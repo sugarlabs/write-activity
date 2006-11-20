@@ -86,7 +86,7 @@ def build_package():
 
 	bundle = Bundle(get_source_path())
 
-	zipname = '%s-%d.zip' % (bundle.get_name(), bundle.get_activity_version())
+	zipname = '%s-%d.xo' % (bundle.get_name(), bundle.get_activity_version())
 	bundle_zip = zipfile.ZipFile(zipname, 'w')
 	
 	for filename in file_list:
