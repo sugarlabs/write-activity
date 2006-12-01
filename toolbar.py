@@ -28,13 +28,13 @@ class Toolbar(gtk.Toolbar):
 		self._abiword_canvas = abiword_canvas
 				
 		self._open = gtk.ToolButton()
-		self._open.set_icon_name('gtk-open')
+		self._open.set_icon_name('stock-open')
 		self._open.connect("clicked", self._open_cb)
 		self.insert(self._open, -1)
 		self._open.show()
 
 		self._save = gtk.ToolButton()
-		self._save.set_icon_name('gtk-save')
+		self._save.set_icon_name('stock-save')
 		self._save.connect("clicked", self._save_cb)
 		self.insert(self._save, -1)
 		self._save.show()
@@ -42,13 +42,13 @@ class Toolbar(gtk.Toolbar):
 		self._insert_separator()
 
 		self._undo = gtk.ToolButton()
-		self._undo.set_icon_name('gtk-undo')
+		self._undo.set_icon_name('stock-undo')
 		self._undo.connect("clicked", self._undo_cb)
 		self.insert(self._undo, -1)
 		self._undo.show()
 
 		self._redo = gtk.ToolButton()
-		self._redo.set_icon_name('gtk-redo')
+		self._redo.set_icon_name('stock-redo')
 		self._redo.connect("clicked", self._redo_cb)
 		self.insert(self._redo, -1)
 		self._redo.show()
@@ -56,13 +56,13 @@ class Toolbar(gtk.Toolbar):
 		self._insert_separator()
 
 		self._underline = gtk.ToolButton()
-		self._underline.set_icon_name('gtk-underline')
+		self._underline.set_icon_name('stock-underline')
 		self._underline.connect("clicked", self._underline_cb)
 		self.insert(self._underline, -1)
 		self._underline.show()
 
 		self._bold = gtk.ToolButton()
-		self._bold.set_icon_name('gtk-bold')
+		self._bold.set_icon_name('stock-bold')
 		self._bold.connect("clicked", self._bold_cb)
 		self.insert(self._bold, -1)
 		self._bold.show()
@@ -70,28 +70,22 @@ class Toolbar(gtk.Toolbar):
 		self._insert_separator()
 
 		self._align_left = gtk.ToolButton()
-		self._align_left.set_icon_name('gtk-justify-left')
+		self._align_left.set_icon_name('stock-justify-left')
 		self._align_left.connect("clicked", self._align_left_cb)
 		self.insert(self._align_left, -1)
 		self._align_left.show()
 
 		self._align_center = gtk.ToolButton()
-		self._align_center.set_icon_name('gtk-justify-center')
+		self._align_center.set_icon_name('stock-justify-center')
 		self._align_center.connect("clicked", self._align_center_cb)
 		self.insert(self._align_center, -1)
 		self._align_center.show()
 
 		self._align_right = gtk.ToolButton()
-		self._align_right.set_icon_name('gtk-justify-right')
+		self._align_right.set_icon_name('stock-justify-right')
 		self._align_right.connect("clicked", self._align_right_cb)
 		self.insert(self._align_right, -1)
 		self._align_right.show()
-
-		self._align_fill = gtk.ToolButton()
-		self._align_fill.set_icon_name('gtk-justify-fill')
-		self._align_fill.connect("clicked", self._align_fill_cb)
-		self.insert(self._align_fill, -1)
-		self._align_fill.show()
 
 	def _insert_separator(self):
 		separator = gtk.SeparatorToolItem()
