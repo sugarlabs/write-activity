@@ -1,29 +1,12 @@
-
 import logging
 import os
 import time
 import gtk
+from abiword import Canvas
 
 from sugar.activity.Activity import Activity
 
-
-class AbiWord (gtk.Socket):
-
-	def __init__ (self):
-		gtk.Socket.__init__ (self)
-
-		self.connect ('realize', self.realize_cb)
-
-
-	def realize_cb (self, event):
-
-		params = [
-			'abiword', 
-			'--nosplash', 
-			'--gtk-socket-id=' + str (self.get_id ())
-		]
-		os.spawnvp (os.P_NOWAIT, 'abiword', params)
-
+from toolbar import Toolbar
 
 class AbiWordActivity (Activity):
 
@@ -32,6 +15,16 @@ class AbiWordActivity (Activity):
 	
 		self.set_title ("AbiWord")
 
-		abiword = AbiWord ()
-		self.add (abiword)
-		abiword.show_all ()
+		hbox = gtk.HBox(False, 0)
+		self.add(hbox)
+		hbox.show()
+
+		abiword_canvas = Canvas()
+
+		toolbar = Toolbar(abiword_canvas)
+		hbox.pack_start(toolbar, False)
+		toolbar.show()
+
+		hbox.add(abiword_canvas)
+		abiword_canvas.set_property("load-file", "")
+		abiword_canvas.show()
