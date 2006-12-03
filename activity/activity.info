@@ -1,6 +1,6 @@
 [Activity]
 name = AbiWord
-service_name = com.jirwin.AbiWordActivity
+service_name = org.laptop.AbiWordActivity
 exec = sugar-activity-factory com.jirwin.AbiWordActivity AbiWordActivity.AbiWordActivity
 icon = activity-abiword
 activity_version = 1
