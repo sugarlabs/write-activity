@@ -3,5 +3,5 @@ name = AbiWord
 service_name = org.laptop.AbiWordActivity
 exec = sugar-activity-factory AbiWordActivity.AbiWordActivity
 icon = activity-abiword
-activity_version = 1
+activity_version = 4
 show_launcher = 1
