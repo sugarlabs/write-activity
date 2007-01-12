@@ -28,3 +28,11 @@ class AbiWordActivity (Activity):
 		self.abiword_canvas.load_file("")
 		self.abiword_canvas.show()
 		vbox.add(self.abiword_canvas)
+
+	def execute(self, command, args):
+		if(command == 'open_document'):
+			self.abiword_canvas.load_file('file://' + args[0])
+			
+			return True
+		else:
+			return False
