@@ -2,18 +2,20 @@ import logging
 import os
 import time
 import gtk
+import hippo
 from abiword import Canvas
 from toolbar import Toolbar
-from sugar.activity.Activity import Activity
+from sugar.activity import activity
 
-class AbiWordActivity (Activity):
+class AbiWordActivity (hippo.CanvasBox):
 
-	def __init__ (self):
-		Activity.__init__ (self)
-		self.set_title ("AbiWord")
+	def __init__ (self, handle):
+		activity.Activity.__init__ (self, handle)
+		self.set_title ("Write")
 
 		vbox = gtk.VBox(False, 0)
-		self.add(vbox)
+		vbox_item = hippo.CanvasWidget(widget=vbox)
+		self.set_root(vbox_item)
 		vbox.show()
 
 		# create the main abiword canvas
