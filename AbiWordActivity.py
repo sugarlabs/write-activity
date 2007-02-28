@@ -7,7 +7,7 @@ from abiword import Canvas
 from toolbar import Toolbar
 from sugar.activity import activity
 
-class AbiWordActivity (hippo.CanvasBox):
+class AbiWordActivity (activity.Activity):
 
 	def __init__ (self, handle):
 		activity.Activity.__init__ (self, handle)
