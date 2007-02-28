@@ -18,94 +18,76 @@ import logging
 import gtk
 import pango
 
-class Toolbar(gtk.Toolbar):
-	def __init__(self, abiword_canvas):
-		gtk.Toolbar.__init__(self)
-		
-		self.set_style(gtk.TOOLBAR_ICONS)
+from sugar.graphics.toolbar import Toolbar
+from sugar.graphics.iconbutton import IconButton
+
+class AbiToolbar():
+	def __init__(self, hippoCanvasBox, abiword_canvas):
+		toolbar = Toolbar()
+		hippoCanvasBox.append(toolbar)
 
 		self._abiword_canvas = abiword_canvas
 	
-		self._open = gtk.ToolButton()
-		self._open.set_icon_name('stock-open')
-		self._open.connect("clicked", self._open_cb)
-		self.insert(self._open, -1)
-		self._open.show()
+		self._open = IconButton(icon_name='theme:stock-open')
+		self._open.connect("activated", self._open_cb)
+		toolbar.append(self._open)
 
-		self._save = gtk.ToolButton()
-		self._save.set_icon_name('stock-save')
-		self._save.connect("clicked", self._save_cb)
-		self.insert(self._save, -1)
-		self._save.show()
-		self._abiword_canvas.connect("is-dirty",self._isDirty_cb)
+		self._save = IconButton(icon_name='theme:stock-save')
+		self._save.connect("activated", self._save_cb)
+		self._abiword_canvas.connect("is-dirty", self._isDirty_cb)
+		toolbar.append(self._save)
 
-		self._insert_separator()
+#		self._insert_separator()
 
-		self._undo = gtk.ToolButton()
-		self._undo.set_icon_name('stock-undo')
-		self._undo.connect("clicked", self._undo_cb)
-		self.insert(self._undo, -1)
-		self._undo.show()
-		self._abiword_canvas.connect("can_undo",self._canUndo_cb)
+		self._undo = IconButton(icon_name='theme:stock-undo')
+		self._undo.connect("activated", self._undo_cb)
+		self._abiword_canvas.connect("can_undo", self._canUndo_cb)
+		toolbar.append(self._undo)
 
-		self._redo = gtk.ToolButton()
-		self._redo.set_icon_name('stock-redo')
-		self._redo.connect("clicked", self._redo_cb)
-		self.insert(self._redo, -1)
-		self._redo.show()
-		self._abiword_canvas.connect("can_redo",self._canRedo_cb)
+		self._redo = IconButton(icon_name='theme:stock-redo')
+		self._redo.connect("activated", self._redo_cb)
+		self._abiword_canvas.connect("can_redo", self._canRedo_cb)
+		toolbar.append(self._redo)
 
-		self._insert_separator()
+#		self._insert_separator()
 
-		self._underline = gtk.ToggleToolButton()
-		self._underline.set_icon_name('stock-underline')
-		self._underline_id = self._underline.connect("clicked", self._underline_cb)
-		self.insert(self._underline, -1)
-		self._underline.show()
-		self._abiword_canvas.connect("underline",self._isUnderline_cb)
+		self._underline = IconButton(icon_name='theme:stock-underline')
+		self._underline_id = self._underline.connect("activated", self._underline_cb)
+		self._abiword_canvas.connect("underline", self._isUnderline_cb)
+		toolbar.append(self._underline)
 
-		self._bold = gtk.ToggleToolButton()
-		self._bold.set_icon_name('stock-bold')
-		self._bold_id =self._bold.connect("clicked", self._bold_cb)
-		self.insert(self._bold, -1)
-		self._bold.show()
-		self._abiword_canvas.connect("bold",self._isBold_cb)
+		self._bold = IconButton(icon_name='theme:stock-bold')
+		self._bold_id = self._bold.connect("activated", self._bold_cb)
+		self._abiword_canvas.connect("bold", self._isBold_cb)
+		toolbar.append(self._bold)
 
-		self._insert_separator()
+#		self._insert_separator()
 
-		self._align_left = gtk.ToggleToolButton()
-		self._align_left.set_icon_name('stock-justify-left')
-		self._align_left_id = self._align_left.connect("clicked", self._align_left_cb)
-		self.insert(self._align_left, -1)
-		self._align_left.show()
-		self._abiword_canvas.connect("left-align",self._isLeftAlign_cb)
+		self._align_left = IconButton(icon_name='theme:stock-justify-left')
+		self._align_left_id = self._align_left.connect("activated", self._align_left_cb)
+		self._abiword_canvas.connect("left-align", self._isLeftAlign_cb)
+		toolbar.append(self._align_left)
 
-		self._align_center = gtk.ToggleToolButton()
-		self._align_center.set_icon_name('stock-justify-center')
-		self._align_center_id = self._align_center.connect("clicked", self._align_center_cb)
-		self.insert(self._align_center, -1)
-		self._align_center.show()
-		self._abiword_canvas.connect("center-align",self._isCenterAlign_cb)
+		self._align_center = IconButton(icon_name='theme:stock-justify-center')
+		self._align_center_id = self._align_center.connect("activated", self._align_center_cb)
+		self._abiword_canvas.connect("center-align", self._isCenterAlign_cb)
+		toolbar.append(self._align_center)
 		
+		self._align_right = IconButton(icon_name='theme:stock-justify-right')
+		self._align_right_id = self._align_right.connect("activated", self._align_right_cb)
+		self._abiword_canvas.connect("right-align", self._isRightAlign_cb)
+		toolbar.append(self._align_right)
 
-		self._align_right = gtk.ToggleToolButton()
-		self._align_right.set_icon_name('stock-justify-right')
-		self._align_right_id = self._align_right.connect("clicked", self._align_right_cb)
-		self.insert(self._align_right, -1)
-		self._align_right.show()
-		self._abiword_canvas.connect("right-align",self._isRightAlign_cb)
-
-	def _insert_separator(self):
-		separator = gtk.SeparatorToolItem()
-		separator.set_draw(True)
-		self.insert(separator, -1)
-		separator.show()
-
-	def setToggleButtonState(self,button,b,id):
-		button.handler_block(id)
-		button.set_active(b)
-		button.handler_unblock(id)
-		
+#	def _insert_separator(self):
+#		separator = gtk.SeparatorToolItem()
+#		separator.set_draw(True)
+#		self.insert(separator, -1)
+#		separator.show()
+#
+#	def setToggleButtonState(self, button, b, id):
+#		button.handler_block(id)
+#		button.set_active(b)
+#		button.handler_unblock(id)
 		
 	def _open_cb(self, button):
 		self._abiword_canvas.file_open()
@@ -113,49 +95,55 @@ class Toolbar(gtk.Toolbar):
 	def _save_cb(self, button):
 		self._abiword_canvas.file_save()
 
-	def _isDirty_cb(self,abi,b):
+	def _isDirty_cb(self, abi, b):
 		print "isDirty",b
-		self._save.set_sensitive(b)
+#		self._save.set_sensitive(b)
 
 	def _undo_cb(self, button):
 		self._abiword_canvas.undo()
 
-	def _canUndo_cb(self,abi,b):
-		self._undo.set_sensitive(b)
+	def _canUndo_cb(self, abi, b):
+		print "canUndo",b
+#		self._undo.set_sensitive(b)
 
 	def _redo_cb(self, button):
 		self._abiword_canvas.redo()
 
-	def _canRedo_cb(self,abi,b):
-		self._redo.set_sensitive(b)
+	def _canRedo_cb(self, abi ,b):
+		print "canRedo",b
+#		self._redo.set_sensitive(b)
 
 	def _underline_cb(self, button):
 		self._abiword_canvas.toggle_underline()
 
-	def _isUnderline_cb(self,abi,b):
-		self.setToggleButtonState(self._underline,b,self._underline_id)
+	def _isUnderline_cb(self, abi, b):
+		print "isUnderline",b
+#		self.setToggleButtonState(self._underline, b, self._underline_id)
 
 	def _bold_cb(self, button):
 		self._abiword_canvas.toggle_bold()
 
-	def _isBold_cb(self,abi,b):
-		self.setToggleButtonState(self._bold,b,self._bold_id)
+	def _isBold_cb(self, abi, b):
+		print "isBold",b
+#		self.setToggleButtonState(self._bold,b,self._bold_id)
 
 	def _align_left_cb(self, button):
 		self._abiword_canvas.align_left()
 
-	def _isLeftAlign_cb(self,abi,b):
-		self.setToggleButtonState(self._align_left,b,self._align_left_id)
+	def _isLeftAlign_cb(self, abi, b):
+		print "isLeftAlign",b
+#		self.setToggleButtonState(self._align_left,b,self._align_left_id)
 
 	def _align_center_cb(self, button):
 		self._abiword_canvas.align_center()
 
-	def _isCenterAlign_cb(self,abi,b):
-		self.setToggleButtonState(self._align_center,b,self._align_center_id)
+	def _isCenterAlign_cb(self, abi, b):
+		print "isCenterAlign",b
+#		self.setToggleButtonState(self._align_center,b,self._align_center_id)
 
 	def _align_right_cb(self, button):
 		self._abiword_canvas.align_right()
 
-	def _isRightAlign_cb(self,abi,b):
-		self.setToggleButtonState(self._align_right,b,self._align_right_id)
-
+	def _isRightAlign_cb(self, abi, b):
+		print "isRightAlign",b
+#		self.setToggleButtonState(self._align_right,b,self._align_right_id)
