@@ -18,6 +18,8 @@
 import logging
 import gtk
 import pango
+import abiword
+import hippo
 
 from sugar.graphics.toolbar import Toolbar
 from sugar.graphics.iconbutton import IconButton
@@ -78,6 +80,17 @@ class AbiToolbar():
 		self._align_right_id = self._align_right.connect("activated", self._align_right_cb)
 		self._abiword_canvas.connect("right-align", self._isRightAlign_cb)
 		toolbar.append(self._align_right)
+
+		self._table = abiword.TableCreator()
+		self._table.set_labels("Table", "Cancel")
+		self._table.show()
+		#self._tableCreate.label().hide()
+
+		tableContainer = hippo.CanvasWidget()
+		tableContainer.props.widget = self._table;
+		self._table_id = self._table.connect("selected", self._table_cb)
+		#self._table_id = self._abiword_canvas.connect("table-state", self._tableState)
+		toolbar.append(tableContainer)
 
 #	def _insert_separator(self):
 #		separator = gtk.SeparatorToolItem()
@@ -148,3 +161,6 @@ class AbiToolbar():
 	def _isRightAlign_cb(self, abi, b):
 		print "isRightAlign",b
 #		self.setToggleButtonState(self._align_right,b,self._align_right_id)
+
+	def _table_cb(self, abi, rows, cols):
+		self._abiword_canvas.insert_table(rows,cols)
