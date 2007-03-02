@@ -24,7 +24,7 @@ import hippo
 from sugar.graphics.toolbar import Toolbar
 from sugar.graphics.iconbutton import IconButton
 
-class AbiToolbar():
+class AbiToolbar(object):
 	def __init__(self, hippoCanvasBox, abiword_canvas):
 		toolbar = Toolbar()
 		hippoCanvasBox.append(toolbar)
