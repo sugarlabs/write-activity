@@ -3,5 +3,5 @@ name = Write
 service_name = org.laptop.AbiWordActivity
 class = AbiWordActivity.AbiWordActivity
 icon = activity-write
-activity_version = 8
+activity_version = 9
 show_launcher = 1
