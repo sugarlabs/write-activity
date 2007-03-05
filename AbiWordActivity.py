@@ -56,6 +56,7 @@ class AbiWordActivity (activity.Activity):
         hippoCanvasBox.append(abiwordCanvasContainer, hippo.PACK_EXPAND)
 
         if handle.object_id:
+            self._journal_handle = handle.object_id
             obj = datastore.read(handle.object_id)
             self.abiword_canvas.load_file('file://' + obj.get_file_path())
         else:
@@ -78,9 +79,9 @@ class AbiWordActivity (activity.Activity):
         if not self._journal_handle:
             home_dir = os.path.expanduser('~')
             journal_dir = os.path.join(home_dir, "Journal")
-            text = Text({'preview'      : text_content[0:30],
+            text = Text({'preview'      : text_content[0:60],
                          'date'         : str(time.time()),
-                         'title'        : 'A text document',
+                         'title'        : text_content[0:30],
                          'icon'         : 'theme:object-text',
                          'keep'         : '0',
                          'buddies'      : str([ { 'name' : profile.get_nick_name(),
@@ -95,8 +96,10 @@ class AbiWordActivity (activity.Activity):
             self._journal_handle = datastore.write(text)
         elif text_content != self._last_saved_text:
             text = datastore.read(self._journal_handle)
-            text.get_metadata()['preview'] = text_content[0:30]
-            text.get_metadata()['date'] = str(time.time())
+            metadata = text.get_metadata()
+            metadata['preview'] = text_content[0:60]
+            metadata['title'] = text_content[0:30]
+            metadata['date'] = str(time.time())
             f = open(text.get_file_path(), 'w')
             try:
                 f.write(self.abiword_canvas.get_content(".abw")[0])
