@@ -70,6 +70,11 @@ class AbiToolbar(object):
         self._abiword_canvas.connect("right-align", self._isRightAlign_cb)
         toolbar.append(self._align_right)
 
+        # theme:stock-image does not exist yet; someone kick Eben please :)
+        self._image = IconButton(icon_name='theme:stock-image')
+        self._image_id = self._image.connect("activated", self._image_cb)
+        toolbar.append(self._image)
+
 # reenable this after march 6th
 #        self._table = abiword.TableCreator()
 #        self._table.set_labels("Table", "Cancel")
@@ -145,6 +150,10 @@ class AbiToolbar(object):
     def _isRightAlign_cb(self, abi, b):
         print "isRightAlign",b
 #        self.setToggleButtonState(self._align_right,b,self._align_right_id)
+
+    def _image_cb(self, button):
+        print "fileInsertGraphic"
+        self._abiword_canvas.invoke_cmd("fileInsertGraphic", "", 0, 0)
 
 #    def _table_cb(self, abi, rows, cols):
 #        self._abiword_canvas.insert_table(rows,cols)
