@@ -55,56 +55,10 @@ class AbiWordActivity (activity.Activity):
         # add the controls to our window
         hippoCanvasBox.append(abiwordCanvasContainer, hippo.PACK_EXPAND)
 
-        if handle.object_id:
-            self._journal_handle = handle.object_id
-            obj = datastore.read(handle.object_id)
-            self.abiword_canvas.load_file('file://' + obj.get_file_path())
+        if handle.uri:
+            self.abiword_canvas.load_file('file://' + handle.uri)
         else:
             # open a blank file
             self.abiword_canvas.load_file("")
 
         self.abiword_canvas.show()
-
-        self.connect('focus-out-event', self._focus_out_event_cb)
-        self.connect('delete-event', self._delete_event_cb)
-
-    def _focus_out_event_cb(self, widget, event):
-        self._autosave()
-
-    def _delete_event_cb(self, widget, event):
-        self._autosave()
-    
-    def _autosave(self):
-        text_content = self.abiword_canvas.get_content(".txt")[0]
-        if not self._journal_handle:
-            home_dir = os.path.expanduser('~')
-            journal_dir = os.path.join(home_dir, "Journal")
-            text = Text({'preview'      : text_content[0:60],
-                         'date'         : str(time.time()),
-                         'title'        : text_content[0:30],
-                         'icon'         : 'theme:object-text',
-                         'keep'         : '0',
-                         'buddies'      : str([ { 'name' : profile.get_nick_name(),
-                                                  'color': profile.get_color().to_string() }]),
-                         'icon-color'   : profile.get_color().to_string()})
-            f = open(os.path.join(journal_dir, '%i.abw' % time.time()), 'w')
-            try:
-                f.write(self.abiword_canvas.get_content(".abw")[0])
-            finally:
-                f.close()
-            text.set_file_path(f.name)
-            self._journal_handle = datastore.write(text)
-        elif text_content != self._last_saved_text:
-            text = datastore.read(self._journal_handle)
-            metadata = text.get_metadata()
-            metadata['preview'] = text_content[0:60]
-            metadata['title'] = text_content[0:30]
-            metadata['date'] = str(time.time())
-            f = open(text.get_file_path(), 'w')
-            try:
-                f.write(self.abiword_canvas.get_content(".abw")[0])
-            finally:
-                f.close()
-            datastore.write(text)
-
-        self._last_saved_text = text_content

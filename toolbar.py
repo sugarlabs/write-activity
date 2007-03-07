@@ -28,7 +28,16 @@ class AbiToolbar(object):
         hippoCanvasBox.append(toolbar)
 
         self._abiword_canvas = abiword_canvas
-    
+
+        self._open = IconButton(icon_name='theme:stock-open')
+        self._open.connect("activated", self._open_cb)
+        toolbar.append(self._open)
+
+        self._save = IconButton(icon_name='theme:stock-save')
+        self._save.connect("activated", self._save_cb)
+        self._abiword_canvas.connect("is-dirty", self._isDirty_cb)
+        toolbar.append(self._save)
+
 #        self._insert_separator()
 
         self._undo = IconButton(icon_name='theme:stock-undo')
@@ -97,6 +106,12 @@ class AbiToolbar(object):
 #        button.handler_block(id)
 #        button.set_active(b)
 #        button.handler_unblock(id)
+
+    def _open_cb(self, button):
+        self._abiword_canvas.file_open()
+
+    def _save_cb(self, button):
+        self._abiword_canvas.file_save()
 
     def _isDirty_cb(self, abi, b):
         print "isDirty",b
