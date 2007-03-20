@@ -121,60 +121,56 @@ class AbiToolbar(object):
 
     def _canUndo_cb(self, abi, b):
         print "canUndo",b
-#        self._undo.set_sensitive(b)
 
     def _redo_cb(self, button):
         self._abiword_canvas.redo()
 
     def _canRedo_cb(self, abi ,b):
         print "canRedo",b
-#        self._redo.set_sensitive(b)
 
     def _underline_cb(self, button):
         self._abiword_canvas.toggle_underline()
 
     def _isUnderline_cb(self, abi, b):
         print "isUnderline",b
-#        self.setToggleButtonState(self._underline, b, self._underline_id)
 
     def _bold_cb(self, button):
         self._abiword_canvas.toggle_bold()
 
     def _isBold_cb(self, abi, b):
         print "isBold",b
-#        self.setToggleButtonState(self._bold,b,self._bold_id)
 
-    def _align_left_cb(self, button):
+    def _align_left_cb(self, button, pspec):
         self._abiword_canvas.align_left()
 
     def _isLeftAlign_cb(self, abi, b):
         print "isLeftAlign",b
-        self._align_left.props.active = b
+        self._align_left.props.toggled = b
 
-    def _align_center_cb(self, button):
+    def _align_center_cb(self, button, pspec):
         self._abiword_canvas.align_center()
 
     def _isCenterAlign_cb(self, abi, b):
         print "isCenterAlign",b
-        self._align_center.props.active = b
+        self._align_center.props.toggled = b
 
-    def _align_right_cb(self, button):
+    def _align_right_cb(self, button, pspec):
         self._abiword_canvas.align_right()
 
     def _isRightAlign_cb(self, abi, b):
         print "isRightAlign",b
-        self._align_right.props.active = b
+        self._align_right.props.toggled = b
 
-    def _align_fill_cb(self, button):
+    def _align_fill_cb(self, button, pspec):
         self._abiword_canvas.align_justify()
 
     def _isFillAlign_cb(self, abi, b):
         print "isFillAlign",b
-        self._align_fill.props.active = b
+        self._align_fill.props.toggled = b
 
     def _image_cb(self, button):
         print "fileInsertGraphic"
-        self._abiword_canvas.invoke_cmd("fileInsertGraphic", "", 0, 0)
+        self._abiword_canvas.invoke_cmd("fileInsertPositionedGraphic", "", 0, 0)
 
 #    def _table_cb(self, abi, rows, cols):
 #        self._abiword_canvas.insert_table(rows,cols)
