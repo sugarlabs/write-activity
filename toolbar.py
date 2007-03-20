@@ -149,28 +149,28 @@ class AbiToolbar(object):
 
     def _isLeftAlign_cb(self, abi, b):
         print "isLeftAlign",b
-        self._align_left.active = b
+        self._align_left.props.active = b
 
     def _align_center_cb(self, button):
         self._abiword_canvas.align_center()
 
     def _isCenterAlign_cb(self, abi, b):
         print "isCenterAlign",b
-        self._align_center.active = b
+        self._align_center.props.active = b
 
     def _align_right_cb(self, button):
         self._abiword_canvas.align_right()
 
     def _isRightAlign_cb(self, abi, b):
         print "isRightAlign",b
-        self._align_right.active = b
+        self._align_right.props.active = b
 
     def _align_fill_cb(self, button):
         self._abiword_canvas.align_justify()
 
     def _isFillAlign_cb(self, abi, b):
         print "isFillAlign",b
-        self._align_fill.active = b
+        self._align_fill.props.active = b
 
     def _image_cb(self, button):
         print "fileInsertGraphic"
