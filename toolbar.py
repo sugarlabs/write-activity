@@ -21,6 +21,7 @@ import hippo
 
 from sugar.graphics.toolbar import Toolbar
 from sugar.graphics.iconbutton import IconButton
+from sugar.graphics.toggleiconbutton import ToggleIconButton
 
 class AbiToolbar(object):
     def __init__(self, hippoCanvasBox, abiword_canvas):
@@ -53,31 +54,37 @@ class AbiToolbar(object):
         self._abiword_canvas.connect("underline", self._isUnderline_cb)
         toolbar.append(self._underline)
 
-        self._bold = IconButton(icon_name='theme:stock-bold')
+        self._bold = ToggleIconButton(icon_name='theme:stock-bold')
         self._bold_id = self._bold.connect("activated", self._bold_cb)
         self._abiword_canvas.connect("bold", self._isBold_cb)
         toolbar.append(self._bold)
 
-        self._align_left = IconButton(icon_name='theme:stock-justify-left')
-        self._align_left_id = self._align_left.connect("activated", self._align_left_cb)
+        #
+        # alignment buttons
+        #
+        self._align_left = ToggleIconButton(icon_name='theme:stock-justify-left')
+        self._align_left.connect("activated", self._align_left_cb)
         self._abiword_canvas.connect("left-align", self._isLeftAlign_cb)
         toolbar.append(self._align_left)
 
-        self._align_center = IconButton(icon_name='theme:stock-justify-center')
-        self._align_center_id = self._align_center.connect("activated", self._align_center_cb)
+        self._align_center = ToggleIconButton(icon_name='theme:stock-justify-center')
+        self._align_center.connect("activated", self._align_center_cb)
         self._abiword_canvas.connect("center-align", self._isCenterAlign_cb)
         toolbar.append(self._align_center)
         
-        self._align_right = IconButton(icon_name='theme:stock-justify-right')
-        self._align_right_id = self._align_right.connect("activated", self._align_right_cb)
+        self._align_right = ToggleIconButton(icon_name='theme:stock-justify-right')
+        self._align_right.connect("activated", self._align_right_cb)
         self._abiword_canvas.connect("right-align", self._isRightAlign_cb)
         toolbar.append(self._align_right)
 
-        self._align_fill = IconButton(icon_name='theme:stock-justify-fill')
-        self._align_fill_id = self._align_fill.connect("activated", self._align_fill_cb)
+        self._align_fill = ToggleIconButton(icon_name='theme:stock-justify-fill')
+        self._align_fill.connect("activated", self._align_fill_cb)
         self._abiword_canvas.connect("justify-align", self._isFillAlign_cb)
         toolbar.append(self._align_fill)
 
+        #
+        # images
+        #
         self._image = IconButton(icon_name='theme:stock-insert-image')
         self._image_id = self._image.connect("activated", self._image_cb)
         toolbar.append(self._image)
@@ -142,29 +149,28 @@ class AbiToolbar(object):
 
     def _isLeftAlign_cb(self, abi, b):
         print "isLeftAlign",b
-#        self.setToggleButtonState(self._align_left,b,self._align_left_id)
+        self._align_left.active = b
 
     def _align_center_cb(self, button):
         self._abiword_canvas.align_center()
 
     def _isCenterAlign_cb(self, abi, b):
         print "isCenterAlign",b
-#        self.setToggleButtonState(self._align_center,b,self._align_center_id)
+        self._align_center.active = b
 
     def _align_right_cb(self, button):
         self._abiword_canvas.align_right()
 
     def _isRightAlign_cb(self, abi, b):
         print "isRightAlign",b
-#        b.active = true
-#        self.setToggleButtonState(self._align_right,b,self._align_right_id)
+        self._align_right.active = b
 
     def _align_fill_cb(self, button):
         self._abiword_canvas.align_justify()
 
     def _isFillAlign_cb(self, abi, b):
         print "isFillAlign",b
-#        self.setToggleButtonState(self._align_fill,b,self._align_fill_id)
+        self._align_fill.active = b
 
     def _image_cb(self, button):
         print "fileInsertGraphic"
