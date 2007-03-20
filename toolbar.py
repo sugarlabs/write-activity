@@ -98,13 +98,7 @@ class AbiToolbar(object):
 #        tableContainer = hippo.CanvasWidget()
 #        tableContainer.props.widget = self._table;
 #        self._table_id = self._table.connect("selected", self._table_cb)
-        #self._table_id = self._abiword_canvas.connect("table-state", self._tableState)
 #        toolbar.append(tableContainer)
-
-#    def setToggleButtonState(self, button, b, id):
-#        button.handler_block(id)
-#        button.set_active(b)
-#        button.handler_unblock(id)
 
     def _open_cb(self, button):
         self._abiword_canvas.file_open()
@@ -114,7 +108,6 @@ class AbiToolbar(object):
 
     def _isDirty_cb(self, abi, b):
         print "isDirty",b
-#        self._save.set_sensitive(b)
 
     def _undo_cb(self, button):
         self._abiword_canvas.undo()
@@ -140,28 +133,28 @@ class AbiToolbar(object):
     def _isBold_cb(self, abi, b):
         print "isBold",b
 
-    def _align_left_cb(self, button, pspec):
+    def _align_left_cb(self, button):
         self._abiword_canvas.align_left()
 
     def _isLeftAlign_cb(self, abi, b):
         print "isLeftAlign",b
         self._align_left.props.toggled = b
 
-    def _align_center_cb(self, button, pspec):
+    def _align_center_cb(self, button):
         self._abiword_canvas.align_center()
 
     def _isCenterAlign_cb(self, abi, b):
         print "isCenterAlign",b
         self._align_center.props.toggled = b
 
-    def _align_right_cb(self, button, pspec):
+    def _align_right_cb(self, button):
         self._abiword_canvas.align_right()
 
     def _isRightAlign_cb(self, abi, b):
         print "isRightAlign",b
         self._align_right.props.toggled = b
 
-    def _align_fill_cb(self, button, pspec):
+    def _align_fill_cb(self, button):
         self._abiword_canvas.align_justify()
 
     def _isFillAlign_cb(self, abi, b):
