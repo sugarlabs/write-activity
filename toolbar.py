@@ -114,12 +114,14 @@ class AbiToolbar(object):
 
     def _canUndo_cb(self, abi, b):
         print "canUndo",b
+        self._undo.props.active = b
 
     def _redo_cb(self, button):
         self._abiword_canvas.redo()
 
     def _canRedo_cb(self, abi ,b):
         print "canRedo",b
+        self._redo.props.active = b
 
     def _underline_cb(self, button):
         self._abiword_canvas.toggle_underline()
