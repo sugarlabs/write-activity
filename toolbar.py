@@ -38,8 +38,6 @@ class AbiToolbar(object):
         self._abiword_canvas.connect("is-dirty", self._isDirty_cb)
         toolbar.append(self._save)
 
-#        self._insert_separator()
-
         self._undo = IconButton(icon_name='theme:stock-undo')
         self._undo.connect("activated", self._undo_cb)
         self._abiword_canvas.connect("can_undo", self._canUndo_cb)
@@ -50,8 +48,6 @@ class AbiToolbar(object):
         self._abiword_canvas.connect("can_redo", self._canRedo_cb)
         toolbar.append(self._redo)
 
-#        self._insert_separator()
-
         self._underline = IconButton(icon_name='theme:stock-underline')
         self._underline_id = self._underline.connect("activated", self._underline_cb)
         self._abiword_canvas.connect("underline", self._isUnderline_cb)
@@ -61,8 +57,6 @@ class AbiToolbar(object):
         self._bold_id = self._bold.connect("activated", self._bold_cb)
         self._abiword_canvas.connect("bold", self._isBold_cb)
         toolbar.append(self._bold)
-
-#        self._insert_separator()
 
         self._align_left = IconButton(icon_name='theme:stock-justify-left')
         self._align_left_id = self._align_left.connect("activated", self._align_left_cb)
@@ -79,7 +73,11 @@ class AbiToolbar(object):
         self._abiword_canvas.connect("right-align", self._isRightAlign_cb)
         toolbar.append(self._align_right)
 
-        # theme:stock-image does not exist yet; someone kick Eben please :)
+        self._align_fill = IconButton(icon_name='theme:stock-justify-fill')
+        self._align_fill_id = self._align_fill.connect("activated", self._align_fill_cb)
+        self._abiword_canvas.connect("justify-align", self._isFillAlign_cb)
+        toolbar.append(self._align_fill)
+
         self._image = IconButton(icon_name='theme:stock-insert-image')
         self._image_id = self._image.connect("activated", self._image_cb)
         toolbar.append(self._image)
@@ -96,12 +94,6 @@ class AbiToolbar(object):
         #self._table_id = self._abiword_canvas.connect("table-state", self._tableState)
 #        toolbar.append(tableContainer)
 
-#    def _insert_separator(self):
-#        separator = gtk.SeparatorToolItem()
-#        separator.set_draw(True)
-#        self.insert(separator, -1)
-#        separator.show()
-#
 #    def setToggleButtonState(self, button, b, id):
 #        button.handler_block(id)
 #        button.set_active(b)
@@ -164,7 +156,15 @@ class AbiToolbar(object):
 
     def _isRightAlign_cb(self, abi, b):
         print "isRightAlign",b
+#        b.active = true
 #        self.setToggleButtonState(self._align_right,b,self._align_right_id)
+
+    def _align_fill_cb(self, button):
+        self._abiword_canvas.align_justify()
+
+    def _isFillAlign_cb(self, abi, b):
+        print "isFillAlign",b
+#        self.setToggleButtonState(self._align_fill,b,self._align_fill_id)
 
     def _image_cb(self, button):
         print "fileInsertGraphic"
