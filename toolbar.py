@@ -39,6 +39,9 @@ class AbiToolbar(object):
         self._abiword_canvas.connect("is-dirty", self._isDirty_cb)
         toolbar.append(self._save)
 
+        #
+        # undo/redo
+        # 
         self._undo = IconButton(icon_name='theme:stock-undo')
         self._undo.connect("activated", self._undo_cb)
         self._abiword_canvas.connect("can_undo", self._canUndo_cb)
@@ -49,15 +52,23 @@ class AbiToolbar(object):
         self._abiword_canvas.connect("can_redo", self._canRedo_cb)
         toolbar.append(self._redo)
 
-        self._underline = IconButton(icon_name='theme:stock-underline')
-        self._underline_id = self._underline.connect("activated", self._underline_cb)
-        self._abiword_canvas.connect("underline", self._isUnderline_cb)
-        toolbar.append(self._underline)
-
+        #
+        # text formatting options
+        # 
         self._bold = ToggleIconButton(icon_name='theme:stock-bold')
-        self._bold_id = self._bold.connect("activated", self._bold_cb)
+        self._bold.connect("activated", self._bold_cb)
         self._abiword_canvas.connect("bold", self._isBold_cb)
         toolbar.append(self._bold)
+
+        self._italic = ToggleIconButton(icon_name='theme:stock-italic')
+        self._italic.connect("activated", self._italic_cb)
+        self._abiword_canvas.connect("italic", self._isItalic_cb)
+        toolbar.append(self._italic)
+
+        self._underline = ToggleIconButton(icon_name='theme:stock-underline')
+        self._underline.connect("activated", self._underline_cb)
+        self._abiword_canvas.connect("underline", self._isUnderline_cb)
+        toolbar.append(self._underline)
 
         #
         # alignment buttons
@@ -113,58 +124,57 @@ class AbiToolbar(object):
         self._abiword_canvas.undo()
 
     def _canUndo_cb(self, abi, b):
-        print "canUndo",b
         self._undo.props.active = b
 
     def _redo_cb(self, button):
         self._abiword_canvas.redo()
 
     def _canRedo_cb(self, abi ,b):
-        print "canRedo",b
         self._redo.props.active = b
-
-    def _underline_cb(self, button):
-        self._abiword_canvas.toggle_underline()
-
-    def _isUnderline_cb(self, abi, b):
-        print "isUnderline",b
 
     def _bold_cb(self, button):
         self._abiword_canvas.toggle_bold()
 
     def _isBold_cb(self, abi, b):
-        print "isBold",b
+        self._bold.props.toggled = b
+
+    def _italic_cb(self, button):
+        self._abiword_canvas.toggle_italic()
+
+    def _isItalic_cb(self, abi, b):
+        self._italic.props.toggled = b
+
+    def _underline_cb(self, button):
+        self._abiword_canvas.toggle_underline()
+
+    def _isUnderline_cb(self, abi, b):
+        self._underline.props.toggled = b
 
     def _align_left_cb(self, button):
         self._abiword_canvas.align_left()
 
     def _isLeftAlign_cb(self, abi, b):
-        print "isLeftAlign",b
         self._align_left.props.toggled = b
 
     def _align_center_cb(self, button):
         self._abiword_canvas.align_center()
 
     def _isCenterAlign_cb(self, abi, b):
-        print "isCenterAlign",b
         self._align_center.props.toggled = b
 
     def _align_right_cb(self, button):
         self._abiword_canvas.align_right()
 
     def _isRightAlign_cb(self, abi, b):
-        print "isRightAlign",b
         self._align_right.props.toggled = b
 
     def _align_fill_cb(self, button):
         self._abiword_canvas.align_justify()
 
     def _isFillAlign_cb(self, abi, b):
-        print "isFillAlign",b
         self._align_fill.props.toggled = b
 
     def _image_cb(self, button):
-        print "fileInsertGraphic"
         self._abiword_canvas.invoke_cmd("fileInsertPositionedGraphic", "", 0, 0)
 
 #    def _table_cb(self, abi, rows, cols):
