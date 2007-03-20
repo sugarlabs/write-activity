@@ -38,6 +38,7 @@ class AbiWordActivity (activity.Activity):
 
         self._journal_handle = None
         self._last_saved_text = None
+	os.chdir(os.path.expanduser("~"))
 
         hippoCanvasBox = hippo.CanvasBox()
         self.set_root(hippoCanvasBox)
