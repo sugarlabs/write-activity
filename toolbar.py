@@ -80,7 +80,7 @@ class AbiToolbar(object):
         toolbar.append(self._align_right)
 
         # theme:stock-image does not exist yet; someone kick Eben please :)
-        self._image = IconButton(icon_name='theme:stock-image')
+        self._image = IconButton(icon_name='theme:stock-insert-image')
         self._image_id = self._image.connect("activated", self._image_cb)
         toolbar.append(self._image)
 
