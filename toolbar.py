@@ -100,7 +100,7 @@ class AbiToolbar(object):
         self._image_id = self._image.connect("activated", self._image_cb)
         toolbar.append(self._image)
 
-# reenable this after march 6th
+# re-enable this after march 6th
 #        self._table = abiword.TableCreator()
 #        self._table.set_labels("Table", "Cancel")
 #        self._table.show()
@@ -118,7 +118,7 @@ class AbiToolbar(object):
         self._abiword_canvas.file_save()
 
     def _isDirty_cb(self, abi, b):
-        print "isDirty",b
+        self._save.props.active = b
 
     def _undo_cb(self, button):
         self._abiword_canvas.undo()
