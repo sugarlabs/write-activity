@@ -38,7 +38,7 @@ class AbiWordActivity (activity.Activity):
 
         self._journal_handle = None
         self._last_saved_text = None
-	os.chdir(os.path.expanduser("~"))
+        os.chdir(os.path.expanduser("~"))
 
         hippoCanvasBox = hippo.CanvasBox()
         self.set_root(hippoCanvasBox)
@@ -57,7 +57,7 @@ class AbiWordActivity (activity.Activity):
         hippoCanvasBox.append(abiwordCanvasContainer, hippo.PACK_EXPAND)
 
         if handle.uri:
-            self.abiword_canvas.load_file('file://' + handle.uri)
+            self.abiword_canvas.load_file(handle.uri)
         else:
             # open a blank file
             self.abiword_canvas.load_file("")
