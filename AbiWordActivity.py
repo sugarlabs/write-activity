@@ -23,8 +23,6 @@ import gobject
 import hippo
 
 from sugar.activity import activity
-from sugar.datastore import datastore
-from sugar.datastore.datastore import Text
 from sugar import profile
 from abiword import Canvas
 
