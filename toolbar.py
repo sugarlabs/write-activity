@@ -51,6 +51,26 @@ class TextToolbar(gtk.Toolbar):
         separator = gtk.SeparatorToolItem()
         separator.set_draw(True)
         self.insert(separator, -1)
+
+        self._font_size_combo = ComboBox()
+        self._font_sizes = ['8', '9', '10', '11', '12', '14', '16', '20', '22', '24', '26', '28', '36', '48', '72'];
+        for i, s in enumerate(self._font_sizes):
+            self._font_size_combo.append_item(i, s, None)
+        self._font_size_changed_id = self._font_size_combo.connect('changed',
+            self._font_size_changed_cb)
+        self._add_widget(self._font_size_combo)
+
+        self._font_combo = ComboBox()
+        self._fonts = sorted(self._abiword_canvas.get_font_names())
+        for i, f in enumerate(self._fonts):
+            self._font_combo.append_item(i, f, None)
+        self._fonts_changed_id = self._font_combo.connect('changed',
+            self._font_changed_cb)
+        self._add_widget(self._font_combo)
+
+        separator = gtk.SeparatorToolItem()
+        separator.set_draw(True)
+        self.insert(separator, -1)
         separator.show()
 
         self._alignment = ComboBox()
@@ -96,6 +116,16 @@ class TextToolbar(gtk.Toolbar):
     def _isBold_cb(self, abi, b):
         print 'isBold',b
         self.setToggleButtonState(self._bold,b,self._bold_id)
+
+    def _font_changed_cb(self, combobox):
+        if self._font_combo.get_active() != -1:
+            print 'Setting font name:',self._fonts[self._font_combo.get_active()]
+            self._abiword_canvas.set_font_name(self._fonts[self._font_combo.get_active()])
+
+    def _font_size_changed_cb(self, combobox):
+        if self._font_size_combo.get_active() != -1:
+            print 'Setting font size:',self._font_sizes[self._font_size_combo.get_active()]
+            self._abiword_canvas.set_font_size(self._font_sizes[self._font_size_combo.get_active()])
 
     def _alignment_changed_cb(self, combobox):
         if self._alignment.get_active() == self._ACTION_ALIGNMENT_LEFT:
