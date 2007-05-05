@@ -22,8 +22,13 @@ import gtk
 
 from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.toggletoolbutton import ToggleToolButton
+from sugar.graphics.combobox import ComboBox
 
 class TextToolbar(gtk.Toolbar):
+    _ACTION_ALIGNMENT_LEFT = 0
+    _ACTION_ALIGNMENT_CENTER = 1
+    _ACTION_ALIGNMENT_RIGHT = 2
+
     def __init__(self, abiword_canvas):
         gtk.Toolbar.__init__(self)
 
@@ -48,23 +53,30 @@ class TextToolbar(gtk.Toolbar):
         self.insert(separator, -1)
         separator.show()
 
-        self._align_left = ToggleToolButton('format-justify-left')
-        self._align_left_id = self._align_left.connect('clicked', self._align_left_cb)
-        self._abiword_canvas.connect('left-align', self._isLeftAlign_cb)
-        self.insert(self._align_left, -1)
-        self._align_left.show()
+        self._alignment = ComboBox()
+        self._alignment.append_item(self._ACTION_ALIGNMENT_LEFT, None,
+                                    'format-justify-left')
+        self._alignment.append_item(self._ACTION_ALIGNMENT_CENTER, None,
+                                    'format-justify-center')
+        self._alignment.append_item(self._ACTION_ALIGNMENT_RIGHT, None,
+                                    'format-justify-right')
+        self._alignment_changed_id = self._alignment.connect('changed',
+            self._alignment_changed_cb)
+        self._add_widget(self._alignment)
 
-        self._align_center = ToggleToolButton('format-justify-center')
-        self._align_center_id = self._align_center.connect('clicked', self._align_center_cb)
+        self._abiword_canvas.connect('left-align', self._isLeftAlign_cb)
         self._abiword_canvas.connect('center-align', self._isCenterAlign_cb)
-        self.insert(self._align_center, -1)
-        self._align_center.show()
-        
-        self._align_right = ToggleToolButton('format-justify-right')
-        self._align_right_id = self._align_right.connect('clicked', self._align_right_cb)
         self._abiword_canvas.connect('right-align', self._isRightAlign_cb)
-        self.insert(self._align_right, -1)
-        self._align_right.show()
+
+    def _add_widget(self, widget, expand=False):
+        tool_item = gtk.ToolItem()
+        tool_item.set_expand(expand)
+
+        tool_item.add(widget)
+        widget.show()
+
+        self.insert(tool_item, -1)
+        tool_item.show()
 
     def setToggleButtonState(self,button,b,id):
         button.handler_block(id)
@@ -85,26 +97,37 @@ class TextToolbar(gtk.Toolbar):
         print 'isBold',b
         self.setToggleButtonState(self._bold,b,self._bold_id)
 
-    def _align_left_cb(self, button):
-        self._abiword_canvas.align_left()
+    def _alignment_changed_cb(self, combobox):
+        if self._alignment.get_active() == self._ACTION_ALIGNMENT_LEFT:
+            self._abiword_canvas.align_left()
+        elif self._alignment.get_active() == self._ACTION_ALIGNMENT_CENTER:
+            self._abiword_canvas.align_center()
+        elif self._alignment.get_active() == self._ACTION_ALIGNMENT_RIGHT:
+            self._abiword_canvas.align_right()
+        else:
+            raise ValueError, 'Unknown option in alignment combobox.'
+
+    def _update_alignment_icon(self, index):
+        self._alignment.handler_block(self._alignment_changed_id)
+        try:
+            self._alignment.set_active(index)
+        finally:
+            self._alignment.handler_unblock(self._alignment_changed_id)
 
     def _isLeftAlign_cb(self, abi, b):
         print 'isLeftAlign',b
-        self.setToggleButtonState(self._align_left,b,self._align_left_id)
-
-    def _align_center_cb(self, button):
-        self._abiword_canvas.align_center()
+        if b:
+            self._update_alignment_icon(self._ACTION_ALIGNMENT_LEFT)
 
     def _isCenterAlign_cb(self, abi, b):
         print 'isCenterAlign',b
-        self.setToggleButtonState(self._align_center,b,self._align_center_id)
-
-    def _align_right_cb(self, button):
-        self._abiword_canvas.align_right()
+        if b:
+            self._update_alignment_icon(self._ACTION_ALIGNMENT_CENTER)
 
     def _isRightAlign_cb(self, abi, b):
         print 'isRightAlign',b
-        self.setToggleButtonState(self._align_right,b,self._align_right_id)
+        if b:
+            self._update_alignment_icon(self._ACTION_ALIGNMENT_RIGHT)
 
 class ImageToolbar(gtk.Toolbar):
     def __init__(self, abiword_canvas):
