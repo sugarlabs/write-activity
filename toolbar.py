@@ -1,5 +1,6 @@
-# Copyright (C) 2006 by Martin Sevior
-# Copyright (C) 2006-2007 Marc Maurer <uwog@uwog.net>
+# Copyright (C) 2006, Martin Sevior
+# Copyright (C) 2006-2007, Marc Maurer <uwog@uwog.net>
+# Copyright (C) 2007, One Laptop Per Child
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
