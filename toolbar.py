@@ -41,7 +41,11 @@ class TextToolbar(gtk.Toolbar):
         self.insert(self._bold, -1)
         self._bold.show()
 
-        # TODO: Add italic ToggleToolButton.
+        self._italic = ToggleToolButton('format-text-italic')
+        self._italic_id = self._italic.connect('clicked', self._italic_cb)
+        self._abiword_canvas.connect('italic', self._isItalic_cb)
+        self.insert(self._italic, -1)
+        self._italic.show()
 
         self._underline = ToggleToolButton('format-text-underline')
         self._underline_id = self._underline.connect('clicked', self._underline_cb)
@@ -103,6 +107,13 @@ class TextToolbar(gtk.Toolbar):
         button.handler_block(id)
         button.set_active(b)
         button.handler_unblock(id)
+
+    def _italic_cb(self, button):
+        self._abiword_canvas.toggle_italic()
+
+    def _isItalic_cb(self, abi, b):
+        print 'isItalic',b
+        self.setToggleButtonState(self._italic, b, self._italic_id)
 
     def _underline_cb(self, button):
         self._abiword_canvas.toggle_underline()
