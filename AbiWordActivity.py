@@ -27,7 +27,7 @@ from sugar.datastore.datastore import Text
 from sugar import profile
 from abiword import Canvas
 
-from toolbar import TextToolbar, ImageToolbar, TableToolbar
+from toolbar import TextToolbar, ImageToolbar, TableToolbar, ViewToolbar
 
 class AbiWordActivity (activity.Activity):
 
@@ -69,6 +69,10 @@ class AbiWordActivity (activity.Activity):
         table_toolbar = TableToolbar(self.abiword_canvas)
         toolbox.add_toolbar(_('Table'), table_toolbar)
         table_toolbar.show()
+
+        view_toolbar = ViewToolbar(self.abiword_canvas)
+        toolbox.add_toolbar(_('View'), view_toolbar)
+        view_toolbar.show()
 
         self.set_canvas(self.abiword_canvas)
 

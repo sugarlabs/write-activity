@@ -139,7 +139,7 @@ class TextToolbar(gtk.Toolbar):
 
     def _text_color_cb(self, button):
         if self._colorseldlg == None:
-            self._colorseldlg = gtk.ColorSelectionDialog('Select text color')
+            self._colorseldlg = gtk.ColorSelectionDialog(_('Select text color'))
         response = self._colorseldlg.run()
         if response == gtk.RESPONSE_OK:
             newcolor = self._colorseldlg.colorsel.get_current_color()
@@ -262,3 +262,42 @@ class TableToolbar(gtk.Toolbar):
     def _table_delete_cols_cb(self, button):
         print 'table_delete_cols'
         self._abiword_canvas.invoke_cmd('deleteColumns', '', 0, 0)
+
+class ViewToolbar(gtk.Toolbar):
+    def __init__(self, abiword_canvas):
+        gtk.Toolbar.__init__(self)
+
+        self._abiword_canvas = abiword_canvas
+
+        # we can't use abiword_canvas.get_zoom_percentage() yet, as the frame is
+        # not fully initialized
+        self._zoom_percentage = 0;
+
+        self._zoom_in = ToolButton('')
+        self._zoom_in_id = self._zoom_in.connect('clicked', self._zoom_in_cb)
+        self.insert(self._zoom_in, -1)
+        self._zoom_in.show()
+
+        self._zoom_out = ToolButton('')
+        self._zoom_out_id = self._zoom_out.connect('clicked', self._zoom_out_cb)
+        self.insert(self._zoom_out, -1)
+        self._zoom_out.show()
+
+    def _zoom_in_cb(self, button):
+        if self._zoom_percentage == 0:
+            self._zoom_percentage = self._abiword_canvas.get_zoom_percentage()
+        print 'current zoom percentage:', self._zoom_percentage
+        if self._zoom_percentage <= 375:
+            self._zoom_percentage = self._zoom_percentage + 25
+            print 'new zoom percentage:',self._zoom_percentage
+            self._abiword_canvas.set_zoom_percentage(self._zoom_percentage)
+
+    def _zoom_out_cb(self, button):
+        if self._zoom_percentage == 0:
+            self._zoom_percentage = self._abiword_canvas.get_zoom_percentage()
+        print 'current zoom percentage:', self._zoom_percentage
+        if self._zoom_percentage >= 50:
+            self._zoom_percentage = self._zoom_percentage - 25
+            print 'new zoom percentage:',self._zoom_percentage
+            self._abiword_canvas.set_zoom_percentage(self._zoom_percentage)
+
