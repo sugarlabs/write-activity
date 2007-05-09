@@ -67,18 +67,20 @@ class TextToolbar(gtk.Toolbar):
 
         self._font_size_combo = ComboBox()
         self._font_sizes = ['8', '9', '10', '11', '12', '14', '16', '20', '22', '24', '26', '28', '36', '48', '72'];
+        self._font_size_changed_id = self._font_size_combo.connect('changed', self._font_size_changed_cb)
         for i, s in enumerate(self._font_sizes):
             self._font_size_combo.append_item(i, s, None)
-        self._font_size_changed_id = self._font_size_combo.connect('changed',
-            self._font_size_changed_cb)
+            if s == '12':
+                self._font_size_combo.set_active(i)
         self._add_widget(self._font_size_combo)
 
         self._font_combo = ComboBox()
         self._fonts = sorted(self._abiword_canvas.get_font_names())
+        self._fonts_changed_id = self._font_combo.connect('changed', self._font_changed_cb)
         for i, f in enumerate(self._fonts):
             self._font_combo.append_item(i, f, None)
-        self._fonts_changed_id = self._font_combo.connect('changed',
-            self._font_changed_cb)
+            if f == 'Times New Roman':
+                self._font_combo.set_active(i)
         self._add_widget(self._font_combo)
 
         separator = gtk.SeparatorToolItem()
@@ -214,9 +216,9 @@ class TableToolbar(gtk.Toolbar):
         self._table.set_labels(_('Table'), _('Cancel'))
         self._table_id = self._table.connect('selected', self._table_cb)
         #self._table_id = self._abiword_canvas.connect('table-state', self._tableState)
+        self._table.show()
         tool_item = gtk.ToolItem()
         tool_item.add(self._table)
-        self._table.show()
         self.insert(tool_item, -1)
         tool_item.show()
 
@@ -283,21 +285,37 @@ class ViewToolbar(gtk.Toolbar):
         self.insert(self._zoom_out, -1)
         self._zoom_out.show()
 
+        # TODO: fix the initial value
+        self._zoom_spin_adj = gtk.Adjustment(0, 25, 400, 25, 50, 0)
+        self._zoom_spin = gtk.SpinButton(self._zoom_spin_adj, 0, 0)
+        self._zoom_spin_id = self._zoom_spin.connect('value-changed', self._zoom_spin_cb)
+        self._zoom_spin.set_numeric(True)
+        self._zoom_spin.show()
+        tool_item_zoom = gtk.ToolItem()
+        tool_item_zoom.add(self._zoom_spin)
+        self.insert(tool_item_zoom, -1)
+        tool_item_zoom.show()
+
+    def set_zoom_percentage(self, zoom):
+        self._zoom_percentage = zoom
+        #print 'new zoom percentage:',self._zoom_percentage
+        self._abiword_canvas.set_zoom_percentage(self._zoom_percentage)
+        # update out spinner TODO: should be handled by a callback from the abicanvas
+        self._zoom_spin.set_value(zoom)
+
     def _zoom_in_cb(self, button):
         if self._zoom_percentage == 0:
             self._zoom_percentage = self._abiword_canvas.get_zoom_percentage()
-        print 'current zoom percentage:', self._zoom_percentage
         if self._zoom_percentage <= 375:
-            self._zoom_percentage = self._zoom_percentage + 25
-            print 'new zoom percentage:',self._zoom_percentage
-            self._abiword_canvas.set_zoom_percentage(self._zoom_percentage)
+            self.set_zoom_percentage(self._zoom_percentage + 25)
 
     def _zoom_out_cb(self, button):
         if self._zoom_percentage == 0:
             self._zoom_percentage = self._abiword_canvas.get_zoom_percentage()
-        print 'current zoom percentage:', self._zoom_percentage
         if self._zoom_percentage >= 50:
-            self._zoom_percentage = self._zoom_percentage - 25
-            print 'new zoom percentage:',self._zoom_percentage
-            self._abiword_canvas.set_zoom_percentage(self._zoom_percentage)
+            self.set_zoom_percentage(self._zoom_percentage - 25)
+
+    def _zoom_spin_cb(self, button):
+        self._zoom_percentage = self._zoom_spin.get_value_as_int()
+        self._abiword_canvas.set_zoom_percentage(self._zoom_percentage)
 
