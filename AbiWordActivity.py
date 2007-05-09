@@ -35,6 +35,9 @@ class AbiWordActivity (activity.Activity):
         activity.Activity.__init__ (self, handle)
         self.set_title ("Write")
 
+        # abiword uses the current directory for all its file dialogs 
+        os.chdir(os.path.expanduser('~'))
+
         toolbox = activity.ActivityToolbox(self)
         self.set_toolbox(toolbox)
         toolbox.show()
