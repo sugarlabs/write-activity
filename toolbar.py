@@ -224,46 +224,46 @@ class TableToolbar(gtk.Toolbar):
 
         self._table_rows_after = ToolButton('')
         self._table_rows_after_id = self._table_rows_after.connect('clicked', self._table_rows_after_cb)
-#        self._abiword_canvas.connect('text-color', self._isTable_cb)
         self.insert(self._table_rows_after, -1)
         self._table_rows_after.show()
 
         self._table_delete_rows = ToolButton('')
         self._table_delete_rows_id = self._table_delete_rows.connect('clicked', self._table_delete_rows_cb)
-#        self._abiword_canvas.connect('text-color', self._isTable_cb)
         self.insert(self._table_delete_rows, -1)
         self._table_delete_rows.show()
 
         self._table_cols_after = ToolButton('')
         self._table_cols_after_id = self._table_cols_after.connect('clicked', self._table_cols_after_cb)
-#        self._abiword_canvas.connect('text-color', self._isTable_cb)
         self.insert(self._table_cols_after, -1)
         self._table_cols_after.show()
 
         self._table_delete_cols = ToolButton('')
         self._table_delete_cols_id = self._table_delete_cols.connect('clicked', self._table_delete_cols_cb)
-#        self._abiword_canvas.connect('text-color', self._isTable_cb)
         self.insert(self._table_delete_cols, -1)
         self._table_delete_cols.show()
+
+        self._abiword_canvas.connect('table-state', self._isTable_cb)
 
     def _table_cb(self, abi, rows, cols):
         self._abiword_canvas.insert_table(rows,cols)
 
     def _table_rows_after_cb(self, button):
-        print 'table_rows_after'
         self._abiword_canvas.invoke_cmd('insertRowsAfter', '', 0, 0)
 
     def _table_delete_rows_cb(self, button):
-        print 'table_delete_rows'
         self._abiword_canvas.invoke_cmd('deleteRows', '', 0, 0)
 
     def _table_cols_after_cb(self, button):
-        print 'table_rows_after'
         self._abiword_canvas.invoke_cmd('insertColsAfter', '', 0, 0)
 
     def _table_delete_cols_cb(self, button):
-        print 'table_delete_cols'
         self._abiword_canvas.invoke_cmd('deleteColumns', '', 0, 0)
+
+    def _isTable_cb(self, abi, b):
+        self._table_rows_after.set_sensitive(b)
+        self._table_delete_rows.set_sensitive(b)
+        self._table_cols_after.set_sensitive(b)
+        self._table_delete_cols.set_sensitive(b)
 
 class ViewToolbar(gtk.Toolbar):
     def __init__(self, abiword_canvas):
