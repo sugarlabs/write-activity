@@ -31,6 +31,8 @@ class TextToolbar(gtk.Toolbar):
     _ACTION_ALIGNMENT_RIGHT = 2
 
     def __init__(self, abiword_canvas):
+        self._colorseldlg = None
+
         gtk.Toolbar.__init__(self)
 
         self._abiword_canvas = abiword_canvas
@@ -52,6 +54,12 @@ class TextToolbar(gtk.Toolbar):
         self._abiword_canvas.connect('underline', self._isUnderline_cb)
         self.insert(self._underline, -1)
         self._underline.show()
+
+        self._text_color = ToolButton('')
+        self._text_color_id = self._text_color.connect('clicked', self._text_color_cb)
+#        self._abiword_canvas.connect('text-color', self._isUnderline_cb)
+        self.insert(self._text_color, -1)
+        self._text_color.show()
 
         separator = gtk.SeparatorToolItem()
         separator.set_draw(True)
@@ -108,6 +116,13 @@ class TextToolbar(gtk.Toolbar):
         button.set_active(b)
         button.handler_unblock(id)
 
+    def _bold_cb(self, button):
+        self._abiword_canvas.toggle_bold()
+
+    def _isBold_cb(self, abi, b):
+        print 'isBold',b
+        self.setToggleButtonState(self._bold,b,self._bold_id)
+
     def _italic_cb(self, button):
         self._abiword_canvas.toggle_italic()
 
@@ -122,12 +137,14 @@ class TextToolbar(gtk.Toolbar):
         print 'isUnderline',b
         self.setToggleButtonState(self._underline, b, self._underline_id)
 
-    def _bold_cb(self, button):
-        self._abiword_canvas.toggle_bold()
-
-    def _isBold_cb(self, abi, b):
-        print 'isBold',b
-        self.setToggleButtonState(self._bold,b,self._bold_id)
+    def _text_color_cb(self, button):
+        if self._colorseldlg == None:
+            self._colorseldlg = gtk.ColorSelectionDialog('Select text color')
+        response = self._colorseldlg.run()
+        if response == gtk.RESPONSE_OK:
+            newcolor = self._colorseldlg.colorsel.get_current_color()
+            self._abiword_canvas.set_text_color(newcolor.red // 256.0, newcolor.green // 256.0, newcolor.blue // 256.0)
+        self._colorseldlg.hide()
 
     def _font_changed_cb(self, combobox):
         if self._font_combo.get_active() != -1:
