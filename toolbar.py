@@ -222,22 +222,22 @@ class TableToolbar(gtk.Toolbar):
         self.insert(tool_item, -1)
         tool_item.show()
 
-        self._table_rows_after = ToolButton('')
+        self._table_rows_after = ToolButton('insert-row')
         self._table_rows_after_id = self._table_rows_after.connect('clicked', self._table_rows_after_cb)
         self.insert(self._table_rows_after, -1)
         self._table_rows_after.show()
 
-        self._table_delete_rows = ToolButton('')
+        self._table_delete_rows = ToolButton('remove-row')
         self._table_delete_rows_id = self._table_delete_rows.connect('clicked', self._table_delete_rows_cb)
         self.insert(self._table_delete_rows, -1)
         self._table_delete_rows.show()
 
-        self._table_cols_after = ToolButton('')
+        self._table_cols_after = ToolButton('insert-col')
         self._table_cols_after_id = self._table_cols_after.connect('clicked', self._table_cols_after_cb)
         self.insert(self._table_cols_after, -1)
         self._table_cols_after.show()
 
-        self._table_delete_cols = ToolButton('')
+        self._table_delete_cols = ToolButton('remove-col')
         self._table_delete_cols_id = self._table_delete_cols.connect('clicked', self._table_delete_cols_cb)
         self.insert(self._table_delete_cols, -1)
         self._table_delete_cols.show()
@@ -275,12 +275,12 @@ class ViewToolbar(gtk.Toolbar):
         # not fully initialized
         self._zoom_percentage = 0;
 
-        self._zoom_in = ToolButton('')
+        self._zoom_in = ToolButton('stock-zoom-in')
         self._zoom_in_id = self._zoom_in.connect('clicked', self._zoom_in_cb)
         self.insert(self._zoom_in, -1)
         self._zoom_in.show()
 
-        self._zoom_out = ToolButton('')
+        self._zoom_out = ToolButton('stock-zoom-out')
         self._zoom_out_id = self._zoom_out.connect('clicked', self._zoom_out_cb)
         self.insert(self._zoom_out, -1)
         self._zoom_out.show()
