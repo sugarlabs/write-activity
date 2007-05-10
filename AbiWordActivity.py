@@ -1,5 +1,6 @@
 # Copyright (C) 2006 by Martin Sevior
 # Copyright (C) 2006-2007 Marc Maurer <uwog@uwog.net>
+# Copyright (C) 2007, One Laptop Per Child
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,9 +23,6 @@ import time
 import gtk
 
 from sugar.activity import activity
-from sugar.datastore import datastore
-from sugar.datastore.datastore import Text
-from sugar import profile
 from abiword import Canvas
 
 from toolbar import TextToolbar, ImageToolbar, TableToolbar, ViewToolbar
@@ -79,18 +77,33 @@ class AbiWordActivity (activity.Activity):
 
         self.set_canvas(self.abiword_canvas)
 
-        if handle.object_id:
-            self._journal_handle = handle.object_id
-            obj = datastore.read(handle.object_id)
-            self.abiword_canvas.load_file('file://' + obj.get_file_path())
-        else:
-            # open a blank file
-            self.abiword_canvas.load_file("")
-
+        # FIXME: we need to load_file('') before show(), why?
+        self.abiword_canvas.load_file('')
         self.abiword_canvas.show()
 
         self.connect('focus-out-event', self._focus_out_event_cb)
-        self.connect('delete-event', self._delete_event_cb)
+        
+        # FIXME: this should be caled by activity.Activity on realize
+        self.read_file()
+
+    def read_file(self):
+        logging.debug('AbiWordActivity.read_file')
+        logging.debug(self.jobject)
+        logging.debug(self.jobject.file_path)
+        self.abiword_canvas.load_file('file://' + self.jobject.file_path)
+
+    def write_file(self):
+        text_content = self.abiword_canvas.get_content(".txt")[0]
+        self.jobject['preview'] = text_content[0:60]
+        f = open(os.path.join('/tmp', '%i.abw' % time.time()), 'w')
+        try:
+            f.write(self.abiword_canvas.get_content(".abw")[0])
+        finally:
+            f.close()
+
+        self._last_saved_text = text_content
+
+        return f.name
 
     def _can_undo_cb(self, canvas, can_undo):
         self._edit_toolbar.undo.set_sensitive(can_undo)
@@ -105,42 +118,4 @@ class AbiWordActivity (activity.Activity):
         self.abiword_canvas.redo()
 
     def _focus_out_event_cb(self, widget, event):
-        self._autosave()
-
-    def _delete_event_cb(self, widget, event):
-        self._autosave()
-
-    def _autosave(self):
-        text_content = self.abiword_canvas.get_content(".txt")[0]
-        if not self._journal_handle:
-            home_dir = os.path.expanduser('~')
-            journal_dir = os.path.join(home_dir, "Journal")
-            text = Text({'preview'      : text_content[0:60],
-                         'date'         : str(time.time()),
-                         'title'        : text_content[0:30],
-                         'icon'         : 'theme:object-text',
-                         'keep'         : '0',
-                         'buddies'      : str([ { 'name' : profile.get_nick_name(),
-                                                  'color': profile.get_color().to_string() }]),
-                         'icon-color'   : profile.get_color().to_string()})
-            f = open(os.path.join(journal_dir, '%i.abw' % time.time()), 'w')
-            try:
-                f.write(self.abiword_canvas.get_content(".abw")[0])
-            finally:
-                f.close()
-            text.set_file_path(f.name)
-            self._journal_handle = datastore.write(text)
-        elif text_content != self._last_saved_text:
-            text = datastore.read(self._journal_handle)
-            metadata = text.get_metadata()
-            metadata['preview'] = text_content[0:60]
-            metadata['title'] = text_content[0:30]
-            metadata['date'] = str(time.time())
-            f = open(text.get_file_path(), 'w')
-            try:
-                f.write(self.abiword_canvas.get_content(".abw")[0])
-            finally:
-                f.close()
-            datastore.write(text)
-
-        self._last_saved_text = text_content
+        self.save()
