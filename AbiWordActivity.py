@@ -81,21 +81,21 @@ class AbiWordActivity (activity.Activity):
         self.abiword_canvas.load_file('')
         self.abiword_canvas.show()
 
-        self.connect('focus-out-event', self._focus_out_event_cb)
+        if not self.jobject['title']:
+            self.jobject['title'] = _('Text document')
         
-        # FIXME: this should be caled by activity.Activity on realize
+        # FIXME: this should be called by activity.Activity on realize
         self.read_file()
 
     def read_file(self):
         logging.debug('AbiWordActivity.read_file')
-        logging.debug(self.jobject)
-        logging.debug(self.jobject.file_path)
         self.abiword_canvas.load_file('file://' + self.jobject.file_path)
 
     def write_file(self):
         text_content = self.abiword_canvas.get_content(".txt")[0]
         self.jobject['preview'] = text_content[0:60]
-        f = open(os.path.join('/tmp', '%i.abw' % time.time()), 'w')
+        self.jobject['icon'] = 'theme:object-text'
+        f = open(self.jobject.file_path, 'w')
         try:
             f.write(self.abiword_canvas.get_content(".abw")[0])
         finally:
@@ -116,6 +116,3 @@ class AbiWordActivity (activity.Activity):
 
     def _redo_cb(self, button):
         self.abiword_canvas.redo()
-
-    def _focus_out_event_cb(self, widget, event):
-        self.save()
