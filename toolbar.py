@@ -296,6 +296,23 @@ class ViewToolbar(gtk.Toolbar):
         self.insert(tool_item_zoom, -1)
         tool_item_zoom.show()
 
+        separator = gtk.SeparatorToolItem()
+        separator.set_draw(True)
+        self.insert(separator, -1)
+
+        self._page_spin_adj = gtk.Adjustment(0, 1, 0, 1, 1, 0)
+        self._page_spin = gtk.SpinButton(self._page_spin_adj, 0, 0)
+        self._page_spin_id = self._page_spin.connect('value-changed', self._page_spin_cb)
+        self._page_spin.set_numeric(True)
+        self._page_spin.show()
+        tool_item_page = gtk.ToolItem()
+        tool_item_page.add(self._page_spin)
+        self.insert(tool_item_page, -1)
+        tool_item_page.show()
+
+        self._abiword_canvas.connect("page-count", self._page_count_cb)
+        self._abiword_canvas.connect("current-page", self._current_page_cb)
+
     def set_zoom_percentage(self, zoom):
         self._zoom_percentage = zoom
         #print 'new zoom percentage:',self._zoom_percentage
@@ -318,4 +335,22 @@ class ViewToolbar(gtk.Toolbar):
     def _zoom_spin_cb(self, button):
         self._zoom_percentage = self._zoom_spin.get_value_as_int()
         self._abiword_canvas.set_zoom_percentage(self._zoom_percentage)
+
+    def _page_spin_cb(self, button):
+        print "page spin"
+        self._page_num = self._page_spin.get_value_as_int()
+#        TODO
+
+    def _page_count_cb(self, canvas, count):
+        print "page count:",count
+        current_page = canvas.get_current_page_num()
+        self._page_spin_adj.set_all(current_page, 1, count, 1, 1, 0)
+
+    def _current_page_cb(self, canvas, num):
+        print "current page:",num
+        self._page_spin.handler_block(self._page_spin_id)
+        try:
+            self._page_spin.set_value(num)
+        finally:
+            self._page_spin.handler_unblock(self._page_spin_id)
 
