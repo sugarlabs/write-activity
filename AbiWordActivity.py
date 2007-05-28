@@ -95,7 +95,9 @@ class AbiWordActivity (Activity):
     def _map_cb(self, activity):
         logger.debug('_map_cb')
 
-        self.read_file()
+        # FIXME: this should be called by activity.Activity on realize
+        if self.jobject.file_path:
+            self.read_file()
 
         # activity sharing
         pservice = presenceservice.get_instance()
@@ -277,7 +279,6 @@ class AbiWordActivity (Activity):
     def write_file(self):
         text_content = self.abiword_canvas.get_content(".txt")[0]
         self.jobject['preview'] = text_content[0:60]
-        self.jobject['icon'] = 'theme:object-text'
         f = open(self.jobject.file_path, 'w')
         try:
             f.write(self.abiword_canvas.get_content(".abw")[0])
