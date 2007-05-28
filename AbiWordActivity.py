@@ -85,7 +85,8 @@ class AbiWordActivity (activity.Activity):
             self.jobject['title'] = _('Text document')
         
         # FIXME: this should be called by activity.Activity on realize
-        self.read_file()
+        if self.jobject.file_path:
+            self.read_file()
 
     def read_file(self):
         logging.debug('AbiWordActivity.read_file')
@@ -94,7 +95,6 @@ class AbiWordActivity (activity.Activity):
     def write_file(self):
         text_content = self.abiword_canvas.get_content(".txt")[0]
         self.jobject['preview'] = text_content[0:60]
-        self.jobject['icon'] = 'theme:object-text'
         f = open(self.jobject.file_path, 'w')
         try:
             f.write(self.abiword_canvas.get_content(".abw")[0])
