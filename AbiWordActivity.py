@@ -95,9 +95,11 @@ class AbiWordActivity (Activity):
     def _map_cb(self, activity):
         logger.debug('_map_cb')
 
-        # FIXME: this should be called by activity.Activity on realize
+        # always make sure at least 1 document is loaded (bad bad widget design)
         if self.jobject.file_path:
             self.read_file()
+        else:
+            self.abiword_canvas.load_file('');
 
         # activity sharing
         pservice = presenceservice.get_instance()
