@@ -49,8 +49,7 @@ class AbiWordActivity (Activity):
         self.set_toolbox(toolbox)
         toolbox.show()
 
-        self._journal_handle = None
-        self._last_saved_text = None
+        self._file_opened = False
 
         # create our main abiword canvas
         self.abiword_canvas = Canvas()
@@ -87,19 +86,15 @@ class AbiWordActivity (Activity):
         self.set_canvas(self.abiword_canvas)
         self.abiword_canvas.show()
 
-        if not self.jobject['title']:
-            self.jobject['title'] = _('Text document')
-
-        self.abiword_canvas.connect('map', self._map_cb)
+        self.abiword_canvas.connect_after('map', self._map_cb)
 
     def _map_cb(self, activity):
         logger.debug('_map_cb')
 
         # always make sure at least 1 document is loaded (bad bad widget design)
-        if self.jobject.file_path:
-            self.read_file()
-        else:
-            self.abiword_canvas.load_file('');
+        if not self._file_opened:
+            print "Loading empty doc"
+            self.abiword_canvas.load_file('');  
 
         # activity sharing
         pservice = presenceservice.get_instance()
@@ -126,7 +121,6 @@ class AbiWordActivity (Activity):
             print "We are creating an activity"
 
         owner = pservice.get_owner()
-       
 
     def _shared_cb(self, activity):
         logger.debug('My Write activity was shared')
@@ -274,22 +268,19 @@ class AbiWordActivity (Activity):
         logger.debug('buddy left with object path: %s', buddy.object_path())
         self.abiword_canvas.invoke_cmd('com.abisource.abiword.abicollab.olpc.buddyLeft', buddy.object_path(), 0, 0)
 
-    def read_file(self):
+    def read_file(self, file_path):
         logging.debug('AbiWordActivity.read_file')
-        self.abiword_canvas.load_file('file://' + self.jobject.file_path)
+        self.abiword_canvas.load_file('file://' + file_path)
+        self._file_opened = True
 
-    def write_file(self):
+    def write_file(self, file_path):
         text_content = self.abiword_canvas.get_content(".txt")[0]
-        self.jobject['preview'] = text_content[0:60]
-        f = open(self.jobject.file_path, 'w')
+        self.metadata['preview'] = text_content[0:60]
+        f = open(file_path, 'w')
         try:
             f.write(self.abiword_canvas.get_content(".abw")[0])
         finally:
             f.close()
-
-        self._last_saved_text = text_content
-
-        return f.name
 
     def _can_undo_cb(self, canvas, can_undo):
         self._edit_toolbar.undo.set_sensitive(can_undo)
