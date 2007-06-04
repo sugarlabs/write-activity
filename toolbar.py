@@ -320,9 +320,24 @@ class ViewToolbar(gtk.Toolbar):
         self.insert(tool_item_zoom, -1)
         tool_item_zoom.show()
 
+        zoom_perc_label = gtk.Label(_("%"))
+        zoom_perc_label.show()
+        tool_item_zoom_perc_label = gtk.ToolItem()
+        tool_item_zoom_perc_label.add(zoom_perc_label)
+        self.insert(tool_item_zoom_perc_label, -1)
+        tool_item_zoom_perc_label.show()
+
         separator = gtk.SeparatorToolItem()
         separator.set_draw(True)
+        separator.show()
         self.insert(separator, -1)
+
+        page_label = gtk.Label(_("Page:"))
+        page_label.show()
+        tool_item_page_label = gtk.ToolItem()
+        tool_item_page_label.add(page_label)
+        self.insert(tool_item_page_label, -1)
+        tool_item_page_label.show()
 
         self._page_spin_adj = gtk.Adjustment(0, 1, 0, 1, 1, 0)
         self._page_spin = gtk.SpinButton(self._page_spin_adj, 0, 0)
