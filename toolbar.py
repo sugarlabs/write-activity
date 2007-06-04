@@ -25,16 +25,25 @@ from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.toggletoolbutton import ToggleToolButton
 from sugar.graphics.combobox import ComboBox
 
+#ick
+TOOLBAR_ACTIVITY = 0
+TOOLBAR_EDIT = 1
+TOOLBAR_TEXT = 2
+TOOLBAR_IMAGE = 3
+TOOLBAR_TABLE = 4
+TOOLBAR_VIEW = 5
+
 class TextToolbar(gtk.Toolbar):
     _ACTION_ALIGNMENT_LEFT = 0
     _ACTION_ALIGNMENT_CENTER = 1
     _ACTION_ALIGNMENT_RIGHT = 2
 
-    def __init__(self, abiword_canvas):
+    def __init__(self, toolbox, abiword_canvas):
         self._colorseldlg = None
 
         gtk.Toolbar.__init__(self)
 
+        self._toolbox = toolbox
         self._abiword_canvas = abiword_canvas
 
         self._bold = ToggleToolButton('format-text-bold')
@@ -102,6 +111,8 @@ class TextToolbar(gtk.Toolbar):
         self._abiword_canvas.connect('left-align', self._isLeftAlign_cb)
         self._abiword_canvas.connect('center-align', self._isCenterAlign_cb)
         self._abiword_canvas.connect('right-align', self._isRightAlign_cb)
+
+        self._abiword_canvas.connect('text-selected', self._text_selected_cb)
 
     def _add_widget(self, widget, expand=False):
         tool_item = gtk.ToolItem()
@@ -176,46 +187,56 @@ class TextToolbar(gtk.Toolbar):
             self._alignment.handler_unblock(self._alignment_changed_id)
 
     def _isLeftAlign_cb(self, abi, b):
-        print 'isLeftAlign',b
         if b:
             self._update_alignment_icon(self._ACTION_ALIGNMENT_LEFT)
 
     def _isCenterAlign_cb(self, abi, b):
-        print 'isCenterAlign',b
         if b:
             self._update_alignment_icon(self._ACTION_ALIGNMENT_CENTER)
 
     def _isRightAlign_cb(self, abi, b):
-        print 'isRightAlign',b
         if b:
             self._update_alignment_icon(self._ACTION_ALIGNMENT_RIGHT)
 
+    def _text_selected_cb(self, abi, b):
+        print 'text selected',b
+        if b:
+            self._toolbox.set_current_toolbar(TOOLBAR_TEXT)
+            self._abiword_canvas.grab_focus() # hack: bad toolbox, bad!
+
 class ImageToolbar(gtk.Toolbar):
-    def __init__(self, abiword_canvas):
+    def __init__(self, toolbox, abiword_canvas):
         gtk.Toolbar.__init__(self)
 
+        self._toolbox = toolbox
         self._abiword_canvas = abiword_canvas
 
-        # insert-image does not exist yet; someone kick Eben please :)
         self._image = ToolButton('insert-image')
         self._image_id = self._image.connect('clicked', self._image_cb)
         self.insert(self._image, -1)
         self._image.show()
 
+        self._abiword_canvas.connect('image-selected', self._image_selected_cb)
+
     def _image_cb(self, button):
-        print 'fileInsertGraphic'
         self._abiword_canvas.invoke_cmd('fileInsertGraphic', '', 0, 0)
 
+    def _image_selected_cb(self, abi, b):
+        print 'imageSelected',b
+        if b:
+            self._toolbox.set_current_toolbar(TOOLBAR_IMAGE)
+            self._abiword_canvas.grab_focus() # hack: bad toolbox, bad!
+
 class TableToolbar(gtk.Toolbar):
-    def __init__(self, abiword_canvas):
+    def __init__(self, toolbox, abiword_canvas):
         gtk.Toolbar.__init__(self)
 
+        self._toolbox = toolbox
         self._abiword_canvas = abiword_canvas
 
         self._table = abiword.TableCreator()
         self._table.set_labels(_('Table'), _('Cancel'))
         self._table_id = self._table.connect('selected', self._table_cb)
-        #self._table_id = self._abiword_canvas.connect('table-state', self._tableState)
         self._table.show()
         tool_item = gtk.ToolItem()
         tool_item.add(self._table)
@@ -264,6 +285,9 @@ class TableToolbar(gtk.Toolbar):
         self._table_delete_rows.set_sensitive(b)
         self._table_cols_after.set_sensitive(b)
         self._table_delete_cols.set_sensitive(b)
+        if b:
+            self._toolbox.set_current_toolbar(TOOLBAR_TABLE)
+            self._abiword_canvas.grab_focus() # hack: bad toolbox, bad!
 
 class ViewToolbar(gtk.Toolbar):
     def __init__(self, abiword_canvas):

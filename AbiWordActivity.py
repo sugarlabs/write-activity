@@ -27,9 +27,7 @@ import telepathy
 import telepathy.client
 
 from sugar.activity.activity import Activity, ActivityToolbox, EditToolbar
-
 from sugar.presence import presenceservice
-#from buddiespanel import BuddiesPanel
 
 from abiword import Canvas
 from toolbar import TextToolbar, ImageToolbar, TableToolbar, ViewToolbar
@@ -67,15 +65,15 @@ class AbiWordActivity (Activity):
         toolbox.add_toolbar(_('Edit'), self._edit_toolbar)
         self._edit_toolbar.show()
 
-        text_toolbar = TextToolbar(self.abiword_canvas)
+        text_toolbar = TextToolbar(toolbox, self.abiword_canvas)
         toolbox.add_toolbar(_('Text'), text_toolbar)
         text_toolbar.show()
 
-        image_toolbar = ImageToolbar(self.abiword_canvas)
+        image_toolbar = ImageToolbar(toolbox, self.abiword_canvas)
         toolbox.add_toolbar(_('Image'), image_toolbar)
         image_toolbar.show()
 
-        table_toolbar = TableToolbar(self.abiword_canvas)
+        table_toolbar = TableToolbar(toolbox, self.abiword_canvas)
         toolbox.add_toolbar(_('Table'), table_toolbar)
         table_toolbar.show()
 
