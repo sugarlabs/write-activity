@@ -20,6 +20,7 @@ from gettext import gettext as _
 import logging
 import os
 import time
+import shutil
 
 import dbus
 import gtk
@@ -98,7 +99,7 @@ class AbiWordActivity (Activity):
         # always make sure at least 1 document is loaded (bad bad widget design)
         if not self._file_opened:
             print "Loading empty doc"
-            self.abiword_canvas.load_file('');  
+            self.abiword_canvas.load_file('', '');  
 
         # activity sharing
         pservice = presenceservice.get_instance()
@@ -273,16 +274,21 @@ class AbiWordActivity (Activity):
         self.abiword_canvas.invoke_cmd('com.abisource.abiword.abicollab.olpc.buddyLeft', buddy.object_path(), 0, 0)
 
     def read_file(self, file_path):
-        logging.debug('AbiWordActivity.read_file')
-        self.abiword_canvas.load_file('file://' + file_path)
+        logging.debug('AbiWordActivity.read_file: %s', file_path)
+        self.abiword_canvas.load_file('file://' + file_path, "application/vnd.oasis.opendocument.text")
         self._file_opened = True
 
     def write_file(self, file_path):
+        logging.debug('AbiWordActivity.write_file')
+
         text_content = self.abiword_canvas.get_content(".txt")[0]
         self.metadata['preview'] = text_content[0:60]
         f = open(file_path, 'w')
         try:
-            f.write(self.abiword_canvas.get_content(".abw")[0])
+            logger.debug('Writing content as .odt')
+            content, length = self.abiword_canvas.get_content("application/vnd.oasis.opendocument.text")
+            logger.debug('Content length: %d', length)
+            f.write(content)
         finally:
             f.close()
 
