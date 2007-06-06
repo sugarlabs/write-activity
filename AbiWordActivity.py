@@ -53,6 +53,9 @@ class AbiWordActivity (Activity):
         self.abiword_canvas = Canvas()
         self.abiword_canvas.connect("can-undo", self._can_undo_cb)
         self.abiword_canvas.connect("can-redo", self._can_redo_cb)
+        self.abiword_canvas.connect('text-selected', self._selection_cb)
+        self.abiword_canvas.connect('image-selected', self._selection_cb)
+        self.abiword_canvas.connect('selection-cleared', self._selection_cleared_cb)
 
         self._edit_toolbar = EditToolbar()
 
@@ -61,6 +64,9 @@ class AbiWordActivity (Activity):
 
         self._edit_toolbar.redo.set_sensitive(False)
         self._edit_toolbar.redo.connect('clicked', self._redo_cb)
+
+        self._edit_toolbar.copy.connect('clicked', self._copy_cb)
+        self._edit_toolbar.paste.connect('clicked', self._paste_cb)
 
         toolbox.add_toolbar(_('Edit'), self._edit_toolbar)
         self._edit_toolbar.show()
@@ -291,3 +297,15 @@ class AbiWordActivity (Activity):
 
     def _redo_cb(self, button):
         self.abiword_canvas.redo()
+
+    def _copy_cb(self, button):
+        self.abiword_canvas.copy()
+
+    def _paste_cb(self, button):
+        self.abiword_canvas.paste()
+
+    def _selection_cb(self, abi, b):
+        self._edit_toolbar.copy.set_sensitive(True)
+
+    def _selection_cleared_cb(self, abi, b):
+        self._edit_toolbar.copy.set_sensitive(False)
