@@ -275,7 +275,7 @@ class AbiWordActivity (Activity):
 
     def read_file(self, file_path):
         logging.debug('AbiWordActivity.read_file: %s', file_path)
-        self.abiword_canvas.load_file('file://' + file_path, ".odt")
+        self.abiword_canvas.load_file('file://' + file_path, '') # we pass no mime/file type, let libabiword autodetect it, so we can handle multiple file formats
         self._file_opened = True
 
     def write_file(self, file_path):
@@ -283,16 +283,16 @@ class AbiWordActivity (Activity):
 
         logger.debug('Getting text preview')
         text_content = self.abiword_canvas.get_content(".txt")
-        logger.debug('Got text preview, length %d: %s', len(text_content), text_content)
+#        logger.debug('Got text preview, length %d: %s', len(text_content), text_content)
         self.metadata['preview'] = text_content[0:60]
-        logger.debug('done setting metadata')
+#        logger.debug('done setting metadata: %s', text_content[0:60])
         f = open(file_path, 'w')
         try:
             logger.debug('Writing content as .odt')
             content = self.abiword_canvas.get_content(".odt")
             logger.debug('Content length: %d', len(content))
             f.write(content)
-            logger.debug('content written')
+#            logger.debug('content written')
         finally:
             f.close()
 
