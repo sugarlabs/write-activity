@@ -275,7 +275,7 @@ class AbiWordActivity (Activity):
 
     def read_file(self, file_path):
         logging.debug('AbiWordActivity.read_file: %s', file_path)
-        self.abiword_canvas.load_file('file://' + file_path, "application/vnd.oasis.opendocument.text")
+        self.abiword_canvas.load_file('file://' + file_path, ".odt")
         self._file_opened = True
 
     def write_file(self, file_path):
@@ -286,7 +286,7 @@ class AbiWordActivity (Activity):
         f = open(file_path, 'w')
         try:
             logger.debug('Writing content as .odt')
-            content, length = self.abiword_canvas.get_content("application/vnd.oasis.opendocument.text")
+            content, length = self.abiword_canvas.get_content(".odt")
             logger.debug('Content length: %d', length)
             f.write(content)
         finally:
