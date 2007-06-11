@@ -75,7 +75,7 @@ class TextToolbar(gtk.Toolbar):
         self.insert(separator, -1)
 
         self._font_size_combo = ComboBox()
-        self._font_sizes = ['8', '9', '10', '11', '12', '14', '16', '20', '22', '24', '26', '28', '36', '48', '72'];
+        self._font_sizes = ['8', '9', '10', '11', '12', '14', '16', '20', '22', '24', '26', '28', '36', '48', '72']
         self._font_size_changed_id = self._font_size_combo.connect('changed', self._font_size_changed_cb)
         for i, s in enumerate(self._font_sizes):
             self._font_size_combo.append_item(i, s, None)
