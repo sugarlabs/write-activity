@@ -281,11 +281,6 @@ class AbiWordActivity (Activity):
     def write_file(self, file_path):
         logging.debug('AbiWordActivity.write_file')
 
-        logger.debug('Getting text preview')
-        text_content = self.abiword_canvas.get_content(".txt")
-#        logger.debug('Got text preview, length %d: %s', len(text_content), text_content)
-        self.metadata['preview'] = text_content[0:60]
-#        logger.debug('done setting metadata: %s', text_content[0:60])
         f = open(file_path, 'w')
         try:
             logger.debug('Writing content as .odt')
