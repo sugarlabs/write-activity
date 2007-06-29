@@ -1,0 +1,55 @@
+# translation of write.master.po to Arabic
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Khaled Hosny <khaledhosny@eglug.org>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: write.master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-06-21 17:33+0200\n"
+"PO-Revision-Date: 2007-06-28 21:49+0300\n"
+"Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
+"Language-Team: Arabic <doc@arabeyes.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : 3\n"
+
+#: AbiWordActivity.py:72
+msgid "Edit"
+msgstr "حرِّر"
+
+#: AbiWordActivity.py:76
+msgid "Text"
+msgstr "نص"
+
+#: AbiWordActivity.py:80
+msgid "Image"
+msgstr "صورة"
+
+#: AbiWordActivity.py:84 toolbar.py:238
+msgid "Table"
+msgstr "جدول"
+
+#: AbiWordActivity.py:88
+msgid "View"
+msgstr "اعرض"
+
+#: toolbar.py:155
+msgid "Select text color"
+msgstr "اختر لون النص"
+
+#: toolbar.py:238
+msgid "Cancel"
+msgstr "الغِ"
+
+#: toolbar.py:323
+msgid "%"
+msgstr "٪"
+
+#: toolbar.py:335
+msgid "Page:"
+msgstr "صفحة:"
+
