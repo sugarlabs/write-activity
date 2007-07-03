@@ -99,11 +99,11 @@ class TextToolbar(gtk.Toolbar):
 
         self._alignment = ComboBox()
         self._alignment.append_item(self._ACTION_ALIGNMENT_LEFT, None,
-                                    'format-justify-left')
+                                    'theme:format-justify-left')
         self._alignment.append_item(self._ACTION_ALIGNMENT_CENTER, None,
-                                    'format-justify-center')
+                                    'theme:format-justify-center')
         self._alignment.append_item(self._ACTION_ALIGNMENT_RIGHT, None,
-                                    'format-justify-right')
+                                    'theme:format-justify-right')
         self._alignment_changed_id = self._alignment.connect('changed',
             self._alignment_changed_cb)
         self._add_widget(self._alignment)
