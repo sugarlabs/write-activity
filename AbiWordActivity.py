@@ -281,6 +281,7 @@ class AbiWordActivity (Activity):
     def write_file(self, file_path):
         logging.debug('AbiWordActivity.write_file')
 
+        self.metadata['mime_type'] = 'application/vnd.oasis.opendocument.text'
         f = open(file_path, 'w')
         try:
             logger.debug('Writing content as .odt')
