@@ -11,3 +11,4 @@ py-compile
 *.pyc
 *.xo
 *~
+locale
