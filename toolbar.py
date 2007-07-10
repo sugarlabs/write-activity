@@ -241,7 +241,7 @@ class TableToolbar(gtk.Toolbar):
         tool_item = gtk.ToolItem()
         tool_item.add(self._table)
         self.insert(tool_item, -1)
-        tool_item.show()
+        tool_item.show_all()
 
         self._table_rows_after = ToolButton('insert-row')
         self._table_rows_after_id = self._table_rows_after.connect('clicked', self._table_rows_after_cb)
