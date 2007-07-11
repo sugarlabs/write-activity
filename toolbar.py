@@ -24,6 +24,7 @@ import gtk
 from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.toggletoolbutton import ToggleToolButton
 from sugar.graphics.combobox import ComboBox
+from sugar.graphics.toolcombobox import ToolComboBox
 
 #ick
 TOOLBAR_ACTIVITY = 0
@@ -81,7 +82,9 @@ class TextToolbar(gtk.Toolbar):
             self._font_size_combo.append_item(i, s, None)
             if s == '12':
                 self._font_size_combo.set_active(i)
-        self._add_widget(self._font_size_combo)
+        tool_item = ToolComboBox(self._font_size_combo)
+        self.insert(tool_item, -1);
+        tool_item.show()
 
         self._font_combo = ComboBox()
         self._fonts = sorted(self._abiword_canvas.get_font_names())
@@ -90,7 +93,9 @@ class TextToolbar(gtk.Toolbar):
             self._font_combo.append_item(i, f, None)
             if f == 'Times New Roman':
                 self._font_combo.set_active(i)
-        self._add_widget(self._font_combo)
+        tool_item = ToolComboBox(self._font_combo)
+        self.insert(tool_item, -1);
+        tool_item.show()
 
         separator = gtk.SeparatorToolItem()
         separator.set_draw(True)
@@ -104,9 +109,11 @@ class TextToolbar(gtk.Toolbar):
                                     'theme:format-justify-center')
         self._alignment.append_item(self._ACTION_ALIGNMENT_RIGHT, None,
                                     'theme:format-justify-right')
-        self._alignment_changed_id = self._alignment.connect('changed',
-            self._alignment_changed_cb)
-        self._add_widget(self._alignment)
+        self._alignment_changed_id = \
+            self._alignment.connect('changed', self._alignment_changed_cb)
+        tool_item = ToolComboBox(self._alignment)
+        self.insert(tool_item, -1);
+        tool_item.show()
 
         self._abiword_canvas.connect('left-align', self._isLeftAlign_cb)
         self._abiword_canvas.connect('center-align', self._isCenterAlign_cb)
