@@ -95,11 +95,15 @@ class AbiWordActivity (Activity):
 
     def _map_cb(self, activity):
         logger.debug('_map_cb')
-
+    
         # always make sure at least 1 document is loaded (bad bad widget design)
         if not self._file_opened:
             logger.debug("Loading empty doc")
             self.abiword_canvas.load_file('', '');  
+
+        # set the initial zoom to page width; note: always do this AFTER a document
+        # has been opened
+        self.abiword_canvas.zoom_width()
 
         # activity sharing
         pservice = presenceservice.get_instance()

@@ -1,3 +1,5 @@
+* Connect to the zoom signal to show the currect zoom level (uwog)
+
 29
 
 * Use a logger for the toolbar (uwog)

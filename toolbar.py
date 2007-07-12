@@ -299,9 +299,6 @@ class ViewToolbar(gtk.Toolbar):
         gtk.Toolbar.__init__(self)
 
         self._abiword_canvas = abiword_canvas
-
-        # we can't use abiword_canvas.get_zoom_percentage() yet, as the frame is
-        # not fully initialized
         self._zoom_percentage = 0;
 
         self._zoom_in = ToolButton('stock-zoom-in')
@@ -363,13 +360,18 @@ class ViewToolbar(gtk.Toolbar):
 
         self._abiword_canvas.connect("page-count", self._page_count_cb)
         self._abiword_canvas.connect("current-page", self._current_page_cb)
+        self._abiword_canvas.connect("zoom", self._zoom_cb)
 
     def set_zoom_percentage(self, zoom):
         self._zoom_percentage = zoom
-        #print 'new zoom percentage:',self._zoom_percentage
         self._abiword_canvas.set_zoom_percentage(self._zoom_percentage)
-        # update out spinner TODO: should be handled by a callback from the abicanvas
-        self._zoom_spin.set_value(zoom)
+        
+    def _zoom_cb(self, canvas, zoom):
+        self._zoom_spin.handler_block(self._zoom_spin_id)
+        try:
+            self._zoom_spin.set_value(zoom)
+        finally:
+            self._zoom_spin.handler_unblock(self._zoom_spin_id)
 
     def _zoom_in_cb(self, button):
         if self._zoom_percentage == 0:
