@@ -236,7 +236,7 @@ class AbiWordActivity (Activity):
                 # pass this tube to abicollab
                 address = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].GetDBusServerAddress(id)
                 if self.joined:
-                    logger.debug('Passing tube address to abicollab (join)', address)
+                    logger.debug('Passing tube address to abicollab (join): %s', address)
                     self.abiword_canvas.invoke_cmd('com.abisource.abiword.abicollab.olpc.joinTube', address, 0, 0)
                     if initiator_path is not None:
                         logger.debug('Adding the initiator to the session: %s', initiator_path)
