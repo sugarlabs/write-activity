@@ -335,7 +335,7 @@ class ViewToolbar(gtk.Toolbar):
         separator.show()
         self.insert(separator, -1)
 
-        page_label = gtk.Label(_("Page:"))
+        page_label = gtk.Label(_("Page: "))
         page_label.show()
         tool_item_page_label = gtk.ToolItem()
         tool_item_page_label.add(page_label)
@@ -351,6 +351,13 @@ class ViewToolbar(gtk.Toolbar):
         tool_item_page.add(self._page_spin)
         self.insert(tool_item_page, -1)
         tool_item_page.show()
+
+        self._total_page_label = gtk.Label(" / 0")
+        self._total_page_label.show()
+        tool_item = gtk.ToolItem()
+        tool_item.add(self._total_page_label)
+        self.insert(tool_item, -1)
+        tool_item.show()
 
         self._abiword_canvas.connect("page-count", self._page_count_cb)
         self._abiword_canvas.connect("current-page", self._current_page_cb)
@@ -385,6 +392,8 @@ class ViewToolbar(gtk.Toolbar):
     def _page_count_cb(self, canvas, count):
         current_page = canvas.get_current_page_num()
         self._page_spin_adj.set_all(current_page, 1, count, 1, 1, 0)
+        self._total_page_label.props.label = \
+            ' / ' + str(count)
 
     def _current_page_cb(self, canvas, num):
         self._page_spin.handler_block(self._page_spin_id)

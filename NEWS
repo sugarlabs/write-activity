@@ -1,3 +1,4 @@
+* add total page count label
 * replace print's with proper logger calls (J.M. Maurer)
 * Implement a color button, which respects the cursors context (J.M. Maurer)
 
