@@ -1,7 +1,9 @@
+* Implement a color button, which respects the cursors context (J.M. Maurer)
+
 27
 
-* Make sure the table icon shows up
-* Use ToolComboBoxes for ComboBoxes om the toolbar
+* Make sure the table icon shows up (J.M. Maurer)
+* Use ToolComboBoxes for ComboBoxes om the toolbar (J.M. Maurer)
 
 25
 

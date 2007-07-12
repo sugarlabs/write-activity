@@ -65,11 +65,12 @@ class TextToolbar(gtk.Toolbar):
         self.insert(self._underline, -1)
         self._underline.show()
 
-        self._text_color = ToolButton('')
-        self._text_color_id = self._text_color.connect('clicked', self._text_color_cb)
-#        self._abiword_canvas.connect('text-color', self._isUnderline_cb)
-        self.insert(self._text_color, -1)
-        self._text_color.show()
+        self._text_color = gtk.ColorButton()
+        self._text_color_id = self._text_color.connect('color-set', self._text_color_cb)
+        tool_item = gtk.ToolItem()
+        tool_item.add(self._text_color)
+        self.insert(tool_item, -1)
+        tool_item.show_all()
 
         separator = gtk.SeparatorToolItem()
         separator.set_draw(True)
@@ -115,6 +116,8 @@ class TextToolbar(gtk.Toolbar):
         self.insert(tool_item, -1);
         tool_item.show()
 
+        self._abiword_canvas.connect('color', self._color_cb)
+
         self._abiword_canvas.connect('left-align', self._isLeftAlign_cb)
         self._abiword_canvas.connect('center-align', self._isCenterAlign_cb)
         self._abiword_canvas.connect('right-align', self._isRightAlign_cb)
@@ -157,14 +160,12 @@ class TextToolbar(gtk.Toolbar):
         print 'isUnderline',b
         self.setToggleButtonState(self._underline, b, self._underline_id)
 
+    def _color_cb(self, abi, r, g, b):
+        self._text_color.set_color(gtk.gdk.Color(r * 256, g * 256, b * 256))
+
     def _text_color_cb(self, button):
-        if self._colorseldlg == None:
-            self._colorseldlg = gtk.ColorSelectionDialog(_('Select text color'))
-        response = self._colorseldlg.run()
-        if response == gtk.RESPONSE_OK:
-            newcolor = self._colorseldlg.colorsel.get_current_color()
-            self._abiword_canvas.set_text_color(newcolor.red // 256.0, newcolor.green // 256.0, newcolor.blue // 256.0)
-        self._colorseldlg.hide()
+        newcolor = self._text_color.get_color()
+        self._abiword_canvas.set_text_color(newcolor.red // 256.0, newcolor.green // 256.0, newcolor.blue // 256.0)
 
     def _font_changed_cb(self, combobox):
         if self._font_combo.get_active() != -1:
