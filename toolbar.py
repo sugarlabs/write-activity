@@ -26,6 +26,8 @@ from sugar.graphics.toggletoolbutton import ToggleToolButton
 from sugar.graphics.combobox import ComboBox
 from sugar.graphics.toolcombobox import ToolComboBox
 
+logger = logging.getLogger('write-activity')
+
 #ick
 TOOLBAR_ACTIVITY = 0
 TOOLBAR_EDIT = 1
@@ -171,7 +173,7 @@ class TextToolbar(gtk.Toolbar):
 
     def _font_size_changed_cb(self, combobox):
         if self._font_size_combo.get_active() != -1:
-            logger.debug('Setting font size: %d',self._font_sizes[self._font_size_combo.get_active()])
+            logger.debug('Setting font size: %d', int(self._font_sizes[self._font_size_combo.get_active()]))
             self._abiword_canvas.set_font_size(self._font_sizes[self._font_size_combo.get_active()])
 
     def _alignment_changed_cb(self, combobox):

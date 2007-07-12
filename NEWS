@@ -1,13 +1,15 @@
+* Use a logger for the toolbar (uwog)
+
 28
 
-* add total page count label
-* replace print's with proper logger calls (J.M. Maurer)
-* Implement a color button, which respects the cursors context (J.M. Maurer)
+* add total page count label (uwog)
+* replace print's with proper logger calls (uwog)
+* Implement a color button, which respects the cursors context (uwog)
 
 27
 
-* Make sure the table icon shows up (J.M. Maurer)
-* Use ToolComboBoxes for ComboBoxes om the toolbar (J.M. Maurer)
+* Make sure the table icon shows up (uwog)
+* Use ToolComboBoxes for ComboBoxes om the toolbar (uwog)
 
 25
 
