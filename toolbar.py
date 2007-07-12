@@ -143,21 +143,18 @@ class TextToolbar(gtk.Toolbar):
         self._abiword_canvas.toggle_bold()
 
     def _isBold_cb(self, abi, b):
-        print 'isBold',b
         self.setToggleButtonState(self._bold,b,self._bold_id)
 
     def _italic_cb(self, button):
         self._abiword_canvas.toggle_italic()
 
     def _isItalic_cb(self, abi, b):
-        print 'isItalic',b
         self.setToggleButtonState(self._italic, b, self._italic_id)
 
     def _underline_cb(self, button):
         self._abiword_canvas.toggle_underline()
 
     def _isUnderline_cb(self, abi, b):
-        print 'isUnderline',b
         self.setToggleButtonState(self._underline, b, self._underline_id)
 
     def _color_cb(self, abi, r, g, b):
@@ -169,12 +166,12 @@ class TextToolbar(gtk.Toolbar):
 
     def _font_changed_cb(self, combobox):
         if self._font_combo.get_active() != -1:
-            print 'Setting font name:',self._fonts[self._font_combo.get_active()]
+            logger.debug('Setting font name: %s', self._fonts[self._font_combo.get_active()])
             self._abiword_canvas.set_font_name(self._fonts[self._font_combo.get_active()])
 
     def _font_size_changed_cb(self, combobox):
         if self._font_size_combo.get_active() != -1:
-            print 'Setting font size:',self._font_sizes[self._font_size_combo.get_active()]
+            logger.debug('Setting font size: %d',self._font_sizes[self._font_size_combo.get_active()])
             self._abiword_canvas.set_font_size(self._font_sizes[self._font_size_combo.get_active()])
 
     def _alignment_changed_cb(self, combobox):
@@ -207,7 +204,6 @@ class TextToolbar(gtk.Toolbar):
             self._update_alignment_icon(self._ACTION_ALIGNMENT_RIGHT)
 
     def _text_selected_cb(self, abi, b):
-        print 'text selected',b
         if b:
             self._toolbox.set_current_toolbar(TOOLBAR_TEXT)
             self._abiword_canvas.grab_focus() # hack: bad toolbox, bad!
@@ -230,7 +226,6 @@ class ImageToolbar(gtk.Toolbar):
         self._abiword_canvas.invoke_cmd('fileInsertGraphic', '', 0, 0)
 
     def _image_selected_cb(self, abi, b):
-        print 'imageSelected',b
         if b:
             self._toolbox.set_current_toolbar(TOOLBAR_IMAGE)
             self._abiword_canvas.grab_focus() # hack: bad toolbox, bad!
@@ -384,17 +379,14 @@ class ViewToolbar(gtk.Toolbar):
         self._abiword_canvas.set_zoom_percentage(self._zoom_percentage)
 
     def _page_spin_cb(self, button):
-        print "page spin"
         self._page_num = self._page_spin.get_value_as_int()
 #        TODO
 
     def _page_count_cb(self, canvas, count):
-        print "page count:",count
         current_page = canvas.get_current_page_num()
         self._page_spin_adj.set_all(current_page, 1, count, 1, 1, 0)
 
     def _current_page_cb(self, canvas, num):
-        print "current page:",num
         self._page_spin.handler_block(self._page_spin_id)
         try:
             self._page_spin.set_value(num)

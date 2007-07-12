@@ -98,7 +98,7 @@ class AbiWordActivity (Activity):
 
         # always make sure at least 1 document is loaded (bad bad widget design)
         if not self._file_opened:
-            print "Loading empty doc"
+            logger.debug("Loading empty doc")
             self.abiword_canvas.load_file('', '');  
 
         # activity sharing
@@ -114,7 +114,7 @@ class AbiWordActivity (Activity):
 
         if self._shared_activity:
             # we are joining the activity
-            print "We are joining an activity"
+            logger.debug("We are joining an activity")
             self.connect('joined', self._joined_cb)
             self._shared_activity.connect('buddy-joined', self._buddy_joined_cb)
             self._shared_activity.connect('buddy-left', self._buddy_left_cb)
@@ -123,7 +123,7 @@ class AbiWordActivity (Activity):
                 self._joined_cb()
         else:
             # we are creating the activity
-            print "We are creating an activity"
+            logger.debug("We are creating an activity")
 
         owner = pservice.get_owner()
 
@@ -221,12 +221,12 @@ class AbiWordActivity (Activity):
 
             initiator_path = None;
             contacts = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].GetDBusNames(id)
-            print 'dbus contact mapping',self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].GetDBusNames(id)
+            #print 'dbus contact mapping',self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].GetDBusNames(id)
             for i, struct in enumerate(contacts):
-                print 'mapping i',i
+                #print 'mapping i',i
                 handle, path = struct
                 if handle == initiator:
-                    print 'found initiator dbus path:',path
+                    logger.debug('found initiator dbus path: %s', path)
                     initiator_path = path
                     break;
 
@@ -236,7 +236,7 @@ class AbiWordActivity (Activity):
                 # pass this tube to abicollab
                 address = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].GetDBusServerAddress(id)
                 if self.joined:
-                    print 'Passing tube address to abicollab (join)', address
+                    logger.debug('Passing tube address to abicollab (join)', address)
                     self.abiword_canvas.invoke_cmd('com.abisource.abiword.abicollab.olpc.joinTube', address, 0, 0)
                     if initiator_path is not None:
                         logger.debug('Adding the initiator to the session: %s', initiator_path)
@@ -266,7 +266,7 @@ class AbiWordActivity (Activity):
             logger.debug('removed handle: %s, with dbus name: %s', handle, bus_name)
 
     def _buddy_joined_cb (self, activity, buddy):
-        print 'buddy joined with object path: %s',buddy.object_path()
+        logger.debug('buddy joined with object path: %s', buddy.object_path())
 #        self.abiword_canvas.invoke_cmd('com.abisource.abiword.abicollab.olpc.buddyJoined', buddy.object_path(), 0, 0)
 
     def _buddy_left_cb (self,  activity, buddy):
