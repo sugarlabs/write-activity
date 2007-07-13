@@ -1,3 +1,4 @@
+* Remove the border around the view (uwog)
 * Connect to the zoom signal to show the currect zoom level (uwog)
 
 29
