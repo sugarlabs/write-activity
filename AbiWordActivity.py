@@ -105,10 +105,14 @@ class AbiWordActivity (Activity):
         # has been opened
         self.abiword_canvas.zoom_width()
 
-	# no ugly borders please
-	self.abiword_canvas.set_property("shadow-type", gtk.NONE)
-
+        # no ugly borders please
+        self.abiword_canvas.set_property("shadow-type", gtk.SHADOW_NONE)
+        # WORKAROUND: toggle the margin, as the widget doesn't calculate it properly on load
+        self.abiword_canvas.set_show_margin(False)
+        self.abiword_canvas.set_show_margin(True)
+    
         # activity sharing
+        self.participants = {}
         pservice = presenceservice.get_instance()
 
         bus = dbus.Bus()
@@ -255,12 +259,17 @@ class AbiWordActivity (Activity):
             self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].connect_to_signal('DBusNamesChanged',
                 self._on_dbus_names_changed)
 
+            # HACK, as DBusNamesChanged doesn't fire on buddies leaving
+            self.tubes_chan[telepathy.CHANNEL_INTERFACE_GROUP].connect_to_signal('MembersChanged',
+                self._on_members_changed)
+
     def _on_dbus_names_changed(self, tube_id, added, removed):
         logger.debug('_on_dbus_names_changed')
 #        if tube_id == self.tube_id:
         for handle, bus_name in added:
             logger.debug('added handle: %s, with dbus_name: %s', handle, bus_name)
             self.abiword_canvas.invoke_cmd('com.abisource.abiword.abicollab.olpc.buddyJoined', bus_name, 0, 0)
+            self.participants[handle] = bus_name
 
 #            if handle == self.self_handle:
                 # I've just joined - set my unique name
@@ -269,8 +278,17 @@ class AbiWordActivity (Activity):
 #            self.participants[handle] = bus_name
 #            self.bus_name_to_handle[bus_name] = handle
 
-        for handle, bus_name in removed:
-            logger.debug('removed handle: %s, with dbus name: %s', handle, bus_name)
+# HACK: doesn't work yet, bad morgs!
+#        for handle in removed:
+#            logger.debug('removed handle: %s, with dbus name: %s', handle, bus_name)
+#            bus_name = self.participants.pop(handle, None)
+
+    def _on_members_changed(self, message, added, removed, local_pending, remote_pending, actor, reason):
+        logger.debug("_on_members_changed")
+        for handle in removed:
+            logger.debug('removed handle: %d, with dbus name: %s', handle, self.participants[handle])
+            bus_name = self.participants.pop(handle, None)
+            self.abiword_canvas.invoke_cmd('com.abisource.abiword.abicollab.olpc.buddyLeft', bus_name, 0, 0)
 
     def _buddy_joined_cb (self, activity, buddy):
         logger.debug('buddy joined with object path: %s', buddy.object_path())
@@ -278,7 +296,7 @@ class AbiWordActivity (Activity):
 
     def _buddy_left_cb (self,  activity, buddy):
         logger.debug('buddy left with object path: %s', buddy.object_path())
-        self.abiword_canvas.invoke_cmd('com.abisource.abiword.abicollab.olpc.buddyLeft', buddy.object_path(), 0, 0)
+        #self.abiword_canvas.invoke_cmd('com.abisource.abiword.abicollab.olpc.buddyLeft', self.participants[buddy.object_path()], 0, 0)
 
     def read_file(self, file_path):
         logging.debug('AbiWordActivity.read_file: %s', file_path)
