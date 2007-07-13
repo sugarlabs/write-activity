@@ -40,6 +40,7 @@ class TextToolbar(gtk.Toolbar):
     _ACTION_ALIGNMENT_LEFT = 0
     _ACTION_ALIGNMENT_CENTER = 1
     _ACTION_ALIGNMENT_RIGHT = 2
+    _ACTION_ALIGNMENT_JUSTIFY = 3
 
     def __init__(self, toolbox, abiword_canvas):
         self._colorseldlg = None
@@ -112,6 +113,8 @@ class TextToolbar(gtk.Toolbar):
                                     'theme:format-justify-center')
         self._alignment.append_item(self._ACTION_ALIGNMENT_RIGHT, None,
                                     'theme:format-justify-right')
+        self._alignment.append_item(self._ACTION_ALIGNMENT_JUSTIFY, None,
+                                    'theme:format-justify-fill')
         self._alignment_changed_id = \
             self._alignment.connect('changed', self._alignment_changed_cb)
         tool_item = ToolComboBox(self._alignment)
@@ -123,6 +126,7 @@ class TextToolbar(gtk.Toolbar):
         self._abiword_canvas.connect('left-align', self._isLeftAlign_cb)
         self._abiword_canvas.connect('center-align', self._isCenterAlign_cb)
         self._abiword_canvas.connect('right-align', self._isRightAlign_cb)
+        self._abiword_canvas.connect('justify-align', self._isJustifyAlign_cb)
 
         self._abiword_canvas.connect('text-selected', self._text_selected_cb)
 
@@ -183,6 +187,8 @@ class TextToolbar(gtk.Toolbar):
             self._abiword_canvas.align_center()
         elif self._alignment.get_active() == self._ACTION_ALIGNMENT_RIGHT:
             self._abiword_canvas.align_right()
+        elif self._alignment.get_active() == self._ACTION_ALIGNMENT_JUSTIFY:
+            self._abiword_canvas.align_justify()
         else:
             raise ValueError, 'Unknown option in alignment combobox.'
 
@@ -204,6 +210,10 @@ class TextToolbar(gtk.Toolbar):
     def _isRightAlign_cb(self, abi, b):
         if b:
             self._update_alignment_icon(self._ACTION_ALIGNMENT_RIGHT)
+
+    def _isJustifyAlign_cb(self, abi, b):
+        if b:
+            self._update_alignment_icon(self._ACTION_ALIGNMENT_JUSTIFY)
 
     def _text_selected_cb(self, abi, b):
         if b:
@@ -248,22 +258,22 @@ class TableToolbar(gtk.Toolbar):
         self.insert(tool_item, -1)
         tool_item.show_all()
 
-        self._table_rows_after = ToolButton('insert-row')
+        self._table_rows_after = ToolButton('row-insert')
         self._table_rows_after_id = self._table_rows_after.connect('clicked', self._table_rows_after_cb)
         self.insert(self._table_rows_after, -1)
         self._table_rows_after.show()
 
-        self._table_delete_rows = ToolButton('remove-row')
+        self._table_delete_rows = ToolButton('row-remove')
         self._table_delete_rows_id = self._table_delete_rows.connect('clicked', self._table_delete_rows_cb)
         self.insert(self._table_delete_rows, -1)
         self._table_delete_rows.show()
 
-        self._table_cols_after = ToolButton('insert-col')
+        self._table_cols_after = ToolButton('column-insert')
         self._table_cols_after_id = self._table_cols_after.connect('clicked', self._table_cols_after_cb)
         self.insert(self._table_cols_after, -1)
         self._table_cols_after.show()
 
-        self._table_delete_cols = ToolButton('remove-col')
+        self._table_delete_cols = ToolButton('column-remove')
         self._table_delete_cols_id = self._table_delete_cols.connect('clicked', self._table_delete_cols_cb)
         self.insert(self._table_delete_cols, -1)
         self._table_delete_cols.show()
