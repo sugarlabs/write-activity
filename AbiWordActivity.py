@@ -106,7 +106,7 @@ class AbiWordActivity (Activity):
         self.abiword_canvas.zoom_width()
 
 	# no ugly borders please
-	self.abiword_canvas.set_property("shadow-type", gtk.SHADOW_ETCHED_OUT)
+	self.abiword_canvas.set_property("shadow-type", gtk.NONE)
 
         # activity sharing
         pservice = presenceservice.get_instance()
