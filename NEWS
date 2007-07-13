@@ -1,3 +1,5 @@
+30
+
 * Update some icons (uwog)
 * Implement full justification (uwog)
 * Workaround for missing buddy removed in _on_dbus_names_changed (uwog)
