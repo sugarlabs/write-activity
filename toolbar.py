@@ -311,12 +311,12 @@ class ViewToolbar(gtk.Toolbar):
         self._abiword_canvas = abiword_canvas
         self._zoom_percentage = 0;
 
-        self._zoom_in = ToolButton('stock-zoom-in')
+        self._zoom_in = ToolButton('zoom-in')
         self._zoom_in_id = self._zoom_in.connect('clicked', self._zoom_in_cb)
         self.insert(self._zoom_in, -1)
         self._zoom_in.show()
 
-        self._zoom_out = ToolButton('stock-zoom-out')
+        self._zoom_out = ToolButton('zoom-out')
         self._zoom_out_id = self._zoom_out.connect('clicked', self._zoom_out_cb)
         self.insert(self._zoom_out, -1)
         self._zoom_out.show()
