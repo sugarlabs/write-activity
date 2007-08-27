@@ -108,13 +108,13 @@ class TextToolbar(gtk.Toolbar):
 
         self._alignment = ComboBox()
         self._alignment.append_item(self._ACTION_ALIGNMENT_LEFT, None,
-                                    'theme:format-justify-left')
+                                    'format-justify-left')
         self._alignment.append_item(self._ACTION_ALIGNMENT_CENTER, None,
-                                    'theme:format-justify-center')
+                                    'format-justify-center')
         self._alignment.append_item(self._ACTION_ALIGNMENT_RIGHT, None,
-                                    'theme:format-justify-right')
+                                    'format-justify-right')
         self._alignment.append_item(self._ACTION_ALIGNMENT_JUSTIFY, None,
-                                    'theme:format-justify-fill')
+                                    'format-justify-fill')
         self._alignment_changed_id = \
             self._alignment.connect('changed', self._alignment_changed_cb)
         tool_item = ToolComboBox(self._alignment)
