@@ -1,3 +1,4 @@
+* Port to new tubes API. (cassidy)
 * Add supported mimetypes for abiword, msword, xhtml, html and rtf
 * Add a format toolbar
 * Implement basic style support
