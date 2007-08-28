@@ -1,3 +1,4 @@
+* Add supported mimetypes for abiword, msword, xhtml, html and rtf
 * Add a format toolbar
 * Implement basic style support
 * Make style names translatable
