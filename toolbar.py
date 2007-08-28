@@ -304,6 +304,40 @@ class TableToolbar(gtk.Toolbar):
             self._toolbox.set_current_toolbar(TOOLBAR_TABLE)
             self._abiword_canvas.grab_focus() # hack: bad toolbox, bad!
 
+class FormatToolbar(gtk.Toolbar):
+    def __init__(self, toolbox, abiword_canvas):
+        gtk.Toolbar.__init__(self)
+
+        self._toolbox = toolbox
+        self._abiword_canvas = abiword_canvas
+
+        self._style_combo = ComboBox()
+        self._styles = ['Heading 1', 
+			'Heading 2', 
+			'Heading 3',
+			'Heading 4',
+			'Bullet List',
+			'Dashed List',
+			'Numbered List',
+			'Lower Case List',
+			'Upper Case List',
+			'Block Text',
+			'Normal',
+			'Plain Text']
+        self._style_changed_id = self._style_combo.connect('changed', self._style_changed_cb)
+        for i, s in enumerate(self._styles):
+            self._style_combo.append_item(i, s, None)
+            if s == 'Normal':
+                self._style_combo.set_active(i)
+        tool_item = ToolComboBox(self._style_combo)
+        self.insert(tool_item, -1);
+        tool_item.show()
+
+    def _style_changed_cb(self, combobox):
+        if self._style_combo.get_active() != -1:
+            logger.debug('Setting style name: %s', self._styles[self._style_combo.get_active()])
+            self._abiword_canvas.set_style(self._styles[self._style_combo.get_active()])
+
 class ViewToolbar(gtk.Toolbar):
     def __init__(self, abiword_canvas):
         gtk.Toolbar.__init__(self)

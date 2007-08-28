@@ -31,7 +31,7 @@ from sugar.activity.activity import Activity, ActivityToolbox, EditToolbar
 from sugar.presence import presenceservice
 
 from abiword import Canvas
-from toolbar import TextToolbar, ImageToolbar, TableToolbar, ViewToolbar
+from toolbar import TextToolbar, ImageToolbar, TableToolbar, FormatToolbar, ViewToolbar
 
 logger = logging.getLogger('write-activity')
 
@@ -83,6 +83,10 @@ class AbiWordActivity (Activity):
         table_toolbar = TableToolbar(toolbox, self.abiword_canvas)
         toolbox.add_toolbar(_('Table'), table_toolbar)
         table_toolbar.show()
+
+        format_toolbar = FormatToolbar(toolbox, self.abiword_canvas)
+        toolbox.add_toolbar(_('Format'), format_toolbar)
+        format_toolbar.show()
 
         view_toolbar = ViewToolbar(self.abiword_canvas)
         toolbox.add_toolbar(_('View'), view_toolbar)
