@@ -222,11 +222,12 @@ class TextToolbar(gtk.Toolbar):
             self._abiword_canvas.grab_focus() # hack: bad toolbox, bad!
 
 class ImageToolbar(gtk.Toolbar):
-    def __init__(self, toolbox, abiword_canvas):
+    def __init__(self, toolbox, abiword_canvas, parent):
         gtk.Toolbar.__init__(self)
 
         self._toolbox = toolbox
         self._abiword_canvas = abiword_canvas
+	self._parent = parent
 
         self._image = ToolButton('insert-image')
         self._image_id = self._image.connect('clicked', self._image_cb)
@@ -236,7 +237,7 @@ class ImageToolbar(gtk.Toolbar):
         self._abiword_canvas.connect('image-selected', self._image_selected_cb)
 
     def _image_cb(self, button):
-        chooser = ObjectChooser(_('Choose image'), None,
+        chooser = ObjectChooser(_('Choose image'), self._parent,
                                 gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT)
         try:
             result = chooser.run()

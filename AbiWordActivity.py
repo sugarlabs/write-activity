@@ -76,7 +76,7 @@ class AbiWordActivity (Activity):
         toolbox.add_toolbar(_('Text'), text_toolbar)
         text_toolbar.show()
 
-        image_toolbar = ImageToolbar(toolbox, self.abiword_canvas)
+        image_toolbar = ImageToolbar(toolbox, self.abiword_canvas, self)
         toolbox.add_toolbar(_('Image'), image_toolbar)
         image_toolbar.show()
 
