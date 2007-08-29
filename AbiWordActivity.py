@@ -151,9 +151,10 @@ class AbiWordActivity (Activity):
         self._shared_activity.connect('buddy-left', self._buddy_left_cb)
 
         logger.debug('This is my activity: offering a tube...')
-        id = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].OfferTube(
-            telepathy.TUBE_TYPE_DBUS, "com.abisource.abiword.abicollab", {})
-        logger.debug('Tube address: %s', self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].GetDBusServerAddress(id))
+        id = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].OfferDBusTube(
+            "com.abisource.abiword.abicollab", {})
+        logger.debug('Tube address: %s', self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].GetDBusTubeAddress(id))
+
 
     def _setup(self):
         logger.debug("_setup()")
@@ -232,7 +233,7 @@ class AbiWordActivity (Activity):
         if (type == telepathy.TUBE_TYPE_DBUS and
             service == "com.abisource.abiword.abicollab"):
             if state == telepathy.TUBE_STATE_LOCAL_PENDING:
-                self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].AcceptTube(id)
+                self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].AcceptDBusTube(id)
 
             initiator_path = None;
             contacts = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].GetDBusNames(id)
@@ -249,7 +250,7 @@ class AbiWordActivity (Activity):
                 logger.error('Unable to get the dbus path of the tube initiator')
             else:
                 # pass this tube to abicollab
-                address = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].GetDBusServerAddress(id)
+                address = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].GetDBusTubeAddress(id)
                 if self.joined:
                     logger.debug('Passing tube address to abicollab (join): %s', address)
                     self.abiword_canvas.invoke_cmd('com.abisource.abiword.abicollab.olpc.joinTube', address, 0, 0)
