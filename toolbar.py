@@ -25,6 +25,7 @@ from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.toggletoolbutton import ToggleToolButton
 from sugar.graphics.combobox import ComboBox
 from sugar.graphics.toolcombobox import ToolComboBox
+from sugar.graphics.objectchooser import ObjectChooser
 
 logger = logging.getLogger('write-activity')
 
@@ -235,8 +236,19 @@ class ImageToolbar(gtk.Toolbar):
         self._abiword_canvas.connect('image-selected', self._image_selected_cb)
 
     def _image_cb(self, button):
-        self._abiword_canvas.invoke_cmd('fileInsertGraphic', '', 0, 0)
-
+        chooser = ObjectChooser(_('Choose image'), None,
+                                gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT)
+        try:
+            result = chooser.run()
+            if result == gtk.RESPONSE_ACCEPT:
+                logging.debug('ObjectChooser: %r' % chooser.get_selected_object())
+                jobject = chooser.get_selected_object()
+                if jobject and jobject.file_path:
+                    self._abiword_canvas.insert_image(jobject.file_path, True)
+        finally:
+            chooser.destroy()
+            del chooser
+ 
     def _image_selected_cb(self, abi, b):
         if b:
             self._toolbox.set_current_toolbar(TOOLBAR_IMAGE)
