@@ -21,6 +21,7 @@ import logging
 import abiword
 import gtk
 
+from sugar.graphics.icon import Icon
 from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.toggletoolbutton import ToggleToolButton
 from sugar.graphics.combobox import ComboBox
@@ -80,6 +81,12 @@ class TextToolbar(gtk.Toolbar):
         separator.set_draw(True)
         separator.show()
         self.insert(separator, -1)
+
+        self._font_size_icon = Icon(icon_name="format-text-size")
+        tool_item = gtk.ToolItem()
+        tool_item.add(self._font_size_icon)
+        self.insert(tool_item, -1)
+        tool_item.show_all()
 
         self._font_size_combo = ComboBox()
         self._font_sizes = ['8', '9', '10', '11', '12', '14', '16', '20', '22', '24', '26', '28', '36', '48', '72']
