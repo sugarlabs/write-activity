@@ -334,6 +334,13 @@ class FormatToolbar(gtk.Toolbar):
         self._toolbox = toolbox
         self._abiword_canvas = abiword_canvas
 
+        style_label = gtk.Label(_("Style: "))
+        style_label.show()
+        tool_item_style_label = gtk.ToolItem()
+        tool_item_style_label.add(style_label)
+        self.insert(tool_item_style_label, -1)
+        tool_item_style_label.show()
+
         self._style_combo = ComboBox()
         self._styles = [['Heading 1',_('Heading 1')], 
             ['Heading 2',_('Heading 2')], 

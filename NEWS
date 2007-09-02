@@ -1,3 +1,4 @@
+* Add a Style label before the Style combobox (uwog)
 * Hook up the abiword canvas font size signal to the Write toolbar (uwog)
 
 36
