@@ -381,6 +381,17 @@ class FormatToolbar(gtk.Toolbar):
         self.insert(tool_item, -1);
         tool_item.show()
 
+        self._abiword_canvas.connect('style-name', self._style_cb)
+
+    def _style_cb(self, abi, style_name):
+        for i, s in enumerate(self._styles):
+            if s[0] == style_name:
+                self._style_combo.handler_block(self._style_changed_id)
+                self._style_combo.set_active(i)
+                self._style_combo.handler_unblock(self._style_changed_id)
+                break;
+        # TODO: if no match is found, then add the style to the style dropdown
+
     def _style_changed_cb(self, combobox):
         if self._style_combo.get_active() != -1:
             logger.debug('Setting style name: %s', self._styles[self._style_combo.get_active()][0])
