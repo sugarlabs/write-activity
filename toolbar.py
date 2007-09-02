@@ -78,6 +78,7 @@ class TextToolbar(gtk.Toolbar):
 
         separator = gtk.SeparatorToolItem()
         separator.set_draw(True)
+        separator.show()
         self.insert(separator, -1)
 
         self._font_size_combo = ComboBox()
