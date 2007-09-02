@@ -131,7 +131,9 @@ class TextToolbar(gtk.Toolbar):
         tool_item.show()
 
         self._abiword_canvas.connect('color', self._color_cb)
+
         self._abiword_canvas.connect('font-size', self._font_size_cb)
+        self._abiword_canvas.connect('font-family', self._font_family_cb)
 
         self._abiword_canvas.connect('left-align', self._isLeftAlign_cb)
         self._abiword_canvas.connect('center-align', self._isCenterAlign_cb)
@@ -181,18 +183,26 @@ class TextToolbar(gtk.Toolbar):
         self._abiword_canvas.set_text_color(newcolor.red // 256.0, newcolor.green // 256.0, newcolor.blue // 256.0)
 
     def _font_size_cb(self, abi, size):
-        logger.debug('Font size callback: %d', int(size));
         for i, s in enumerate(self._font_sizes):
             if int(s) == int(size):
-                self._font_combo.handler_block(self._font_size_changed_id);
+                self._font_size_combo.handler_block(self._font_size_changed_id)
                 self._font_size_combo.set_active(i)
-                self._font_combo.handler_unblock(self._font_size_changed_id);
+                self._font_size_combo.handler_unblock(self._font_size_changed_id)
                 break;
 
     def _font_size_changed_cb(self, combobox):
         if self._font_size_combo.get_active() != -1:
             logger.debug('Setting font size: %d', int(self._font_sizes[self._font_size_combo.get_active()]))
             self._abiword_canvas.set_font_size(self._font_sizes[self._font_size_combo.get_active()])
+
+    def _font_family_cb(self, abi, font_family):
+        for i, f in enumerate(self._fonts):
+            if f == font_family:
+                self._font_combo.handler_block(self._fonts_changed_id)
+                self._font_combo.set_active(i)
+                self._font_combo.handler_unblock(self._fonts_changed_id)
+                break;
+        # TODO: if no match is found, then add the font to the font family dropdown
 
     def _font_changed_cb(self, combobox):
         if self._font_combo.get_active() != -1:
