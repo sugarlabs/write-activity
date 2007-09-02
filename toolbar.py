@@ -123,6 +123,7 @@ class TextToolbar(gtk.Toolbar):
         tool_item.show()
 
         self._abiword_canvas.connect('color', self._color_cb)
+        self._abiword_canvas.connect('font-size', self._font_size_cb)
 
         self._abiword_canvas.connect('left-align', self._isLeftAlign_cb)
         self._abiword_canvas.connect('center-align', self._isCenterAlign_cb)
@@ -171,15 +172,24 @@ class TextToolbar(gtk.Toolbar):
         newcolor = self._text_color.get_color()
         self._abiword_canvas.set_text_color(newcolor.red // 256.0, newcolor.green // 256.0, newcolor.blue // 256.0)
 
-    def _font_changed_cb(self, combobox):
-        if self._font_combo.get_active() != -1:
-            logger.debug('Setting font name: %s', self._fonts[self._font_combo.get_active()])
-            self._abiword_canvas.set_font_name(self._fonts[self._font_combo.get_active()])
+    def _font_size_cb(self, abi, size):
+        logger.debug('Font size callback: %d', int(size));
+        for i, s in enumerate(self._font_sizes):
+            if int(s) == int(size):
+                self._font_combo.handler_block(self._font_size_changed_id);
+                self._font_size_combo.set_active(i)
+                self._font_combo.handler_unblock(self._font_size_changed_id);
+                break;
 
     def _font_size_changed_cb(self, combobox):
         if self._font_size_combo.get_active() != -1:
             logger.debug('Setting font size: %d', int(self._font_sizes[self._font_size_combo.get_active()]))
             self._abiword_canvas.set_font_size(self._font_sizes[self._font_size_combo.get_active()])
+
+    def _font_changed_cb(self, combobox):
+        if self._font_combo.get_active() != -1:
+            logger.debug('Setting font name: %s', self._fonts[self._font_combo.get_active()])
+            self._abiword_canvas.set_font_name(self._fonts[self._font_combo.get_active()])
 
     def _alignment_changed_cb(self, combobox):
         if self._alignment.get_active() == self._ACTION_ALIGNMENT_LEFT:
@@ -227,7 +237,7 @@ class ImageToolbar(gtk.Toolbar):
 
         self._toolbox = toolbox
         self._abiword_canvas = abiword_canvas
-	self._parent = parent
+        self._parent = parent
 
         self._image = ToolButton('insert-image')
         self._image_id = self._image.connect('clicked', self._image_cb)
@@ -326,17 +336,17 @@ class FormatToolbar(gtk.Toolbar):
 
         self._style_combo = ComboBox()
         self._styles = [['Heading 1',_('Heading 1')], 
-			['Heading 2',_('Heading 2')], 
-			['Heading 3',_('Heading 3')],
-			['Heading 4',_('Heading 4')],
-			['Bullet List',_('Bullet List')],
-			['Dashed List',_('Dashed List')],
-			['Numbered List',_('Numbered List')],
-			['Lower Case List',_('Lower Case List')],
-			['Upper Case List',_('Upper Case List')],
-			['Block Text',_('Block Text')],
-			['Normal',_('Normal')],
-			['Plain Text',_('Plain Text')]]
+            ['Heading 2',_('Heading 2')], 
+            ['Heading 3',_('Heading 3')],
+            ['Heading 4',_('Heading 4')],
+            ['Bullet List',_('Bullet List')],
+            ['Dashed List',_('Dashed List')],
+            ['Numbered List',_('Numbered List')],
+            ['Lower Case List',_('Lower Case List')],
+            ['Upper Case List',_('Upper Case List')],
+            ['Block Text',_('Block Text')],
+            ['Normal',_('Normal')],
+            ['Plain Text',_('Plain Text')]]
         self._style_changed_id = self._style_combo.connect('changed', self._style_changed_cb)
         for i, s in enumerate(self._styles):
             self._style_combo.append_item(i, s[1], None)
