@@ -218,7 +218,6 @@ class TextToolbar(gtk.Toolbar):
                 self._fonts.append('') # ugly
                 self._font_combo.append_separator()
                 self._has_custom_fonts = True
-            font_index = 1
             # add the new font
             self._fonts.append(font_family)
             self._font_combo.append_item(0, font_family, None)
@@ -394,6 +393,8 @@ class FormatToolbar(gtk.Toolbar):
         self.insert(tool_item_style_label, -1)
         tool_item_style_label.show()
 
+        self._has_custom_styles = False
+
         self._style_combo = ComboBox()
         self._styles = [['Heading 1',_('Heading 1')], 
             ['Heading 2',_('Heading 2')], 
@@ -419,13 +420,34 @@ class FormatToolbar(gtk.Toolbar):
         self._abiword_canvas.connect('style-name', self._style_cb)
 
     def _style_cb(self, abi, style_name):
+        style_index = -1
         for i, s in enumerate(self._styles):
             if s[0] == style_name:
-                self._style_combo.handler_block(self._style_changed_id)
-                self._style_combo.set_active(i)
-                self._style_combo.handler_unblock(self._style_changed_id)
+                style_index = i
                 break;
-        # TODO: if no match is found, then add the style to the style dropdown
+
+        # if we don't know this style yet, then add it (temporary) to the list
+        if style_index == -1:
+            logger.debug('Style not found in style list: %s', style_name)
+            if not self._has_custom_styles:
+                # add a separator to seperate the non-available styles from
+                # the available ones
+                self._styles.append(['','']) # ugly
+                self._style_combo.append_separator()
+                self._has_custom_styles = True
+            # add the new style
+            self._styles.append([style_name, style_name])
+            self._style_combo.append_item(0, style_name, None)
+            # see how many styles we have now, so we can select the last one
+            model = self._style_combo.get_model()
+            num_children = model.iter_n_children(None)
+            logger.debug('Number of styles in the list: %d', num_children)
+            style_index = num_children-1
+
+        if style_index > -1:
+            self._style_combo.handler_block(self._style_changed_id)
+            self._style_combo.set_active(style_index)
+            self._style_combo.handler_unblock(self._style_changed_id)
 
     def _style_changed_cb(self, combobox):
         if self._style_combo.get_active() != -1:

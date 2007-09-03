@@ -1,4 +1,6 @@
-* Also (temporary) add fonts used by loaded documents that are not available 
+* (Temporary) add styles used by loaded documents that are not available 
+  by default to the style dropdown list (uwog)
+* (Temporary) add fonts used by loaded documents that are not available 
   on the system to the font dropdown list (uwog)
 * Set a tooltip on various menu items (#821) (uwog)
 * Hook up the abiword canvas 'style-name' signal to the Format toolbar (uwog)
