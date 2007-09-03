@@ -102,6 +102,8 @@ class TextToolbar(gtk.Toolbar):
         self.insert(tool_item, -1);
         tool_item.show()
 
+        self._has_custom_fonts = False
+
         self._font_combo = ComboBox()
         self._fonts = sorted(self._abiword_canvas.get_font_names())
         self._fonts_changed_id = self._font_combo.connect('changed', self._font_changed_cb)
@@ -199,13 +201,38 @@ class TextToolbar(gtk.Toolbar):
             self._abiword_canvas.set_font_size(self._font_sizes[self._font_size_combo.get_active()])
 
     def _font_family_cb(self, abi, font_family):
+        font_index = -1
+
+        # search for the font name in our font list
         for i, f in enumerate(self._fonts):
             if f == font_family:
-                self._font_combo.handler_block(self._fonts_changed_id)
-                self._font_combo.set_active(i)
-                self._font_combo.handler_unblock(self._fonts_changed_id)
+                font_index = i
                 break;
-        # TODO: if no match is found, then add the font to the font family dropdown
+
+        # if we don't know this font yet, then add it (temporary) to the list
+        if font_index == -1:
+            logger.debug('Font not found in font list: %s', font_family)
+            if not self._has_custom_fonts:
+                # add a separator to seperate the non-available fonts from
+                # the available ones
+                self._fonts.append('') # ugly
+                self._font_combo.append_separator()
+                self._has_custom_fonts = True
+            font_index = 1
+            # add the new font
+            self._fonts.append(font_family)
+            self._font_combo.append_item(0, font_family, None)
+            # see how many fonts we have now, so we can select the last one
+            model = self._font_combo.get_model()
+            num_children = model.iter_n_children(None)
+            logger.debug('Number of fonts in the list: %d', num_children)
+            font_index = num_children-1
+
+        # activate the found font
+        if (font_index > -1):
+            self._font_combo.handler_block(self._fonts_changed_id)
+            self._font_combo.set_active(font_index)
+            self._font_combo.handler_unblock(self._fonts_changed_id)
 
     def _font_changed_cb(self, combobox):
         if self._font_combo.get_active() != -1:
