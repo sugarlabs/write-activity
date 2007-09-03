@@ -53,18 +53,21 @@ class TextToolbar(gtk.Toolbar):
         self._abiword_canvas = abiword_canvas
 
         self._bold = ToggleToolButton('format-text-bold')
+        self._bold.set_tooltip(_('Bold'))
         self._bold_id = self._bold.connect('clicked', self._bold_cb)
         self._abiword_canvas.connect('bold', self._isBold_cb)
         self.insert(self._bold, -1)
         self._bold.show()
 
         self._italic = ToggleToolButton('format-text-italic')
+        self._italic.set_tooltip(_('Italic'))
         self._italic_id = self._italic.connect('clicked', self._italic_cb)
         self._abiword_canvas.connect('italic', self._isItalic_cb)
         self.insert(self._italic, -1)
         self._italic.show()
 
         self._underline = ToggleToolButton('format-text-underline')
+        self._underline.set_tooltip(_('Underline'))
         self._underline_id = self._underline.connect('clicked', self._underline_cb)
         self._abiword_canvas.connect('underline', self._isUnderline_cb)
         self.insert(self._underline, -1)
@@ -258,6 +261,7 @@ class ImageToolbar(gtk.Toolbar):
         self._parent = parent
 
         self._image = ToolButton('insert-image')
+        self._image.set_tooltip(_('Insert Image'))
         self._image_id = self._image.connect('clicked', self._image_cb)
         self.insert(self._image, -1)
         self._image.show()
@@ -300,21 +304,25 @@ class TableToolbar(gtk.Toolbar):
         tool_item.show_all()
 
         self._table_rows_after = ToolButton('row-insert')
+        self._table_rows_after.set_tooltip(_('Insert Row'))
         self._table_rows_after_id = self._table_rows_after.connect('clicked', self._table_rows_after_cb)
         self.insert(self._table_rows_after, -1)
         self._table_rows_after.show()
 
         self._table_delete_rows = ToolButton('row-remove')
+        self._table_delete_rows.set_tooltip(_('Delete Row'))
         self._table_delete_rows_id = self._table_delete_rows.connect('clicked', self._table_delete_rows_cb)
         self.insert(self._table_delete_rows, -1)
         self._table_delete_rows.show()
 
         self._table_cols_after = ToolButton('column-insert')
+        self._table_cols_after.set_tooltip(_('Insert Column'))
         self._table_cols_after_id = self._table_cols_after.connect('clicked', self._table_cols_after_cb)
         self.insert(self._table_cols_after, -1)
         self._table_cols_after.show()
 
         self._table_delete_cols = ToolButton('column-remove')
+        self._table_delete_cols.set_tooltip(_('Delete Column'))
         self._table_delete_cols_id = self._table_delete_cols.connect('clicked', self._table_delete_cols_cb)
         self.insert(self._table_delete_cols, -1)
         self._table_delete_cols.show()
@@ -405,11 +413,13 @@ class ViewToolbar(gtk.Toolbar):
         self._zoom_percentage = 0;
 
         self._zoom_in = ToolButton('zoom-in')
+        self._zoom_in.set_tooltip(_('Zoom In'))
         self._zoom_in_id = self._zoom_in.connect('clicked', self._zoom_in_cb)
         self.insert(self._zoom_in, -1)
         self._zoom_in.show()
 
         self._zoom_out = ToolButton('zoom-out')
+        self._zoom_out.set_tooltip(_('Zoom Out'))
         self._zoom_out_id = self._zoom_out.connect('clicked', self._zoom_out_cb)
         self.insert(self._zoom_out, -1)
         self._zoom_out.show()
