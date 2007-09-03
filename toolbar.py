@@ -82,7 +82,7 @@ class TextToolbar(gtk.Toolbar):
         separator.show()
         self.insert(separator, -1)
 
-        self._font_size_icon = Icon(icon_name="format-text-size")
+        self._font_size_icon = Icon(icon_name="format-text-size", icon_size=gtk.ICON_SIZE_LARGE_TOOLBAR)
         tool_item = gtk.ToolItem()
         tool_item.add(self._font_size_icon)
         self.insert(tool_item, -1)
