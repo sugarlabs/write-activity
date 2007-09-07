@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-21 17:33+0200\n"
+"POT-Creation-Date: 2007-09-07 13:53+0200\n"
 "PO-Revision-Date: 2007-07-03 10:28-0300\n"
 "Last-Translator: Diego Búrigo Zacarão <diegobz@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <fedora-docs-br@redhat.com>\n"
@@ -15,6 +15,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+
+#: activity/activity.info:2
+msgid "Write"
+msgstr ""
 
 #: AbiWordActivity.py:72
 msgid "Edit"
@@ -28,27 +32,126 @@ msgstr "Texto"
 msgid "Image"
 msgstr "Imagem"
 
-#: AbiWordActivity.py:84 toolbar.py:238
+#: AbiWordActivity.py:84 toolbar.py:324
 msgid "Table"
 msgstr "Tabela"
 
 #: AbiWordActivity.py:88
+msgid "Format"
+msgstr ""
+
+#: AbiWordActivity.py:92
 msgid "View"
 msgstr "Visualizar"
 
-#: toolbar.py:155
-msgid "Select text color"
-msgstr "Selecione a cor do texto"
+#: toolbar.py:56
+msgid "Bold"
+msgstr ""
 
-#: toolbar.py:238
+#: toolbar.py:63
+msgid "Italic"
+msgstr ""
+
+#: toolbar.py:70
+msgid "Underline"
+msgstr ""
+
+#: toolbar.py:290
+msgid "Insert Image"
+msgstr ""
+
+#: toolbar.py:298
+msgid "Choose image"
+msgstr ""
+
+#: toolbar.py:324
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: toolbar.py:323
+#: toolbar.py:333
+msgid "Insert Row"
+msgstr ""
+
+#: toolbar.py:339
+msgid "Delete Row"
+msgstr ""
+
+#: toolbar.py:345
+msgid "Insert Column"
+msgstr ""
+
+#: toolbar.py:351
+msgid "Delete Column"
+msgstr ""
+
+#: toolbar.py:389
+msgid "Style: "
+msgstr ""
+
+#: toolbar.py:399
+msgid "Heading 1"
+msgstr ""
+
+#: toolbar.py:400
+msgid "Heading 2"
+msgstr ""
+
+#: toolbar.py:401
+msgid "Heading 3"
+msgstr ""
+
+#: toolbar.py:402
+msgid "Heading 4"
+msgstr ""
+
+#: toolbar.py:403
+msgid "Bullet List"
+msgstr ""
+
+#: toolbar.py:404
+msgid "Dashed List"
+msgstr ""
+
+#: toolbar.py:405
+msgid "Numbered List"
+msgstr ""
+
+#: toolbar.py:406
+msgid "Lower Case List"
+msgstr ""
+
+#: toolbar.py:407
+msgid "Upper Case List"
+msgstr ""
+
+#: toolbar.py:408
+msgid "Block Text"
+msgstr ""
+
+#: toolbar.py:409
+msgid "Normal"
+msgstr ""
+
+#: toolbar.py:410
+msgid "Plain Text"
+msgstr ""
+
+#: toolbar.py:465
+msgid "Zoom In"
+msgstr ""
+
+#: toolbar.py:471
+msgid "Zoom Out"
+msgstr ""
+
+#: toolbar.py:487
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:335
-msgid "Page:"
+#: toolbar.py:499
+#, fuzzy
+msgid "Page: "
 msgstr "Página:"
 
+#~ msgid "Select text color"
+#~ msgstr "Selecione a cor do texto"
