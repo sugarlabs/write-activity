@@ -305,7 +305,10 @@ class AbiWordActivity (Activity):
 
     def read_file(self, file_path):
         logging.debug('AbiWordActivity.read_file: %s', file_path)
-        self.abiword_canvas.load_file('file://' + file_path, '') # we pass no mime/file type, let libabiword autodetect it, so we can handle multiple file formats
+        if self.metadata.has_key('source') and self.metadata['source'] == '1':
+            self.abiword_canvas.load_file('file://' + file_path, 'text/plain') 
+        else:
+            self.abiword_canvas.load_file('file://' + file_path, '') # we pass no mime/file type, let libabiword autodetect it, so we can handle multiple file formats
         self._file_opened = True
 
     def write_file(self, file_path):
