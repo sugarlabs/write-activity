@@ -315,6 +315,7 @@ class AbiWordActivity (Activity):
         logging.debug('AbiWordActivity.write_file')
 
         self.metadata['mime_type'] = 'application/vnd.oasis.opendocument.text'
+        self.metadata['fulltext'] = self.abiword_canvas.get_content(".txt")[:3000]
         f = open(file_path, 'w')
         try:
             logger.debug('Writing content as .odt')
