@@ -1,3 +1,5 @@
+* Fix #3319: default tab should be 'text' (uwog)
+
 40
 
 * Add first 3000 words indexing (tomeu)
