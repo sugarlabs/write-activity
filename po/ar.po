@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: write.master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-07 13:53+0200\n"
+"POT-Creation-Date: 2007-09-17 23:35+0200\n"
 "PO-Revision-Date: 2007-06-28 21:49+0300\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -22,27 +22,27 @@ msgstr ""
 msgid "Write"
 msgstr ""
 
-#: AbiWordActivity.py:72
+#: AbiWordActivity.py:73
 msgid "Edit"
 msgstr "حرِّر"
 
-#: AbiWordActivity.py:76
+#: AbiWordActivity.py:77
 msgid "Text"
 msgstr "نص"
 
-#: AbiWordActivity.py:80
+#: AbiWordActivity.py:81
 msgid "Image"
 msgstr "صورة"
 
-#: AbiWordActivity.py:84 toolbar.py:324
+#: AbiWordActivity.py:85 toolbar.py:324
 msgid "Table"
 msgstr "جدول"
 
-#: AbiWordActivity.py:88
+#: AbiWordActivity.py:89
 msgid "Format"
 msgstr ""
 
-#: AbiWordActivity.py:92
+#: AbiWordActivity.py:93
 msgid "View"
 msgstr "اعرض"
 

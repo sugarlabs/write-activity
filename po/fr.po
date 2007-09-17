@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: projects/write\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-07 13:53+0200\n"
+"POT-Creation-Date: 2007-09-17 23:35+0200\n"
 "PO-Revision-Date: 2007-07-31 09:34+0200\n"
 "Last-Translator: Samuel Bizien <samuel@bizien.info>\n"
 "Language-Team: French <traduc@traduc.org>\n"
@@ -19,27 +19,27 @@ msgstr ""
 msgid "Write"
 msgstr ""
 
-#: AbiWordActivity.py:72
+#: AbiWordActivity.py:73
 msgid "Edit"
 msgstr "Modifier"
 
-#: AbiWordActivity.py:76
+#: AbiWordActivity.py:77
 msgid "Text"
 msgstr "Texte"
 
-#: AbiWordActivity.py:80
+#: AbiWordActivity.py:81
 msgid "Image"
 msgstr "Image"
 
-#: AbiWordActivity.py:84 toolbar.py:324
+#: AbiWordActivity.py:85 toolbar.py:324
 msgid "Table"
 msgstr "Tableau"
 
-#: AbiWordActivity.py:88
+#: AbiWordActivity.py:89
 msgid "Format"
 msgstr ""
 
-#: AbiWordActivity.py:92
+#: AbiWordActivity.py:93
 msgid "View"
 msgstr "Vue"
 
