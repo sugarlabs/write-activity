@@ -1,3 +1,5 @@
+* Fix 3899: do not use set_title (uwog)
+
 47
 
 * Advertise odt support (marco)

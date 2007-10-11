@@ -40,7 +40,6 @@ class AbiWordActivity (Activity):
 
     def __init__ (self, handle):
         Activity.__init__ (self, handle)
-        self.set_title ("Write")
 
         # abiword uses the current directory for all its file dialogs 
         os.chdir(os.path.expanduser('~'))
