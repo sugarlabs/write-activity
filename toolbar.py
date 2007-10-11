@@ -553,7 +553,7 @@ class ViewToolbar(gtk.Toolbar):
 
     def _page_spin_cb(self, button):
         self._page_num = self._page_spin.get_value_as_int()
-#        TODO
+        self._abiword_canvas.set_current_page(self._page_num)
 
     def _page_count_cb(self, canvas, count):
         current_page = canvas.get_current_page_num()
