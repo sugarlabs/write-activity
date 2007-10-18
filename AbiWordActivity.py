@@ -33,6 +33,7 @@ from sugar.presence import presenceservice
 from abiword import Canvas
 import toolbar
 from toolbar import TextToolbar, ImageToolbar, TableToolbar, FormatToolbar, ViewToolbar
+from sugar.activity.activity import get_bundle_path
 
 logger = logging.getLogger('write-activity')
 
@@ -107,6 +108,11 @@ class AbiWordActivity (Activity):
         if not self._file_opened:
             logger.debug("Loading empty doc")
             self.abiword_canvas.load_file('', '');  
+
+        # set custom keybindings for Write
+        logger.debug("Loading keybindings")
+        keybindings_file = os.path.join( get_bundle_path(), "keybindings.xml" )
+        self.abiword_canvas.invoke_cmd('com.abisource.abiword.loadbindings.fromURI', keybindings_file, 0, 0)
 
         # set the initial zoom to page width; note: always do this AFTER a document
         # has been opened

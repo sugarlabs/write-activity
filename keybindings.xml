@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editbindings name="default" mode="append" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.abisource.com/abiword-keybindings-1.0.xsd">
+	<unbind-mappings handler="contextEmbedLayout" />
+	<unbind-mappings handler="contextPosObject" />
+	<unbind-mappings handler="contextTOC" />
+	<unbind-mappings handler="contextText" />
+	<unbind-mappings handler="contextFrame" />
+	<unbind-mappings handler="contextRevision" />
+	<unbind-mappings handler="contextHyperlink" />
+	<unbind-mappings handler="contextImage" />
+	<unbind-mappings handler="contextMisspellText" />
+	<unbind-mappings handler="contextMenu" />
+	<unbind-mappings handler="dlgFmtPosImage" />
+	<unbind-mappings handler="dlgFmtImage" />
+	<unbind-mappings handler="dlgFont" />
+	<unbind-mappings handler="dlgSpell" />
+	<unbind-mappings handler="viewFullScreen" />
+	<unbind-mappings handler="querySaveAndExit" />
+	<unbind-mappings handler="findAgain" />
+	<unbind-mappings handler="helpContents" />
+	<unbind-mappings handler="find" />
+	<unbind-mappings handler="go" />
+	<unbind-mappings handler="replace" />
+	<unbind-mappings handler="insSymbol" />
+	<unbind-mappings handler="fileNewUsingTemplate" />
+	<unbind-mappings handler="fileOpen" />
+	<unbind-mappings handler="print" />
+	<unbind-mappings handler="fileSaveAs" />
+	<unbind-mappings handler="closeWindow" />
+	<unbind-mappings handler="fileNew" />
+	<unbind-mappings handler="fileSave" />
+	<unbind-mappings handler="cycleWindows" />
+	<unbind-mappings handler="togglePlain" />
+	<unbind-mappings handler="Test_Ftr" />
+	<unbind-mappings handler="Test_Dump" />
+</editbindings>
