@@ -67,34 +67,44 @@ class WriteEditToolbar(EditToolbar):
         separator.show()
 
         # setup additional buttons for searching
-        self.search = ToolButton('system-search')
-        self.search.set_tooltip(_('Search'))
-        self.insert(self.search, -1)
-        self.search.show()
-        self.search.connect('clicked', self._search_cb);
+        self._search = ToolButton('system-search')
+        self._search.set_tooltip(_('Search'))
+        self.insert(self._search, -1)
+        self._search.show()
+        self._search.connect('clicked', self._search_cb);
 
         self._searchtext = gtk.Entry()
         self._searchtext.set_size_request(int(gtk.gdk.screen_width() / 6), -1)
-        self._searchtext.connect('changed', self._searchtext_changed)
+        self._searchtext.connect('changed', self._searchtext_changed_cb)
         self._add_widget(self._searchtext)
 
-        self.clear = ToolButton('dialog-cancel')
-        self.clear.set_tooltip(_('Clear'))
-        self.insert(self.clear, -1)
-        self.clear.show()
-        self.clear.connect('clicked', self._clear_cb);
+        self._clear = ToolButton('dialog-cancel')
+        self._clear.set_tooltip(_('Clear'))
+        self.insert(self._clear, -1)
+        self._clear.show()
+        self._clear.connect('clicked', self._clear_cb);
 
-        self.findprev = ToolButton('go-previous')
-        self.findprev.set_tooltip(_('Find previous'))
-        self.insert(self.findprev, -1)
-        self.findprev.show()
-        self.findprev.connect('clicked', self._findprev_cb);
+        self._findprev = ToolButton('go-previous')
+        self._findprev.set_tooltip(_('Find previous'))
+        self.insert(self._findprev, -1)
+        self._findprev.show()
+        self._findprev.connect('clicked', self._findprev_cb);
 
-        self.findnext = ToolButton('go-next')
-        self.findnext.set_tooltip(_('Find next'))
-        self.insert(self.findnext, -1)
-        self.findnext.show()
-        self.findnext.connect('clicked', self._findnext_cb);
+        self._findnext = ToolButton('go-next')
+        self._findnext.set_tooltip(_('Find next'))
+        self.insert(self._findnext, -1)
+        self._findnext.show()
+        self._findnext.connect('clicked', self._findnext_cb);
+
+        # set the initial state of the search controls
+        # note: we won't simple call self._searchtext_changed_cb
+        # here, as that will call into the abiword_canvas, which
+        # is not mapped on screen here, causing the set_find_string
+        # call to fail
+        self._search.set_sensitive(False)
+        self._clear.set_sensitive(False)
+        self._findprev.set_sensitive(False)
+        self._findnext.set_sensitive(False)
 
     def _undo_cb(self, button):
         self._abiword_canvas.undo()
@@ -114,19 +124,22 @@ class WriteEditToolbar(EditToolbar):
     def _can_redo_cb(self, canvas, can_redo):
         self.redo.set_sensitive(can_redo)
 
-    def _searchtext_changed(self, entry):
+    def _searchtext_changed_cb(self, entry):
         text = self._searchtext.get_text()
-        logger.debug('_searchtext_changed to %s', text)
+        logger.debug('_searchtext_changed_cb to \'%s\'', text)
+        self._search.set_sensitive(text != "")
+        self._clear.set_sensitive(text != "")
+        self._findprev.set_sensitive(text != "")
+        self._findnext.set_sensitive(text != "")
         self._abiword_canvas.set_find_string(text)
 
     def _search_cb(self, button):
         logger.debug('_search_cb')
-        self._findnext_cb(self.findnext)
+        self._findnext_cb(self._findnext)
 
     def _clear_cb(self, button):
         logger.debug('_clear_cb')
         self._searchtext.set_text('')
-        self._searchtext_changed(self._searchtext)
 
     def _findprev_cb(self, button):
         logger.debug('_findprev_cb')
