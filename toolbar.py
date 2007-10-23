@@ -27,6 +27,7 @@ from sugar.graphics.toggletoolbutton import ToggleToolButton
 from sugar.graphics.combobox import ComboBox
 from sugar.graphics.toolcombobox import ToolComboBox
 from sugar.graphics.objectchooser import ObjectChooser
+from sugar.activity.activity import EditToolbar
 
 logger = logging.getLogger('write-activity')
 
@@ -37,6 +38,126 @@ TOOLBAR_TEXT = 2
 TOOLBAR_IMAGE = 3
 TOOLBAR_TABLE = 4
 TOOLBAR_VIEW = 5
+
+class WriteEditToolbar(EditToolbar):
+
+    def __init__(self, toolbox, abiword_canvas, text_toolbar):
+
+        EditToolbar.__init__(self)
+
+        self._toolbox = toolbox
+        self._abiword_canvas = abiword_canvas
+        self._text_toolbar = text_toolbar
+
+        # connect existing buttons
+        self.undo.set_sensitive(False)
+        self.redo.set_sensitive(False)
+        self.undo.connect('clicked', self._undo_cb)
+        self.redo.connect('clicked', self._redo_cb)
+        self.copy.connect('clicked', self._copy_cb)
+        self.paste.connect('clicked', self._paste_cb)
+        self._abiword_canvas.connect("can-undo", self._can_undo_cb)
+        self._abiword_canvas.connect("can-redo", self._can_redo_cb)
+
+        # make expanded non-drawn visible separator to make the search stuff right-align
+        separator = gtk.SeparatorToolItem()
+        separator.props.draw = False
+        separator.set_expand(True)
+        self.insert(separator, -1)
+        separator.show()
+
+        # setup additional buttons for searching
+        self.search = ToolButton('system-search')
+        self.search.set_tooltip(_('Search'))
+        self.insert(self.search, -1)
+        self.search.show()
+        self.search.connect('clicked', self._search_cb);
+
+        self._searchtext = gtk.Entry()
+        self._searchtext.set_size_request(int(gtk.gdk.screen_width() / 6), -1)
+        self._searchtext.connect('changed', self._searchtext_changed)
+        self._add_widget(self._searchtext)
+
+        self.clear = ToolButton('dialog-cancel')
+        self.clear.set_tooltip(_('Clear'))
+        self.insert(self.clear, -1)
+        self.clear.show()
+        self.clear.connect('clicked', self._clear_cb);
+
+        self.findprev = ToolButton('go-previous')
+        self.findprev.set_tooltip(_('Find previous'))
+        self.insert(self.findprev, -1)
+        self.findprev.show()
+        self.findprev.connect('clicked', self._findprev_cb);
+
+        self.findnext = ToolButton('go-next')
+        self.findnext.set_tooltip(_('Find next'))
+        self.insert(self.findnext, -1)
+        self.findnext.show()
+        self.findnext.connect('clicked', self._findnext_cb);
+
+    def _undo_cb(self, button):
+        self._abiword_canvas.undo()
+
+    def _redo_cb(self, button):
+        self._abiword_canvas.redo()
+
+    def _copy_cb(self, button):
+        self._abiword_canvas.copy()
+
+    def _paste_cb(self, button):
+        self._abiword_canvas.paste()
+
+    def _can_undo_cb(self, canvas, can_undo):
+        self.undo.set_sensitive(can_undo)
+
+    def _can_redo_cb(self, canvas, can_redo):
+        self.redo.set_sensitive(can_redo)
+
+    def _searchtext_changed(self, entry):
+        text = self._searchtext.get_text()
+        logger.debug('_searchtext_changed to %s', text)
+        self._abiword_canvas.set_find_string(text)
+
+    def _search_cb(self, button):
+        logger.debug('_search_cb')
+        self._findnext_cb(self.findnext)
+
+    def _clear_cb(self, button):
+        logger.debug('_clear_cb')
+        self._searchtext.set_text('')
+        self._searchtext_changed(self._searchtext)
+
+    def _findprev_cb(self, button):
+        logger.debug('_findprev_cb')
+        if self._searchtext.get_text():
+            id = self._text_toolbar.get_text_selected_handler();
+            self._abiword_canvas.handler_block(id)
+            self._abiword_canvas.find_prev()
+            self._abiword_canvas.handler_unblock(id)
+        else:
+            logger.debug('nothing to search for!')
+
+    def _findnext_cb(self, button):
+        logger.debug('_findnext_cb')
+        if self._searchtext.get_text():
+            id = self._text_toolbar.get_text_selected_handler();
+            self._abiword_canvas.handler_block(id)
+            self._abiword_canvas.find_next()
+            self._abiword_canvas.handler_unblock(id)
+        else:
+            logger.debug('nothing to search for!')
+
+    # bad foddex! this function was copied from sugar's activity.py
+    def _add_widget(self, widget, expand=False):
+        tool_item = gtk.ToolItem()
+        tool_item.set_expand(expand)
+
+        tool_item.add(widget)
+        widget.show()
+
+        self.insert(tool_item, -1)
+        tool_item.show()
 
 class TextToolbar(gtk.Toolbar):
     _ACTION_ALIGNMENT_LEFT = 0
@@ -145,7 +266,10 @@ class TextToolbar(gtk.Toolbar):
         self._abiword_canvas.connect('right-align', self._isRightAlign_cb)
         self._abiword_canvas.connect('justify-align', self._isJustifyAlign_cb)
 
-        self._abiword_canvas.connect('text-selected', self._text_selected_cb)
+        self._text_selected_handler = self._abiword_canvas.connect('text-selected', self._text_selected_cb)
+
+    def get_text_selected_handler(self):
+        return self._text_selected_handler
 
     def _add_widget(self, widget, expand=False):
         tool_item = gtk.ToolItem()

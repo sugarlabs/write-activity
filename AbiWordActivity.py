@@ -32,7 +32,7 @@ from sugar.presence import presenceservice
 
 from abiword import Canvas
 import toolbar
-from toolbar import TextToolbar, ImageToolbar, TableToolbar, FormatToolbar, ViewToolbar
+from toolbar import WriteEditToolbar, TextToolbar, ImageToolbar, TableToolbar, FormatToolbar, ViewToolbar
 from sugar.activity.activity import get_bundle_path
 
 logger = logging.getLogger('write-activity')
@@ -53,27 +53,17 @@ class AbiWordActivity (Activity):
 
         # create our main abiword canvas
         self.abiword_canvas = Canvas()
-        self.abiword_canvas.connect("can-undo", self._can_undo_cb)
-        self.abiword_canvas.connect("can-redo", self._can_redo_cb)
         self.abiword_canvas.connect('text-selected', self._selection_cb)
         self.abiword_canvas.connect('image-selected', self._selection_cb)
         self.abiword_canvas.connect('selection-cleared', self._selection_cleared_cb)
 
-        self._edit_toolbar = EditToolbar()
+        # create our toolbars
+        text_toolbar = TextToolbar(toolbox, self.abiword_canvas)
 
-        self._edit_toolbar.undo.set_sensitive(False)
-        self._edit_toolbar.undo.connect('clicked', self._undo_cb)
-
-        self._edit_toolbar.redo.set_sensitive(False)
-        self._edit_toolbar.redo.connect('clicked', self._redo_cb)
-
-        self._edit_toolbar.copy.connect('clicked', self._copy_cb)
-        self._edit_toolbar.paste.connect('clicked', self._paste_cb)
-
+        self._edit_toolbar = WriteEditToolbar(toolbox, self.abiword_canvas, text_toolbar)
         toolbox.add_toolbar(_('Edit'), self._edit_toolbar)
         self._edit_toolbar.show()
 
-        text_toolbar = TextToolbar(toolbox, self.abiword_canvas)
         toolbox.add_toolbar(_('Text'), text_toolbar)
         text_toolbar.show()
 
@@ -334,24 +324,6 @@ class AbiWordActivity (Activity):
 #            logger.debug('content written')
         finally:
             f.close()
-
-    def _can_undo_cb(self, canvas, can_undo):
-        self._edit_toolbar.undo.set_sensitive(can_undo)
-
-    def _can_redo_cb(self, canvas, can_redo):
-        self._edit_toolbar.redo.set_sensitive(can_redo)
-
-    def _undo_cb(self, button):
-        self.abiword_canvas.undo()
-
-    def _redo_cb(self, button):
-        self.abiword_canvas.redo()
-
-    def _copy_cb(self, button):
-        self.abiword_canvas.copy()
-
-    def _paste_cb(self, button):
-        self.abiword_canvas.paste()
 
     def _selection_cb(self, abi, b):
         self._edit_toolbar.copy.set_sensitive(True)
