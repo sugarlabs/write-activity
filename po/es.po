@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Actividad Escribir\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-21 17:33+0200\n"
+"POT-Creation-Date: 2007-10-30 14:05+0100\n"
 "PO-Revision-Date: 2007-09-18 09:58-0300\n"
 "Last-Translator: Domingo Becker <domingobecker@gmail.com>\n"
 "Language-Team: Fedora Spanish <fedora-trans-es@redhat.com>\n"
@@ -16,40 +16,158 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Spanish\n"
 
-#: AbiWordActivity.py:72
+#: activity/activity.info:2
+msgid "Write"
+msgstr ""
+
+#: AbiWordActivity.py:64
 msgid "Edit"
 msgstr "Editar"
 
-#: AbiWordActivity.py:76
+#: AbiWordActivity.py:67
 msgid "Text"
 msgstr "Texto"
 
-#: AbiWordActivity.py:80
+#: AbiWordActivity.py:71
 msgid "Image"
 msgstr "Imagen"
 
-#: AbiWordActivity.py:84
-#: toolbar.py:238
+#: AbiWordActivity.py:75 toolbar.py:461
 msgid "Table"
 msgstr "Tabla"
 
-#: AbiWordActivity.py:88
+#: AbiWordActivity.py:79
+msgid "Format"
+msgstr ""
+
+#: AbiWordActivity.py:83
 msgid "View"
 msgstr "Ver"
 
-#: toolbar.py:155
-msgid "Select text color"
-msgstr "Seleccionar color de texto"
+#: toolbar.py:71
+msgid "Search"
+msgstr ""
 
-#: toolbar.py:238
+#: toolbar.py:82
+msgid "Clear"
+msgstr ""
+
+#: toolbar.py:88
+msgid "Find previous"
+msgstr ""
+
+#: toolbar.py:94
+msgid "Find next"
+msgstr ""
+
+#: toolbar.py:190
+msgid "Bold"
+msgstr ""
+
+#: toolbar.py:197
+msgid "Italic"
+msgstr ""
+
+#: toolbar.py:204
+msgid "Underline"
+msgstr ""
+
+#: toolbar.py:427
+msgid "Insert Image"
+msgstr ""
+
+#: toolbar.py:435
+msgid "Choose image"
+msgstr ""
+
+#: toolbar.py:461
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: toolbar.py:323
+#: toolbar.py:470
+msgid "Insert Row"
+msgstr ""
+
+#: toolbar.py:476
+msgid "Delete Row"
+msgstr ""
+
+#: toolbar.py:482
+msgid "Insert Column"
+msgstr ""
+
+#: toolbar.py:488
+msgid "Delete Column"
+msgstr ""
+
+#: toolbar.py:526
+msgid "Style: "
+msgstr ""
+
+#: toolbar.py:536
+msgid "Heading 1"
+msgstr ""
+
+#: toolbar.py:537
+msgid "Heading 2"
+msgstr ""
+
+#: toolbar.py:538
+msgid "Heading 3"
+msgstr ""
+
+#: toolbar.py:539
+msgid "Heading 4"
+msgstr ""
+
+#: toolbar.py:540
+msgid "Bullet List"
+msgstr ""
+
+#: toolbar.py:541
+msgid "Dashed List"
+msgstr ""
+
+#: toolbar.py:542
+msgid "Numbered List"
+msgstr ""
+
+#: toolbar.py:543
+msgid "Lower Case List"
+msgstr ""
+
+#: toolbar.py:544
+msgid "Upper Case List"
+msgstr ""
+
+#: toolbar.py:545
+msgid "Block Text"
+msgstr ""
+
+#: toolbar.py:546
+msgid "Normal"
+msgstr ""
+
+#: toolbar.py:547
+msgid "Plain Text"
+msgstr ""
+
+#: toolbar.py:602
+msgid "Zoom In"
+msgstr ""
+
+#: toolbar.py:608
+msgid "Zoom Out"
+msgstr ""
+
+#: toolbar.py:624
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:335
-msgid "Page:"
+#: toolbar.py:636
+#, fuzzy
+msgid "Page: "
 msgstr "Página:"
 
+#~ msgid "Select text color"
+#~ msgstr "Seleccionar color de texto"

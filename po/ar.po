@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: write.master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-17 23:35+0200\n"
+"POT-Creation-Date: 2007-10-30 14:05+0100\n"
 "PO-Revision-Date: 2007-06-28 21:49+0300\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -22,135 +22,151 @@ msgstr ""
 msgid "Write"
 msgstr ""
 
-#: AbiWordActivity.py:73
+#: AbiWordActivity.py:64
 msgid "Edit"
 msgstr "حرِّر"
 
-#: AbiWordActivity.py:77
+#: AbiWordActivity.py:67
 msgid "Text"
 msgstr "نص"
 
-#: AbiWordActivity.py:81
+#: AbiWordActivity.py:71
 msgid "Image"
 msgstr "صورة"
 
-#: AbiWordActivity.py:85 toolbar.py:324
+#: AbiWordActivity.py:75 toolbar.py:461
 msgid "Table"
 msgstr "جدول"
 
-#: AbiWordActivity.py:89
+#: AbiWordActivity.py:79
 msgid "Format"
 msgstr ""
 
-#: AbiWordActivity.py:93
+#: AbiWordActivity.py:83
 msgid "View"
 msgstr "اعرض"
 
-#: toolbar.py:56
+#: toolbar.py:71
+msgid "Search"
+msgstr ""
+
+#: toolbar.py:82
+msgid "Clear"
+msgstr ""
+
+#: toolbar.py:88
+msgid "Find previous"
+msgstr ""
+
+#: toolbar.py:94
+msgid "Find next"
+msgstr ""
+
+#: toolbar.py:190
 msgid "Bold"
 msgstr ""
 
-#: toolbar.py:63
+#: toolbar.py:197
 msgid "Italic"
 msgstr ""
 
-#: toolbar.py:70
+#: toolbar.py:204
 msgid "Underline"
 msgstr ""
 
-#: toolbar.py:290
+#: toolbar.py:427
 msgid "Insert Image"
 msgstr ""
 
-#: toolbar.py:298
+#: toolbar.py:435
 msgid "Choose image"
 msgstr ""
 
-#: toolbar.py:324
+#: toolbar.py:461
 msgid "Cancel"
 msgstr "الغِ"
 
-#: toolbar.py:333
+#: toolbar.py:470
 msgid "Insert Row"
 msgstr ""
 
-#: toolbar.py:339
+#: toolbar.py:476
 msgid "Delete Row"
 msgstr ""
 
-#: toolbar.py:345
+#: toolbar.py:482
 msgid "Insert Column"
 msgstr ""
 
-#: toolbar.py:351
+#: toolbar.py:488
 msgid "Delete Column"
 msgstr ""
 
-#: toolbar.py:389
+#: toolbar.py:526
 msgid "Style: "
 msgstr ""
 
-#: toolbar.py:399
+#: toolbar.py:536
 msgid "Heading 1"
 msgstr ""
 
-#: toolbar.py:400
+#: toolbar.py:537
 msgid "Heading 2"
 msgstr ""
 
-#: toolbar.py:401
+#: toolbar.py:538
 msgid "Heading 3"
 msgstr ""
 
-#: toolbar.py:402
+#: toolbar.py:539
 msgid "Heading 4"
 msgstr ""
 
-#: toolbar.py:403
+#: toolbar.py:540
 msgid "Bullet List"
 msgstr ""
 
-#: toolbar.py:404
+#: toolbar.py:541
 msgid "Dashed List"
 msgstr ""
 
-#: toolbar.py:405
+#: toolbar.py:542
 msgid "Numbered List"
 msgstr ""
 
-#: toolbar.py:406
+#: toolbar.py:543
 msgid "Lower Case List"
 msgstr ""
 
-#: toolbar.py:407
+#: toolbar.py:544
 msgid "Upper Case List"
 msgstr ""
 
-#: toolbar.py:408
+#: toolbar.py:545
 msgid "Block Text"
 msgstr ""
 
-#: toolbar.py:409
+#: toolbar.py:546
 msgid "Normal"
 msgstr ""
 
-#: toolbar.py:410
+#: toolbar.py:547
 msgid "Plain Text"
 msgstr ""
 
-#: toolbar.py:465
+#: toolbar.py:602
 msgid "Zoom In"
 msgstr ""
 
-#: toolbar.py:471
+#: toolbar.py:608
 msgid "Zoom Out"
 msgstr ""
 
-#: toolbar.py:487
+#: toolbar.py:624
 msgid "%"
 msgstr "٪"
 
-#: toolbar.py:499
+#: toolbar.py:636
 #, fuzzy
 msgid "Page: "
 msgstr "صفحة:"
