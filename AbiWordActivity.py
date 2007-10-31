@@ -32,7 +32,7 @@ from sugar.presence import presenceservice
 
 from abiword import Canvas
 import toolbar
-from toolbar import WriteEditToolbar, TextToolbar, ImageToolbar, TableToolbar, FormatToolbar, ViewToolbar
+from toolbar import WriteActivityToolbarExtension, WriteEditToolbar, TextToolbar, ImageToolbar, TableToolbar, FormatToolbar, ViewToolbar
 from sugar.activity.activity import get_bundle_path
 
 logger = logging.getLogger('write-activity')
@@ -45,10 +45,6 @@ class AbiWordActivity (Activity):
         # abiword uses the current directory for all its file dialogs 
         os.chdir(os.path.expanduser('~'))
 
-        toolbox = ActivityToolbox(self)
-        self.set_toolbox(toolbox)
-        toolbox.show()
-
         self._file_opened = False
 
         # create our main abiword canvas
@@ -58,6 +54,12 @@ class AbiWordActivity (Activity):
         self.abiword_canvas.connect('selection-cleared', self._selection_cleared_cb)
 
         # create our toolbars
+        toolbox = ActivityToolbox(self)
+        self.set_toolbox(toolbox)
+        toolbox.show()
+
+        activity_toolbar_ext = WriteActivityToolbarExtension(self, toolbox, self.abiword_canvas)
+
         text_toolbar = TextToolbar(toolbox, self.abiword_canvas)
 
         self._edit_toolbar = WriteEditToolbar(toolbox, self.abiword_canvas, text_toolbar)
@@ -314,14 +316,11 @@ class AbiWordActivity (Activity):
         logging.debug('AbiWordActivity.write_file')
 
         self.metadata['mime_type'] = 'application/vnd.oasis.opendocument.text'
-        self.metadata['fulltext'] = self.abiword_canvas.get_content(".txt")[:3000]
+        self.metadata['fulltext'] = self.abiword_canvas.get_content(extension_or_mimetype=".txt")[:3000]
         f = open(file_path, 'w')
         try:
-            logger.debug('Writing content as .odt')
-            content = self.abiword_canvas.get_content(".odt")
-            logger.debug('Content length: %d', len(content))
+            content = self.abiword_canvas.get_content(extension_or_mimetype=".odt")
             f.write(content)
-#            logger.debug('content written')
         finally:
             f.close()
 

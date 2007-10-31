@@ -1,3 +1,6 @@
+* First implementation of 4165: Write must expose UI to 
+  allow specifying output format (uwog)
+
 49
 
 * Enable/disable the search functions based on the input (uwog)
