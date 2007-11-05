@@ -1,3 +1,4 @@
+* Fix 4022: Write should not change the format of an opened journal entry (uwog)
 * Remove tons of hacks to go with the new AbiWidget version (uwog)
 
 50

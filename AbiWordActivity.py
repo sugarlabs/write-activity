@@ -296,8 +296,9 @@ class AbiWordActivity (Activity):
         #self.abiword_canvas.invoke_cmd('com.abisource.abiword.abicollab.olpc.buddyLeft', self.participants[buddy.object_path()], 0, 0)
 
     def read_file(self, file_path):
-        logging.debug('AbiWordActivity.read_file: %s', file_path)
-        if self.metadata.has_key('source') and self.metadata['source'] == '1':
+        logging.debug('AbiWordActivity.read_file: %s, mimetype: %s', file_path, self.metadata['mime_type'])
+        if 'source' in self.metadata and self.metadata['source'] == '1':
+            logger.debug('Opening file in view source mode')
             self.abiword_canvas.load_file('file://' + file_path, 'text/plain') 
         else:
             self.abiword_canvas.load_file('file://' + file_path, '') # we pass no mime/file type, let libabiword autodetect it, so we can handle multiple file formats
@@ -305,14 +306,19 @@ class AbiWordActivity (Activity):
     def write_file(self, file_path):
         logging.debug('AbiWordActivity.write_file')
 
-        self.metadata['mime_type'] = 'application/vnd.oasis.opendocument.text'
+        # check if we have a default mimetype; if not, fall back to OpenDocument
+        if 'mime_type' not in self.metadata or self.metadata['mime_type'] == '':
+            self.metadata['mime_type'] = 'application/vnd.oasis.opendocument.text'
+
+        # if we where viewing the source of a file, 
+        # then always save as plain text
+        actual_mimetype = self.metadata['mime_type'];
+        if 'source' in self.metadata and self.metadata['source'] == '1':
+            logger.debug('Writing file as type source (text/plain)')
+            actual_mimetype = 'text/plain'
+
         self.metadata['fulltext'] = self.abiword_canvas.get_content(extension_or_mimetype=".txt")[:3000]
-        f = open(file_path, 'w')
-        try:
-            content = self.abiword_canvas.get_content(extension_or_mimetype=".odt")
-            f.write(content)
-        finally:
-            f.close()
+        self.abiword_canvas.save('file://' + file_path, actual_mimetype, '');
 
     def _selection_cb(self, abi, b):
         self._edit_toolbar.copy.set_sensitive(True)
