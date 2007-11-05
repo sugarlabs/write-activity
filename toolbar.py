@@ -646,17 +646,17 @@ class ViewToolbar(gtk.Toolbar):
         self._abiword_canvas = abiword_canvas
         self._zoom_percentage = 0;
 
-        self._zoom_in = ToolButton('zoom-in')
-        self._zoom_in.set_tooltip(_('Zoom In'))
-        self._zoom_in_id = self._zoom_in.connect('clicked', self._zoom_in_cb)
-        self.insert(self._zoom_in, -1)
-        self._zoom_in.show()
-
         self._zoom_out = ToolButton('zoom-out')
         self._zoom_out.set_tooltip(_('Zoom Out'))
         self._zoom_out_id = self._zoom_out.connect('clicked', self._zoom_out_cb)
         self.insert(self._zoom_out, -1)
         self._zoom_out.show()
+
+        self._zoom_in = ToolButton('zoom-in')
+        self._zoom_in.set_tooltip(_('Zoom In'))
+        self._zoom_in_id = self._zoom_in.connect('clicked', self._zoom_in_cb)
+        self.insert(self._zoom_in, -1)
+        self._zoom_in.show()
 
         # TODO: fix the initial value
         self._zoom_spin_adj = gtk.Adjustment(0, 25, 400, 25, 50, 0)
@@ -720,17 +720,17 @@ class ViewToolbar(gtk.Toolbar):
         finally:
             self._zoom_spin.handler_unblock(self._zoom_spin_id)
 
-    def _zoom_in_cb(self, button):
-        if self._zoom_percentage == 0:
-            self._zoom_percentage = self._abiword_canvas.get_zoom_percentage()
-        if self._zoom_percentage <= 375:
-            self.set_zoom_percentage(self._zoom_percentage + 25)
-
     def _zoom_out_cb(self, button):
         if self._zoom_percentage == 0:
             self._zoom_percentage = self._abiword_canvas.get_zoom_percentage()
         if self._zoom_percentage >= 50:
             self.set_zoom_percentage(self._zoom_percentage - 25)
+
+    def _zoom_in_cb(self, button):
+        if self._zoom_percentage == 0:
+            self._zoom_percentage = self._abiword_canvas.get_zoom_percentage()
+        if self._zoom_percentage <= 375:
+            self.set_zoom_percentage(self._zoom_percentage + 25)
 
     def _zoom_spin_cb(self, button):
         self._zoom_percentage = self._zoom_spin.get_value_as_int()
