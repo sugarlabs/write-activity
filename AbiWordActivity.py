@@ -310,7 +310,7 @@ class AbiWordActivity (Activity):
         if 'mime_type' not in self.metadata or self.metadata['mime_type'] == '':
             self.metadata['mime_type'] = 'application/vnd.oasis.opendocument.text'
 
-        # if we where viewing the source of a file, 
+        # if we were viewing the source of a file, 
         # then always save as plain text
         actual_mimetype = self.metadata['mime_type'];
         if 'source' in self.metadata and self.metadata['source'] == '1':
