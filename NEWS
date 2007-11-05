@@ -1,3 +1,5 @@
+* Remove tons of hacks to go with the new AbiWidget version (uwog)
+
 50
 
 * First implementation of 4165: Write must expose UI to 

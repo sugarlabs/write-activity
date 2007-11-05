@@ -45,8 +45,6 @@ class AbiWordActivity (Activity):
         # abiword uses the current directory for all its file dialogs 
         os.chdir(os.path.expanduser('~'))
 
-        self._file_opened = False
-
         # create our main abiword canvas
         self.abiword_canvas = Canvas()
         self.abiword_canvas.connect('text-selected', self._selection_cb)
@@ -89,33 +87,26 @@ class AbiWordActivity (Activity):
         toolbox.set_current_toolbar(toolbar.TOOLBAR_TEXT)
 
         self.set_canvas(self.abiword_canvas)
+        self.abiword_canvas.connect_after('map-event', self._map_event_cb)
         self.abiword_canvas.show()
 
-        self.abiword_canvas.connect_after('map', self._map_cb)
-
-    def _map_cb(self, activity):
-        logger.debug('_map_cb')
+    def _map_event_cb(self, event, activity):
+        logger.debug('_map_event_cb')
     
-        # always make sure at least 1 document is loaded (bad bad widget design)
-        if not self._file_opened:
-            logger.debug("Loading empty doc")
-            self.abiword_canvas.load_file('', '');  
-
         # set custom keybindings for Write
         logger.debug("Loading keybindings")
         keybindings_file = os.path.join( get_bundle_path(), "keybindings.xml" )
         self.abiword_canvas.invoke_cmd('com.abisource.abiword.loadbindings.fromURI', keybindings_file, 0, 0)
 
-        # set the initial zoom to page width; note: always do this AFTER a document
-        # has been opened
-        self.abiword_canvas.zoom_width()
-
         # no ugly borders please
         self.abiword_canvas.set_property("shadow-type", gtk.SHADOW_NONE)
-        # WORKAROUND: toggle the margin, as the widget doesn't calculate it properly on load
-        self.abiword_canvas.set_show_margin(False)
+
+        # we only do per-word selections (when using the mouse)
+        self.abiword_canvas.set_word_selections(True)
+
+        # we want a nice border so we can select paragraphs easily
         self.abiword_canvas.set_show_margin(True)
-    
+
         # activity sharing
         self.participants = {}
         pservice = presenceservice.get_instance()
@@ -310,7 +301,6 @@ class AbiWordActivity (Activity):
             self.abiword_canvas.load_file('file://' + file_path, 'text/plain') 
         else:
             self.abiword_canvas.load_file('file://' + file_path, '') # we pass no mime/file type, let libabiword autodetect it, so we can handle multiple file formats
-        self._file_opened = True
 
     def write_file(self, file_path):
         logging.debug('AbiWordActivity.write_file')
