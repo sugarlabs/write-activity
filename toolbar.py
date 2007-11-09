@@ -29,6 +29,7 @@ from sugar.graphics.toggletoolbutton import ToggleToolButton
 from sugar.graphics.combobox import ComboBox
 from sugar.graphics.toolcombobox import ToolComboBox
 from sugar.graphics.objectchooser import ObjectChooser
+from sugar.graphics import iconentry
 from sugar.activity.activity import ActivityToolbar
 from sugar.activity.activity import EditToolbar
 from sugar.graphics.menuitem import MenuItem
@@ -114,23 +115,14 @@ class WriteEditToolbar(EditToolbar):
         self.insert(separator, -1)
         separator.show()
 
-        # setup additional buttons for searching
-        self._search = ToolButton('system-search')
-        self._search.set_tooltip(_('Search'))
-        self.insert(self._search, -1)
-        self._search.show()
-        self._search.connect('clicked', self._search_cb);
-
-        self._searchtext = gtk.Entry()
-        self._searchtext.set_size_request(int(gtk.gdk.screen_width() / 6), -1)
-        self._searchtext.connect('changed', self._searchtext_changed_cb)
-        self._add_widget(self._searchtext)
-
-        self._clear = ToolButton('dialog-cancel')
-        self._clear.set_tooltip(_('Clear'))
-        self.insert(self._clear, -1)
-        self._clear.show()
-        self._clear.connect('clicked', self._clear_cb);
+        # setup the search options
+        self._search_entry = iconentry.IconEntry()
+        self._search_entry.set_icon_from_name(iconentry.ICON_ENTRY_PRIMARY,
+                                              'system-search')
+        self._search_entry.connect('activate', self._search_entry_activated_cb)
+        self._search_entry.connect('changed', self._search_entry_changed_cb)
+        self._search_entry.add_clear_button();
+        self._add_widget(self._search_entry, expand=True)
 
         self._findprev = ToolButton('go-previous')
         self._findprev.set_tooltip(_('Find previous'))
@@ -145,12 +137,10 @@ class WriteEditToolbar(EditToolbar):
         self._findnext.connect('clicked', self._findnext_cb);
 
         # set the initial state of the search controls
-        # note: we won't simple call self._searchtext_changed_cb
+        # note: we won't simple call self._search_entry_changed_cb
         # here, as that will call into the abiword_canvas, which
         # is not mapped on screen here, causing the set_find_string
         # call to fail
-        self._search.set_sensitive(False)
-        self._clear.set_sensitive(False)
         self._findprev.set_sensitive(False)
         self._findnext.set_sensitive(False)
 
@@ -172,26 +162,42 @@ class WriteEditToolbar(EditToolbar):
     def _can_redo_cb(self, canvas, can_redo):
         self.redo.set_sensitive(can_redo)
 
-    def _searchtext_changed_cb(self, entry):
-        text = self._searchtext.get_text()
-        logger.debug('_searchtext_changed_cb to \'%s\'', text)
-        self._search.set_sensitive(text != "")
-        self._clear.set_sensitive(text != "")
-        self._findprev.set_sensitive(text != "")
-        self._findnext.set_sensitive(text != "")
-        self._abiword_canvas.set_find_string(text)
+    def _search_entry_activated_cb(self, entry):
+        logger.debug('_search_entry_activated_cb')
+        if not self._search_entry.props.text:
+            return
 
-    def _search_cb(self, button):
-        logger.debug('_search_cb')
-        self._findnext_cb(self._findnext)
+        # find the next entry
+        id = self._text_toolbar.get_text_selected_handler();
+        self._abiword_canvas.handler_block(id)
+        self._abiword_canvas.find_next()
+        self._abiword_canvas.handler_unblock(id)
 
-    def _clear_cb(self, button):
-        logger.debug('_clear_cb')
-        self._searchtext.set_text('')
+    def _search_entry_changed_cb(self, entry):
+        logger.debug('_search_entry_changed_cb search for \'%s\'', self._search_entry.props.text)
+   
+        if not self._search_entry.props.text:
+            self._search_entry.activate()
+            # set the button contexts
+            self._findprev.set_sensitive(False)
+            self._findnext.set_sensitive(False)
+            return
+
+        self._abiword_canvas.set_find_string(self._search_entry.props.text)
+
+        # set the button contexts
+        self._findprev.set_sensitive(True)
+        self._findnext.set_sensitive(True)
+
+        # immediately start seaching
+        id = self._text_toolbar.get_text_selected_handler();
+        self._abiword_canvas.handler_block(id)
+        self._abiword_canvas.find_next()
+        self._abiword_canvas.handler_unblock(id)
 
     def _findprev_cb(self, button):
         logger.debug('_findprev_cb')
-        if self._searchtext.get_text():
+        if self._search_entry.props.text:
             id = self._text_toolbar.get_text_selected_handler();
             self._abiword_canvas.handler_block(id)
             self._abiword_canvas.find_prev()
@@ -201,7 +207,7 @@ class WriteEditToolbar(EditToolbar):
 
     def _findnext_cb(self, button):
         logger.debug('_findnext_cb')
-        if self._searchtext.get_text():
+        if self._search_entry.props.text:
             id = self._text_toolbar.get_text_selected_handler();
             self._abiword_canvas.handler_block(id)
             self._abiword_canvas.find_next()
