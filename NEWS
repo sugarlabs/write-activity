@@ -1,3 +1,5 @@
+* Use 'instance' instead of 'data' as a path prefix; part of 4850 (uwog)
+
 52
 
 * Fix 4731: Find control should have embedded search/cancel icons (uwog)

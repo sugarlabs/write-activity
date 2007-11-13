@@ -80,7 +80,7 @@ class WriteActivityToolbarExtension:
         fileObject.metadata['fulltext'] = self._abiword_canvas.get_content(extension_or_mimetype=".txt")[:3000]
 
         # write out the document contents in the requested format
-        fileObject.file_path = os.path.join(self._activity.get_activity_root(), 'data', '%i' % time.time())
+        fileObject.file_path = os.path.join(self._activity.get_activity_root(), 'instance', '%i' % time.time())
         self._abiword_canvas.save('file://' + fileObject.file_path, mimetype, exp_props)
        
         # store the journal item
