@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: write\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-31 19:54+0100\n"
+"POT-Creation-Date: 2007-11-17 20:56+0100\n"
 "PO-Revision-Date: 2007-07-30 10:33+0100\n"
 "Last-Translator: Fabian Affolter <fab@fedoraproject.org>\n"
 "Language-Team: German <fedora-trans-de@redhat.com>\n"
@@ -19,175 +19,167 @@ msgstr ""
 msgid "Write"
 msgstr ""
 
-#: AbiWordActivity.py:66
+#: AbiWordActivity.py:64
 msgid "Edit"
 msgstr "Ändern"
 
-#: AbiWordActivity.py:69
+#: AbiWordActivity.py:67
 msgid "Text"
 msgstr "Text"
 
-#: AbiWordActivity.py:73
+#: AbiWordActivity.py:71
 msgid "Image"
 msgstr "Bild"
 
-#: AbiWordActivity.py:77 toolbar.py:509
+#: AbiWordActivity.py:75 toolbar.py:515
 msgid "Table"
 msgstr "Tabelle"
 
-#: AbiWordActivity.py:81
+#: AbiWordActivity.py:79
 msgid "Format"
 msgstr ""
 
-#: AbiWordActivity.py:85
+#: AbiWordActivity.py:83
 msgid "View"
 msgstr "Ansicht"
 
-#: toolbar.py:50
+#: toolbar.py:51
 msgid "Rich Text (RTF)"
 msgstr ""
 
-#: toolbar.py:50
+#: toolbar.py:51
 msgid "RTF"
 msgstr ""
 
-#: toolbar.py:51
+#: toolbar.py:52
 msgid "Hypertext (HTML)"
 msgstr ""
 
-#: toolbar.py:51
+#: toolbar.py:52
 msgid "HTML"
 msgstr ""
 
-#: toolbar.py:52
+#: toolbar.py:53
 msgid "Plain Text (TXT)"
 msgstr ""
 
-#: toolbar.py:52
+#: toolbar.py:53
 msgid "TXT"
 msgstr ""
 
-#: toolbar.py:119
-msgid "Search"
-msgstr ""
-
-#: toolbar.py:130
-msgid "Clear"
-msgstr ""
-
-#: toolbar.py:136
+#: toolbar.py:128
 msgid "Find previous"
 msgstr ""
 
-#: toolbar.py:142
+#: toolbar.py:134
 msgid "Find next"
 msgstr ""
 
-#: toolbar.py:238
+#: toolbar.py:244
 msgid "Bold"
 msgstr ""
 
-#: toolbar.py:245
+#: toolbar.py:251
 msgid "Italic"
 msgstr ""
 
-#: toolbar.py:252
+#: toolbar.py:258
 msgid "Underline"
 msgstr ""
 
-#: toolbar.py:475
+#: toolbar.py:481
 msgid "Insert Image"
 msgstr ""
 
-#: toolbar.py:483
+#: toolbar.py:489
 msgid "Choose image"
 msgstr ""
 
-#: toolbar.py:509
+#: toolbar.py:515
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: toolbar.py:518
+#: toolbar.py:524
 msgid "Insert Row"
 msgstr ""
 
-#: toolbar.py:524
+#: toolbar.py:530
 msgid "Delete Row"
 msgstr ""
 
-#: toolbar.py:530
+#: toolbar.py:536
 msgid "Insert Column"
 msgstr ""
 
-#: toolbar.py:536
+#: toolbar.py:542
 msgid "Delete Column"
 msgstr ""
 
-#: toolbar.py:574
+#: toolbar.py:580
 msgid "Style: "
 msgstr ""
 
-#: toolbar.py:584
+#: toolbar.py:590
 msgid "Heading 1"
 msgstr ""
 
-#: toolbar.py:585
+#: toolbar.py:591
 msgid "Heading 2"
 msgstr ""
 
-#: toolbar.py:586
+#: toolbar.py:592
 msgid "Heading 3"
 msgstr ""
 
-#: toolbar.py:587
+#: toolbar.py:593
 msgid "Heading 4"
 msgstr ""
 
-#: toolbar.py:588
+#: toolbar.py:594
 msgid "Bullet List"
 msgstr ""
 
-#: toolbar.py:589
+#: toolbar.py:595
 msgid "Dashed List"
 msgstr ""
 
-#: toolbar.py:590
+#: toolbar.py:596
 msgid "Numbered List"
 msgstr ""
 
-#: toolbar.py:591
+#: toolbar.py:597
 msgid "Lower Case List"
 msgstr ""
 
-#: toolbar.py:592
+#: toolbar.py:598
 msgid "Upper Case List"
 msgstr ""
 
-#: toolbar.py:593
+#: toolbar.py:599
 msgid "Block Text"
 msgstr ""
 
-#: toolbar.py:594
+#: toolbar.py:600
 msgid "Normal"
 msgstr ""
 
-#: toolbar.py:595
+#: toolbar.py:601
 msgid "Plain Text"
-msgstr ""
-
-#: toolbar.py:650
-msgid "Zoom In"
 msgstr ""
 
 #: toolbar.py:656
 msgid "Zoom Out"
 msgstr ""
 
-#: toolbar.py:672
+#: toolbar.py:662
+msgid "Zoom In"
+msgstr ""
+
+#: toolbar.py:678
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:684
+#: toolbar.py:690
 #, fuzzy
 msgid "Page: "
 msgstr "Seite:"
