@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-06-21 17:33+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: AbiWordActivity.py:72
+msgid "Edit"
+msgstr "[ҢӞҎѵ Ќв३]Ҿԃﻨт"
+
+#: AbiWordActivity.py:76
+msgid "Text"
+msgstr "[ђ Щ жՉ ә ]Тэѫէ"
+
+#: AbiWordActivity.py:80
+msgid "Image"
+msgstr "[ک ѓՄՑ ҭкҏ]Їмձցе"
+
+#: AbiWordActivity.py:84 toolbar.py:238
+msgid "Table"
+msgstr "[ќՑ४аչ Կәأв ]ҬەҍӀչ"
+
+#: AbiWordActivity.py:88
+msgid "View"
+msgstr "[Թ мСՀե Ҳ ]Ѵآڿш"
+
+#: toolbar.py:155
+msgid "Select text color"
+msgstr "[ցї Ж эвбԃ Ёप ڈ Դ ЩЅ ﻛяﻻՀ ワщ چО ҺиլЄﺳ ]کڿӀәҁҭ էչҳҭ ҁօاюѓ"
+
+#: toolbar.py:238
+msgid "Cancel"
+msgstr "[Ш ЭӴռ३ ЅМѓЎ ւю ]Ըаղҁэا"
+
+#: toolbar.py:323
+msgid "%"
+msgstr "[ﻻЍ ]%"
+
+#: toolbar.py:335
+msgid "Page:"
+msgstr "[Ющթ ՀјՀ Ը ]Рەԍе:"
+

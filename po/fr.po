@@ -1,23 +1,24 @@
 # French files for Write activity.
 # Copyright (C) 2007 The Package's copyright holder
 # This file is distributed under the same license as the Write package.
-#
 # Samuel Bizien <samuel@bizien.info>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: projects/write\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2007-07-31 09:34+0200\n"
-"Last-Translator: Samuel Bizien <samuel@bizien.info>\n"
+"PO-Revision-Date: 2007-11-19 19:27+0000\n"
+"Last-Translator: samy boutayeb <s.boutayeb@free.fr>\n"
 "Language-Team: French <traduc@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Pootle 1.0.2\n"
 
 #: activity/activity.info:2
 msgid "Write"
-msgstr ""
+msgstr "Écrire"
 
 #: AbiWordActivity.py:64
 msgid "Edit"
@@ -37,7 +38,7 @@ msgstr "Tableau"
 
 #: AbiWordActivity.py:79
 msgid "Format"
-msgstr ""
+msgstr "Format"
 
 #: AbiWordActivity.py:83
 msgid "View"
@@ -45,55 +46,55 @@ msgstr "Vue"
 
 #: toolbar.py:51
 msgid "Rich Text (RTF)"
-msgstr ""
+msgstr "Texte enrichi (RTF)"
 
 #: toolbar.py:51
 msgid "RTF"
-msgstr ""
+msgstr "RTF"
 
 #: toolbar.py:52
 msgid "Hypertext (HTML)"
-msgstr ""
+msgstr "Hypertexte (HTML)"
 
 #: toolbar.py:52
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #: toolbar.py:53
 msgid "Plain Text (TXT)"
-msgstr ""
+msgstr "Texte simple (TXT)"
 
 #: toolbar.py:53
 msgid "TXT"
-msgstr ""
+msgstr "TXT"
 
 #: toolbar.py:128
 msgid "Find previous"
-msgstr ""
+msgstr "Rechercher précédent"
 
 #: toolbar.py:134
 msgid "Find next"
-msgstr ""
+msgstr "Rechercher suivant"
 
 #: toolbar.py:244
 msgid "Bold"
-msgstr ""
+msgstr "Gras"
 
 #: toolbar.py:251
 msgid "Italic"
-msgstr ""
+msgstr "Italique"
 
 #: toolbar.py:258
 msgid "Underline"
-msgstr ""
+msgstr "Souligné"
 
 #: toolbar.py:481
 msgid "Insert Image"
-msgstr ""
+msgstr "Insérer une image"
 
 #: toolbar.py:489
 msgid "Choose image"
-msgstr ""
+msgstr "Choisir une image"
 
 #: toolbar.py:515
 msgid "Cancel"
@@ -101,87 +102,85 @@ msgstr "Annuler"
 
 #: toolbar.py:524
 msgid "Insert Row"
-msgstr ""
+msgstr "Insérer une ligne"
 
 #: toolbar.py:530
 msgid "Delete Row"
-msgstr ""
+msgstr "Supprimer une ligne"
 
 #: toolbar.py:536
 msgid "Insert Column"
-msgstr ""
+msgstr "Insérer une colonne"
 
 #: toolbar.py:542
 msgid "Delete Column"
-msgstr ""
+msgstr "Supprimer une colonne"
 
 #: toolbar.py:580
 msgid "Style: "
-msgstr ""
+msgstr "Style : "
 
 #: toolbar.py:590
 msgid "Heading 1"
-msgstr ""
+msgstr "Titre 1"
 
 #: toolbar.py:591
 msgid "Heading 2"
-msgstr ""
+msgstr "Titre 2"
 
 #: toolbar.py:592
 msgid "Heading 3"
-msgstr ""
+msgstr "Titre 3"
 
 #: toolbar.py:593
 msgid "Heading 4"
-msgstr ""
+msgstr "Titre 4"
 
 #: toolbar.py:594
 msgid "Bullet List"
-msgstr ""
+msgstr "Liste à puces"
 
 #: toolbar.py:595
 msgid "Dashed List"
-msgstr ""
+msgstr "Liste en tirets"
 
 #: toolbar.py:596
 msgid "Numbered List"
-msgstr ""
+msgstr "Liste numérotée"
 
 #: toolbar.py:597
 msgid "Lower Case List"
-msgstr ""
+msgstr "Liste en minuscules"
 
 #: toolbar.py:598
 msgid "Upper Case List"
-msgstr ""
+msgstr "Liste en majuscules"
 
 #: toolbar.py:599
 msgid "Block Text"
-msgstr ""
+msgstr "Texte justifié"
 
 #: toolbar.py:600
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: toolbar.py:601
 msgid "Plain Text"
-msgstr ""
+msgstr "Texte simple"
 
 #: toolbar.py:656
 msgid "Zoom Out"
-msgstr ""
+msgstr "Zoom arrière"
 
 #: toolbar.py:662
 msgid "Zoom In"
-msgstr ""
+msgstr "Zoom avant"
 
 #: toolbar.py:678
-#, fuzzy
 msgid "%"
 msgstr "%"
 
 #: toolbar.py:690
-#, fuzzy
 msgid "Page: "
 msgstr "Page : "
 
