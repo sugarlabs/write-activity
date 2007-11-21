@@ -8,47 +8,179 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-21 17:33+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2007-11-17 20:56+0100\n"
+"PO-Revision-Date: 2007-11-21 03:27+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: AbiWordActivity.py:72
+#: activity/activity.info:2
+msgid "Write"
+msgstr "[ڧآﺫ ԍҍ キй]Шяїեչ"
+
+#: AbiWordActivity.py:64
 msgid "Edit"
-msgstr "[ҢӞҎѵ Ќв३]Ҿԃﻨт"
+msgstr "[३Թ ФМԸ վ ]६ԃїٲ"
 
-#: AbiWordActivity.py:76
+#: AbiWordActivity.py:67
 msgid "Text"
-msgstr "[ђ Щ жՉ ә ]Тэѫէ"
+msgstr "[մРЖ Ф ٮԺ]Ҭэжٲ"
 
-#: AbiWordActivity.py:80
+#: AbiWordActivity.py:71
 msgid "Image"
-msgstr "[ک ѓՄՑ ҭкҏ]Їмձցе"
+msgstr "[ГҕۉۦҶӊШъգ]Імдۉә"
 
-#: AbiWordActivity.py:84 toolbar.py:238
+#: AbiWordActivity.py:75 toolbar.py:515
 msgid "Table"
-msgstr "[ќՑ४аչ Կәأв ]ҬەҍӀչ"
+msgstr "[Թբ ИլڑЦԲ թ]ТаҍӀә"
 
-#: AbiWordActivity.py:88
+#: AbiWordActivity.py:79
+msgid "Format"
+msgstr "[ղ३ ѫ ЙФ գﻨ ]ऊюѓмдҭ"
+
+#: AbiWordActivity.py:83
 msgid "View"
-msgstr "[Թ мСՀե Ҳ ]Ѵآڿш"
+msgstr "[ւԿВ ६ Яђ]Ѵآєш"
 
-#: toolbar.py:155
-msgid "Select text color"
-msgstr "[ցї Ж эвбԃ Ёप ڈ Դ ЩЅ ﻛяﻻՀ ワщ چО ҺиլЄﺳ ]کڿӀәҁҭ էչҳҭ ҁօاюѓ"
+#: toolbar.py:51
+msgid "Rich Text (RTF)"
+msgstr "[Йҍ ڧєԺ  ﻨҭ سҰٮ ѴЅ ۦٲ Яҁ گŻ јط ]Яїҁհ Ҭәжٲ (ЯТऊ)"
 
-#: toolbar.py:238
+#: toolbar.py:51
+msgid "RTF"
+msgstr "[йگк ڧ ]ЯҬऊ"
+
+#: toolbar.py:52
+msgid "Hypertext (HTML)"
+msgstr "[ҳլ Ҵԍ Ъ گҴҺ յո я ҺҲ ժ я я ԺեА ]Ђўمєբէэҳҭ (ЂҬМГ)"
+
+#: toolbar.py:52
+msgid "HTML"
+msgstr "[ڃԍ اƵВگ]ҤҬМГ"
+
+#: toolbar.py:53
+msgid "Plain Text (TXT)"
+msgstr "[չ ѫ аՑठզ३  م ە ӊќ  ղԺل४І पՑ ﯽД ]ԹӀەآй Тєҳե (ҬﻼҬ)"
+
+#: toolbar.py:53
+msgid "TXT"
+msgstr "[ձuкձ u ]ТҲҬ"
+
+#: toolbar.py:128
+msgid "Find previous"
+msgstr "[ż ճж чўНձ ا モҟ аІحƶҲ ѓ ڑкﺳモ]キآйժ թբڿѵﻨօٮی"
+
+#: toolbar.py:134
+msgid "Find next"
+msgstr "[яڑ żモ ւٮङ ъԿЪ ѵՍ Бҧ ]Բآղժ ղչѫҭ"
+
+#: toolbar.py:244
+msgid "Bold"
+msgstr "[ЦӳҰе Йԃ]ВօӀԃ"
+
+#: toolbar.py:251
+msgid "Italic"
+msgstr "[ठڑҺПƶکЮ ﻼ]أٲаӀآۦ"
+
+#: toolbar.py:258
+msgid "Underline"
+msgstr "[քՍ БطﻛչЭﻨ Ҿ ҘՀհس]ҴդԺәҕӀїռչ"
+
+#: toolbar.py:481
+msgid "Insert Image"
+msgstr "[Аڑ ںաճङ ѓuғЮ Ў  МЄ ڿڈКҳ д Թ]Їռﯽչҕե Імձۉе"
+
+#: toolbar.py:489
+msgid "Choose image"
+msgstr "[Ժ єモսЙհҬ  Ҥ жЎ јҪ աՕ щР ]حपюօیչ آмдڧэ"
+
+#: toolbar.py:515
 msgid "Cancel"
-msgstr "[Ш ЭӴռ३ ЅМѓЎ ւю ]Ըаղҁэا"
+msgstr "[Аկ Ңگ ս ќە ﻨ ҢИ ]Ըەղҁєլ"
 
-#: toolbar.py:323
+#: toolbar.py:524
+msgid "Insert Row"
+msgstr "[ŻӞ Օш мБՕҳաҁ u पӳЖЮ ]Іղﯽәѓٲ Яօщ"
+
+#: toolbar.py:530
+msgid "Delete Row"
+msgstr "[աƶ Іѕє խҏҴ  ҟ ѕЌ]ワչլڿٲڿ Яօщ"
+
+#: toolbar.py:536
+msgid "Insert Column"
+msgstr "[աғ эէ П Вҁ Ѝշ  ИԼ ワҤ О ҕեО]أդﯽєяٲ Сюاսмդ"
+
+#: toolbar.py:542
+msgid "Delete Column"
+msgstr "[јڿک Ѕ эЈ ƶﻨ մт Կ ѵԍժ Յաキո]ワэլеҭә حюӀцмո"
+
+#: toolbar.py:580
+msgid "Style: "
+msgstr "[ҭю еҟ ІЯ ց ղठ Ս ]کтўӀչ: "
+
+#: toolbar.py:590
+msgid "Heading 1"
+msgstr "[еՕ ЇЪսճ ցҳ३ւ  П]Нәەԃւոۉ ﻠ"
+
+#: toolbar.py:591
+msgid "Heading 2"
+msgstr "[ч Дչ ԃم ՍҭкҬ շПԍи Ժ]ЂչձԺﻨղԍ շ"
+
+#: toolbar.py:592
+msgid "Heading 3"
+msgstr "[СФЄԹ ۦռ Ҭҭ ւ لﻻ  ԍе]ҤڿձԺւռۉ Ҙ"
+
+#: toolbar.py:593
+msgid "Heading 4"
+msgstr "[շյՓ ﻻ ъԸآսӊ  ठ ]Нәдԃآҧۉ Կ"
+
+#: toolbar.py:594
+msgid "Bullet List"
+msgstr "[Яモ ںل ГаԲҁІ  գҧ م Đﺫ Բբ]Вҵլاڿт Լїﯽҭ"
+
+#: toolbar.py:595
+msgid "Dashed List"
+msgstr "[կէ Չ єѴմ ڃ Пթѓ ﻠО ]Đаیӊєժ Լւیէ"
+
+#: toolbar.py:596
+msgid "Numbered List"
+msgstr "[ѵ حՀ Ҿप ЅЌӳѫ४Ⴇ ż ҟզӳц Յ]ЍٮмҍєբәԺ Լﻨیҭ"
+
+#: toolbar.py:597
+msgid "Lower Case List"
+msgstr "[Іշսکи юՉ Ҿ  яЦЍխڈ ӞԺ ҏ ցЪ ҁПօҤ]Լօшєѓ Сձﯽє Гїѕէ"
+
+#: toolbar.py:598
+msgid "Upper Case List"
+msgstr "[ҲĐ لПمՄյا  Օ Չ Ғч Ց چۉ Тҁ ]ںuҏеҕ Сձѕє Լւیт"
+
+#: toolbar.py:599
+msgid "Block Text"
+msgstr "[շҵ էﯽ چҏкժ  Գј ٮՈح ӨՕ ]Ъاюҁխ Ҭڿѫէ"
+
+#: toolbar.py:600
+msgid "Normal"
+msgstr "[ժБ ԿմТЩ ռ ҪИԃՉ]Пօямձا"
+
+#: toolbar.py:601
+msgid "Plain Text"
+msgstr "[ЭՀ ў Ѵբ ﻻ  ҏҟ ԸЦЌգ]Թاдїҧ Ҭչжҭ"
+
+#: toolbar.py:656
+msgid "Zoom Out"
+msgstr "[ПЩ НڈїН Կ  լЩжв]Żюօм Օٮե"
+
+#: toolbar.py:662
+msgid "Zoom In"
+msgstr "[ԍ Żэ Սڑ  ю یѵ]Ƶюօм Їи"
+
+#: toolbar.py:678
 msgid "%"
-msgstr "[ﻻЍ ]%"
+msgstr "[ձƵ]%"
 
-#: toolbar.py:335
-msgid "Page:"
-msgstr "[Ющթ ՀјՀ Ը ]Рەԍе:"
+#: toolbar.py:690
+msgid "Page: "
+msgstr "[Ҿ չէ ւ еѫ Нм  ]Рдցе: "
 
