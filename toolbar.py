@@ -35,6 +35,10 @@ from sugar.activity.activity import EditToolbar
 from sugar.graphics.menuitem import MenuItem
 from sugar.datastore import datastore
 
+import sugar.profile
+
+import dbus
+
 logger = logging.getLogger('write-activity')
 
 #ick
@@ -75,9 +79,24 @@ class WriteActivityToolbarExtension:
 
         # create a new journal item
         fileObject = datastore.create()
-        fileObject.metadata['title'] = self._activity.metadata['title'] + ' (' + jpostfix + ')';
+        act_meta = self._activity.metadata
+        fileObject.metadata['title'] = act_meta['title'] + ' (' + jpostfix + ')';
+        fileObject.metadata['title_set_by_user'] = act_meta['title_set_by_user']
         fileObject.metadata['mime_type'] = mimetype
-        fileObject.metadata['fulltext'] = self._abiword_canvas.get_content(extension_or_mimetype=".txt")[:3000]
+        fileObject.metadata['fulltext'] = \
+            self._abiword_canvas.get_content(extension_or_mimetype=".txt")[:3000]
+
+        fileObject.metadata['icon-color'] = act_meta['icon-color']
+        fileObject.metadata['activity'] = act_meta['activity']
+        fileObject.metadata['keep'] = act_meta['keep']
+
+# TODO: Activity class should provide support for preview, see #5119
+#        self._activity.take_screenshot()
+#        if self._activity._preview:
+#            preview = self._activity._get_preview()
+#            fileObject.metadata['preview'] = dbus.ByteArray(preview)
+
+        fileObject.metadata['share-scope'] = act_meta['share-scope']
 
         # write out the document contents in the requested format
         fileObject.file_path = os.path.join(self._activity.get_activity_root(), 'instance', '%i' % time.time())
