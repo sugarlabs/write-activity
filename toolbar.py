@@ -170,7 +170,7 @@ class WriteEditToolbar(EditToolbar):
         # find the next entry
         id = self._text_toolbar.get_text_selected_handler();
         self._abiword_canvas.handler_block(id)
-        self._abiword_canvas.find_next()
+        self._abiword_canvas.find_next(False)
         self._abiword_canvas.handler_unblock(id)
 
     def _search_entry_changed_cb(self, entry):
@@ -192,7 +192,7 @@ class WriteEditToolbar(EditToolbar):
         # immediately start seaching
         id = self._text_toolbar.get_text_selected_handler();
         self._abiword_canvas.handler_block(id)
-        self._abiword_canvas.find_next()
+        self._abiword_canvas.find_next(True)
         self._abiword_canvas.handler_unblock(id)
 
     def _findprev_cb(self, button):
@@ -210,7 +210,7 @@ class WriteEditToolbar(EditToolbar):
         if self._search_entry.props.text:
             id = self._text_toolbar.get_text_selected_handler();
             self._abiword_canvas.handler_block(id)
-            self._abiword_canvas.find_next()
+            self._abiword_canvas.find_next(False)
             self._abiword_canvas.handler_unblock(id)
         else:
             logger.debug('nothing to search for!')

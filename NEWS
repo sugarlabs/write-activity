@@ -1,3 +1,5 @@
+* Fix 4861: Incremental find cycles through words while typing (uwog)
+
 53
 
 * Use 'instance' instead of 'data' as a path prefix; part of 4850 (uwog)
