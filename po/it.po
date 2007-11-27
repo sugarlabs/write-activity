@@ -2,47 +2,48 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2007-11-21 09:26+0000\n"
+"Last-Translator: Riccardo Setti <giskard@autistici.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.0.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 1.0.2\n"
 
 #: AbiWordActivity.py:64
 msgid "Edit"
-msgstr ""
+msgstr "Modifica"
 
 #: AbiWordActivity.py:67
 msgid "Text"
-msgstr ""
+msgstr "Testo"
 
 #: AbiWordActivity.py:71
 msgid "Image"
-msgstr ""
+msgstr "Immagine"
 
 #: AbiWordActivity.py:75 toolbar.py:515
 msgid "Table"
-msgstr ""
+msgstr "Tabella"
 
 #: AbiWordActivity.py:83
 msgid "View"
-msgstr ""
+msgstr "Vista"
 
 #: toolbar.py:155
 msgid "Select text color"
-msgstr ""
+msgstr "Seleziona colore testo"
 
 #: toolbar.py:515
+#, fuzzy
 msgid "Cancel"
-msgstr ""
+msgstr "Cancella"
 
 #: toolbar.py:678
 msgid "%"
@@ -50,7 +51,7 @@ msgstr ""
 
 #: toolbar.py:335
 msgid "Page:"
-msgstr ""
+msgstr "Pagina:"
 
 #: activity/activity.info:2
 msgid "Write"
@@ -58,7 +59,7 @@ msgstr ""
 
 #: AbiWordActivity.py:79
 msgid "Format"
-msgstr ""
+msgstr "Formato"
 
 #: toolbar.py:51
 msgid "Rich Text (RTF)"
@@ -70,7 +71,7 @@ msgstr ""
 
 #: toolbar.py:52
 msgid "Hypertext (HTML)"
-msgstr ""
+msgstr "Ipertesto (HTML)"
 
 #: toolbar.py:52
 msgid "HTML"
@@ -78,7 +79,7 @@ msgstr ""
 
 #: toolbar.py:53
 msgid "Plain Text (TXT)"
-msgstr ""
+msgstr "Testo semplice (TXT)"
 
 #: toolbar.py:53
 msgid "TXT"
@@ -86,51 +87,51 @@ msgstr ""
 
 #: toolbar.py:128
 msgid "Find previous"
-msgstr ""
+msgstr "Trova precedente"
 
 #: toolbar.py:134
 msgid "Find next"
-msgstr ""
+msgstr "Trova prossimo"
 
 #: toolbar.py:244
 msgid "Bold"
-msgstr ""
+msgstr "Grassetto"
 
 #: toolbar.py:251
 msgid "Italic"
-msgstr ""
+msgstr "Corsivo"
 
 #: toolbar.py:258
 msgid "Underline"
-msgstr ""
+msgstr "Sottolineato"
 
 #: toolbar.py:481
 msgid "Insert Image"
-msgstr ""
+msgstr "Inserisci Immagine"
 
 #: toolbar.py:489
 msgid "Choose image"
-msgstr ""
+msgstr "Scegli immagine"
 
 #: toolbar.py:524
 msgid "Insert Row"
-msgstr ""
+msgstr "Inserisci Riga"
 
 #: toolbar.py:530
 msgid "Delete Row"
-msgstr ""
+msgstr "Cancella Riga"
 
 #: toolbar.py:536
 msgid "Insert Column"
-msgstr ""
+msgstr "Inserisci Colonna"
 
 #: toolbar.py:542
 msgid "Delete Column"
-msgstr ""
+msgstr "Cancella Colonna"
 
 #: toolbar.py:580
 msgid "Style: "
-msgstr ""
+msgstr "Stile:"
 
 #: toolbar.py:590
 msgid "Heading 1"
@@ -150,7 +151,7 @@ msgstr ""
 
 #: toolbar.py:594
 msgid "Bullet List"
-msgstr ""
+msgstr "Lista puntata"
 
 #: toolbar.py:595
 msgid "Dashed List"
@@ -158,7 +159,7 @@ msgstr ""
 
 #: toolbar.py:596
 msgid "Numbered List"
-msgstr ""
+msgstr "Lista numerata"
 
 #: toolbar.py:597
 msgid "Lower Case List"
