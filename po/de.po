@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: write\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2007-11-25 19:48+0000\n"
+"PO-Revision-Date: 2007-11-28 09:50+0000\n"
 "Last-Translator: Gerhard Steiner <gerhard.steiner@duichwir.at>\n"
 "Language-Team: German <fedora-trans-de@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -116,7 +116,7 @@ msgstr "Spalte löschen"
 
 #: toolbar.py:580
 msgid "Style: "
-msgstr "Stil:"
+msgstr "Stil: "
 
 #: toolbar.py:590
 msgid "Heading 1"
@@ -136,11 +136,11 @@ msgstr "Überschrift 4"
 
 #: toolbar.py:594
 msgid "Bullet List"
-msgstr "Aufzählung (Punkte)"
+msgstr "Aufzählung mit Punkten"
 
 #: toolbar.py:595
 msgid "Dashed List"
-msgstr "Aufzählung (Striche)"
+msgstr "Aufzählung mit Strichen"
 
 #: toolbar.py:596
 msgid "Numbered List"
@@ -148,11 +148,11 @@ msgstr "Nummerierung"
 
 #: toolbar.py:597
 msgid "Lower Case List"
-msgstr "Nummerierung (Kleinbuchstaben)"
+msgstr "Nummerierung mit Kleinbuchstaben"
 
 #: toolbar.py:598
 msgid "Upper Case List"
-msgstr "Nummerierung (Großbuchstaben)"
+msgstr "Nummerierung mit Großbuchstaben"
 
 #: toolbar.py:599
 msgid "Block Text"
