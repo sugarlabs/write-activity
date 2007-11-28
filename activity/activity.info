@@ -3,6 +3,6 @@ name = Write
 service_name = org.laptop.AbiWordActivity
 class = AbiWordActivity.AbiWordActivity
 icon = activity-write
-activity_version = 53
+activity_version = 54
 show_launcher = 1
 mime_types = text/rtf;text/plain;application/x-abiword;text/x-xml-abiword;application/msword;application/rtf;application/xhtml+xml;text/html;application/vnd.oasis.opendocument.text
