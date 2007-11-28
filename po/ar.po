@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: write.master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2007-11-21 10:00+0000\n"
+"PO-Revision-Date: 2007-11-24 09:49+0000\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
 "MIME-Version: 1.0\n"
@@ -47,55 +47,55 @@ msgstr "اعرض"
 
 #: toolbar.py:51
 msgid "Rich Text (RTF)"
-msgstr ""
+msgstr "نص غني (RTF)"
 
 #: toolbar.py:51
 msgid "RTF"
-msgstr ""
+msgstr "RTF"
 
 #: toolbar.py:52
 msgid "Hypertext (HTML)"
-msgstr ""
+msgstr "نص فائق (HTML)"
 
 #: toolbar.py:52
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #: toolbar.py:53
 msgid "Plain Text (TXT)"
-msgstr ""
+msgstr "نص صِرف (TXT)"
 
 #: toolbar.py:53
 msgid "TXT"
-msgstr ""
+msgstr "TXT"
 
 #: toolbar.py:128
 msgid "Find previous"
-msgstr ""
+msgstr "ابحث عن السابق"
 
 #: toolbar.py:134
 msgid "Find next"
-msgstr ""
+msgstr "ابحث عن التالي"
 
 #: toolbar.py:244
 msgid "Bold"
-msgstr ""
+msgstr "عريض"
 
 #: toolbar.py:251
 msgid "Italic"
-msgstr ""
+msgstr "مائل"
 
 #: toolbar.py:258
 msgid "Underline"
-msgstr ""
+msgstr "مُسطَّر"
 
 #: toolbar.py:481
 msgid "Insert Image"
-msgstr ""
+msgstr "أدرج صورة"
 
 #: toolbar.py:489
 msgid "Choose image"
-msgstr ""
+msgstr "اختر صورة"
 
 #: toolbar.py:515
 msgid "Cancel"
@@ -103,88 +103,87 @@ msgstr "الغِ"
 
 #: toolbar.py:524
 msgid "Insert Row"
-msgstr ""
+msgstr "أدرج صف"
 
 #: toolbar.py:530
 msgid "Delete Row"
-msgstr ""
+msgstr "احذف صف"
 
 #: toolbar.py:536
 msgid "Insert Column"
-msgstr ""
+msgstr "أدرج عمود"
 
 #: toolbar.py:542
 msgid "Delete Column"
-msgstr ""
+msgstr "احذف عمود"
 
 #: toolbar.py:580
 msgid "Style: "
-msgstr ""
+msgstr "الأسلوب: "
 
 #: toolbar.py:590
 msgid "Heading 1"
-msgstr ""
+msgstr "رأس 1"
 
 #: toolbar.py:591
 msgid "Heading 2"
-msgstr ""
+msgstr "رأس 2"
 
 #: toolbar.py:592
 msgid "Heading 3"
-msgstr ""
+msgstr "رأس 3"
 
 #: toolbar.py:593
 msgid "Heading 4"
-msgstr ""
+msgstr "رأس 4"
 
 #: toolbar.py:594
 msgid "Bullet List"
-msgstr ""
+msgstr "قائمة منقوطة"
 
 #: toolbar.py:595
 msgid "Dashed List"
-msgstr ""
+msgstr "قائمة بشرطة"
 
 #: toolbar.py:596
 msgid "Numbered List"
-msgstr ""
+msgstr "قائمة مرقّمة"
 
 #: toolbar.py:597
 msgid "Lower Case List"
-msgstr ""
+msgstr "قائمة حروف صغيرة"
 
 #: toolbar.py:598
 msgid "Upper Case List"
-msgstr ""
+msgstr "قائمة حروف كبيرة"
 
 #: toolbar.py:599
 msgid "Block Text"
-msgstr ""
+msgstr "مربع نص"
 
 #: toolbar.py:600
 msgid "Normal"
-msgstr ""
+msgstr "عادي"
 
 #: toolbar.py:601
 msgid "Plain Text"
-msgstr ""
+msgstr "نص صِرف"
 
 #: toolbar.py:656
 msgid "Zoom Out"
-msgstr ""
+msgstr "صغّر"
 
 #: toolbar.py:662
 msgid "Zoom In"
-msgstr ""
+msgstr "كبّر"
 
 #: toolbar.py:678
 msgid "%"
 msgstr "٪"
 
 #: toolbar.py:690
-#, fuzzy
 msgid "Page: "
-msgstr "صفحة:"
+msgstr "صفحة: "
 
 #~ msgid "Select text color"
 #~ msgstr "اختر لون النص"
