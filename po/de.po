@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: write\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2007-11-21 07:57+0000\n"
+"PO-Revision-Date: 2007-11-28 08:42+0000\n"
 "Last-Translator: Gerhard Steiner <gerhard.steiner@duichwir.at>\n"
 "Language-Team: German <fedora-trans-de@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -68,31 +68,31 @@ msgstr "TXT"
 
 #: toolbar.py:128
 msgid "Find previous"
-msgstr ""
+msgstr "Suche rückwärts"
 
 #: toolbar.py:134
 msgid "Find next"
-msgstr ""
+msgstr "Suche vorwärts"
 
 #: toolbar.py:244
 msgid "Bold"
-msgstr ""
+msgstr "Fett"
 
 #: toolbar.py:251
 msgid "Italic"
-msgstr ""
+msgstr "Kursiv"
 
 #: toolbar.py:258
 msgid "Underline"
-msgstr ""
+msgstr "Unterstrichen"
 
 #: toolbar.py:481
 msgid "Insert Image"
-msgstr ""
+msgstr "Bild einfügen"
 
 #: toolbar.py:489
 msgid "Choose image"
-msgstr ""
+msgstr "Bild auswählen"
 
 #: toolbar.py:515
 msgid "Cancel"
@@ -100,88 +100,87 @@ msgstr "Abbrechen"
 
 #: toolbar.py:524
 msgid "Insert Row"
-msgstr ""
+msgstr "Zeile einfügen"
 
 #: toolbar.py:530
 msgid "Delete Row"
-msgstr ""
+msgstr "Zeile löschen"
 
 #: toolbar.py:536
 msgid "Insert Column"
-msgstr ""
+msgstr "Spalte einfügen"
 
 #: toolbar.py:542
 msgid "Delete Column"
-msgstr ""
+msgstr "Spalte löschen"
 
 #: toolbar.py:580
 msgid "Style: "
-msgstr ""
+msgstr "Stil:"
 
 #: toolbar.py:590
 msgid "Heading 1"
-msgstr ""
+msgstr "Überschrift 1"
 
 #: toolbar.py:591
 msgid "Heading 2"
-msgstr ""
+msgstr "Überschrift 2"
 
 #: toolbar.py:592
 msgid "Heading 3"
-msgstr ""
+msgstr "Überschrift 3"
 
 #: toolbar.py:593
 msgid "Heading 4"
-msgstr ""
+msgstr "Überschrift 4"
 
 #: toolbar.py:594
 msgid "Bullet List"
-msgstr ""
+msgstr "Aufzählung mit Punkten"
 
 #: toolbar.py:595
 msgid "Dashed List"
-msgstr ""
+msgstr "Aufzählung mit Strichen"
 
 #: toolbar.py:596
 msgid "Numbered List"
-msgstr ""
+msgstr "Nummerierung"
 
 #: toolbar.py:597
 msgid "Lower Case List"
-msgstr ""
+msgstr "Nummerierung (Kleinbuchstaben)"
 
 #: toolbar.py:598
 msgid "Upper Case List"
-msgstr ""
+msgstr "Nummerierung (Großbuchstaben)"
 
 #: toolbar.py:599
 msgid "Block Text"
-msgstr ""
+msgstr "Blocktext"
 
 #: toolbar.py:600
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: toolbar.py:601
 msgid "Plain Text"
-msgstr ""
+msgstr "Nur Text"
 
 #: toolbar.py:656
 msgid "Zoom Out"
-msgstr ""
+msgstr "Verkleinern"
 
 #: toolbar.py:662
 msgid "Zoom In"
-msgstr ""
+msgstr "Vergrößern"
 
 #: toolbar.py:678
 msgid "%"
 msgstr "%"
 
 #: toolbar.py:690
-#, fuzzy
 msgid "Page: "
-msgstr "Seite:"
+msgstr "Seite: "
 
 #~ msgid "Select text color"
 #~ msgstr "Wähle Text-Farbe"

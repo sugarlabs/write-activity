@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Actividad Escribir\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2007-11-19 20:36+0000\n"
+"PO-Revision-Date: 2007-11-25 15:23+0000\n"
 "Last-Translator: Xavier Alvarez <xavi.alvarez@gmail.com>\n"
 "Language-Team: Fedora Spanish <fedora-trans-es@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -46,7 +46,6 @@ msgid "View"
 msgstr "Ver"
 
 #: toolbar.py:51
-#, fuzzy
 msgid "Rich Text (RTF)"
 msgstr "Texto enriquecido (RTF)"
 
@@ -119,9 +118,8 @@ msgid "Delete Column"
 msgstr "Borrar columna"
 
 #: toolbar.py:580
-#, fuzzy
 msgid "Style: "
-msgstr "Estilo:"
+msgstr "Estilo: "
 
 #: toolbar.py:590
 msgid "Heading 1"
@@ -141,23 +139,23 @@ msgstr "Encabezado 4"
 
 #: toolbar.py:594
 msgid "Bullet List"
-msgstr ""
+msgstr "Lista con viñetas"
 
 #: toolbar.py:595
 msgid "Dashed List"
-msgstr ""
+msgstr "Lista con guiones"
 
 #: toolbar.py:596
 msgid "Numbered List"
-msgstr ""
+msgstr "Lista enumerada"
 
 #: toolbar.py:597
 msgid "Lower Case List"
-msgstr ""
+msgstr "Lista alfabética minúsculas"
 
 #: toolbar.py:598
 msgid "Upper Case List"
-msgstr ""
+msgstr "Lista alfabética mayúsculas"
 
 #: toolbar.py:599
 msgid "Block Text"

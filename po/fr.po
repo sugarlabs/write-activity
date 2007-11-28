@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: projects/write\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2007-11-19 19:27+0000\n"
+"PO-Revision-Date: 2007-11-22 09:54+0000\n"
 "Last-Translator: samy boutayeb <s.boutayeb@free.fr>\n"
 "Language-Team: French <traduc@traduc.org>\n"
 "MIME-Version: 1.0\n"
@@ -142,7 +142,7 @@ msgstr "Liste à puces"
 
 #: toolbar.py:595
 msgid "Dashed List"
-msgstr "Liste en tirets"
+msgstr "Liste à tirets"
 
 #: toolbar.py:596
 msgid "Numbered List"
@@ -150,11 +150,11 @@ msgstr "Liste numérotée"
 
 #: toolbar.py:597
 msgid "Lower Case List"
-msgstr "Liste en minuscules"
+msgstr "Liste a, b, c"
 
 #: toolbar.py:598
 msgid "Upper Case List"
-msgstr "Liste en majuscules"
+msgstr "Liste A, B, C"
 
 #: toolbar.py:599
 msgid "Block Text"
