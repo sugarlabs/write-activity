@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2007-12-01 08:58+0000\n"
+"PO-Revision-Date: 2007-12-01 09:09+0000\n"
 "Last-Translator: Shankar Pokharel <memshankar@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -183,11 +183,11 @@ msgstr "सादा पाठ"
 
 #: toolbar.py:656
 msgid "Zoom Out"
-msgstr "जुम आउट"
+msgstr "सानो गराऊ"
 
 #: toolbar.py:662
 msgid "Zoom In"
-msgstr "जुम इन"
+msgstr "ठूलो गराऊ"
 
 #: toolbar.py:690
 msgid "Page: "
