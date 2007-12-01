@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2007-11-25 17:37+0000\n"
+"PO-Revision-Date: 2007-12-01 08:58+0000\n"
 "Last-Translator: Shankar Pokharel <memshankar@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,7 @@ msgstr "पाठको रङ्ग छान"
 
 #: toolbar.py:515
 msgid "Cancel"
-msgstr "रद्द गर्नुहोस्"
+msgstr "रद्द गर"
 
 #: toolbar.py:678
 msgid "%"
@@ -62,27 +62,27 @@ msgstr "प्रारुप"
 
 #: toolbar.py:51
 msgid "Rich Text (RTF)"
-msgstr ""
+msgstr "रिच पाठ (आर टि एफ)"
 
 #: toolbar.py:51
 msgid "RTF"
-msgstr ""
+msgstr "आर टि एफ"
 
 #: toolbar.py:52
 msgid "Hypertext (HTML)"
-msgstr ""
+msgstr "हाइपरटेक्स्ट (एच टी एम एल)"
 
 #: toolbar.py:52
 msgid "HTML"
-msgstr "एचटीएमएल"
+msgstr "एच टी एम एल"
 
 #: toolbar.py:53
 msgid "Plain Text (TXT)"
-msgstr "सादा पाठ (TXT)"
+msgstr "सादा पाठ (टि एक्स टि)"
 
 #: toolbar.py:53
 msgid "TXT"
-msgstr "TXT"
+msgstr "टि एक्स टि"
 
 #: toolbar.py:128
 msgid "Find previous"
@@ -98,8 +98,9 @@ msgstr "गाढा"
 
 #: toolbar.py:251
 msgid "Italic"
-msgstr ""
+msgstr "छड्के"
 
+# कच गर
 #: toolbar.py:258
 msgid "Underline"
 msgstr "रेखांकित"
@@ -150,23 +151,23 @@ msgstr "शीर्षक ४"
 
 #: toolbar.py:594
 msgid "Bullet List"
-msgstr ""
+msgstr "गोली सूची"
 
 #: toolbar.py:595
 msgid "Dashed List"
-msgstr ""
+msgstr "ड्यास सूची"
 
 #: toolbar.py:596
 msgid "Numbered List"
-msgstr ""
+msgstr "क्रमाङ्कित सूची"
 
 #: toolbar.py:597
 msgid "Lower Case List"
-msgstr ""
+msgstr "सानो अक्षर सूची"
 
 #: toolbar.py:598
 msgid "Upper Case List"
-msgstr ""
+msgstr "ठुला अक्षर सूची"
 
 #: toolbar.py:599
 msgid "Block Text"
@@ -182,11 +183,11 @@ msgstr "सादा पाठ"
 
 #: toolbar.py:656
 msgid "Zoom Out"
-msgstr ""
+msgstr "जुम आउट"
 
 #: toolbar.py:662
 msgid "Zoom In"
-msgstr ""
+msgstr "जुम इन"
 
 #: toolbar.py:690
 msgid "Page: "
