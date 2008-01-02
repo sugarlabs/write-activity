@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2007-11-27 07:23+0000\n"
-"Last-Translator: Waqas Nasir Toor <waqastoor@gmail.com>\n"
+"PO-Revision-Date: 2008-01-01 11:09+0000\n"
+"Last-Translator: Huda Sarfraz <huda.sarfraz@nu.edu.pk>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,31 +17,31 @@ msgstr ""
 
 #: AbiWordActivity.py:64
 msgid "Edit"
-msgstr "مرتب کریں"
+msgstr "تدوین"
 
 #: AbiWordActivity.py:67
 msgid "Text"
-msgstr "عبارت"
+msgstr "متن"
 
 #: AbiWordActivity.py:71
 msgid "Image"
-msgstr "تصویر"
+msgstr "نقش"
 
 #: AbiWordActivity.py:75 toolbar.py:515
 msgid "Table"
-msgstr "فهرست"
+msgstr "جدول"
 
 #: AbiWordActivity.py:83
 msgid "View"
-msgstr "دیکهیں"
+msgstr "نظارہ"
 
 #: toolbar.py:155
 msgid "Select text color"
-msgstr "الفاظ کا رنگ منتخب کريں"
+msgstr "متن کا رنگ منتخب کريں"
 
 #: toolbar.py:515
 msgid "Cancel"
-msgstr "ختم کريں"
+msgstr "منسوخ کريں"
 
 #: toolbar.py:678
 msgid "%"
@@ -49,7 +49,7 @@ msgstr "%"
 
 #: toolbar.py:335
 msgid "Page:"
-msgstr "صفه:"
+msgstr "صفحہ:"
 
 #: activity/activity.info:2
 msgid "Write"
@@ -57,19 +57,19 @@ msgstr "لکهیں"
 
 #: AbiWordActivity.py:79
 msgid "Format"
-msgstr "ترتیب"
+msgstr "وضع کریں"
 
 #: toolbar.py:51
 msgid "Rich Text (RTF)"
-msgstr "صاف عبارت (RTF)"
+msgstr "بھرپور متن (رچ ٹکسٹ، RTF)"
 
 #: toolbar.py:51
 msgid "RTF"
-msgstr "(RTF)"
+msgstr "RTF"
 
 #: toolbar.py:52
 msgid "Hypertext (HTML)"
-msgstr "حائیپر تیکسٹ (HTML)"
+msgstr "ہایپر ٹیکسٹ (HTML)"
 
 #: toolbar.py:52
 msgid "HTML"
@@ -77,7 +77,7 @@ msgstr "HTML"
 
 #: toolbar.py:53
 msgid "Plain Text (TXT)"
-msgstr "عام تیکسٹ"
+msgstr "سادہ متن (TXT)"
 
 #: toolbar.py:53
 msgid "TXT"
@@ -85,15 +85,15 @@ msgstr "TXT"
 
 #: toolbar.py:128
 msgid "Find previous"
-msgstr "اس سے سابقه تلاش کریں"
+msgstr "پچھلا ڈھونڈیں"
 
 #: toolbar.py:134
 msgid "Find next"
-msgstr "اس سے اگلا تلاش کریں"
+msgstr "اگلا ڈھونڈیں"
 
 #: toolbar.py:244
 msgid "Bold"
-msgstr "ولڈ"
+msgstr "جلی"
 
 #: toolbar.py:251
 msgid "Italic"
@@ -101,92 +101,92 @@ msgstr "اٹالک"
 
 #: toolbar.py:258
 msgid "Underline"
-msgstr "زیرخط"
+msgstr "خط کشیدہ"
 
 #: toolbar.py:481
 msgid "Insert Image"
-msgstr "تصوير ڈاليں"
+msgstr "نقش داخل کریں"
 
 #: toolbar.py:489
 msgid "Choose image"
-msgstr "تصویر چنیں"
+msgstr "نقش منتخب کریں"
 
 #: toolbar.py:524
 msgid "Insert Row"
-msgstr "رو ڈالیں"
+msgstr "صف داخل کریں"
 
 #: toolbar.py:530
 msgid "Delete Row"
-msgstr "رو مٹائیں"
+msgstr "صف حذف کریں"
 
 #: toolbar.py:536
 msgid "Insert Column"
-msgstr "کالم ڈالیں"
+msgstr "کالم داخل کریں"
 
 #: toolbar.py:542
 msgid "Delete Column"
-msgstr "کالم مٹائیں"
+msgstr "کالم حذف کریں"
 
 #: toolbar.py:580
 msgid "Style: "
-msgstr "شکل:"
+msgstr "طرز:_"
 
 #: toolbar.py:590
 msgid "Heading 1"
-msgstr "عنوان ١"
+msgstr "عنوان 1"
 
 #: toolbar.py:591
 msgid "Heading 2"
-msgstr "عنوان ٢"
+msgstr "عنوان 2"
 
 #: toolbar.py:592
 msgid "Heading 3"
-msgstr "عنوان ٣"
+msgstr "عنوان 3"
 
 #: toolbar.py:593
 msgid "Heading 4"
-msgstr "عنوان ۴"
+msgstr "عنوان 4 "
 
 #: toolbar.py:594
 msgid "Bullet List"
-msgstr "بلٹڈ فهرست"
+msgstr "شق وار فہرست"
 
 #: toolbar.py:595
 msgid "Dashed List"
-msgstr "ڈیشڈ فهرست"
+msgstr "ڈیش دار فہرست"
 
 #: toolbar.py:596
 msgid "Numbered List"
-msgstr "نمبر فهرست"
+msgstr "نمبر وار فہرست"
 
 #: toolbar.py:597
 msgid "Lower Case List"
-msgstr "لور کیس فهرست"
+msgstr "چھوٹے حروف کی فہرست"
 
 #: toolbar.py:598
 msgid "Upper Case List"
-msgstr "اپر کیس فهرست"
+msgstr "بڑے حروف کی فہرست"
 
 #: toolbar.py:599
 msgid "Block Text"
-msgstr "بڑے الفاظ"
+msgstr "بلاک متن"
 
 #: toolbar.py:600
 msgid "Normal"
-msgstr "نارمل"
+msgstr "عام"
 
 #: toolbar.py:601
 msgid "Plain Text"
-msgstr "ساده الفاظ"
+msgstr "سادہ متن"
 
 #: toolbar.py:656
 msgid "Zoom Out"
-msgstr "چهوٹا کریں"
+msgstr "باہر زوم کریں"
 
 #: toolbar.py:662
 msgid "Zoom In"
-msgstr "بڑا کریں"
+msgstr "اندر زوم کریں"
 
 #: toolbar.py:690
 msgid "Page: "
-msgstr "صفحه:_"
+msgstr "صفحہ:_"
