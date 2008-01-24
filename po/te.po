@@ -18,23 +18,23 @@ msgstr ""
 
 #: activity/activity.info:2
 msgid "Write"
-msgstr ""
+msgstr "వ్రాత"
 
 #: AbiWordActivity.py:64
 msgid "Edit"
-msgstr ""
+msgstr " కూర్చు"
 
 #: AbiWordActivity.py:67
 msgid "Text"
-msgstr ""
+msgstr "వచనం"
 
 #: AbiWordActivity.py:71
 msgid "Image"
-msgstr ""
+msgstr "బొమ్మ"
 
 #: AbiWordActivity.py:75 toolbar.py:515
 msgid "Table"
-msgstr ""
+msgstr "పట్టిక"
 
 #: AbiWordActivity.py:79
 msgid "Format"
@@ -42,144 +42,144 @@ msgstr ""
 
 #: AbiWordActivity.py:83
 msgid "View"
-msgstr ""
+msgstr "చూడు"
 
 #: toolbar.py:51
 msgid "Rich Text (RTF)"
-msgstr ""
+msgstr "దివ్యమైన వచనం (RTF)"
 
 #: toolbar.py:51
 msgid "RTF"
-msgstr ""
+msgstr "RTF"
 
 #: toolbar.py:52
 msgid "Hypertext (HTML)"
-msgstr ""
+msgstr "హైపరుటెక్ష్  (HTML)"
 
 #: toolbar.py:52
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #: toolbar.py:53
 msgid "Plain Text (TXT)"
-msgstr ""
+msgstr "సాదాసీసా వచనం (TXT)"
 
 #: toolbar.py:53
 msgid "TXT"
-msgstr ""
+msgstr "TXT"
 
 #: toolbar.py:128
 msgid "Find previous"
-msgstr ""
+msgstr "ముందుది వెతుకు"
 
 #: toolbar.py:134
 msgid "Find next"
-msgstr ""
+msgstr "తర్వాతది వెతుకు"
 
 #: toolbar.py:244
 msgid "Bold"
-msgstr ""
+msgstr "చిక్కగా"
 
 #: toolbar.py:251
 msgid "Italic"
-msgstr ""
+msgstr "ఏటవాలుగా"
 
 #: toolbar.py:258
 msgid "Underline"
-msgstr ""
+msgstr "అడుగున గీతతో"
 
 #: toolbar.py:481
 msgid "Insert Image"
-msgstr ""
+msgstr "బొమ్మ దూర్చు"
 
 #: toolbar.py:489
 msgid "Choose image"
-msgstr ""
+msgstr "బొమ్మ ఎంచుకో"
 
 #: toolbar.py:515
 msgid "Cancel"
-msgstr ""
+msgstr "రద్దుచేయి"
 
 #: toolbar.py:524
 msgid "Insert Row"
-msgstr ""
+msgstr "అడ్డవరస దూర్చు"
 
 #: toolbar.py:530
 msgid "Delete Row"
-msgstr ""
+msgstr "ఆడ్డవరస తీసివేయి"
 
 #: toolbar.py:536
 msgid "Insert Column"
-msgstr ""
+msgstr "నిలువవరస దూర్చు"
 
 #: toolbar.py:542
 msgid "Delete Column"
-msgstr ""
+msgstr "నిలువవరస తీసివేయి"
 
 #: toolbar.py:580
 msgid "Style: "
-msgstr ""
+msgstr "శైలి"
 
 #: toolbar.py:590
 msgid "Heading 1"
-msgstr ""
+msgstr "శీర్షిక  1"
 
 #: toolbar.py:591
 msgid "Heading 2"
-msgstr ""
+msgstr "శీర్షిక  2"
 
 #: toolbar.py:592
 msgid "Heading 3"
-msgstr ""
+msgstr "శీర్షిక  3"
 
 #: toolbar.py:593
 msgid "Heading 4"
-msgstr ""
+msgstr "శీర్షిక  4"
 
 #: toolbar.py:594
 msgid "Bullet List"
-msgstr ""
+msgstr "బుల్లెటు జాబితా"
 
 #: toolbar.py:595
 msgid "Dashed List"
-msgstr ""
+msgstr "అడ్డగీతతో జాబితా"
 
 #: toolbar.py:596
 msgid "Numbered List"
-msgstr ""
+msgstr "లెక్కగట్టిన జాబితా"
 
 #: toolbar.py:597
 msgid "Lower Case List"
-msgstr ""
+msgstr "రెండో బరి జాబితా"
 
 #: toolbar.py:598
 msgid "Upper Case List"
-msgstr ""
+msgstr "మొదటి బరి జాబితా"
 
 #: toolbar.py:599
 msgid "Block Text"
-msgstr ""
+msgstr "పెద్ద అక్షరములు"
 
 #: toolbar.py:600
 msgid "Normal"
-msgstr ""
+msgstr "సామాన్యమైన"
 
 #: toolbar.py:601
 msgid "Plain Text"
-msgstr ""
+msgstr "సాదాసీదా వచనం"
 
 #: toolbar.py:656
 msgid "Zoom Out"
-msgstr ""
+msgstr "దూరంనుంచి చూడు"
 
 #: toolbar.py:662
 msgid "Zoom In"
-msgstr ""
+msgstr "దగ్గరగా చూడు"
 
 #: toolbar.py:678
 msgid "%"
-msgstr ""
+msgstr "%"
 
 #: toolbar.py:690
 msgid "Page: "
-msgstr ""
+msgstr "పుట: "
