@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: write\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2007-11-28 08:42+0000\n"
+"PO-Revision-Date: 2007-12-31 10:06+0000\n"
 "Last-Translator: Gerhard Steiner <gerhard.steiner@duichwir.at>\n"
 "Language-Team: German <fedora-trans-de@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr "Schreiben"
 
 #: AbiWordActivity.py:64
 msgid "Edit"
-msgstr "Ändern"
+msgstr "Bearbeiten"
 
 #: AbiWordActivity.py:67
 msgid "Text"
@@ -148,11 +148,11 @@ msgstr "Nummerierung"
 
 #: toolbar.py:597
 msgid "Lower Case List"
-msgstr "Nummerierung (Kleinbuchstaben)"
+msgstr "Nummerierung mit Kleinbuchstaben"
 
 #: toolbar.py:598
 msgid "Upper Case List"
-msgstr "Nummerierung (Großbuchstaben)"
+msgstr "Nummerierung mit Großbuchstaben"
 
 #: toolbar.py:599
 msgid "Block Text"
