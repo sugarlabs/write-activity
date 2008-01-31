@@ -2,19 +2,18 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2008-01-31 05:16-0500\n"
+"Last-Translator: Satyanarayana Murthy Saladi <saladism@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.0.1\n"
+"X-Generator: Pootle 1.0.2\n"
 
 #: activity/activity.info:2
 msgid "Write"
@@ -22,7 +21,7 @@ msgstr "వ్రాత"
 
 #: AbiWordActivity.py:64
 msgid "Edit"
-msgstr " కూర్చు"
+msgstr "కూర్చు"
 
 #: AbiWordActivity.py:67
 msgid "Text"
@@ -38,7 +37,7 @@ msgstr "పట్టిక"
 
 #: AbiWordActivity.py:79
 msgid "Format"
-msgstr ""
+msgstr "రూపు"
 
 #: AbiWordActivity.py:83
 msgid "View"
@@ -46,27 +45,27 @@ msgstr "చూడు"
 
 #: toolbar.py:51
 msgid "Rich Text (RTF)"
-msgstr "దివ్యమైన వచనం (RTF)"
+msgstr "సిరి వచనం (RTF)"
 
 #: toolbar.py:51
 msgid "RTF"
-msgstr "RTF"
+msgstr "ఆర్ టి ఎఫ్"
 
 #: toolbar.py:52
 msgid "Hypertext (HTML)"
-msgstr "హైపరుటెక్ష్  (HTML)"
+msgstr "హైపరుటెక్ష్ (HTML)"
 
 #: toolbar.py:52
 msgid "HTML"
-msgstr "HTML"
+msgstr "హెచ్ టి ఎం ఎల్"
 
 #: toolbar.py:53
 msgid "Plain Text (TXT)"
-msgstr "సాదాసీసా వచనం (TXT)"
+msgstr "సాదా వచనం (TXT)"
 
 #: toolbar.py:53
 msgid "TXT"
-msgstr "TXT"
+msgstr "టి ఎక్స్ టి"
 
 #: toolbar.py:128
 msgid "Find previous"
@@ -78,15 +77,15 @@ msgstr "తర్వాతది వెతుకు"
 
 #: toolbar.py:244
 msgid "Bold"
-msgstr "చిక్కగా"
+msgstr "బొద్దు"
 
 #: toolbar.py:251
 msgid "Italic"
-msgstr "ఏటవాలుగా"
+msgstr "వాలు"
 
 #: toolbar.py:258
 msgid "Underline"
-msgstr "అడుగున గీతతో"
+msgstr "క్రింద గీతతో"
 
 #: toolbar.py:481
 msgid "Insert Image"
@@ -118,23 +117,23 @@ msgstr "నిలువవరస తీసివేయి"
 
 #: toolbar.py:580
 msgid "Style: "
-msgstr "శైలి"
+msgstr "శైలి: "
 
 #: toolbar.py:590
 msgid "Heading 1"
-msgstr "శీర్షిక  1"
+msgstr "శీర్షిక 1"
 
 #: toolbar.py:591
 msgid "Heading 2"
-msgstr "శీర్షిక  2"
+msgstr "శీర్షిక 2"
 
 #: toolbar.py:592
 msgid "Heading 3"
-msgstr "శీర్షిక  3"
+msgstr "శీర్షిక 3"
 
 #: toolbar.py:593
 msgid "Heading 4"
-msgstr "శీర్షిక  4"
+msgstr "శీర్షిక 4"
 
 #: toolbar.py:594
 msgid "Bullet List"
@@ -146,7 +145,7 @@ msgstr "అడ్డగీతతో జాబితా"
 
 #: toolbar.py:596
 msgid "Numbered List"
-msgstr "లెక్కగట్టిన జాబితా"
+msgstr "అంకెల జాబితా"
 
 #: toolbar.py:597
 msgid "Lower Case List"
@@ -166,7 +165,7 @@ msgstr "సామాన్యమైన"
 
 #: toolbar.py:601
 msgid "Plain Text"
-msgstr "సాదాసీదా వచనం"
+msgstr "సాదా వచనం"
 
 #: toolbar.py:656
 msgid "Zoom Out"
