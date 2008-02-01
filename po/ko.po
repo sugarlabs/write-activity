@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2007-11-21 08:04+0000\n"
-"Last-Translator: Yunrim Park <rimipark@gmail.com>\n"
+"PO-Revision-Date: 2007-11-28 20:13+0000\n"
+"Last-Translator: Seonho Kim <kayseon@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,19 +21,19 @@ msgstr "쓰기"
 
 #: AbiWordActivity.py:64
 msgid "Edit"
-msgstr ""
+msgstr "편집하기"
 
 #: AbiWordActivity.py:67
 msgid "Text"
-msgstr ""
+msgstr "문자"
 
 #: AbiWordActivity.py:71
 msgid "Image"
-msgstr ""
+msgstr "이미지"
 
 #: AbiWordActivity.py:75 toolbar.py:515
 msgid "Table"
-msgstr ""
+msgstr "테이블"
 
 #: AbiWordActivity.py:79
 msgid "Format"
@@ -41,7 +41,7 @@ msgstr ""
 
 #: AbiWordActivity.py:83
 msgid "View"
-msgstr ""
+msgstr "보기"
 
 #: toolbar.py:51
 msgid "Rich Text (RTF)"

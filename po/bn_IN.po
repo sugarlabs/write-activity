@@ -2,184 +2,192 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2008-01-22 06:17+0000\n"
+"Last-Translator: Sankarshan Mukhopadhyay <sankarshan.mukhopadhyay@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.0.1\n"
+"X-Generator: Pootle 1.0.2\n"
 
 #: activity/activity.info:2
 msgid "Write"
-msgstr ""
+msgstr "লিখুন"
 
 #: AbiWordActivity.py:64
 msgid "Edit"
-msgstr ""
+msgstr "সম্পাদন"
 
 #: AbiWordActivity.py:67
 msgid "Text"
-msgstr ""
+msgstr "টেক্সট"
 
 #: AbiWordActivity.py:71
 msgid "Image"
-msgstr ""
+msgstr "ছবি"
 
 #: AbiWordActivity.py:75 toolbar.py:515
+#, fuzzy
 msgid "Table"
-msgstr ""
+msgstr "টেবিল"
 
 #: AbiWordActivity.py:79
 msgid "Format"
-msgstr ""
+msgstr "ফর্ম্যাট"
 
 #: AbiWordActivity.py:83
 msgid "View"
-msgstr ""
+msgstr "প্রদর্শন"
 
 #: toolbar.py:51
 msgid "Rich Text (RTF)"
-msgstr ""
+msgstr "রিচ টেক্সট (RTF)"
 
 #: toolbar.py:51
 msgid "RTF"
-msgstr ""
+msgstr "আরটিএফ"
 
 #: toolbar.py:52
 msgid "Hypertext (HTML)"
-msgstr ""
+msgstr "হাইপারটেক্সট (এইচটিএমএল)"
 
 #: toolbar.py:52
 msgid "HTML"
-msgstr ""
+msgstr "এইচটিএমএল"
 
 #: toolbar.py:53
 msgid "Plain Text (TXT)"
-msgstr ""
+msgstr "প্লেইন টেক্সট (TXT)"
 
 #: toolbar.py:53
 msgid "TXT"
-msgstr ""
+msgstr "টিএক্সটি"
 
 #: toolbar.py:128
 msgid "Find previous"
-msgstr ""
+msgstr "আগেরটি খোঁজো"
 
 #: toolbar.py:134
 msgid "Find next"
-msgstr ""
+msgstr "পরবর্তী খোঁজো"
 
 #: toolbar.py:244
 msgid "Bold"
-msgstr ""
+msgstr "বোল্ড"
 
 #: toolbar.py:251
 msgid "Italic"
-msgstr ""
+msgstr "আইটালিক"
 
 #: toolbar.py:258
 msgid "Underline"
-msgstr ""
+msgstr "আন্ডারলাইন"
 
 #: toolbar.py:481
 msgid "Insert Image"
-msgstr ""
+msgstr "ছবি ঢোকান"
 
 #: toolbar.py:489
 msgid "Choose image"
-msgstr ""
+msgstr "ছবি বেছে নিন"
 
 #: toolbar.py:515
 msgid "Cancel"
-msgstr ""
+msgstr "বাতিল"
 
 #: toolbar.py:524
 msgid "Insert Row"
-msgstr ""
+msgstr "সারি ঢুকিয়ে দিন"
 
 #: toolbar.py:530
 msgid "Delete Row"
-msgstr ""
+msgstr "সারি মুছে ফেলুন"
 
 #: toolbar.py:536
 msgid "Insert Column"
 msgstr ""
 
 #: toolbar.py:542
+#, fuzzy
 msgid "Delete Column"
-msgstr ""
+msgstr "কলাম মোছো"
 
 #: toolbar.py:580
 msgid "Style: "
-msgstr ""
+msgstr "স্টাইল:"
 
 #: toolbar.py:590
 msgid "Heading 1"
-msgstr ""
+msgstr "হেডিং ১"
 
 #: toolbar.py:591
 msgid "Heading 2"
-msgstr ""
+msgstr "হেডিং ২"
 
 #: toolbar.py:592
 msgid "Heading 3"
-msgstr ""
+msgstr "হেডিং ৩"
 
 #: toolbar.py:593
 msgid "Heading 4"
-msgstr ""
+msgstr "হেডিং ৪"
 
 #: toolbar.py:594
+#, fuzzy
 msgid "Bullet List"
-msgstr ""
+msgstr "বুলেট তালিকা"
 
 #: toolbar.py:595
+#, fuzzy
 msgid "Dashed List"
-msgstr ""
+msgstr "ড্যাস তালিকা"
 
 #: toolbar.py:596
+#, fuzzy
 msgid "Numbered List"
-msgstr ""
+msgstr "সংখ্যা তালিকা"
 
 #: toolbar.py:597
+#, fuzzy
 msgid "Lower Case List"
-msgstr ""
+msgstr "ছোট হাতের হরফ তালিকা"
 
 #: toolbar.py:598
+#, fuzzy
 msgid "Upper Case List"
-msgstr ""
+msgstr "বড় হাতের হরফ তালিকা"
 
 #: toolbar.py:599
 msgid "Block Text"
-msgstr ""
+msgstr "ব্লক লেখা"
 
 #: toolbar.py:600
 msgid "Normal"
-msgstr ""
+msgstr "সাধারণ"
 
 #: toolbar.py:601
 msgid "Plain Text"
-msgstr ""
+msgstr "প্লেইন টেক্সট"
 
 #: toolbar.py:656
+#, fuzzy
 msgid "Zoom Out"
-msgstr ""
+msgstr "ছোট করুন"
 
 #: toolbar.py:662
+#, fuzzy
 msgid "Zoom In"
-msgstr ""
+msgstr "বড় করুন"
 
 #: toolbar.py:678
 msgid "%"
-msgstr ""
+msgstr "%"
 
 #: toolbar.py:690
 msgid "Page: "
-msgstr ""
+msgstr "পৃষ্ঠা:"

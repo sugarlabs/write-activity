@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2008-01-08 19:27+0000\n"
+"PO-Revision-Date: 2008-01-08 19:36+0000\n"
 "Last-Translator: Jaume <jaume@nualart.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -105,80 +105,82 @@ msgstr "Insereix fila"
 
 #: toolbar.py:530
 msgid "Delete Row"
-msgstr ""
+msgstr "Esborrar fila"
 
 #: toolbar.py:536
 msgid "Insert Column"
-msgstr ""
+msgstr "Insereix Columna"
 
 #: toolbar.py:542
 msgid "Delete Column"
-msgstr ""
+msgstr "Esborrar Columna"
 
 #: toolbar.py:580
 msgid "Style: "
-msgstr ""
+msgstr "Estil:"
 
 #: toolbar.py:590
 msgid "Heading 1"
-msgstr ""
+msgstr "Capçalera 1"
 
 #: toolbar.py:591
 msgid "Heading 2"
-msgstr ""
+msgstr "Capçalera 2"
 
 #: toolbar.py:592
 msgid "Heading 3"
-msgstr ""
+msgstr "Capçalera 3"
 
 #: toolbar.py:593
 msgid "Heading 4"
-msgstr ""
+msgstr "Capçalera 4"
 
+# Definicions
+# ca: Figura en forma de cercle, de quadrat o de rombe, plena o buida, que s'utilitza en tipografia per a destacar l'inici d'un paràgraf, una enumeració, etc.
 #: toolbar.py:594
 msgid "Bullet List"
-msgstr ""
+msgstr "Llista amb pics"
 
 #: toolbar.py:595
 msgid "Dashed List"
-msgstr ""
+msgstr "Llista amb guionets"
 
 #: toolbar.py:596
 msgid "Numbered List"
-msgstr ""
+msgstr "Llista numerada"
 
 #: toolbar.py:597
 msgid "Lower Case List"
-msgstr ""
+msgstr "Llista de minúscules"
 
 #: toolbar.py:598
 msgid "Upper Case List"
-msgstr ""
+msgstr "Llista de majúscules"
 
 #: toolbar.py:599
 msgid "Block Text"
-msgstr ""
+msgstr "Bloc de Text"
 
 #: toolbar.py:600
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: toolbar.py:601
 msgid "Plain Text"
-msgstr ""
+msgstr "Text Pla"
 
 #: toolbar.py:656
 msgid "Zoom Out"
-msgstr ""
+msgstr "Reduir"
 
 #: toolbar.py:662
 msgid "Zoom In"
-msgstr ""
+msgstr "Ampliar"
 
 #: toolbar.py:678
 msgid "%"
-msgstr ""
+msgstr "%"
 
 #: toolbar.py:690
 msgid "Page: "
-msgstr ""
+msgstr "Pàgina"

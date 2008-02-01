@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2008-01-04 12:57+0000\n"
+"PO-Revision-Date: 2008-01-10 10:18+0000\n"
 "Last-Translator: usman mansoor ansari <jalalkut@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -49,7 +49,7 @@ msgstr "بډاى-متن (RTF)"
 
 #: toolbar.py:51
 msgid "RTF"
-msgstr ""
+msgstr "RTF"
 
 #: toolbar.py:52
 msgid "Hypertext (HTML)"

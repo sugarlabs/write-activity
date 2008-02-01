@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2007-11-27 23:17+0000\n"
+"PO-Revision-Date: 2007-12-04 20:00+0000\n"
 "Last-Translator: Carlo Falciola <cfalciola@yahoo.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,7 @@ msgstr "Pagina:"
 
 #: activity/activity.info:2
 msgid "Write"
-msgstr ""
+msgstr "Scrivi"
 
 #: AbiWordActivity.py:79
 msgid "Format"
@@ -63,7 +63,7 @@ msgstr "Formato"
 
 #: toolbar.py:51
 msgid "Rich Text (RTF)"
-msgstr ""
+msgstr "Rich Text Format (RTF)"
 
 #: toolbar.py:51
 msgid "RTF"
@@ -131,7 +131,7 @@ msgstr "Cancella Colonna"
 
 #: toolbar.py:580
 msgid "Style: "
-msgstr "Stile:"
+msgstr "Stile: "
 
 #: toolbar.py:590
 msgid "Heading 1"
@@ -172,7 +172,7 @@ msgstr "Lista con maiuscola"
 # to be checked on app
 #: toolbar.py:599
 msgid "Block Text"
-msgstr ""
+msgstr "Blocco di testo"
 
 #: toolbar.py:600
 msgid "Normal"
@@ -182,14 +182,18 @@ msgstr "Normale"
 msgid "Plain Text"
 msgstr "Testo normale"
 
+# Nel caso si tratti di attributi al carattere sarebbe più opportuno ingrandisci/riduci
 #: toolbar.py:656
+#, fuzzy
 msgid "Zoom Out"
-msgstr ""
+msgstr "Zoom Indietro"
 
+# Nel caso si tratti di attributi al carattere sarebbe più opportuno ingrandisci/riduci
 #: toolbar.py:662
+#, fuzzy
 msgid "Zoom In"
-msgstr ""
+msgstr "Zoom Avanti"
 
 #: toolbar.py:690
 msgid "Page: "
-msgstr "Pagina:"
+msgstr "Pagina: "

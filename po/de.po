@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: write\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2007-12-31 10:06+0000\n"
+"PO-Revision-Date: 2008-01-27 18:12-0500\n"
 "Last-Translator: Gerhard Steiner <gerhard.steiner@duichwir.at>\n"
 "Language-Team: German <fedora-trans-de@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -116,7 +116,7 @@ msgstr "Spalte löschen"
 
 #: toolbar.py:580
 msgid "Style: "
-msgstr "Stil:"
+msgstr "Stil: "
 
 #: toolbar.py:590
 msgid "Heading 1"

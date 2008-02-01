@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2007-11-25 20:04+0000\n"
-"Last-Translator: Behnam B.Marandi <blixbox@gmail.com>\n"
+"PO-Revision-Date: 2007-12-18 04:33+0000\n"
+"Last-Translator: Siamak Farsaii <sfarsaii@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -47,12 +47,12 @@ msgstr "نمایش"
 #: toolbar.py:51
 #, fuzzy
 msgid "Rich Text (RTF)"
-msgstr "متن غنی (راست به چپ)"
+msgstr "متن غنی (RTF)"
 
 #: toolbar.py:51
 #, fuzzy
 msgid "RTF"
-msgstr "راست به چپ"
+msgstr "فرم غنی(RTF)"
 
 #: toolbar.py:52
 msgid "Hypertext (HTML)"
@@ -68,7 +68,7 @@ msgstr "متن ساده (TXT)"
 
 #: toolbar.py:53
 msgid "TXT"
-msgstr "TXT"
+msgstr "متن"
 
 #: toolbar.py:128
 msgid "Find previous"
