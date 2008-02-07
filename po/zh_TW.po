@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: OLPC Write\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2008-01-03 11:27+0000\n"
+"PO-Revision-Date: 2008-02-07 11:54-0500\n"
 "Last-Translator: Yuan Chao <yuanchao@gmail.com>\n"
 "Language-Team: Yuan CHAO <yuanchao@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -65,11 +65,11 @@ msgstr "TXT"
 
 #: toolbar.py:128
 msgid "Find previous"
-msgstr "往前找"
+msgstr "找上一個"
 
 #: toolbar.py:134
 msgid "Find next"
-msgstr "往後找"
+msgstr "找下一個"
 
 #: toolbar.py:244
 msgid "Bold"
@@ -81,7 +81,7 @@ msgstr "斜體"
 
 #: toolbar.py:258
 msgid "Underline"
-msgstr "底線"
+msgstr "劃底線"
 
 #: toolbar.py:481
 msgid "Insert Image"
@@ -133,23 +133,23 @@ msgstr "小標題"
 
 #: toolbar.py:594
 msgid "Bullet List"
-msgstr "圓點列舉"
+msgstr "圓點條列項目"
 
 #: toolbar.py:595
 msgid "Dashed List"
-msgstr "短線列舉"
+msgstr "短線條列項目"
 
 #: toolbar.py:596
 msgid "Numbered List"
-msgstr "序號列舉"
+msgstr "數字條列項目"
 
 #: toolbar.py:597
 msgid "Lower Case List"
-msgstr "大寫列表"
+msgstr "小寫英文條列項目"
 
 #: toolbar.py:598
 msgid "Upper Case List"
-msgstr "小寫列表"
+msgstr "大寫英文條列項目"
 
 #: toolbar.py:599
 msgid "Block Text"
@@ -177,4 +177,4 @@ msgstr "%"
 
 #: toolbar.py:690
 msgid "Page: "
-msgstr "頁碼:"
+msgstr "頁碼: "
