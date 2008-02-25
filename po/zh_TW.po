@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: OLPC Write\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2008-02-07 11:54-0500\n"
+"PO-Revision-Date: 2008-02-25 00:00-0500\n"
 "Last-Translator: Yuan Chao <yuanchao@gmail.com>\n"
 "Language-Team: Yuan CHAO <yuanchao@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -101,7 +101,7 @@ msgstr "插入列"
 
 #: toolbar.py:530
 msgid "Delete Row"
-msgstr "刪除線"
+msgstr "刪除列"
 
 #: toolbar.py:536
 msgid "Insert Column"
