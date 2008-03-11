@@ -1,0 +1,184 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-11-17 20:56+0100\n"
+"PO-Revision-Date: 2008-02-15 07:06-0500\n"
+"Last-Translator: Hayesha Somarathne <hayeshais@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Pootle 1.0.2\n"
+
+#: activity/activity.info:2
+msgid "Write"
+msgstr "ලියන්න"
+
+#: AbiWordActivity.py:64
+msgid "Edit"
+msgstr "සංස්කරනය කරන්න"
+
+#: AbiWordActivity.py:67
+msgid "Text"
+msgstr ""
+
+#: AbiWordActivity.py:71
+msgid "Image"
+msgstr "පින්තූරය"
+
+#: AbiWordActivity.py:75 toolbar.py:515
+msgid "Table"
+msgstr "වගුව"
+
+#: AbiWordActivity.py:79
+msgid "Format"
+msgstr "සැකසීම"
+
+#: AbiWordActivity.py:83
+msgid "View"
+msgstr "දර්ශනය කරන්න"
+
+#: toolbar.py:51
+msgid "Rich Text (RTF)"
+msgstr ""
+
+#: toolbar.py:51
+msgid "RTF"
+msgstr ""
+
+#: toolbar.py:52
+msgid "Hypertext (HTML)"
+msgstr ""
+
+#: toolbar.py:52
+msgid "HTML"
+msgstr ""
+
+#: toolbar.py:53
+msgid "Plain Text (TXT)"
+msgstr ""
+
+#: toolbar.py:53
+msgid "TXT"
+msgstr ""
+
+#: toolbar.py:128
+msgid "Find previous"
+msgstr "පෙර එක සොයන්න"
+
+#: toolbar.py:134
+msgid "Find next"
+msgstr "පසු එක සොයන්න"
+
+#: toolbar.py:244
+msgid "Bold"
+msgstr ""
+
+#: toolbar.py:251
+msgid "Italic"
+msgstr ""
+
+#: toolbar.py:258
+msgid "Underline"
+msgstr ""
+
+#: toolbar.py:481
+msgid "Insert Image"
+msgstr "පින්තූරයක් ඇතුල් කරන්න"
+
+#: toolbar.py:489
+msgid "Choose image"
+msgstr "පින්තූරයක් තෝරන්න"
+
+#: toolbar.py:515
+msgid "Cancel"
+msgstr "අවලංගු කරන්න"
+
+#: toolbar.py:524
+msgid "Insert Row"
+msgstr "පේලියක් ඇතුල් කරන්න"
+
+#: toolbar.py:530
+msgid "Delete Row"
+msgstr "පේලිය මකා දමන්න හෝ පේලිය ඉවත් කරන්න"
+
+#: toolbar.py:536
+msgid "Insert Column"
+msgstr "කොලමක් ඇතුල් කරන්න"
+
+#: toolbar.py:542
+msgid "Delete Column"
+msgstr "කොලම ඉවත් කරන්න හෝ කොලම මකා දමන්න "
+
+#: toolbar.py:580
+msgid "Style: "
+msgstr ""
+
+#: toolbar.py:590
+msgid "Heading 1"
+msgstr ""
+
+#: toolbar.py:591
+msgid "Heading 2"
+msgstr ""
+
+#: toolbar.py:592
+msgid "Heading 3"
+msgstr ""
+
+#: toolbar.py:593
+msgid "Heading 4"
+msgstr ""
+
+#: toolbar.py:594
+msgid "Bullet List"
+msgstr ""
+
+#: toolbar.py:595
+msgid "Dashed List"
+msgstr ""
+
+#: toolbar.py:596
+msgid "Numbered List"
+msgstr ""
+
+#: toolbar.py:597
+msgid "Lower Case List"
+msgstr ""
+
+#: toolbar.py:598
+msgid "Upper Case List"
+msgstr ""
+
+#: toolbar.py:599
+msgid "Block Text"
+msgstr ""
+
+#: toolbar.py:600
+msgid "Normal"
+msgstr "සාමාන්‍ය"
+
+#: toolbar.py:601
+msgid "Plain Text"
+msgstr ""
+
+#: toolbar.py:656
+msgid "Zoom Out"
+msgstr "කුඩා කරන්න"
+
+#: toolbar.py:662
+msgid "Zoom In"
+msgstr "විශාල කරන්න"
+
+#: toolbar.py:678
+msgid "%"
+msgstr ""
+
+#: toolbar.py:690
+msgid "Page: "
+msgstr "පිටුව :"
