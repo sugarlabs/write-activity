@@ -2,184 +2,183 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2008-04-28 02:48-0400\n"
+"Last-Translator: Sandip Gawas <sandip.gawas@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.0.1\n"
+"X-Generator: Pootle 1.1.0rc2\n"
 
 #: activity/activity.info:2
 msgid "Write"
-msgstr ""
+msgstr "लिहा"
 
 #: AbiWordActivity.py:64
 msgid "Edit"
-msgstr ""
+msgstr "संपादन करणे "
 
 #: AbiWordActivity.py:67
 msgid "Text"
-msgstr ""
+msgstr "शब्द"
 
 #: AbiWordActivity.py:71
 msgid "Image"
-msgstr ""
+msgstr " छायाचित्र"
 
 #: AbiWordActivity.py:75 toolbar.py:515
 msgid "Table"
-msgstr ""
+msgstr "टेबल"
 
 #: AbiWordActivity.py:79
 msgid "Format"
-msgstr ""
+msgstr "बघा"
 
 #: AbiWordActivity.py:83
 msgid "View"
-msgstr ""
+msgstr "पाहा"
 
 #: toolbar.py:51
 msgid "Rich Text (RTF)"
-msgstr ""
+msgstr "रिच टेक्स्ट (आर.टी.एफ)"
 
 #: toolbar.py:51
 msgid "RTF"
-msgstr ""
+msgstr "आर.टी.एफ"
 
 #: toolbar.py:52
 msgid "Hypertext (HTML)"
-msgstr ""
+msgstr "हाइपरटेक्स्ट (एच्.टी.एम्.एल्)"
 
 #: toolbar.py:52
 msgid "HTML"
-msgstr ""
+msgstr "एच्.टी.एम्.एल्"
 
 #: toolbar.py:53
 msgid "Plain Text (TXT)"
-msgstr ""
+msgstr "साधे शब्द (टी.एक्स.टी)"
 
 #: toolbar.py:53
 msgid "TXT"
-msgstr ""
+msgstr "टी.एक्स.टी"
 
 #: toolbar.py:128
 msgid "Find previous"
-msgstr ""
+msgstr "मागचा शोधा"
 
 #: toolbar.py:134
 msgid "Find next"
-msgstr ""
+msgstr "पुढचे शोधा"
 
 #: toolbar.py:244
 msgid "Bold"
-msgstr ""
+msgstr "बोल्ड"
 
 #: toolbar.py:251
 msgid "Italic"
-msgstr ""
+msgstr "तिरपा"
 
 #: toolbar.py:258
 msgid "Underline"
-msgstr ""
+msgstr "अधोरेखित करणे"
 
 #: toolbar.py:481
 msgid "Insert Image"
-msgstr ""
+msgstr "छायाचित्र आत घाला "
 
 #: toolbar.py:489
 msgid "Choose image"
-msgstr ""
+msgstr "चित्र निवडा "
 
 #: toolbar.py:515
 msgid "Cancel"
-msgstr ""
+msgstr "रद्द करणे "
 
 #: toolbar.py:524
 msgid "Insert Row"
-msgstr ""
+msgstr "रांग बनवा"
 
 #: toolbar.py:530
 msgid "Delete Row"
-msgstr ""
+msgstr "रांग काढून टाका"
 
 #: toolbar.py:536
 msgid "Insert Column"
-msgstr ""
+msgstr "स्तंभ बनवा"
 
 #: toolbar.py:542
 msgid "Delete Column"
-msgstr ""
+msgstr "स्तंभ काढून टाका "
 
 #: toolbar.py:580
 msgid "Style: "
-msgstr ""
+msgstr "शैली"
 
 #: toolbar.py:590
 msgid "Heading 1"
-msgstr ""
+msgstr "शीर्षक १"
 
 #: toolbar.py:591
 msgid "Heading 2"
-msgstr ""
+msgstr "शीर्षक २"
 
 #: toolbar.py:592
 msgid "Heading 3"
-msgstr ""
+msgstr "शीर्षक ३"
 
 #: toolbar.py:593
 msgid "Heading 4"
-msgstr ""
+msgstr "शीर्षक ४"
 
 #: toolbar.py:594
 msgid "Bullet List"
-msgstr ""
+msgstr "बुलेट लिस्ट"
 
 #: toolbar.py:595
 msgid "Dashed List"
-msgstr ""
+msgstr "अधोरेखित यादी"
 
 #: toolbar.py:596
 msgid "Numbered List"
-msgstr ""
+msgstr "अंक यादी"
 
 #: toolbar.py:597
 msgid "Lower Case List"
-msgstr ""
+msgstr "छोटी लिपी यादी"
 
 #: toolbar.py:598
 msgid "Upper Case List"
-msgstr ""
+msgstr " मोठी लिपी यादी"
 
 #: toolbar.py:599
 msgid "Block Text"
-msgstr ""
+msgstr "गृहसमुदाय शब्ध"
 
 #: toolbar.py:600
 msgid "Normal"
-msgstr ""
+msgstr "साधारण"
 
 #: toolbar.py:601
 msgid "Plain Text"
-msgstr ""
+msgstr "साधारण शब्द"
 
 #: toolbar.py:656
 msgid "Zoom Out"
-msgstr ""
+msgstr "झूम आउट"
 
 #: toolbar.py:662
 msgid "Zoom In"
-msgstr ""
+msgstr "झूम इन"
 
 #: toolbar.py:678
 msgid "%"
-msgstr ""
+msgstr "%"
 
 #: toolbar.py:690
 msgid "Page: "
-msgstr ""
+msgstr "पृष्ठ"
