@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Rit Lim <rit.lim@gmail.com>, 2008.
 #, fuzzy
 msgid ""
 msgstr ""
@@ -18,168 +18,168 @@ msgstr ""
 
 #: activity/activity.info:2
 msgid "Write"
-msgstr ""
+msgstr "សរសេរ"
 
 #: AbiWordActivity.py:64
 msgid "Edit"
-msgstr ""
+msgstr "កែ"
 
 #: AbiWordActivity.py:67
 msgid "Text"
-msgstr ""
+msgstr "អក្សរ"
 
 #: AbiWordActivity.py:71
 msgid "Image"
-msgstr ""
+msgstr "រូបភាព"
 
 #: AbiWordActivity.py:75 toolbar.py:515
 msgid "Table"
-msgstr ""
+msgstr "តារាង"
 
 #: AbiWordActivity.py:79
 msgid "Format"
-msgstr ""
+msgstr "ទ្រង់ទ្រាយ"
 
 #: AbiWordActivity.py:83
 msgid "View"
-msgstr ""
+msgstr "មើល"
 
 #: toolbar.py:51
 msgid "Rich Text (RTF)"
-msgstr ""
+msgstr "Rich Text (RTF)"
 
 #: toolbar.py:51
 msgid "RTF"
-msgstr ""
+msgstr "RTF"
 
 #: toolbar.py:52
 msgid "Hypertext (HTML)"
-msgstr ""
+msgstr "Hypertext (HTML)"
 
 #: toolbar.py:52
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #: toolbar.py:53
 msgid "Plain Text (TXT)"
-msgstr ""
+msgstr "Plain Text (TXT)"
 
 #: toolbar.py:53
 msgid "TXT"
-msgstr ""
+msgstr "TXT"
 
 #: toolbar.py:128
 msgid "Find previous"
-msgstr ""
+msgstr "រក​ទៅ​ក្រោយ"
 
 #: toolbar.py:134
 msgid "Find next"
-msgstr ""
+msgstr "រក​ទៅ​មុខ"
 
 #: toolbar.py:244
 msgid "Bold"
-msgstr ""
+msgstr "ដុត"
 
 #: toolbar.py:251
 msgid "Italic"
-msgstr ""
+msgstr "ទ្រេត"
 
 #: toolbar.py:258
 msgid "Underline"
-msgstr ""
+msgstr "គូស​បន្ទាត់​ក្រាម"
 
 #: toolbar.py:481
 msgid "Insert Image"
-msgstr ""
+msgstr "បញ្ចូល​រូបភាព"
 
 #: toolbar.py:489
 msgid "Choose image"
-msgstr ""
+msgstr "ជ្រើសរើស​រូបភាព"
 
 #: toolbar.py:515
 msgid "Cancel"
-msgstr ""
+msgstr "បោះបង់"
 
 #: toolbar.py:524
 msgid "Insert Row"
-msgstr ""
+msgstr "បញ្ចូល​ជួរដេក"
 
 #: toolbar.py:530
 msgid "Delete Row"
-msgstr ""
+msgstr "ដក​ជួរដេក"
 
 #: toolbar.py:536
 msgid "Insert Column"
-msgstr ""
+msgstr "បញ្ចូល​ជួរឈរ"
 
 #: toolbar.py:542
 msgid "Delete Column"
-msgstr ""
+msgstr "ដក​ជួរ​ឈរ"
 
 #: toolbar.py:580
 msgid "Style: "
-msgstr ""
+msgstr "រចនាប័ត្ម: "
 
 #: toolbar.py:590
 msgid "Heading 1"
-msgstr ""
+msgstr "ក្បាល ១"
 
 #: toolbar.py:591
 msgid "Heading 2"
-msgstr ""
+msgstr "ក្បាល ២"
 
 #: toolbar.py:592
 msgid "Heading 3"
-msgstr ""
+msgstr "ក្បាល ៣"
 
 #: toolbar.py:593
 msgid "Heading 4"
-msgstr ""
+msgstr "ក្បាល ៤"
 
 #: toolbar.py:594
 msgid "Bullet List"
-msgstr ""
+msgstr "សំនុមចំនុច"
 
 #: toolbar.py:595
 msgid "Dashed List"
-msgstr ""
+msgstr "សំនុម​ខ្សែដាច់"
 
 #: toolbar.py:596
 msgid "Numbered List"
-msgstr ""
+msgstr "សំនុមលេខ"
 
 #: toolbar.py:597
 msgid "Lower Case List"
-msgstr ""
+msgstr "សំនុម​អក្សរ​តូច"
 
 #: toolbar.py:598
 msgid "Upper Case List"
-msgstr ""
+msgstr "សំនុម​អក្សរ​ធំ"
 
 #: toolbar.py:599
 msgid "Block Text"
-msgstr ""
+msgstr "អក្សរប្លុក"
 
 #: toolbar.py:600
 msgid "Normal"
-msgstr ""
+msgstr "ធម្មតា"
 
 #: toolbar.py:601
 msgid "Plain Text"
-msgstr ""
+msgstr "អក្សរ​ធម្មតា"
 
 #: toolbar.py:656
 msgid "Zoom Out"
-msgstr ""
+msgstr "ពង្រីក"
 
 #: toolbar.py:662
 msgid "Zoom In"
-msgstr ""
+msgstr "បង្រួម"
 
 #: toolbar.py:678
 msgid "%"
-msgstr ""
+msgstr "%"
 
 #: toolbar.py:690
 msgid "Page: "
-msgstr ""
+msgstr "ទំព័រ: "
