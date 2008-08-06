@@ -15,6 +15,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Pootle 1.0.2\n"
 
+#: activity/activity.info:2
+msgid "Write"
+msgstr "لکهیں"
+
 #: AbiWordActivity.py:64
 msgid "Edit"
 msgstr "تدوین"
@@ -31,33 +35,13 @@ msgstr "نقش"
 msgid "Table"
 msgstr "جدول"
 
-#: AbiWordActivity.py:83
-msgid "View"
-msgstr "نظارہ"
-
-#: toolbar.py:155
-msgid "Select text color"
-msgstr "متن کا رنگ منتخب کريں"
-
-#: toolbar.py:515
-msgid "Cancel"
-msgstr "منسوخ کريں"
-
-#: toolbar.py:678
-msgid "%"
-msgstr "%"
-
-#: toolbar.py:335
-msgid "Page:"
-msgstr "صفحہ:"
-
-#: activity/activity.info:2
-msgid "Write"
-msgstr "لکهیں"
-
 #: AbiWordActivity.py:79
 msgid "Format"
 msgstr "وضع کریں"
+
+#: AbiWordActivity.py:83
+msgid "View"
+msgstr "نظارہ"
 
 #: toolbar.py:51
 msgid "Rich Text (RTF)"
@@ -110,6 +94,10 @@ msgstr "نقش داخل کریں"
 #: toolbar.py:489
 msgid "Choose image"
 msgstr "نقش منتخب کریں"
+
+#: toolbar.py:515
+msgid "Cancel"
+msgstr "منسوخ کريں"
 
 #: toolbar.py:524
 msgid "Insert Row"
@@ -187,6 +175,16 @@ msgstr "باہر زوم کریں"
 msgid "Zoom In"
 msgstr "اندر زوم کریں"
 
+#: toolbar.py:678
+msgid "%"
+msgstr "%"
+
 #: toolbar.py:690
 msgid "Page: "
 msgstr "صفحہ:_"
+
+#~ msgid "Select text color"
+#~ msgstr "متن کا رنگ منتخب کريں"
+
+#~ msgid "Page:"
+#~ msgstr "صفحہ:"
