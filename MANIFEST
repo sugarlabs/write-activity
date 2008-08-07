@@ -18,6 +18,7 @@ po/fr.po
 po/km.po
 po/hi.po
 po/fa.po
+po/sl.po
 po/tpi.po
 po/en.po
 po/mk.po
@@ -34,6 +35,7 @@ po/ro.po
 po/mn.po
 po/ht.po
 po/zh_CN.po
+po/nb.po
 po/de.po
 po/pseudo.po
 po/ca.po
@@ -85,6 +87,8 @@ locale/qu/activity.linfo
 locale/qu/LC_MESSAGES/org.laptop.AbiWordActivity.mo
 locale/th/activity.linfo
 locale/th/LC_MESSAGES/org.laptop.AbiWordActivity.mo
+locale/nb/activity.linfo
+locale/nb/LC_MESSAGES/org.laptop.AbiWordActivity.mo
 locale/km/activity.linfo
 locale/km/LC_MESSAGES/org.laptop.AbiWordActivity.mo
 locale/pt_BR/activity.linfo
@@ -101,6 +105,8 @@ locale/ff/activity.linfo
 locale/ff/LC_MESSAGES/org.laptop.AbiWordActivity.mo
 locale/ig/activity.linfo
 locale/ig/LC_MESSAGES/org.laptop.AbiWordActivity.mo
+locale/sl/activity.linfo
+locale/sl/LC_MESSAGES/org.laptop.AbiWordActivity.mo
 locale/zh_TW/activity.linfo
 locale/zh_TW/LC_MESSAGES/org.laptop.AbiWordActivity.mo
 locale/ml/activity.linfo
