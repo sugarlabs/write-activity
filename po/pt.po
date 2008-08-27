@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2008-08-27 05:57-0400\n"
+"PO-Revision-Date: 2008-08-27 06:08-0400\n"
 "Last-Translator: Eduardo H. Silva <HoboPrimate@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -69,11 +69,11 @@ msgstr "TXT"
 
 #: toolbar.py:128
 msgid "Find previous"
-msgstr "Encontrar o anterior"
+msgstr "Encontrar anterior"
 
 #: toolbar.py:134
 msgid "Find next"
-msgstr "Encontrar o seguinte"
+msgstr "Encontrar próximo"
 
 #: toolbar.py:244
 msgid "Bold"
