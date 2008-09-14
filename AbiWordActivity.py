@@ -283,8 +283,9 @@ class AbiWordActivity (Activity):
     def _on_members_changed(self, message, added, removed, local_pending, remote_pending, actor, reason):
         logger.debug("_on_members_changed")
         for handle in removed:
-            logger.debug('removed handle: %d, with dbus name: %s', handle, self.participants[handle])
             bus_name = self.participants.pop(handle, None)
+            logger.debug('removed handle: %d, with dbus name: %s', handle,
+                         bus_name)
             self.abiword_canvas.invoke_cmd('com.abisource.abiword.abicollab.olpc.buddyLeft', bus_name, 0, 0)
 
     def _buddy_joined_cb (self, activity, buddy):
