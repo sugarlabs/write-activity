@@ -7,21 +7,21 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2008-02-22 23:26-0500\n"
-"Last-Translator: Serkan Cabi <serkancabi@gmail.com>\n"
+"PO-Revision-Date: 2008-08-28 03:47-0400\n"
+"Last-Translator: abdullah kocabas <abdullah.kocabas@abcdizustu.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 1.0.2\n"
+"X-Generator: Pootle 1.1.0rc2\n"
 
 #: activity/activity.info:2
 msgid "Write"
-msgstr "Yaz"
+msgstr "Yazınız."
 
 #: AbiWordActivity.py:64
 msgid "Edit"
-msgstr "Düzenle"
+msgstr "Düzenleyiniz."
 
 #: AbiWordActivity.py:67
 msgid "Text"
@@ -70,11 +70,11 @@ msgstr "TXT"
 
 #: toolbar.py:128
 msgid "Find previous"
-msgstr "Öncekini bul"
+msgstr "Öncekini bulunuz."
 
 #: toolbar.py:134
 msgid "Find next"
-msgstr "Sonrakini bul"
+msgstr "Sonrakini bulunuz."
 
 #: toolbar.py:244
 msgid "Bold"
@@ -90,31 +90,31 @@ msgstr "Altçizgili"
 
 #: toolbar.py:481
 msgid "Insert Image"
-msgstr "Resim Ekle"
+msgstr "Resim Ekleyiniz."
 
 #: toolbar.py:489
 msgid "Choose image"
-msgstr "Resim seç"
+msgstr "Resim seçiniz."
 
 #: toolbar.py:515
 msgid "Cancel"
-msgstr "Vazgeç"
+msgstr "Vazgeçiniz."
 
 #: toolbar.py:524
 msgid "Insert Row"
-msgstr "Satır Ekle"
+msgstr "Satır Ekleyiniz."
 
 #: toolbar.py:530
 msgid "Delete Row"
-msgstr "Satırı Sil"
+msgstr "Satırı Siliniz."
 
 #: toolbar.py:536
 msgid "Insert Column"
-msgstr "Kolon Ekle"
+msgstr "Kolon Ekleyiniz."
 
 #: toolbar.py:542
 msgid "Delete Column"
-msgstr "Kolonu Sil"
+msgstr "Kolonu Siliniz."
 
 #: toolbar.py:580
 msgid "Style: "
@@ -137,12 +137,10 @@ msgid "Heading 4"
 msgstr "Başlık 4"
 
 #: toolbar.py:594
-#, fuzzy
 msgid "Bullet List"
 msgstr "Noktalı Liste"
 
 #: toolbar.py:595
-#, fuzzy
 msgid "Dashed List"
 msgstr "Çizgili Liste"
 
@@ -172,11 +170,11 @@ msgstr "Düz Metin"
 
 #: toolbar.py:656
 msgid "Zoom Out"
-msgstr "Küçült"
+msgstr "Küçültünüz."
 
 #: toolbar.py:662
 msgid "Zoom In"
-msgstr "Büyült"
+msgstr "Büyültünüz."
 
 #: toolbar.py:678
 msgid "%"
