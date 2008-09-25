@@ -285,6 +285,8 @@ class AbiWordActivity (Activity):
         for handle in removed:
             bus_name = self.participants.pop(handle, None)
             if bus_name is None:
+                # FIXME: that shouldn't happen so probably hide another bug.
+                # Should be investigated
                 continue
 
             logger.debug('removed handle: %d, with dbus name: %s', handle,
