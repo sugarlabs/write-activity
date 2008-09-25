@@ -1,9 +1,16 @@
+60
+
+* #8492 fix crash on buddy left (cassidy)
+
 59
+
+* Remove MANIFEST from git (erikos)
+* Add COPYING file (erikos)
 
 58
 
-* Fix 6021: Write crash on buddy left
-* Add license field to activity.info
+* Fix 6021: Write crash on buddy left (morgs)
+* Add license field to activity.info (uwog)
 
 57
 
