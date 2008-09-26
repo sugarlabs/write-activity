@@ -284,6 +284,11 @@ class AbiWordActivity (Activity):
         logger.debug("_on_members_changed")
         for handle in removed:
             bus_name = self.participants.pop(handle, None)
+            if bus_name is None:
+                # FIXME: that shouldn't happen so probably hide another bug.
+                # Should be investigated
+                continue
+
             logger.debug('removed handle: %d, with dbus name: %s', handle,
                          bus_name)
             self.abiword_canvas.invoke_cmd('com.abisource.abiword.abicollab.olpc.buddyLeft', bus_name, 0, 0)
