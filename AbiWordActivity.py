@@ -313,7 +313,9 @@ class AbiWordActivity (Activity):
         logging.debug('AbiWordActivity.write_file')
 
         # check if we have a default mimetype; if not, fall back to OpenDocument
-        if 'mime_type' not in self.metadata or self.metadata['mime_type'] == '':
+        # also fallback if we know we cannot export in that format
+        if 'mime_type' not in self.metadata or self.metadata['mime_type'] == '' or \
+            self.metadata['mime_type'] == 'application/msword':
             self.metadata['mime_type'] = 'application/vnd.oasis.opendocument.text'
 
         # if we were viewing the source of a file, 
