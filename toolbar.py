@@ -34,7 +34,7 @@ from sugar.activity.activity import ActivityToolbar
 from sugar.activity.activity import EditToolbar
 from sugar.graphics.menuitem import MenuItem
 from sugar.datastore import datastore
-
+from sugar import mime
 import sugar.profile
 
 import dbus
@@ -506,7 +506,8 @@ class ImageToolbar(gtk.Toolbar):
 
     def _image_cb(self, button):
         chooser = ObjectChooser(_('Choose image'), self._parent,
-                                gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT)
+                                gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,
+                                data_type=mime.GENERIC_TYPE_IMAGE)
         try:
             result = chooser.run()
             if result == gtk.RESPONSE_ACCEPT:
