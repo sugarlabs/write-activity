@@ -27,6 +27,7 @@ from sugar.graphics.icon import Icon
 from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.toggletoolbutton import ToggleToolButton
 from sugar.graphics.combobox import ComboBox
+from sugar.graphics.colorbutton import ColorToolButton
 from sugar.graphics.toolcombobox import ToolComboBox
 from sugar.graphics.objectchooser import ObjectChooser
 from sugar.graphics import iconentry
@@ -280,7 +281,7 @@ class TextToolbar(gtk.Toolbar):
         self.insert(self._underline, -1)
         self._underline.show()
 
-        self._text_color = gtk.ColorButton()
+        self._text_color = ColorToolButton()
         self._text_color_id = self._text_color.connect('color-set', self._text_color_cb)
         tool_item = gtk.ToolItem()
         tool_item.add(self._text_color)
@@ -395,7 +396,9 @@ class TextToolbar(gtk.Toolbar):
 
     def _text_color_cb(self, button):
         newcolor = self._text_color.get_color()
-        self._abiword_canvas.set_text_color(newcolor.red // 256.0, newcolor.green // 256.0, newcolor.blue // 256.0)
+        self._abiword_canvas.set_text_color(int(newcolor.red / 256.0), 
+                                            int(newcolor.green / 256.0), 
+                                            int(newcolor.blue / 256.0))
 
     def _font_size_cb(self, abi, size):
         for i, s in enumerate(self._font_sizes):
