@@ -507,7 +507,7 @@ class ImageToolbar(gtk.Toolbar):
     def _image_cb(self, button):
         chooser = ObjectChooser(_('Choose image'), self._parent,
                                 gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,
-                                data_type=mime.GENERIC_TYPE_IMAGE)
+                                what_filter=mime.GENERIC_TYPE_IMAGE)
         try:
             result = chooser.run()
             if result == gtk.RESPONSE_ACCEPT:
