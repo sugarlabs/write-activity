@@ -16,6 +16,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Translate Toolkit 1.0.1\n"
 
+#: activity/activity.info:2
+msgid "Write"
+msgstr ""
+
 #: AbiWordActivity.py:64
 msgid "Edit"
 msgstr ""
@@ -32,32 +36,12 @@ msgstr ""
 msgid "Table"
 msgstr ""
 
-#: AbiWordActivity.py:83
-msgid "View"
-msgstr ""
-
-#: toolbar.py:155
-msgid "Select text color"
-msgstr ""
-
-#: toolbar.py:515
-msgid "Cancel"
-msgstr ""
-
-#: toolbar.py:678
-msgid "%"
-msgstr ""
-
-#: toolbar.py:335
-msgid "Page:"
-msgstr ""
-
-#: activity/activity.info:2
-msgid "Write"
-msgstr ""
-
 #: AbiWordActivity.py:79
 msgid "Format"
+msgstr ""
+
+#: AbiWordActivity.py:83
+msgid "View"
 msgstr ""
 
 #: toolbar.py:51
@@ -110,6 +94,10 @@ msgstr ""
 
 #: toolbar.py:489
 msgid "Choose image"
+msgstr ""
+
+#: toolbar.py:515
+msgid "Cancel"
 msgstr ""
 
 #: toolbar.py:524
@@ -186,6 +174,10 @@ msgstr ""
 
 #: toolbar.py:662
 msgid "Zoom In"
+msgstr ""
+
+#: toolbar.py:678
+msgid "%"
 msgstr ""
 
 #: toolbar.py:690
