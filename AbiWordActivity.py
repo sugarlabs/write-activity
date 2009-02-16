@@ -22,6 +22,10 @@ import os
 import time
 import shutil
 
+# Abiword needs this to happen as soon as possible
+import gobject
+gobject.threads_init()
+
 import dbus
 import gtk
 import telepathy
