@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2008-08-27 06:08-0400\n"
+"PO-Revision-Date: 2009-02-20 13:59-0500\n"
 "Last-Translator: Eduardo H. Silva <HoboPrimate@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -89,11 +89,11 @@ msgstr "Sublinhar"
 
 #: toolbar.py:481
 msgid "Insert Image"
-msgstr "Inserir Imagem"
+msgstr "Inserir imagem"
 
 #: toolbar.py:489
 msgid "Choose image"
-msgstr "Escolhe a Imagem"
+msgstr "Escolhe a imagem"
 
 #: toolbar.py:515
 msgid "Cancel"
@@ -101,19 +101,19 @@ msgstr "Cancelar"
 
 #: toolbar.py:524
 msgid "Insert Row"
-msgstr "Inserir Linha"
+msgstr "Inserir linha"
 
 #: toolbar.py:530
 msgid "Delete Row"
-msgstr "Apagar Linha"
+msgstr "Apagar linha"
 
 #: toolbar.py:536
 msgid "Insert Column"
-msgstr "Inserir Coluna"
+msgstr "Inserir coluna"
 
 #: toolbar.py:542
 msgid "Delete Column"
-msgstr "Apagar Coluna"
+msgstr "Apagar coluna"
 
 #: toolbar.py:580
 msgid "Style: "
@@ -137,27 +137,27 @@ msgstr "Título 4"
 
 #: toolbar.py:594
 msgid "Bullet List"
-msgstr "Lista de Pontos"
+msgstr "Lista de pontos"
 
 #: toolbar.py:595
 msgid "Dashed List"
-msgstr "Lista com Traços"
+msgstr "Lista de traços"
 
 #: toolbar.py:596
 msgid "Numbered List"
-msgstr "Lista Numerada"
+msgstr "Lista numerada"
 
 #: toolbar.py:597
 msgid "Lower Case List"
-msgstr "Lista com Minúsculas"
+msgstr "Lista com minúsculas"
 
 #: toolbar.py:598
 msgid "Upper Case List"
-msgstr "Lista com Maiúsculas"
+msgstr "Lista com maiúsculas"
 
 #: toolbar.py:599
 msgid "Block Text"
-msgstr "Texto em Bloco"
+msgstr "Texto em bloco"
 
 #: toolbar.py:600
 msgid "Normal"
@@ -165,15 +165,15 @@ msgstr "Normal"
 
 #: toolbar.py:601
 msgid "Plain Text"
-msgstr "Texto Simples"
+msgstr "Texto simples"
 
 #: toolbar.py:656
 msgid "Zoom Out"
-msgstr "Afastar Zoom"
+msgstr "Afastar zoom"
 
 #: toolbar.py:662
 msgid "Zoom In"
-msgstr "Aproximar Zoom"
+msgstr "Aproximar zoom"
 
 #: toolbar.py:678
 msgid "%"
