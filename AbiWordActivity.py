@@ -33,6 +33,7 @@ import telepathy.client
 
 from sugar.activity.activity import Activity, ActivityToolbox, EditToolbar
 from sugar.presence import presenceservice
+from sugar.graphics import style
 
 from abiword import Canvas
 import toolbar
@@ -137,6 +138,23 @@ class AbiWordActivity (Activity):
             logger.debug("We are creating an activity")
 
         owner = pservice.get_owner()
+
+    def get_preview(self):
+        if not hasattr(self.abiword_canvas, 'render_page_to_image'):
+            return Activity.get_preview(self)
+
+        pixbuf = self.abiword_canvas.render_page_to_image(0)
+        pixbuf = pixbuf.scale_simple(style.zoom(300), style.zoom(225),
+                                     gtk.gdk.INTERP_BILINEAR)
+
+        preview_data = []
+        def save_func(buf, data):
+            data.append(buf)
+
+        pixbuf.save_to_callback(save_func, 'png', user_data=preview_data)
+        preview_data = ''.join(preview_data)
+
+        return preview_data
 
     def _shared_cb(self, activity):
         logger.debug('My Write activity was shared')
