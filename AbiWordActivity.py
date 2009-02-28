@@ -143,7 +143,7 @@ class AbiWordActivity (Activity):
         if not hasattr(self.abiword_canvas, 'render_page_to_image'):
             return Activity.get_preview(self)
 
-        pixbuf = self.abiword_canvas.render_page_to_image(0)
+        pixbuf = self.abiword_canvas.render_page_to_image(1)
         pixbuf = pixbuf.scale_simple(style.zoom(300), style.zoom(225),
                                      gtk.gdk.INTERP_BILINEAR)
 
