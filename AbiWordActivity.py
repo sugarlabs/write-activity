@@ -31,73 +31,103 @@ import gtk
 import telepathy
 import telepathy.client
 
-from sugar.activity.activity import Activity, ActivityToolbox, EditToolbar
+from sugar.graphics.toolcombobox import ToolComboBox
+from sugar.graphics.toolbar import ToolbarButton, Toolbar
+from sugar.activity import activity
 from sugar.presence import presenceservice
 from sugar.graphics import style
 
 from abiword import Canvas
 import toolbar
-from toolbar import WriteActivityToolbarExtension, WriteEditToolbar, TextToolbar, ImageToolbar, TableToolbar, FormatToolbar, ViewToolbar
+import widgets
 from sugar.activity.activity import get_bundle_path
 
 logger = logging.getLogger('write-activity')
 
-class AbiWordActivity (Activity):
+class AbiWordActivity (activity.Activity):
 
     def __init__ (self, handle):
-        Activity.__init__ (self, handle)
+        activity.Activity.__init__ (self, handle)
 
-        # abiword uses the current directory for all its file dialogs 
+        # abiword uses the current directory for all its file dialogs
         os.chdir(os.path.expanduser('~'))
 
         # create our main abiword canvas
         self.abiword_canvas = Canvas()
-        self.abiword_canvas.connect('text-selected', self._selection_cb)
-        self.abiword_canvas.connect('image-selected', self._selection_cb)
-        self.abiword_canvas.connect('selection-cleared', self._selection_cleared_cb)
 
-        # create our toolbars
-        toolbox = ActivityToolbox(self)
-        self.set_toolbox(toolbox)
-        toolbox.show()
+        main_toolbar = Toolbar()
 
-        activity_toolbar_ext = WriteActivityToolbarExtension(self, toolbox, self.abiword_canvas)
+        main_toolbar.top.insert(activity.toolbar(self), 0)
 
-        text_toolbar = TextToolbar(toolbox, self.abiword_canvas)
+        main_toolbar.top.insert(
+                ToolComboBox(widgets.FontCombo(self.abiword_canvas)), -1)
+        main_toolbar.top.insert(
+                ToolComboBox(widgets.FontSizeCombo(self.abiword_canvas)), -1)
 
-        self._edit_toolbar = WriteEditToolbar(toolbox, self.abiword_canvas, text_toolbar)
-        toolbox.add_toolbar(_('Edit'), self._edit_toolbar)
-        self._edit_toolbar.show()
+        text_toolbar = ToolbarButton(
+                page=toolbar.TextToolbar(self.abiword_canvas),
+                icon_name='text-bar')
+        main_toolbar.top.insert(text_toolbar, -1)
 
-        toolbox.add_toolbar(_('Text'), text_toolbar)
-        text_toolbar.show()
+        main_toolbar.top.insert(activity.separator(), -1)
 
-        image_toolbar = ImageToolbar(toolbox, self.abiword_canvas, self)
-        toolbox.add_toolbar(_('Image'), image_toolbar)
-        image_toolbar.show()
+        undo = activity.undo_button(sensitive=False)
+        undo.connect('clicked', lambda button: self.abiword_canvas.undo())
+        self.abiword_canvas.connect("can-undo", lambda abi, can_undo:
+                undo.set_sensitive(can_undo))
+        main_toolbar.top.insert(undo, -1)
 
-        table_toolbar = TableToolbar(toolbox, self.abiword_canvas)
-        toolbox.add_toolbar(_('Table'), table_toolbar)
-        table_toolbar.show()
+        redo = activity.redo_button(sensitive=False)
+        redo.connect('clicked', lambda button: self.abiword_canvas.redo())
+        self.abiword_canvas.connect("can-redo", lambda abi, can_redo:
+                redo.set_sensitive(can_redo))
+        main_toolbar.top.insert(redo, -1)
 
-        format_toolbar = FormatToolbar(toolbox, self.abiword_canvas)
-        toolbox.add_toolbar(_('Format'), format_toolbar)
-        format_toolbar.show()
+        copy = activity.copy_button()
+        copy.connect('clicked', lambda button: self.abiword_canvas.copy())
+        main_toolbar.top.insert(copy, -1)
 
-        view_toolbar = ViewToolbar(self.abiword_canvas)
-        toolbox.add_toolbar(_('View'), view_toolbar)
-        view_toolbar.show()
+        paste = activity.paste_button()
+        paste.connect('clicked', lambda button: self.abiword_canvas.paste())
+        main_toolbar.top.insert(paste, -1)
 
-        # the text toolbar should be our default toolbar
-        toolbox.set_current_toolbar(toolbar.TOOLBAR_TEXT)
+        self.abiword_canvas.connect('text-selected', lambda abi, b:
+                copy.set_sensitive(True))
+        self.abiword_canvas.connect('image-selected', lambda abi, b:
+                copy.set_sensitive(True))
+        self.abiword_canvas.connect('selection-cleared', lambda abi, b:
+                copy.set_sensitive(False))
+
+        main_toolbar.top.insert(activity.separator(), -1)
+
+        insert_toolbar = ToolbarButton(
+                page=toolbar.InsertToolbar(self.abiword_canvas),
+                icon_name='transfer-from')
+        main_toolbar.top.insert(insert_toolbar, -1)
+
+        search_toolbar = ToolbarButton(
+                page=toolbar.SearchToolbar(self.abiword_canvas, main_toolbar),
+                icon_name='search-bar')
+        main_toolbar.top.insert(search_toolbar, -1)
+
+        view_toolbar = ToolbarButton(
+                page=toolbar.ViewToolbar(self.abiword_canvas),
+                icon_name='view-bar')
+        main_toolbar.top.insert(view_toolbar, -1)
+
+        main_toolbar.top.insert(activity.expander(), -1)
+        main_toolbar.top.insert(activity.stop_button(self), -1)
+
+        main_toolbar.show_all()
+        self.set_toolbox(main_toolbar)
 
         self.set_canvas(self.abiword_canvas)
-        self.abiword_canvas.connect_after('map-event', self._map_event_cb)
+        #self.abiword_canvas.connect_after('map-event', self._map_event_cb)
         self.abiword_canvas.show()
 
     def _map_event_cb(self, event, activity):
         logger.debug('_map_event_cb')
-    
+
         # set custom keybindings for Write
         logger.debug("Loading keybindings")
         keybindings_file = os.path.join( get_bundle_path(), "keybindings.xml" )
@@ -141,7 +171,7 @@ class AbiWordActivity (Activity):
 
     def get_preview(self):
         if not hasattr(self.abiword_canvas, 'render_page_to_image'):
-            return Activity.get_preview(self)
+            return activity.Activity.get_preview(self)
 
         pixbuf = self.abiword_canvas.render_page_to_image(1)
         pixbuf = pixbuf.scale_simple(style.zoom(300), style.zoom(225),
@@ -349,9 +379,3 @@ class AbiWordActivity (Activity):
 
         self.metadata['fulltext'] = self.abiword_canvas.get_content(extension_or_mimetype=".txt")[:3000]
         self.abiword_canvas.save('file://' + file_path, actual_mimetype, '');
-
-    def _selection_cb(self, abi, b):
-        self._edit_toolbar.copy.set_sensitive(True)
-
-    def _selection_cleared_cb(self, abi, b):
-        self._edit_toolbar.copy.set_sensitive(False)

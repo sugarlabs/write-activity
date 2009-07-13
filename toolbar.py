@@ -15,40 +15,35 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
 from gettext import gettext as _
 import logging
 import os
 import time
+import dbus
 
 import abiword
 import gtk
 
+from sugar.graphics.radiopalette import RadioMenuButton
 from sugar.graphics.icon import Icon
 from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.toggletoolbutton import ToggleToolButton
-from sugar.graphics.combobox import ComboBox
 from sugar.graphics.colorbutton import ColorToolButton
 from sugar.graphics.toolcombobox import ToolComboBox
 from sugar.graphics.objectchooser import ObjectChooser
 from sugar.graphics import iconentry
-from sugar.activity.activity import ActivityToolbar
-from sugar.activity.activity import EditToolbar
+from sugar.activity import activity
 from sugar.graphics.menuitem import MenuItem
+from sugar.graphics.palette import Palette
 from sugar.datastore import datastore
 from sugar import mime
+from port import chooser
 import sugar.profile
 
-import dbus
+import widgets
 
 logger = logging.getLogger('write-activity')
-
-#ick
-TOOLBAR_ACTIVITY = 0
-TOOLBAR_EDIT = 1
-TOOLBAR_TEXT = 2
-TOOLBAR_IMAGE = 3
-TOOLBAR_TABLE = 4
-TOOLBAR_VIEW = 5
 
 class WriteActivityToolbarExtension:
 
@@ -108,32 +103,14 @@ class WriteActivityToolbarExtension:
         fileObject.destroy()
         del fileObject
 
-class WriteEditToolbar(EditToolbar):
+class SearchToolbar(gtk.Toolbar):
 
-    def __init__(self, toolbox, abiword_canvas, text_toolbar):
+    def __init__(self, abiword_canvas, text_toolbar):
 
-        EditToolbar.__init__(self)
+        gtk.Toolbar.__init__(self)
 
-        self._toolbox = toolbox
         self._abiword_canvas = abiword_canvas
         self._text_toolbar = text_toolbar
-
-        # connect existing buttons
-        self.undo.set_sensitive(False)
-        self.redo.set_sensitive(False)
-        self.undo.connect('clicked', self._undo_cb)
-        self.redo.connect('clicked', self._redo_cb)
-        self.copy.connect('clicked', self._copy_cb)
-        self.paste.connect('clicked', self._paste_cb)
-        self._abiword_canvas.connect("can-undo", self._can_undo_cb)
-        self._abiword_canvas.connect("can-redo", self._can_redo_cb)
-
-        # make expanded non-drawn visible separator to make the search stuff right-align
-        separator = gtk.SeparatorToolItem()
-        separator.props.draw = False
-        separator.set_expand(True)
-        self.insert(separator, -1)
-        separator.show()
 
         # setup the search options
         self._search_entry = iconentry.IconEntry()
@@ -164,38 +141,18 @@ class WriteEditToolbar(EditToolbar):
         self._findprev.set_sensitive(False)
         self._findnext.set_sensitive(False)
 
-    def _undo_cb(self, button):
-        self._abiword_canvas.undo()
-
-    def _redo_cb(self, button):
-        self._abiword_canvas.redo()
-
-    def _copy_cb(self, button):
-        self._abiword_canvas.copy()
-
-    def _paste_cb(self, button):
-        self._abiword_canvas.paste()
-
-    def _can_undo_cb(self, canvas, can_undo):
-        self.undo.set_sensitive(can_undo)
-
-    def _can_redo_cb(self, canvas, can_redo):
-        self.redo.set_sensitive(can_redo)
-
     def _search_entry_activated_cb(self, entry):
         logger.debug('_search_entry_activated_cb')
         if not self._search_entry.props.text:
             return
 
         # find the next entry
-        id = self._text_toolbar.get_text_selected_handler();
-        self._abiword_canvas.handler_block(id)
         self._abiword_canvas.find_next(False)
-        self._abiword_canvas.handler_unblock(id)
 
     def _search_entry_changed_cb(self, entry):
-        logger.debug('_search_entry_changed_cb search for \'%s\'', self._search_entry.props.text)
-   
+        logger.debug('_search_entry_changed_cb search for \'%s\'',
+                self._search_entry.props.text)
+
         if not self._search_entry.props.text:
             self._search_entry.activate()
             # set the button contexts
@@ -210,28 +167,19 @@ class WriteEditToolbar(EditToolbar):
         self._findnext.set_sensitive(True)
 
         # immediately start seaching
-        id = self._text_toolbar.get_text_selected_handler();
-        self._abiword_canvas.handler_block(id)
         self._abiword_canvas.find_next(True)
-        self._abiword_canvas.handler_unblock(id)
 
     def _findprev_cb(self, button):
         logger.debug('_findprev_cb')
         if self._search_entry.props.text:
-            id = self._text_toolbar.get_text_selected_handler();
-            self._abiword_canvas.handler_block(id)
             self._abiword_canvas.find_prev()
-            self._abiword_canvas.handler_unblock(id)
         else:
             logger.debug('nothing to search for!')
 
     def _findnext_cb(self, button):
         logger.debug('_findnext_cb')
         if self._search_entry.props.text:
-            id = self._text_toolbar.get_text_selected_handler();
-            self._abiword_canvas.handler_block(id)
             self._abiword_canvas.find_next(False)
-            self._abiword_canvas.handler_unblock(id)
         else:
             logger.debug('nothing to search for!')
 
@@ -246,298 +194,15 @@ class WriteEditToolbar(EditToolbar):
         self.insert(tool_item, -1)
         tool_item.show()
 
-class TextToolbar(gtk.Toolbar):
-    _ACTION_ALIGNMENT_LEFT = 0
-    _ACTION_ALIGNMENT_CENTER = 1
-    _ACTION_ALIGNMENT_RIGHT = 2
-    _ACTION_ALIGNMENT_JUSTIFY = 3
-
-    def __init__(self, toolbox, abiword_canvas):
-        self._colorseldlg = None
-
+class InsertToolbar(gtk.Toolbar):
+    def __init__(self, abiword_canvas):
         gtk.Toolbar.__init__(self)
 
-        self._toolbox = toolbox
-        self._abiword_canvas = abiword_canvas
-
-        self._bold = ToggleToolButton('format-text-bold')
-        self._bold.set_tooltip(_('Bold'))
-        self._bold_id = self._bold.connect('clicked', self._bold_cb)
-        self._abiword_canvas.connect('bold', self._isBold_cb)
-        self.insert(self._bold, -1)
-        self._bold.show()
-
-        self._italic = ToggleToolButton('format-text-italic')
-        self._italic.set_tooltip(_('Italic'))
-        self._italic_id = self._italic.connect('clicked', self._italic_cb)
-        self._abiword_canvas.connect('italic', self._isItalic_cb)
-        self.insert(self._italic, -1)
-        self._italic.show()
-
-        self._underline = ToggleToolButton('format-text-underline')
-        self._underline.set_tooltip(_('Underline'))
-        self._underline_id = self._underline.connect('clicked', self._underline_cb)
-        self._abiword_canvas.connect('underline', self._isUnderline_cb)
-        self.insert(self._underline, -1)
-        self._underline.show()
-
-        self._text_color = ColorToolButton()
-        self._text_color_id = self._text_color.connect('color-set', self._text_color_cb)
-        tool_item = gtk.ToolItem()
-        tool_item.add(self._text_color)
-        self.insert(tool_item, -1)
-        tool_item.show_all()
-
-        separator = gtk.SeparatorToolItem()
-        separator.set_draw(True)
-        separator.show()
-        self.insert(separator, -1)
-
-        self._font_size_icon = Icon(icon_name="format-text-size", icon_size=gtk.ICON_SIZE_LARGE_TOOLBAR)
-        tool_item = gtk.ToolItem()
-        tool_item.add(self._font_size_icon)
-        self.insert(tool_item, -1)
-        tool_item.show_all()
-
-        self._font_size_combo = ComboBox()
-        self._font_sizes = ['8', '9', '10', '11', '12', '14', '16', '20', '22', '24', '26', '28', '36', '48', '72']
-        self._font_size_changed_id = self._font_size_combo.connect('changed', self._font_size_changed_cb)
-        for i, s in enumerate(self._font_sizes):
-            self._font_size_combo.append_item(i, s, None)
-            if s == '12':
-                self._font_size_combo.set_active(i)
-        tool_item = ToolComboBox(self._font_size_combo)
-        self.insert(tool_item, -1);
-        tool_item.show()
-
-        self._has_custom_fonts = False
-
-        self._font_combo = ComboBox()
-        self._fonts = sorted(self._abiword_canvas.get_font_names())
-        self._fonts_changed_id = self._font_combo.connect('changed', self._font_changed_cb)
-        for i, f in enumerate(self._fonts):
-            self._font_combo.append_item(i, f, None)
-            if f == 'Times New Roman':
-                self._font_combo.set_active(i)
-        tool_item = ToolComboBox(self._font_combo)
-        self.insert(tool_item, -1);
-        tool_item.show()
-
-        separator = gtk.SeparatorToolItem()
-        separator.set_draw(True)
-        self.insert(separator, -1)
-        separator.show()
-
-        self._alignment = ComboBox()
-        self._alignment.append_item(self._ACTION_ALIGNMENT_LEFT, None,
-                                    'format-justify-left')
-        self._alignment.append_item(self._ACTION_ALIGNMENT_CENTER, None,
-                                    'format-justify-center')
-        self._alignment.append_item(self._ACTION_ALIGNMENT_RIGHT, None,
-                                    'format-justify-right')
-        self._alignment.append_item(self._ACTION_ALIGNMENT_JUSTIFY, None,
-                                    'format-justify-fill')
-        self._alignment_changed_id = \
-            self._alignment.connect('changed', self._alignment_changed_cb)
-        tool_item = ToolComboBox(self._alignment)
-        self.insert(tool_item, -1);
-        tool_item.show()
-
-        self._abiword_canvas.connect('color', self._color_cb)
-
-        self._abiword_canvas.connect('font-size', self._font_size_cb)
-        self._abiword_canvas.connect('font-family', self._font_family_cb)
-
-        self._abiword_canvas.connect('left-align', self._isLeftAlign_cb)
-        self._abiword_canvas.connect('center-align', self._isCenterAlign_cb)
-        self._abiword_canvas.connect('right-align', self._isRightAlign_cb)
-        self._abiword_canvas.connect('justify-align', self._isJustifyAlign_cb)
-
-        self._text_selected_handler = self._abiword_canvas.connect('text-selected', self._text_selected_cb)
-
-    def get_text_selected_handler(self):
-        return self._text_selected_handler
-
-    def _add_widget(self, widget, expand=False):
-        tool_item = gtk.ToolItem()
-        tool_item.set_expand(expand)
-
-        tool_item.add(widget)
-        widget.show()
-
-        self.insert(tool_item, -1)
-        tool_item.show()
-
-    def setToggleButtonState(self,button,b,id):
-        button.handler_block(id)
-        button.set_active(b)
-        button.handler_unblock(id)
-
-    def _bold_cb(self, button):
-        self._abiword_canvas.toggle_bold()
-
-    def _isBold_cb(self, abi, b):
-        self.setToggleButtonState(self._bold,b,self._bold_id)
-
-    def _italic_cb(self, button):
-        self._abiword_canvas.toggle_italic()
-
-    def _isItalic_cb(self, abi, b):
-        self.setToggleButtonState(self._italic, b, self._italic_id)
-
-    def _underline_cb(self, button):
-        self._abiword_canvas.toggle_underline()
-
-    def _isUnderline_cb(self, abi, b):
-        self.setToggleButtonState(self._underline, b, self._underline_id)
-
-    def _color_cb(self, abi, r, g, b):
-        self._text_color.set_color(gtk.gdk.Color(r * 256, g * 256, b * 256))
-
-    def _text_color_cb(self, button):
-        newcolor = self._text_color.get_color()
-        self._abiword_canvas.set_text_color(int(newcolor.red / 256.0), 
-                                            int(newcolor.green / 256.0), 
-                                            int(newcolor.blue / 256.0))
-
-    def _font_size_cb(self, abi, size):
-        for i, s in enumerate(self._font_sizes):
-            if int(s) == int(size):
-                self._font_size_combo.handler_block(self._font_size_changed_id)
-                self._font_size_combo.set_active(i)
-                self._font_size_combo.handler_unblock(self._font_size_changed_id)
-                break;
-
-    def _font_size_changed_cb(self, combobox):
-        if self._font_size_combo.get_active() != -1:
-            logger.debug('Setting font size: %d', int(self._font_sizes[self._font_size_combo.get_active()]))
-            self._abiword_canvas.set_font_size(self._font_sizes[self._font_size_combo.get_active()])
-
-    def _font_family_cb(self, abi, font_family):
-        font_index = -1
-
-        # search for the font name in our font list
-        for i, f in enumerate(self._fonts):
-            if f == font_family:
-                font_index = i
-                break;
-
-        # if we don't know this font yet, then add it (temporary) to the list
-        if font_index == -1:
-            logger.debug('Font not found in font list: %s', font_family)
-            if not self._has_custom_fonts:
-                # add a separator to seperate the non-available fonts from
-                # the available ones
-                self._fonts.append('') # ugly
-                self._font_combo.append_separator()
-                self._has_custom_fonts = True
-            # add the new font
-            self._fonts.append(font_family)
-            self._font_combo.append_item(0, font_family, None)
-            # see how many fonts we have now, so we can select the last one
-            model = self._font_combo.get_model()
-            num_children = model.iter_n_children(None)
-            logger.debug('Number of fonts in the list: %d', num_children)
-            font_index = num_children-1
-
-        # activate the found font
-        if (font_index > -1):
-            self._font_combo.handler_block(self._fonts_changed_id)
-            self._font_combo.set_active(font_index)
-            self._font_combo.handler_unblock(self._fonts_changed_id)
-
-    def _font_changed_cb(self, combobox):
-        if self._font_combo.get_active() != -1:
-            logger.debug('Setting font name: %s', self._fonts[self._font_combo.get_active()])
-            self._abiword_canvas.set_font_name(self._fonts[self._font_combo.get_active()])
-
-    def _alignment_changed_cb(self, combobox):
-        if self._alignment.get_active() == self._ACTION_ALIGNMENT_LEFT:
-            self._abiword_canvas.align_left()
-        elif self._alignment.get_active() == self._ACTION_ALIGNMENT_CENTER:
-            self._abiword_canvas.align_center()
-        elif self._alignment.get_active() == self._ACTION_ALIGNMENT_RIGHT:
-            self._abiword_canvas.align_right()
-        elif self._alignment.get_active() == self._ACTION_ALIGNMENT_JUSTIFY:
-            self._abiword_canvas.align_justify()
-        else:
-            raise ValueError, 'Unknown option in alignment combobox.'
-
-    def _update_alignment_icon(self, index):
-        self._alignment.handler_block(self._alignment_changed_id)
-        try:
-            self._alignment.set_active(index)
-        finally:
-            self._alignment.handler_unblock(self._alignment_changed_id)
-
-    def _isLeftAlign_cb(self, abi, b):
-        if b:
-            self._update_alignment_icon(self._ACTION_ALIGNMENT_LEFT)
-
-    def _isCenterAlign_cb(self, abi, b):
-        if b:
-            self._update_alignment_icon(self._ACTION_ALIGNMENT_CENTER)
-
-    def _isRightAlign_cb(self, abi, b):
-        if b:
-            self._update_alignment_icon(self._ACTION_ALIGNMENT_RIGHT)
-
-    def _isJustifyAlign_cb(self, abi, b):
-        if b:
-            self._update_alignment_icon(self._ACTION_ALIGNMENT_JUSTIFY)
-
-    def _text_selected_cb(self, abi, b):
-        if b:
-            self._toolbox.set_current_toolbar(TOOLBAR_TEXT)
-            self._abiword_canvas.grab_focus() # hack: bad toolbox, bad!
-
-class ImageToolbar(gtk.Toolbar):
-    def __init__(self, toolbox, abiword_canvas, parent):
-        gtk.Toolbar.__init__(self)
-
-        self._toolbox = toolbox
-        self._abiword_canvas = abiword_canvas
-        self._parent = parent
-
-        self._image = ToolButton('insert-image')
-        self._image.set_tooltip(_('Insert Image'))
-        self._image_id = self._image.connect('clicked', self._image_cb)
-        self.insert(self._image, -1)
-        self._image.show()
-
-        self._abiword_canvas.connect('image-selected', self._image_selected_cb)
-
-    def _image_cb(self, button):
-        chooser = ObjectChooser(_('Choose image'), self._parent,
-                                gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,
-                                what_filter=mime.GENERIC_TYPE_IMAGE)
-        try:
-            result = chooser.run()
-            if result == gtk.RESPONSE_ACCEPT:
-                logging.debug('ObjectChooser: %r' % chooser.get_selected_object())
-                jobject = chooser.get_selected_object()
-                if jobject and jobject.file_path:
-                    self._abiword_canvas.insert_image(jobject.file_path, True)
-        finally:
-            chooser.destroy()
-            del chooser
- 
-    def _image_selected_cb(self, abi, b):
-        if b:
-            self._toolbox.set_current_toolbar(TOOLBAR_IMAGE)
-            self._abiword_canvas.grab_focus() # hack: bad toolbox, bad!
-
-class TableToolbar(gtk.Toolbar):
-    def __init__(self, toolbox, abiword_canvas):
-        gtk.Toolbar.__init__(self)
-
-        self._toolbox = toolbox
         self._abiword_canvas = abiword_canvas
 
         self._table = abiword.TableCreator()
         self._table.set_labels(_('Table'), _('Cancel'))
         self._table_id = self._table.connect('selected', self._table_cb)
-        self._table.show()
         tool_item = gtk.ToolItem()
         tool_item.add(self._table)
         self.insert(tool_item, -1)
@@ -547,27 +212,40 @@ class TableToolbar(gtk.Toolbar):
         self._table_rows_after.set_tooltip(_('Insert Row'))
         self._table_rows_after_id = self._table_rows_after.connect('clicked', self._table_rows_after_cb)
         self.insert(self._table_rows_after, -1)
-        self._table_rows_after.show()
 
         self._table_delete_rows = ToolButton('row-remove')
         self._table_delete_rows.set_tooltip(_('Delete Row'))
         self._table_delete_rows_id = self._table_delete_rows.connect('clicked', self._table_delete_rows_cb)
         self.insert(self._table_delete_rows, -1)
-        self._table_delete_rows.show()
 
         self._table_cols_after = ToolButton('column-insert')
         self._table_cols_after.set_tooltip(_('Insert Column'))
         self._table_cols_after_id = self._table_cols_after.connect('clicked', self._table_cols_after_cb)
         self.insert(self._table_cols_after, -1)
-        self._table_cols_after.show()
 
         self._table_delete_cols = ToolButton('column-remove')
         self._table_delete_cols.set_tooltip(_('Delete Column'))
         self._table_delete_cols_id = self._table_delete_cols.connect('clicked', self._table_delete_cols_cb)
         self.insert(self._table_delete_cols, -1)
-        self._table_delete_cols.show()
+
+        separator = gtk.SeparatorToolItem()
+        self.insert(separator, -1)
+
+        image = ToolButton('insert-image')
+        image.set_tooltip(_('Insert Image'))
+        self._image_id = image.connect('clicked', self._image_cb)
+        self.insert(image, -1)
+
+        self.show_all()
 
         self._abiword_canvas.connect('table-state', self._isTable_cb)
+        #self._abiword_canvas.connect('image-selected', self._image_selected_cb)
+
+    def _image_cb(self, button):
+        def cb(object):
+            logging.debug('ObjectChooser: %r' % object)
+            self._abiword_canvas.insert_image(object.file_path, True)
+        chooser.pick(what=chooser.IMAGE, cb=cb)
 
     def _table_cb(self, abi, rows, cols):
         self._abiword_canvas.insert_table(rows,cols)
@@ -589,84 +267,6 @@ class TableToolbar(gtk.Toolbar):
         self._table_delete_rows.set_sensitive(b)
         self._table_cols_after.set_sensitive(b)
         self._table_delete_cols.set_sensitive(b)
-        if b:
-            self._toolbox.set_current_toolbar(TOOLBAR_TABLE)
-            self._abiword_canvas.grab_focus() # hack: bad toolbox, bad!
-
-class FormatToolbar(gtk.Toolbar):
-    def __init__(self, toolbox, abiword_canvas):
-        gtk.Toolbar.__init__(self)
-
-        self._toolbox = toolbox
-        self._abiword_canvas = abiword_canvas
-
-        style_label = gtk.Label(_("Style: "))
-        style_label.show()
-        tool_item_style_label = gtk.ToolItem()
-        tool_item_style_label.add(style_label)
-        self.insert(tool_item_style_label, -1)
-        tool_item_style_label.show()
-
-        self._has_custom_styles = False
-
-        self._style_combo = ComboBox()
-        self._styles = [['Heading 1',_('Heading 1')], 
-            ['Heading 2',_('Heading 2')], 
-            ['Heading 3',_('Heading 3')],
-            ['Heading 4',_('Heading 4')],
-            ['Bullet List',_('Bullet List')],
-            ['Dashed List',_('Dashed List')],
-            ['Numbered List',_('Numbered List')],
-            ['Lower Case List',_('Lower Case List')],
-            ['Upper Case List',_('Upper Case List')],
-            ['Block Text',_('Block Text')],
-            ['Normal',_('Normal')],
-            ['Plain Text',_('Plain Text')]]
-        self._style_changed_id = self._style_combo.connect('changed', self._style_changed_cb)
-        for i, s in enumerate(self._styles):
-            self._style_combo.append_item(i, s[1], None)
-            if s[0] == 'Normal':
-                self._style_combo.set_active(i)
-        tool_item = ToolComboBox(self._style_combo)
-        self.insert(tool_item, -1);
-        tool_item.show()
-
-        self._abiword_canvas.connect('style-name', self._style_cb)
-
-    def _style_cb(self, abi, style_name):
-        style_index = -1
-        for i, s in enumerate(self._styles):
-            if s[0] == style_name:
-                style_index = i
-                break;
-
-        # if we don't know this style yet, then add it (temporary) to the list
-        if style_index == -1:
-            logger.debug('Style not found in style list: %s', style_name)
-            if not self._has_custom_styles:
-                # add a separator to seperate the non-available styles from
-                # the available ones
-                self._styles.append(['','']) # ugly
-                self._style_combo.append_separator()
-                self._has_custom_styles = True
-            # add the new style
-            self._styles.append([style_name, style_name])
-            self._style_combo.append_item(0, style_name, None)
-            # see how many styles we have now, so we can select the last one
-            model = self._style_combo.get_model()
-            num_children = model.iter_n_children(None)
-            logger.debug('Number of styles in the list: %d', num_children)
-            style_index = num_children-1
-
-        if style_index > -1:
-            self._style_combo.handler_block(self._style_changed_id)
-            self._style_combo.set_active(style_index)
-            self._style_combo.handler_unblock(self._style_changed_id)
-
-    def _style_changed_cb(self, combobox):
-        if self._style_combo.get_active() != -1:
-            logger.debug('Setting style name: %s', self._styles[self._style_combo.get_active()][0])
-            self._abiword_canvas.set_style(self._styles[self._style_combo.get_active()][0])
 
 class ViewToolbar(gtk.Toolbar):
     def __init__(self, abiword_canvas):
@@ -741,7 +341,7 @@ class ViewToolbar(gtk.Toolbar):
     def set_zoom_percentage(self, zoom):
         self._zoom_percentage = zoom
         self._abiword_canvas.set_zoom_percentage(self._zoom_percentage)
-        
+
     def _zoom_cb(self, canvas, zoom):
         self._zoom_spin.handler_block(self._zoom_spin_id)
         try:
@@ -781,4 +381,68 @@ class ViewToolbar(gtk.Toolbar):
             self._page_spin.set_value(num)
         finally:
             self._page_spin.handler_unblock(self._page_spin_id)
+
+class TextToolbar(gtk.Toolbar):
+    def __init__(self, abiword_canvas):
+        gtk.Toolbar.__init__(self)
+
+        self._abiword_canvas = abiword_canvas
+
+        self.insert(ToolComboBox(widgets.StyleCombo(abiword_canvas)), -1)
+        self.insert(activity.separator(), -1)
+
+        bold = ToggleToolButton('format-text-bold')
+        bold.set_tooltip(_('Bold'))
+        bold_id = bold.connect('clicked', lambda sender:
+                abiword_canvas.toggle_bold())
+        self._abiword_canvas.connect('bold', lambda abi, b:
+                self.setToggleButtonState(bold, b, bold_id))
+        self.insert(bold, -1)
+
+        italic = ToggleToolButton('format-text-italic')
+        italic.set_tooltip(_('Italic'))
+        italic_id = italic.connect('clicked', lambda sender:
+                abiword_canvas.toggle_italic())
+        self._abiword_canvas.connect('italic', lambda abi, b:
+                self.setToggleButtonState(italic, b, italic_id))
+        self.insert(italic, -1)
+
+        underline = ToggleToolButton('format-text-underline')
+        underline.set_tooltip(_('Underline'))
+        underline_id = underline.connect('clicked', lambda sender:
+                abiword_canvas.toggle_underline())
+        self._abiword_canvas.connect('underline', lambda abi, b:
+                self.setToggleButtonState(underline, b, underline_id))
+        self.insert(underline, -1)
+
+        self.insert(activity.separator(), -1)
+
+        alignment = RadioMenuButton(palette=widgets.Alignment(abiword_canvas))
+        self.insert(alignment, -1)
+
+        lists = RadioMenuButton(palette=widgets.Lists(abiword_canvas))
+        self.insert(lists, -1)
+
+        self.insert(activity.separator(), -1)
+
+        color = ColorToolButton()
+        color.connect('color-set', self._text_color_cb)
+        tool_item = gtk.ToolItem()
+        tool_item.add(color)
+        self.insert(tool_item, -1)
+        self._abiword_canvas.connect('color', lambda abi, r, g, b:
+                color.set_color(gtk.gdk.Color(r * 256, g * 256, b * 256)))
+
+        self.show_all()
+
+    def setToggleButtonState(self,button,b,id):
+        button.handler_block(id)
+        button.set_active(b)
+        button.handler_unblock(id)
+
+    def _text_color_cb(self, button):
+        newcolor = button.get_color()
+        self._abiword_canvas.set_text_color(int(newcolor.red / 256.0), 
+                                            int(newcolor.green / 256.0), 
+                                            int(newcolor.blue / 256.0))
 
