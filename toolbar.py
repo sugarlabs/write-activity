@@ -389,7 +389,10 @@ class TextToolbar(gtk.Toolbar):
         self._abiword_canvas = abiword_canvas
 
         self.insert(ToolComboBox(widgets.StyleCombo(abiword_canvas)), -1)
-        self.insert(activity.separator(), -1)
+
+        separator = gtk.SeparatorToolItem()
+        separator.show()
+        self.insert(separator, -1)
 
         bold = ToggleToolButton('format-text-bold')
         bold.set_tooltip(_('Bold'))
@@ -415,7 +418,9 @@ class TextToolbar(gtk.Toolbar):
                 self.setToggleButtonState(underline, b, underline_id))
         self.insert(underline, -1)
 
-        self.insert(activity.separator(), -1)
+        separator = gtk.SeparatorToolItem()
+        separator.show()
+        self.insert(separator, -1)
 
         alignment = RadioMenuButton(palette=widgets.Alignment(abiword_canvas))
         self.insert(alignment, -1)
@@ -423,7 +428,9 @@ class TextToolbar(gtk.Toolbar):
         lists = RadioMenuButton(palette=widgets.Lists(abiword_canvas))
         self.insert(lists, -1)
 
-        self.insert(activity.separator(), -1)
+        separator = gtk.SeparatorToolItem()
+        separator.show()
+        self.insert(separator, -1)
 
         color = ColorToolButton()
         color.connect('color-set', self._text_color_cb)

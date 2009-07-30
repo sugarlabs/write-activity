@@ -22,6 +22,7 @@ from sugar.graphics.radiotoolbutton import RadioToolButton
 from sugar.graphics.combobox import ComboBox
 from sugar.graphics.palette import Palette
 from sugar.graphics.radiopalette import RadioPalette
+from sugar.graphics.radiotoolbutton import RadioToolButton
 
 class FontCombo(ComboBox):
     def __init__(self, abi):
@@ -182,10 +183,13 @@ class AbiPalette(RadioPalette):
         self.abi = abi
 
     def append(self, icon_name, tooltip, clicked_cb, abi_signal, abi_cb):
-        button = RadioPalette.append(self,
+        siblings = self.button_box.get_children()
+
+        button = RadioToolButton(
                 icon_name=icon_name,
-                tooltip=tooltip,
-                toggled_cb=lambda: clicked_cb())
+                group=siblings and siblings[0] or None)
+        button.connect('clicked', lambda sender: clicked_cb())
+        RadioPalette.append(self, button, tooltip)
 
         def cb(abi, prop):
             if abi_cb(abi, prop):
