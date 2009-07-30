@@ -32,9 +32,9 @@ import telepathy
 import telepathy.client
 
 from sugar.graphics.toolcombobox import ToolComboBox
-from sugar.graphics.toolbar import ToolbarButton, Toolbar
+from sugar.graphics.toolbarbox import ToolbarButton, ToolbarBox
 from sugar.activity import activity
-from sugar.activity.activity import ActivityToolbarButton
+from sugar.activity.widgets import *
 from sugar.presence import presenceservice
 from sugar.graphics import style
 
@@ -56,44 +56,44 @@ class AbiWordActivity (activity.Activity):
         # create our main abiword canvas
         self.abiword_canvas = Canvas()
 
-        main_toolbar = Toolbar()
+        toolbar_box = ToolbarBox()
 
         activity_button = ActivityToolbarButton(self)
-        main_toolbar.top.insert(activity_button, 0)
+        toolbar_box.top.insert(activity_button, 0)
 
-        main_toolbar.top.insert(
+        toolbar_box.top.insert(
                 ToolComboBox(widgets.FontCombo(self.abiword_canvas)), -1)
-        main_toolbar.top.insert(
+        toolbar_box.top.insert(
                 ToolComboBox(widgets.FontSizeCombo(self.abiword_canvas)), -1)
 
         text_toolbar = ToolbarButton(
                 page=toolbar.TextToolbar(self.abiword_canvas),
                 icon_name='text-bar')
-        main_toolbar.top.insert(text_toolbar, -1)
+        toolbar_box.top.insert(text_toolbar, -1)
 
         separator = gtk.SeparatorToolItem()
         separator.show()
-        main_toolbar.top.insert(separator, -1)
+        toolbar_box.top.insert(separator, -1)
 
-        undo = activity_button.undo_button(sensitive=False)
+        undo = UndoButton(sensitive=False)
         undo.connect('clicked', lambda button: self.abiword_canvas.undo())
         self.abiword_canvas.connect("can-undo", lambda abi, can_undo:
                 undo.set_sensitive(can_undo))
-        main_toolbar.top.insert(undo, -1)
+        toolbar_box.top.insert(undo, -1)
 
-        redo = activity_button.redo_button(sensitive=False)
+        redo = RedoButton(sensitive=False)
         redo.connect('clicked', lambda button: self.abiword_canvas.redo())
         self.abiword_canvas.connect("can-redo", lambda abi, can_redo:
                 redo.set_sensitive(can_redo))
-        main_toolbar.top.insert(redo, -1)
+        toolbar_box.top.insert(redo, -1)
 
-        copy = activity_button.copy_button()
+        copy = CopyButton()
         copy.connect('clicked', lambda button: self.abiword_canvas.copy())
-        main_toolbar.top.insert(copy, -1)
+        toolbar_box.top.insert(copy, -1)
 
-        paste = activity_button.paste_button()
+        paste = PasteButton()
         paste.connect('clicked', lambda button: self.abiword_canvas.paste())
-        main_toolbar.top.insert(paste, -1)
+        toolbar_box.top.insert(paste, -1)
 
         self.abiword_canvas.connect('text-selected', lambda abi, b:
                 copy.set_sensitive(True))
@@ -104,33 +104,34 @@ class AbiWordActivity (activity.Activity):
 
         separator = gtk.SeparatorToolItem()
         separator.show()
-        main_toolbar.top.insert(separator, -1)
+        toolbar_box.top.insert(separator, -1)
 
         insert_toolbar = ToolbarButton(
                 page=toolbar.InsertToolbar(self.abiword_canvas),
                 icon_name='transfer-from')
-        main_toolbar.top.insert(insert_toolbar, -1)
+        toolbar_box.top.insert(insert_toolbar, -1)
 
         search_toolbar = ToolbarButton(
-                page=toolbar.SearchToolbar(self.abiword_canvas, main_toolbar),
+                page=toolbar.SearchToolbar(self.abiword_canvas, toolbar_box),
                 icon_name='search-bar')
-        main_toolbar.top.insert(search_toolbar, -1)
+        toolbar_box.top.insert(search_toolbar, -1)
 
         view_toolbar = ToolbarButton(
                 page=toolbar.ViewToolbar(self.abiword_canvas),
                 icon_name='view-bar')
-        main_toolbar.top.insert(view_toolbar, -1)
+        toolbar_box.top.insert(view_toolbar, -1)
 
         separator = gtk.SeparatorToolItem()
         separator.props.draw = False
         separator.set_expand(True)
         separator.show()
-        main_toolbar.top.insert(separator, -1)
+        toolbar_box.top.insert(separator, -1)
 
-        main_toolbar.top.insert(activity_button.stop_button(), -1)
+        stop = StopButton(self)
+        toolbar_box.top.insert(stop, -1)
 
-        main_toolbar.show_all()
-        self.set_toolbox(main_toolbar)
+        toolbar_box.show_all()
+        self.set_toolbar_box(toolbar_box)
 
         self.set_canvas(self.abiword_canvas)
         #self.abiword_canvas.connect_after('map-event', self._map_event_cb)
