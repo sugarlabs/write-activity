@@ -68,7 +68,7 @@ class AbiWordActivity (activity.Activity):
 
         text_toolbar = ToolbarButton(
                 page=toolbar.TextToolbar(self.abiword_canvas),
-                icon_name='text-bar')
+                icon_name='toolbar-edit')
         toolbar_box.toolbar.insert(text_toolbar, -1)
 
         separator = gtk.SeparatorToolItem()
@@ -118,7 +118,7 @@ class AbiWordActivity (activity.Activity):
 
         view_toolbar = ToolbarButton(
                 page=toolbar.ViewToolbar(self.abiword_canvas),
-                icon_name='view-bar')
+                icon_name='toolbar-view')
         toolbar_box.toolbar.insert(view_toolbar, -1)
 
         separator = gtk.SeparatorToolItem()
