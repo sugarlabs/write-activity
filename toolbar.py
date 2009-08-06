@@ -34,6 +34,7 @@ from sugar.graphics.toolcombobox import ToolComboBox
 from sugar.graphics.objectchooser import ObjectChooser
 from sugar.graphics import iconentry
 from sugar.activity import activity
+from sugar.activity.widgets import *
 from sugar.graphics.menuitem import MenuItem
 from sugar.graphics.palette import Palette
 from sugar.datastore import datastore
@@ -386,70 +387,99 @@ class TextToolbar(gtk.Toolbar):
     def __init__(self, abiword_canvas):
         gtk.Toolbar.__init__(self)
 
-        self._abiword_canvas = abiword_canvas
+        font_name = ToolComboBox(widgets.FontCombo(abiword_canvas))
+        self.insert(font_name, -1)
 
-        self.insert(ToolComboBox(widgets.StyleCombo(abiword_canvas)), -1)
+        font_size = ToolComboBox(widgets.FontSizeCombo(abiword_canvas))
+        self.insert(font_size, -1)
 
         separator = gtk.SeparatorToolItem()
-        separator.show()
         self.insert(separator, -1)
 
         bold = ToggleToolButton('format-text-bold')
         bold.set_tooltip(_('Bold'))
         bold_id = bold.connect('clicked', lambda sender:
                 abiword_canvas.toggle_bold())
-        self._abiword_canvas.connect('bold', lambda abi, b:
-                self.setToggleButtonState(bold, b, bold_id))
+        abiword_canvas.connect('bold', lambda abi, b:
+                self._setToggleButtonState(bold, b, bold_id))
         self.insert(bold, -1)
 
         italic = ToggleToolButton('format-text-italic')
         italic.set_tooltip(_('Italic'))
         italic_id = italic.connect('clicked', lambda sender:
                 abiword_canvas.toggle_italic())
-        self._abiword_canvas.connect('italic', lambda abi, b:
-                self.setToggleButtonState(italic, b, italic_id))
+        abiword_canvas.connect('italic', lambda abi, b:
+                self._setToggleButtonState(italic, b, italic_id))
         self.insert(italic, -1)
 
         underline = ToggleToolButton('format-text-underline')
         underline.set_tooltip(_('Underline'))
         underline_id = underline.connect('clicked', lambda sender:
                 abiword_canvas.toggle_underline())
-        self._abiword_canvas.connect('underline', lambda abi, b:
-                self.setToggleButtonState(underline, b, underline_id))
+        abiword_canvas.connect('underline', lambda abi, b:
+                self._setToggleButtonState(underline, b, underline_id))
         self.insert(underline, -1)
 
         separator = gtk.SeparatorToolItem()
-        separator.show()
-        self.insert(separator, -1)
-
-        alignment = RadioMenuButton(palette=widgets.Alignment(abiword_canvas))
-        self.insert(alignment, -1)
-
-        lists = RadioMenuButton(palette=widgets.Lists(abiword_canvas))
-        self.insert(lists, -1)
-
-        separator = gtk.SeparatorToolItem()
-        separator.show()
         self.insert(separator, -1)
 
         color = ColorToolButton()
-        color.connect('color-set', self._text_color_cb)
+        color.connect('color-set', self._text_color_cb, abiword_canvas)
         tool_item = gtk.ToolItem()
         tool_item.add(color)
         self.insert(tool_item, -1)
-        self._abiword_canvas.connect('color', lambda abi, r, g, b:
+        abiword_canvas.connect('color', lambda abi, r, g, b:
                 color.set_color(gtk.gdk.Color(r * 256, g * 256, b * 256)))
 
         self.show_all()
 
-    def setToggleButtonState(self,button,b,id):
+    def _text_color_cb(self, button, abiword_canvas):
+        newcolor = button.get_color()
+        abiword_canvas.set_text_color(int(newcolor.red / 256.0),
+                                            int(newcolor.green / 256.0),
+                                            int(newcolor.blue / 256.0))
+
+    def _setToggleButtonState(self,button,b,id):
         button.handler_block(id)
         button.set_active(b)
         button.handler_unblock(id)
 
-    def _text_color_cb(self, button):
-        newcolor = button.get_color()
-        self._abiword_canvas.set_text_color(int(newcolor.red / 256.0), 
-                                            int(newcolor.green / 256.0), 
-                                            int(newcolor.blue / 256.0))
+class ParagraphToolbar(gtk.Toolbar):
+    def __init__(self, abi):
+        gtk.Toolbar.__init__(self)
 
+        self.insert(ToolComboBox(widgets.StyleCombo(abi)), -1)
+        self.insert(gtk.SeparatorToolItem(), -1)
+
+        group = widgets.AbiButton(abi, 'left-align')
+        group.props.named_icon = 'format-justify-left'
+        group.props.tooltip = _('Left justify')
+        group.connect('clicked', lambda button: abi.align_left())
+        self.insert(group, -1)
+
+        button = widgets.AbiButton(abi, 'center-align')
+        button.props.group = group
+        button.props.named_icon = 'format-justify-center'
+        button.props.tooltip = _('Center justify')
+        button.connect('clicked', lambda button: abi.align_center())
+        self.insert(button, -1)
+
+        button = widgets.AbiButton(abi, 'right-align')
+        button.props.group = group
+        button.props.named_icon = 'format-justify-right'
+        button.props.tooltip = _('Right justify')
+        button.connect('clicked', lambda button: abi.align_right())
+        self.insert(button, -1)
+
+        button = widgets.AbiButton(abi, 'justify-align')
+        button.props.group = group
+        button.props.named_icon = 'format-justify-fill'
+        button.props.tooltip = _('Fill justify')
+        button.connect('clicked', lambda button: abi.align_justify())
+        self.insert(button, -1)
+
+        self.insert(gtk.SeparatorToolItem(), -1)
+        lists = RadioMenuButton(palette=widgets.ListsPalette(abi))
+        self.insert(lists, -1)
+
+        self.show_all()

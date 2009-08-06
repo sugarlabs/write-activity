@@ -177,70 +177,63 @@ class StyleCombo(ComboBox):
             self.set_active(style_index)
             self.handler_unblock(self._style_changed_id)
 
-class AbiPalette(RadioPalette):
+class AbiButton(RadioToolButton):
+    def __init__(self, abi, abi_signal, user_cb=None, **kwargs):
+        RadioToolButton.__init__(self, **kwargs)
+        self._handler = abi.connect(abi_signal, self.__abi_cb, user_cb)
+
+    def __abi_cb(self, abi, prop, user_cb):
+        if (user_cb is None and prop) or \
+                (user_cb is not None and user_cb(abi, prop)):
+            abi.handler_block(self._handler)
+            try:
+                self.set_active(True)
+            finally:
+                abi.handler_unblock(self._handler)
+
+class ListsPalette(RadioPalette):
     def __init__(self, abi):
         RadioPalette.__init__(self)
-        self.abi = abi
 
-    def append(self, icon_name, tooltip, clicked_cb, abi_signal, abi_cb):
-        siblings = self.button_box.get_children()
+        def append(icon_name, tooltip, clicked_cb, abi_cb):
+            button = AbiButton(abi, 'style-name', abi_cb)
+            button.show()
+            button.props.icon_name = icon_name
+            button.props.group = group
+            button.connect('toggled', lambda sender: clicked_cb())
+            RadioPalette.append(self, button, tooltip)
+            return button
 
-        button = RadioToolButton(
-                icon_name=icon_name,
-                group=siblings and siblings[0] or None)
-        button.connect('clicked', lambda sender: clicked_cb())
-        RadioPalette.append(self, button, tooltip)
+        group = None
 
-        def cb(abi, prop):
-            if abi_cb(abi, prop):
-                button.set_active(True)
-        self.abi.connect(abi_signal, cb)
-
-class Alignment(AbiPalette):
-    def __init__(self, abi):
-        AbiPalette.__init__(self, abi)
-
-        self.append('format-justify-left', _('Left justify'),
-                lambda: abi.align_left(), 'left-align', lambda abi, b: b)
-
-        self.append('format-justify-center', _('Center justify'),
-                lambda: abi.align_center(), 'center-align', lambda abi, b: b)
-
-        self.append('format-justify-right', _('Right justify'),
-                lambda: abi.align_right(), 'right-align', lambda abi, b: b)
-
-        self.append('format-justify-fill', _('Fill justify'),
-                lambda: abi.align_justify(), 'justify-align', lambda abi, b: b)
-
-class Lists(AbiPalette):
-    def __init__(self, abi):
-        AbiPalette.__init__(self, abi)
-
-        self.append('list-none', _('Normal'),
-                lambda: abi.set_style('Normal'),
-                'style-name', lambda abi, style:
+        group = append('list-none', _('Normal'),
+                lambda:
+                    abi.set_style('Normal'),
+                lambda abi, style:
                     style not in ['Bullet List',
                                   'Dashed List',
                                   'Numbered List',
                                   'Lower Case List',
                                   'Upper Case List'])
 
-        self.append('list-bullet', _('Bullet List'),
+        append('list-bullet', _('Bullet List'),
                 lambda: abi.set_style('Bullet List'),
-                'style-name', lambda abi, style: style == 'Bullet List')
+                lambda abi, style: style == 'Bullet List')
 
-        self.append('list-dashed', _('Dashed List'),
+        append('list-dashed', _('Dashed List'),
                 lambda: abi.set_style('Dashed List'),
-                'style-name', lambda abi, style: style == 'Dashed List')
+                lambda abi, style: style == 'Dashed List')
 
-        self.append('list-numbered', _('Numbered List'),
+        append('list-numbered', _('Numbered List'),
                 lambda: abi.set_style('Numbered List'),
-                'style-name', lambda abi, style: style == 'Numbered List')
+                lambda abi, style: style == 'Numbered List')
 
-        self.append('list-lower-case', _('Lower Case List'),
+        append('list-lower-case', _('Lower Case List'),
                 lambda: abi.set_style('Lower Case List'),
-                'style-name', lambda abi, style: style == 'Lower Case List')
+                lambda abi, style: style == 'Lower Case List')
 
-        self.append('list-upper-case', _('Upper Case List'),
+        append('list-upper-case', _('Upper Case List'),
                 lambda: abi.set_style('Upper Case List'),
-                'style-name', lambda abi, style: style == 'Upper Case List')
+                lambda abi, style: style == 'Upper Case List')
+
+        self.show_all()

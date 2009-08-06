@@ -61,18 +61,31 @@ class AbiWordActivity (activity.Activity):
         activity_button = ActivityToolbarButton(self)
         toolbar_box.toolbar.insert(activity_button, 0)
 
-        toolbar_box.toolbar.insert(
-                ToolComboBox(widgets.FontCombo(self.abiword_canvas)), -1)
-        toolbar_box.toolbar.insert(
-                ToolComboBox(widgets.FontSizeCombo(self.abiword_canvas)), -1)
+        separator = gtk.SeparatorToolItem()
+        toolbar_box.toolbar.insert(separator, -1)
 
         text_toolbar = ToolbarButton(
                 page=toolbar.TextToolbar(self.abiword_canvas),
-                icon_name='toolbar-edit')
+                icon_name='format-text-size')
+        toolbar_box.toolbar.insert(text_toolbar, -1)
+
+        text_toolbar = ToolbarButton(
+                page=toolbar.ParagraphToolbar(self.abiword_canvas),
+                icon_name='paragraph-bar')
         toolbar_box.toolbar.insert(text_toolbar, -1)
 
         separator = gtk.SeparatorToolItem()
-        separator.show()
+        toolbar_box.toolbar.insert(separator, -1)
+
+        copy = CopyButton()
+        copy.connect('clicked', lambda button: self.abiword_canvas.copy())
+        toolbar_box.toolbar.insert(copy, -1)
+
+        paste = PasteButton()
+        paste.connect('clicked', lambda button: self.abiword_canvas.paste())
+        toolbar_box.toolbar.insert(paste, -1)
+
+        separator = gtk.SeparatorToolItem()
         toolbar_box.toolbar.insert(separator, -1)
 
         undo = UndoButton(sensitive=False)
@@ -87,13 +100,8 @@ class AbiWordActivity (activity.Activity):
                 redo.set_sensitive(can_redo))
         toolbar_box.toolbar.insert(redo, -1)
 
-        copy = CopyButton()
-        copy.connect('clicked', lambda button: self.abiword_canvas.copy())
-        toolbar_box.toolbar.insert(copy, -1)
-
-        paste = PasteButton()
-        paste.connect('clicked', lambda button: self.abiword_canvas.paste())
-        toolbar_box.toolbar.insert(paste, -1)
+        separator = gtk.SeparatorToolItem()
+        toolbar_box.toolbar.insert(separator, -1)
 
         self.abiword_canvas.connect('text-selected', lambda abi, b:
                 copy.set_sensitive(True))
@@ -101,10 +109,6 @@ class AbiWordActivity (activity.Activity):
                 copy.set_sensitive(True))
         self.abiword_canvas.connect('selection-cleared', lambda abi, b:
                 copy.set_sensitive(False))
-
-        separator = gtk.SeparatorToolItem()
-        separator.show()
-        toolbar_box.toolbar.insert(separator, -1)
 
         insert_toolbar = ToolbarButton(
                 page=toolbar.InsertToolbar(self.abiword_canvas),
