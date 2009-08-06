@@ -1,3 +1,10 @@
+64
+
+* Utilize new toolbars
+* #1121 Write canvas redraw glitch when locking open a secondary toolbar
+* #1120 Fix MANIFEST file
+* #1122 New Write primary toolbar icon design does not all fit in the toolbar
+
 58
 
 * Fix 6021: Write crash on buddy left
