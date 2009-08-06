@@ -22,7 +22,6 @@ from sugar.graphics.radiotoolbutton import RadioToolButton
 from sugar.graphics.combobox import ComboBox
 from sugar.graphics.palette import Palette
 from sugar.graphics.radiopalette import RadioPalette
-from sugar.graphics.radiotoolbutton import RadioToolButton
 
 class FontCombo(ComboBox):
     def __init__(self, abi):

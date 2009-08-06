@@ -64,15 +64,17 @@ class AbiWordActivity (activity.Activity):
         separator = gtk.SeparatorToolItem()
         toolbar_box.toolbar.insert(separator, -1)
 
-        text_toolbar = ToolbarButton(
-                page=toolbar.TextToolbar(self.abiword_canvas),
-                icon_name='format-text-size')
+        text_toolbar = ToolbarButton()
+        text_toolbar.props.page = toolbar.TextToolbar(self.abiword_canvas)
+        text_toolbar.props.icon_name = 'format-text-size'
+        text_toolbar.props.label = _('Text')
         toolbar_box.toolbar.insert(text_toolbar, -1)
 
-        text_toolbar = ToolbarButton(
-                page=toolbar.ParagraphToolbar(self.abiword_canvas),
-                icon_name='paragraph-bar')
-        toolbar_box.toolbar.insert(text_toolbar, -1)
+        para_toolbar = ToolbarButton()
+        para_toolbar.props.page = toolbar.ParagraphToolbar(self.abiword_canvas)
+        para_toolbar.props.icon_name = 'paragraph-bar'
+        para_toolbar.props.label = _('Paragraph')
+        toolbar_box.toolbar.insert(para_toolbar, -1)
 
         separator = gtk.SeparatorToolItem()
         toolbar_box.toolbar.insert(separator, -1)
@@ -110,19 +112,23 @@ class AbiWordActivity (activity.Activity):
         self.abiword_canvas.connect('selection-cleared', lambda abi, b:
                 copy.set_sensitive(False))
 
-        insert_toolbar = ToolbarButton(
-                page=toolbar.InsertToolbar(self.abiword_canvas),
-                icon_name='transfer-from')
+        insert_toolbar = ToolbarButton()
+        insert_toolbar.props.page = toolbar.InsertToolbar(self.abiword_canvas)
+        insert_toolbar.props.icon_name = 'transfer-from'
+        insert_toolbar.props.label = _('Insert')
         toolbar_box.toolbar.insert(insert_toolbar, -1)
 
-        search_toolbar = ToolbarButton(
-                page=toolbar.SearchToolbar(self.abiword_canvas, toolbar_box),
-                icon_name='search-bar')
+        search_toolbar = ToolbarButton()
+        search_toolbar.props.page = toolbar.SearchToolbar(self.abiword_canvas,
+                toolbar_box)
+        search_toolbar.props.icon_name = 'search-bar'
+        search_toolbar.props.label = _('Search')
         toolbar_box.toolbar.insert(search_toolbar, -1)
 
-        view_toolbar = ToolbarButton(
-                page=toolbar.ViewToolbar(self.abiword_canvas),
-                icon_name='toolbar-view')
+        view_toolbar = ToolbarButton()
+        view_toolbar.props.page = toolbar.ViewToolbar(self.abiword_canvas)
+        view_toolbar.props.icon_name = 'toolbar-view'
+        view_toolbar.props.label = _('View')
         toolbar_box.toolbar.insert(view_toolbar, -1)
 
         separator = gtk.SeparatorToolItem()
