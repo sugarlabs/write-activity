@@ -37,12 +37,16 @@ class FontCombo(ComboBox):
             if f == 'Times New Roman':
                 self.set_active(i)
 
-        abi.connect('font-family', self._font_family_cb)
+        self._abi_handler = abi.connect('font-family', self._font_family_cb)
 
     def _font_changed_cb(self, combobox, abi):
         if self.get_active() != -1:
             logger.debug('Setting font: %s', self._fonts[self.get_active()])
-            abi.set_font_name(self._fonts[self.get_active()])
+            try:
+                abi.handler_block(self._abi_handler)
+                abi.set_font_name(self._fonts[self.get_active()])
+            finally:
+                abi.handler_unblock(self._abi_handler)
 
     def _font_family_cb(self, abi, font_family):
         font_index = -1
@@ -81,6 +85,8 @@ class FontSizeCombo(ComboBox):
     def __init__(self, abi):
         ComboBox.__init__(self)
 
+        self._abi_handler = abi.connect('font-size', self._font_size_cb)
+
         self._font_sizes = ['8', '9', '10', '11', '12', '14', '16', '20', \
                             '22', '24', '26', '28', '36', '48', '72']
         self._changed_id = self.connect('changed', self._font_size_changed_cb,
@@ -91,13 +97,16 @@ class FontSizeCombo(ComboBox):
             if s == '12':
                 self.set_active(i)
 
-        abi.connect('font-size', self._font_size_cb)
-
     def _font_size_changed_cb(self, combobox, abi):
         if self.get_active() != -1:
             logger.debug('Setting font size: %d',
                     int(self._font_sizes[self.get_active()]))
-            abi.set_font_size(self._font_sizes[self.get_active()])
+
+            abi.handler_block(self._abi_handler)
+            try:
+                abi.set_font_size(self._font_sizes[self.get_active()])
+            finally:
+                abi.handler_unblock(self._abi_handler)
 
     def _font_size_cb(self, abi, size):
         for i, s in enumerate(self._font_sizes):
@@ -110,6 +119,8 @@ class FontSizeCombo(ComboBox):
 class StyleCombo(ComboBox):
     def __init__(self, abi):
         ComboBox.__init__(self)
+
+        self._abi_handler = abi.connect('style-name', self._style_cb)
 
         self._styles = [ ['Heading 1', _('Heading 1')],
                          ['Heading 2', _('Heading 2')],
@@ -133,12 +144,14 @@ class StyleCombo(ComboBox):
             if s[0] == 'Normal':
                 self.set_active(i)
 
-        abi.connect('style-name', self._style_cb)
-
     def _style_changed_cb(self, combobox, abi):
         if self.get_active() != -1:
             logger.debug('Set style: %s', self._styles[self.get_active()][0])
-            abi.set_style(self._styles[self.get_active()][0])
+            try:
+                abi.handler_block(self._abi_handler)
+                abi.set_style(self._styles[self.get_active()][0])
+            finally:
+                abi.handler_unblock(self._abi_handler)
 
     def _style_cb(self, abi, style_name):
         if style_name is None or style_name == 'None':
@@ -177,29 +190,46 @@ class StyleCombo(ComboBox):
             self.handler_unblock(self._style_changed_id)
 
 class AbiButton(RadioToolButton):
-    def __init__(self, abi, abi_signal, user_cb=None, **kwargs):
+    def __init__(self, abi, abi_signal, do_abi_cb, on_abi_cb=None, **kwargs):
         RadioToolButton.__init__(self, **kwargs)
-        self._handler = abi.connect(abi_signal, self.__abi_cb, user_cb)
 
-    def __abi_cb(self, abi, prop, user_cb):
-        if (user_cb is None and prop) or \
-                (user_cb is not None and user_cb(abi, prop)):
-            abi.handler_block(self._handler)
-            try:
-                self.set_active(True)
-            finally:
-                abi.handler_unblock(self._handler)
+        self._abi_handler = abi.connect(abi_signal, self.__abi_cb,
+                abi_signal, on_abi_cb)
+        self._toggled_handler = self.connect('toggled', self.__toggled_cb,
+                abi, do_abi_cb)
+
+    def __toggled_cb(self, button, abi, do_abi_cb):
+        if not button.props.active:
+            return
+
+        abi.handler_block(self._abi_handler)
+        try:
+            logging.debug('Do abi %s' % do_abi_cb)
+            do_abi_cb()
+        finally:
+            abi.handler_unblock(self._abi_handler)
+
+    def __abi_cb(self, abi, prop, abi_signal, on_abi_cb):
+        if (on_abi_cb is None and not prop) or \
+                (on_abi_cb is not None and not on_abi_cb(abi, prop)):
+            return
+
+        self.handler_block(self._toggled_handler)
+        try:
+            logging.debug('On abi %s prop=%r' % (abi_signal, prop))
+            self.set_active(True)
+        finally:
+            self.handler_unblock(self._toggled_handler)
 
 class ListsPalette(RadioPalette):
     def __init__(self, abi):
         RadioPalette.__init__(self)
 
-        def append(icon_name, tooltip, clicked_cb, abi_cb):
-            button = AbiButton(abi, 'style-name', abi_cb)
+        def append(icon_name, tooltip, do_abi_cb, on_abi_cb):
+            button = AbiButton(abi, 'style-name', do_abi_cb, on_abi_cb)
             button.show()
             button.props.icon_name = icon_name
             button.props.group = group
-            button.connect('toggled', lambda sender: clicked_cb())
             RadioPalette.append(self, button, tooltip)
             return button
 

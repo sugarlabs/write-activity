@@ -451,31 +451,27 @@ class ParagraphToolbar(gtk.Toolbar):
         self.insert(ToolComboBox(widgets.StyleCombo(abi)), -1)
         self.insert(gtk.SeparatorToolItem(), -1)
 
-        group = widgets.AbiButton(abi, 'left-align')
+        group = widgets.AbiButton(abi, 'left-align', abi.align_left)
         group.props.named_icon = 'format-justify-left'
         group.props.tooltip = _('Left justify')
-        group.connect('clicked', lambda button: abi.align_left())
         self.insert(group, -1)
 
-        button = widgets.AbiButton(abi, 'center-align')
+        button = widgets.AbiButton(abi, 'center-align', abi.align_center)
         button.props.group = group
         button.props.named_icon = 'format-justify-center'
         button.props.tooltip = _('Center justify')
-        button.connect('clicked', lambda button: abi.align_center())
         self.insert(button, -1)
 
-        button = widgets.AbiButton(abi, 'right-align')
+        button = widgets.AbiButton(abi, 'right-align', abi.align_right)
         button.props.group = group
         button.props.named_icon = 'format-justify-right'
         button.props.tooltip = _('Right justify')
-        button.connect('clicked', lambda button: abi.align_right())
         self.insert(button, -1)
 
-        button = widgets.AbiButton(abi, 'justify-align')
+        button = widgets.AbiButton(abi, 'justify-align', abi.align_justify)
         button.props.group = group
         button.props.named_icon = 'format-justify-fill'
         button.props.tooltip = _('Fill justify')
-        button.connect('clicked', lambda button: abi.align_justify())
         self.insert(button, -1)
 
         self.insert(gtk.SeparatorToolItem(), -1)
