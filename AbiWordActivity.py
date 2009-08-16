@@ -39,8 +39,8 @@ from sugar.presence import presenceservice
 from sugar.graphics import style
 
 from abiword import Canvas
-import toolbar
-import widgets
+from toolbar import *
+from widgets import *
 from sugar.activity.activity import get_bundle_path
 
 logger = logging.getLogger('write-activity')
@@ -59,19 +59,26 @@ class AbiWordActivity (activity.Activity):
         toolbar_box = ToolbarBox()
 
         activity_button = ActivityToolbarButton(self)
+
+        separator = gtk.SeparatorToolItem()
+        separator.show()
+        activity_button.props.page.insert(separator, 2)
+        export_button = ExportButton(self, self.abiword_canvas)
+        export_button.show()
+        activity_button.props.page.insert(export_button, 2)
         toolbar_box.toolbar.insert(activity_button, 0)
 
         separator = gtk.SeparatorToolItem()
         toolbar_box.toolbar.insert(separator, -1)
 
         text_toolbar = ToolbarButton()
-        text_toolbar.props.page = toolbar.TextToolbar(self.abiword_canvas)
+        text_toolbar.props.page = TextToolbar(self.abiword_canvas)
         text_toolbar.props.icon_name = 'format-text-size'
         text_toolbar.props.label = _('Text')
         toolbar_box.toolbar.insert(text_toolbar, -1)
 
         para_toolbar = ToolbarButton()
-        para_toolbar.props.page = toolbar.ParagraphToolbar(self.abiword_canvas)
+        para_toolbar.props.page = ParagraphToolbar(self.abiword_canvas)
         para_toolbar.props.icon_name = 'paragraph-bar'
         para_toolbar.props.label = _('Paragraph')
         toolbar_box.toolbar.insert(para_toolbar, -1)
@@ -113,20 +120,20 @@ class AbiWordActivity (activity.Activity):
                 copy.set_sensitive(False))
 
         insert_toolbar = ToolbarButton()
-        insert_toolbar.props.page = toolbar.InsertToolbar(self.abiword_canvas)
+        insert_toolbar.props.page = InsertToolbar(self.abiword_canvas)
         insert_toolbar.props.icon_name = 'transfer-from'
         insert_toolbar.props.label = _('Insert')
         toolbar_box.toolbar.insert(insert_toolbar, -1)
 
         search_toolbar = ToolbarButton()
-        search_toolbar.props.page = toolbar.SearchToolbar(self.abiword_canvas,
+        search_toolbar.props.page = SearchToolbar(self.abiword_canvas,
                 toolbar_box)
         search_toolbar.props.icon_name = 'search-bar'
         search_toolbar.props.label = _('Search')
         toolbar_box.toolbar.insert(search_toolbar, -1)
 
         view_toolbar = ToolbarButton()
-        view_toolbar.props.page = toolbar.ViewToolbar(self.abiword_canvas)
+        view_toolbar.props.page = ViewToolbar(self.abiword_canvas)
         view_toolbar.props.icon_name = 'toolbar-view'
         view_toolbar.props.label = _('View')
         toolbar_box.toolbar.insert(view_toolbar, -1)

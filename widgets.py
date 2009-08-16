@@ -12,16 +12,22 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+import os
 import gtk
+import dbus
+import time
 from gettext import gettext as _
-
 import logging
-logger = logging.getLogger('write-activity')
 
 from sugar.graphics.radiotoolbutton import RadioToolButton
 from sugar.graphics.combobox import ComboBox
 from sugar.graphics.palette import Palette
 from sugar.graphics.radiopalette import RadioPalette
+from sugar.graphics.toolbutton import ToolButton
+from sugar.graphics.menuitem import MenuItem
+from sugar.datastore import datastore
+
+logger = logging.getLogger('write-activity')
 
 class FontCombo(ComboBox):
     def __init__(self, abi):
@@ -266,3 +272,77 @@ class ListsPalette(RadioPalette):
                 lambda abi, style: style == 'Upper Case List')
 
         self.show_all()
+
+class ExportButton(ToolButton):
+    _EXPORT_FORMATS = [{'mime_type' : 'application/rtf',
+                        'title'     : _('Rich Text (RTF)'),
+                        'jpostfix'  : _('RTF'),
+                        'exp_props' : ''},
+
+                       {'mime_type' : 'text/html',
+                        'title'     : _('Hypertext (HTML)'),
+                        'jpostfix'  : _('HTML'),
+                        'exp_props' : 'html4:yes; declare-xml:no; ' \
+                                      'embed-css:yes; embed-images:yes;'},
+
+                       {'mime_type' : 'text/plain',
+                        'title'     : _('Plain Text (TXT)'),
+                        'jpostfix'  : _('TXT'),
+                        'exp_props' : ''}]
+
+    def __init__(self, activity, abi):
+        ToolButton.__init__(self, 'document-save')
+        self.props.tooltip = _('Export')
+        self.props.label = _('Export')
+
+        for i in self._EXPORT_FORMATS:
+            menu_item = MenuItem(i['title'])
+            menu_item.connect('activate', self.__activate_cb, activity, abi, i)
+            self.props.palette.menu.append(menu_item)
+            menu_item.show()
+
+    def do_clicked(self):
+        if self.props.palette.is_up():
+            self.props.palette.popdown(immediate=True)
+        else:
+            self.props.palette.popup(immediate=True, state=Palette.SECONDARY)
+
+    def __activate_cb(self, menu_item, activity, abi, format):
+        logger.debug('exporting file: %r' % format)
+
+        exp_props = format['exp_props']
+
+        # special case HTML export to set the activity name as the HTML title
+        if format['mime_type'] == "text/html":
+            exp_props += " title:" + activity.metadata['title'] + ';';
+
+        # create a new journal item
+        fileObject = datastore.create()
+        act_meta = activity.metadata
+        fileObject.metadata['title'] = \
+                act_meta['title'] + ' (' + format['jpostfix'] + ')';
+        fileObject.metadata['title_set_by_user'] = act_meta['title_set_by_user']
+        fileObject.metadata['mime_type'] = format['mime_type']
+        fileObject.metadata['fulltext'] = abi.get_content(
+                extension_or_mimetype=".txt")[:3000]
+
+        fileObject.metadata['icon-color'] = act_meta['icon-color']
+        fileObject.metadata['activity'] = act_meta['activity']
+        fileObject.metadata['keep'] = act_meta['keep']
+
+        preview = activity.get_preview()
+        if preview is not None:
+            fileObject.metadata['preview'] = dbus.ByteArray(preview)
+
+        fileObject.metadata['share-scope'] = act_meta['share-scope']
+
+        # write out the document contents in the requested format
+        fileObject.file_path = os.path.join(activity.get_activity_root(),
+                'instance', '%i' % time.time())
+        abi.save('file://' + fileObject.file_path,
+                format['mime_type'], exp_props)
+
+        # store the journal item
+        datastore.write(fileObject, transfer_ownership=True)
+        fileObject.destroy()
+        del fileObject
