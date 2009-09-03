@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-08-02 00:30-0400\n"
+"PO-Revision-Date: 2009-08-17 23:56-0400\n"
+"Last-Translator: Chris Leonard <cjl@laptop.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: mg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Pootle 1.2.1\n"
+
+#: activity/activity.info:2
+msgid "Write"
+msgstr "Soraty"
+
+#: toolbar.py:51
+msgid "Rich Text (RTF)"
+msgstr "Lahatsoratra nohatsaraina (RTF)"
+
+#: toolbar.py:51
+msgid "RTF"
+msgstr "RTF"
+
+#: toolbar.py:52
+msgid "Hypertext (HTML)"
+msgstr "Lahatsoratra afa-mifandray (HTML)"
+
+#: toolbar.py:52
+msgid "HTML"
+msgstr "HTML"
+
+#: toolbar.py:53
+msgid "Plain Text (TXT)"
+msgstr "Lahatsoratra tsotra (TXT)"
+
+#: toolbar.py:53
+msgid "TXT"
+msgstr "TXT"
+
+#: toolbar.py:125
+msgid "Find previous"
+msgstr "Tadiavo ny teo aloha"
+
+#: toolbar.py:131
+msgid "Find next"
+msgstr "Tadivao ny manaraka"
+
+#: toolbar.py:204
+msgid "Table"
+msgstr "Tabilao"
+
+#: toolbar.py:204
+msgid "Cancel"
+msgstr "foany"
+
+#: toolbar.py:212
+msgid "Insert Row"
+msgstr "ampidiro andalana"
+
+#: toolbar.py:217
+msgid "Delete Row"
+msgstr "vonoy ny andalana"
+
+#: toolbar.py:222
+msgid "Insert Column"
+msgstr "ampidiro tsanganana"
+
+#: toolbar.py:227
+msgid "Delete Column"
+msgstr "vonoy ny tsanganana"
+
+#: toolbar.py:235
+msgid "Insert Image"
+msgstr "ampidiro sary"
+
+#: toolbar.py:279
+msgid "Zoom Out"
+msgstr "tomory lavitra"
+
+#: toolbar.py:285
+msgid "Zoom In"
+msgstr "tomory akaiky"
+
+#: toolbar.py:301
+msgid "%"
+msgstr "%"
+
+#: toolbar.py:313
+msgid "Page: "
+msgstr "Pejy:_"
+
+#: toolbar.py:398
+msgid "Bold"
+msgstr "matavy"
+
+#: toolbar.py:406
+msgid "Italic"
+msgstr "mitanila"
+
+#: toolbar.py:414
+msgid "Underline"
+msgstr "mitsipika"
+
+#~ msgid "Text"
+#~ msgstr "Lahatsoratra"
+
+#~ msgid "Image"
+#~ msgstr "Sary"
+
+#~ msgid "View"
+#~ msgstr "Jereo"
+
+#~ msgid "Choose image"
+#~ msgstr "fidio ny sary"
+
+#~ msgid "Heading 1"
+#~ msgstr "Lohateny 1"
+
+#~ msgid "Heading 2"
+#~ msgstr "Lohateny 2"
+
+#~ msgid "Heading 3"
+#~ msgstr "Lohateny 3"
+
+#~ msgid "Heading 4"
+#~ msgstr "Lohateny 4"
+
+#~ msgid "Bullet List"
+#~ msgstr "lisitra ialohavan'ny teboka"
+
+#~ msgid "Dashed List"
+#~ msgstr "Lisitra ialoahavan'ny tsipipanohizana"
+
+#~ msgid "Numbered List"
+#~ msgstr "Lisitra misy nomerao"
+
+#~ msgid "Lower Case List"
+#~ msgstr "lisitra a b d"
+
+#~ msgid "Upper Case List"
+#~ msgstr "lisitra A B D"
+
+#~ msgid "Plain Text"
+#~ msgstr "Lahatsoratra tsotra"
