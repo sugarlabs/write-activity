@@ -1,0 +1,110 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-08-02 00:30-0400\n"
+"PO-Revision-Date: 2009-08-17 21:20-0400\n"
+"Last-Translator: Chris Leonard <cjl@laptop.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 1.2.1\n"
+
+#: activity/activity.info:2
+msgid "Write"
+msgstr "Skriv"
+
+#: toolbar.py:51
+msgid "Rich Text (RTF)"
+msgstr ""
+
+#: toolbar.py:51
+msgid "RTF"
+msgstr "RTF"
+
+#: toolbar.py:52
+msgid "Hypertext (HTML)"
+msgstr "Hypertekst (HTML)"
+
+#: toolbar.py:52
+msgid "HTML"
+msgstr "HTML"
+
+#: toolbar.py:53
+msgid "Plain Text (TXT)"
+msgstr ""
+
+#: toolbar.py:53
+msgid "TXT"
+msgstr "TXT"
+
+#: toolbar.py:125
+msgid "Find previous"
+msgstr "Find forrige"
+
+#: toolbar.py:131
+msgid "Find next"
+msgstr "Find næste"
+
+#: toolbar.py:204
+msgid "Table"
+msgstr ""
+
+#: toolbar.py:204
+msgid "Cancel"
+msgstr "Fortryd"
+
+#: toolbar.py:212
+msgid "Insert Row"
+msgstr "Indsæt række"
+
+#: toolbar.py:217
+msgid "Delete Row"
+msgstr "Slet række"
+
+#: toolbar.py:222
+msgid "Insert Column"
+msgstr "Indsæt kolonne"
+
+#: toolbar.py:227
+msgid "Delete Column"
+msgstr "Slet kolonne"
+
+#: toolbar.py:235
+msgid "Insert Image"
+msgstr "Indsæt billede"
+
+#: toolbar.py:279
+msgid "Zoom Out"
+msgstr "Forstør"
+
+#: toolbar.py:285
+msgid "Zoom In"
+msgstr "Formindsk"
+
+#: toolbar.py:301
+msgid "%"
+msgstr "%"
+
+#: toolbar.py:313
+msgid "Page: "
+msgstr "Side: "
+
+#: toolbar.py:398
+msgid "Bold"
+msgstr "Fed"
+
+#: toolbar.py:406
+msgid "Italic"
+msgstr "Kursiv"
+
+#: toolbar.py:414
+msgid "Underline"
+msgstr ""
