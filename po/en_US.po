@@ -117,7 +117,7 @@ msgstr "Delete Column"
 
 #: toolbar.py:580
 msgid "Style: "
-msgstr "Style: _"
+msgstr "Style: "
 
 #: toolbar.py:590
 msgid "Heading 1"
@@ -181,4 +181,4 @@ msgstr "%"
 
 #: toolbar.py:690
 msgid "Page: "
-msgstr "Page: _"
+msgstr "Page: "

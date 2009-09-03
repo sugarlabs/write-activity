@@ -12,17 +12,22 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+import os
 import gtk
+import dbus
+import time
 from gettext import gettext as _
-
 import logging
-logger = logging.getLogger('write-activity')
 
 from sugar.graphics.radiotoolbutton import RadioToolButton
 from sugar.graphics.combobox import ComboBox
 from sugar.graphics.palette import Palette
 from sugar.graphics.radiopalette import RadioPalette
-from sugar.graphics.radiotoolbutton import RadioToolButton
+from sugar.graphics.toolbutton import ToolButton
+from sugar.graphics.menuitem import MenuItem
+from sugar.datastore import datastore
+
+logger = logging.getLogger('write-activity')
 
 class FontCombo(ComboBox):
     def __init__(self, abi):
@@ -38,12 +43,16 @@ class FontCombo(ComboBox):
             if f == 'Times New Roman':
                 self.set_active(i)
 
-        abi.connect('font-family', self._font_family_cb)
+        self._abi_handler = abi.connect('font-family', self._font_family_cb)
 
     def _font_changed_cb(self, combobox, abi):
         if self.get_active() != -1:
             logger.debug('Setting font: %s', self._fonts[self.get_active()])
-            abi.set_font_name(self._fonts[self.get_active()])
+            try:
+                abi.handler_block(self._abi_handler)
+                abi.set_font_name(self._fonts[self.get_active()])
+            finally:
+                abi.handler_unblock(self._abi_handler)
 
     def _font_family_cb(self, abi, font_family):
         font_index = -1
@@ -82,6 +91,8 @@ class FontSizeCombo(ComboBox):
     def __init__(self, abi):
         ComboBox.__init__(self)
 
+        self._abi_handler = abi.connect('font-size', self._font_size_cb)
+
         self._font_sizes = ['8', '9', '10', '11', '12', '14', '16', '20', \
                             '22', '24', '26', '28', '36', '48', '72']
         self._changed_id = self.connect('changed', self._font_size_changed_cb,
@@ -92,13 +103,16 @@ class FontSizeCombo(ComboBox):
             if s == '12':
                 self.set_active(i)
 
-        abi.connect('font-size', self._font_size_cb)
-
     def _font_size_changed_cb(self, combobox, abi):
         if self.get_active() != -1:
             logger.debug('Setting font size: %d',
                     int(self._font_sizes[self.get_active()]))
-            abi.set_font_size(self._font_sizes[self.get_active()])
+
+            abi.handler_block(self._abi_handler)
+            try:
+                abi.set_font_size(self._font_sizes[self.get_active()])
+            finally:
+                abi.handler_unblock(self._abi_handler)
 
     def _font_size_cb(self, abi, size):
         for i, s in enumerate(self._font_sizes):
@@ -111,6 +125,8 @@ class FontSizeCombo(ComboBox):
 class StyleCombo(ComboBox):
     def __init__(self, abi):
         ComboBox.__init__(self)
+
+        self._abi_handler = abi.connect('style-name', self._style_cb)
 
         self._styles = [ ['Heading 1', _('Heading 1')],
                          ['Heading 2', _('Heading 2')],
@@ -134,12 +150,14 @@ class StyleCombo(ComboBox):
             if s[0] == 'Normal':
                 self.set_active(i)
 
-        abi.connect('style-name', self._style_cb)
-
     def _style_changed_cb(self, combobox, abi):
         if self.get_active() != -1:
             logger.debug('Set style: %s', self._styles[self.get_active()][0])
-            abi.set_style(self._styles[self.get_active()][0])
+            try:
+                abi.handler_block(self._abi_handler)
+                abi.set_style(self._styles[self.get_active()][0])
+            finally:
+                abi.handler_unblock(self._abi_handler)
 
     def _style_cb(self, abi, style_name):
         if style_name is None or style_name == 'None':
@@ -177,70 +195,154 @@ class StyleCombo(ComboBox):
             self.set_active(style_index)
             self.handler_unblock(self._style_changed_id)
 
-class AbiPalette(RadioPalette):
+class AbiButton(RadioToolButton):
+    def __init__(self, abi, abi_signal, do_abi_cb, on_abi_cb=None, **kwargs):
+        RadioToolButton.__init__(self, **kwargs)
+
+        self._abi_handler = abi.connect(abi_signal, self.__abi_cb,
+                abi_signal, on_abi_cb)
+        self._toggled_handler = self.connect('toggled', self.__toggled_cb,
+                abi, do_abi_cb)
+
+    def __toggled_cb(self, button, abi, do_abi_cb):
+        if not button.props.active:
+            return
+
+        abi.handler_block(self._abi_handler)
+        try:
+            logging.debug('Do abi %s' % do_abi_cb)
+            do_abi_cb()
+        finally:
+            abi.handler_unblock(self._abi_handler)
+
+    def __abi_cb(self, abi, prop, abi_signal, on_abi_cb):
+        if (on_abi_cb is None and not prop) or \
+                (on_abi_cb is not None and not on_abi_cb(abi, prop)):
+            return
+
+        self.handler_block(self._toggled_handler)
+        try:
+            logging.debug('On abi %s prop=%r' % (abi_signal, prop))
+            self.set_active(True)
+        finally:
+            self.handler_unblock(self._toggled_handler)
+
+class ListsPalette(RadioPalette):
     def __init__(self, abi):
         RadioPalette.__init__(self)
-        self.abi = abi
 
-    def append(self, icon_name, tooltip, clicked_cb, abi_signal, abi_cb):
-        siblings = self.button_box.get_children()
+        def append(icon_name, tooltip, do_abi_cb, on_abi_cb):
+            button = AbiButton(abi, 'style-name', do_abi_cb, on_abi_cb)
+            button.show()
+            button.props.icon_name = icon_name
+            button.props.group = group
+            RadioPalette.append(self, button, tooltip)
+            return button
 
-        button = RadioToolButton(
-                icon_name=icon_name,
-                group=siblings and siblings[0] or None)
-        button.connect('clicked', lambda sender: clicked_cb())
-        RadioPalette.append(self, button, tooltip)
+        group = None
 
-        def cb(abi, prop):
-            if abi_cb(abi, prop):
-                button.set_active(True)
-        self.abi.connect(abi_signal, cb)
-
-class Alignment(AbiPalette):
-    def __init__(self, abi):
-        AbiPalette.__init__(self, abi)
-
-        self.append('format-justify-left', _('Left justify'),
-                lambda: abi.align_left(), 'left-align', lambda abi, b: b)
-
-        self.append('format-justify-center', _('Center justify'),
-                lambda: abi.align_center(), 'center-align', lambda abi, b: b)
-
-        self.append('format-justify-right', _('Right justify'),
-                lambda: abi.align_right(), 'right-align', lambda abi, b: b)
-
-        self.append('format-justify-fill', _('Fill justify'),
-                lambda: abi.align_justify(), 'justify-align', lambda abi, b: b)
-
-class Lists(AbiPalette):
-    def __init__(self, abi):
-        AbiPalette.__init__(self, abi)
-
-        self.append('list-none', _('Normal'),
-                lambda: abi.set_style('Normal'),
-                'style-name', lambda abi, style:
+        group = append('list-none', _('Normal'),
+                lambda:
+                    abi.set_style('Normal'),
+                lambda abi, style:
                     style not in ['Bullet List',
                                   'Dashed List',
                                   'Numbered List',
                                   'Lower Case List',
                                   'Upper Case List'])
 
-        self.append('list-bullet', _('Bullet List'),
+        append('list-bullet', _('Bullet List'),
                 lambda: abi.set_style('Bullet List'),
-                'style-name', lambda abi, style: style == 'Bullet List')
+                lambda abi, style: style == 'Bullet List')
 
-        self.append('list-dashed', _('Dashed List'),
+        append('list-dashed', _('Dashed List'),
                 lambda: abi.set_style('Dashed List'),
-                'style-name', lambda abi, style: style == 'Dashed List')
+                lambda abi, style: style == 'Dashed List')
 
-        self.append('list-numbered', _('Numbered List'),
+        append('list-numbered', _('Numbered List'),
                 lambda: abi.set_style('Numbered List'),
-                'style-name', lambda abi, style: style == 'Numbered List')
+                lambda abi, style: style == 'Numbered List')
 
-        self.append('list-lower-case', _('Lower Case List'),
+        append('list-lower-case', _('Lower Case List'),
                 lambda: abi.set_style('Lower Case List'),
-                'style-name', lambda abi, style: style == 'Lower Case List')
+                lambda abi, style: style == 'Lower Case List')
 
-        self.append('list-upper-case', _('Upper Case List'),
+        append('list-upper-case', _('Upper Case List'),
                 lambda: abi.set_style('Upper Case List'),
-                'style-name', lambda abi, style: style == 'Upper Case List')
+                lambda abi, style: style == 'Upper Case List')
+
+        self.show_all()
+
+class ExportButton(ToolButton):
+    _EXPORT_FORMATS = [{'mime_type' : 'application/rtf',
+                        'title'     : _('Rich Text (RTF)'),
+                        'jpostfix'  : _('RTF'),
+                        'exp_props' : ''},
+
+                       {'mime_type' : 'text/html',
+                        'title'     : _('Hypertext (HTML)'),
+                        'jpostfix'  : _('HTML'),
+                        'exp_props' : 'html4:yes; declare-xml:no; ' \
+                                      'embed-css:yes; embed-images:yes;'},
+
+                       {'mime_type' : 'text/plain',
+                        'title'     : _('Plain Text (TXT)'),
+                        'jpostfix'  : _('TXT'),
+                        'exp_props' : ''}]
+
+    def __init__(self, activity, abi):
+        ToolButton.__init__(self, 'document-save')
+        self.props.tooltip = _('Export')
+        self.props.label = _('Export')
+
+        for i in self._EXPORT_FORMATS:
+            menu_item = MenuItem(i['title'])
+            menu_item.connect('activate', self.__activate_cb, activity, abi, i)
+            self.props.palette.menu.append(menu_item)
+            menu_item.show()
+
+    def do_clicked(self):
+        if self.props.palette.is_up():
+            self.props.palette.popdown(immediate=True)
+        else:
+            self.props.palette.popup(immediate=True, state=Palette.SECONDARY)
+
+    def __activate_cb(self, menu_item, activity, abi, format):
+        logger.debug('exporting file: %r' % format)
+
+        exp_props = format['exp_props']
+
+        # special case HTML export to set the activity name as the HTML title
+        if format['mime_type'] == "text/html":
+            exp_props += " title:" + activity.metadata['title'] + ';';
+
+        # create a new journal item
+        fileObject = datastore.create()
+        act_meta = activity.metadata
+        fileObject.metadata['title'] = \
+                act_meta['title'] + ' (' + format['jpostfix'] + ')';
+        fileObject.metadata['title_set_by_user'] = act_meta['title_set_by_user']
+        fileObject.metadata['mime_type'] = format['mime_type']
+        fileObject.metadata['fulltext'] = abi.get_content(
+                extension_or_mimetype=".txt")[:3000]
+
+        fileObject.metadata['icon-color'] = act_meta['icon-color']
+        fileObject.metadata['activity'] = act_meta['activity']
+        fileObject.metadata['keep'] = act_meta['keep']
+
+        preview = activity.get_preview()
+        if preview is not None:
+            fileObject.metadata['preview'] = dbus.ByteArray(preview)
+
+        fileObject.metadata['share-scope'] = act_meta['share-scope']
+
+        # write out the document contents in the requested format
+        fileObject.file_path = os.path.join(activity.get_activity_root(),
+                'instance', '%i' % time.time())
+        abi.save('file://' + fileObject.file_path,
+                format['mime_type'], exp_props)
+
+        # store the journal item
+        datastore.write(fileObject, transfer_ownership=True)
+        fileObject.destroy()
+        del fileObject

@@ -18,9 +18,6 @@
 
 from gettext import gettext as _
 import logging
-import os
-import time
-import dbus
 
 import abiword
 import gtk
@@ -34,9 +31,8 @@ from sugar.graphics.toolcombobox import ToolComboBox
 from sugar.graphics.objectchooser import ObjectChooser
 from sugar.graphics import iconentry
 from sugar.activity import activity
-from sugar.graphics.menuitem import MenuItem
+from sugar.activity.widgets import *
 from sugar.graphics.palette import Palette
-from sugar.datastore import datastore
 from sugar import mime
 from port import chooser
 import sugar.profile
@@ -44,64 +40,6 @@ import sugar.profile
 import widgets
 
 logger = logging.getLogger('write-activity')
-
-class WriteActivityToolbarExtension:
-
-    # file mime type, abiword exporter properties, drop down name, journal entry postfix
-    _EXPORT_FORMATS = [['application/rtf', _('Rich Text (RTF)'), _('RTF'), ""],
-        ['text/html', _('Hypertext (HTML)'), _('HTML'), "html4:yes; declare-xml:no; embed-css:yes; embed-images:yes;"],
-        ['text/plain', _('Plain Text (TXT)'), _('TXT'), ""]]
-
-    def __init__(self, activity, toolbox, abiword_canvas):
-
-        self._activity = activity
-        self._abiword_canvas = abiword_canvas
-        self._activity_toolbar = toolbox.get_activity_toolbar()
-        self._keep_palette = self._activity_toolbar.keep.get_palette()
-
-        # hook up the export formats to the Keep button
-        for i, f in enumerate(self._EXPORT_FORMATS):
-            menu_item = MenuItem(f[1])
-            menu_item.connect('activate', self._export_as_cb, f[0], f[2], f[3])
-            self._keep_palette.menu.append(menu_item)
-            menu_item.show()
-
-    def _export_as_cb(self, menu_item, mimetype, jpostfix, exp_props):
-        logger.debug('exporting file, mimetype: %s, exp_props: %s', mimetype, exp_props);
-
-        # special case HTML export to set the activity name as the HTML title
-        if mimetype == "text/html":
-            exp_props += " title:" + self._activity.metadata['title'] + ';';
-
-        # create a new journal item
-        fileObject = datastore.create()
-        act_meta = self._activity.metadata
-        fileObject.metadata['title'] = act_meta['title'] + ' (' + jpostfix + ')';
-        fileObject.metadata['title_set_by_user'] = act_meta['title_set_by_user']
-        fileObject.metadata['mime_type'] = mimetype
-        fileObject.metadata['fulltext'] = \
-            self._abiword_canvas.get_content(extension_or_mimetype=".txt")[:3000]
-
-        fileObject.metadata['icon-color'] = act_meta['icon-color']
-        fileObject.metadata['activity'] = act_meta['activity']
-        fileObject.metadata['keep'] = act_meta['keep']
-
-# TODO: Activity class should provide support for preview, see #5119
-#        self._activity.take_screenshot()
-#        if self._activity._preview:
-#            preview = self._activity._get_preview()
-#            fileObject.metadata['preview'] = dbus.ByteArray(preview)
-
-        fileObject.metadata['share-scope'] = act_meta['share-scope']
-
-        # write out the document contents in the requested format
-        fileObject.file_path = os.path.join(self._activity.get_activity_root(), 'instance', '%i' % time.time())
-        self._abiword_canvas.save('file://' + fileObject.file_path, mimetype, exp_props)
-       
-        # store the journal item
-        datastore.write(fileObject, transfer_ownership=True)
-        fileObject.destroy()
-        del fileObject
 
 class SearchToolbar(gtk.Toolbar):
 
@@ -386,70 +324,95 @@ class TextToolbar(gtk.Toolbar):
     def __init__(self, abiword_canvas):
         gtk.Toolbar.__init__(self)
 
-        self._abiword_canvas = abiword_canvas
+        font_name = ToolComboBox(widgets.FontCombo(abiword_canvas))
+        self.insert(font_name, -1)
 
-        self.insert(ToolComboBox(widgets.StyleCombo(abiword_canvas)), -1)
+        font_size = ToolComboBox(widgets.FontSizeCombo(abiword_canvas))
+        self.insert(font_size, -1)
 
         separator = gtk.SeparatorToolItem()
-        separator.show()
         self.insert(separator, -1)
 
         bold = ToggleToolButton('format-text-bold')
         bold.set_tooltip(_('Bold'))
         bold_id = bold.connect('clicked', lambda sender:
                 abiword_canvas.toggle_bold())
-        self._abiword_canvas.connect('bold', lambda abi, b:
-                self.setToggleButtonState(bold, b, bold_id))
+        abiword_canvas.connect('bold', lambda abi, b:
+                self._setToggleButtonState(bold, b, bold_id))
         self.insert(bold, -1)
 
         italic = ToggleToolButton('format-text-italic')
         italic.set_tooltip(_('Italic'))
         italic_id = italic.connect('clicked', lambda sender:
                 abiword_canvas.toggle_italic())
-        self._abiword_canvas.connect('italic', lambda abi, b:
-                self.setToggleButtonState(italic, b, italic_id))
+        abiword_canvas.connect('italic', lambda abi, b:
+                self._setToggleButtonState(italic, b, italic_id))
         self.insert(italic, -1)
 
         underline = ToggleToolButton('format-text-underline')
         underline.set_tooltip(_('Underline'))
         underline_id = underline.connect('clicked', lambda sender:
                 abiword_canvas.toggle_underline())
-        self._abiword_canvas.connect('underline', lambda abi, b:
-                self.setToggleButtonState(underline, b, underline_id))
+        abiword_canvas.connect('underline', lambda abi, b:
+                self._setToggleButtonState(underline, b, underline_id))
         self.insert(underline, -1)
 
         separator = gtk.SeparatorToolItem()
-        separator.show()
-        self.insert(separator, -1)
-
-        alignment = RadioMenuButton(palette=widgets.Alignment(abiword_canvas))
-        self.insert(alignment, -1)
-
-        lists = RadioMenuButton(palette=widgets.Lists(abiword_canvas))
-        self.insert(lists, -1)
-
-        separator = gtk.SeparatorToolItem()
-        separator.show()
         self.insert(separator, -1)
 
         color = ColorToolButton()
-        color.connect('color-set', self._text_color_cb)
+        color.connect('color-set', self._text_color_cb, abiword_canvas)
         tool_item = gtk.ToolItem()
         tool_item.add(color)
         self.insert(tool_item, -1)
-        self._abiword_canvas.connect('color', lambda abi, r, g, b:
+        abiword_canvas.connect('color', lambda abi, r, g, b:
                 color.set_color(gtk.gdk.Color(r * 256, g * 256, b * 256)))
 
         self.show_all()
 
-    def setToggleButtonState(self,button,b,id):
+    def _text_color_cb(self, button, abiword_canvas):
+        newcolor = button.get_color()
+        abiword_canvas.set_text_color(int(newcolor.red / 256.0),
+                                            int(newcolor.green / 256.0),
+                                            int(newcolor.blue / 256.0))
+
+    def _setToggleButtonState(self,button,b,id):
         button.handler_block(id)
         button.set_active(b)
         button.handler_unblock(id)
 
-    def _text_color_cb(self, button):
-        newcolor = button.get_color()
-        self._abiword_canvas.set_text_color(int(newcolor.red / 256.0), 
-                                            int(newcolor.green / 256.0), 
-                                            int(newcolor.blue / 256.0))
+class ParagraphToolbar(gtk.Toolbar):
+    def __init__(self, abi):
+        gtk.Toolbar.__init__(self)
 
+        self.insert(ToolComboBox(widgets.StyleCombo(abi)), -1)
+        self.insert(gtk.SeparatorToolItem(), -1)
+
+        group = widgets.AbiButton(abi, 'left-align', abi.align_left)
+        group.props.named_icon = 'format-justify-left'
+        group.props.tooltip = _('Left justify')
+        self.insert(group, -1)
+
+        button = widgets.AbiButton(abi, 'center-align', abi.align_center)
+        button.props.group = group
+        button.props.named_icon = 'format-justify-center'
+        button.props.tooltip = _('Center justify')
+        self.insert(button, -1)
+
+        button = widgets.AbiButton(abi, 'right-align', abi.align_right)
+        button.props.group = group
+        button.props.named_icon = 'format-justify-right'
+        button.props.tooltip = _('Right justify')
+        self.insert(button, -1)
+
+        button = widgets.AbiButton(abi, 'justify-align', abi.align_justify)
+        button.props.group = group
+        button.props.named_icon = 'format-justify-fill'
+        button.props.tooltip = _('Fill justify')
+        self.insert(button, -1)
+
+        self.insert(gtk.SeparatorToolItem(), -1)
+        lists = RadioMenuButton(palette=widgets.ListsPalette(abi))
+        self.insert(lists, -1)
+
+        self.show_all()

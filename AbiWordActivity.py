@@ -39,8 +39,8 @@ from sugar.presence import presenceservice
 from sugar.graphics import style
 
 from abiword import Canvas
-import toolbar
-import widgets
+from toolbar import *
+from widgets import *
 from sugar.activity.activity import get_bundle_path
 
 logger = logging.getLogger('write-activity')
@@ -59,20 +59,42 @@ class AbiWordActivity (activity.Activity):
         toolbar_box = ToolbarBox()
 
         activity_button = ActivityToolbarButton(self)
-        toolbar_box.toolbar.insert(activity_button, 0)
-
-        toolbar_box.toolbar.insert(
-                ToolComboBox(widgets.FontCombo(self.abiword_canvas)), -1)
-        toolbar_box.toolbar.insert(
-                ToolComboBox(widgets.FontSizeCombo(self.abiword_canvas)), -1)
-
-        text_toolbar = ToolbarButton(
-                page=toolbar.TextToolbar(self.abiword_canvas),
-                icon_name='toolbar-edit')
-        toolbar_box.toolbar.insert(text_toolbar, -1)
 
         separator = gtk.SeparatorToolItem()
         separator.show()
+        activity_button.props.page.insert(separator, 2)
+        export_button = ExportButton(self, self.abiword_canvas)
+        export_button.show()
+        activity_button.props.page.insert(export_button, 2)
+        toolbar_box.toolbar.insert(activity_button, 0)
+
+        separator = gtk.SeparatorToolItem()
+        toolbar_box.toolbar.insert(separator, -1)
+
+        text_toolbar = ToolbarButton()
+        text_toolbar.props.page = TextToolbar(self.abiword_canvas)
+        text_toolbar.props.icon_name = 'format-text-size'
+        text_toolbar.props.label = _('Text')
+        toolbar_box.toolbar.insert(text_toolbar, -1)
+
+        para_toolbar = ToolbarButton()
+        para_toolbar.props.page = ParagraphToolbar(self.abiword_canvas)
+        para_toolbar.props.icon_name = 'paragraph-bar'
+        para_toolbar.props.label = _('Paragraph')
+        toolbar_box.toolbar.insert(para_toolbar, -1)
+
+        separator = gtk.SeparatorToolItem()
+        toolbar_box.toolbar.insert(separator, -1)
+
+        copy = CopyButton()
+        copy.connect('clicked', lambda button: self.abiword_canvas.copy())
+        toolbar_box.toolbar.insert(copy, -1)
+
+        paste = PasteButton()
+        paste.connect('clicked', lambda button: self.abiword_canvas.paste())
+        toolbar_box.toolbar.insert(paste, -1)
+
+        separator = gtk.SeparatorToolItem()
         toolbar_box.toolbar.insert(separator, -1)
 
         undo = UndoButton(sensitive=False)
@@ -87,13 +109,8 @@ class AbiWordActivity (activity.Activity):
                 redo.set_sensitive(can_redo))
         toolbar_box.toolbar.insert(redo, -1)
 
-        copy = CopyButton()
-        copy.connect('clicked', lambda button: self.abiword_canvas.copy())
-        toolbar_box.toolbar.insert(copy, -1)
-
-        paste = PasteButton()
-        paste.connect('clicked', lambda button: self.abiword_canvas.paste())
-        toolbar_box.toolbar.insert(paste, -1)
+        separator = gtk.SeparatorToolItem()
+        toolbar_box.toolbar.insert(separator, -1)
 
         self.abiword_canvas.connect('text-selected', lambda abi, b:
                 copy.set_sensitive(True))
@@ -102,23 +119,23 @@ class AbiWordActivity (activity.Activity):
         self.abiword_canvas.connect('selection-cleared', lambda abi, b:
                 copy.set_sensitive(False))
 
-        separator = gtk.SeparatorToolItem()
-        separator.show()
-        toolbar_box.toolbar.insert(separator, -1)
-
-        insert_toolbar = ToolbarButton(
-                page=toolbar.InsertToolbar(self.abiword_canvas),
-                icon_name='transfer-from')
+        insert_toolbar = ToolbarButton()
+        insert_toolbar.props.page = InsertToolbar(self.abiword_canvas)
+        insert_toolbar.props.icon_name = 'transfer-from'
+        insert_toolbar.props.label = _('Insert')
         toolbar_box.toolbar.insert(insert_toolbar, -1)
 
-        search_toolbar = ToolbarButton(
-                page=toolbar.SearchToolbar(self.abiword_canvas, toolbar_box),
-                icon_name='search-bar')
+        search_toolbar = ToolbarButton()
+        search_toolbar.props.page = SearchToolbar(self.abiword_canvas,
+                toolbar_box)
+        search_toolbar.props.icon_name = 'search-bar'
+        search_toolbar.props.label = _('Search')
         toolbar_box.toolbar.insert(search_toolbar, -1)
 
-        view_toolbar = ToolbarButton(
-                page=toolbar.ViewToolbar(self.abiword_canvas),
-                icon_name='toolbar-view')
+        view_toolbar = ToolbarButton()
+        view_toolbar.props.page = ViewToolbar(self.abiword_canvas)
+        view_toolbar.props.icon_name = 'toolbar-view'
+        view_toolbar.props.label = _('View')
         toolbar_box.toolbar.insert(view_toolbar, -1)
 
         separator = gtk.SeparatorToolItem()
@@ -134,16 +151,30 @@ class AbiWordActivity (activity.Activity):
         self.set_toolbar_box(toolbar_box)
 
         self.set_canvas(self.abiword_canvas)
-        #self.abiword_canvas.connect_after('map-event', self._map_event_cb)
+        self.abiword_canvas.connect_after('map-event', self.__map_event_cb)
         self.abiword_canvas.show()
 
-    def _map_event_cb(self, event, activity):
-        logger.debug('_map_event_cb')
+        self._zoom_handler = self.abiword_canvas.connect("zoom", self.__zoom_cb)
+
+    def __zoom_cb(self, abi, zoom):
+        abi.disconnect(self._zoom_handler)
+
+        # XXX workarond code to redraw abi document on every resize, see #1121
+        def size_allocate_cb(abi, alloc):
+            zoom = abi.get_zoom_percentage()
+            abi.set_zoom_percentage(zoom)
+        abi.set_zoom_percentage(zoom)
+        abi.connect('size-allocate', size_allocate_cb)
+
+    def __map_event_cb(self, event, activity):
+        logger.debug('__map_event_cb')
 
         # set custom keybindings for Write
         logger.debug("Loading keybindings")
         keybindings_file = os.path.join( get_bundle_path(), "keybindings.xml" )
-        self.abiword_canvas.invoke_cmd('com.abisource.abiword.loadbindings.fromURI', keybindings_file, 0, 0)
+        self.abiword_canvas.invoke_cmd(
+                'com.abisource.abiword.loadbindings.fromURI',
+                keybindings_file, 0, 0)
 
         # no ugly borders please
         self.abiword_canvas.set_property("shadow-type", gtk.SHADOW_NONE)
@@ -202,7 +233,7 @@ class AbiWordActivity (activity.Activity):
         logger.debug('My Write activity was shared')
         self.initiating = True
         self._setup()
-        
+
         self._shared_activity.connect('buddy-joined', self._buddy_joined_cb)
         self._shared_activity.connect('buddy-left', self._buddy_left_cb)
 
