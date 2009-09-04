@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-17 20:56+0100\n"
+"POT-Creation-Date: 2009-08-02 00:30-0400\n"
 "PO-Revision-Date: 2008-06-24 17:21-0400\n"
 "Last-Translator: Myckel Habets <myckel@sdf.lonestar.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,30 +19,6 @@ msgstr ""
 #: activity/activity.info:2
 msgid "Write"
 msgstr "Schrijven"
-
-#: AbiWordActivity.py:64
-msgid "Edit"
-msgstr "Bewerken"
-
-#: AbiWordActivity.py:67
-msgid "Text"
-msgstr "Tekst"
-
-#: AbiWordActivity.py:71
-msgid "Image"
-msgstr "Afbeelding"
-
-#: AbiWordActivity.py:75 toolbar.py:515
-msgid "Table"
-msgstr "Tabel"
-
-#: AbiWordActivity.py:79
-msgid "Format"
-msgstr "Opmaak"
-
-#: AbiWordActivity.py:83
-msgid "View"
-msgstr "Beeld"
 
 #: toolbar.py:51
 msgid "Rich Text (RTF)"
@@ -68,121 +44,126 @@ msgstr "Platte tekst (TXT)"
 msgid "TXT"
 msgstr "TXT"
 
-#: toolbar.py:128
+#: toolbar.py:125
 msgid "Find previous"
 msgstr "Vorige zoeken"
 
-#: toolbar.py:134
+#: toolbar.py:131
 msgid "Find next"
 msgstr "Volgende zoeken"
 
-#: toolbar.py:244
-msgid "Bold"
-msgstr "Vet"
+#: toolbar.py:204
+msgid "Table"
+msgstr "Tabel"
 
-#: toolbar.py:251
-msgid "Italic"
-msgstr "Cursief"
-
-#: toolbar.py:258
-msgid "Underline"
-msgstr "Onderstrepen"
-
-#: toolbar.py:481
-msgid "Insert Image"
-msgstr "Afbeelding invoegen"
-
-#: toolbar.py:489
-msgid "Choose image"
-msgstr "Afbeelding kiezen"
-
-#: toolbar.py:515
+#: toolbar.py:204
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: toolbar.py:524
+#: toolbar.py:212
 msgid "Insert Row"
 msgstr "Rij invoegen"
 
-#: toolbar.py:530
+#: toolbar.py:217
 msgid "Delete Row"
 msgstr "Rij verwijderen"
 
-#: toolbar.py:536
+#: toolbar.py:222
 msgid "Insert Column"
 msgstr "Kolom invoegen"
 
-#: toolbar.py:542
+#: toolbar.py:227
 msgid "Delete Column"
 msgstr "Kolom verwijderen"
 
-#: toolbar.py:580
-msgid "Style: "
-msgstr "Opmaak:"
+#: toolbar.py:235
+msgid "Insert Image"
+msgstr "Afbeelding invoegen"
 
-#: toolbar.py:590
-msgid "Heading 1"
-msgstr "Koptekst 1"
-
-#: toolbar.py:591
-msgid "Heading 2"
-msgstr "Koptekst 2"
-
-#: toolbar.py:592
-msgid "Heading 3"
-msgstr "Koptekst 3"
-
-#: toolbar.py:593
-msgid "Heading 4"
-msgstr "Koptekst 4"
-
-#: toolbar.py:594
-msgid "Bullet List"
-msgstr "Puntenlijst"
-
-#: toolbar.py:595
-msgid "Dashed List"
-msgstr "Streepjeslijst"
-
-#: toolbar.py:596
-msgid "Numbered List"
-msgstr "Genummerde lijst"
-
-#: toolbar.py:597
-msgid "Lower Case List"
-msgstr "Kleineletter lijst"
-
-#: toolbar.py:598
-msgid "Upper Case List"
-msgstr "Hoofdletter lijst"
-
-#: toolbar.py:599
-msgid "Block Text"
-msgstr "Tekstblok"
-
-#: toolbar.py:600
-msgid "Normal"
-msgstr "Normaal"
-
-#: toolbar.py:601
-msgid "Plain Text"
-msgstr "Platte tekst"
-
-#: toolbar.py:656
+#: toolbar.py:279
 msgid "Zoom Out"
 msgstr "Inzoomen"
 
-#: toolbar.py:662
+#: toolbar.py:285
 msgid "Zoom In"
 msgstr "Uitzoomen"
 
-#: toolbar.py:678
+#: toolbar.py:301
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:690
+#: toolbar.py:313
 msgid "Page: "
 msgstr "Pagina:"
+
+#: toolbar.py:398
+msgid "Bold"
+msgstr "Vet"
+
+#: toolbar.py:406
+msgid "Italic"
+msgstr "Cursief"
+
+#: toolbar.py:414
+msgid "Underline"
+msgstr "Onderstrepen"
+
+#~ msgid "Edit"
+#~ msgstr "Bewerken"
+
+#~ msgid "Text"
+#~ msgstr "Tekst"
+
+#~ msgid "Image"
+#~ msgstr "Afbeelding"
+
+#~ msgid "Format"
+#~ msgstr "Opmaak"
+
+#~ msgid "View"
+#~ msgstr "Beeld"
+
+#~ msgid "Choose image"
+#~ msgstr "Afbeelding kiezen"
+
+#~ msgid "Style: "
+#~ msgstr "Opmaak:"
+
+#~ msgid "Heading 1"
+#~ msgstr "Koptekst 1"
+
+#~ msgid "Heading 2"
+#~ msgstr "Koptekst 2"
+
+#~ msgid "Heading 3"
+#~ msgstr "Koptekst 3"
+
+#~ msgid "Heading 4"
+#~ msgstr "Koptekst 4"
+
+#~ msgid "Bullet List"
+#~ msgstr "Puntenlijst"
+
+#~ msgid "Dashed List"
+#~ msgstr "Streepjeslijst"
+
+#~ msgid "Numbered List"
+#~ msgstr "Genummerde lijst"
+
+#~ msgid "Lower Case List"
+#~ msgstr "Kleineletter lijst"
+
+#~ msgid "Upper Case List"
+#~ msgstr "Hoofdletter lijst"
+
+#~ msgid "Block Text"
+#~ msgstr "Tekstblok"
+
+#~ msgid "Normal"
+#~ msgstr "Normaal"
+
+#~ msgid "Plain Text"
+#~ msgstr "Platte tekst"
 
 #~ msgid "Select text color"
 #~ msgstr "Tekst kleur kiezen"
