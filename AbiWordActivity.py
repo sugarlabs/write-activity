@@ -68,6 +68,18 @@ class AbiWordActivity (activity.Activity):
         activity_button.props.page.insert(export_button, 2)
         toolbar_box.toolbar.insert(activity_button, 0)
 
+        edit_toolbar = ToolbarButton()
+        edit_toolbar.props.page = EditToolbar(self)
+        edit_toolbar.props.icon_name = 'toolbar-edit'
+        edit_toolbar.props.label = _('Edit')
+        toolbar_box.toolbar.insert(edit_toolbar, -1)
+
+        view_toolbar = ToolbarButton()
+        view_toolbar.props.page = ViewToolbar(self.abiword_canvas)
+        view_toolbar.props.icon_name = 'toolbar-view'
+        view_toolbar.props.label = _('View')
+        toolbar_box.toolbar.insert(view_toolbar, -1)
+        
         separator = gtk.SeparatorToolItem()
         toolbar_box.toolbar.insert(separator, -1)
 
@@ -83,42 +95,6 @@ class AbiWordActivity (activity.Activity):
         para_toolbar.props.label = _('Paragraph')
         toolbar_box.toolbar.insert(para_toolbar, -1)
 
-        separator = gtk.SeparatorToolItem()
-        toolbar_box.toolbar.insert(separator, -1)
-
-        copy = CopyButton()
-        copy.connect('clicked', lambda button: self.abiword_canvas.copy())
-        toolbar_box.toolbar.insert(copy, -1)
-
-        paste = PasteButton()
-        paste.connect('clicked', lambda button: self.abiword_canvas.paste())
-        toolbar_box.toolbar.insert(paste, -1)
-
-        separator = gtk.SeparatorToolItem()
-        toolbar_box.toolbar.insert(separator, -1)
-
-        undo = UndoButton(sensitive=False)
-        undo.connect('clicked', lambda button: self.abiword_canvas.undo())
-        self.abiword_canvas.connect("can-undo", lambda abi, can_undo:
-                undo.set_sensitive(can_undo))
-        toolbar_box.toolbar.insert(undo, -1)
-
-        redo = RedoButton(sensitive=False)
-        redo.connect('clicked', lambda button: self.abiword_canvas.redo())
-        self.abiword_canvas.connect("can-redo", lambda abi, can_redo:
-                redo.set_sensitive(can_redo))
-        toolbar_box.toolbar.insert(redo, -1)
-
-        separator = gtk.SeparatorToolItem()
-        toolbar_box.toolbar.insert(separator, -1)
-
-        self.abiword_canvas.connect('text-selected', lambda abi, b:
-                copy.set_sensitive(True))
-        self.abiword_canvas.connect('image-selected', lambda abi, b:
-                copy.set_sensitive(True))
-        self.abiword_canvas.connect('selection-cleared', lambda abi, b:
-                copy.set_sensitive(False))
-
         insert_toolbar = ToolbarButton()
         insert_toolbar.props.page = InsertToolbar(self.abiword_canvas)
         insert_toolbar.props.icon_name = 'transfer-from'
@@ -131,12 +107,6 @@ class AbiWordActivity (activity.Activity):
         search_toolbar.props.icon_name = 'search-bar'
         search_toolbar.props.label = _('Search')
         toolbar_box.toolbar.insert(search_toolbar, -1)
-
-        view_toolbar = ToolbarButton()
-        view_toolbar.props.page = ViewToolbar(self.abiword_canvas)
-        view_toolbar.props.icon_name = 'toolbar-view'
-        view_toolbar.props.label = _('View')
-        toolbar_box.toolbar.insert(view_toolbar, -1)
 
         separator = gtk.SeparatorToolItem()
         separator.props.draw = False

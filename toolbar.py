@@ -41,6 +41,49 @@ import widgets
 
 logger = logging.getLogger('write-activity')
 
+class EditToolbar(gtk.Toolbar):
+    def __init__(self, pc):
+    
+        gtk.Toolbar.__init__(self)
+
+        copy = CopyButton()
+        copy.props.accelerator = '<Ctrl>C'
+        copy.connect('clicked', lambda button: pc.abiword_canvas.copy())
+        self.insert(copy, -1)
+        copy.show()
+
+        paste = PasteButton()
+        paste.props.accelerator = '<Ctrl>V'
+        paste.connect('clicked', lambda button: pc.abiword_canvas.paste())
+        self.insert(paste, -1)
+        paste.show()
+
+        separator = gtk.SeparatorToolItem()
+        self.insert(separator, -1)
+        separator.show()
+
+        undo = UndoButton(sensitive=False)
+        undo.connect('clicked', lambda button: pc.abiword_canvas.undo())
+        pc.abiword_canvas.connect("can-undo", lambda abi, can_undo:
+                undo.set_sensitive(can_undo))
+        self.insert(undo, -1)
+        undo.show()
+
+        redo = RedoButton(sensitive=False)
+        redo.connect('clicked', lambda button: pc.abiword_canvas.redo())
+        pc.abiword_canvas.connect("can-redo", lambda abi, can_redo:
+                redo.set_sensitive(can_redo))
+        self.insert(redo, -1)
+        redo.show()
+
+        pc.abiword_canvas.connect('text-selected', lambda abi, b:
+                copy.set_sensitive(True))
+        pc.abiword_canvas.connect('image-selected', lambda abi, b:
+                copy.set_sensitive(True))
+        pc.abiword_canvas.connect('selection-cleared', lambda abi, b:
+                copy.set_sensitive(False))
+
+
 class SearchToolbar(gtk.Toolbar):
 
     def __init__(self, abiword_canvas, text_toolbar):
