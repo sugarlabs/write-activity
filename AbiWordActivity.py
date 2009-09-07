@@ -80,11 +80,20 @@ class AbiWordActivity (activity.Activity):
         view_toolbar.props.label = _('View')
         toolbar_box.toolbar.insert(view_toolbar, -1)
 
+        separator = gtk.SeparatorToolItem()
+        toolbar_box.toolbar.insert(separator, -1)
+
         para_toolbar = ToolbarButton()
         para_toolbar.props.page = ParagraphToolbar(self.abiword_canvas)
         para_toolbar.props.icon_name = 'paragraph-bar'
         para_toolbar.props.label = _('Paragraph')
         toolbar_box.toolbar.insert(para_toolbar, -1)
+
+        list_toolbar = ToolbarButton()
+        list_toolbar.props.page = ListToolbar(self.abiword_canvas)
+        list_toolbar.props.icon_name = 'toolbar-bulletlist'
+        list_toolbar.props.label = _('List')
+        toolbar_box.toolbar.insert(list_toolbar, -1)
         
         text_toolbar = ToolbarButton()
         text_toolbar.props.page = TextToolbar(self.abiword_canvas)
@@ -124,6 +133,9 @@ class AbiWordActivity (activity.Activity):
         self.abiword_canvas.connect('underline', lambda abi, b:
                 self._setToggleButtonState(underline, b, underline_id))
         toolbar_box.toolbar.insert(underline, -1)
+
+        separator = gtk.SeparatorToolItem()
+        toolbar_box.toolbar.insert(separator, -1)
 
         color = ColorToolButton()
         color.connect('color-set', self._text_color_cb, self.abiword_canvas)

@@ -378,9 +378,6 @@ class ParagraphToolbar(gtk.Toolbar):
     def __init__(self, abi):
         gtk.Toolbar.__init__(self)
 
-        self.insert(ToolComboBox(widgets.StyleCombo(abi)), -1)
-        self.insert(gtk.SeparatorToolItem(), -1)
-
         group = widgets.AbiButton(abi, 'left-align', abi.align_left)
         group.props.named_icon = 'format-justify-left'
         group.props.tooltip = _('Left justify')
@@ -405,7 +402,67 @@ class ParagraphToolbar(gtk.Toolbar):
         self.insert(button, -1)
 
         self.insert(gtk.SeparatorToolItem(), -1)
-        lists = RadioMenuButton(palette=widgets.ListsPalette(abi))
-        self.insert(lists, -1)
+
+        #self.insert(gtk.SeparatorToolItem(), -1)
+        #lists = RadioMenuButton(palette=widgets.ListsPalette(abi))
+        #self.insert(lists, -1)
+
+        self.show_all()
+
+class ListToolbar(gtk.Toolbar):
+    def __init__(self, abi):
+        gtk.Toolbar.__init__(self)
+
+        group = widgets.AbiButton(abi, 'style-name',
+                lambda: abi.set_style('Normal'),
+                lambda abi, style:
+                    style not in ['Bullet List',
+                                  'Dashed List',
+                                  'Numbered List',
+                                  'Lower Case List',
+                                  'Upper Case List'])
+        group.props.named_icon = 'list-none'
+        group.props.tooltip = _('Normal')
+        self.insert(group, -1)
+
+        button = widgets.AbiButton(abi, 'style-name',
+                lambda: abi.set_style('Bullet List'),
+                lambda abi, style: style == 'Bullet List')
+        button.props.group = group
+        button.props.named_icon = 'list-bullet'
+        button.props.tooltip = _('Bullet List')
+        self.insert(button, -1)
+
+        button = widgets.AbiButton(abi, 'style-name',
+                lambda: abi.set_style('Dashed List'),
+                lambda abi, style: style == 'Dashed List')
+        button.props.group = group
+        button.props.named_icon = 'list-dashed'
+        button.props.tooltip = _('Dashed List')
+        self.insert(button, -1)
+
+        button = widgets.AbiButton(abi, 'style-name',
+                lambda: abi.set_style('Numbered List'),
+                lambda abi, style: style == 'Numbered List')
+        button.props.group = group
+        button.props.named_icon = 'list-numbered'
+        button.props.tooltip = _('Numbered List')
+        self.insert(button, -1)
+
+        button = widgets.AbiButton(abi, 'style-name',
+                lambda: abi.set_style('Lower Case List'),
+                lambda abi, style: style == 'Lower Case List')
+        button.props.group = group
+        button.props.named_icon = 'list-lower-case'
+        button.props.tooltip = _('Lower Case List')
+        self.insert(button, -1)
+
+        button = widgets.AbiButton(abi, 'style-name',
+                lambda: abi.set_style('Upper Case List'),
+                lambda abi, style: style == 'Upper Case List')
+        button.props.group = group
+        button.props.named_icon = 'list-upper-case'
+        button.props.tooltip = _('Upper Case List')
+        self.insert(button, -1)
 
         self.show_all()
