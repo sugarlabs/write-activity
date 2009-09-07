@@ -42,9 +42,11 @@ import widgets
 logger = logging.getLogger('write-activity')
 
 class EditToolbar(gtk.Toolbar):
-    def __init__(self, pc):
+    def __init__(self, pc, toolbar_box):
     
         gtk.Toolbar.__init__(self)
+
+        self._abiword_canvas = pc.abiword_canvas
 
         copy = CopyButton()
         copy.props.accelerator = '<Ctrl>C'
@@ -83,15 +85,9 @@ class EditToolbar(gtk.Toolbar):
         pc.abiword_canvas.connect('selection-cleared', lambda abi, b:
                 copy.set_sensitive(False))
 
-
-class SearchToolbar(gtk.Toolbar):
-
-    def __init__(self, abiword_canvas, text_toolbar):
-
-        gtk.Toolbar.__init__(self)
-
-        self._abiword_canvas = abiword_canvas
-        self._text_toolbar = text_toolbar
+        separator = gtk.SeparatorToolItem()
+        self.insert(separator, -1)
+        separator.show()
 
         # setup the search options
         self._search_entry = iconentry.IconEntry()

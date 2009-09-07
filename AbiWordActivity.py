@@ -69,7 +69,7 @@ class AbiWordActivity (activity.Activity):
         toolbar_box.toolbar.insert(activity_button, 0)
 
         edit_toolbar = ToolbarButton()
-        edit_toolbar.props.page = EditToolbar(self)
+        edit_toolbar.props.page = EditToolbar(self, toolbar_box)
         edit_toolbar.props.icon_name = 'toolbar-edit'
         edit_toolbar.props.label = _('Edit')
         toolbar_box.toolbar.insert(edit_toolbar, -1)
@@ -97,13 +97,6 @@ class AbiWordActivity (activity.Activity):
         insert_toolbar.props.icon_name = 'insert-table'
         insert_toolbar.props.label = _('Insert')
         toolbar_box.toolbar.insert(insert_toolbar, -1)
-
-        search_toolbar = ToolbarButton()
-        search_toolbar.props.page = SearchToolbar(self.abiword_canvas,
-                toolbar_box)
-        search_toolbar.props.icon_name = 'search-bar'
-        search_toolbar.props.label = _('Search')
-        toolbar_box.toolbar.insert(search_toolbar, -1)
 
         separator = gtk.SeparatorToolItem()
         toolbar_box.toolbar.insert(separator, -1)
