@@ -105,13 +105,13 @@ class EditToolbar(gtk.Toolbar):
         self._search_entry.add_clear_button();
         self._add_widget(self._search_entry, expand=True)
 
-        self._findprev = ToolButton('go-previous')
+        self._findprev = ToolButton('go-previous-paired')
         self._findprev.set_tooltip(_('Find previous'))
         self.insert(self._findprev, -1)
         self._findprev.show()
         self._findprev.connect('clicked', self._findprev_cb);
 
-        self._findnext = ToolButton('go-next')
+        self._findnext = ToolButton('go-next-paired')
         self._findnext.set_tooltip(_('Find next'))
         self.insert(self._findnext, -1)
         self._findnext.show()
