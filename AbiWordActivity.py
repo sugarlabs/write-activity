@@ -83,6 +83,12 @@ class AbiWordActivity (activity.Activity):
         separator = gtk.SeparatorToolItem()
         toolbar_box.toolbar.insert(separator, -1)
 
+        text_toolbar = ToolbarButton()
+        text_toolbar.props.page = TextToolbar(self.abiword_canvas)
+        text_toolbar.props.icon_name = 'format-text-size'
+        text_toolbar.props.label = _('Text')
+        toolbar_box.toolbar.insert(text_toolbar, -1)
+
         para_toolbar = ToolbarButton()
         para_toolbar.props.page = ParagraphToolbar(self.abiword_canvas)
         para_toolbar.props.icon_name = 'paragraph-bar'
@@ -95,12 +101,6 @@ class AbiWordActivity (activity.Activity):
         list_toolbar.props.label = _('List')
         toolbar_box.toolbar.insert(list_toolbar, -1)
         
-        text_toolbar = ToolbarButton()
-        text_toolbar.props.page = TextToolbar(self.abiword_canvas)
-        text_toolbar.props.icon_name = 'format-text-size'
-        text_toolbar.props.label = _('Text')
-        toolbar_box.toolbar.insert(text_toolbar, -1)
-
         insert_toolbar = ToolbarButton()
         insert_toolbar.props.page = InsertToolbar(self.abiword_canvas)
         insert_toolbar.props.icon_name = 'insert-table'
