@@ -89,6 +89,13 @@ class EditToolbar(gtk.Toolbar):
         self.insert(separator, -1)
         separator.show()
 
+        search_label = gtk.Label(_("Search: "))
+        search_label.show()
+        search_item_page_label = gtk.ToolItem()
+        search_item_page_label.add(search_label)
+        self.insert(search_item_page_label, -1)
+        search_item_page_label.show()
+
         # setup the search options
         self._search_entry = iconentry.IconEntry()
         self._search_entry.set_icon_from_name(iconentry.ICON_ENTRY_PRIMARY,
