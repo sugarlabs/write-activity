@@ -378,6 +378,69 @@ class ParagraphToolbar(gtk.Toolbar):
     def __init__(self, abi):
         gtk.Toolbar.__init__(self)
 
+        group = widgets.AbiButton(abi, 'style-name',
+                lambda: abi.set_style('Normal'),
+                lambda abi, style:
+                    style not in ['Heading 1',
+                                  'Heading 2',
+                                  'Heading 3',
+                                  'Heading 4',
+                                  'Block Text',
+                                  'Plain Text'])
+        group.props.named_icon = 'list-none'
+        group.props.tooltip = _('Normal')
+        self.insert(group, -1)
+        
+        button = widgets.AbiButton(abi, 'style-name',
+                lambda: abi.set_style('Heading 1'),
+                lambda abi, style: style == 'Heading 1')
+        button.props.group = group
+        button.props.named_icon = 'paragraph-h1'
+        button.props.tooltip = _('Heading 1')
+        self.insert(button, -1)
+
+        button = widgets.AbiButton(abi, 'style-name',
+                lambda: abi.set_style('Heading 2'),
+                lambda abi, style: style == 'Heading 2')
+        button.props.group = group
+        button.props.named_icon = 'paragraph-h2'
+        button.props.tooltip = _('Heading 2')
+        self.insert(button, -1)
+
+        button = widgets.AbiButton(abi, 'style-name',
+                lambda: abi.set_style('Heading 3'),
+                lambda abi, style: style == 'Heading 3')
+        button.props.group = group
+        button.props.named_icon = 'paragraph-h3'
+        button.props.tooltip = _('Heading 3')
+        self.insert(button, -1)
+
+        button = widgets.AbiButton(abi, 'style-name',
+                lambda: abi.set_style('Heading 4'),
+                lambda abi, style: style == 'Heading 4')
+        button.props.group = group
+        button.props.named_icon = 'paragraph-h4'
+        button.props.tooltip = _('Heading 4')
+        self.insert(button, -1)
+
+        button = widgets.AbiButton(abi, 'style-name',
+                lambda: abi.set_style('Block Text'),
+                lambda abi, style: style == 'Block Text')
+        button.props.group = group
+        button.props.named_icon = 'paragraph-blocktext'
+        button.props.tooltip = _('Block Text')
+        self.insert(button, -1)
+
+        button = widgets.AbiButton(abi, 'style-name',
+                lambda: abi.set_style('Plain Text'),
+                lambda abi, style: style == 'Plain Text')
+        button.props.group = group
+        button.props.named_icon = 'paragraph-plaintext'
+        button.props.tooltip = _('Plain Text')
+        self.insert(button, -1)
+
+        self.insert(gtk.SeparatorToolItem(), -1)
+
         group = widgets.AbiButton(abi, 'left-align', abi.align_left)
         group.props.named_icon = 'format-justify-left'
         group.props.tooltip = _('Left justify')
@@ -400,12 +463,6 @@ class ParagraphToolbar(gtk.Toolbar):
         button.props.named_icon = 'format-justify-fill'
         button.props.tooltip = _('Fill justify')
         self.insert(button, -1)
-
-        self.insert(gtk.SeparatorToolItem(), -1)
-
-        #self.insert(gtk.SeparatorToolItem(), -1)
-        #lists = RadioMenuButton(palette=widgets.ListsPalette(abi))
-        #self.insert(lists, -1)
 
         self.show_all()
 
