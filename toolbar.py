@@ -208,7 +208,7 @@ class InsertToolbar(gtk.Toolbar):
         separator = gtk.SeparatorToolItem()
         self.insert(separator, -1)
 
-        image = ToolButton('insert-image')
+        image = ToolButton('insert-picture')
         image.set_tooltip(_('Insert Image'))
         self._image_id = image.connect('clicked', self._image_cb)
         self.insert(image, -1)
