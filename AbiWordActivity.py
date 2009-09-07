@@ -79,21 +79,18 @@ class AbiWordActivity (activity.Activity):
         view_toolbar.props.icon_name = 'toolbar-view'
         view_toolbar.props.label = _('View')
         toolbar_box.toolbar.insert(view_toolbar, -1)
-        
-        separator = gtk.SeparatorToolItem()
-        toolbar_box.toolbar.insert(separator, -1)
-
-        text_toolbar = ToolbarButton()
-        text_toolbar.props.page = TextToolbar(self.abiword_canvas)
-        text_toolbar.props.icon_name = 'format-text-size'
-        text_toolbar.props.label = _('Text')
-        toolbar_box.toolbar.insert(text_toolbar, -1)
 
         para_toolbar = ToolbarButton()
         para_toolbar.props.page = ParagraphToolbar(self.abiword_canvas)
         para_toolbar.props.icon_name = 'paragraph-bar'
         para_toolbar.props.label = _('Paragraph')
         toolbar_box.toolbar.insert(para_toolbar, -1)
+        
+        text_toolbar = ToolbarButton()
+        text_toolbar.props.page = TextToolbar(self.abiword_canvas)
+        text_toolbar.props.icon_name = 'format-text-size'
+        text_toolbar.props.label = _('Text')
+        toolbar_box.toolbar.insert(text_toolbar, -1)
 
         insert_toolbar = ToolbarButton()
         insert_toolbar.props.page = InsertToolbar(self.abiword_canvas)
@@ -107,6 +104,41 @@ class AbiWordActivity (activity.Activity):
         search_toolbar.props.icon_name = 'search-bar'
         search_toolbar.props.label = _('Search')
         toolbar_box.toolbar.insert(search_toolbar, -1)
+
+        separator = gtk.SeparatorToolItem()
+        toolbar_box.toolbar.insert(separator, -1)
+
+        bold = ToggleToolButton('format-text-bold')
+        bold.set_tooltip(_('Bold'))
+        bold_id = bold.connect('clicked', lambda sender:
+                self.abiword_canvas.toggle_bold())
+        self.abiword_canvas.connect('bold', lambda abi, b:
+                self._setToggleButtonState(bold, b, bold_id))
+        toolbar_box.toolbar.insert(bold, -1)
+
+        italic = ToggleToolButton('format-text-italic')
+        italic.set_tooltip(_('Italic'))
+        italic_id = italic.connect('clicked', lambda sender:
+                self.abiword_canvas.toggle_italic())
+        self.abiword_canvas.connect('italic', lambda abi, b:
+                self._setToggleButtonState(italic, b, italic_id))
+        toolbar_box.toolbar.insert(italic, -1)
+
+        underline = ToggleToolButton('format-text-underline')
+        underline.set_tooltip(_('Underline'))
+        underline_id = underline.connect('clicked', lambda sender:
+                self.abiword_canvas.toggle_underline())
+        self.abiword_canvas.connect('underline', lambda abi, b:
+                self._setToggleButtonState(underline, b, underline_id))
+        toolbar_box.toolbar.insert(underline, -1)
+
+        color = ColorToolButton()
+        color.connect('color-set', self._text_color_cb, self.abiword_canvas)
+        tool_item = gtk.ToolItem()
+        tool_item.add(color)
+        toolbar_box.toolbar.insert(tool_item, -1)
+        self.abiword_canvas.connect('color', lambda abi, r, g, b:
+                color.set_color(gtk.gdk.Color(r * 256, g * 256, b * 256)))
 
         separator = gtk.SeparatorToolItem()
         separator.props.draw = False
@@ -125,6 +157,17 @@ class AbiWordActivity (activity.Activity):
         self.abiword_canvas.show()
 
         self._zoom_handler = self.abiword_canvas.connect("zoom", self.__zoom_cb)
+
+    def _text_color_cb(self, button, abiword_canvas):
+        newcolor = button.get_color()
+        abiword_canvas.set_text_color(int(newcolor.red / 256.0),
+                                            int(newcolor.green / 256.0),
+                                            int(newcolor.blue / 256.0))
+
+    def _setToggleButtonState(self,button,b,id):
+        button.handler_block(id)
+        button.set_active(b)
+        button.handler_unblock(id)
 
     def __zoom_cb(self, abi, zoom):
         abi.disconnect(self._zoom_handler)

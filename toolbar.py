@@ -373,56 +373,10 @@ class TextToolbar(gtk.Toolbar):
         font_size = ToolComboBox(widgets.FontSizeCombo(abiword_canvas))
         self.insert(font_size, -1)
 
-        separator = gtk.SeparatorToolItem()
-        self.insert(separator, -1)
-
-        bold = ToggleToolButton('format-text-bold')
-        bold.set_tooltip(_('Bold'))
-        bold_id = bold.connect('clicked', lambda sender:
-                abiword_canvas.toggle_bold())
-        abiword_canvas.connect('bold', lambda abi, b:
-                self._setToggleButtonState(bold, b, bold_id))
-        self.insert(bold, -1)
-
-        italic = ToggleToolButton('format-text-italic')
-        italic.set_tooltip(_('Italic'))
-        italic_id = italic.connect('clicked', lambda sender:
-                abiword_canvas.toggle_italic())
-        abiword_canvas.connect('italic', lambda abi, b:
-                self._setToggleButtonState(italic, b, italic_id))
-        self.insert(italic, -1)
-
-        underline = ToggleToolButton('format-text-underline')
-        underline.set_tooltip(_('Underline'))
-        underline_id = underline.connect('clicked', lambda sender:
-                abiword_canvas.toggle_underline())
-        abiword_canvas.connect('underline', lambda abi, b:
-                self._setToggleButtonState(underline, b, underline_id))
-        self.insert(underline, -1)
-
-        separator = gtk.SeparatorToolItem()
-        self.insert(separator, -1)
-
-        color = ColorToolButton()
-        color.connect('color-set', self._text_color_cb, abiword_canvas)
-        tool_item = gtk.ToolItem()
-        tool_item.add(color)
-        self.insert(tool_item, -1)
-        abiword_canvas.connect('color', lambda abi, r, g, b:
-                color.set_color(gtk.gdk.Color(r * 256, g * 256, b * 256)))
+        # MAGIC NUMBER WARNING: Secondary toolbars are not a standard height?
+        self.set_size_request(-1, 75)
 
         self.show_all()
-
-    def _text_color_cb(self, button, abiword_canvas):
-        newcolor = button.get_color()
-        abiword_canvas.set_text_color(int(newcolor.red / 256.0),
-                                            int(newcolor.green / 256.0),
-                                            int(newcolor.blue / 256.0))
-
-    def _setToggleButtonState(self,button,b,id):
-        button.handler_block(id)
-        button.set_active(b)
-        button.handler_unblock(id)
 
 class ParagraphToolbar(gtk.Toolbar):
     def __init__(self, abi):
