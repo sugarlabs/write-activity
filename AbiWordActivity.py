@@ -98,7 +98,7 @@ class AbiWordActivity (activity.Activity):
         list_toolbar = ToolbarButton()
         list_toolbar.props.page = ListToolbar(self.abiword_canvas)
         list_toolbar.props.icon_name = 'toolbar-bulletlist'
-        list_toolbar.props.label = _('List')
+        list_toolbar.props.label = _('Bullet List')
         toolbar_box.toolbar.insert(list_toolbar, -1)
         
         insert_toolbar = ToolbarButton()
