@@ -22,18 +22,22 @@ import logging
 import abiword
 import gtk
 
+from sugar.graphics.radiopalette import RadioMenuButton
+from sugar.graphics.icon import Icon
 from sugar.graphics.toolbutton import ToolButton
+from sugar.graphics.toggletoolbutton import ToggleToolButton
+from sugar.graphics.colorbutton import ColorToolButton
 from sugar.graphics.toolcombobox import ToolComboBox
+from sugar.graphics.objectchooser import ObjectChooser
 from sugar.graphics import iconentry
-from sugar.activity.widgets import CopyButton
-from sugar.activity.widgets import PasteButton
-from sugar.activity.widgets import UndoButton
-from sugar.activity.widgets import RedoButton
+from sugar.activity import activity
+from sugar.activity.widgets import *
+from sugar.graphics.palette import Palette
+from sugar import mime
 from port import chooser
+import sugar.profile
 
-from widgets import AbiButton
-from widgets import FontCombo
-from widgets import FontSizeCombo
+import widgets
 
 logger = logging.getLogger('write-activity')
 
@@ -98,20 +102,20 @@ class EditToolbar(gtk.Toolbar):
                                               'system-search')
         self._search_entry.connect('activate', self._search_entry_activated_cb)
         self._search_entry.connect('changed', self._search_entry_changed_cb)
-        self._search_entry.add_clear_button()
+        self._search_entry.add_clear_button();
         self._add_widget(self._search_entry, expand=True)
 
         self._findprev = ToolButton('go-previous-paired')
         self._findprev.set_tooltip(_('Find previous'))
         self.insert(self._findprev, -1)
         self._findprev.show()
-        self._findprev.connect('clicked', self._findprev_cb)
+        self._findprev.connect('clicked', self._findprev_cb);
 
         self._findnext = ToolButton('go-next-paired')
         self._findnext.set_tooltip(_('Find next'))
         self.insert(self._findnext, -1)
         self._findnext.show()
-        self._findnext.connect('clicked', self._findnext_cb)
+        self._findnext.connect('clicked', self._findnext_cb);
 
         # set the initial state of the search controls
         # note: we won't simple call self._search_entry_changed_cb
@@ -194,26 +198,22 @@ class InsertToolbar(gtk.Toolbar):
 
         self._table_rows_after = ToolButton('row-insert')
         self._table_rows_after.set_tooltip(_('Insert Row'))
-        self._table_rows_after_id = self._table_rows_after.connect( \
-                'clicked', self._table_rows_after_cb)
+        self._table_rows_after_id = self._table_rows_after.connect('clicked', self._table_rows_after_cb)
         self.insert(self._table_rows_after, -1)
 
         self._table_delete_rows = ToolButton('row-remove')
         self._table_delete_rows.set_tooltip(_('Delete Row'))
-        self._table_delete_rows_id = self._table_delete_rows.connect( \
-                'clicked', self._table_delete_rows_cb)
+        self._table_delete_rows_id = self._table_delete_rows.connect('clicked', self._table_delete_rows_cb)
         self.insert(self._table_delete_rows, -1)
 
         self._table_cols_after = ToolButton('column-insert')
         self._table_cols_after.set_tooltip(_('Insert Column'))
-        self._table_cols_after_id = self._table_cols_after.connect( \
-                'clicked', self._table_cols_after_cb)
+        self._table_cols_after_id = self._table_cols_after.connect('clicked', self._table_cols_after_cb)
         self.insert(self._table_cols_after, -1)
 
         self._table_delete_cols = ToolButton('column-remove')
         self._table_delete_cols.set_tooltip(_('Delete Column'))
-        self._table_delete_cols_id = self._table_delete_cols.connect( \
-                'clicked', self._table_delete_cols_cb)
+        self._table_delete_cols_id = self._table_delete_cols.connect('clicked', self._table_delete_cols_cb)
         self.insert(self._table_delete_cols, -1)
 
         separator = gtk.SeparatorToolItem()
@@ -236,7 +236,7 @@ class InsertToolbar(gtk.Toolbar):
         chooser.pick(what=chooser.IMAGE, cb=cb)
 
     def _table_cb(self, abi, rows, cols):
-        self._abiword_canvas.insert_table(rows, cols)
+        self._abiword_canvas.insert_table(rows,cols)
 
     def _table_rows_after_cb(self, button):
         self._abiword_canvas.invoke_cmd('insertRowsAfter', '', 0, 0)
@@ -261,7 +261,7 @@ class ViewToolbar(gtk.Toolbar):
         gtk.Toolbar.__init__(self)
 
         self._abiword_canvas = abiword_canvas
-        self._zoom_percentage = 0
+        self._zoom_percentage = 0;
 
         self._zoom_out = ToolButton('zoom-out')
         self._zoom_out.set_tooltip(_('Zoom Out'))
@@ -278,8 +278,7 @@ class ViewToolbar(gtk.Toolbar):
         # TODO: fix the initial value
         self._zoom_spin_adj = gtk.Adjustment(0, 25, 400, 25, 50, 0)
         self._zoom_spin = gtk.SpinButton(self._zoom_spin_adj, 0, 0)
-        self._zoom_spin_id = self._zoom_spin.connect('value-changed', 
-                                                     self._zoom_spin_cb)
+        self._zoom_spin_id = self._zoom_spin.connect('value-changed', self._zoom_spin_cb)
         self._zoom_spin.set_numeric(True)
         self._zoom_spin.show()
         tool_item_zoom = gtk.ToolItem()
@@ -308,8 +307,7 @@ class ViewToolbar(gtk.Toolbar):
 
         self._page_spin_adj = gtk.Adjustment(0, 1, 0, 1, 1, 0)
         self._page_spin = gtk.SpinButton(self._page_spin_adj, 0, 0)
-        self._page_spin_id = self._page_spin.connect('value-changed', 
-                                                     self._page_spin_cb)
+        self._page_spin_id = self._page_spin.connect('value-changed', self._page_spin_cb)
         self._page_spin.set_numeric(True)
         self._page_spin.show()
         tool_item_page = gtk.ToolItem()
@@ -356,8 +354,8 @@ class ViewToolbar(gtk.Toolbar):
         self._abiword_canvas.set_zoom_percentage(self._zoom_percentage)
 
     def _page_spin_cb(self, button):
-        page_num = self._page_spin.get_value_as_int()
-        self._abiword_canvas.set_current_page(page_num)
+        self._page_num = self._page_spin.get_value_as_int()
+        self._abiword_canvas.set_current_page(self._page_num)
 
     def _page_count_cb(self, canvas, count):
         current_page = canvas.get_current_page_num()
@@ -376,10 +374,10 @@ class TextToolbar(gtk.Toolbar):
     def __init__(self, abiword_canvas):
         gtk.Toolbar.__init__(self)
 
-        font_name = ToolComboBox(FontCombo(abiword_canvas))
+        font_name = ToolComboBox(widgets.FontCombo(abiword_canvas))
         self.insert(font_name, -1)
 
-        font_size = ToolComboBox(FontSizeCombo(abiword_canvas))
+        font_size = ToolComboBox(widgets.FontSizeCombo(abiword_canvas))
         self.insert(font_size, -1)
 
         # MAGIC NUMBER WARNING: Secondary toolbars are not a standard height?
@@ -391,8 +389,8 @@ class ParagraphToolbar(gtk.Toolbar):
     def __init__(self, abi):
         gtk.Toolbar.__init__(self)
 
-        def append(icon_name, tooltip, do_abi_cb, on_abi_cb):
-            button = AbiButton(abi, 'style-name', do_abi_cb, on_abi_cb)
+        def append_style(icon_name, tooltip, do_abi_cb, on_abi_cb):
+            button = widgets.AbiButton(abi, 'style-name', do_abi_cb, on_abi_cb)
             button.props.icon_name = icon_name
             button.props.group = group
             button.props.tooltip = tooltip
@@ -401,7 +399,7 @@ class ParagraphToolbar(gtk.Toolbar):
 
         group = None
 
-        group = append('list-none', _('Normal'),
+        group = append_style('list-none', _('Normal'),
                 lambda:
                     abi.set_style('Normal'),
                 lambda abi, style:
@@ -412,34 +410,34 @@ class ParagraphToolbar(gtk.Toolbar):
                                   'Block Text',
                                   'Plain Text'])
 
-        append('paragraph-h1', _('Heading 1'),
+        append_style('paragraph-h1', _('Heading 1'),
                 lambda: abi.set_style('Heading 1'),
                 lambda abi, style: style == 'Heading 1')
 
-        append('paragraph-h2', _('Heading 2'),
+        append_style('paragraph-h2', _('Heading 2'),
                 lambda: abi.set_style('Heading 2'),
                 lambda abi, style: style == 'Heading 2')
 
-        append('paragraph-h3', _('Heading 3'),
+        append_style('paragraph-h3', _('Heading 3'),
                 lambda: abi.set_style('Heading 3'),
                 lambda abi, style: style == 'Heading 3')
 
-        append('paragraph-h4', _('Heading 4'),
+        append_style('paragraph-h4', _('Heading 4'),
                 lambda: abi.set_style('Heading 4'),
                 lambda abi, style: style == 'Heading 4')
 
-        append('paragraph-blocktext', _('Block Text'),
+        append_style('paragraph-blocktext', _('Block Text'),
                 lambda: abi.set_style('Block Text'),
                 lambda abi, style: style == 'Block Text')
 
-        append('paragraph-plaintext', _('Plain Text'),
+        append_style('paragraph-plaintext', _('Plain Text'),
                 lambda: abi.set_style('Plain Text'),
                 lambda abi, style: style == 'Plain Text')
 
         self.insert(gtk.SeparatorToolItem(), -1)
 
-        def append(icon_name, tooltip, do_abi_cb, style_name):
-            button = AbiButton(abi, style_name, do_abi_cb)
+        def append_align(icon_name, tooltip, do_abi_cb, style_name):
+            button = widgets.AbiButton(abi, style_name, do_abi_cb)
             button.props.icon_name = icon_name
             button.props.group = group
             button.props.tooltip = tooltip
@@ -448,16 +446,16 @@ class ParagraphToolbar(gtk.Toolbar):
 
         group = None
 
-        group = append('format-justify-left', _('Left justify'),
+        group = append_align('format-justify-left', _('Left justify'),
                 abi.align_left, 'left-align')
 
-        append('format-justify-center', _('Center justify'),
+        append_align('format-justify-center', _('Center justify'),
                 abi.align_center, 'center-align')
 
-        append('format-justify-right', _('Right justify'),
+        append_align('format-justify-right', _('Right justify'),
                 abi.align_right, 'right-align')
 
-        append('format-justify-fill', _('Fill justify'),
+        append_align('format-justify-fill', _('Fill justify'),
                 abi.align_justify, 'justify-align')
 
         self.show_all()
@@ -467,7 +465,7 @@ class ListToolbar(gtk.Toolbar):
         gtk.Toolbar.__init__(self)
 
         def append(icon_name, tooltip, do_abi_cb, on_abi_cb):
-            button = AbiButton(abi, 'style-name', do_abi_cb, on_abi_cb)
+            button = widgets.AbiButton(abi, 'style-name', do_abi_cb, on_abi_cb)
             button.props.icon_name = icon_name
             button.props.group = group
             button.props.tooltip = tooltip
