@@ -25,6 +25,7 @@ import gtk
 from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.toolcombobox import ToolComboBox
 from sugar.graphics import iconentry
+from sugar.graphics import style
 from sugar.activity.widgets import CopyButton
 from sugar.activity.widgets import PasteButton
 from sugar.activity.widgets import UndoButton
@@ -383,7 +384,7 @@ class TextToolbar(gtk.Toolbar):
         self.insert(font_size, -1)
 
         # MAGIC NUMBER WARNING: Secondary toolbars are not a standard height?
-        self.set_size_request(-1, 75)
+        self.set_size_request(-1, style.GRID_CELL_SIZE)
 
         self.show_all()
 
