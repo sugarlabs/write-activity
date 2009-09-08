@@ -19,8 +19,6 @@
 from gettext import gettext as _
 import logging
 import os
-import time
-import shutil
 
 # Abiword needs this to happen as soon as possible
 import gobject
@@ -31,17 +29,27 @@ import gtk
 import telepathy
 import telepathy.client
 
-from sugar.graphics.toolcombobox import ToolComboBox
-from sugar.graphics.toolbarbox import ToolbarButton, ToolbarBox
+from abiword import Canvas
+
 from sugar.activity import activity
-from sugar.activity.widgets import *
+from sugar.activity.widgets import StopButton
+from sugar.activity.widgets import ActivityToolbarButton
+from sugar.activity.activity import get_bundle_path
+
 from sugar.presence import presenceservice
+
+from sugar.graphics.toolbarbox import ToolbarButton, ToolbarBox
+from sugar.graphics.toggletoolbutton import ToggleToolButton
+from sugar.graphics.colorbutton import ColorToolButton
 from sugar.graphics import style
 
-from abiword import Canvas
-from toolbar import *
-from widgets import *
-from sugar.activity.activity import get_bundle_path
+from toolbar import EditToolbar
+from toolbar import ViewToolbar
+from toolbar import TextToolbar
+from toolbar import ListToolbar
+from toolbar import InsertToolbar
+from toolbar import ParagraphToolbar
+from widgets import ExportButton
 
 logger = logging.getLogger('write-activity')
 
@@ -169,7 +177,7 @@ class AbiWordActivity (activity.Activity):
                                             int(newcolor.green / 256.0),
                                             int(newcolor.blue / 256.0))
 
-    def _setToggleButtonState(self,button,b,id):
+    def _setToggleButtonState(self, button, b, id):
         button.handler_block(id)
         button.set_active(b)
         button.handler_unblock(id)
@@ -340,7 +348,7 @@ class AbiWordActivity (activity.Activity):
             if state == telepathy.TUBE_STATE_LOCAL_PENDING:
                 self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].AcceptDBusTube(id)
 
-            initiator_path = None;
+            initiator_path = None
             contacts = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].GetDBusNames(id)
             #print 'dbus contact mapping',self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].GetDBusNames(id)
             for i, struct in enumerate(contacts):
@@ -349,7 +357,7 @@ class AbiWordActivity (activity.Activity):
                 if handle == initiator:
                     logger.debug('found initiator dbus path: %s', path)
                     initiator_path = path
-                    break;
+                    break
 
             if initiator_path is None:
                 logger.error('Unable to get the dbus path of the tube initiator')
@@ -433,10 +441,10 @@ class AbiWordActivity (activity.Activity):
 
         # if we were viewing the source of a file, 
         # then always save as plain text
-        actual_mimetype = self.metadata['mime_type'];
+        actual_mimetype = self.metadata['mime_type']
         if 'source' in self.metadata and self.metadata['source'] == '1':
             logger.debug('Writing file as type source (text/plain)')
             actual_mimetype = 'text/plain'
 
         self.metadata['fulltext'] = self.abiword_canvas.get_content(extension_or_mimetype=".txt")[:3000]
-        self.abiword_canvas.save('file://' + file_path, actual_mimetype, '');
+        self.abiword_canvas.save('file://' + file_path, actual_mimetype, '')

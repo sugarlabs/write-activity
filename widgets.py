@@ -13,7 +13,6 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import os
-import gtk
 import dbus
 import time
 from gettext import gettext as _
@@ -22,7 +21,6 @@ import logging
 from sugar.graphics.radiotoolbutton import RadioToolButton
 from sugar.graphics.combobox import ComboBox
 from sugar.graphics.palette import Palette
-from sugar.graphics.radiopalette import RadioPalette
 from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.menuitem import MenuItem
 from sugar.datastore import datastore
@@ -61,7 +59,7 @@ class FontCombo(ComboBox):
         for i, f in enumerate(self._fonts):
             if f == font_family:
                 font_index = i
-                break;
+                break
 
         # if we don't know this font yet, then add it (temporary) to the list
         if font_index == -1:
@@ -120,7 +118,7 @@ class FontSizeCombo(ComboBox):
                 self.handler_block(self._changed_id)
                 self.set_active(i)
                 self.handler_unblock(self._changed_id)
-                break;
+                break
 
 class AbiButton(RadioToolButton):
     def __init__(self, abi, abi_signal, do_abi_cb, on_abi_cb=None, **kwargs):
@@ -195,13 +193,13 @@ class ExportButton(ToolButton):
 
         # special case HTML export to set the activity name as the HTML title
         if format['mime_type'] == "text/html":
-            exp_props += " title:" + activity.metadata['title'] + ';';
+            exp_props += " title:" + activity.metadata['title'] + ';'
 
         # create a new journal item
         fileObject = datastore.create()
         act_meta = activity.metadata
         fileObject.metadata['title'] = \
-                act_meta['title'] + ' (' + format['jpostfix'] + ')';
+                act_meta['title'] + ' (' + format['jpostfix'] + ')'
         fileObject.metadata['title_set_by_user'] = act_meta['title_set_by_user']
         fileObject.metadata['mime_type'] = format['mime_type']
         fileObject.metadata['fulltext'] = abi.get_content(
