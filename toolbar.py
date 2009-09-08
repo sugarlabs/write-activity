@@ -305,7 +305,7 @@ class ViewToolbar(gtk.Toolbar):
         self.insert(tool_item_page_label, -1)
         tool_item_page_label.show()
 
-        self._page_spin_adj = gtk.Adjustment(0, 1, 0, 1, 1, 0)
+        self._page_spin_adj = gtk.Adjustment(0, 1, 0, -1, -1, 0)
         self._page_spin = gtk.SpinButton(self._page_spin_adj, 0, 0)
         self._page_spin_id = self._page_spin.connect('value-changed', self._page_spin_cb)
         self._page_spin.set_numeric(True)
@@ -359,7 +359,7 @@ class ViewToolbar(gtk.Toolbar):
 
     def _page_count_cb(self, canvas, count):
         current_page = canvas.get_current_page_num()
-        self._page_spin_adj.set_all(current_page, 1, count, 1, 1, 0)
+        self._page_spin_adj.set_all(current_page, 1, count, -1, -1, 0)
         self._total_page_label.props.label = \
             ' / ' + str(count)
 
