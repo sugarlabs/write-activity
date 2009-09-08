@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: projects/write\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-17 20:56+0100\n"
+"POT-Creation-Date: 2009-08-02 00:30-0400\n"
 "PO-Revision-Date: 2008-01-25 14:48-0500\n"
 "Last-Translator: samy boutayeb <s.boutayeb@free.fr>\n"
 "Language-Team: French <traduc@traduc.org>\n"
@@ -19,30 +19,6 @@ msgstr ""
 #: activity/activity.info:2
 msgid "Write"
 msgstr "Écrire"
-
-#: AbiWordActivity.py:64
-msgid "Edit"
-msgstr "Modifier"
-
-#: AbiWordActivity.py:67
-msgid "Text"
-msgstr "Texte"
-
-#: AbiWordActivity.py:71
-msgid "Image"
-msgstr "Image"
-
-#: AbiWordActivity.py:75 toolbar.py:515
-msgid "Table"
-msgstr "Tableau"
-
-#: AbiWordActivity.py:79
-msgid "Format"
-msgstr "Format"
-
-#: AbiWordActivity.py:83
-msgid "View"
-msgstr "Vue"
 
 #: toolbar.py:51
 msgid "Rich Text (RTF)"
@@ -68,121 +44,126 @@ msgstr "Texte simple (TXT)"
 msgid "TXT"
 msgstr "TXT"
 
-#: toolbar.py:128
+#: toolbar.py:125
 msgid "Find previous"
 msgstr "Rechercher précédent"
 
-#: toolbar.py:134
+#: toolbar.py:131
 msgid "Find next"
 msgstr "Rechercher suivant"
 
-#: toolbar.py:244
-msgid "Bold"
-msgstr "Gras"
+#: toolbar.py:204
+msgid "Table"
+msgstr "Tableau"
 
-#: toolbar.py:251
-msgid "Italic"
-msgstr "Italique"
-
-#: toolbar.py:258
-msgid "Underline"
-msgstr "Souligné"
-
-#: toolbar.py:481
-msgid "Insert Image"
-msgstr "Insérer une image"
-
-#: toolbar.py:489
-msgid "Choose image"
-msgstr "Choisir une image"
-
-#: toolbar.py:515
+#: toolbar.py:204
 msgid "Cancel"
 msgstr "Annuler"
 
-#: toolbar.py:524
+#: toolbar.py:212
 msgid "Insert Row"
 msgstr "Insérer une ligne"
 
-#: toolbar.py:530
+#: toolbar.py:217
 msgid "Delete Row"
 msgstr "Supprimer une ligne"
 
-#: toolbar.py:536
+#: toolbar.py:222
 msgid "Insert Column"
 msgstr "Insérer une colonne"
 
-#: toolbar.py:542
+#: toolbar.py:227
 msgid "Delete Column"
 msgstr "Supprimer une colonne"
 
-#: toolbar.py:580
-msgid "Style: "
-msgstr "Style : "
+#: toolbar.py:235
+msgid "Insert Image"
+msgstr "Insérer une image"
 
-#: toolbar.py:590
-msgid "Heading 1"
-msgstr "Titre 1"
-
-#: toolbar.py:591
-msgid "Heading 2"
-msgstr "Titre 2"
-
-#: toolbar.py:592
-msgid "Heading 3"
-msgstr "Titre 3"
-
-#: toolbar.py:593
-msgid "Heading 4"
-msgstr "Titre 4"
-
-#: toolbar.py:594
-msgid "Bullet List"
-msgstr "Liste à puces"
-
-#: toolbar.py:595
-msgid "Dashed List"
-msgstr "Liste à tirets"
-
-#: toolbar.py:596
-msgid "Numbered List"
-msgstr "Liste numérotée"
-
-#: toolbar.py:597
-msgid "Lower Case List"
-msgstr "Liste a, b, c"
-
-#: toolbar.py:598
-msgid "Upper Case List"
-msgstr "Liste A, B, C"
-
-#: toolbar.py:599
-msgid "Block Text"
-msgstr "Texte justifié"
-
-#: toolbar.py:600
-msgid "Normal"
-msgstr "Normal"
-
-#: toolbar.py:601
-msgid "Plain Text"
-msgstr "Texte simple"
-
-#: toolbar.py:656
+#: toolbar.py:279
 msgid "Zoom Out"
 msgstr "Zoom arrière"
 
-#: toolbar.py:662
+#: toolbar.py:285
 msgid "Zoom In"
 msgstr "Zoom avant"
 
-#: toolbar.py:678
+#: toolbar.py:301
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:690
+#: toolbar.py:313
 msgid "Page: "
 msgstr "Page : "
+
+#: toolbar.py:398
+msgid "Bold"
+msgstr "Gras"
+
+#: toolbar.py:406
+msgid "Italic"
+msgstr "Italique"
+
+#: toolbar.py:414
+msgid "Underline"
+msgstr "Souligné"
+
+#~ msgid "Edit"
+#~ msgstr "Modifier"
+
+#~ msgid "Text"
+#~ msgstr "Texte"
+
+#~ msgid "Image"
+#~ msgstr "Image"
+
+#~ msgid "Format"
+#~ msgstr "Format"
+
+#~ msgid "View"
+#~ msgstr "Vue"
+
+#~ msgid "Choose image"
+#~ msgstr "Choisir une image"
+
+#~ msgid "Style: "
+#~ msgstr "Style : "
+
+#~ msgid "Heading 1"
+#~ msgstr "Titre 1"
+
+#~ msgid "Heading 2"
+#~ msgstr "Titre 2"
+
+#~ msgid "Heading 3"
+#~ msgstr "Titre 3"
+
+#~ msgid "Heading 4"
+#~ msgstr "Titre 4"
+
+#~ msgid "Bullet List"
+#~ msgstr "Liste à puces"
+
+#~ msgid "Dashed List"
+#~ msgstr "Liste à tirets"
+
+#~ msgid "Numbered List"
+#~ msgstr "Liste numérotée"
+
+#~ msgid "Lower Case List"
+#~ msgstr "Liste a, b, c"
+
+#~ msgid "Upper Case List"
+#~ msgstr "Liste A, B, C"
+
+#~ msgid "Block Text"
+#~ msgstr "Texte justifié"
+
+#~ msgid "Normal"
+#~ msgstr "Normal"
+
+#~ msgid "Plain Text"
+#~ msgstr "Texte simple"
 
 #~ msgid "Select text color"
 #~ msgstr "Choisir la couleur du texte"
