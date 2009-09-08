@@ -389,8 +389,19 @@ class ParagraphToolbar(gtk.Toolbar):
     def __init__(self, abi):
         gtk.Toolbar.__init__(self)
 
-        group = widgets.AbiButton(abi, 'style-name',
-                lambda: abi.set_style('Normal'),
+        def append(icon_name, tooltip, do_abi_cb, on_abi_cb):
+            button = widgets.AbiButton(abi, 'style-name', do_abi_cb, on_abi_cb)
+            button.props.icon_name = icon_name
+            button.props.group = group
+            button.props.tooltip = tooltip
+            self.insert(button, -1)
+            return button
+
+        group = None
+
+        group = append('list-none', _('Normal'),
+                lambda:
+                    abi.set_style('Normal'),
                 lambda abi, style:
                     style not in ['Heading 1',
                                   'Heading 2',
@@ -398,82 +409,54 @@ class ParagraphToolbar(gtk.Toolbar):
                                   'Heading 4',
                                   'Block Text',
                                   'Plain Text'])
-        group.props.named_icon = 'list-none'
-        group.props.tooltip = _('Normal')
-        self.insert(group, -1)
-        
-        button = widgets.AbiButton(abi, 'style-name',
+
+        append('paragraph-h1', _('Heading 1'),
                 lambda: abi.set_style('Heading 1'),
                 lambda abi, style: style == 'Heading 1')
-        button.props.group = group
-        button.props.named_icon = 'paragraph-h1'
-        button.props.tooltip = _('Heading 1')
-        self.insert(button, -1)
 
-        button = widgets.AbiButton(abi, 'style-name',
+        append('paragraph-h2', _('Heading 2'),
                 lambda: abi.set_style('Heading 2'),
                 lambda abi, style: style == 'Heading 2')
-        button.props.group = group
-        button.props.named_icon = 'paragraph-h2'
-        button.props.tooltip = _('Heading 2')
-        self.insert(button, -1)
 
-        button = widgets.AbiButton(abi, 'style-name',
+        append('paragraph-h3', _('Heading 3'),
                 lambda: abi.set_style('Heading 3'),
                 lambda abi, style: style == 'Heading 3')
-        button.props.group = group
-        button.props.named_icon = 'paragraph-h3'
-        button.props.tooltip = _('Heading 3')
-        self.insert(button, -1)
 
-        button = widgets.AbiButton(abi, 'style-name',
+        append('paragraph-h4', _('Heading 4'),
                 lambda: abi.set_style('Heading 4'),
                 lambda abi, style: style == 'Heading 4')
-        button.props.group = group
-        button.props.named_icon = 'paragraph-h4'
-        button.props.tooltip = _('Heading 4')
-        self.insert(button, -1)
 
-        button = widgets.AbiButton(abi, 'style-name',
+        append('paragraph-blocktext', _('Block Text'),
                 lambda: abi.set_style('Block Text'),
                 lambda abi, style: style == 'Block Text')
-        button.props.group = group
-        button.props.named_icon = 'paragraph-blocktext'
-        button.props.tooltip = _('Block Text')
-        self.insert(button, -1)
 
-        button = widgets.AbiButton(abi, 'style-name',
+        append('paragraph-plaintext', _('Plain Text'),
                 lambda: abi.set_style('Plain Text'),
                 lambda abi, style: style == 'Plain Text')
-        button.props.group = group
-        button.props.named_icon = 'paragraph-plaintext'
-        button.props.tooltip = _('Plain Text')
-        self.insert(button, -1)
 
         self.insert(gtk.SeparatorToolItem(), -1)
 
-        group = widgets.AbiButton(abi, 'left-align', abi.align_left)
-        group.props.named_icon = 'format-justify-left'
-        group.props.tooltip = _('Left justify')
-        self.insert(group, -1)
+        def append(icon_name, tooltip, do_abi_cb, style_name):
+            button = widgets.AbiButton(abi, style_name, do_abi_cb)
+            button.props.icon_name = icon_name
+            button.props.group = group
+            button.props.tooltip = tooltip
+            self.insert(button, -1)
+            return button
 
-        button = widgets.AbiButton(abi, 'center-align', abi.align_center)
-        button.props.group = group
-        button.props.named_icon = 'format-justify-center'
-        button.props.tooltip = _('Center justify')
-        self.insert(button, -1)
+        group = None
 
-        button = widgets.AbiButton(abi, 'right-align', abi.align_right)
-        button.props.group = group
-        button.props.named_icon = 'format-justify-right'
-        button.props.tooltip = _('Right justify')
-        self.insert(button, -1)
+        group = append('format-justify-left', _('Left justify'),
+                abi.align_left, 'left-align')
 
-        button = widgets.AbiButton(abi, 'justify-align', abi.align_justify)
-        button.props.group = group
-        button.props.named_icon = 'format-justify-fill'
-        button.props.tooltip = _('Fill justify')
-        self.insert(button, -1)
+        append('format-justify-center', _('Center justify'),
+                abi.align_center, 'center-align')
+
+        append('format-justify-right', _('Right justify'),
+                abi.align_right, 'right-align')
+
+        append('format-justify-fill', _('Fill justify'),
+                abi.align_justify, 'justify-align')
 
         self.show_all()
 
@@ -520,6 +503,5 @@ class ListToolbar(gtk.Toolbar):
         append('list-upper-case', _('Upper Case List'),
                 lambda: abi.set_style('Upper Case List'),
                 lambda abi, style: style == 'Upper Case List')
-
 
         self.show_all()
