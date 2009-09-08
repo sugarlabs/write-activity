@@ -104,7 +104,7 @@ class AbiWordActivity (activity.Activity):
         insert_toolbar = ToolbarButton()
         insert_toolbar.props.page = InsertToolbar(self.abiword_canvas)
         insert_toolbar.props.icon_name = 'insert-table'
-        insert_toolbar.props.label = _('Insert')
+        insert_toolbar.props.label = _('Table')
         toolbar_box.toolbar.insert(insert_toolbar, -1)
 
         separator = gtk.SeparatorToolItem()
