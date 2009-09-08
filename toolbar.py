@@ -481,56 +481,45 @@ class ListToolbar(gtk.Toolbar):
     def __init__(self, abi):
         gtk.Toolbar.__init__(self)
 
-        group = widgets.AbiButton(abi, 'style-name',
-                lambda: abi.set_style('Normal'),
+        def append(icon_name, tooltip, do_abi_cb, on_abi_cb):
+            button = widgets.AbiButton(abi, 'style-name', do_abi_cb, on_abi_cb)
+            button.props.icon_name = icon_name
+            button.props.group = group
+            button.props.tooltip = tooltip
+            self.insert(button, -1)
+            return button
+
+        group = None
+
+        group = append('list-none', _('Normal'),
+                lambda:
+                    abi.set_style('Normal'),
                 lambda abi, style:
                     style not in ['Bullet List',
                                   'Dashed List',
                                   'Numbered List',
                                   'Lower Case List',
                                   'Upper Case List'])
-        group.props.named_icon = 'list-none'
-        group.props.tooltip = _('Normal')
-        self.insert(group, -1)
 
-        button = widgets.AbiButton(abi, 'style-name',
+        append('list-bullet', _('Bullet List'),
                 lambda: abi.set_style('Bullet List'),
                 lambda abi, style: style == 'Bullet List')
-        button.props.group = group
-        button.props.named_icon = 'list-bullet'
-        button.props.tooltip = _('Bullet List')
-        self.insert(button, -1)
 
-        button = widgets.AbiButton(abi, 'style-name',
+        append('list-dashed', _('Dashed List'),
                 lambda: abi.set_style('Dashed List'),
                 lambda abi, style: style == 'Dashed List')
-        button.props.group = group
-        button.props.named_icon = 'list-dashed'
-        button.props.tooltip = _('Dashed List')
-        self.insert(button, -1)
 
-        button = widgets.AbiButton(abi, 'style-name',
+        append('list-numbered', _('Numbered List'),
                 lambda: abi.set_style('Numbered List'),
                 lambda abi, style: style == 'Numbered List')
-        button.props.group = group
-        button.props.named_icon = 'list-numbered'
-        button.props.tooltip = _('Numbered List')
-        self.insert(button, -1)
 
-        button = widgets.AbiButton(abi, 'style-name',
+        append('list-lower-case', _('Lower Case List'),
                 lambda: abi.set_style('Lower Case List'),
                 lambda abi, style: style == 'Lower Case List')
-        button.props.group = group
-        button.props.named_icon = 'list-lower-case'
-        button.props.tooltip = _('Lower Case List')
-        self.insert(button, -1)
 
-        button = widgets.AbiButton(abi, 'style-name',
+        append('list-upper-case', _('Upper Case List'),
                 lambda: abi.set_style('Upper Case List'),
                 lambda abi, style: style == 'Upper Case List')
-        button.props.group = group
-        button.props.named_icon = 'list-upper-case'
-        button.props.tooltip = _('Upper Case List')
-        self.insert(button, -1)
+
 
         self.show_all()
