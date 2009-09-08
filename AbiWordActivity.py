@@ -85,7 +85,7 @@ class AbiWordActivity (activity.Activity):
 
         text_toolbar = ToolbarButton()
         text_toolbar.props.page = TextToolbar(self.abiword_canvas)
-        text_toolbar.props.icon_name = 'format-text-size'
+        text_toolbar.props.icon_name = 'format-text'
         text_toolbar.props.label = _('Text')
         toolbar_box.toolbar.insert(text_toolbar, -1)
 
