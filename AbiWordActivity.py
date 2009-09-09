@@ -19,8 +19,6 @@
 from gettext import gettext as _
 import logging
 import os
-import time
-import shutil
 
 # Abiword needs this to happen as soon as possible
 import gobject
@@ -31,17 +29,27 @@ import gtk
 import telepathy
 import telepathy.client
 
-from sugar.graphics.toolcombobox import ToolComboBox
-from sugar.graphics.toolbarbox import ToolbarButton, ToolbarBox
+from abiword import Canvas
+
 from sugar.activity import activity
-from sugar.activity.widgets import *
+from sugar.activity.widgets import StopButton
+from sugar.activity.widgets import ActivityToolbarButton
+from sugar.activity.activity import get_bundle_path
+
 from sugar.presence import presenceservice
+
+from sugar.graphics.toolbarbox import ToolbarButton, ToolbarBox
+from sugar.graphics.toggletoolbutton import ToggleToolButton
+from sugar.graphics.colorbutton import ColorToolButton
 from sugar.graphics import style
 
-from abiword import Canvas
-from toolbar import *
-from widgets import *
-from sugar.activity.activity import get_bundle_path
+from toolbar import EditToolbar
+from toolbar import ViewToolbar
+from toolbar import TextToolbar
+from toolbar import ListToolbar
+from toolbar import InsertToolbar
+from toolbar import ParagraphToolbar
+from widgets import ExportButton
 
 logger = logging.getLogger('write-activity')
 
@@ -68,12 +76,24 @@ class AbiWordActivity (activity.Activity):
         activity_button.props.page.insert(export_button, 2)
         toolbar_box.toolbar.insert(activity_button, 0)
 
+        edit_toolbar = ToolbarButton()
+        edit_toolbar.props.page = EditToolbar(self, toolbar_box)
+        edit_toolbar.props.icon_name = 'toolbar-edit'
+        edit_toolbar.props.label = _('Edit')
+        toolbar_box.toolbar.insert(edit_toolbar, -1)
+
+        view_toolbar = ToolbarButton()
+        view_toolbar.props.page = ViewToolbar(self.abiword_canvas)
+        view_toolbar.props.icon_name = 'toolbar-view'
+        view_toolbar.props.label = _('View')
+        toolbar_box.toolbar.insert(view_toolbar, -1)
+
         separator = gtk.SeparatorToolItem()
         toolbar_box.toolbar.insert(separator, -1)
 
         text_toolbar = ToolbarButton()
         text_toolbar.props.page = TextToolbar(self.abiword_canvas)
-        text_toolbar.props.icon_name = 'format-text-size'
+        text_toolbar.props.icon_name = 'format-text'
         text_toolbar.props.label = _('Text')
         toolbar_box.toolbar.insert(text_toolbar, -1)
 
@@ -83,60 +103,55 @@ class AbiWordActivity (activity.Activity):
         para_toolbar.props.label = _('Paragraph')
         toolbar_box.toolbar.insert(para_toolbar, -1)
 
-        separator = gtk.SeparatorToolItem()
-        toolbar_box.toolbar.insert(separator, -1)
-
-        copy = CopyButton()
-        copy.connect('clicked', lambda button: self.abiword_canvas.copy())
-        toolbar_box.toolbar.insert(copy, -1)
-
-        paste = PasteButton()
-        paste.connect('clicked', lambda button: self.abiword_canvas.paste())
-        toolbar_box.toolbar.insert(paste, -1)
-
-        separator = gtk.SeparatorToolItem()
-        toolbar_box.toolbar.insert(separator, -1)
-
-        undo = UndoButton(sensitive=False)
-        undo.connect('clicked', lambda button: self.abiword_canvas.undo())
-        self.abiword_canvas.connect("can-undo", lambda abi, can_undo:
-                undo.set_sensitive(can_undo))
-        toolbar_box.toolbar.insert(undo, -1)
-
-        redo = RedoButton(sensitive=False)
-        redo.connect('clicked', lambda button: self.abiword_canvas.redo())
-        self.abiword_canvas.connect("can-redo", lambda abi, can_redo:
-                redo.set_sensitive(can_redo))
-        toolbar_box.toolbar.insert(redo, -1)
-
-        separator = gtk.SeparatorToolItem()
-        toolbar_box.toolbar.insert(separator, -1)
-
-        self.abiword_canvas.connect('text-selected', lambda abi, b:
-                copy.set_sensitive(True))
-        self.abiword_canvas.connect('image-selected', lambda abi, b:
-                copy.set_sensitive(True))
-        self.abiword_canvas.connect('selection-cleared', lambda abi, b:
-                copy.set_sensitive(False))
-
+        list_toolbar = ToolbarButton()
+        list_toolbar.props.page = ListToolbar(self.abiword_canvas)
+        list_toolbar.props.icon_name = 'toolbar-bulletlist'
+        list_toolbar.props.label = _('Bullet List')
+        toolbar_box.toolbar.insert(list_toolbar, -1)
+        
         insert_toolbar = ToolbarButton()
         insert_toolbar.props.page = InsertToolbar(self.abiword_canvas)
-        insert_toolbar.props.icon_name = 'transfer-from'
-        insert_toolbar.props.label = _('Insert')
+        insert_toolbar.props.icon_name = 'insert-table'
+        insert_toolbar.props.label = _('Table')
         toolbar_box.toolbar.insert(insert_toolbar, -1)
 
-        search_toolbar = ToolbarButton()
-        search_toolbar.props.page = SearchToolbar(self.abiword_canvas,
-                toolbar_box)
-        search_toolbar.props.icon_name = 'search-bar'
-        search_toolbar.props.label = _('Search')
-        toolbar_box.toolbar.insert(search_toolbar, -1)
+        separator = gtk.SeparatorToolItem()
+        toolbar_box.toolbar.insert(separator, -1)
 
-        view_toolbar = ToolbarButton()
-        view_toolbar.props.page = ViewToolbar(self.abiword_canvas)
-        view_toolbar.props.icon_name = 'toolbar-view'
-        view_toolbar.props.label = _('View')
-        toolbar_box.toolbar.insert(view_toolbar, -1)
+        bold = ToggleToolButton('format-text-bold')
+        bold.set_tooltip(_('Bold'))
+        bold_id = bold.connect('clicked', lambda sender:
+                self.abiword_canvas.toggle_bold())
+        self.abiword_canvas.connect('bold', lambda abi, b:
+                self._setToggleButtonState(bold, b, bold_id))
+        toolbar_box.toolbar.insert(bold, -1)
+
+        italic = ToggleToolButton('format-text-italic')
+        italic.set_tooltip(_('Italic'))
+        italic_id = italic.connect('clicked', lambda sender:
+                self.abiword_canvas.toggle_italic())
+        self.abiword_canvas.connect('italic', lambda abi, b:
+                self._setToggleButtonState(italic, b, italic_id))
+        toolbar_box.toolbar.insert(italic, -1)
+
+        underline = ToggleToolButton('format-text-underline')
+        underline.set_tooltip(_('Underline'))
+        underline_id = underline.connect('clicked', lambda sender:
+                self.abiword_canvas.toggle_underline())
+        self.abiword_canvas.connect('underline', lambda abi, b:
+                self._setToggleButtonState(underline, b, underline_id))
+        toolbar_box.toolbar.insert(underline, -1)
+
+        separator = gtk.SeparatorToolItem()
+        toolbar_box.toolbar.insert(separator, -1)
+
+        color = ColorToolButton()
+        color.connect('color-set', self._text_color_cb, self.abiword_canvas)
+        tool_item = gtk.ToolItem()
+        tool_item.add(color)
+        toolbar_box.toolbar.insert(tool_item, -1)
+        self.abiword_canvas.connect('color', lambda abi, r, g, b:
+                color.set_color(gtk.gdk.Color(r * 256, g * 256, b * 256)))
 
         separator = gtk.SeparatorToolItem()
         separator.props.draw = False
@@ -155,6 +170,17 @@ class AbiWordActivity (activity.Activity):
         self.abiword_canvas.show()
 
         self._zoom_handler = self.abiword_canvas.connect("zoom", self.__zoom_cb)
+
+    def _text_color_cb(self, button, abiword_canvas):
+        newcolor = button.get_color()
+        abiword_canvas.set_text_color(int(newcolor.red / 256.0),
+                                            int(newcolor.green / 256.0),
+                                            int(newcolor.blue / 256.0))
+
+    def _setToggleButtonState(self, button, b, id):
+        button.handler_block(id)
+        button.set_active(b)
+        button.handler_unblock(id)
 
     def __zoom_cb(self, abi, zoom):
         abi.disconnect(self._zoom_handler)
@@ -322,7 +348,7 @@ class AbiWordActivity (activity.Activity):
             if state == telepathy.TUBE_STATE_LOCAL_PENDING:
                 self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].AcceptDBusTube(id)
 
-            initiator_path = None;
+            initiator_path = None
             contacts = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].GetDBusNames(id)
             #print 'dbus contact mapping',self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].GetDBusNames(id)
             for i, struct in enumerate(contacts):
@@ -331,7 +357,7 @@ class AbiWordActivity (activity.Activity):
                 if handle == initiator:
                     logger.debug('found initiator dbus path: %s', path)
                     initiator_path = path
-                    break;
+                    break
 
             if initiator_path is None:
                 logger.error('Unable to get the dbus path of the tube initiator')
@@ -415,10 +441,10 @@ class AbiWordActivity (activity.Activity):
 
         # if we were viewing the source of a file, 
         # then always save as plain text
-        actual_mimetype = self.metadata['mime_type'];
+        actual_mimetype = self.metadata['mime_type']
         if 'source' in self.metadata and self.metadata['source'] == '1':
             logger.debug('Writing file as type source (text/plain)')
             actual_mimetype = 'text/plain'
 
         self.metadata['fulltext'] = self.abiword_canvas.get_content(extension_or_mimetype=".txt")[:3000]
-        self.abiword_canvas.save('file://' + file_path, actual_mimetype, '');
+        self.abiword_canvas.save('file://' + file_path, actual_mimetype, '')

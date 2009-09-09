@@ -13,7 +13,6 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import os
-import gtk
 import dbus
 import time
 from gettext import gettext as _
@@ -22,7 +21,6 @@ import logging
 from sugar.graphics.radiotoolbutton import RadioToolButton
 from sugar.graphics.combobox import ComboBox
 from sugar.graphics.palette import Palette
-from sugar.graphics.radiopalette import RadioPalette
 from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.menuitem import MenuItem
 from sugar.datastore import datastore
@@ -61,7 +59,7 @@ class FontCombo(ComboBox):
         for i, f in enumerate(self._fonts):
             if f == font_family:
                 font_index = i
-                break;
+                break
 
         # if we don't know this font yet, then add it (temporary) to the list
         if font_index == -1:
@@ -120,80 +118,7 @@ class FontSizeCombo(ComboBox):
                 self.handler_block(self._changed_id)
                 self.set_active(i)
                 self.handler_unblock(self._changed_id)
-                break;
-
-class StyleCombo(ComboBox):
-    def __init__(self, abi):
-        ComboBox.__init__(self)
-
-        self._abi_handler = abi.connect('style-name', self._style_cb)
-
-        self._styles = [ ['Heading 1', _('Heading 1')],
-                         ['Heading 2', _('Heading 2')],
-                         ['Heading 3', _('Heading 3')],
-                         ['Heading 4', _('Heading 4')],
-                         ['Bullet List', _('Bullet List')],
-                         ['Dashed List', _('Dashed List')],
-                         ['Numbered List', _('Numbered List')],
-                         ['Lower Case List', _('Lower Case List')],
-                         ['Upper Case List', _('Upper Case List')],
-                         ['Block Text', _('Block Text')],
-                         ['Normal', _('Normal')],
-                         ['Plain Text', _('Plain Text')] ]
-
-        self._has_custom_styles = False
-        self._style_changed_id = self.connect('changed', self._style_changed_cb,
-                abi)
-
-        for i, s in enumerate(self._styles):
-            self.append_item(i, s[1], None)
-            if s[0] == 'Normal':
-                self.set_active(i)
-
-    def _style_changed_cb(self, combobox, abi):
-        if self.get_active() != -1:
-            logger.debug('Set style: %s', self._styles[self.get_active()][0])
-            try:
-                abi.handler_block(self._abi_handler)
-                abi.set_style(self._styles[self.get_active()][0])
-            finally:
-                abi.handler_unblock(self._abi_handler)
-
-    def _style_cb(self, abi, style_name):
-        if style_name is None or style_name == 'None':
-            style_name = 'Normal'
-
-        style_index = -1
-        for i, s in enumerate(self._styles):
-            if s[0] == style_name:
-                style_index = i
-                break;
-
-        # if we don't know this style yet, then add it (temporary) to the list
-        if style_index == -1:
-            logger.debug('Style not found in style list: %s', style_name)
-
-            if not self._has_custom_styles:
-                # add a separator to seperate the non-available styles from
-                # the available ones
-                self._styles.append(['','']) # ugly
-                self.append_separator()
-                self._has_custom_styles = True
-
-            # add the new style
-            self._styles.append([style_name, style_name])
-            self.append_item(0, style_name, None)
-
-            # see how many styles we have now, so we can select the last one
-            model = self.get_model()
-            num_children = model.iter_n_children(None)
-            logger.debug('Number of styles in the list: %d', num_children)
-            style_index = num_children-1
-
-        if style_index > -1:
-            self.handler_block(self._style_changed_id)
-            self.set_active(style_index)
-            self.handler_unblock(self._style_changed_id)
+                break
 
 class AbiButton(RadioToolButton):
     def __init__(self, abi, abi_signal, do_abi_cb, on_abi_cb=None, **kwargs):
@@ -226,52 +151,6 @@ class AbiButton(RadioToolButton):
             self.set_active(True)
         finally:
             self.handler_unblock(self._toggled_handler)
-
-class ListsPalette(RadioPalette):
-    def __init__(self, abi):
-        RadioPalette.__init__(self)
-
-        def append(icon_name, tooltip, do_abi_cb, on_abi_cb):
-            button = AbiButton(abi, 'style-name', do_abi_cb, on_abi_cb)
-            button.show()
-            button.props.icon_name = icon_name
-            button.props.group = group
-            RadioPalette.append(self, button, tooltip)
-            return button
-
-        group = None
-
-        group = append('list-none', _('Normal'),
-                lambda:
-                    abi.set_style('Normal'),
-                lambda abi, style:
-                    style not in ['Bullet List',
-                                  'Dashed List',
-                                  'Numbered List',
-                                  'Lower Case List',
-                                  'Upper Case List'])
-
-        append('list-bullet', _('Bullet List'),
-                lambda: abi.set_style('Bullet List'),
-                lambda abi, style: style == 'Bullet List')
-
-        append('list-dashed', _('Dashed List'),
-                lambda: abi.set_style('Dashed List'),
-                lambda abi, style: style == 'Dashed List')
-
-        append('list-numbered', _('Numbered List'),
-                lambda: abi.set_style('Numbered List'),
-                lambda abi, style: style == 'Numbered List')
-
-        append('list-lower-case', _('Lower Case List'),
-                lambda: abi.set_style('Lower Case List'),
-                lambda abi, style: style == 'Lower Case List')
-
-        append('list-upper-case', _('Upper Case List'),
-                lambda: abi.set_style('Upper Case List'),
-                lambda abi, style: style == 'Upper Case List')
-
-        self.show_all()
 
 class ExportButton(ToolButton):
     _EXPORT_FORMATS = [{'mime_type' : 'application/rtf',
@@ -314,13 +193,13 @@ class ExportButton(ToolButton):
 
         # special case HTML export to set the activity name as the HTML title
         if format['mime_type'] == "text/html":
-            exp_props += " title:" + activity.metadata['title'] + ';';
+            exp_props += " title:" + activity.metadata['title'] + ';'
 
         # create a new journal item
         fileObject = datastore.create()
         act_meta = activity.metadata
         fileObject.metadata['title'] = \
-                act_meta['title'] + ' (' + format['jpostfix'] + ')';
+                act_meta['title'] + ' (' + format['jpostfix'] + ')'
         fileObject.metadata['title_set_by_user'] = act_meta['title_set_by_user']
         fileObject.metadata['mime_type'] = format['mime_type']
         fileObject.metadata['fulltext'] = abi.get_content(
