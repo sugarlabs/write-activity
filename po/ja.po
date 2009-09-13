@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-17 20:56+0100\n"
+"POT-Creation-Date: 2009-08-02 00:30-0400\n"
 "PO-Revision-Date: 2008-09-20 23:23-0400\n"
 "Last-Translator: korakurider <korakurider@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,30 +18,6 @@ msgstr ""
 #: activity/activity.info:2
 msgid "Write"
 msgstr "Write"
-
-#: AbiWordActivity.py:64
-msgid "Edit"
-msgstr "編集"
-
-#: AbiWordActivity.py:67
-msgid "Text"
-msgstr "文字"
-
-#: AbiWordActivity.py:71
-msgid "Image"
-msgstr "画像"
-
-#: AbiWordActivity.py:75 toolbar.py:515
-msgid "Table"
-msgstr "表"
-
-#: AbiWordActivity.py:79
-msgid "Format"
-msgstr "書式"
-
-#: AbiWordActivity.py:83
-msgid "View"
-msgstr "ビュー"
 
 #: toolbar.py:51
 msgid "Rich Text (RTF)"
@@ -67,118 +43,123 @@ msgstr "プレーンテキスト(TXT)"
 msgid "TXT"
 msgstr "TXT"
 
-#: toolbar.py:128
+#: toolbar.py:125
 msgid "Find previous"
 msgstr "前を探す"
 
-#: toolbar.py:134
+#: toolbar.py:131
 msgid "Find next"
 msgstr "次を探す"
 
-#: toolbar.py:244
-msgid "Bold"
-msgstr "太字"
+#: toolbar.py:204
+msgid "Table"
+msgstr "表"
 
-#: toolbar.py:251
-msgid "Italic"
-msgstr "斜体"
-
-#: toolbar.py:258
-msgid "Underline"
-msgstr "下線"
-
-#: toolbar.py:481
-msgid "Insert Image"
-msgstr "画像を挿入"
-
-#: toolbar.py:489
-msgid "Choose image"
-msgstr "画像を選ぶ"
-
-#: toolbar.py:515
+#: toolbar.py:204
 msgid "Cancel"
 msgstr "中止"
 
-#: toolbar.py:524
+#: toolbar.py:212
 msgid "Insert Row"
 msgstr "行を挿入"
 
-#: toolbar.py:530
+#: toolbar.py:217
 msgid "Delete Row"
 msgstr "行を削除"
 
-#: toolbar.py:536
+#: toolbar.py:222
 msgid "Insert Column"
 msgstr "列を挿入"
 
-#: toolbar.py:542
+#: toolbar.py:227
 msgid "Delete Column"
 msgstr "列を削除"
 
-#: toolbar.py:580
-msgid "Style: "
-msgstr "スタイル: "
+#: toolbar.py:235
+msgid "Insert Image"
+msgstr "画像を挿入"
 
-#: toolbar.py:590
-msgid "Heading 1"
-msgstr "見出し1"
-
-#: toolbar.py:591
-msgid "Heading 2"
-msgstr "見出し2"
-
-#: toolbar.py:592
-msgid "Heading 3"
-msgstr "見出し3"
-
-#: toolbar.py:593
-msgid "Heading 4"
-msgstr "見出し4"
-
-#: toolbar.py:594
-msgid "Bullet List"
-msgstr "箇条書き（黒丸）"
-
-#: toolbar.py:595
-msgid "Dashed List"
-msgstr "箇条書き（ハイフン）"
-
-#: toolbar.py:596
-msgid "Numbered List"
-msgstr "箇条書き（番号）"
-
-#: toolbar.py:597
-msgid "Lower Case List"
-msgstr "箇条書き（英小文字）"
-
-#: toolbar.py:598
-msgid "Upper Case List"
-msgstr "箇条書き（英大文字）"
-
-#: toolbar.py:599
-msgid "Block Text"
-msgstr "ゴシック体"
-
-#: toolbar.py:600
-msgid "Normal"
-msgstr "標準"
-
-#: toolbar.py:601
-msgid "Plain Text"
-msgstr "プレーンテキスト"
-
-#: toolbar.py:656
+#: toolbar.py:279
 msgid "Zoom Out"
 msgstr "縮小"
 
-#: toolbar.py:662
+#: toolbar.py:285
 msgid "Zoom In"
 msgstr "拡大"
 
-#: toolbar.py:678
+#: toolbar.py:301
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:690
+#: toolbar.py:313
 msgid "Page: "
 msgstr "ページ: "
+
+#: toolbar.py:398
+msgid "Bold"
+msgstr "太字"
+
+#: toolbar.py:406
+msgid "Italic"
+msgstr "斜体"
+
+#: toolbar.py:414
+msgid "Underline"
+msgstr "下線"
+
+#~ msgid "Edit"
+#~ msgstr "編集"
+
+#~ msgid "Text"
+#~ msgstr "文字"
+
+#~ msgid "Image"
+#~ msgstr "画像"
+
+#~ msgid "Format"
+#~ msgstr "書式"
+
+#~ msgid "View"
+#~ msgstr "ビュー"
+
+#~ msgid "Choose image"
+#~ msgstr "画像を選ぶ"
+
+#~ msgid "Style: "
+#~ msgstr "スタイル: "
+
+#~ msgid "Heading 1"
+#~ msgstr "見出し1"
+
+#~ msgid "Heading 2"
+#~ msgstr "見出し2"
+
+#~ msgid "Heading 3"
+#~ msgstr "見出し3"
+
+#~ msgid "Heading 4"
+#~ msgstr "見出し4"
+
+#~ msgid "Bullet List"
+#~ msgstr "箇条書き（黒丸）"
+
+#~ msgid "Dashed List"
+#~ msgstr "箇条書き（ハイフン）"
+
+#~ msgid "Numbered List"
+#~ msgstr "箇条書き（番号）"
+
+#~ msgid "Lower Case List"
+#~ msgstr "箇条書き（英小文字）"
+
+#~ msgid "Upper Case List"
+#~ msgstr "箇条書き（英大文字）"
+
+#~ msgid "Block Text"
+#~ msgstr "ゴシック体"
+
+#~ msgid "Normal"
+#~ msgstr "標準"
+
+#~ msgid "Plain Text"
+#~ msgstr "プレーンテキスト"
