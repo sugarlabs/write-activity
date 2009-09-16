@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: projects/write\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-09-10 00:30-0400\n"
-"PO-Revision-Date: 2009-09-15 18:21-0400\n"
+"PO-Revision-Date: 2009-09-15 18:25-0400\n"
 "Last-Translator: samy boutayeb <s.boutayeb@free.fr>\n"
 "Language-Team: French <traduc@traduc.org>\n"
 "Language: fr\n"
@@ -195,7 +195,7 @@ msgstr "TXT"
 
 #: widgets.py:174 widgets.py:175
 msgid "Export"
-msgstr ""
+msgstr "Exporter"
 
 #~ msgid "Image"
 #~ msgstr "Image"
