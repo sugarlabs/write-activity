@@ -6,186 +6,211 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2008-04-30 08:21-0400\n"
+"POT-Creation-Date: 2009-09-10 00:30-0400\n"
+"PO-Revision-Date: 2009-09-16 09:17-0400\n"
 "Last-Translator: Carlo Falciola <cfalciola@yahoo.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 1.1.0rc2\n"
+"X-Generator: Pootle 1.2.1\n"
 
 #: activity/activity.info:2
 msgid "Write"
 msgstr "Scrivi"
 
-#: AbiWordActivity.py:64
+#: AbiWordActivity.py:82
 msgid "Edit"
 msgstr "Modifica"
 
-#: AbiWordActivity.py:67
-msgid "Text"
-msgstr "Testo"
-
-#: AbiWordActivity.py:71
-msgid "Image"
-msgstr "Immagine"
-
-#: AbiWordActivity.py:75 toolbar.py:515
-msgid "Table"
-msgstr "Tabella"
-
-#: AbiWordActivity.py:79
-msgid "Format"
-msgstr "Formato"
-
-#: AbiWordActivity.py:83
+#: AbiWordActivity.py:88
 msgid "View"
 msgstr "Vista"
 
-#: toolbar.py:51
-msgid "Rich Text (RTF)"
-msgstr "Rich Text Format (RTF)"
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr "Testo"
 
-#: toolbar.py:51
-msgid "RTF"
-msgstr "RTF"
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr "Paragrafo"
 
-#: toolbar.py:52
-msgid "Hypertext (HTML)"
-msgstr "Ipertesto (HTML)"
-
-#: toolbar.py:52
-msgid "HTML"
-msgstr "HTML"
-
-#: toolbar.py:53
-msgid "Plain Text (TXT)"
-msgstr "Testo semplice (TXT)"
-
-#: toolbar.py:53
-msgid "TXT"
-msgstr "TXT"
-
-#: toolbar.py:128
-msgid "Find previous"
-msgstr "Trova precedente"
-
-#: toolbar.py:134
-msgid "Find next"
-msgstr "Trova prossimo"
-
-#: toolbar.py:244
-msgid "Bold"
-msgstr "Grassetto"
-
-#: toolbar.py:251
-msgid "Italic"
-msgstr "Corsivo"
-
-#: toolbar.py:258
-msgid "Underline"
-msgstr "Sottolineato"
-
-#: toolbar.py:481
-msgid "Insert Image"
-msgstr "Inserisci Immagine"
-
-#: toolbar.py:489
-msgid "Choose image"
-msgstr "Scegli immagine"
-
-#: toolbar.py:515
-msgid "Cancel"
-msgstr "Annulla"
-
-#: toolbar.py:524
-msgid "Insert Row"
-msgstr "Inserisci Riga"
-
-#: toolbar.py:530
-msgid "Delete Row"
-msgstr "Cancella Riga"
-
-#: toolbar.py:536
-msgid "Insert Column"
-msgstr "Inserisci Colonna"
-
-#: toolbar.py:542
-msgid "Delete Column"
-msgstr "Cancella Colonna"
-
-#: toolbar.py:580
-msgid "Style: "
-msgstr "Stile: "
-
-#: toolbar.py:590
-msgid "Heading 1"
-msgstr "Titolo 1"
-
-#: toolbar.py:591
-msgid "Heading 2"
-msgstr "Titolo 2"
-
-#: toolbar.py:592
-msgid "Heading 3"
-msgstr "Titolo 3"
-
-#: toolbar.py:593
-msgid "Heading 4"
-msgstr "Titolo 4"
-
-#: toolbar.py:594
+#: AbiWordActivity.py:109 toolbar.py:490
 msgid "Bullet List"
 msgstr "Lista puntata"
 
-#: toolbar.py:595
-msgid "Dashed List"
-msgstr "Lista con trattino"
+#: AbiWordActivity.py:115 toolbar.py:185
+msgid "Table"
+msgstr "Tabella"
 
-#: toolbar.py:596
-msgid "Numbered List"
-msgstr "Lista numerata"
+#: AbiWordActivity.py:122
+msgid "Bold"
+msgstr "Grassetto"
 
-#: toolbar.py:597
-msgid "Lower Case List"
-msgstr "Lista con minuscola"
+#: AbiWordActivity.py:130
+msgid "Italic"
+msgstr "Corsivo"
 
-#: toolbar.py:598
-msgid "Upper Case List"
-msgstr "Lista con maiuscola"
+#: AbiWordActivity.py:138
+msgid "Underline"
+msgstr "Sottolineato"
 
-# to be checked on app
-#: toolbar.py:599
-msgid "Block Text"
-msgstr "Blocco di testo"
+#: toolbar.py:89
+msgid "Search"
+msgstr "Cerca"
 
-#: toolbar.py:600
-msgid "Normal"
-msgstr "Normale"
+#: toolbar.py:106
+msgid "Find previous"
+msgstr "Trova precedente"
 
-#: toolbar.py:601
-msgid "Plain Text"
-msgstr "Testo normale"
+#: toolbar.py:112
+msgid "Find next"
+msgstr "Trova prossimo"
+
+#: toolbar.py:185
+msgid "Cancel"
+msgstr "Annulla"
+
+#: toolbar.py:197
+msgid "Insert Row"
+msgstr "Inserisci Riga"
+
+#: toolbar.py:203
+msgid "Delete Row"
+msgstr "Cancella Riga"
+
+#: toolbar.py:209
+msgid "Insert Column"
+msgstr "Inserisci Colonna"
+
+#: toolbar.py:215
+msgid "Delete Column"
+msgstr "Cancella Colonna"
+
+#: toolbar.py:224
+msgid "Insert Image"
+msgstr "Inserisci Immagine"
 
 # Nel caso si tratti di attributi al carattere sarebbe più opportuno ingrandisci/riduci
-#: toolbar.py:656
+#: toolbar.py:268
 msgid "Zoom Out"
 msgstr "Zoom Indietro"
 
 # Nel caso si tratti di attributi al carattere sarebbe più opportuno ingrandisci/riduci
-#: toolbar.py:662
+#: toolbar.py:274
 msgid "Zoom In"
 msgstr "Zoom Avanti"
 
-#: toolbar.py:678
+#: toolbar.py:291
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:690
+#: toolbar.py:303
 msgid "Page: "
 msgstr "Pagina: "
+
+#: toolbar.py:405 toolbar.py:480
+msgid "Normal"
+msgstr "Normale"
+
+#: toolbar.py:416
+msgid "Heading 1"
+msgstr "Titolo 1"
+
+#: toolbar.py:420
+msgid "Heading 2"
+msgstr "Titolo 2"
+
+#: toolbar.py:424
+msgid "Heading 3"
+msgstr "Titolo 3"
+
+#: toolbar.py:428
+msgid "Heading 4"
+msgstr "Titolo 4"
+
+# to be checked on app
+#: toolbar.py:432
+msgid "Block Text"
+msgstr "Blocco di testo"
+
+#: toolbar.py:436
+msgid "Plain Text"
+msgstr "Testo normale"
+
+#: toolbar.py:452
+msgid "Left justify"
+msgstr "Allinea a sinistra"
+
+#: toolbar.py:455
+msgid "Center justify"
+msgstr "Allinea al centro"
+
+#: toolbar.py:458
+msgid "Right justify"
+msgstr "Allinea a destra"
+
+#: toolbar.py:461
+msgid "Fill justify"
+msgstr "Giustifica"
+
+#: toolbar.py:494
+msgid "Dashed List"
+msgstr "Lista con trattino"
+
+#: toolbar.py:498
+msgid "Numbered List"
+msgstr "Lista numerata"
+
+#: toolbar.py:502
+msgid "Lower Case List"
+msgstr "Lista con minuscola"
+
+#: toolbar.py:506
+msgid "Upper Case List"
+msgstr "Lista con maiuscola"
+
+#: widgets.py:157
+msgid "Rich Text (RTF)"
+msgstr "Rich Text Format (RTF)"
+
+#: widgets.py:158
+msgid "RTF"
+msgstr "RTF"
+
+#: widgets.py:162
+msgid "Hypertext (HTML)"
+msgstr "Ipertesto (HTML)"
+
+#: widgets.py:163
+msgid "HTML"
+msgstr "HTML"
+
+#: widgets.py:168
+msgid "Plain Text (TXT)"
+msgstr "Testo semplice (TXT)"
+
+#: widgets.py:169
+msgid "TXT"
+msgstr "TXT"
+
+#: widgets.py:174 widgets.py:175
+msgid "Export"
+msgstr "Esporta"
+
+#~ msgid "Image"
+#~ msgstr "Immagine"
+
+#~ msgid "Format"
+#~ msgstr "Formato"
+
+#~ msgid "Choose image"
+#~ msgstr "Scegli immagine"
+
+#~ msgid "Style: "
+#~ msgstr "Stile: "
 
 #~ msgid "Select text color"
 #~ msgstr "Seleziona colore testo"
