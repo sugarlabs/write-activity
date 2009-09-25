@@ -6,179 +6,205 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2008-06-16 10:18-0400\n"
+"POT-Creation-Date: 2009-09-10 00:30-0400\n"
+"PO-Revision-Date: 2009-09-24 10:46-0400\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 1.1.0rc2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 1.2.1\n"
 
 #: activity/activity.info:2
 msgid "Write"
 msgstr "Ghi"
 
-#: AbiWordActivity.py:64
+#: AbiWordActivity.py:82
 msgid "Edit"
 msgstr "Sửa"
 
-#: AbiWordActivity.py:67
-msgid "Text"
-msgstr "Văn bản"
-
-#: AbiWordActivity.py:71
-msgid "Image"
-msgstr "Ảnh"
-
-#: AbiWordActivity.py:75 toolbar.py:515
-msgid "Table"
-msgstr "Bảng"
-
-#: AbiWordActivity.py:79
-msgid "Format"
-msgstr "Định dạng"
-
-#: AbiWordActivity.py:83
+#: AbiWordActivity.py:88
 msgid "View"
 msgstr "Xem"
 
-#: toolbar.py:51
-msgid "Rich Text (RTF)"
-msgstr "Văn bản có kiểu dáng (RTF)"
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr "Văn bản"
 
-#: toolbar.py:51
-msgid "RTF"
-msgstr "RTF"
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr "Đoạn văn"
 
-#: toolbar.py:52
-msgid "Hypertext (HTML)"
-msgstr "Siêu văn bản (HTML)"
-
-#: toolbar.py:52
-msgid "HTML"
-msgstr "HTML"
-
-#: toolbar.py:53
-msgid "Plain Text (TXT)"
-msgstr "Nhập thô (TXT)"
-
-#: toolbar.py:53
-msgid "TXT"
-msgstr "TXT"
-
-#: toolbar.py:128
-msgid "Find previous"
-msgstr "Tìm trước"
-
-#: toolbar.py:134
-msgid "Find next"
-msgstr "Tìm tiếp"
-
-#: toolbar.py:244
-msgid "Bold"
-msgstr "Đậm"
-
-#: toolbar.py:251
-msgid "Italic"
-msgstr "Nghiêng"
-
-#: toolbar.py:258
-msgid "Underline"
-msgstr "Gạch dưới"
-
-#: toolbar.py:481
-msgid "Insert Image"
-msgstr "Chèn ảnh"
-
-#: toolbar.py:489
-msgid "Choose image"
-msgstr "Chọn ảnh"
-
-#: toolbar.py:515
-msgid "Cancel"
-msgstr "Thôi"
-
-#: toolbar.py:524
-msgid "Insert Row"
-msgstr "Chèn hàng"
-
-#: toolbar.py:530
-msgid "Delete Row"
-msgstr "Xoá hàng"
-
-#: toolbar.py:536
-msgid "Insert Column"
-msgstr "Chèn cột"
-
-#: toolbar.py:542
-msgid "Delete Column"
-msgstr "Xoá cột"
-
-#: toolbar.py:580
-msgid "Style: "
-msgstr "Kiểu dáng: "
-
-#: toolbar.py:590
-msgid "Heading 1"
-msgstr "Tiêu đề 1"
-
-#: toolbar.py:591
-msgid "Heading 2"
-msgstr "Tiêu đề 2"
-
-#: toolbar.py:592
-msgid "Heading 3"
-msgstr "Tiêu đề 3"
-
-#: toolbar.py:593
-msgid "Heading 4"
-msgstr "Tiêu đề 4"
-
-#: toolbar.py:594
+#: AbiWordActivity.py:109 toolbar.py:490
 msgid "Bullet List"
 msgstr "Danh sách chấm điểm"
 
-#: toolbar.py:595
-msgid "Dashed List"
-msgstr "Danh sách gạch gạch"
+#: AbiWordActivity.py:115 toolbar.py:185
+msgid "Table"
+msgstr "Bảng"
 
-#: toolbar.py:596
-msgid "Numbered List"
-msgstr "Danh sách đánh số"
+#: AbiWordActivity.py:122
+msgid "Bold"
+msgstr "Đậm"
 
-#: toolbar.py:597
-msgid "Lower Case List"
-msgstr "Danh sách chữ thường"
+#: AbiWordActivity.py:130
+msgid "Italic"
+msgstr "Nghiêng"
 
-#: toolbar.py:598
-msgid "Upper Case List"
-msgstr "Danh sách chữ hoa"
+#: AbiWordActivity.py:138
+msgid "Underline"
+msgstr "Gạch dưới"
 
-#: toolbar.py:599
-msgid "Block Text"
-msgstr "Khối văn bản"
+#: toolbar.py:89
+msgid "Search"
+msgstr "Tìm kiếm"
 
-#: toolbar.py:600
-msgid "Normal"
-msgstr "Chuẩn"
+#: toolbar.py:106
+msgid "Find previous"
+msgstr "Tìm trước"
 
-#: toolbar.py:601
-msgid "Plain Text"
-msgstr "Nhập thô"
+#: toolbar.py:112
+msgid "Find next"
+msgstr "Tìm tiếp"
 
-#: toolbar.py:656
+#: toolbar.py:185
+msgid "Cancel"
+msgstr "Thôi"
+
+#: toolbar.py:197
+msgid "Insert Row"
+msgstr "Chèn hàng"
+
+#: toolbar.py:203
+msgid "Delete Row"
+msgstr "Xoá hàng"
+
+#: toolbar.py:209
+msgid "Insert Column"
+msgstr "Chèn cột"
+
+#: toolbar.py:215
+msgid "Delete Column"
+msgstr "Xoá cột"
+
+#: toolbar.py:224
+msgid "Insert Image"
+msgstr "Chèn ảnh"
+
+#: toolbar.py:268
 msgid "Zoom Out"
 msgstr "Thu nhỏ"
 
-#: toolbar.py:662
+#: toolbar.py:274
 msgid "Zoom In"
 msgstr "Phóng to"
 
-#: toolbar.py:678
+#: toolbar.py:291
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:690
+#: toolbar.py:303
 msgid "Page: "
 msgstr "Trang: "
+
+#: toolbar.py:405 toolbar.py:480
+msgid "Normal"
+msgstr "Chuẩn"
+
+#: toolbar.py:416
+msgid "Heading 1"
+msgstr "Tiêu đề 1"
+
+#: toolbar.py:420
+msgid "Heading 2"
+msgstr "Tiêu đề 2"
+
+#: toolbar.py:424
+msgid "Heading 3"
+msgstr "Tiêu đề 3"
+
+#: toolbar.py:428
+msgid "Heading 4"
+msgstr "Tiêu đề 4"
+
+#: toolbar.py:432
+msgid "Block Text"
+msgstr "Khối văn bản"
+
+#: toolbar.py:436
+msgid "Plain Text"
+msgstr "Nhập thô"
+
+#: toolbar.py:452
+msgid "Left justify"
+msgstr "Sắp thẳng bên trái"
+
+#: toolbar.py:455
+msgid "Center justify"
+msgstr "Canh đều 2 bên"
+
+#: toolbar.py:458
+msgid "Right justify"
+msgstr "Sắp thẳng bên phải"
+
+#: toolbar.py:461
+msgid "Fill justify"
+msgstr "Tô đầy sắp thẳng"
+
+#: toolbar.py:494
+msgid "Dashed List"
+msgstr "Danh sách gạch gạch"
+
+#: toolbar.py:498
+msgid "Numbered List"
+msgstr "Danh sách đánh số"
+
+#: toolbar.py:502
+msgid "Lower Case List"
+msgstr "Danh sách chữ thường"
+
+#: toolbar.py:506
+msgid "Upper Case List"
+msgstr "Danh sách chữ hoa"
+
+#: widgets.py:157
+msgid "Rich Text (RTF)"
+msgstr "Văn bản có kiểu dáng (RTF)"
+
+#: widgets.py:158
+msgid "RTF"
+msgstr "RTF"
+
+#: widgets.py:162
+msgid "Hypertext (HTML)"
+msgstr "Siêu văn bản (HTML)"
+
+#: widgets.py:163
+msgid "HTML"
+msgstr "HTML"
+
+#: widgets.py:168
+msgid "Plain Text (TXT)"
+msgstr "Nhập thô (TXT)"
+
+#: widgets.py:169
+msgid "TXT"
+msgstr "TXT"
+
+#: widgets.py:174 widgets.py:175
+msgid "Export"
+msgstr "Xuất"
+
+#~ msgid "Image"
+#~ msgstr "Ảnh"
+
+#~ msgid "Format"
+#~ msgstr "Định dạng"
+
+#~ msgid "Choose image"
+#~ msgstr "Chọn ảnh"
+
+#~ msgid "Style: "
+#~ msgstr "Kiểu dáng: "
