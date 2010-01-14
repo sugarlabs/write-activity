@@ -1,0 +1,197 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-09-10 00:30-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.3.0\n"
+
+#: activity/activity.info:2
+msgid "Write"
+msgstr ""
+
+#: AbiWordActivity.py:82
+msgid "Edit"
+msgstr ""
+
+#: AbiWordActivity.py:88
+msgid "View"
+msgstr ""
+
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr ""
+
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr ""
+
+#: AbiWordActivity.py:109 toolbar.py:490
+msgid "Bullet List"
+msgstr ""
+
+#: AbiWordActivity.py:115 toolbar.py:185
+msgid "Table"
+msgstr ""
+
+#: AbiWordActivity.py:122
+msgid "Bold"
+msgstr ""
+
+#: AbiWordActivity.py:130
+msgid "Italic"
+msgstr ""
+
+#: AbiWordActivity.py:138
+msgid "Underline"
+msgstr ""
+
+#: toolbar.py:89
+msgid "Search"
+msgstr ""
+
+#: toolbar.py:106
+msgid "Find previous"
+msgstr ""
+
+#: toolbar.py:112
+msgid "Find next"
+msgstr ""
+
+#: toolbar.py:185
+msgid "Cancel"
+msgstr ""
+
+#: toolbar.py:197
+msgid "Insert Row"
+msgstr ""
+
+#: toolbar.py:203
+msgid "Delete Row"
+msgstr ""
+
+#: toolbar.py:209
+msgid "Insert Column"
+msgstr ""
+
+#: toolbar.py:215
+msgid "Delete Column"
+msgstr ""
+
+#: toolbar.py:224
+msgid "Insert Image"
+msgstr ""
+
+#: toolbar.py:268
+msgid "Zoom Out"
+msgstr ""
+
+#: toolbar.py:274
+msgid "Zoom In"
+msgstr ""
+
+#: toolbar.py:291
+msgid "%"
+msgstr ""
+
+#: toolbar.py:303
+msgid "Page: "
+msgstr ""
+
+#: toolbar.py:405 toolbar.py:480
+msgid "Normal"
+msgstr ""
+
+#: toolbar.py:416
+msgid "Heading 1"
+msgstr ""
+
+#: toolbar.py:420
+msgid "Heading 2"
+msgstr ""
+
+#: toolbar.py:424
+msgid "Heading 3"
+msgstr ""
+
+#: toolbar.py:428
+msgid "Heading 4"
+msgstr ""
+
+#: toolbar.py:432
+msgid "Block Text"
+msgstr ""
+
+#: toolbar.py:436
+msgid "Plain Text"
+msgstr ""
+
+#: toolbar.py:452
+msgid "Left justify"
+msgstr ""
+
+#: toolbar.py:455
+msgid "Center justify"
+msgstr ""
+
+#: toolbar.py:458
+msgid "Right justify"
+msgstr ""
+
+#: toolbar.py:461
+msgid "Fill justify"
+msgstr ""
+
+#: toolbar.py:494
+msgid "Dashed List"
+msgstr ""
+
+#: toolbar.py:498
+msgid "Numbered List"
+msgstr ""
+
+#: toolbar.py:502
+msgid "Lower Case List"
+msgstr ""
+
+#: toolbar.py:506
+msgid "Upper Case List"
+msgstr ""
+
+#: widgets.py:157
+msgid "Rich Text (RTF)"
+msgstr ""
+
+#: widgets.py:158
+msgid "RTF"
+msgstr ""
+
+#: widgets.py:162
+msgid "Hypertext (HTML)"
+msgstr ""
+
+#: widgets.py:163
+msgid "HTML"
+msgstr ""
+
+#: widgets.py:168
+msgid "Plain Text (TXT)"
+msgstr ""
+
+#: widgets.py:169
+msgid "TXT"
+msgstr ""
+
+#: widgets.py:174 widgets.py:175
+msgid "Export"
+msgstr ""
