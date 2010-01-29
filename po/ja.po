@@ -6,112 +6,196 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-02 00:30-0400\n"
-"PO-Revision-Date: 2008-09-20 23:23-0400\n"
+"POT-Creation-Date: 2009-09-10 00:30-0400\n"
+"PO-Revision-Date: 2010-01-29 04:37+0200\n"
 "Last-Translator: korakurider <korakurider@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 1.1.0rc2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: activity/activity.info:2
 msgid "Write"
 msgstr "Write"
 
-#: toolbar.py:51
-msgid "Rich Text (RTF)"
-msgstr "リッチテキスト(RTF)"
+#: AbiWordActivity.py:82
+msgid "Edit"
+msgstr "編集"
 
-#: toolbar.py:51
-msgid "RTF"
-msgstr "RTF"
+#: AbiWordActivity.py:88
+msgid "View"
+msgstr "ビュー"
 
-#: toolbar.py:52
-msgid "Hypertext (HTML)"
-msgstr "ハイパーテキスト(HTML)"
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr "文字"
 
-#: toolbar.py:52
-msgid "HTML"
-msgstr "HTML"
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr "段落"
 
-#: toolbar.py:53
-msgid "Plain Text (TXT)"
-msgstr "プレーンテキスト(TXT)"
+#: AbiWordActivity.py:109 toolbar.py:490
+msgid "Bullet List"
+msgstr "箇条書き（黒丸）"
 
-#: toolbar.py:53
-msgid "TXT"
-msgstr "TXT"
-
-#: toolbar.py:125
-msgid "Find previous"
-msgstr "前を探す"
-
-#: toolbar.py:131
-msgid "Find next"
-msgstr "次を探す"
-
-#: toolbar.py:204
+#: AbiWordActivity.py:115 toolbar.py:185
 msgid "Table"
 msgstr "表"
 
-#: toolbar.py:204
-msgid "Cancel"
-msgstr "中止"
-
-#: toolbar.py:212
-msgid "Insert Row"
-msgstr "行を挿入"
-
-#: toolbar.py:217
-msgid "Delete Row"
-msgstr "行を削除"
-
-#: toolbar.py:222
-msgid "Insert Column"
-msgstr "列を挿入"
-
-#: toolbar.py:227
-msgid "Delete Column"
-msgstr "列を削除"
-
-#: toolbar.py:235
-msgid "Insert Image"
-msgstr "画像を挿入"
-
-#: toolbar.py:279
-msgid "Zoom Out"
-msgstr "縮小"
-
-#: toolbar.py:285
-msgid "Zoom In"
-msgstr "拡大"
-
-#: toolbar.py:301
-msgid "%"
-msgstr "%"
-
-#: toolbar.py:313
-msgid "Page: "
-msgstr "ページ: "
-
-#: toolbar.py:398
+#: AbiWordActivity.py:122
 msgid "Bold"
 msgstr "太字"
 
-#: toolbar.py:406
+#: AbiWordActivity.py:130
 msgid "Italic"
 msgstr "斜体"
 
-#: toolbar.py:414
+#: AbiWordActivity.py:138
 msgid "Underline"
 msgstr "下線"
 
-#~ msgid "Edit"
-#~ msgstr "編集"
+#: toolbar.py:89
+msgid "Search"
+msgstr "検索"
 
-#~ msgid "Text"
-#~ msgstr "文字"
+#: toolbar.py:106
+msgid "Find previous"
+msgstr "前を探す"
+
+#: toolbar.py:112
+msgid "Find next"
+msgstr "次を探す"
+
+#: toolbar.py:185
+msgid "Cancel"
+msgstr "中止"
+
+#: toolbar.py:197
+msgid "Insert Row"
+msgstr "行を挿入"
+
+#: toolbar.py:203
+msgid "Delete Row"
+msgstr "行を削除"
+
+#: toolbar.py:209
+msgid "Insert Column"
+msgstr "列を挿入"
+
+#: toolbar.py:215
+msgid "Delete Column"
+msgstr "列を削除"
+
+#: toolbar.py:224
+msgid "Insert Image"
+msgstr "画像を挿入"
+
+#: toolbar.py:268
+msgid "Zoom Out"
+msgstr "縮小"
+
+#: toolbar.py:274
+msgid "Zoom In"
+msgstr "拡大"
+
+#: toolbar.py:291
+msgid "%"
+msgstr "%"
+
+#: toolbar.py:303
+msgid "Page: "
+msgstr "ページ: "
+
+#: toolbar.py:405 toolbar.py:480
+msgid "Normal"
+msgstr "標準"
+
+#: toolbar.py:416
+msgid "Heading 1"
+msgstr "見出し1"
+
+#: toolbar.py:420
+msgid "Heading 2"
+msgstr "見出し2"
+
+#: toolbar.py:424
+msgid "Heading 3"
+msgstr "見出し3"
+
+#: toolbar.py:428
+msgid "Heading 4"
+msgstr "見出し4"
+
+#: toolbar.py:432
+msgid "Block Text"
+msgstr "ゴシック体"
+
+#: toolbar.py:436
+msgid "Plain Text"
+msgstr "プレーンテキスト"
+
+#: toolbar.py:452
+msgid "Left justify"
+msgstr "左端揃え"
+
+#: toolbar.py:455
+msgid "Center justify"
+msgstr "中央揃え"
+
+#: toolbar.py:458
+msgid "Right justify"
+msgstr "右端揃え"
+
+#: toolbar.py:461
+msgid "Fill justify"
+msgstr "両端揃え"
+
+#: toolbar.py:494
+msgid "Dashed List"
+msgstr "箇条書き（ハイフン）"
+
+#: toolbar.py:498
+msgid "Numbered List"
+msgstr "箇条書き（番号）"
+
+#: toolbar.py:502
+msgid "Lower Case List"
+msgstr "箇条書き（英小文字）"
+
+#: toolbar.py:506
+msgid "Upper Case List"
+msgstr "箇条書き（英大文字）"
+
+#: widgets.py:157
+msgid "Rich Text (RTF)"
+msgstr "リッチテキスト(RTF)"
+
+#: widgets.py:158
+msgid "RTF"
+msgstr "RTF"
+
+#: widgets.py:162
+msgid "Hypertext (HTML)"
+msgstr "ハイパーテキスト(HTML)"
+
+#: widgets.py:163
+msgid "HTML"
+msgstr "HTML"
+
+#: widgets.py:168
+msgid "Plain Text (TXT)"
+msgstr "プレーンテキスト(TXT)"
+
+#: widgets.py:169
+msgid "TXT"
+msgstr "TXT"
+
+#: widgets.py:174 widgets.py:175
+msgid "Export"
+msgstr "書き出し"
 
 #~ msgid "Image"
 #~ msgstr "画像"
@@ -119,47 +203,8 @@ msgstr "下線"
 #~ msgid "Format"
 #~ msgstr "書式"
 
-#~ msgid "View"
-#~ msgstr "ビュー"
-
 #~ msgid "Choose image"
 #~ msgstr "画像を選ぶ"
 
 #~ msgid "Style: "
 #~ msgstr "スタイル: "
-
-#~ msgid "Heading 1"
-#~ msgstr "見出し1"
-
-#~ msgid "Heading 2"
-#~ msgstr "見出し2"
-
-#~ msgid "Heading 3"
-#~ msgstr "見出し3"
-
-#~ msgid "Heading 4"
-#~ msgstr "見出し4"
-
-#~ msgid "Bullet List"
-#~ msgstr "箇条書き（黒丸）"
-
-#~ msgid "Dashed List"
-#~ msgstr "箇条書き（ハイフン）"
-
-#~ msgid "Numbered List"
-#~ msgstr "箇条書き（番号）"
-
-#~ msgid "Lower Case List"
-#~ msgstr "箇条書き（英小文字）"
-
-#~ msgid "Upper Case List"
-#~ msgstr "箇条書き（英大文字）"
-
-#~ msgid "Block Text"
-#~ msgstr "ゴシック体"
-
-#~ msgid "Normal"
-#~ msgstr "標準"
-
-#~ msgid "Plain Text"
-#~ msgstr "プレーンテキスト"
