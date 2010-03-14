@@ -5,15 +5,15 @@ msgstr ""
 "Project-Id-Version: write\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-09-10 00:30-0400\n"
-"PO-Revision-Date: 2009-09-23 17:01-0400\n"
-"Last-Translator: Markus Schlager <m.slg@gmx.de>\n"
+"PO-Revision-Date: 2010-03-14 19:06+0200\n"
+"Last-Translator: Markus <m.slg@gmx.de>\n"
 "Language-Team: German <fedora-trans-de@redhat.com>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 1.2.1\n"
+"X-Generator: Pootle 2.0.3\n"
 "X-Poedit-Language: German\n"
 
 #: activity/activity.info:2
@@ -34,11 +34,11 @@ msgstr "Text"
 
 #: AbiWordActivity.py:103
 msgid "Paragraph"
-msgstr "Paragraph"
+msgstr "Absatz"
 
 #: AbiWordActivity.py:109 toolbar.py:490
 msgid "Bullet List"
-msgstr "Aufzählung mit Punkten"
+msgstr "Spiegelstrichliste"
 
 #: AbiWordActivity.py:115 toolbar.py:185
 msgid "Table"
@@ -58,15 +58,15 @@ msgstr "Unterstrichen"
 
 #: toolbar.py:89
 msgid "Search"
-msgstr "Suche"
+msgstr "Suchen"
 
 #: toolbar.py:106
 msgid "Find previous"
-msgstr "Suche rückwärts"
+msgstr "Rückwärts suchen"
 
 #: toolbar.py:112
 msgid "Find next"
-msgstr "Suche vorwärts"
+msgstr "Vorwärts suchen"
 
 #: toolbar.py:185
 msgid "Cancel"
@@ -110,7 +110,7 @@ msgstr "Seite: "
 
 #: toolbar.py:405 toolbar.py:480
 msgid "Normal"
-msgstr "Normal"
+msgstr "Normaler Text"
 
 #: toolbar.py:416
 msgid "Heading 1"
@@ -129,12 +129,14 @@ msgid "Heading 4"
 msgstr "Überschrift 4"
 
 #: toolbar.py:432
+#, fuzzy
 msgid "Block Text"
-msgstr "Blocktext"
+msgstr "Textblock"
 
 #: toolbar.py:436
+#, fuzzy
 msgid "Plain Text"
-msgstr "Nur Text"
+msgstr "Reiner Text"
 
 #: toolbar.py:452
 msgid "Left justify"
