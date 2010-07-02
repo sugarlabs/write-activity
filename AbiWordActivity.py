@@ -186,10 +186,13 @@ class AbiWordActivity (activity.Activity):
         abi.disconnect(self._zoom_handler)
 
         # XXX workarond code to redraw abi document on every resize, see #1121
+        # looks like original #1121 issue is already not reproducible in
+        # environments like fc13 but we still need it for older ones
         def size_allocate_cb(abi, alloc):
-            zoom = abi.get_zoom_percentage()
-            abi.set_zoom_percentage(zoom)
-        abi.set_zoom_percentage(zoom)
+            def idle_cb():
+                zoom = abi.get_zoom_percentage()
+                abi.set_zoom_percentage(zoom)
+            gobject.idle_add(idle_cb)
         abi.connect('size-allocate', size_allocate_cb)
 
     def __map_event_cb(self, event, activity):
