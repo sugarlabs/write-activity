@@ -234,7 +234,7 @@ class InsertToolbar(gtk.Toolbar):
         def cb(object):
             logging.debug('ObjectChooser: %r' % object)
             self._abiword_canvas.insert_image(object.file_path, True)
-        chooser.pick(what=chooser.IMAGE, cb=cb)
+        chooser.pick(parent=self._abiword_canvas.get_toplevel(), what=chooser.IMAGE, cb=cb)
 
     def _table_cb(self, abi, rows, cols):
         self._abiword_canvas.insert_table(rows, cols)
