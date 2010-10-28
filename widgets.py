@@ -27,7 +27,9 @@ from sugar.datastore import datastore
 
 logger = logging.getLogger('write-activity')
 
+
 class FontCombo(ComboBox):
+
     def __init__(self, abi):
         ComboBox.__init__(self)
 
@@ -85,7 +87,9 @@ class FontCombo(ComboBox):
             self.set_active(font_index)
             self.handler_unblock(self._fonts_changed_id)
 
+
 class FontSizeCombo(ComboBox):
+
     def __init__(self, abi):
         ComboBox.__init__(self)
 
@@ -120,7 +124,9 @@ class FontSizeCombo(ComboBox):
                 self.handler_unblock(self._changed_id)
                 break
 
+
 class AbiButton(RadioToolButton):
+
     def __init__(self, abi, abi_signal, do_abi_cb, on_abi_cb=None, **kwargs):
         RadioToolButton.__init__(self, **kwargs)
 
@@ -152,22 +158,24 @@ class AbiButton(RadioToolButton):
         finally:
             self.handler_unblock(self._toggled_handler)
 
-class ExportButton(ToolButton):
-    _EXPORT_FORMATS = [{'mime_type' : 'application/rtf',
-                        'title'     : _('Rich Text (RTF)'),
-                        'jpostfix'  : _('RTF'),
-                        'exp_props' : ''},
 
-                       {'mime_type' : 'text/html',
-                        'title'     : _('Hypertext (HTML)'),
-                        'jpostfix'  : _('HTML'),
-                        'exp_props' : 'html4:yes; declare-xml:no; ' \
+class ExportButton(ToolButton):
+
+    _EXPORT_FORMATS = [{'mime_type': 'application/rtf',
+                        'title': _('Rich Text (RTF)'),
+                        'jpostfix': _('RTF'),
+                        'exp_props': ''},
+
+                       {'mime_type': 'text/html',
+                        'title': _('Hypertext (HTML)'),
+                        'jpostfix': _('HTML'),
+                        'exp_props': 'html4:yes; declare-xml:no; ' \
                                       'embed-css:yes; embed-images:yes;'},
 
-                       {'mime_type' : 'text/plain',
-                        'title'     : _('Plain Text (TXT)'),
-                        'jpostfix'  : _('TXT'),
-                        'exp_props' : ''},
+                       {'mime_type': 'text/plain',
+                        'title': _('Plain Text (TXT)'),
+                        'jpostfix': _('TXT'),
+                        'exp_props': ''},
 
                        {'mime_type': 'application/pdf',
                         'title': _('Portable Document Format (PDF)'),
@@ -205,7 +213,8 @@ class ExportButton(ToolButton):
         act_meta = activity.metadata
         fileObject.metadata['title'] = \
                 act_meta['title'] + ' (' + format['jpostfix'] + ')'
-        fileObject.metadata['title_set_by_user'] = act_meta['title_set_by_user']
+        fileObject.metadata['title_set_by_user'] = \
+                act_meta['title_set_by_user']
         fileObject.metadata['mime_type'] = format['mime_type']
         fileObject.metadata['fulltext'] = abi.get_content(
                 extension_or_mimetype=".txt")[:3000]

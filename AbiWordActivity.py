@@ -53,10 +53,11 @@ from widgets import ExportButton
 
 logger = logging.getLogger('write-activity')
 
-class AbiWordActivity (activity.Activity):
 
-    def __init__ (self, handle):
-        activity.Activity.__init__ (self, handle)
+class AbiWordActivity(activity.Activity):
+
+    def __init__(self, handle):
+        activity.Activity.__init__(self, handle)
 
         # abiword uses the current directory for all its file dialogs
         os.chdir(os.path.expanduser('~'))
@@ -108,7 +109,7 @@ class AbiWordActivity (activity.Activity):
         list_toolbar.props.icon_name = 'toolbar-bulletlist'
         list_toolbar.props.label = _('Bullet List')
         toolbar_box.toolbar.insert(list_toolbar, -1)
-        
+
         insert_toolbar = ToolbarButton()
         insert_toolbar.props.page = InsertToolbar(self.abiword_canvas)
         insert_toolbar.props.icon_name = 'insert-table'
@@ -169,7 +170,8 @@ class AbiWordActivity (activity.Activity):
         self.abiword_canvas.connect_after('map-event', self.__map_event_cb)
         self.abiword_canvas.show()
 
-        self._zoom_handler = self.abiword_canvas.connect("zoom", self.__zoom_cb)
+        self._zoom_handler = self.abiword_canvas.connect("zoom",
+                self.__zoom_cb)
 
     def _text_color_cb(self, button, abiword_canvas):
         newcolor = button.get_color()
@@ -188,7 +190,9 @@ class AbiWordActivity (activity.Activity):
         # XXX workarond code to redraw abi document on every resize, see #1121
         # looks like original #1121 issue is already not reproducible in
         # environments like fc13 but we still need it for older ones
+
         def size_allocate_cb(abi, alloc):
+
             def idle_cb():
                 zoom = abi.get_zoom_percentage()
                 abi.set_zoom_percentage(zoom)
@@ -199,8 +203,8 @@ class AbiWordActivity (activity.Activity):
         logger.debug('__map_event_cb')
 
         # set custom keybindings for Write
-        logger.debug("Loading keybindings")
-        keybindings_file = os.path.join( get_bundle_path(), "keybindings.xml" )
+        logger.debug('Loading keybindings')
+        keybindings_file = os.path.join(get_bundle_path(), 'keybindings.xml')
         self.abiword_canvas.invoke_cmd(
                 'com.abisource.abiword.loadbindings.fromURI',
                 keybindings_file, 0, 0)
@@ -228,9 +232,10 @@ class AbiWordActivity (activity.Activity):
 
         if self._shared_activity:
             # we are joining the activity
-            logger.debug("We are joining an activity")
+            logger.debug('We are joining an activity')
             self.connect('joined', self._joined_cb)
-            self._shared_activity.connect('buddy-joined', self._buddy_joined_cb)
+            self._shared_activity.connect('buddy-joined',
+                    self._buddy_joined_cb)
             self._shared_activity.connect('buddy-left', self._buddy_left_cb)
             if self.get_shared():
 #                # oh, OK, we've already joined
@@ -250,6 +255,7 @@ class AbiWordActivity (activity.Activity):
                                      gtk.gdk.INTERP_BILINEAR)
 
         preview_data = []
+
         def save_func(buf, data):
             data.append(buf)
 
@@ -266,11 +272,10 @@ class AbiWordActivity (activity.Activity):
         self._shared_activity.connect('buddy-joined', self._buddy_joined_cb)
         self._shared_activity.connect('buddy-left', self._buddy_left_cb)
 
+        channel = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES]
         logger.debug('This is my activity: offering a tube...')
-        id = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].OfferDBusTube(
-            "com.abisource.abiword.abicollab", {})
-        logger.debug('Tube address: %s', self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].GetDBusTubeAddress(id))
-
+        id = channel.OfferDBusTube('com.abisource.abiword.abicollab', {})
+        logger.debug('Tube address: %s', channel.GetDBusTubeAddress(id))
 
     def _setup(self):
         logger.debug("_setup()")
@@ -279,7 +284,8 @@ class AbiWordActivity (activity.Activity):
             logger.error('Failed to share or join activity')
             return
 
-        bus_name, conn_path, channel_paths = self._shared_activity.get_channels()
+        bus_name, conn_path, channel_paths = \
+                self._shared_activity.get_channels()
 
         # Work out what our room is called and whether we have Tubes already
         room = None
@@ -309,10 +315,12 @@ class AbiWordActivity (activity.Activity):
 
         # Make sure we have a Tubes channel - PS doesn't yet provide one
         if tubes_chan is None:
-            logger.debug("Didn't find our Tubes negotation channel, requesting one...")
-            tubes_chan = self.conn.request_channel(telepathy.CHANNEL_TYPE_TUBES,
-                telepathy.HANDLE_TYPE_ROOM, room, True)
-            logger.debug("Got our tubes negotiation channel")
+            logger.debug('Didn''t find our Tubes negotation channel, ' +
+                    'requesting one...')
+            tubes_chan = self.conn.request_channel( \
+                        telepathy.CHANNEL_TYPE_TUBES, \
+                        telepathy.HANDLE_TYPE_ROOM, room, True)
+            logger.debug('Got our tubes negotiation channel')
 
         self.tubes_chan = tubes_chan
         self.text_chan = text_chan
@@ -348,12 +356,13 @@ class AbiWordActivity (activity.Activity):
 
         if (type == telepathy.TUBE_TYPE_DBUS and
             service == "com.abisource.abiword.abicollab"):
+            channel = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES]
             if state == telepathy.TUBE_STATE_LOCAL_PENDING:
-                self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].AcceptDBusTube(id)
+                channel.AcceptDBusTube(id)
 
             initiator_path = None
-            contacts = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].GetDBusNames(id)
-            #print 'dbus contact mapping',self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].GetDBusNames(id)
+            contacts = channel.GetDBusNames(id)
+            #print 'dbus contact mapping',channel.GetDBusNames(id)
             for i, struct in enumerate(contacts):
                 #print 'mapping i',i
                 handle, path = struct
@@ -363,33 +372,48 @@ class AbiWordActivity (activity.Activity):
                     break
 
             if initiator_path is None:
-                logger.error('Unable to get the dbus path of the tube initiator')
+                logger.error('Unable to get the dbus path ' +
+                        'of the tube initiator')
             else:
                 # pass this tube to abicollab
-                address = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].GetDBusTubeAddress(id)
+                address = channel.GetDBusTubeAddress(id)
+                cmd_prefix = 'com.abisource.abiword.abicollab.olpc'
                 if self.joined:
-                    logger.debug('Passing tube address to abicollab (join): %s', address)
-                    self.abiword_canvas.invoke_cmd('com.abisource.abiword.abicollab.olpc.joinTube', address, 0, 0)
+                    logger.debug( \
+                            'Passing tube address to abicollab (join): %s',
+                            address)
+                    self.abiword_canvas.invoke_cmd(cmd_prefix + '.joinTube',
+                            address, 0, 0)
                     if initiator_path is not None:
-                        logger.debug('Adding the initiator to the session: %s', initiator_path)
-                        self.abiword_canvas.invoke_cmd('com.abisource.abiword.abicollab.olpc.buddyJoined', initiator_path, 0, 0)
+                        logger.debug('Adding the initiator to session: %s',
+                                initiator_path)
+                        self.abiword_canvas.invoke_cmd( \
+                                cmd_prefix + '.buddyJoined',
+                                initiator_path, 0, 0)
                 else:
-                    logger.debug('Passing tube address to abicollab (offer): %s', address)
-                    self.abiword_canvas.invoke_cmd('com.abisource.abiword.abicollab.olpc.offerTube', address, 0, 0)
+                    logger.debug( \
+                            'Passing tube address to abicollab (offer): %s',
+                            address)
+                    self.abiword_canvas.invoke_cmd(cmd_prefix + '.offerTube',
+                            address, 0, 0)
 
-            self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].connect_to_signal('DBusNamesChanged',
+            channel.connect_to_signal('DBusNamesChanged',
                 self._on_dbus_names_changed)
 
             # HACK, as DBusNamesChanged doesn't fire on buddies leaving
-            self.tubes_chan[telepathy.CHANNEL_INTERFACE_GROUP].connect_to_signal('MembersChanged',
-                self._on_members_changed)
+            channel_group = self.tubes_chan[telepathy.CHANNEL_INTERFACE_GROUP]
+            channel_group.connect_to_signal('MembersChanged',
+                    self._on_members_changed)
 
     def _on_dbus_names_changed(self, tube_id, added, removed):
         logger.debug('_on_dbus_names_changed')
 #        if tube_id == self.tube_id:
+        cmd_prefix = 'com.abisource.abiword.abicollab.olpc'
         for handle, bus_name in added:
-            logger.debug('added handle: %s, with dbus_name: %s', handle, bus_name)
-            self.abiword_canvas.invoke_cmd('com.abisource.abiword.abicollab.olpc.buddyJoined', bus_name, 0, 0)
+            logger.debug('added handle: %s, with dbus_name: %s',
+                    handle, bus_name)
+            self.abiword_canvas.invoke_cmd(cmd_prefix + '.buddyJoined',
+                    bus_name, 0, 0)
             self.participants[handle] = bus_name
 
 #            if handle == self.self_handle:
@@ -401,10 +425,12 @@ class AbiWordActivity (activity.Activity):
 
 # HACK: doesn't work yet, bad morgs!
 #        for handle in removed:
-#            logger.debug('removed handle: %s, with dbus name: %s', handle, bus_name)
+#            logger.debug('removed handle: %s, with dbus name: %s',
+#                    handle, bus_name)
 #            bus_name = self.participants.pop(handle, None)
 
-    def _on_members_changed(self, message, added, removed, local_pending, remote_pending, actor, reason):
+    def _on_members_changed(self, message, added, removed, local_pending,
+                            remote_pending, actor, reason):
         logger.debug("_on_members_changed")
         for handle in removed:
             bus_name = self.participants.pop(handle, None)
@@ -413,41 +439,54 @@ class AbiWordActivity (activity.Activity):
                 # Should be investigated
                 continue
 
+            cmd_prefix = 'com.abisource.abiword.abicollab.olpc'
             logger.debug('removed handle: %d, with dbus name: %s', handle,
                          bus_name)
-            self.abiword_canvas.invoke_cmd('com.abisource.abiword.abicollab.olpc.buddyLeft', bus_name, 0, 0)
+            self.abiword_canvas.invoke_cmd(cmd_prefix + '.buddyLeft',
+                    bus_name, 0, 0)
 
-    def _buddy_joined_cb (self, activity, buddy):
+    def _buddy_joined_cb(self, activity, buddy):
         logger.debug('buddy joined with object path: %s', buddy.object_path())
-#        self.abiword_canvas.invoke_cmd('com.abisource.abiword.abicollab.olpc.buddyJoined', buddy.object_path(), 0, 0)
+#        self.abiword_canvas.invoke_cmd(
+#               'com.abisource.abiword.abicollab.olpc.buddyJoined',
+#       buddy.object_path(), 0, 0)
 
-    def _buddy_left_cb (self,  activity, buddy):
+    def _buddy_left_cb(self, activity, buddy):
         logger.debug('buddy left with object path: %s', buddy.object_path())
-        #self.abiword_canvas.invoke_cmd('com.abisource.abiword.abicollab.olpc.buddyLeft', self.participants[buddy.object_path()], 0, 0)
+#self.abiword_canvas.invoke_cmd('com.abisource.abiword.abicollab.olpc.' +
+#'buddyLeft', self.participants[buddy.object_path()], 0, 0)
 
     def read_file(self, file_path):
-        logging.debug('AbiWordActivity.read_file: %s, mimetype: %s', file_path, self.metadata['mime_type'])
+        logging.debug('AbiWordActivity.read_file: %s, mimetype: %s',
+                file_path, self.metadata['mime_type'])
         if 'source' in self.metadata and self.metadata['source'] == '1':
             logger.debug('Opening file in view source mode')
-            self.abiword_canvas.load_file('file://' + file_path, 'text/plain') 
+            self.abiword_canvas.load_file('file://' + file_path, 'text/plain')
         else:
-            self.abiword_canvas.load_file('file://' + file_path, '') # we pass no mime/file type, let libabiword autodetect it, so we can handle multiple file formats
+            # we pass no mime/file type, let libabiword autodetect it,
+            # so we can handle multiple file formats
+            self.abiword_canvas.load_file('file://' + file_path, '')
 
     def write_file(self, file_path):
         logging.debug('AbiWordActivity.write_file')
 
-        # check if we have a default mimetype; if not, fall back to OpenDocument
+        # check if we have a default mimetype; if not,
+        # fall back to OpenDocument
         # also fallback if we know we cannot export in that format
-        if 'mime_type' not in self.metadata or self.metadata['mime_type'] == '' or \
+        if 'mime_type' not in self.metadata or \
+            self.metadata['mime_type'] == '' or \
             self.metadata['mime_type'] == 'application/msword':
-            self.metadata['mime_type'] = 'application/vnd.oasis.opendocument.text'
+            self.metadata['mime_type'] = \
+                    'application/vnd.oasis.opendocument.text'
 
-        # if we were viewing the source of a file, 
+        # if we were viewing the source of a file,
         # then always save as plain text
         actual_mimetype = self.metadata['mime_type']
         if 'source' in self.metadata and self.metadata['source'] == '1':
             logger.debug('Writing file as type source (text/plain)')
             actual_mimetype = 'text/plain'
 
-        self.metadata['fulltext'] = self.abiword_canvas.get_content(extension_or_mimetype=".txt")[:3000]
+        self.metadata['fulltext'] = \
+            self.abiword_canvas.get_content(extension_or_mimetype=".txt") \
+            [:3000]
         self.abiword_canvas.save('file://' + file_path, actual_mimetype, '')

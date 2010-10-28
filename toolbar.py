@@ -41,9 +41,11 @@ from widgets import FontSizeCombo
 
 logger = logging.getLogger('write-activity')
 
+
 class EditToolbar(gtk.Toolbar):
+
     def __init__(self, pc, toolbar_box):
-    
+
         gtk.Toolbar.__init__(self)
 
         self._abiword_canvas = pc.abiword_canvas
@@ -126,10 +128,10 @@ class EditToolbar(gtk.Toolbar):
         self._findnext.set_sensitive(False)
 
     def __paste_button_cb(self, button):
-        clipBoard = gtk.Clipboard()
+        clipboard = gtk.Clipboard()
 
-        if clipBoard.wait_is_image_available():
-            pixbuf_sel = clipBoard.wait_for_image()
+        if clipboard.wait_is_image_available():
+            pixbuf_sel = clipboard.wait_for_image()
             size = int(pixbuf_sel.get_width()), int(pixbuf_sel.get_height())
             activity = self._abiword_canvas.get_toplevel()
             temp_path = os.path.join(activity.get_activity_root(), 'instance')
@@ -141,8 +143,8 @@ class EditToolbar(gtk.Toolbar):
             pixbuf_sel.save(file_path, 'jpeg')
             self._abiword_canvas.insert_image(file_path, False)
 
-        elif clipBoard.wait_is_uris_available():
-            selection = clipBoard.wait_for_contents('text/uri-list')
+        elif clipboard.wait_is_uris_available():
+            selection = clipboard.wait_for_contents('text/uri-list')
             if selection != None:
                 for uri in selection.get_uris():
                     self._abiword_canvas.insert_image(urlparse(uri).path,
@@ -203,7 +205,9 @@ class EditToolbar(gtk.Toolbar):
         self.insert(tool_item, -1)
         tool_item.show()
 
+
 class InsertToolbar(gtk.Toolbar):
+
     def __init__(self, abiword_canvas):
         gtk.Toolbar.__init__(self)
 
@@ -256,13 +260,16 @@ class InsertToolbar(gtk.Toolbar):
         self.show_all()
 
         self._abiword_canvas.connect('table-state', self._isTable_cb)
-        #self._abiword_canvas.connect('image-selected', self._image_selected_cb)
+        #self._abiword_canvas.connect('image-selected',
+        #       self._image_selected_cb)
 
     def _image_cb(self, button):
+
         def cb(object):
             logging.debug('ObjectChooser: %r' % object)
             self._abiword_canvas.insert_image(object.file_path, True)
-        chooser.pick(parent=self._abiword_canvas.get_toplevel(), what=chooser.IMAGE, cb=cb)
+        chooser.pick(parent=self._abiword_canvas.get_toplevel(),
+                what=chooser.IMAGE, cb=cb)
 
     def _table_cb(self, abi, rows, cols):
         self._abiword_canvas.insert_table(rows, cols)
@@ -285,7 +292,9 @@ class InsertToolbar(gtk.Toolbar):
         self._table_cols_after.set_sensitive(b)
         self._table_delete_cols.set_sensitive(b)
 
+
 class ViewToolbar(gtk.Toolbar):
+
     def __init__(self, abiword_canvas):
         gtk.Toolbar.__init__(self)
 
@@ -294,7 +303,8 @@ class ViewToolbar(gtk.Toolbar):
 
         self._zoom_out = ToolButton('zoom-out')
         self._zoom_out.set_tooltip(_('Zoom Out'))
-        self._zoom_out_id = self._zoom_out.connect('clicked', self._zoom_out_cb)
+        self._zoom_out_id = self._zoom_out.connect('clicked',
+                self._zoom_out_cb)
         self.insert(self._zoom_out, -1)
         self._zoom_out.show()
 
@@ -401,7 +411,9 @@ class ViewToolbar(gtk.Toolbar):
         finally:
             self._page_spin.handler_unblock(self._page_spin_id)
 
+
 class TextToolbar(gtk.Toolbar):
+
     def __init__(self, abiword_canvas):
         gtk.Toolbar.__init__(self)
 
@@ -416,7 +428,9 @@ class TextToolbar(gtk.Toolbar):
 
         self.show_all()
 
+
 class ParagraphToolbar(gtk.Toolbar):
+
     def __init__(self, abi):
         gtk.Toolbar.__init__(self)
 
@@ -491,7 +505,9 @@ class ParagraphToolbar(gtk.Toolbar):
 
         self.show_all()
 
+
 class ListToolbar(gtk.Toolbar):
+
     def __init__(self, abi):
         gtk.Toolbar.__init__(self)
 
