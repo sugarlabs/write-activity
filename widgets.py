@@ -167,7 +167,12 @@ class ExportButton(ToolButton):
                        {'mime_type' : 'text/plain',
                         'title'     : _('Plain Text (TXT)'),
                         'jpostfix'  : _('TXT'),
-                        'exp_props' : ''}]
+                        'exp_props' : ''},
+
+                       {'mime_type': 'application/pdf',
+                        'title': _('Portable Document Format (PDF)'),
+                        'jpostfix': _('PDF'),
+                        'exp_props': ''}]
 
     def __init__(self, activity, abi):
         ToolButton.__init__(self, 'document-save')
