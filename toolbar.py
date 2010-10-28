@@ -21,6 +21,9 @@ import logging
 
 import abiword
 import gtk
+import os
+import tempfile
+from urlparse import urlparse
 
 from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.toolcombobox import ToolComboBox
@@ -53,7 +56,7 @@ class EditToolbar(gtk.Toolbar):
 
         paste = PasteButton()
         paste.props.accelerator = '<Ctrl>V'
-        paste.connect('clicked', lambda button: pc.abiword_canvas.paste())
+        paste.connect('clicked', self.__paste_button_cb)
         self.insert(paste, -1)
         paste.show()
 
@@ -121,6 +124,31 @@ class EditToolbar(gtk.Toolbar):
         # call to fail
         self._findprev.set_sensitive(False)
         self._findnext.set_sensitive(False)
+
+    def __paste_button_cb(self, button):
+        clipBoard = gtk.Clipboard()
+
+        if clipBoard.wait_is_image_available():
+            pixbuf_sel = clipBoard.wait_for_image()
+            size = int(pixbuf_sel.get_width()), int(pixbuf_sel.get_height())
+            activity = self._abiword_canvas.get_toplevel()
+            temp_path = os.path.join(activity.get_activity_root(), 'instance')
+            if not os.path.exists(temp_path):
+                os.makedirs(temp_path)
+            fd, file_path = tempfile.mkstemp(dir=temp_path, suffix='.jpg')
+            os.close(fd)
+            logging.error('tempfile is %s' % file_path)
+            pixbuf_sel.save(file_path, 'jpeg')
+            self._abiword_canvas.insert_image(file_path, False)
+
+        elif clipBoard.wait_is_uris_available():
+            selection = clipBoard.wait_for_contents('text/uri-list')
+            if selection != None:
+                for uri in selection.get_uris():
+                    self._abiword_canvas.insert_image(urlparse(uri).path,
+                        False)
+        else:
+            self._abiword_canvas.paste()
 
     def _search_entry_activated_cb(self, entry):
         logger.debug('_search_entry_activated_cb')
