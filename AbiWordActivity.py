@@ -37,6 +37,7 @@ from sugar.activity.widgets import ActivityToolbarButton
 from sugar.activity.activity import get_bundle_path
 
 from sugar.presence import presenceservice
+from sugar import mime
 
 from sugar.graphics.toolbarbox import ToolbarButton, ToolbarBox
 from sugar.graphics.toggletoolbutton import ToggleToolButton
@@ -459,8 +460,9 @@ class AbiWordActivity(activity.Activity):
     def read_file(self, file_path):
         logging.debug('AbiWordActivity.read_file: %s, mimetype: %s',
                 file_path, self.metadata['mime_type'])
-        if 'source' in self.metadata and self.metadata['source'] == '1':
-            logger.debug('Opening file in view source mode')
+        mime_parents = mime.get_mime_parents(self.metadata['mime_type'])
+        if self.metadata['mime_type'] in ['text/plain', 'text/csv'] or \
+               'text/plain' in mime_parents:
             self.abiword_canvas.load_file('file://' + file_path, 'text/plain')
         else:
             # we pass no mime/file type, let libabiword autodetect it,
@@ -468,25 +470,27 @@ class AbiWordActivity(activity.Activity):
             self.abiword_canvas.load_file('file://' + file_path, '')
 
     def write_file(self, file_path):
-        logging.debug('AbiWordActivity.write_file')
-
-        # check if we have a default mimetype; if not,
-        # fall back to OpenDocument
-        # also fallback if we know we cannot export in that format
-        if 'mime_type' not in self.metadata or \
-            self.metadata['mime_type'] == '' or \
-            self.metadata['mime_type'] == 'application/msword':
-            self.metadata['mime_type'] = \
-                    'application/vnd.oasis.opendocument.text'
-
-        # if we were viewing the source of a file,
-        # then always save as plain text
-        actual_mimetype = self.metadata['mime_type']
-        if 'source' in self.metadata and self.metadata['source'] == '1':
+        logging.debug('AbiWordActivity.write_file: %s, mimetype: %s',
+            file_path, self.metadata['mime_type'])
+        # if we were editing a text file save as plain text
+        mime_parents = mime.get_mime_parents(self.metadata['mime_type'])
+        if self.metadata['mime_type'] in ['text/plain', 'text/csv'] or \
+               'text/plain' in mime_parents:
             logger.debug('Writing file as type source (text/plain)')
-            actual_mimetype = 'text/plain'
+            self.abiword_canvas.save('file://' + file_path, 'text/plain', '')
+        else:
+            #if the file is new, save in .odt format
+            if self.metadata['mime_type'] == '':
+                self.metadata['mime_type'] = \
+                        'application/vnd.oasis.opendocument.text'
+
+            # Abiword can't save in .doc format, save in .rtf instead
+            if self.metadata['mime_type'] == 'application/msword':
+                self.metadata['mime_type'] = 'application/rtf'
+
+            self.abiword_canvas.save('file://' + file_path,
+                    self.metadata['mime_type'], '')
 
         self.metadata['fulltext'] = \
             self.abiword_canvas.get_content(extension_or_mimetype=".txt") \
             [:3000]
-        self.abiword_canvas.save('file://' + file_path, actual_mimetype, '')
