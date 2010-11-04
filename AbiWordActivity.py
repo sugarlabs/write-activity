@@ -24,7 +24,6 @@ import os
 import gobject
 gobject.threads_init()
 
-import dbus
 import gtk
 import telepathy
 import telepathy.client
@@ -36,7 +35,6 @@ from sugar.activity.widgets import StopButton
 from sugar.activity.widgets import ActivityToolbarButton
 from sugar.activity.activity import get_bundle_path
 
-from sugar.presence import presenceservice
 from sugar import mime
 
 from sugar.graphics.toolbarbox import ToolbarButton, ToolbarBox
@@ -221,19 +219,13 @@ class AbiWordActivity(activity.Activity):
 
         # activity sharing
         self.participants = {}
-        pservice = presenceservice.get_instance()
-
-        bus = dbus.Bus()
-        name, path = pservice.get_preferred_connection()
-        self.conn = telepathy.client.Connection(name, path)
-        self.initiating = None
         self.joined = False
 
         self.connect('shared', self._shared_cb)
 
         if self._shared_activity:
             # we are joining the activity
-            logger.debug('We are joining an activity')
+            logger.error('We are joining an activity')
             self.connect('joined', self._joined_cb)
             self._shared_activity.connect('buddy-joined',
                     self._buddy_joined_cb)
@@ -243,9 +235,7 @@ class AbiWordActivity(activity.Activity):
                 self._joined_cb()
         else:
             # we are creating the activity
-            logger.debug("We are creating an activity")
-
-        owner = pservice.get_owner()
+            logger.error("We are creating an activity")
 
     def get_preview(self):
         if not hasattr(self.abiword_canvas, 'render_page_to_image'):
@@ -266,68 +256,30 @@ class AbiWordActivity(activity.Activity):
         return preview_data
 
     def _shared_cb(self, activity):
-        logger.debug('My Write activity was shared')
-        self.initiating = True
-        self._setup()
+        logger.error('My Write activity was shared')
+        self._sharing_setup()
 
         self._shared_activity.connect('buddy-joined', self._buddy_joined_cb)
         self._shared_activity.connect('buddy-left', self._buddy_left_cb)
 
         channel = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES]
-        logger.debug('This is my activity: offering a tube...')
+        logger.error('This is my activity: offering a tube...')
         id = channel.OfferDBusTube('com.abisource.abiword.abicollab', {})
-        logger.debug('Tube address: %s', channel.GetDBusTubeAddress(id))
+        logger.error('Tube address: %s', channel.GetDBusTubeAddress(id))
 
-    def _setup(self):
-        logger.debug("_setup()")
+    def _sharing_setup(self):
+        logger.debug("_sharing_setup()")
 
         if self._shared_activity is None:
             logger.error('Failed to share or join activity')
             return
 
-        bus_name, conn_path, channel_paths = \
-                self._shared_activity.get_channels()
-
-        # Work out what our room is called and whether we have Tubes already
-        room = None
-        tubes_chan = None
-        text_chan = None
-        for channel_path in channel_paths:
-            channel = telepathy.client.Channel(bus_name, channel_path)
-            htype, handle = channel.GetHandle()
-            if htype == telepathy.HANDLE_TYPE_ROOM:
-                logger.debug('Found our room: it has handle#%d "%s"',
-                    handle, self.conn.InspectHandles(htype, [handle])[0])
-                room = handle
-                ctype = channel.GetChannelType()
-                if ctype == telepathy.CHANNEL_TYPE_TUBES:
-                    logger.debug('Found our Tubes channel at %s', channel_path)
-                    tubes_chan = channel
-                elif ctype == telepathy.CHANNEL_TYPE_TEXT:
-                    logger.debug('Found our Text channel at %s', channel_path)
-                    text_chan = channel
-
-        if room is None:
-            logger.error("Presence service didn't create a room")
-            return
-        if text_chan is None:
-            logger.error("Presence service didn't create a text channel")
-            return
-
-        # Make sure we have a Tubes channel - PS doesn't yet provide one
-        if tubes_chan is None:
-            logger.debug('Didn''t find our Tubes negotation channel, ' +
-                    'requesting one...')
-            tubes_chan = self.conn.request_channel( \
-                        telepathy.CHANNEL_TYPE_TUBES, \
-                        telepathy.HANDLE_TYPE_ROOM, room, True)
-            logger.debug('Got our tubes negotiation channel')
-
-        self.tubes_chan = tubes_chan
-        self.text_chan = text_chan
-
-        tubes_chan[telepathy.CHANNEL_TYPE_TUBES].connect_to_signal('NewTube',
-            self._new_tube_cb)
+        self.conn = self._shared_activity.telepathy_conn
+        self.tubes_chan = self._shared_activity.telepathy_tubes_chan
+        self.text_chan = self._shared_activity.telepathy_text_chan
+        self.tube_id = None
+        self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].connect_to_signal(
+                'NewTube', self._new_tube_cb)
 
     def _list_tubes_reply_cb(self, tubes):
         for tube_info in tubes:
@@ -337,102 +289,95 @@ class AbiWordActivity(activity.Activity):
         logger.error('ListTubes() failed: %s', e)
 
     def _joined_cb(self, activity):
-        logger.debug("_joined_cb()")
+        logger.error("_joined_cb()")
         if not self._shared_activity:
             return
 
         self.joined = True
-        logger.debug('Joined an existing Write session')
-        self._setup()
+        logger.error('Joined an existing Write session')
+        self._sharing_setup()
 
-        logger.debug('This is not my activity: waiting for a tube...')
+        logger.error('This is not my activity: waiting for a tube...')
         self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].ListTubes(
             reply_handler=self._list_tubes_reply_cb,
             error_handler=self._list_tubes_error_cb)
 
     def _new_tube_cb(self, id, initiator, type, service, params, state):
-        logger.debug('New tube: ID=%d initiator=%d type=%d service=%s '
+        logger.error('New tube: ID=%d initiator=%d type=%d service=%s '
                      'params=%r state=%d', id, initiator, type, service,
                      params, state)
 
-        if (type == telepathy.TUBE_TYPE_DBUS and
-            service == "com.abisource.abiword.abicollab"):
-            channel = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES]
-            if state == telepathy.TUBE_STATE_LOCAL_PENDING:
-                channel.AcceptDBusTube(id)
+        if self.tube_id is not None:
+            # We are already using a tube
+            return
 
-            initiator_path = None
-            contacts = channel.GetDBusNames(id)
-            #print 'dbus contact mapping',channel.GetDBusNames(id)
-            for i, struct in enumerate(contacts):
-                #print 'mapping i',i
-                handle, path = struct
-                if handle == initiator:
-                    logger.debug('found initiator dbus path: %s', path)
-                    initiator_path = path
-                    break
+        if type != telepathy.TUBE_TYPE_DBUS or \
+                service != "com.abisource.abiword.abicollab":
+            return
 
-            if initiator_path is None:
-                logger.error('Unable to get the dbus path ' +
-                        'of the tube initiator')
-            else:
-                # pass this tube to abicollab
-                address = channel.GetDBusTubeAddress(id)
-                cmd_prefix = 'com.abisource.abiword.abicollab.olpc'
-                if self.joined:
-                    logger.debug( \
-                            'Passing tube address to abicollab (join): %s',
-                            address)
-                    self.abiword_canvas.invoke_cmd(cmd_prefix + '.joinTube',
-                            address, 0, 0)
-                    if initiator_path is not None:
-                        logger.debug('Adding the initiator to session: %s',
-                                initiator_path)
-                        self.abiword_canvas.invoke_cmd( \
-                                cmd_prefix + '.buddyJoined',
-                                initiator_path, 0, 0)
-                else:
-                    logger.debug( \
-                            'Passing tube address to abicollab (offer): %s',
-                            address)
-                    self.abiword_canvas.invoke_cmd(cmd_prefix + '.offerTube',
-                            address, 0, 0)
+        channel = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES]
 
-            channel.connect_to_signal('DBusNamesChanged',
-                self._on_dbus_names_changed)
+        if state == telepathy.TUBE_STATE_LOCAL_PENDING:
+            channel.AcceptDBusTube(id)
 
-            # HACK, as DBusNamesChanged doesn't fire on buddies leaving
-            channel_group = self.tubes_chan[telepathy.CHANNEL_INTERFACE_GROUP]
-            channel_group.connect_to_signal('MembersChanged',
-                    self._on_members_changed)
+        # look for the initiator's D-Bus unique name
+        initiator_dbus_name = None
+        dbus_names = channel.GetDBusNames(id)
+        for handle, name in dbus_names:
+            if handle == initiator:
+                logger.error('found initiator D-Bus name: %s', name)
+                initiator_dbus_name = name
+                break
+
+        if initiator_dbus_name is None:
+            logger.error('Unable to get the D-Bus name of the tube initiator')
+            return
+
+        cmd_prefix = 'com.abisource.abiword.abicollab.olpc.'
+        # pass this tube to abicollab
+        address = channel.GetDBusTubeAddress(id)
+        if self.joined:
+            logger.error('Passing tube address to abicollab (join): %s',
+                    address)
+            self.abiword_canvas.invoke_cmd(cmd_prefix + 'joinTube',
+                    address, 0, 0)
+            # The intiator of the session has to be the first passed
+            # to the Abicollab backend.
+            logger.error('Adding the initiator to the session: %s',
+                    initiator_dbus_name)
+            self.abiword_canvas.invoke_cmd(cmd_prefix + 'buddyJoined',
+                    initiator_dbus_name, 0, 0)
+        else:
+            logger.error('Passing tube address to abicollab (offer): %s',
+                    address)
+            self.abiword_canvas.invoke_cmd(cmd_prefix + 'offerTube', address,
+                    0, 0)
+        self.tube_id = id
+
+        channel.connect_to_signal('DBusNamesChanged',
+            self._on_dbus_names_changed)
+
+        self._on_dbus_names_changed(id, dbus_names, [])
 
     def _on_dbus_names_changed(self, tube_id, added, removed):
-        logger.debug('_on_dbus_names_changed')
+        """
+        We call com.abisource.abiword.abicollab.olpc.buddy{Joined,Left}
+        according members of the D-Bus tube. That's why we don't add/remove
+        buddies in _buddy_{joined,left}_cb.
+        """
+        logger.error('_on_dbus_names_changed')
 #        if tube_id == self.tube_id:
         cmd_prefix = 'com.abisource.abiword.abicollab.olpc'
         for handle, bus_name in added:
-            logger.debug('added handle: %s, with dbus_name: %s',
+            logger.error('added handle: %s, with dbus_name: %s',
                     handle, bus_name)
             self.abiword_canvas.invoke_cmd(cmd_prefix + '.buddyJoined',
                     bus_name, 0, 0)
             self.participants[handle] = bus_name
 
-#            if handle == self.self_handle:
-                # I've just joined - set my unique name
-#                print 'i\'ve just joined'
-#                self.set_unique_name(bus_name)
-#            self.participants[handle] = bus_name
-#            self.bus_name_to_handle[bus_name] = handle
-
-# HACK: doesn't work yet, bad morgs!
-#        for handle in removed:
-#            logger.debug('removed handle: %s, with dbus name: %s',
-#                    handle, bus_name)
-#            bus_name = self.participants.pop(handle, None)
-
     def _on_members_changed(self, message, added, removed, local_pending,
                             remote_pending, actor, reason):
-        logger.debug("_on_members_changed")
+        logger.error("_on_members_changed")
         for handle in removed:
             bus_name = self.participants.pop(handle, None)
             if bus_name is None:
@@ -441,21 +386,16 @@ class AbiWordActivity(activity.Activity):
                 continue
 
             cmd_prefix = 'com.abisource.abiword.abicollab.olpc'
-            logger.debug('removed handle: %d, with dbus name: %s', handle,
+            logger.error('removed handle: %d, with dbus name: %s', handle,
                          bus_name)
             self.abiword_canvas.invoke_cmd(cmd_prefix + '.buddyLeft',
                     bus_name, 0, 0)
 
     def _buddy_joined_cb(self, activity, buddy):
-        logger.debug('buddy joined with object path: %s', buddy.object_path())
-#        self.abiword_canvas.invoke_cmd(
-#               'com.abisource.abiword.abicollab.olpc.buddyJoined',
-#       buddy.object_path(), 0, 0)
+        logger.error('buddy joined with object path: %s', buddy.object_path())
 
     def _buddy_left_cb(self, activity, buddy):
-        logger.debug('buddy left with object path: %s', buddy.object_path())
-#self.abiword_canvas.invoke_cmd('com.abisource.abiword.abicollab.olpc.' +
-#'buddyLeft', self.participants[buddy.object_path()], 0, 0)
+        logger.error('buddy left with object path: %s', buddy.object_path())
 
     def read_file(self, file_path):
         logging.debug('AbiWordActivity.read_file: %s, mimetype: %s',
