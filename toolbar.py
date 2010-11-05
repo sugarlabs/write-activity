@@ -257,17 +257,32 @@ class InsertToolbar(gtk.Toolbar):
         self._image_id = image.connect('clicked', self._image_cb)
         self.insert(image, -1)
 
+        palette = image.get_palette()
+        content_box = gtk.VBox()
+        palette.set_content(content_box)
+        image_floating_checkbutton = gtk.CheckButton(_('Floating'))
+        image_floating_checkbutton.connect('toggled',
+                self._image_floating_checkbutton_toggled_cb)
+        content_box.pack_start(image_floating_checkbutton)
+        content_box.show_all()
+        self.floating_image = False
+
         self.show_all()
 
         self._abiword_canvas.connect('table-state', self._isTable_cb)
         #self._abiword_canvas.connect('image-selected',
         #       self._image_selected_cb)
 
+    def _image_floating_checkbutton_toggled_cb(self, checkbutton):
+        self.floating_image = checkbutton.get_active()
+
     def _image_cb(self, button):
 
         def cb(object):
             logging.debug('ObjectChooser: %r' % object)
-            self._abiword_canvas.insert_image(object.file_path, True)
+            self._abiword_canvas.insert_image(object.file_path,
+                    self.floating_image)
+
         chooser.pick(parent=self._abiword_canvas.get_toplevel(),
                 what=chooser.IMAGE, cb=cb)
 
