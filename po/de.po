@@ -10,14 +10,22 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # This file is distributed under the same license as the PACKAGE package.
 # Fabian Affolter <fab@fedoraproject.org>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: write\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 00:30-0400\n"
-"PO-Revision-Date: 2010-03-28 23:09+0200\n"
+"POT-Creation-Date: 2010-10-29 00:30-0400\n"
+"PO-Revision-Date: 2010-11-07 20:32+0200\n"
 "Last-Translator: Markus <m.slg@gmx.de>\n"
 "Language-Team: German <fedora-trans-de@redhat.com>\n"
 "Language: de\n"
@@ -32,179 +40,187 @@ msgstr ""
 msgid "Write"
 msgstr "Schreiben"
 
-#: AbiWordActivity.py:82
+#: AbiWordActivity.py:83
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: AbiWordActivity.py:88
+#: AbiWordActivity.py:89
 msgid "View"
 msgstr "Ansicht"
 
-#: AbiWordActivity.py:97
+#: AbiWordActivity.py:98
 msgid "Text"
 msgstr "Text"
 
-#: AbiWordActivity.py:103
+#: AbiWordActivity.py:104
 msgid "Paragraph"
 msgstr "Absatz"
 
-#: AbiWordActivity.py:109 toolbar.py:490
+#: AbiWordActivity.py:110 toolbar.py:534
 msgid "Bullet List"
 msgstr "Liste mit Punkten"
 
-#: AbiWordActivity.py:115 toolbar.py:185
+#: AbiWordActivity.py:116 toolbar.py:217
 msgid "Table"
 msgstr "Tabelle"
 
-#: AbiWordActivity.py:122
+#: AbiWordActivity.py:123
 msgid "Bold"
 msgstr "Fett"
 
-#: AbiWordActivity.py:130
+#: AbiWordActivity.py:131
 msgid "Italic"
 msgstr "Kursiv"
 
-#: AbiWordActivity.py:138
+#: AbiWordActivity.py:139
 msgid "Underline"
 msgstr "Unterstrichen"
 
-#: toolbar.py:89
+#: toolbar.py:94
 msgid "Search"
 msgstr "Suchen"
 
-#: toolbar.py:106
+#: toolbar.py:111
 msgid "Find previous"
 msgstr "Rückwärts suchen"
 
-#: toolbar.py:112
+#: toolbar.py:117
 msgid "Find next"
 msgstr "Vorwärts suchen"
 
-#: toolbar.py:185
+#: toolbar.py:217
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: toolbar.py:197
+#: toolbar.py:229
 msgid "Insert Row"
 msgstr "Zeile einfügen"
 
-#: toolbar.py:203
+#: toolbar.py:235
 msgid "Delete Row"
 msgstr "Zeile löschen"
 
-#: toolbar.py:209
+#: toolbar.py:241
 msgid "Insert Column"
 msgstr "Spalte einfügen"
 
-#: toolbar.py:215
+#: toolbar.py:247
 msgid "Delete Column"
 msgstr "Spalte löschen"
 
-#: toolbar.py:224
+#: toolbar.py:256
 msgid "Insert Image"
 msgstr "Bild einfügen"
 
-#: toolbar.py:268
+#: toolbar.py:305
 msgid "Zoom Out"
 msgstr "Verkleinern"
 
-#: toolbar.py:274
+#: toolbar.py:312
 msgid "Zoom In"
 msgstr "Vergrößern"
 
-#: toolbar.py:291
+#: toolbar.py:329
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:303
+#: toolbar.py:341
 msgid "Page: "
 msgstr "Seite: "
 
-#: toolbar.py:405 toolbar.py:480
+#: toolbar.py:447 toolbar.py:524
 msgid "Normal"
 msgstr "Normaler Text"
 
-#: toolbar.py:416
+#: toolbar.py:458
 msgid "Heading 1"
 msgstr "Überschrift 1"
 
-#: toolbar.py:420
+#: toolbar.py:462
 msgid "Heading 2"
 msgstr "Überschrift 2"
 
-#: toolbar.py:424
+#: toolbar.py:466
 msgid "Heading 3"
 msgstr "Überschrift 3"
 
-#: toolbar.py:428
+#: toolbar.py:470
 msgid "Heading 4"
 msgstr "Überschrift 4"
 
-#: toolbar.py:432
+#: toolbar.py:474
 msgid "Block Text"
 msgstr "Eingerückt"
 
-#: toolbar.py:436
+#: toolbar.py:478
 msgid "Plain Text"
 msgstr "Unformatierter Text"
 
-#: toolbar.py:452
+#: toolbar.py:494
 msgid "Left justify"
 msgstr "Linksbündig"
 
-#: toolbar.py:455
+#: toolbar.py:497
 msgid "Center justify"
 msgstr "Zentriert"
 
-#: toolbar.py:458
+#: toolbar.py:500
 msgid "Right justify"
 msgstr "Rechtsbündig"
 
-#: toolbar.py:461
+#: toolbar.py:503
 msgid "Fill justify"
 msgstr "Blocksatz"
 
-#: toolbar.py:494
+#: toolbar.py:538
 msgid "Dashed List"
 msgstr "Liste mit Spiegelstrichen"
 
-#: toolbar.py:498
+#: toolbar.py:542
 msgid "Numbered List"
 msgstr "Nummerierte Liste"
 
-#: toolbar.py:502
+#: toolbar.py:546
 msgid "Lower Case List"
 msgstr "Nummerierung mit Kleinbuchstaben"
 
-#: toolbar.py:506
+#: toolbar.py:550
 msgid "Upper Case List"
 msgstr "Nummerierung mit Großbuchstaben"
 
-#: widgets.py:157
+#: widgets.py:165
 msgid "Rich Text (RTF)"
 msgstr "Rich Text (RTF)"
 
-#: widgets.py:158
+#: widgets.py:166
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:162
+#: widgets.py:170
 msgid "Hypertext (HTML)"
 msgstr "Hypertext (HTML)"
 
-#: widgets.py:163
+#: widgets.py:171
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:168
+#: widgets.py:176
 msgid "Plain Text (TXT)"
 msgstr "Unformatierter Text (TXT)"
 
-#: widgets.py:169
+#: widgets.py:177
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:174 widgets.py:175
+#: widgets.py:181
+msgid "Portable Document Format (PDF)"
+msgstr "Portables Dokumentenformat (PDF)"
+
+#: widgets.py:182
+msgid "PDF"
+msgstr "PDF"
+
+#: widgets.py:187 widgets.py:188
 msgid "Export"
 msgstr "Exportieren"
 
