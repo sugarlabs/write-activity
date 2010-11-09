@@ -37,6 +37,9 @@ from sugar.graphics.menuitem import MenuItem
 from sugar.datastore import datastore
 from sugar import mime
 import sugar.profile
+import os
+import tempfile
+from urlparse import urlparse
 
 import dbus
 
@@ -174,7 +177,29 @@ class WriteEditToolbar(EditToolbar):
         self._abiword_canvas.copy()
 
     def _paste_cb(self, button):
-        self._abiword_canvas.paste()
+        clipBoard = gtk.Clipboard()
+
+        if clipBoard.wait_is_image_available():
+            pixbuf_sel = clipBoard.wait_for_image()
+            size = int(pixbuf_sel.get_width()), int(pixbuf_sel.get_height())
+            activity = self._abiword_canvas.get_toplevel()
+            temp_path = os.path.join(activity.get_activity_root(), 'instance')
+            if not os.path.exists(temp_path):
+                os.makedirs(temp_path)
+            fd, file_path = tempfile.mkstemp(dir=temp_path, suffix='.jpg')
+            os.close(fd)
+            logging.error('tempfile is %s' % file_path)
+            pixbuf_sel.save(file_path, 'jpeg')
+            self._abiword_canvas.insert_image(file_path, False)
+
+        elif clipBoard.wait_is_uris_available():
+            selection = clipBoard.wait_for_contents('text/uri-list')
+            if selection != None:
+                for uri in selection.get_uris():
+                    self._abiword_canvas.insert_image(urlparse(uri).path,
+                        False)
+        else:
+            self._abiword_canvas.paste()
 
     def _can_undo_cb(self, canvas, can_undo):
         self.undo.set_sensitive(can_undo)
