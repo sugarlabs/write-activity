@@ -58,7 +58,8 @@ class WriteActivityToolbarExtension:
     # file mime type, abiword exporter properties, drop down name, journal entry postfix
     _EXPORT_FORMATS = [['application/rtf', _('Rich Text (RTF)'), _('RTF'), ""],
         ['text/html', _('Hypertext (HTML)'), _('HTML'), "html4:yes; declare-xml:no; embed-css:yes; embed-images:yes;"],
-        ['text/plain', _('Plain Text (TXT)'), _('TXT'), ""]]
+        ['text/plain', _('Plain Text (TXT)'), _('TXT'), ""],
+        ['application/pdf',_('Portable Document Format (PDF)'),_('PDF'),'']]
 
     def __init__(self, activity, toolbox, abiword_canvas):
 
