@@ -529,9 +529,23 @@ class ImageToolbar(gtk.Toolbar):
         self._image.set_tooltip(_('Insert Image'))
         self._image_id = self._image.connect('clicked', self._image_cb)
         self.insert(self._image, -1)
+
+        palette = self._image.get_palette()
+        content_box = gtk.VBox()
+        palette.set_content(content_box)
+        image_floating_checkbutton = gtk.CheckButton(_('Floating'))
+        image_floating_checkbutton.connect('toggled',
+                self._image_floating_checkbutton_toggled_cb)
+        content_box.pack_start(image_floating_checkbutton)
+        content_box.show_all()
+        self.floating_image = False
+
         self._image.show()
 
         self._abiword_canvas.connect('image-selected', self._image_selected_cb)
+
+    def _image_floating_checkbutton_toggled_cb(self, checkbutton):
+        self.floating_image = checkbutton.get_active()
 
     def _image_cb(self, button):
         chooser = ObjectChooser(_('Choose image'), self._parent,
@@ -543,7 +557,8 @@ class ImageToolbar(gtk.Toolbar):
                 logging.debug('ObjectChooser: %r' % chooser.get_selected_object())
                 jobject = chooser.get_selected_object()
                 if jobject and jobject.file_path:
-                    self._abiword_canvas.insert_image(jobject.file_path, True)
+                    self._abiword_canvas.insert_image(jobject.file_path,
+                            self.floating_image)
         finally:
             chooser.destroy()
             del chooser
