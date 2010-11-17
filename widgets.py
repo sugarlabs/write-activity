@@ -220,7 +220,11 @@ class ExportButton(ToolButton):
                 extension_or_mimetype=".txt")[:3000]
 
         fileObject.metadata['icon-color'] = act_meta['icon-color']
-        fileObject.metadata['activity'] = act_meta['activity']
+
+        # don't set application if PDF because Write can't open PDF files
+        if format['mime_type'] != 'application/pdf':
+            fileObject.metadata['activity'] = act_meta['activity']
+
         fileObject.metadata['keep'] = act_meta['keep']
 
         preview = activity.get_preview()
