@@ -92,7 +92,11 @@ class WriteActivityToolbarExtension:
             self._abiword_canvas.get_content(extension_or_mimetype=".txt")[:3000]
 
         fileObject.metadata['icon-color'] = act_meta['icon-color']
-        fileObject.metadata['activity'] = act_meta['activity']
+
+        # don't set application if PDF because Write can't open PDF files
+        if format['mime_type'] != 'application/pdf':
+            fileObject.metadata['activity'] = act_meta['activity']
+
         fileObject.metadata['keep'] = act_meta['keep']
 
 # TODO: Activity class should provide support for preview, see #5119
