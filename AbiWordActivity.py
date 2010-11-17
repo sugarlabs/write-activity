@@ -326,9 +326,7 @@ class AbiWordActivity (Activity):
 
     def read_file(self, file_path):
         logging.debug('AbiWordActivity.read_file: %s, mimetype: %s', file_path, self.metadata['mime_type'])
-        mime_parents = mime.get_mime_parents(self.metadata['mime_type'])
-        if self.metadata['mime_type'] in ['text/plain', 'text/csv'] or \
-               'text/plain' in mime_parents:
+        if self._is_plain_text(self.metadata['mime_type']):
             logger.debug('Opening file in view source mode')
             self.abiword_canvas.load_file('file://' + file_path, 'text/plain') 
         else:
@@ -340,9 +338,7 @@ class AbiWordActivity (Activity):
         logging.debug('AbiWordActivity.write_file: %s, mimetype: %s',
             file_path, self.metadata['mime_type'])
         # if we were editing a text file save as plain text
-        mime_parents = mime.get_mime_parents(self.metadata['mime_type'])
-        if self.metadata['mime_type'] in ['text/plain', 'text/csv'] or \
-               'text/plain' in mime_parents:
+        if self._is_plain_text(self.metadata['mime_type']):
             logger.debug('Writing file as type source (text/plain)')
             self.abiword_canvas.save('file://' + file_path, 'text/plain', '')
         else:
@@ -361,6 +357,16 @@ class AbiWordActivity (Activity):
         self.metadata['fulltext'] = \
             self.abiword_canvas.get_content(extension_or_mimetype=".txt") \
             [:3000]
+
+    def _is_plain_text(self, mime_type):
+        # These types have 'text/plain' in their mime_parents  but we need
+        # use it like rich text
+        if mime_type in ['application/rtf', 'text/rtf', 'text/html']:
+            return False
+
+        mime_parents = mime.get_mime_parents(self.metadata['mime_type'])
+        return self.metadata['mime_type'] in ['text/plain', 'text/csv'] or \
+               'text/plain' in mime_parents
 
     def _selection_cb(self, abi, b):
         self._edit_toolbar.copy.set_sensitive(True)
