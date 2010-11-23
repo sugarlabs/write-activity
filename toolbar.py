@@ -94,7 +94,7 @@ class WriteActivityToolbarExtension:
         fileObject.metadata['icon-color'] = act_meta['icon-color']
 
         # don't set application if PDF because Write can't open PDF files
-        if format['mime_type'] != 'application/pdf':
+        if mimetype != 'application/pdf':
             fileObject.metadata['activity'] = act_meta['activity']
 
         fileObject.metadata['keep'] = act_meta['keep']
