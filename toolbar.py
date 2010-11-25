@@ -655,7 +655,11 @@ class FormatToolbar(gtk.Toolbar):
         self._has_custom_styles = False
 
         self._style_combo = ComboBox()
-        self._styles = [['Heading 1',_('Heading 1')], 
+        self._styles = [['Normal',_('Normal')],
+            ['Block Text',_('Block Text')],
+            ['Plain Text',_('Plain Text')],
+            [None, None],
+            ['Heading 1',_('Heading 1')],
             ['Heading 2',_('Heading 2')], 
             ['Heading 3',_('Heading 3')],
             ['Heading 4',_('Heading 4')],
@@ -664,11 +668,7 @@ class FormatToolbar(gtk.Toolbar):
             ['Dashed List',_('Dashed List')],
             ['Numbered List',_('Numbered List')],
             ['Lower Case List',_('Lower Case List')],
-            ['Upper Case List',_('Upper Case List')],
-            [None, None],
-            ['Block Text',_('Block Text')],
-            ['Normal',_('Normal')],
-            ['Plain Text',_('Plain Text')]]
+            ['Upper Case List',_('Upper Case List')]]
         self._style_changed_id = self._style_combo.connect('changed', self._style_changed_cb)
         for i, s in enumerate(self._styles):
             if s[1] != None:
