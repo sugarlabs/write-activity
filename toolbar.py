@@ -659,19 +659,25 @@ class FormatToolbar(gtk.Toolbar):
             ['Heading 2',_('Heading 2')], 
             ['Heading 3',_('Heading 3')],
             ['Heading 4',_('Heading 4')],
+            [None, None],
             ['Bullet List',_('Bullet List')],
             ['Dashed List',_('Dashed List')],
             ['Numbered List',_('Numbered List')],
             ['Lower Case List',_('Lower Case List')],
             ['Upper Case List',_('Upper Case List')],
+            [None, None],
             ['Block Text',_('Block Text')],
             ['Normal',_('Normal')],
             ['Plain Text',_('Plain Text')]]
         self._style_changed_id = self._style_combo.connect('changed', self._style_changed_cb)
         for i, s in enumerate(self._styles):
-            self._style_combo.append_item(i, s[1], None)
-            if s[0] == 'Normal':
-                self._style_combo.set_active(i)
+            if s[1] != None:
+                self._style_combo.append_item(i, s[1], None)
+                if s[0] == 'Normal':
+                    self._style_combo.set_active(i)
+            else:
+                self._style_combo.append_separator()
+
         tool_item = ToolComboBox(self._style_combo)
         self.insert(tool_item, -1);
         tool_item.show()
