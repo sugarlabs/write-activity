@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-17 20:56+0100\n"
+"POT-Creation-Date: 2010-11-26 11:02-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,166 +21,178 @@ msgstr ""
 msgid "Write"
 msgstr ""
 
-#: AbiWordActivity.py:64
-msgid "Edit"
-msgstr ""
-
-#: AbiWordActivity.py:67
-msgid "Text"
-msgstr ""
-
-#: AbiWordActivity.py:71
-msgid "Image"
-msgstr ""
-
-#: AbiWordActivity.py:75 toolbar.py:515
-msgid "Table"
-msgstr ""
-
-#: AbiWordActivity.py:79
-msgid "Format"
-msgstr ""
-
-#: AbiWordActivity.py:83
-msgid "View"
-msgstr ""
-
-#: toolbar.py:51
+#: toolbar.py:59
 msgid "Rich Text (RTF)"
 msgstr ""
 
-#: toolbar.py:51
+#: toolbar.py:59
 msgid "RTF"
 msgstr ""
 
-#: toolbar.py:52
+#: toolbar.py:60
 msgid "Hypertext (HTML)"
 msgstr ""
 
-#: toolbar.py:52
+#: toolbar.py:60
 msgid "HTML"
 msgstr ""
 
-#: toolbar.py:53
+#: toolbar.py:61
 msgid "Plain Text (TXT)"
 msgstr ""
 
-#: toolbar.py:53
+#: toolbar.py:61
 msgid "TXT"
 msgstr ""
 
-#: toolbar.py:128
+#: toolbar.py:62
+msgid "Portable Document Format (PDF)"
+msgstr ""
+
+#: toolbar.py:62
+msgid "PDF"
+msgstr ""
+
+#: toolbar.py:156
 msgid "Find previous"
 msgstr ""
 
-#: toolbar.py:134
+#: toolbar.py:162
 msgid "Find next"
 msgstr ""
 
-#: toolbar.py:244
+#: toolbar.py:294
 msgid "Bold"
 msgstr ""
 
-#: toolbar.py:251
+#: toolbar.py:301
 msgid "Italic"
 msgstr ""
 
-#: toolbar.py:258
+#: toolbar.py:308
 msgid "Underline"
 msgstr ""
 
-#: toolbar.py:481
+#: toolbar.py:533
 msgid "Insert Image"
 msgstr ""
 
-#: toolbar.py:489
+#: toolbar.py:540
+msgid "Floating"
+msgstr ""
+
+#: toolbar.py:555
 msgid "Choose image"
 msgstr ""
 
-#: toolbar.py:515
+#: toolbar.py:583 AbiWordActivity.py:81
+msgid "Table"
+msgstr ""
+
+#: toolbar.py:583
 msgid "Cancel"
 msgstr ""
 
-#: toolbar.py:524
+#: toolbar.py:592
 msgid "Insert Row"
 msgstr ""
 
-#: toolbar.py:530
+#: toolbar.py:598
 msgid "Delete Row"
 msgstr ""
 
-#: toolbar.py:536
+#: toolbar.py:604
 msgid "Insert Column"
 msgstr ""
 
-#: toolbar.py:542
+#: toolbar.py:610
 msgid "Delete Column"
 msgstr ""
 
-#: toolbar.py:580
+#: toolbar.py:648
 msgid "Style: "
 msgstr ""
 
-#: toolbar.py:590
+#: toolbar.py:658
 msgid "Heading 1"
 msgstr ""
 
-#: toolbar.py:591
+#: toolbar.py:659
 msgid "Heading 2"
 msgstr ""
 
-#: toolbar.py:592
+#: toolbar.py:660
 msgid "Heading 3"
 msgstr ""
 
-#: toolbar.py:593
+#: toolbar.py:661
 msgid "Heading 4"
 msgstr ""
 
-#: toolbar.py:594
+#: toolbar.py:662
 msgid "Bullet List"
 msgstr ""
 
-#: toolbar.py:595
+#: toolbar.py:663
 msgid "Dashed List"
 msgstr ""
 
-#: toolbar.py:596
+#: toolbar.py:664
 msgid "Numbered List"
 msgstr ""
 
-#: toolbar.py:597
+#: toolbar.py:665
 msgid "Lower Case List"
 msgstr ""
 
-#: toolbar.py:598
+#: toolbar.py:666
 msgid "Upper Case List"
 msgstr ""
 
-#: toolbar.py:599
+#: toolbar.py:667
 msgid "Block Text"
 msgstr ""
 
-#: toolbar.py:600
+#: toolbar.py:668
 msgid "Normal"
 msgstr ""
 
-#: toolbar.py:601
+#: toolbar.py:669
 msgid "Plain Text"
 msgstr ""
 
-#: toolbar.py:656
+#: toolbar.py:724
 msgid "Zoom Out"
 msgstr ""
 
-#: toolbar.py:662
+#: toolbar.py:730
 msgid "Zoom In"
 msgstr ""
 
-#: toolbar.py:678
+#: toolbar.py:746
 msgid "%"
 msgstr ""
 
-#: toolbar.py:690
+#: toolbar.py:758
 msgid "Page: "
+msgstr ""
+
+#: AbiWordActivity.py:70
+msgid "Edit"
+msgstr ""
+
+#: AbiWordActivity.py:73
+msgid "Text"
+msgstr ""
+
+#: AbiWordActivity.py:77
+msgid "Image"
+msgstr ""
+
+#: AbiWordActivity.py:85
+msgid "Format"
+msgstr ""
+
+#: AbiWordActivity.py:89
+msgid "View"
 msgstr ""
