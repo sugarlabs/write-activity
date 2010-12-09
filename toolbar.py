@@ -312,7 +312,8 @@ class TextToolbar(gtk.Toolbar):
         self._underline.show()
 
         self._text_color = ColorToolButton()
-        self._text_color_id = self._text_color.connect('color-set', self._text_color_cb)
+        self._text_color_id = self._text_color.connect('notify::color',
+                self._text_color_cb)
         tool_item = gtk.ToolItem()
         tool_item.add(self._text_color)
         self.insert(tool_item, -1)
@@ -424,7 +425,7 @@ class TextToolbar(gtk.Toolbar):
     def _color_cb(self, abi, r, g, b):
         self._text_color.set_color(gtk.gdk.Color(r * 256, g * 256, b * 256))
 
-    def _text_color_cb(self, button):
+    def _text_color_cb(self, button, pspec):
         newcolor = self._text_color.get_color()
         self._abiword_canvas.set_text_color(int(newcolor.red / 256.0), 
                                             int(newcolor.green / 256.0), 
