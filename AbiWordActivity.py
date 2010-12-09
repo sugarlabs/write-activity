@@ -146,7 +146,8 @@ class AbiWordActivity(activity.Activity):
         toolbar_box.toolbar.insert(separator, -1)
 
         color = ColorToolButton()
-        color.connect('color-set', self._text_color_cb, self.abiword_canvas)
+        color.connect('notify::color', self._text_color_cb,
+                self.abiword_canvas)
         tool_item = gtk.ToolItem()
         tool_item.add(color)
         toolbar_box.toolbar.insert(tool_item, -1)
@@ -172,7 +173,7 @@ class AbiWordActivity(activity.Activity):
         self._zoom_handler = self.abiword_canvas.connect("zoom",
                 self.__zoom_cb)
 
-    def _text_color_cb(self, button, abiword_canvas):
+    def _text_color_cb(self, button, pspec, abiword_canvas):
         newcolor = button.get_color()
         abiword_canvas.set_text_color(int(newcolor.red / 256.0),
                                             int(newcolor.green / 256.0),
