@@ -1,200 +1,216 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # Xavier Alvarez <xavi.alvarez@gmail.com>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: Actividad Escribir\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 00:30-0400\n"
-"PO-Revision-Date: 2009-09-21 21:01-0400\n"
-"Last-Translator: Rafael Ortiz <rafael@laptop.org>\n"
+"POT-Creation-Date: 2010-10-29 00:30-0400\n"
+"PO-Revision-Date: 2010-12-20 23:52+0200\n"
+"Last-Translator: Gonzalo <godiard@sugarlabs.org>\n"
 "Language-Team: Fedora Spanish <fedora-trans-es@redhat.com>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 1.2.1\n"
+"X-Generator: Pootle 2.0.3\n"
 "X-Poedit-Language: Spanish\n"
 
 #: activity/activity.info:2
 msgid "Write"
 msgstr "Escribir"
 
-#: AbiWordActivity.py:82
+#: AbiWordActivity.py:83
 msgid "Edit"
 msgstr "Editar"
 
-#: AbiWordActivity.py:88
+#: AbiWordActivity.py:89
 msgid "View"
 msgstr "Ver"
 
-#: AbiWordActivity.py:97
+#: AbiWordActivity.py:98
 msgid "Text"
 msgstr "Texto"
 
-#: AbiWordActivity.py:103
+#: AbiWordActivity.py:104
 msgid "Paragraph"
 msgstr "Párrafo"
 
-#: AbiWordActivity.py:109 toolbar.py:490
+#: AbiWordActivity.py:110 toolbar.py:534
 msgid "Bullet List"
 msgstr "Lista con viñetas"
 
-#: AbiWordActivity.py:115 toolbar.py:185
+#: AbiWordActivity.py:116 toolbar.py:217
 msgid "Table"
 msgstr "Tabla"
 
-#: AbiWordActivity.py:122
+#: AbiWordActivity.py:123
 msgid "Bold"
 msgstr "Negritas"
 
-#: AbiWordActivity.py:130
+#: AbiWordActivity.py:131
 msgid "Italic"
 msgstr "Cursiva"
 
-#: AbiWordActivity.py:138
+#: AbiWordActivity.py:139
 msgid "Underline"
 msgstr "Subrayado"
 
-#: toolbar.py:89
+#: toolbar.py:94
 msgid "Search"
 msgstr "Buscar"
 
-#: toolbar.py:106
+#: toolbar.py:111
 msgid "Find previous"
 msgstr "Buscar anterior"
 
-#: toolbar.py:112
+#: toolbar.py:117
 msgid "Find next"
 msgstr "Buscar siguiente"
 
-#: toolbar.py:185
+#: toolbar.py:217
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: toolbar.py:197
+#: toolbar.py:229
 msgid "Insert Row"
 msgstr "Insertar fila"
 
-#: toolbar.py:203
+#: toolbar.py:235
 msgid "Delete Row"
 msgstr "Borrar fila"
 
-#: toolbar.py:209
+#: toolbar.py:241
 msgid "Insert Column"
 msgstr "Insertar columna"
 
-#: toolbar.py:215
+#: toolbar.py:247
 msgid "Delete Column"
 msgstr "Borrar columna"
 
-#: toolbar.py:224
+#: toolbar.py:256
 msgid "Insert Image"
 msgstr "Insertar imagen"
 
-#: toolbar.py:268
+#: toolbar.py:305
 msgid "Zoom Out"
 msgstr "Acercar"
 
-#: toolbar.py:274
+#: toolbar.py:312
 msgid "Zoom In"
 msgstr "Alejar"
 
-#: toolbar.py:291
+#: toolbar.py:329
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:303
+#: toolbar.py:341
 msgid "Page: "
 msgstr "Página: "
 
-#: toolbar.py:405 toolbar.py:480
+#: toolbar.py:447 toolbar.py:524
 msgid "Normal"
 msgstr "Normal"
 
-#: toolbar.py:416
+#: toolbar.py:458
 msgid "Heading 1"
 msgstr "Encabezado 1"
 
-#: toolbar.py:420
+#: toolbar.py:462
 msgid "Heading 2"
 msgstr "Encabezado 2"
 
-#: toolbar.py:424
+#: toolbar.py:466
 msgid "Heading 3"
 msgstr "Encabezado 3"
 
-#: toolbar.py:428
+#: toolbar.py:470
 msgid "Heading 4"
 msgstr "Encabezado 4"
 
-#: toolbar.py:432
+#: toolbar.py:474
 msgid "Block Text"
 msgstr "Bloque de texto"
 
-#: toolbar.py:436
+#: toolbar.py:478
 msgid "Plain Text"
 msgstr "Texto simple"
 
-#: toolbar.py:452
+#: toolbar.py:494
 msgid "Left justify"
 msgstr "Justificar a la izquierda"
 
-#: toolbar.py:455
+#: toolbar.py:497
 msgid "Center justify"
 msgstr "Justificar al centro"
 
-#: toolbar.py:458
+#: toolbar.py:500
 msgid "Right justify"
 msgstr "Justificar a la derecha"
 
-#: toolbar.py:461
+#: toolbar.py:503
 msgid "Fill justify"
 msgstr "Justificar ambos lados"
 
-#: toolbar.py:494
+#: toolbar.py:538
 msgid "Dashed List"
 msgstr "Lista con guiones"
 
-#: toolbar.py:498
+#: toolbar.py:542
 msgid "Numbered List"
 msgstr "Lista enumerada"
 
-#: toolbar.py:502
+#: toolbar.py:546
 msgid "Lower Case List"
 msgstr "Lista alfabética minúsculas"
 
-#: toolbar.py:506
+#: toolbar.py:550
 msgid "Upper Case List"
 msgstr "Lista alfabética mayúsculas"
 
-#: widgets.py:157
+#: widgets.py:165
 msgid "Rich Text (RTF)"
 msgstr "Texto enriquecido (RTF)"
 
-#: widgets.py:158
+#: widgets.py:166
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:162
+#: widgets.py:170
 msgid "Hypertext (HTML)"
 msgstr "Hipertexto (HTML)"
 
-#: widgets.py:163
+#: widgets.py:171
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:168
+#: widgets.py:176
 msgid "Plain Text (TXT)"
 msgstr "Texto simple (TXT)"
 
-#: widgets.py:169
+#: widgets.py:177
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:174 widgets.py:175
+#: widgets.py:181
+msgid "Portable Document Format (PDF)"
+msgstr "Formato de Documento Portable (PDF)"
+
+#: widgets.py:182
+msgid "PDF"
+msgstr "PDF"
+
+#: widgets.py:187 widgets.py:188
 msgid "Export"
 msgstr "Exportar"
 
