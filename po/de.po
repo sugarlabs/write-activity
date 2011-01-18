@@ -18,14 +18,42 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # This file is distributed under the same license as the PACKAGE package.
 # Fabian Affolter <fab@fedoraproject.org>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: write\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-29 00:30-0400\n"
-"PO-Revision-Date: 2010-11-07 20:32+0200\n"
+"POT-Creation-Date: 2010-12-23 00:33-0500\n"
+"PO-Revision-Date: 2011-01-18 11:14+0200\n"
 "Last-Translator: Markus <m.slg@gmx.de>\n"
 "Language-Team: German <fedora-trans-de@redhat.com>\n"
 "Language: de\n"
@@ -40,39 +68,39 @@ msgstr ""
 msgid "Write"
 msgstr "Schreiben"
 
-#: AbiWordActivity.py:83
+#: AbiWordActivity.py:82
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: AbiWordActivity.py:89
+#: AbiWordActivity.py:88
 msgid "View"
 msgstr "Ansicht"
 
-#: AbiWordActivity.py:98
+#: AbiWordActivity.py:97
 msgid "Text"
 msgstr "Text"
 
-#: AbiWordActivity.py:104
+#: AbiWordActivity.py:103
 msgid "Paragraph"
 msgstr "Absatz"
 
-#: AbiWordActivity.py:110 toolbar.py:534
+#: AbiWordActivity.py:109 toolbar.py:549
 msgid "Bullet List"
 msgstr "Liste mit Punkten"
 
-#: AbiWordActivity.py:116 toolbar.py:217
+#: AbiWordActivity.py:115 toolbar.py:217
 msgid "Table"
 msgstr "Tabelle"
 
-#: AbiWordActivity.py:123
+#: AbiWordActivity.py:122
 msgid "Bold"
 msgstr "Fett"
 
-#: AbiWordActivity.py:131
+#: AbiWordActivity.py:130
 msgid "Italic"
 msgstr "Kursiv"
 
-#: AbiWordActivity.py:139
+#: AbiWordActivity.py:138
 msgid "Underline"
 msgstr "Unterstrichen"
 
@@ -112,79 +140,83 @@ msgstr "Spalte löschen"
 msgid "Insert Image"
 msgstr "Bild einfügen"
 
-#: toolbar.py:305
+#: toolbar.py:263
+msgid "Floating"
+msgstr "Gleitobjekt"
+
+#: toolbar.py:320
 msgid "Zoom Out"
 msgstr "Verkleinern"
 
-#: toolbar.py:312
+#: toolbar.py:327
 msgid "Zoom In"
 msgstr "Vergrößern"
 
-#: toolbar.py:329
+#: toolbar.py:344
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:341
+#: toolbar.py:356
 msgid "Page: "
 msgstr "Seite: "
 
-#: toolbar.py:447 toolbar.py:524
+#: toolbar.py:462 toolbar.py:539
 msgid "Normal"
 msgstr "Normaler Text"
 
-#: toolbar.py:458
+#: toolbar.py:473
 msgid "Heading 1"
 msgstr "Überschrift 1"
 
-#: toolbar.py:462
+#: toolbar.py:477
 msgid "Heading 2"
 msgstr "Überschrift 2"
 
-#: toolbar.py:466
+#: toolbar.py:481
 msgid "Heading 3"
 msgstr "Überschrift 3"
 
-#: toolbar.py:470
+#: toolbar.py:485
 msgid "Heading 4"
 msgstr "Überschrift 4"
 
-#: toolbar.py:474
+#: toolbar.py:489
 msgid "Block Text"
 msgstr "Eingerückt"
 
-#: toolbar.py:478
+#: toolbar.py:493
 msgid "Plain Text"
 msgstr "Unformatierter Text"
 
-#: toolbar.py:494
+#: toolbar.py:509
 msgid "Left justify"
 msgstr "Linksbündig"
 
-#: toolbar.py:497
+#: toolbar.py:512
 msgid "Center justify"
 msgstr "Zentriert"
 
-#: toolbar.py:500
+#: toolbar.py:515
 msgid "Right justify"
 msgstr "Rechtsbündig"
 
-#: toolbar.py:503
+#: toolbar.py:518
 msgid "Fill justify"
 msgstr "Blocksatz"
 
-#: toolbar.py:538
+#: toolbar.py:553
 msgid "Dashed List"
 msgstr "Liste mit Spiegelstrichen"
 
-#: toolbar.py:542
+#: toolbar.py:557
 msgid "Numbered List"
 msgstr "Nummerierte Liste"
 
-#: toolbar.py:546
+#: toolbar.py:561
 msgid "Lower Case List"
 msgstr "Nummerierung mit Kleinbuchstaben"
 
-#: toolbar.py:550
+#: toolbar.py:565
 msgid "Upper Case List"
 msgstr "Nummerierung mit Großbuchstaben"
 
