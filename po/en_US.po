@@ -6,12 +6,16 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-29 00:30-0400\n"
-"PO-Revision-Date: 2010-12-19 06:14+0200\n"
+"POT-Creation-Date: 2011-01-25 00:30-0500\n"
+"PO-Revision-Date: 2011-02-09 18:45+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: en_US\n"
@@ -25,39 +29,39 @@ msgstr ""
 msgid "Write"
 msgstr "Write"
 
-#: AbiWordActivity.py:83
+#: AbiWordActivity.py:82
 msgid "Edit"
 msgstr "Edit"
 
-#: AbiWordActivity.py:89
+#: AbiWordActivity.py:88
 msgid "View"
 msgstr "View"
 
-#: AbiWordActivity.py:98
+#: AbiWordActivity.py:97
 msgid "Text"
 msgstr "Text"
 
-#: AbiWordActivity.py:104
+#: AbiWordActivity.py:103
 msgid "Paragraph"
 msgstr "Paragraph"
 
-#: AbiWordActivity.py:110 toolbar.py:534
+#: AbiWordActivity.py:109 toolbar.py:549
 msgid "Bullet List"
 msgstr "Bullet List"
 
-#: AbiWordActivity.py:116 toolbar.py:217
+#: AbiWordActivity.py:115 toolbar.py:217
 msgid "Table"
 msgstr "Table"
 
-#: AbiWordActivity.py:123
+#: AbiWordActivity.py:122
 msgid "Bold"
 msgstr "Bold"
 
-#: AbiWordActivity.py:131
+#: AbiWordActivity.py:130
 msgid "Italic"
 msgstr "Italic"
 
-#: AbiWordActivity.py:139
+#: AbiWordActivity.py:138
 msgid "Underline"
 msgstr "Underline"
 
@@ -97,79 +101,83 @@ msgstr "Delete Column"
 msgid "Insert Image"
 msgstr "Insert Image"
 
-#: toolbar.py:305
+#: toolbar.py:263
+msgid "Floating"
+msgstr "Floating"
+
+#: toolbar.py:320
 msgid "Zoom Out"
 msgstr "Zoom Out"
 
-#: toolbar.py:312
+#: toolbar.py:327
 msgid "Zoom In"
 msgstr "Zoom In"
 
-#: toolbar.py:329
+#: toolbar.py:344
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:341
+#: toolbar.py:356
 msgid "Page: "
 msgstr "Page: "
 
-#: toolbar.py:447 toolbar.py:524
+#: toolbar.py:462 toolbar.py:539
 msgid "Normal"
 msgstr "Normal"
 
-#: toolbar.py:458
+#: toolbar.py:473
 msgid "Heading 1"
 msgstr "Heading 1"
 
-#: toolbar.py:462
+#: toolbar.py:477
 msgid "Heading 2"
 msgstr "Heading 2"
 
-#: toolbar.py:466
+#: toolbar.py:481
 msgid "Heading 3"
 msgstr "Heading 3"
 
-#: toolbar.py:470
+#: toolbar.py:485
 msgid "Heading 4"
 msgstr "Heading 4"
 
-#: toolbar.py:474
+#: toolbar.py:489
 msgid "Block Text"
 msgstr "Block Text"
 
-#: toolbar.py:478
+#: toolbar.py:493
 msgid "Plain Text"
 msgstr "Plain Text"
 
-#: toolbar.py:494
+#: toolbar.py:509
 msgid "Left justify"
 msgstr "Left justify"
 
-#: toolbar.py:497
+#: toolbar.py:512
 msgid "Center justify"
 msgstr "Center justify"
 
-#: toolbar.py:500
+#: toolbar.py:515
 msgid "Right justify"
 msgstr "Right justify"
 
-#: toolbar.py:503
+#: toolbar.py:518
 msgid "Fill justify"
 msgstr "Fill justify"
 
-#: toolbar.py:538
+#: toolbar.py:553
 msgid "Dashed List"
 msgstr "Dashed List"
 
-#: toolbar.py:542
+#: toolbar.py:557
 msgid "Numbered List"
 msgstr "Numbered List"
 
-#: toolbar.py:546
+#: toolbar.py:561
 msgid "Lower Case List"
 msgstr "Lower Case List"
 
-#: toolbar.py:550
+#: toolbar.py:565
 msgid "Upper Case List"
 msgstr "Upper Case List"
 
