@@ -2,11 +2,19 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 00:30-0400\n"
+"POT-Creation-Date: 2011-01-25 00:30-0500\n"
 "PO-Revision-Date: 2010-01-29 04:37+0200\n"
 "Last-Translator: korakurider <korakurider@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,11 +45,11 @@ msgstr "文字"
 msgid "Paragraph"
 msgstr "段落"
 
-#: AbiWordActivity.py:109 toolbar.py:490
+#: AbiWordActivity.py:109 toolbar.py:549
 msgid "Bullet List"
 msgstr "箇条書き（黒丸）"
 
-#: AbiWordActivity.py:115 toolbar.py:185
+#: AbiWordActivity.py:115 toolbar.py:217
 msgid "Table"
 msgstr "表"
 
@@ -57,143 +65,155 @@ msgstr "斜体"
 msgid "Underline"
 msgstr "下線"
 
-#: toolbar.py:89
+#: toolbar.py:94
 msgid "Search"
 msgstr "検索"
 
-#: toolbar.py:106
+#: toolbar.py:111
 msgid "Find previous"
 msgstr "前を探す"
 
-#: toolbar.py:112
+#: toolbar.py:117
 msgid "Find next"
 msgstr "次を探す"
 
-#: toolbar.py:185
+#: toolbar.py:217
 msgid "Cancel"
 msgstr "中止"
 
-#: toolbar.py:197
+#: toolbar.py:229
 msgid "Insert Row"
 msgstr "行を挿入"
 
-#: toolbar.py:203
+#: toolbar.py:235
 msgid "Delete Row"
 msgstr "行を削除"
 
-#: toolbar.py:209
+#: toolbar.py:241
 msgid "Insert Column"
 msgstr "列を挿入"
 
-#: toolbar.py:215
+#: toolbar.py:247
 msgid "Delete Column"
 msgstr "列を削除"
 
-#: toolbar.py:224
+#: toolbar.py:256
 msgid "Insert Image"
 msgstr "画像を挿入"
 
-#: toolbar.py:268
+#: toolbar.py:263
+msgid "Floating"
+msgstr ""
+
+#: toolbar.py:320
 msgid "Zoom Out"
 msgstr "縮小"
 
-#: toolbar.py:274
+#: toolbar.py:327
 msgid "Zoom In"
 msgstr "拡大"
 
-#: toolbar.py:291
+#: toolbar.py:344
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:303
+#: toolbar.py:356
 msgid "Page: "
 msgstr "ページ: "
 
-#: toolbar.py:405 toolbar.py:480
+#: toolbar.py:462 toolbar.py:539
 msgid "Normal"
 msgstr "標準"
 
-#: toolbar.py:416
+#: toolbar.py:473
 msgid "Heading 1"
 msgstr "見出し1"
 
-#: toolbar.py:420
+#: toolbar.py:477
 msgid "Heading 2"
 msgstr "見出し2"
 
-#: toolbar.py:424
+#: toolbar.py:481
 msgid "Heading 3"
 msgstr "見出し3"
 
-#: toolbar.py:428
+#: toolbar.py:485
 msgid "Heading 4"
 msgstr "見出し4"
 
-#: toolbar.py:432
+#: toolbar.py:489
 msgid "Block Text"
 msgstr "ゴシック体"
 
-#: toolbar.py:436
+#: toolbar.py:493
 msgid "Plain Text"
 msgstr "プレーンテキスト"
 
-#: toolbar.py:452
+#: toolbar.py:509
 msgid "Left justify"
 msgstr "左端揃え"
 
-#: toolbar.py:455
+#: toolbar.py:512
 msgid "Center justify"
 msgstr "中央揃え"
 
-#: toolbar.py:458
+#: toolbar.py:515
 msgid "Right justify"
 msgstr "右端揃え"
 
-#: toolbar.py:461
+#: toolbar.py:518
 msgid "Fill justify"
 msgstr "両端揃え"
 
-#: toolbar.py:494
+#: toolbar.py:553
 msgid "Dashed List"
 msgstr "箇条書き（ハイフン）"
 
-#: toolbar.py:498
+#: toolbar.py:557
 msgid "Numbered List"
 msgstr "箇条書き（番号）"
 
-#: toolbar.py:502
+#: toolbar.py:561
 msgid "Lower Case List"
 msgstr "箇条書き（英小文字）"
 
-#: toolbar.py:506
+#: toolbar.py:565
 msgid "Upper Case List"
 msgstr "箇条書き（英大文字）"
 
-#: widgets.py:157
+#: widgets.py:165
 msgid "Rich Text (RTF)"
 msgstr "リッチテキスト(RTF)"
 
-#: widgets.py:158
+#: widgets.py:166
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:162
+#: widgets.py:170
 msgid "Hypertext (HTML)"
 msgstr "ハイパーテキスト(HTML)"
 
-#: widgets.py:163
+#: widgets.py:171
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:168
+#: widgets.py:176
 msgid "Plain Text (TXT)"
 msgstr "プレーンテキスト(TXT)"
 
-#: widgets.py:169
+#: widgets.py:177
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:174 widgets.py:175
+#: widgets.py:181
+msgid "Portable Document Format (PDF)"
+msgstr ""
+
+#: widgets.py:182
+msgid "PDF"
+msgstr ""
+
+#: widgets.py:187 widgets.py:188
 msgid "Export"
 msgstr "書き出し"
 

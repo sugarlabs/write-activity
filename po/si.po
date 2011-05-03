@@ -2,183 +2,227 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2008-02-15 07:06-0500\n"
-"Last-Translator: Hayesha Somarathne <hayeshais@gmail.com>\n"
+"POT-Creation-Date: 2011-01-25 00:30-0500\n"
+"PO-Revision-Date: 2008-05-23 09:50-0400\n"
+"Last-Translator: Rashan Anushka <rashan.uoc@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 1.0.2\n"
+"X-Generator: Pootle 1.1.0rc2\n"
 
 #: activity/activity.info:2
 msgid "Write"
 msgstr "ලියන්න"
 
-#: AbiWordActivity.py:64
+#: AbiWordActivity.py:82
 msgid "Edit"
 msgstr "සංස්කරනය කරන්න"
 
-#: AbiWordActivity.py:67
-msgid "Text"
-msgstr ""
-
-#: AbiWordActivity.py:71
-msgid "Image"
-msgstr "පින්තූරය"
-
-#: AbiWordActivity.py:75 toolbar.py:515
-msgid "Table"
-msgstr "වගුව"
-
-#: AbiWordActivity.py:79
-msgid "Format"
-msgstr "සැකසීම"
-
-#: AbiWordActivity.py:83
+#: AbiWordActivity.py:88
 msgid "View"
 msgstr "දර්ශනය කරන්න"
 
-#: toolbar.py:51
-msgid "Rich Text (RTF)"
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr "පෙළ"
+
+#: AbiWordActivity.py:103
+msgid "Paragraph"
 msgstr ""
 
-#: toolbar.py:51
-msgid "RTF"
+#: AbiWordActivity.py:109 toolbar.py:549
+msgid "Bullet List"
+msgstr "බුලට් ලැයිස්තුව"
+
+#: AbiWordActivity.py:115 toolbar.py:217
+msgid "Table"
+msgstr "වගුව"
+
+#: AbiWordActivity.py:122
+msgid "Bold"
+msgstr "තද ඉරි"
+
+#: AbiWordActivity.py:130
+msgid "Italic"
+msgstr "ඉතාලියානු"
+
+#: AbiWordActivity.py:138
+msgid "Underline"
+msgstr "යටි ඉරක්"
+
+#: toolbar.py:94
+msgid "Search"
 msgstr ""
 
-#: toolbar.py:52
-msgid "Hypertext (HTML)"
-msgstr ""
-
-#: toolbar.py:52
-msgid "HTML"
-msgstr ""
-
-#: toolbar.py:53
-msgid "Plain Text (TXT)"
-msgstr ""
-
-#: toolbar.py:53
-msgid "TXT"
-msgstr ""
-
-#: toolbar.py:128
+#: toolbar.py:111
 msgid "Find previous"
 msgstr "පෙර එක සොයන්න"
 
-#: toolbar.py:134
+#: toolbar.py:117
 msgid "Find next"
 msgstr "පසු එක සොයන්න"
 
-#: toolbar.py:244
-msgid "Bold"
-msgstr ""
-
-#: toolbar.py:251
-msgid "Italic"
-msgstr ""
-
-#: toolbar.py:258
-msgid "Underline"
-msgstr ""
-
-#: toolbar.py:481
-msgid "Insert Image"
-msgstr "පින්තූරයක් ඇතුල් කරන්න"
-
-#: toolbar.py:489
-msgid "Choose image"
-msgstr "පින්තූරයක් තෝරන්න"
-
-#: toolbar.py:515
+#: toolbar.py:217
 msgid "Cancel"
 msgstr "අවලංගු කරන්න"
 
-#: toolbar.py:524
+#: toolbar.py:229
 msgid "Insert Row"
 msgstr "පේලියක් ඇතුල් කරන්න"
 
-#: toolbar.py:530
+#: toolbar.py:235
 msgid "Delete Row"
 msgstr "පේලිය මකා දමන්න හෝ පේලිය ඉවත් කරන්න"
 
-#: toolbar.py:536
+#: toolbar.py:241
 msgid "Insert Column"
 msgstr "කොලමක් ඇතුල් කරන්න"
 
-#: toolbar.py:542
+#: toolbar.py:247
 msgid "Delete Column"
 msgstr "කොලම ඉවත් කරන්න හෝ කොලම මකා දමන්න "
 
-#: toolbar.py:580
-msgid "Style: "
+#: toolbar.py:256
+msgid "Insert Image"
+msgstr "පින්තූරයක් ඇතුල් කරන්න"
+
+#: toolbar.py:263
+msgid "Floating"
 msgstr ""
 
-#: toolbar.py:590
-msgid "Heading 1"
-msgstr ""
-
-#: toolbar.py:591
-msgid "Heading 2"
-msgstr ""
-
-#: toolbar.py:592
-msgid "Heading 3"
-msgstr ""
-
-#: toolbar.py:593
-msgid "Heading 4"
-msgstr ""
-
-#: toolbar.py:594
-msgid "Bullet List"
-msgstr ""
-
-#: toolbar.py:595
-msgid "Dashed List"
-msgstr ""
-
-#: toolbar.py:596
-msgid "Numbered List"
-msgstr ""
-
-#: toolbar.py:597
-msgid "Lower Case List"
-msgstr ""
-
-#: toolbar.py:598
-msgid "Upper Case List"
-msgstr ""
-
-#: toolbar.py:599
-msgid "Block Text"
-msgstr ""
-
-#: toolbar.py:600
-msgid "Normal"
-msgstr "සාමාන්‍ය"
-
-#: toolbar.py:601
-msgid "Plain Text"
-msgstr ""
-
-#: toolbar.py:656
+#: toolbar.py:320
 msgid "Zoom Out"
 msgstr "කුඩා කරන්න"
 
-#: toolbar.py:662
+#: toolbar.py:327
 msgid "Zoom In"
 msgstr "විශාල කරන්න"
 
-#: toolbar.py:678
+#: toolbar.py:344
 msgid "%"
-msgstr ""
+msgstr "%"
 
-#: toolbar.py:690
+#: toolbar.py:356
 msgid "Page: "
 msgstr "පිටුව :"
+
+#: toolbar.py:462 toolbar.py:539
+msgid "Normal"
+msgstr "සාමාන්‍ය"
+
+#: toolbar.py:473
+msgid "Heading 1"
+msgstr "සිරැසිය 1"
+
+#: toolbar.py:477
+msgid "Heading 2"
+msgstr "සිරැසිය 2"
+
+#: toolbar.py:481
+msgid "Heading 3"
+msgstr "සිරැසිය 3"
+
+#: toolbar.py:485
+msgid "Heading 4"
+msgstr "සිරැසිය 4"
+
+#: toolbar.py:489
+msgid "Block Text"
+msgstr "ඒකක පෙළ"
+
+#: toolbar.py:493
+msgid "Plain Text"
+msgstr "සරල පෙළ"
+
+#: toolbar.py:509
+msgid "Left justify"
+msgstr ""
+
+#: toolbar.py:512
+msgid "Center justify"
+msgstr ""
+
+#: toolbar.py:515
+msgid "Right justify"
+msgstr ""
+
+#: toolbar.py:518
+msgid "Fill justify"
+msgstr ""
+
+#: toolbar.py:553
+msgid "Dashed List"
+msgstr "ඉරි ලැයිස්තුව"
+
+#: toolbar.py:557
+msgid "Numbered List"
+msgstr "අංකිත ලැයිස්තුව"
+
+#: toolbar.py:561
+msgid "Lower Case List"
+msgstr "කුඩකුරු ලැයිස්තුව"
+
+#: toolbar.py:565
+msgid "Upper Case List"
+msgstr "මහකුරු ලැයිස්තුව"
+
+#: widgets.py:165
+msgid "Rich Text (RTF)"
+msgstr "සරු පෙළ (RTF)"
+
+#: widgets.py:166
+msgid "RTF"
+msgstr "RTF"
+
+#: widgets.py:170
+msgid "Hypertext (HTML)"
+msgstr "අදිපෙළ (HTML)"
+
+#: widgets.py:171
+msgid "HTML"
+msgstr "HTML"
+
+#: widgets.py:176
+msgid "Plain Text (TXT)"
+msgstr "සරල පෙළ (TXT)"
+
+#: widgets.py:177
+msgid "TXT"
+msgstr "TXT"
+
+#: widgets.py:181
+msgid "Portable Document Format (PDF)"
+msgstr ""
+
+#: widgets.py:182
+msgid "PDF"
+msgstr ""
+
+#: widgets.py:187 widgets.py:188
+msgid "Export"
+msgstr ""
+
+#~ msgid "Image"
+#~ msgstr "පින්තූරය"
+
+#~ msgid "Format"
+#~ msgstr "සැකසීම"
+
+#~ msgid "Choose image"
+#~ msgstr "පින්තූරයක් තෝරන්න"
+
+#~ msgid "Style: "
+#~ msgstr "විලාසය: "

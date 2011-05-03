@@ -2,185 +2,229 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2008-07-31 11:58+0200\n"
-"Last-Translator: GASHAYIJA Guillaume <gashayija2002@yahoo.com>\n"
+"POT-Creation-Date: 2011-01-25 00:30-0500\n"
+"PO-Revision-Date: 2011-04-05 22:17+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: rw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 1.1.0rc2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1) ;\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: activity/activity.info:2
 msgid "Write"
 msgstr "Andika"
 
-#: AbiWordActivity.py:64
+#: AbiWordActivity.py:82
 msgid "Edit"
 msgstr "Hindura"
 
-#: AbiWordActivity.py:67
-msgid "Text"
-msgstr "Umwandiko"
-
-#: AbiWordActivity.py:71
-msgid "Image"
-msgstr "Ishusho"
-
-#: AbiWordActivity.py:75
-#: toolbar.py:515
-msgid "Table"
-msgstr "Imbonerahamwe"
-
-#: AbiWordActivity.py:79
-msgid "Format"
-msgstr "Gusanisha"
-
-#: AbiWordActivity.py:83
+#: AbiWordActivity.py:88
 msgid "View"
 msgstr "Irebero"
 
-#: toolbar.py:51
-msgid "Rich Text (RTF)"
-msgstr "Umwandiko ukungahaye (RTF)"
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr "Umwandiko"
 
-#: toolbar.py:51
-msgid "RTF"
-msgstr "RTF"
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr ""
 
-#: toolbar.py:52
-msgid "Hypertext (HTML)"
-msgstr "UImwandiko mugali"
-
-#: toolbar.py:52
-msgid "HTML"
-msgstr "HTML"
-
-#: toolbar.py:53
-msgid "Plain Text (TXT)"
-msgstr "Plain Umwandiko (TXT)"
-
-#: toolbar.py:53
-msgid "TXT"
-msgstr "TXT"
-
-#: toolbar.py:128
-msgid "Find previous"
-msgstr "Shaka ibibanziriza"
-
-#: toolbar.py:134
-msgid "Find next"
-msgstr "Shaka ibikurikira"
-
-#: toolbar.py:244
-msgid "Bold"
-msgstr "bigaragare cyane"
-
-#: toolbar.py:251
-msgid "Italic"
-msgstr "Ikintu kiberamye"
-
-#: toolbar.py:258
-msgid "Underline"
-msgstr "Ca umurongo"
-
-#: toolbar.py:481
-msgid "Insert Image"
-msgstr "Shyiramo ishusho"
-
-#: toolbar.py:489
-msgid "Choose image"
-msgstr "Toranya Ishusho"
-
-#: toolbar.py:515
-msgid "Cancel"
-msgstr "Gukuraho"
-
-#: toolbar.py:524
-msgid "Insert Row"
-msgstr "Shyiramo umurongo utambtse"
-
-#: toolbar.py:530
-msgid "Delete Row"
-msgstr "Siba umurongo utambitse"
-
-#: toolbar.py:536
-msgid "Insert Column"
-msgstr "Shyiramo umurongo uhagaze"
-
-#: toolbar.py:542
-msgid "Delete Column"
-msgstr "Siba umurongo uhagaze"
-
-#: toolbar.py:580
-msgid "Style: "
-msgstr "Siitile"
-
-#: toolbar.py:590
-msgid "Heading 1"
-msgstr "Umutwe w`amagambo 1"
-
-#: toolbar.py:591
-msgid "Heading 2"
-msgstr "Umutwe w`amagambo 2"
-
-#: toolbar.py:592
-msgid "Heading 3"
-msgstr "Umutwe w`amagambo 3"
-
-#: toolbar.py:593
-msgid "Heading 4"
-msgstr "Umutwe w`amagambo 4"
-
-#: toolbar.py:594
+#: AbiWordActivity.py:109 toolbar.py:549
 msgid "Bullet List"
 msgstr "Utuimenyetso tw`urutonde"
 
-#: toolbar.py:595
-msgid "Dashed List"
-msgstr "Dashed List"
+#: AbiWordActivity.py:115 toolbar.py:217
+msgid "Table"
+msgstr "Imbonerahamwe"
 
-#: toolbar.py:596
-msgid "Numbered List"
-msgstr "Urutonde"
+#: AbiWordActivity.py:122
+msgid "Bold"
+msgstr "bigaragare cyane"
 
-#: toolbar.py:597
-msgid "Lower Case List"
-msgstr "Urutonde rwanditswe mu nyuguti ntoya"
+#: AbiWordActivity.py:130
+msgid "Italic"
+msgstr "Ikintu kiberamye"
 
-#: toolbar.py:598
-msgid "Upper Case List"
-msgstr "Urutonde rwanditswe munyuguti nkuru"
+#: AbiWordActivity.py:138
+msgid "Underline"
+msgstr "Ca umurongo"
 
-#: toolbar.py:599
-msgid "Block Text"
-msgstr "Block Umwandiko"
+#: toolbar.py:94
+msgid "Search"
+msgstr "Shaka"
 
-#: toolbar.py:600
-msgid "Normal"
-msgstr "Birasanzwe"
+#: toolbar.py:111
+msgid "Find previous"
+msgstr "Shaka ibibanziriza"
 
-#: toolbar.py:601
-msgid "Plain Text"
-msgstr "Plain Umandiko"
+#: toolbar.py:117
+msgid "Find next"
+msgstr "Shaka ibikurikira"
 
-#: toolbar.py:656
+#: toolbar.py:217
+msgid "Cancel"
+msgstr "Gukuraho"
+
+#: toolbar.py:229
+msgid "Insert Row"
+msgstr "Shyiramo umurongo utambtse"
+
+#: toolbar.py:235
+msgid "Delete Row"
+msgstr "Siba umurongo utambitse"
+
+#: toolbar.py:241
+msgid "Insert Column"
+msgstr "Shyiramo umurongo uhagaze"
+
+#: toolbar.py:247
+msgid "Delete Column"
+msgstr "Siba umurongo uhagaze"
+
+#: toolbar.py:256
+msgid "Insert Image"
+msgstr "Shyiramo ishusho"
+
+#: toolbar.py:263
+msgid "Floating"
+msgstr ""
+
+#: toolbar.py:320
 msgid "Zoom Out"
 msgstr "Kugabanya"
 
-#: toolbar.py:662
+#: toolbar.py:327
 msgid "Zoom In"
 msgstr "Kwagura"
 
-#: toolbar.py:678
+#: toolbar.py:344
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:690
+#: toolbar.py:356
 msgid "Page: "
-msgstr "Ipaje"
+msgstr "Ipaje: "
 
+#: toolbar.py:462 toolbar.py:539
+msgid "Normal"
+msgstr "Birasanzwe"
+
+#: toolbar.py:473
+msgid "Heading 1"
+msgstr "Umutwe w`amagambo 1"
+
+#: toolbar.py:477
+msgid "Heading 2"
+msgstr "Umutwe w`amagambo 2"
+
+#: toolbar.py:481
+msgid "Heading 3"
+msgstr "Umutwe w`amagambo 3"
+
+#: toolbar.py:485
+msgid "Heading 4"
+msgstr "Umutwe w`amagambo 4"
+
+#: toolbar.py:489
+msgid "Block Text"
+msgstr "Block Umwandiko"
+
+#: toolbar.py:493
+msgid "Plain Text"
+msgstr "Plain Umandiko"
+
+#: toolbar.py:509
+msgid "Left justify"
+msgstr ""
+
+#: toolbar.py:512
+msgid "Center justify"
+msgstr ""
+
+#: toolbar.py:515
+msgid "Right justify"
+msgstr ""
+
+#: toolbar.py:518
+msgid "Fill justify"
+msgstr ""
+
+#: toolbar.py:553
+msgid "Dashed List"
+msgstr "Dashed List"
+
+#: toolbar.py:557
+msgid "Numbered List"
+msgstr "Urutonde"
+
+#: toolbar.py:561
+msgid "Lower Case List"
+msgstr "Urutonde rwanditswe mu nyuguti ntoya"
+
+#: toolbar.py:565
+msgid "Upper Case List"
+msgstr "Urutonde rwanditswe munyuguti nkuru"
+
+#: widgets.py:165
+msgid "Rich Text (RTF)"
+msgstr "Umwandiko ukungahaye (RTF)"
+
+#: widgets.py:166
+msgid "RTF"
+msgstr "RTF"
+
+#: widgets.py:170
+msgid "Hypertext (HTML)"
+msgstr "UImwandiko mugali"
+
+#: widgets.py:171
+msgid "HTML"
+msgstr "HTML"
+
+#: widgets.py:176
+msgid "Plain Text (TXT)"
+msgstr "Plain Umwandiko (TXT)"
+
+#: widgets.py:177
+msgid "TXT"
+msgstr "TXT"
+
+#: widgets.py:181
+msgid "Portable Document Format (PDF)"
+msgstr ""
+
+#: widgets.py:182
+msgid "PDF"
+msgstr "PDF"
+
+#: widgets.py:187 widgets.py:188
+msgid "Export"
+msgstr ""
+
+#~ msgid "Image"
+#~ msgstr "Ishusho"
+
+#~ msgid "Format"
+#~ msgstr "Gusanisha"
+
+#~ msgid "Choose image"
+#~ msgstr "Toranya Ishusho"
+
+#~ msgid "Style: "
+#~ msgstr "Siitile"

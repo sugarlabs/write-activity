@@ -1,3 +1,15 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # translation of write.po to Hindi
 # G Karunakar <karunakar@indlinux.org>, 2007.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
@@ -6,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: write\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 00:30-0400\n"
+"POT-Creation-Date: 2011-01-25 00:30-0500\n"
 "PO-Revision-Date: 2010-03-22 22:50+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: Hindi <indlinux-hindi@lists.sourceforge.net>\n"
@@ -37,11 +49,11 @@ msgstr "पाठ"
 msgid "Paragraph"
 msgstr "पैराग्राफ"
 
-#: AbiWordActivity.py:109 toolbar.py:490
+#: AbiWordActivity.py:109 toolbar.py:549
 msgid "Bullet List"
 msgstr "बिंदीदार सूची"
 
-#: AbiWordActivity.py:115 toolbar.py:185
+#: AbiWordActivity.py:115 toolbar.py:217
 msgid "Table"
 msgstr "टेबल"
 
@@ -57,143 +69,155 @@ msgstr "ईटैलिक"
 msgid "Underline"
 msgstr "रेखांकित"
 
-#: toolbar.py:89
+#: toolbar.py:94
 msgid "Search"
 msgstr "ढूंढें"
 
-#: toolbar.py:106
+#: toolbar.py:111
 msgid "Find previous"
 msgstr "पिछला ढूँढो"
 
-#: toolbar.py:112
+#: toolbar.py:117
 msgid "Find next"
 msgstr "अगला ढूँढो"
 
-#: toolbar.py:185
+#: toolbar.py:217
 msgid "Cancel"
 msgstr "रद्द करें"
 
-#: toolbar.py:197
+#: toolbar.py:229
 msgid "Insert Row"
 msgstr "पंक्ति घुसाएँ"
 
-#: toolbar.py:203
+#: toolbar.py:235
 msgid "Delete Row"
 msgstr "पंक्ति मिटाएँ"
 
-#: toolbar.py:209
+#: toolbar.py:241
 msgid "Insert Column"
 msgstr "स्तम्भ चुनें"
 
-#: toolbar.py:215
+#: toolbar.py:247
 msgid "Delete Column"
 msgstr "स्तम्भ मिटाएँ"
 
-#: toolbar.py:224
+#: toolbar.py:256
 msgid "Insert Image"
 msgstr "छवि डालो"
 
-#: toolbar.py:268
+#: toolbar.py:263
+msgid "Floating"
+msgstr ""
+
+#: toolbar.py:320
 msgid "Zoom Out"
 msgstr "ज़ूम आउट"
 
-#: toolbar.py:274
+#: toolbar.py:327
 msgid "Zoom In"
 msgstr "ज़ूम इन"
 
-#: toolbar.py:291
+#: toolbar.py:344
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:303
+#: toolbar.py:356
 msgid "Page: "
 msgstr "पृष्ठ: "
 
-#: toolbar.py:405 toolbar.py:480
+#: toolbar.py:462 toolbar.py:539
 msgid "Normal"
 msgstr "सामान्य"
 
-#: toolbar.py:416
+#: toolbar.py:473
 msgid "Heading 1"
 msgstr "शीर्षक १"
 
-#: toolbar.py:420
+#: toolbar.py:477
 msgid "Heading 2"
 msgstr "शीर्षक २"
 
-#: toolbar.py:424
+#: toolbar.py:481
 msgid "Heading 3"
 msgstr "शीर्षक ३"
 
-#: toolbar.py:428
+#: toolbar.py:485
 msgid "Heading 4"
 msgstr "शीर्षक ४"
 
-#: toolbar.py:432
+#: toolbar.py:489
 msgid "Block Text"
 msgstr "गाढा पाठ"
 
-#: toolbar.py:436
+#: toolbar.py:493
 msgid "Plain Text"
 msgstr "सादा पाठ"
 
-#: toolbar.py:452
+#: toolbar.py:509
 msgid "Left justify"
 msgstr "बाएँ जमाएँ"
 
-#: toolbar.py:455
+#: toolbar.py:512
 msgid "Center justify"
 msgstr "बीचों-बीच जमाएँ"
 
-#: toolbar.py:458
+#: toolbar.py:515
 msgid "Right justify"
 msgstr "दाएँ जमाएँ"
 
-#: toolbar.py:461
+#: toolbar.py:518
 msgid "Fill justify"
 msgstr "मध्य में व्यवस्थित करें"
 
-#: toolbar.py:494
+#: toolbar.py:553
 msgid "Dashed List"
 msgstr "डेश युक्त सूची"
 
-#: toolbar.py:498
+#: toolbar.py:557
 msgid "Numbered List"
 msgstr "नंबर वाली सूची"
 
-#: toolbar.py:502
+#: toolbar.py:561
 msgid "Lower Case List"
 msgstr "लोअर केस सूची"
 
-#: toolbar.py:506
+#: toolbar.py:565
 msgid "Upper Case List"
 msgstr "अपर केस सूची"
 
-#: widgets.py:157
+#: widgets.py:165
 msgid "Rich Text (RTF)"
 msgstr "रिच पाठ (RTF)"
 
-#: widgets.py:158
+#: widgets.py:166
 msgid "RTF"
 msgstr "आरटीएफ़"
 
-#: widgets.py:162
+#: widgets.py:170
 msgid "Hypertext (HTML)"
 msgstr "हायपरटैक्स्ट (एचटीएमएल)"
 
-#: widgets.py:163
+#: widgets.py:171
 msgid "HTML"
 msgstr "एचटीएमएल"
 
-#: widgets.py:168
+#: widgets.py:176
 msgid "Plain Text (TXT)"
 msgstr "सादा पाठ (TXT)"
 
-#: widgets.py:169
+#: widgets.py:177
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:174 widgets.py:175
+#: widgets.py:181
+msgid "Portable Document Format (PDF)"
+msgstr ""
+
+#: widgets.py:182
+msgid "PDF"
+msgstr ""
+
+#: widgets.py:187 widgets.py:188
 msgid "Export"
 msgstr "निर्यात"
 

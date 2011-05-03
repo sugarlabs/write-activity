@@ -2,188 +2,233 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2007-12-18 04:33+0000\n"
-"Last-Translator: Siamak Farsaii <sfarsaii@gmail.com>\n"
+"POT-Creation-Date: 2011-01-25 00:30-0500\n"
+"PO-Revision-Date: 2011-03-30 04:56+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 1.0.2\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: activity/activity.info:2
 msgid "Write"
 msgstr "نوشتن"
 
-#: AbiWordActivity.py:64
+#: AbiWordActivity.py:82
 msgid "Edit"
 msgstr "ویراستن"
 
-#: AbiWordActivity.py:67
-msgid "Text"
-msgstr "متن"
-
-#: AbiWordActivity.py:71
-msgid "Image"
-msgstr "تصویر"
-
-#: AbiWordActivity.py:75 toolbar.py:515
-msgid "Table"
-msgstr "جدول"
-
-#: AbiWordActivity.py:79
-msgid "Format"
-msgstr "قالب‌بندی"
-
-#: AbiWordActivity.py:83
+#: AbiWordActivity.py:88
 msgid "View"
 msgstr "نمایش"
 
-#: toolbar.py:51
-#, fuzzy
-msgid "Rich Text (RTF)"
-msgstr "متن غنی (RTF)"
-
-#: toolbar.py:51
-#, fuzzy
-msgid "RTF"
-msgstr "فرم غنی(RTF)"
-
-#: toolbar.py:52
-msgid "Hypertext (HTML)"
-msgstr "فرامتن (HTML)"
-
-#: toolbar.py:52
-msgid "HTML"
-msgstr "HTML"
-
-#: toolbar.py:53
-msgid "Plain Text (TXT)"
-msgstr "متن ساده (TXT)"
-
-#: toolbar.py:53
-msgid "TXT"
+#: AbiWordActivity.py:97
+msgid "Text"
 msgstr "متن"
 
-#: toolbar.py:128
-msgid "Find previous"
-msgstr "قبلی را دریاب"
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr ""
 
-#: toolbar.py:134
-msgid "Find next"
-msgstr "بعدی را دریاب"
-
-#: toolbar.py:244
-msgid "Bold"
-msgstr "ضخیم"
-
-#: toolbar.py:251
-msgid "Italic"
-msgstr "مورب"
-
-#: toolbar.py:258
-msgid "Underline"
-msgstr "زیرخط"
-
-#: toolbar.py:481
-msgid "Insert Image"
-msgstr "درج تصویر"
-
-#: toolbar.py:489
-msgid "Choose image"
-msgstr "انتخاب تصویر"
-
-#: toolbar.py:515
-msgid "Cancel"
-msgstr "لغو"
-
-#: toolbar.py:524
-msgid "Insert Row"
-msgstr "درج سطر"
-
-#: toolbar.py:530
-msgid "Delete Row"
-msgstr "حذف سطر"
-
-#: toolbar.py:536
-msgid "Insert Column"
-msgstr "درج ستون"
-
-#: toolbar.py:542
-msgid "Delete Column"
-msgstr "حذف ستون"
-
-#: toolbar.py:580
-msgid "Style: "
-msgstr "سبک:ـ"
-
-#: toolbar.py:590
-msgid "Heading 1"
-msgstr "سرفصل ۱"
-
-#: toolbar.py:591
-msgid "Heading 2"
-msgstr "سرفصل ۲"
-
-#: toolbar.py:592
-msgid "Heading 3"
-msgstr "سرفصل ۳"
-
-#: toolbar.py:593
-msgid "Heading 4"
-msgstr "سرفصل ۴"
-
-#: toolbar.py:594
+#: AbiWordActivity.py:109 toolbar.py:549
 msgid "Bullet List"
 msgstr "فهرست گلوله"
 
-#: toolbar.py:595
+#: AbiWordActivity.py:115 toolbar.py:217
+msgid "Table"
+msgstr "جدول"
+
+#: AbiWordActivity.py:122
+msgid "Bold"
+msgstr "ضخیم"
+
+#: AbiWordActivity.py:130
+msgid "Italic"
+msgstr "مورب"
+
+#: AbiWordActivity.py:138
+msgid "Underline"
+msgstr "زیرخط"
+
+#: toolbar.py:94
+msgid "Search"
+msgstr ""
+
+#: toolbar.py:111
+msgid "Find previous"
+msgstr "قبلی را دریاب"
+
+#: toolbar.py:117
+msgid "Find next"
+msgstr "بعدی را دریاب"
+
+#: toolbar.py:217
+msgid "Cancel"
+msgstr "لغو"
+
+#: toolbar.py:229
+msgid "Insert Row"
+msgstr "درج سطر"
+
+#: toolbar.py:235
+msgid "Delete Row"
+msgstr "حذف سطر"
+
+#: toolbar.py:241
+msgid "Insert Column"
+msgstr "درج ستون"
+
+#: toolbar.py:247
+msgid "Delete Column"
+msgstr "حذف ستون"
+
+#: toolbar.py:256
+msgid "Insert Image"
+msgstr "درج تصویر"
+
+#: toolbar.py:263
+msgid "Floating"
+msgstr ""
+
+#: toolbar.py:320
+msgid "Zoom Out"
+msgstr "کوچکنمایی"
+
+#: toolbar.py:327
+msgid "Zoom In"
+msgstr "بزرگنمایی"
+
+#: toolbar.py:344
+msgid "%"
+msgstr "٪"
+
+#: toolbar.py:356
+msgid "Page: "
+msgstr "صفحه:ـ"
+
+#: toolbar.py:462 toolbar.py:539
+msgid "Normal"
+msgstr "عادی"
+
+#: toolbar.py:473
+msgid "Heading 1"
+msgstr "سرفصل ۱"
+
+#: toolbar.py:477
+msgid "Heading 2"
+msgstr "سرفصل ۲"
+
+#: toolbar.py:481
+msgid "Heading 3"
+msgstr "سرفصل ۳"
+
+#: toolbar.py:485
+msgid "Heading 4"
+msgstr "سرفصل ۴"
+
+#: toolbar.py:489
+msgid "Block Text"
+msgstr "بلوک متن"
+
+#: toolbar.py:493
+msgid "Plain Text"
+msgstr "متن ساده"
+
+#: toolbar.py:509
+msgid "Left justify"
+msgstr ""
+
+#: toolbar.py:512
+msgid "Center justify"
+msgstr ""
+
+#: toolbar.py:515
+msgid "Right justify"
+msgstr ""
+
+#: toolbar.py:518
+msgid "Fill justify"
+msgstr ""
+
+#: toolbar.py:553
 msgid "Dashed List"
 msgstr "فهرست خط‌تیره"
 
-#: toolbar.py:596
+#: toolbar.py:557
 msgid "Numbered List"
 msgstr "فهرست شماره‌دار"
 
-#: toolbar.py:597
+#: toolbar.py:561
 #, fuzzy
 msgid "Lower Case List"
 msgstr "فهرست لغت کوچک"
 
-#: toolbar.py:598
+#: toolbar.py:565
 #, fuzzy
 msgid "Upper Case List"
 msgstr "فهرست لغت بزرگ"
 
-#: toolbar.py:599
-msgid "Block Text"
-msgstr "بلوک متن"
+#: widgets.py:165
+#, fuzzy
+msgid "Rich Text (RTF)"
+msgstr "متن غنی (RTF)"
 
-#: toolbar.py:600
-msgid "Normal"
-msgstr "عادی"
+#: widgets.py:166
+#, fuzzy
+msgid "RTF"
+msgstr "فرم غنی(RTF)"
 
-#: toolbar.py:601
-msgid "Plain Text"
-msgstr "متن ساده"
+#: widgets.py:170
+msgid "Hypertext (HTML)"
+msgstr "فرامتن (HTML)"
 
-#: toolbar.py:656
-msgid "Zoom Out"
-msgstr "کوچکنمایی"
+#: widgets.py:171
+msgid "HTML"
+msgstr "HTML"
 
-#: toolbar.py:662
-msgid "Zoom In"
-msgstr "بزرگنمایی"
+#: widgets.py:176
+msgid "Plain Text (TXT)"
+msgstr "متن ساده (TXT)"
 
-#: toolbar.py:678
-msgid "%"
-msgstr "٪"
+#: widgets.py:177
+msgid "TXT"
+msgstr "متن"
 
-#: toolbar.py:690
-msgid "Page: "
-msgstr "صفحه:ـ"
+#: widgets.py:181
+msgid "Portable Document Format (PDF)"
+msgstr ""
+
+#: widgets.py:182
+msgid "PDF"
+msgstr ""
+
+#: widgets.py:187 widgets.py:188
+msgid "Export"
+msgstr ""
+
+#~ msgid "Image"
+#~ msgstr "تصویر"
+
+#~ msgid "Format"
+#~ msgstr "قالب‌بندی"
+
+#~ msgid "Choose image"
+#~ msgstr "انتخاب تصویر"
+
+#~ msgid "Style: "
+#~ msgstr "سبک:ـ"

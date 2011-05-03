@@ -2,183 +2,229 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2007-11-28 20:13+0000\n"
-"Last-Translator: Seonho Kim <kayseon@gmail.com>\n"
+"POT-Creation-Date: 2011-01-25 00:30-0500\n"
+"PO-Revision-Date: 2009-05-13 12:51-0400\n"
+"Last-Translator: Donghee Park <i4u_4ever@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 1.0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 1.2.1\n"
 
 #: activity/activity.info:2
 msgid "Write"
 msgstr "쓰기"
 
-#: AbiWordActivity.py:64
+#: AbiWordActivity.py:82
 msgid "Edit"
-msgstr "편집하기"
+msgstr "편집"
 
-#: AbiWordActivity.py:67
-msgid "Text"
-msgstr "문자"
-
-#: AbiWordActivity.py:71
-msgid "Image"
-msgstr "이미지"
-
-#: AbiWordActivity.py:75 toolbar.py:515
-msgid "Table"
-msgstr "테이블"
-
-#: AbiWordActivity.py:79
-msgid "Format"
-msgstr ""
-
-#: AbiWordActivity.py:83
+#: AbiWordActivity.py:88
 msgid "View"
 msgstr "보기"
 
-#: toolbar.py:51
-msgid "Rich Text (RTF)"
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr "문자"
+
+#: AbiWordActivity.py:103
+msgid "Paragraph"
 msgstr ""
 
-#: toolbar.py:51
-msgid "RTF"
-msgstr ""
+#: AbiWordActivity.py:109 toolbar.py:549
+msgid "Bullet List"
+msgstr "총알 리스트"
 
-#: toolbar.py:52
-msgid "Hypertext (HTML)"
-msgstr ""
+#: AbiWordActivity.py:115 toolbar.py:217
+msgid "Table"
+msgstr "표"
 
-#: toolbar.py:52
-msgid "HTML"
-msgstr ""
-
-#: toolbar.py:53
-msgid "Plain Text (TXT)"
-msgstr ""
-
-#: toolbar.py:53
-msgid "TXT"
-msgstr ""
-
-#: toolbar.py:128
-msgid "Find previous"
-msgstr ""
-
-#: toolbar.py:134
-msgid "Find next"
-msgstr ""
-
-#: toolbar.py:244
+#: AbiWordActivity.py:122
 msgid "Bold"
-msgstr ""
+msgstr "굵게"
 
-#: toolbar.py:251
+#: AbiWordActivity.py:130
 msgid "Italic"
+msgstr "이탤릭"
+
+#: AbiWordActivity.py:138
+msgid "Underline"
+msgstr "밑줄"
+
+#: toolbar.py:94
+msgid "Search"
 msgstr ""
 
-#: toolbar.py:258
-msgid "Underline"
+#: toolbar.py:111
+msgid "Find previous"
+msgstr "이전 찾기"
+
+#: toolbar.py:117
+msgid "Find next"
+msgstr "다음 찾기"
+
+#: toolbar.py:217
+msgid "Cancel"
+msgstr "취소"
+
+#: toolbar.py:229
+msgid "Insert Row"
+msgstr "줄 삽입"
+
+#: toolbar.py:235
+msgid "Delete Row"
+msgstr "줄 삭제"
+
+#: toolbar.py:241
+msgid "Insert Column"
+msgstr "컬럼 삽입"
+
+#: toolbar.py:247
+msgid "Delete Column"
+msgstr "컬럼 삭제"
+
+#: toolbar.py:256
+msgid "Insert Image"
+msgstr "이미지 삽입"
+
+#: toolbar.py:263
+msgid "Floating"
 msgstr ""
+
+#: toolbar.py:320
+msgid "Zoom Out"
+msgstr "축소"
+
+#: toolbar.py:327
+msgid "Zoom In"
+msgstr "확대"
+
+#: toolbar.py:344
+msgid "%"
+msgstr "%"
+
+#: toolbar.py:356
+msgid "Page: "
+msgstr "페이지: "
+
+#: toolbar.py:462 toolbar.py:539
+msgid "Normal"
+msgstr "보통"
+
+#: toolbar.py:473
+msgid "Heading 1"
+msgstr "제목 1"
+
+#: toolbar.py:477
+msgid "Heading 2"
+msgstr "제목 2"
 
 #: toolbar.py:481
-msgid "Insert Image"
-msgstr ""
+msgid "Heading 3"
+msgstr "제목 3"
+
+#: toolbar.py:485
+msgid "Heading 4"
+msgstr "제목 4"
 
 #: toolbar.py:489
-msgid "Choose image"
+msgid "Block Text"
+msgstr "블록 문자"
+
+#: toolbar.py:493
+msgid "Plain Text"
+msgstr "일반 문자"
+
+#: toolbar.py:509
+msgid "Left justify"
+msgstr ""
+
+#: toolbar.py:512
+msgid "Center justify"
 msgstr ""
 
 #: toolbar.py:515
-msgid "Cancel"
+msgid "Right justify"
 msgstr ""
 
-#: toolbar.py:524
-msgid "Insert Row"
+#: toolbar.py:518
+msgid "Fill justify"
 msgstr ""
 
-#: toolbar.py:530
-msgid "Delete Row"
-msgstr ""
-
-#: toolbar.py:536
-msgid "Insert Column"
-msgstr ""
-
-#: toolbar.py:542
-msgid "Delete Column"
-msgstr ""
-
-#: toolbar.py:580
-msgid "Style: "
-msgstr ""
-
-#: toolbar.py:590
-msgid "Heading 1"
-msgstr ""
-
-#: toolbar.py:591
-msgid "Heading 2"
-msgstr ""
-
-#: toolbar.py:592
-msgid "Heading 3"
-msgstr ""
-
-#: toolbar.py:593
-msgid "Heading 4"
-msgstr ""
-
-#: toolbar.py:594
-msgid "Bullet List"
-msgstr ""
-
-#: toolbar.py:595
+#: toolbar.py:553
 msgid "Dashed List"
-msgstr ""
+msgstr "대쉬 리스트"
 
-#: toolbar.py:596
+#: toolbar.py:557
 msgid "Numbered List"
-msgstr ""
+msgstr "숫자 리스트"
 
-#: toolbar.py:597
+#: toolbar.py:561
 msgid "Lower Case List"
-msgstr ""
+msgstr "Lower Case 리스트"
 
-#: toolbar.py:598
+#: toolbar.py:565
 msgid "Upper Case List"
+msgstr "Upper Case 리스트"
+
+#: widgets.py:165
+msgid "Rich Text (RTF)"
+msgstr "확장 표현형 문자 (RTF)"
+
+#: widgets.py:166
+msgid "RTF"
+msgstr "RTF"
+
+#: widgets.py:170
+msgid "Hypertext (HTML)"
+msgstr "하이퍼텍스트 (HTML)"
+
+#: widgets.py:171
+msgid "HTML"
+msgstr "HTML"
+
+#: widgets.py:176
+msgid "Plain Text (TXT)"
+msgstr "일반 표현형 문자 (TXT)"
+
+#: widgets.py:177
+msgid "TXT"
+msgstr "TXT"
+
+#: widgets.py:181
+msgid "Portable Document Format (PDF)"
 msgstr ""
 
-#: toolbar.py:599
-msgid "Block Text"
+#: widgets.py:182
+msgid "PDF"
 msgstr ""
 
-#: toolbar.py:600
-msgid "Normal"
+#: widgets.py:187 widgets.py:188
+msgid "Export"
 msgstr ""
 
-#: toolbar.py:601
-msgid "Plain Text"
-msgstr ""
+#~ msgid "Image"
+#~ msgstr "이미지"
 
-#: toolbar.py:656
-msgid "Zoom Out"
-msgstr ""
+#~ msgid "Format"
+#~ msgstr "형식"
 
-#: toolbar.py:662
-msgid "Zoom In"
-msgstr ""
+#~ msgid "Choose image"
+#~ msgstr "이미지 고르기"
 
-#: toolbar.py:678
-msgid "%"
-msgstr ""
-
-#: toolbar.py:690
-msgid "Page: "
-msgstr ""
+#~ msgid "Style: "
+#~ msgstr "스타일: "

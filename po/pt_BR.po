@@ -1,3 +1,11 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # translation of pt_BR.po to Brazilian Portuguese
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
@@ -6,187 +14,225 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2008-01-19 11:43+0000\n"
-"Last-Translator: Eduardo H. Silva <HoboPrimate@gmail.com>\n"
+"POT-Creation-Date: 2011-01-25 00:30-0500\n"
+"PO-Revision-Date: 2009-12-06 08:04-0400\n"
+"Last-Translator: Robson Mendonça <robsonmwoc@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <fedora-docs-br@redhat.com>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Pootle 1.0.2\n"
+"X-Generator: Pootle 1.2.1\n"
 
 #: activity/activity.info:2
 msgid "Write"
 msgstr "Escrever"
 
-#: AbiWordActivity.py:64
+#: AbiWordActivity.py:82
 msgid "Edit"
 msgstr "Editar"
 
-#: AbiWordActivity.py:67
-msgid "Text"
-msgstr "Texto"
-
-#: AbiWordActivity.py:71
-msgid "Image"
-msgstr "Imagem"
-
-#: AbiWordActivity.py:75 toolbar.py:515
-msgid "Table"
-msgstr "Tabela"
-
-#: AbiWordActivity.py:79
-msgid "Format"
-msgstr "Formatar"
-
-#: AbiWordActivity.py:83
+#: AbiWordActivity.py:88
 msgid "View"
 msgstr "Ver"
 
-#: toolbar.py:51
-msgid "Rich Text (RTF)"
-msgstr "Rich Text (RTF)"
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr "Texto"
 
-#: toolbar.py:51
-msgid "RTF"
-msgstr "RTF"
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr "Parágrafo"
 
-#: toolbar.py:52
-msgid "Hypertext (HTML)"
-msgstr "Hipertexto (HTML)"
+# I think it's better not to translate the term "bullet"
+#: AbiWordActivity.py:109 toolbar.py:549
+msgid "Bullet List"
+msgstr "Lista"
 
-#: toolbar.py:52
-msgid "HTML"
-msgstr "HTML"
+#: AbiWordActivity.py:115 toolbar.py:217
+msgid "Table"
+msgstr "Tabela"
 
-#: toolbar.py:53
-msgid "Plain Text (TXT)"
-msgstr "Texto Simples (TXT)"
-
-#: toolbar.py:53
-msgid "TXT"
-msgstr "TXT"
-
-#: toolbar.py:128
-msgid "Find previous"
-msgstr "Buscar anterior"
-
-#: toolbar.py:134
-msgid "Find next"
-msgstr "Buscar próximo"
-
-#: toolbar.py:244
+#: AbiWordActivity.py:122
 msgid "Bold"
 msgstr "Negrito"
 
-#: toolbar.py:251
+#: AbiWordActivity.py:130
 msgid "Italic"
 msgstr "Itálico"
 
-#: toolbar.py:258
+#: AbiWordActivity.py:138
 msgid "Underline"
 msgstr "Sublinhado"
 
-#: toolbar.py:481
-msgid "Insert Image"
-msgstr "Inserir Imagem"
+#: toolbar.py:94
+msgid "Search"
+msgstr "Procurar"
 
-#: toolbar.py:489
-msgid "Choose image"
-msgstr "Escolher imagem"
+#: toolbar.py:111
+msgid "Find previous"
+msgstr "Buscar anterior"
 
-#: toolbar.py:515
+#: toolbar.py:117
+msgid "Find next"
+msgstr "Buscar próximo"
+
+#: toolbar.py:217
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: toolbar.py:524
+#: toolbar.py:229
 msgid "Insert Row"
 msgstr "Inserir Linha"
 
-#: toolbar.py:530
+#: toolbar.py:235
 msgid "Delete Row"
 msgstr "Remover Linha"
 
-#: toolbar.py:536
+#: toolbar.py:241
 msgid "Insert Column"
 msgstr "Inserir Coluna"
 
-#: toolbar.py:542
+#: toolbar.py:247
 msgid "Delete Column"
 msgstr "Remover Coluna"
 
-#: toolbar.py:580
-msgid "Style: "
-msgstr "Estilo: "
+#: toolbar.py:256
+msgid "Insert Image"
+msgstr "Inserir Imagem"
 
-#: toolbar.py:590
+#: toolbar.py:263
+msgid "Floating"
+msgstr ""
+
+#: toolbar.py:320
+msgid "Zoom Out"
+msgstr "Diminuir zoom"
+
+#: toolbar.py:327
+msgid "Zoom In"
+msgstr "Aumentar zoom"
+
+# qual é o contexto de significação deste símbolo?
+#: toolbar.py:344
+msgid "%"
+msgstr "%"
+
+#: toolbar.py:356
+msgid "Page: "
+msgstr "Página: "
+
+#: toolbar.py:462 toolbar.py:539
+msgid "Normal"
+msgstr "Normal"
+
+#: toolbar.py:473
 msgid "Heading 1"
 msgstr "Título 1"
 
-#: toolbar.py:591
+#: toolbar.py:477
 msgid "Heading 2"
 msgstr "Título 2"
 
-#: toolbar.py:592
+#: toolbar.py:481
 msgid "Heading 3"
 msgstr "Título 3"
 
-#: toolbar.py:593
+#: toolbar.py:485
 msgid "Heading 4"
 msgstr "Título 4"
 
-# I think it's better not to translate the term "bullet"
-#: toolbar.py:594
-msgid "Bullet List"
-msgstr "Lista com bullets"
+#: toolbar.py:489
+msgid "Block Text"
+msgstr "Bloco de texto"
 
-#: toolbar.py:595
+#: toolbar.py:493
+msgid "Plain Text"
+msgstr "Texto sem formatação"
+
+#: toolbar.py:509
+msgid "Left justify"
+msgstr "Ajustado à esquerda"
+
+#: toolbar.py:512
+msgid "Center justify"
+msgstr "Ajustado ao Centro"
+
+#: toolbar.py:515
+msgid "Right justify"
+msgstr "Ajustado à direita"
+
+#: toolbar.py:518
+msgid "Fill justify"
+msgstr "Ajustado para preenchimento"
+
+#: toolbar.py:553
 msgid "Dashed List"
 msgstr "Lista com traços"
 
-#: toolbar.py:596
+#: toolbar.py:557
 msgid "Numbered List"
 msgstr "Lista numerada"
 
 # This is a hard translate. It would be something like "Lista de ítens numerados com letras minúsculas". I think it's not applicable.
 # What about "lista com letras minúsculas"?
-#: toolbar.py:597
+#: toolbar.py:561
 msgid "Lower Case List"
 msgstr "Lista (minúsculas)"
 
 # See "Lower Case List" comment, please.
-#: toolbar.py:598
+#: toolbar.py:565
 msgid "Upper Case List"
 msgstr "Lista (maiúsculas)"
 
-#: toolbar.py:599
-msgid "Block Text"
-msgstr "Bloco de texto"
+#: widgets.py:165
+msgid "Rich Text (RTF)"
+msgstr "Rich Text (RTF)"
 
-#: toolbar.py:600
-msgid "Normal"
-msgstr "Normal"
+#: widgets.py:166
+msgid "RTF"
+msgstr "RTF"
 
-#: toolbar.py:601
-msgid "Plain Text"
-msgstr "Texto sem formatação"
+#: widgets.py:170
+msgid "Hypertext (HTML)"
+msgstr "Hipertexto (HTML)"
 
-#: toolbar.py:656
-msgid "Zoom Out"
-msgstr "Diminuir zoom"
+#: widgets.py:171
+msgid "HTML"
+msgstr "HTML"
 
-#: toolbar.py:662
-msgid "Zoom In"
-msgstr "Aumentar zoom"
+#: widgets.py:176
+msgid "Plain Text (TXT)"
+msgstr "Texto Simples (TXT)"
 
-#: toolbar.py:678
-msgid "%"
-msgstr "%"
+#: widgets.py:177
+msgid "TXT"
+msgstr "TXT"
 
-#: toolbar.py:690
-msgid "Page: "
-msgstr "Página: "
+#: widgets.py:181
+msgid "Portable Document Format (PDF)"
+msgstr ""
+
+#: widgets.py:182
+msgid "PDF"
+msgstr ""
+
+#: widgets.py:187 widgets.py:188
+msgid "Export"
+msgstr "Exportar"
+
+#~ msgid "Image"
+#~ msgstr "Imagem"
+
+#~ msgid "Format"
+#~ msgstr "Formatar"
+
+#~ msgid "Choose image"
+#~ msgstr "Escolher imagem"
+
+#~ msgid "Style: "
+#~ msgstr "Estilo: "
 
 #~ msgid "Select text color"
 #~ msgstr "Selecione a cor do texto"

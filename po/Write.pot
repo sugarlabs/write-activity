@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-06 18:26+0000\n"
+"POT-Creation-Date: 2011-01-25 00:30-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,180 +20,190 @@ msgstr ""
 msgid "Write"
 msgstr ""
 
-#: /home/sugar/src/activities/Write.activity/toolbar.py:52
-msgid "Rich Text (RTF)"
+#: AbiWordActivity.py:82
+msgid "Edit"
 msgstr ""
 
-#: /home/sugar/src/activities/Write.activity/toolbar.py:52
-msgid "RTF"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/toolbar.py:53
-msgid "Hypertext (HTML)"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/toolbar.py:53
-msgid "HTML"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/toolbar.py:54
-msgid "Plain Text (TXT)"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/toolbar.py:54
-msgid "TXT"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/toolbar.py:126
-msgid "Find previous"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/toolbar.py:132
-msgid "Find next"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/toolbar.py:205
-msgid "Table"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/toolbar.py:205
-msgid "Cancel"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/toolbar.py:213
-msgid "Insert Row"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/toolbar.py:218
-msgid "Delete Row"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/toolbar.py:223
-msgid "Insert Column"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/toolbar.py:228
-msgid "Delete Column"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/toolbar.py:236
-msgid "Insert Image"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/toolbar.py:280
-msgid "Zoom Out"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/toolbar.py:286
-msgid "Zoom In"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/toolbar.py:302
-msgid "%"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/toolbar.py:314
-msgid "Page: "
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/toolbar.py:400
-msgid "Bold"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/toolbar.py:408
-msgid "Italic"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/toolbar.py:416
-msgid "Underline"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/toolbar.py:456
-msgid "Left justify"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/toolbar.py:463
-msgid "Center justify"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/toolbar.py:470
-msgid "Right justify"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/toolbar.py:477
-msgid "Fill justify"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/AbiWordActivity.py:70
-msgid "Text"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/AbiWordActivity.py:76
-msgid "Paragraph"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/AbiWordActivity.py:118
-msgid "Insert"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/AbiWordActivity.py:125
-msgid "Search"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/AbiWordActivity.py:131
+#: AbiWordActivity.py:88
 msgid "View"
 msgstr ""
 
-#: /home/sugar/src/activities/Write.activity/widgets.py:114
-msgid "Heading 1"
+#: AbiWordActivity.py:97
+msgid "Text"
 msgstr ""
 
-#: /home/sugar/src/activities/Write.activity/widgets.py:115
-msgid "Heading 2"
+#: AbiWordActivity.py:103
+msgid "Paragraph"
 msgstr ""
 
-#: /home/sugar/src/activities/Write.activity/widgets.py:116
-msgid "Heading 3"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/widgets.py:117
-msgid "Heading 4"
-msgstr ""
-
-#: /home/sugar/src/activities/Write.activity/widgets.py:118
-#: /home/sugar/src/activities/Write.activity/widgets.py:218
+#: AbiWordActivity.py:109 toolbar.py:549
 msgid "Bullet List"
 msgstr ""
 
-#: /home/sugar/src/activities/Write.activity/widgets.py:119
-#: /home/sugar/src/activities/Write.activity/widgets.py:222
-msgid "Dashed List"
+#: AbiWordActivity.py:115 toolbar.py:217
+msgid "Table"
 msgstr ""
 
-#: /home/sugar/src/activities/Write.activity/widgets.py:120
-#: /home/sugar/src/activities/Write.activity/widgets.py:226
-msgid "Numbered List"
+#: AbiWordActivity.py:122
+msgid "Bold"
 msgstr ""
 
-#: /home/sugar/src/activities/Write.activity/widgets.py:121
-#: /home/sugar/src/activities/Write.activity/widgets.py:230
-msgid "Lower Case List"
+#: AbiWordActivity.py:130
+msgid "Italic"
 msgstr ""
 
-#: /home/sugar/src/activities/Write.activity/widgets.py:122
-#: /home/sugar/src/activities/Write.activity/widgets.py:234
-msgid "Upper Case List"
+#: AbiWordActivity.py:138
+msgid "Underline"
 msgstr ""
 
-#: /home/sugar/src/activities/Write.activity/widgets.py:123
-msgid "Block Text"
+#: toolbar.py:94
+msgid "Search"
 msgstr ""
 
-#: /home/sugar/src/activities/Write.activity/widgets.py:124
-#: /home/sugar/src/activities/Write.activity/widgets.py:208
+#: toolbar.py:111
+msgid "Find previous"
+msgstr ""
+
+#: toolbar.py:117
+msgid "Find next"
+msgstr ""
+
+#: toolbar.py:217
+msgid "Cancel"
+msgstr ""
+
+#: toolbar.py:229
+msgid "Insert Row"
+msgstr ""
+
+#: toolbar.py:235
+msgid "Delete Row"
+msgstr ""
+
+#: toolbar.py:241
+msgid "Insert Column"
+msgstr ""
+
+#: toolbar.py:247
+msgid "Delete Column"
+msgstr ""
+
+#: toolbar.py:256
+msgid "Insert Image"
+msgstr ""
+
+#: toolbar.py:263
+msgid "Floating"
+msgstr ""
+
+#: toolbar.py:320
+msgid "Zoom Out"
+msgstr ""
+
+#: toolbar.py:327
+msgid "Zoom In"
+msgstr ""
+
+#: toolbar.py:344
+msgid "%"
+msgstr ""
+
+#: toolbar.py:356
+msgid "Page: "
+msgstr ""
+
+#: toolbar.py:462 toolbar.py:539
 msgid "Normal"
 msgstr ""
 
-#: /home/sugar/src/activities/Write.activity/widgets.py:125
+#: toolbar.py:473
+msgid "Heading 1"
+msgstr ""
+
+#: toolbar.py:477
+msgid "Heading 2"
+msgstr ""
+
+#: toolbar.py:481
+msgid "Heading 3"
+msgstr ""
+
+#: toolbar.py:485
+msgid "Heading 4"
+msgstr ""
+
+#: toolbar.py:489
+msgid "Block Text"
+msgstr ""
+
+#: toolbar.py:493
 msgid "Plain Text"
+msgstr ""
+
+#: toolbar.py:509
+msgid "Left justify"
+msgstr ""
+
+#: toolbar.py:512
+msgid "Center justify"
+msgstr ""
+
+#: toolbar.py:515
+msgid "Right justify"
+msgstr ""
+
+#: toolbar.py:518
+msgid "Fill justify"
+msgstr ""
+
+#: toolbar.py:553
+msgid "Dashed List"
+msgstr ""
+
+#: toolbar.py:557
+msgid "Numbered List"
+msgstr ""
+
+#: toolbar.py:561
+msgid "Lower Case List"
+msgstr ""
+
+#: toolbar.py:565
+msgid "Upper Case List"
+msgstr ""
+
+#: widgets.py:165
+msgid "Rich Text (RTF)"
+msgstr ""
+
+#: widgets.py:166
+msgid "RTF"
+msgstr ""
+
+#: widgets.py:170
+msgid "Hypertext (HTML)"
+msgstr ""
+
+#: widgets.py:171
+msgid "HTML"
+msgstr ""
+
+#: widgets.py:176
+msgid "Plain Text (TXT)"
+msgstr ""
+
+#: widgets.py:177
+msgid "TXT"
+msgstr ""
+
+#: widgets.py:181
+msgid "Portable Document Format (PDF)"
+msgstr ""
+
+#: widgets.py:182
+msgid "PDF"
+msgstr ""
+
+#: widgets.py:187 widgets.py:188
+msgid "Export"
 msgstr ""

@@ -2,11 +2,19 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-17 20:56+0100\n"
+"POT-Creation-Date: 2011-01-25 00:30-0500\n"
 "PO-Revision-Date: 2008-08-26 10:55-0400\n"
 "Last-Translator: abdullah kocabas <abdullah.kocabas@abcdizustu.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,167 +27,203 @@ msgstr ""
 msgid "Write"
 msgstr "Yazınız."
 
-#: AbiWordActivity.py:64
+#: AbiWordActivity.py:82
 msgid "Edit"
 msgstr "Düzenleyiniz."
 
-#: AbiWordActivity.py:67
-msgid "Text"
-msgstr "Metin"
-
-#: AbiWordActivity.py:71
-msgid "Image"
-msgstr "Resim"
-
-#: AbiWordActivity.py:75 toolbar.py:515
-msgid "Table"
-msgstr "Tablo"
-
-#: AbiWordActivity.py:79
-msgid "Format"
-msgstr "Biçim"
-
-#: AbiWordActivity.py:83
+#: AbiWordActivity.py:88
 msgid "View"
 msgstr "Görünüm"
 
-#: toolbar.py:51
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr "Metin"
+
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr ""
+
+#: AbiWordActivity.py:109 toolbar.py:549
+msgid "Bullet List"
+msgstr "Noktalı Liste"
+
+#: AbiWordActivity.py:115 toolbar.py:217
+msgid "Table"
+msgstr "Tablo"
+
+#: AbiWordActivity.py:122
+msgid "Bold"
+msgstr "Kalın"
+
+#: AbiWordActivity.py:130
+msgid "Italic"
+msgstr "Eğik"
+
+#: AbiWordActivity.py:138
+msgid "Underline"
+msgstr "Altçizgili"
+
+#: toolbar.py:94
+msgid "Search"
+msgstr ""
+
+#: toolbar.py:111
+msgid "Find previous"
+msgstr "Öncekini bulunuz."
+
+#: toolbar.py:117
+msgid "Find next"
+msgstr "Sonrakini bulunuz."
+
+#: toolbar.py:217
+msgid "Cancel"
+msgstr "Vazgeçiniz."
+
+#: toolbar.py:229
+msgid "Insert Row"
+msgstr "Satır Ekleyiniz."
+
+#: toolbar.py:235
+msgid "Delete Row"
+msgstr "Satırı Siliniz."
+
+#: toolbar.py:241
+msgid "Insert Column"
+msgstr "Kolon ekleyiniz."
+
+#: toolbar.py:247
+msgid "Delete Column"
+msgstr "Kolonu Siliniz."
+
+#: toolbar.py:256
+msgid "Insert Image"
+msgstr "Resim ekleyiniz."
+
+#: toolbar.py:263
+msgid "Floating"
+msgstr ""
+
+#: toolbar.py:320
+msgid "Zoom Out"
+msgstr "Küçültünüz."
+
+#: toolbar.py:327
+msgid "Zoom In"
+msgstr "Büyültünüz."
+
+#: toolbar.py:344
+msgid "%"
+msgstr "%"
+
+#: toolbar.py:356
+msgid "Page: "
+msgstr "Sayfa:"
+
+#: toolbar.py:462 toolbar.py:539
+msgid "Normal"
+msgstr "Normal"
+
+#: toolbar.py:473
+msgid "Heading 1"
+msgstr "Başlık 1"
+
+#: toolbar.py:477
+msgid "Heading 2"
+msgstr "Başlık 2"
+
+#: toolbar.py:481
+msgid "Heading 3"
+msgstr "Başlık 3"
+
+#: toolbar.py:485
+msgid "Heading 4"
+msgstr "Başlık 4"
+
+#: toolbar.py:489
+msgid "Block Text"
+msgstr "Metin Parçası"
+
+#: toolbar.py:493
+msgid "Plain Text"
+msgstr "Düz Metin"
+
+#: toolbar.py:509
+msgid "Left justify"
+msgstr ""
+
+#: toolbar.py:512
+msgid "Center justify"
+msgstr ""
+
+#: toolbar.py:515
+msgid "Right justify"
+msgstr ""
+
+#: toolbar.py:518
+msgid "Fill justify"
+msgstr ""
+
+#: toolbar.py:553
+msgid "Dashed List"
+msgstr "Çizgili Liste"
+
+#: toolbar.py:557
+msgid "Numbered List"
+msgstr "Numaralı Liste"
+
+#: toolbar.py:561
+msgid "Lower Case List"
+msgstr "Küçük Harfli Liste"
+
+#: toolbar.py:565
+msgid "Upper Case List"
+msgstr "Büyük Harfli Liste"
+
+#: widgets.py:165
 msgid "Rich Text (RTF)"
 msgstr "Zengin Metin (RTF)"
 
-#: toolbar.py:51
+#: widgets.py:166
 msgid "RTF"
 msgstr "RTF"
 
 # TDK çevirisi
-#: toolbar.py:52
+#: widgets.py:170
 msgid "Hypertext (HTML)"
 msgstr "Hiper Metin (HTML)"
 
-#: toolbar.py:52
+#: widgets.py:171
 msgid "HTML"
 msgstr "HTML"
 
-#: toolbar.py:53
+#: widgets.py:176
 msgid "Plain Text (TXT)"
 msgstr "Düz Metin (TXT)"
 
-#: toolbar.py:53
+#: widgets.py:177
 msgid "TXT"
 msgstr "TXT"
 
-#: toolbar.py:128
-msgid "Find previous"
-msgstr "Öncekini bulunuz."
+#: widgets.py:181
+msgid "Portable Document Format (PDF)"
+msgstr ""
 
-#: toolbar.py:134
-msgid "Find next"
-msgstr "Sonrakini bulunuz."
+#: widgets.py:182
+msgid "PDF"
+msgstr ""
 
-#: toolbar.py:244
-msgid "Bold"
-msgstr "Kalın"
+#: widgets.py:187 widgets.py:188
+msgid "Export"
+msgstr ""
 
-#: toolbar.py:251
-msgid "Italic"
-msgstr "Eğik"
+#~ msgid "Image"
+#~ msgstr "Resim"
 
-#: toolbar.py:258
-msgid "Underline"
-msgstr "Altçizgili"
+#~ msgid "Format"
+#~ msgstr "Biçim"
 
-#: toolbar.py:481
-msgid "Insert Image"
-msgstr "Resim ekleyiniz."
+#~ msgid "Choose image"
+#~ msgstr "Resim seçiniz."
 
-#: toolbar.py:489
-msgid "Choose image"
-msgstr "Resim seçiniz."
-
-#: toolbar.py:515
-msgid "Cancel"
-msgstr "Vazgeçiniz."
-
-#: toolbar.py:524
-msgid "Insert Row"
-msgstr "Satır Ekleyiniz."
-
-#: toolbar.py:530
-msgid "Delete Row"
-msgstr "Satırı Siliniz."
-
-#: toolbar.py:536
-msgid "Insert Column"
-msgstr "Kolon ekleyiniz."
-
-#: toolbar.py:542
-msgid "Delete Column"
-msgstr "Kolonu Siliniz."
-
-#: toolbar.py:580
-msgid "Style: "
-msgstr "Tarz:"
-
-#: toolbar.py:590
-msgid "Heading 1"
-msgstr "Başlık 1"
-
-#: toolbar.py:591
-msgid "Heading 2"
-msgstr "Başlık 2"
-
-#: toolbar.py:592
-msgid "Heading 3"
-msgstr "Başlık 3"
-
-#: toolbar.py:593
-msgid "Heading 4"
-msgstr "Başlık 4"
-
-#: toolbar.py:594
-msgid "Bullet List"
-msgstr "Noktalı Liste"
-
-#: toolbar.py:595
-msgid "Dashed List"
-msgstr "Çizgili Liste"
-
-#: toolbar.py:596
-msgid "Numbered List"
-msgstr "Numaralı Liste"
-
-#: toolbar.py:597
-msgid "Lower Case List"
-msgstr "Küçük Harfli Liste"
-
-#: toolbar.py:598
-msgid "Upper Case List"
-msgstr "Büyük Harfli Liste"
-
-#: toolbar.py:599
-msgid "Block Text"
-msgstr "Metin Parçası"
-
-#: toolbar.py:600
-msgid "Normal"
-msgstr "Normal"
-
-#: toolbar.py:601
-msgid "Plain Text"
-msgstr "Düz Metin"
-
-#: toolbar.py:656
-msgid "Zoom Out"
-msgstr "Küçültünüz."
-
-#: toolbar.py:662
-msgid "Zoom In"
-msgstr "Büyültünüz."
-
-#: toolbar.py:678
-msgid "%"
-msgstr "%"
-
-#: toolbar.py:690
-msgid "Page: "
-msgstr "Sayfa:"
+#~ msgid "Style: "
+#~ msgstr "Tarz:"

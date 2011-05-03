@@ -2,184 +2,229 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2011-01-25 00:30-0500\n"
+"PO-Revision-Date: 2011-03-13 17:37+0200\n"
+"Last-Translator: <klpeter@windowslive.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1rc4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: activity/activity.info:2
 msgid "Write"
-msgstr ""
+msgstr "Írás"
 
-#: AbiWordActivity.py:64
+#: AbiWordActivity.py:82
 msgid "Edit"
-msgstr ""
+msgstr "Szerkesztés"
 
-#: AbiWordActivity.py:67
-msgid "Text"
-msgstr ""
-
-#: AbiWordActivity.py:71
-msgid "Image"
-msgstr ""
-
-#: AbiWordActivity.py:75 toolbar.py:515
-msgid "Table"
-msgstr ""
-
-#: AbiWordActivity.py:79
-msgid "Format"
-msgstr ""
-
-#: AbiWordActivity.py:83
+#: AbiWordActivity.py:88
 msgid "View"
-msgstr ""
+msgstr "Nézet"
 
-#: toolbar.py:51
-msgid "Rich Text (RTF)"
-msgstr ""
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr "Szöveg"
 
-#: toolbar.py:51
-msgid "RTF"
-msgstr ""
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr "Paragrafus"
 
-#: toolbar.py:52
-msgid "Hypertext (HTML)"
-msgstr ""
+#: AbiWordActivity.py:109 toolbar.py:549
+msgid "Bullet List"
+msgstr "Felsorolás pontokkal"
 
-#: toolbar.py:52
-msgid "HTML"
-msgstr ""
+#: AbiWordActivity.py:115 toolbar.py:217
+msgid "Table"
+msgstr "Táblázat"
 
-#: toolbar.py:53
-msgid "Plain Text (TXT)"
-msgstr ""
-
-#: toolbar.py:53
-msgid "TXT"
-msgstr ""
-
-#: toolbar.py:128
-msgid "Find previous"
-msgstr ""
-
-#: toolbar.py:134
-msgid "Find next"
-msgstr ""
-
-#: toolbar.py:244
+#: AbiWordActivity.py:122
 msgid "Bold"
-msgstr ""
+msgstr "Félkövér"
 
-#: toolbar.py:251
+#: AbiWordActivity.py:130
 msgid "Italic"
-msgstr ""
+msgstr "Dőlt"
 
-#: toolbar.py:258
+#: AbiWordActivity.py:138
 msgid "Underline"
-msgstr ""
+msgstr "Aláhúzott"
+
+#: toolbar.py:94
+msgid "Search"
+msgstr "Keres"
+
+#: toolbar.py:111
+msgid "Find previous"
+msgstr "Előző keresése"
+
+#: toolbar.py:117
+msgid "Find next"
+msgstr "Következő keresése"
+
+#: toolbar.py:217
+msgid "Cancel"
+msgstr "Mégsem"
+
+#: toolbar.py:229
+msgid "Insert Row"
+msgstr "Sor beszúrása"
+
+#: toolbar.py:235
+msgid "Delete Row"
+msgstr "Sor törlése"
+
+#: toolbar.py:241
+msgid "Insert Column"
+msgstr "Oszlop beszúrása"
+
+#: toolbar.py:247
+msgid "Delete Column"
+msgstr "Oszlop törlése"
+
+#: toolbar.py:256
+msgid "Insert Image"
+msgstr "Kép beillesztése"
+
+#: toolbar.py:263
+msgid "Floating"
+msgstr "Lebegő"
+
+#: toolbar.py:320
+msgid "Zoom Out"
+msgstr "Nagyítás ki"
+
+#: toolbar.py:327
+msgid "Zoom In"
+msgstr "Nagyítás be"
+
+#: toolbar.py:344
+msgid "%"
+msgstr "%"
+
+#: toolbar.py:356
+msgid "Page: "
+msgstr "Oldal: "
+
+#: toolbar.py:462 toolbar.py:539
+msgid "Normal"
+msgstr "Normál"
+
+#: toolbar.py:473
+msgid "Heading 1"
+msgstr "Címsor 1"
+
+#: toolbar.py:477
+msgid "Heading 2"
+msgstr "Címsor 2"
 
 #: toolbar.py:481
-msgid "Insert Image"
-msgstr ""
+msgid "Heading 3"
+msgstr "Címsor 3"
+
+#: toolbar.py:485
+msgid "Heading 4"
+msgstr "Címsor 4"
 
 #: toolbar.py:489
-msgid "Choose image"
-msgstr ""
+msgid "Block Text"
+msgstr "Szöveg tömb"
+
+#: toolbar.py:493
+msgid "Plain Text"
+msgstr "Sima szöveg"
+
+#: toolbar.py:509
+msgid "Left justify"
+msgstr "Bal oldalhoz igazít"
+
+#: toolbar.py:512
+msgid "Center justify"
+msgstr "Középre igazít"
 
 #: toolbar.py:515
-msgid "Cancel"
-msgstr ""
+msgid "Right justify"
+msgstr "Jobb oldalhoz igazít"
 
-#: toolbar.py:524
-msgid "Insert Row"
-msgstr ""
+#: toolbar.py:518
+msgid "Fill justify"
+msgstr "Kitöltés"
 
-#: toolbar.py:530
-msgid "Delete Row"
-msgstr ""
-
-#: toolbar.py:536
-msgid "Insert Column"
-msgstr ""
-
-#: toolbar.py:542
-msgid "Delete Column"
-msgstr ""
-
-#: toolbar.py:580
-msgid "Style: "
-msgstr ""
-
-#: toolbar.py:590
-msgid "Heading 1"
-msgstr ""
-
-#: toolbar.py:591
-msgid "Heading 2"
-msgstr ""
-
-#: toolbar.py:592
-msgid "Heading 3"
-msgstr ""
-
-#: toolbar.py:593
-msgid "Heading 4"
-msgstr ""
-
-#: toolbar.py:594
-msgid "Bullet List"
-msgstr ""
-
-#: toolbar.py:595
+#: toolbar.py:553
 msgid "Dashed List"
-msgstr ""
+msgstr "Felsorolás kötőjellel"
 
-#: toolbar.py:596
+#: toolbar.py:557
 msgid "Numbered List"
-msgstr ""
+msgstr "Számozás"
 
-#: toolbar.py:597
+#: toolbar.py:561
 msgid "Lower Case List"
-msgstr ""
+msgstr "Felsorolás alacsonyabb szint"
 
-#: toolbar.py:598
+#: toolbar.py:565
 msgid "Upper Case List"
-msgstr ""
+msgstr "Felsorolás magasabb szint"
 
-#: toolbar.py:599
-msgid "Block Text"
-msgstr ""
+#: widgets.py:165
+msgid "Rich Text (RTF)"
+msgstr "Rich Text (RTF)"
 
-#: toolbar.py:600
-msgid "Normal"
-msgstr ""
+#: widgets.py:166
+msgid "RTF"
+msgstr "RTF"
 
-#: toolbar.py:601
-msgid "Plain Text"
-msgstr ""
+#: widgets.py:170
+msgid "Hypertext (HTML)"
+msgstr "Hypertext (HTML)"
 
-#: toolbar.py:656
-msgid "Zoom Out"
-msgstr ""
+#: widgets.py:171
+msgid "HTML"
+msgstr "HTML"
 
-#: toolbar.py:662
-msgid "Zoom In"
-msgstr ""
+#: widgets.py:176
+msgid "Plain Text (TXT)"
+msgstr "Sima szöveg (TXT)"
 
-#: toolbar.py:678
-msgid "%"
-msgstr ""
+#: widgets.py:177
+msgid "TXT"
+msgstr "TXT"
 
-#: toolbar.py:690
-msgid "Page: "
-msgstr ""
+#: widgets.py:181
+msgid "Portable Document Format (PDF)"
+msgstr "Hordozható dokumentum formátum"
+
+#: widgets.py:182
+msgid "PDF"
+msgstr "PDF"
+
+#: widgets.py:187 widgets.py:188
+msgid "Export"
+msgstr "Export"
+
+#~ msgid "Image"
+#~ msgstr "Kép"
+
+#~ msgid "Format"
+#~ msgstr "Formátum"
+
+#~ msgid "Choose image"
+#~ msgstr "Kép kiválasztása"
+
+#~ msgid "Style: "
+#~ msgstr "Stílus:"

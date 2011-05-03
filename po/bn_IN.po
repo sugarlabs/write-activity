@@ -2,192 +2,230 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Sankarshan <sankarshan.mukhopadhyay@gmail.com>, 2009
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: 2008-01-22 06:17+0000\n"
-"Last-Translator: Sankarshan Mukhopadhyay <sankarshan.mukhopadhyay@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2011-01-25 00:30-0500\n"
+"PO-Revision-Date: 2009-02-23 19:20+0530\n"
+"Last-Translator: Sankarshan <sankarshan.mukhopadhyay@gmail.com>\n"
+"Language-Team: discuss@lists.ankur.org.in\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 1.0.2\n"
 
 #: activity/activity.info:2
 msgid "Write"
 msgstr "লিখুন"
 
-#: AbiWordActivity.py:64
+#: AbiWordActivity.py:82
 msgid "Edit"
 msgstr "সম্পাদন"
 
-#: AbiWordActivity.py:67
-msgid "Text"
-msgstr "টেক্সট"
-
-#: AbiWordActivity.py:71
-msgid "Image"
-msgstr "ছবি"
-
-#: AbiWordActivity.py:75 toolbar.py:515
-#, fuzzy
-msgid "Table"
-msgstr "টেবিল"
-
-#: AbiWordActivity.py:79
-msgid "Format"
-msgstr "ফর্ম্যাট"
-
-#: AbiWordActivity.py:83
+#: AbiWordActivity.py:88
 msgid "View"
 msgstr "প্রদর্শন"
 
-#: toolbar.py:51
-msgid "Rich Text (RTF)"
-msgstr "রিচ টেক্সট (RTF)"
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr "টেক্সট"
 
-#: toolbar.py:51
-msgid "RTF"
-msgstr "আরটিএফ"
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr ""
 
-#: toolbar.py:52
-msgid "Hypertext (HTML)"
-msgstr "হাইপারটেক্সট (এইচটিএমএল)"
+#: AbiWordActivity.py:109 toolbar.py:549
+msgid "Bullet List"
+msgstr "বুলেট তালিকা"
 
-#: toolbar.py:52
-msgid "HTML"
-msgstr "এইচটিএমএল"
+#: AbiWordActivity.py:115 toolbar.py:217
+msgid "Table"
+msgstr "টেবিল"
 
-#: toolbar.py:53
-msgid "Plain Text (TXT)"
-msgstr "প্লেইন টেক্সট (TXT)"
-
-#: toolbar.py:53
-msgid "TXT"
-msgstr "টিএক্সটি"
-
-#: toolbar.py:128
-msgid "Find previous"
-msgstr "আগেরটি খোঁজো"
-
-#: toolbar.py:134
-msgid "Find next"
-msgstr "পরবর্তী খোঁজো"
-
-#: toolbar.py:244
+#: AbiWordActivity.py:122
 msgid "Bold"
 msgstr "বোল্ড"
 
-#: toolbar.py:251
+#: AbiWordActivity.py:130
 msgid "Italic"
 msgstr "আইটালিক"
 
-#: toolbar.py:258
+#: AbiWordActivity.py:138
 msgid "Underline"
 msgstr "আন্ডারলাইন"
 
-#: toolbar.py:481
-msgid "Insert Image"
-msgstr "ছবি ঢোকান"
+#: toolbar.py:94
+msgid "Search"
+msgstr ""
 
-#: toolbar.py:489
-msgid "Choose image"
-msgstr "ছবি বেছে নিন"
+#: toolbar.py:111
+msgid "Find previous"
+msgstr "আগেরটি খোঁজো"
 
-#: toolbar.py:515
+#: toolbar.py:117
+msgid "Find next"
+msgstr "পরবর্তী খোঁজো"
+
+#: toolbar.py:217
 msgid "Cancel"
 msgstr "বাতিল"
 
-#: toolbar.py:524
+#: toolbar.py:229
 msgid "Insert Row"
 msgstr "সারি ঢুকিয়ে দিন"
 
-#: toolbar.py:530
+#: toolbar.py:235
 msgid "Delete Row"
 msgstr "সারি মুছে ফেলুন"
 
-#: toolbar.py:536
+#: toolbar.py:241
 msgid "Insert Column"
-msgstr ""
+msgstr "কলাম সন্নিবেশ করুন"
 
-#: toolbar.py:542
+#: toolbar.py:247
 #, fuzzy
 msgid "Delete Column"
 msgstr "কলাম মোছো"
 
-#: toolbar.py:580
-msgid "Style: "
-msgstr "স্টাইল:"
+#: toolbar.py:256
+msgid "Insert Image"
+msgstr "ছবি ঢোকান"
 
-#: toolbar.py:590
+#: toolbar.py:263
+msgid "Floating"
+msgstr ""
+
+#: toolbar.py:320
+msgid "Zoom Out"
+msgstr "ছোট করুন"
+
+#: toolbar.py:327
+msgid "Zoom In"
+msgstr "বড় করুন"
+
+#: toolbar.py:344
+msgid "%"
+msgstr "%"
+
+#: toolbar.py:356
+msgid "Page: "
+msgstr "পৃষ্ঠা:"
+
+#: toolbar.py:462 toolbar.py:539
+msgid "Normal"
+msgstr "সাধারণ"
+
+#: toolbar.py:473
 msgid "Heading 1"
 msgstr "হেডিং ১"
 
-#: toolbar.py:591
+#: toolbar.py:477
 msgid "Heading 2"
 msgstr "হেডিং ২"
 
-#: toolbar.py:592
+#: toolbar.py:481
 msgid "Heading 3"
 msgstr "হেডিং ৩"
 
-#: toolbar.py:593
+#: toolbar.py:485
 msgid "Heading 4"
 msgstr "হেডিং ৪"
 
-#: toolbar.py:594
-#, fuzzy
-msgid "Bullet List"
-msgstr "বুলেট তালিকা"
+#: toolbar.py:489
+msgid "Block Text"
+msgstr "ব্লক লেখা"
 
-#: toolbar.py:595
+#: toolbar.py:493
+msgid "Plain Text"
+msgstr "প্লেইন টেক্সট"
+
+#: toolbar.py:509
+msgid "Left justify"
+msgstr ""
+
+#: toolbar.py:512
+msgid "Center justify"
+msgstr ""
+
+#: toolbar.py:515
+msgid "Right justify"
+msgstr ""
+
+#: toolbar.py:518
+msgid "Fill justify"
+msgstr ""
+
+#: toolbar.py:553
 #, fuzzy
 msgid "Dashed List"
 msgstr "ড্যাস তালিকা"
 
-#: toolbar.py:596
-#, fuzzy
+#: toolbar.py:557
 msgid "Numbered List"
 msgstr "সংখ্যা তালিকা"
 
-#: toolbar.py:597
-#, fuzzy
+#: toolbar.py:561
 msgid "Lower Case List"
 msgstr "ছোট হাতের হরফ তালিকা"
 
-#: toolbar.py:598
-#, fuzzy
+#: toolbar.py:565
 msgid "Upper Case List"
 msgstr "বড় হাতের হরফ তালিকা"
 
-#: toolbar.py:599
-msgid "Block Text"
-msgstr "ব্লক লেখা"
+#: widgets.py:165
+msgid "Rich Text (RTF)"
+msgstr "রিচ টেক্সট (RTF)"
 
-#: toolbar.py:600
-msgid "Normal"
-msgstr "সাধারণ"
+#: widgets.py:166
+msgid "RTF"
+msgstr "আরটিএফ"
 
-#: toolbar.py:601
-msgid "Plain Text"
-msgstr "প্লেইন টেক্সট"
+#: widgets.py:170
+msgid "Hypertext (HTML)"
+msgstr "হাইপারটেক্সট (এইচটিএমএল)"
 
-#: toolbar.py:656
-#, fuzzy
-msgid "Zoom Out"
-msgstr "ছোট করুন"
+#: widgets.py:171
+msgid "HTML"
+msgstr "এইচটিএমএল"
 
-#: toolbar.py:662
-#, fuzzy
-msgid "Zoom In"
-msgstr "বড় করুন"
+#: widgets.py:176
+msgid "Plain Text (TXT)"
+msgstr "প্লেইন টেক্সট (TXT)"
 
-#: toolbar.py:678
-msgid "%"
-msgstr "%"
+#: widgets.py:177
+msgid "TXT"
+msgstr "টিএক্সটি"
 
-#: toolbar.py:690
-msgid "Page: "
-msgstr "পৃষ্ঠা:"
+#: widgets.py:181
+msgid "Portable Document Format (PDF)"
+msgstr ""
+
+#: widgets.py:182
+msgid "PDF"
+msgstr ""
+
+#: widgets.py:187 widgets.py:188
+msgid "Export"
+msgstr ""
+
+#~ msgid "Image"
+#~ msgstr "ছবি"
+
+#~ msgid "Format"
+#~ msgstr "ফর্ম্যাট"
+
+#~ msgid "Choose image"
+#~ msgstr "ছবি বেছে নিন"
+
+#~ msgid "Style: "
+#~ msgstr "স্টাইল:"

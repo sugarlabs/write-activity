@@ -1,185 +1,230 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # Rit Lim <rit.lim@gmail.com>, 2008.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-17 20:56+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2011-01-25 00:30-0500\n"
+"PO-Revision-Date: 2011-04-28 14:33+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: km\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.0.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: activity/activity.info:2
 msgid "Write"
 msgstr "សរសេរ"
 
-#: AbiWordActivity.py:64
+#: AbiWordActivity.py:82
 msgid "Edit"
 msgstr "កែ"
 
-#: AbiWordActivity.py:67
-msgid "Text"
-msgstr "អក្សរ"
-
-#: AbiWordActivity.py:71
-msgid "Image"
-msgstr "រូបភាព"
-
-#: AbiWordActivity.py:75 toolbar.py:515
-msgid "Table"
-msgstr "តារាង"
-
-#: AbiWordActivity.py:79
-msgid "Format"
-msgstr "ទ្រង់ទ្រាយ"
-
-#: AbiWordActivity.py:83
+#: AbiWordActivity.py:88
 msgid "View"
 msgstr "មើល"
 
-#: toolbar.py:51
-msgid "Rich Text (RTF)"
-msgstr "Rich Text (RTF)"
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr "អក្សរ"
 
-#: toolbar.py:51
-msgid "RTF"
-msgstr "RTF"
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr ""
 
-#: toolbar.py:52
-msgid "Hypertext (HTML)"
-msgstr "Hypertext (HTML)"
-
-#: toolbar.py:52
-msgid "HTML"
-msgstr "HTML"
-
-#: toolbar.py:53
-msgid "Plain Text (TXT)"
-msgstr "Plain Text (TXT)"
-
-#: toolbar.py:53
-msgid "TXT"
-msgstr "TXT"
-
-#: toolbar.py:128
-msgid "Find previous"
-msgstr "រក​ទៅ​ក្រោយ"
-
-#: toolbar.py:134
-msgid "Find next"
-msgstr "រក​ទៅ​មុខ"
-
-#: toolbar.py:244
-msgid "Bold"
-msgstr "ដុត"
-
-#: toolbar.py:251
-msgid "Italic"
-msgstr "ទ្រេត"
-
-#: toolbar.py:258
-msgid "Underline"
-msgstr "គូស​បន្ទាត់​ក្រាម"
-
-#: toolbar.py:481
-msgid "Insert Image"
-msgstr "បញ្ចូល​រូបភាព"
-
-#: toolbar.py:489
-msgid "Choose image"
-msgstr "ជ្រើសរើស​រូបភាព"
-
-#: toolbar.py:515
-msgid "Cancel"
-msgstr "បោះបង់"
-
-#: toolbar.py:524
-msgid "Insert Row"
-msgstr "បញ្ចូល​ជួរដេក"
-
-#: toolbar.py:530
-msgid "Delete Row"
-msgstr "ដក​ជួរដេក"
-
-#: toolbar.py:536
-msgid "Insert Column"
-msgstr "បញ្ចូល​ជួរឈរ"
-
-#: toolbar.py:542
-msgid "Delete Column"
-msgstr "ដក​ជួរ​ឈរ"
-
-#: toolbar.py:580
-msgid "Style: "
-msgstr "រចនាប័ត្ម: "
-
-#: toolbar.py:590
-msgid "Heading 1"
-msgstr "ក្បាល ១"
-
-#: toolbar.py:591
-msgid "Heading 2"
-msgstr "ក្បាល ២"
-
-#: toolbar.py:592
-msgid "Heading 3"
-msgstr "ក្បាល ៣"
-
-#: toolbar.py:593
-msgid "Heading 4"
-msgstr "ក្បាល ៤"
-
-#: toolbar.py:594
+#: AbiWordActivity.py:109 toolbar.py:549
 msgid "Bullet List"
 msgstr "សំនុមចំនុច"
 
-#: toolbar.py:595
-msgid "Dashed List"
-msgstr "សំនុម​ខ្សែដាច់"
+#: AbiWordActivity.py:115 toolbar.py:217
+msgid "Table"
+msgstr "តារាង"
 
-#: toolbar.py:596
-msgid "Numbered List"
-msgstr "សំនុមលេខ"
+#: AbiWordActivity.py:122
+msgid "Bold"
+msgstr "ដុត"
 
-#: toolbar.py:597
-msgid "Lower Case List"
-msgstr "សំនុម​អក្សរ​តូច"
+#: AbiWordActivity.py:130
+msgid "Italic"
+msgstr "ទ្រេត"
 
-#: toolbar.py:598
-msgid "Upper Case List"
-msgstr "សំនុម​អក្សរ​ធំ"
+#: AbiWordActivity.py:138
+msgid "Underline"
+msgstr "គូស​បន្ទាត់​ក្រាម"
 
-#: toolbar.py:599
-msgid "Block Text"
-msgstr "អក្សរប្លុក"
+#: toolbar.py:94
+msgid "Search"
+msgstr ""
 
-#: toolbar.py:600
-msgid "Normal"
-msgstr "ធម្មតា"
+#: toolbar.py:111
+msgid "Find previous"
+msgstr "រក​ទៅ​ក្រោយ"
 
-#: toolbar.py:601
-msgid "Plain Text"
-msgstr "អក្សរ​ធម្មតា"
+#: toolbar.py:117
+msgid "Find next"
+msgstr "រក​ទៅ​មុខ"
 
-#: toolbar.py:656
+#: toolbar.py:217
+msgid "Cancel"
+msgstr "បោះបង់"
+
+#: toolbar.py:229
+msgid "Insert Row"
+msgstr "បញ្ចូល​ជួរដេក"
+
+#: toolbar.py:235
+msgid "Delete Row"
+msgstr "ដក​ជួរដេក"
+
+#: toolbar.py:241
+msgid "Insert Column"
+msgstr "បញ្ចូល​ជួរឈរ"
+
+#: toolbar.py:247
+msgid "Delete Column"
+msgstr "ដក​ជួរ​ឈរ"
+
+#: toolbar.py:256
+msgid "Insert Image"
+msgstr "បញ្ចូល​រូបភាព"
+
+#: toolbar.py:263
+msgid "Floating"
+msgstr "អណ្ដែត​"
+
+#: toolbar.py:320
 msgid "Zoom Out"
 msgstr "ពង្រីក"
 
-#: toolbar.py:662
+#: toolbar.py:327
 msgid "Zoom In"
 msgstr "បង្រួម"
 
-#: toolbar.py:678
+#: toolbar.py:344
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:690
+#: toolbar.py:356
 msgid "Page: "
-msgstr "ទំព័រ: "
+msgstr "ទំព័រ ៖"
+
+#: toolbar.py:462 toolbar.py:539
+msgid "Normal"
+msgstr "ធម្មតា"
+
+#: toolbar.py:473
+msgid "Heading 1"
+msgstr "ក្បាល ១"
+
+#: toolbar.py:477
+msgid "Heading 2"
+msgstr "ក្បាល ២"
+
+#: toolbar.py:481
+msgid "Heading 3"
+msgstr "ក្បាល ៣"
+
+#: toolbar.py:485
+msgid "Heading 4"
+msgstr "ក្បាល ៤"
+
+#: toolbar.py:489
+msgid "Block Text"
+msgstr "អក្សរប្លុក"
+
+#: toolbar.py:493
+msgid "Plain Text"
+msgstr "អក្សរ​ធម្មតា"
+
+#: toolbar.py:509
+msgid "Left justify"
+msgstr ""
+
+#: toolbar.py:512
+msgid "Center justify"
+msgstr ""
+
+#: toolbar.py:515
+msgid "Right justify"
+msgstr ""
+
+#: toolbar.py:518
+msgid "Fill justify"
+msgstr ""
+
+#: toolbar.py:553
+msgid "Dashed List"
+msgstr "សំនុម​ខ្សែដាច់"
+
+#: toolbar.py:557
+msgid "Numbered List"
+msgstr "សំនុមលេខ"
+
+#: toolbar.py:561
+msgid "Lower Case List"
+msgstr "សំនុម​អក្សរ​តូច"
+
+#: toolbar.py:565
+msgid "Upper Case List"
+msgstr "សំនុម​អក្សរ​ធំ"
+
+#: widgets.py:165
+msgid "Rich Text (RTF)"
+msgstr "Rich Text (RTF)"
+
+#: widgets.py:166
+msgid "RTF"
+msgstr "RTF"
+
+#: widgets.py:170
+msgid "Hypertext (HTML)"
+msgstr "Hypertext (HTML)"
+
+#: widgets.py:171
+msgid "HTML"
+msgstr "HTML"
+
+#: widgets.py:176
+msgid "Plain Text (TXT)"
+msgstr "Plain Text (TXT)"
+
+#: widgets.py:177
+msgid "TXT"
+msgstr "TXT"
+
+#: widgets.py:181
+msgid "Portable Document Format (PDF)"
+msgstr ""
+
+#: widgets.py:182
+msgid "PDF"
+msgstr "PDF"
+
+#: widgets.py:187 widgets.py:188
+msgid "Export"
+msgstr "នាំចេញ"
+
+#~ msgid "Image"
+#~ msgstr "រូបភាព"
+
+#~ msgid "Format"
+#~ msgstr "ទ្រង់ទ្រាយ"
+
+#~ msgid "Choose image"
+#~ msgstr "ជ្រើសរើស​រូបភាព"
+
+#~ msgid "Style: "
+#~ msgstr "រចនាប័ត្ម: "
