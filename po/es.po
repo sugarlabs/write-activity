@@ -27,8 +27,8 @@ msgstr ""
 "Project-Id-Version: Actividad Escribir\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-01-25 00:30-0500\n"
-"PO-Revision-Date: 2011-04-15 15:48+0200\n"
-"Last-Translator: Gustavo S <ibarrags@gmail.com>\n"
+"PO-Revision-Date: 2011-05-17 16:39+0200\n"
+"Last-Translator: Gonzalo <godiard@sugarlabs.org>\n"
 "Language-Team: Fedora Spanish <fedora-trans-es@redhat.com>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -120,11 +120,11 @@ msgstr "Flotante"
 
 #: toolbar.py:320
 msgid "Zoom Out"
-msgstr "Acercarse"
+msgstr "Reducir"
 
 #: toolbar.py:327
 msgid "Zoom In"
-msgstr "Alejarse"
+msgstr "Ampliar"
 
 #: toolbar.py:344
 msgid "%"
