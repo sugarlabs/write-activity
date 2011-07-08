@@ -169,6 +169,7 @@ class AbiWordActivity(activity.Activity):
         self.set_canvas(self.abiword_canvas)
         self.abiword_canvas.connect_after('map-event', self.__map_event_cb)
         self.abiword_canvas.show()
+        self.connect_after('map-event', self.__map_activity_event_cb)
 
         self._zoom_handler = self.abiword_canvas.connect("zoom",
                 self.__zoom_cb)
@@ -202,13 +203,6 @@ class AbiWordActivity(activity.Activity):
     def __map_event_cb(self, event, activity):
         logger.debug('__map_event_cb')
 
-        # set custom keybindings for Write
-        logger.debug('Loading keybindings')
-        keybindings_file = os.path.join(get_bundle_path(), 'keybindings.xml')
-        self.abiword_canvas.invoke_cmd(
-                'com.abisource.abiword.loadbindings.fromURI',
-                keybindings_file, 0, 0)
-
         # no ugly borders please
         self.abiword_canvas.set_property("shadow-type", gtk.SHADOW_NONE)
 
@@ -237,6 +231,15 @@ class AbiWordActivity(activity.Activity):
         else:
             # we are creating the activity
             logger.error("We are creating an activity")
+
+    def __map_activity_event_cb(self, event, activity):
+        # set custom keybindings for Write
+        # we do it later because have problems if done before - OLPC #11049
+        logger.error('Loading keybindings')
+        keybindings_file = os.path.join(get_bundle_path(), 'keybindings.xml')
+        self.abiword_canvas.invoke_cmd(
+                'com.abisource.abiword.loadbindings.fromURI',
+                keybindings_file, 0, 0)
 
     def get_preview(self):
         if not hasattr(self.abiword_canvas, 'render_page_to_image'):
