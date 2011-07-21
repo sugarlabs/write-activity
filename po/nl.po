@@ -19,15 +19,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-01-25 00:30-0500\n"
-"PO-Revision-Date: 2010-06-23 07:45+0200\n"
-"Last-Translator: whe <heppew@yahoo.com>\n"
+"PO-Revision-Date: 2011-07-21 21:09+0200\n"
+"Last-Translator: Myckel Habets <myckel@sdf.lonestar.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.3\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: activity/activity.info:2
 msgid "Write"
@@ -107,7 +107,7 @@ msgstr "Afbeelding invoegen"
 
 #: toolbar.py:263
 msgid "Floating"
-msgstr ""
+msgstr "Drijvend"
 
 #: toolbar.py:320
 msgid "Zoom Out"
@@ -211,11 +211,11 @@ msgstr "TXT"
 
 #: widgets.py:181
 msgid "Portable Document Format (PDF)"
-msgstr ""
+msgstr "Portable Document Format (PDF)"
 
 #: widgets.py:182
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 #: widgets.py:187 widgets.py:188
 msgid "Export"
