@@ -8,52 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-25 00:30-0500\n"
+"POT-Creation-Date: 2011-08-05 11:13-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: activity/activity.info:2
 msgid "Write"
-msgstr ""
-
-#: AbiWordActivity.py:82
-msgid "Edit"
-msgstr ""
-
-#: AbiWordActivity.py:88
-msgid "View"
-msgstr ""
-
-#: AbiWordActivity.py:97
-msgid "Text"
-msgstr ""
-
-#: AbiWordActivity.py:103
-msgid "Paragraph"
-msgstr ""
-
-#: AbiWordActivity.py:109 toolbar.py:549
-msgid "Bullet List"
-msgstr ""
-
-#: AbiWordActivity.py:115 toolbar.py:217
-msgid "Table"
-msgstr ""
-
-#: AbiWordActivity.py:122
-msgid "Bold"
-msgstr ""
-
-#: AbiWordActivity.py:130
-msgid "Italic"
-msgstr ""
-
-#: AbiWordActivity.py:138
-msgid "Underline"
 msgstr ""
 
 #: toolbar.py:94
@@ -66,6 +31,10 @@ msgstr ""
 
 #: toolbar.py:117
 msgid "Find next"
+msgstr ""
+
+#: toolbar.py:217 AbiWordActivity.py:115
+msgid "Table"
 msgstr ""
 
 #: toolbar.py:217
@@ -156,6 +125,10 @@ msgstr ""
 msgid "Fill justify"
 msgstr ""
 
+#: toolbar.py:549 AbiWordActivity.py:109
+msgid "Bullet List"
+msgstr ""
+
 #: toolbar.py:553
 msgid "Dashed List"
 msgstr ""
@@ -170,6 +143,34 @@ msgstr ""
 
 #: toolbar.py:565
 msgid "Upper Case List"
+msgstr ""
+
+#: AbiWordActivity.py:82
+msgid "Edit"
+msgstr ""
+
+#: AbiWordActivity.py:88
+msgid "View"
+msgstr ""
+
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr ""
+
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr ""
+
+#: AbiWordActivity.py:122
+msgid "Bold"
+msgstr ""
+
+#: AbiWordActivity.py:130
+msgid "Italic"
+msgstr ""
+
+#: AbiWordActivity.py:138
+msgid "Underline"
 msgstr ""
 
 #: widgets.py:165
