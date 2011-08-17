@@ -14,11 +14,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: projects/write\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-25 00:30-0500\n"
+"POT-Creation-Date: 2011-08-05 11:13-0300\n"
 "PO-Revision-Date: 2011-02-17 08:33+0200\n"
 "Last-Translator: samy boutayeb <s.boutayeb@free.fr>\n"
 "Language-Team: French <traduc@traduc.org>\n"
-"Language: fr\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,42 +28,6 @@ msgstr ""
 #: activity/activity.info:2
 msgid "Write"
 msgstr "Écrire"
-
-#: AbiWordActivity.py:82
-msgid "Edit"
-msgstr "Modifier"
-
-#: AbiWordActivity.py:88
-msgid "View"
-msgstr "Vue"
-
-#: AbiWordActivity.py:97
-msgid "Text"
-msgstr "Texte"
-
-#: AbiWordActivity.py:103
-msgid "Paragraph"
-msgstr "Paragraphe"
-
-#: AbiWordActivity.py:109 toolbar.py:549
-msgid "Bullet List"
-msgstr "Liste à puces"
-
-#: AbiWordActivity.py:115 toolbar.py:217
-msgid "Table"
-msgstr "Tableau"
-
-#: AbiWordActivity.py:122
-msgid "Bold"
-msgstr "Gras"
-
-#: AbiWordActivity.py:130
-msgid "Italic"
-msgstr "Italique"
-
-#: AbiWordActivity.py:138
-msgid "Underline"
-msgstr "Souligné"
 
 #: toolbar.py:94
 msgid "Search"
@@ -76,6 +40,10 @@ msgstr "Rechercher précédent"
 #: toolbar.py:117
 msgid "Find next"
 msgstr "Rechercher suivant"
+
+#: toolbar.py:217 AbiWordActivity.py:115
+msgid "Table"
+msgstr "Tableau"
 
 #: toolbar.py:217
 msgid "Cancel"
@@ -165,6 +133,10 @@ msgstr "Aligné à droite"
 msgid "Fill justify"
 msgstr "Justifié"
 
+#: toolbar.py:549 AbiWordActivity.py:109
+msgid "Bullet List"
+msgstr "Liste à puces"
+
 #: toolbar.py:553
 msgid "Dashed List"
 msgstr "Liste à tirets"
@@ -180,6 +152,34 @@ msgstr "Liste a, b, c"
 #: toolbar.py:565
 msgid "Upper Case List"
 msgstr "Liste A, B, C"
+
+#: AbiWordActivity.py:82
+msgid "Edit"
+msgstr "Modifier"
+
+#: AbiWordActivity.py:88
+msgid "View"
+msgstr "Vue"
+
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr "Texte"
+
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr "Paragraphe"
+
+#: AbiWordActivity.py:122
+msgid "Bold"
+msgstr "Gras"
+
+#: AbiWordActivity.py:130
+msgid "Italic"
+msgstr "Italique"
+
+#: AbiWordActivity.py:138
+msgid "Underline"
+msgstr "Souligné"
 
 #: widgets.py:165
 msgid "Rich Text (RTF)"
