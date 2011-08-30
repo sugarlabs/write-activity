@@ -48,7 +48,7 @@ from toolbar import TextToolbar
 from toolbar import ListToolbar
 from toolbar import InsertToolbar
 from toolbar import ParagraphToolbar
-from widgets import ExportButton
+from widgets import ExportButtonFactory
 
 logger = logging.getLogger('write-activity')
 
@@ -66,15 +66,14 @@ class AbiWordActivity(activity.Activity):
 
         toolbar_box = ToolbarBox()
 
-        activity_button = ActivityToolbarButton(self)
+        self.activity_button = ActivityToolbarButton(self)
+        toolbar_box.toolbar.insert(self.activity_button, -1)
 
         separator = gtk.SeparatorToolItem()
         separator.show()
-        activity_button.props.page.insert(separator, 2)
-        export_button = ExportButton(self, self.abiword_canvas)
-        export_button.show()
-        activity_button.props.page.insert(export_button, 2)
-        toolbar_box.toolbar.insert(activity_button, 0)
+        self.activity_button.props.page.insert(separator, 2)
+        ExportButtonFactory(self, self.abiword_canvas)
+        self.activity_button.show()
 
         edit_toolbar = ToolbarButton()
         edit_toolbar.props.page = EditToolbar(self, toolbar_box)

@@ -159,47 +159,44 @@ class AbiButton(RadioToolButton):
             self.handler_unblock(self._toggled_handler)
 
 
-class ExportButton(ToolButton):
+class ExportButtonFactory():
 
     _EXPORT_FORMATS = [{'mime_type': 'application/rtf',
                         'title': _('Rich Text (RTF)'),
+                        'icon':'save-as-rtf',
                         'jpostfix': _('RTF'),
                         'exp_props': ''},
 
                        {'mime_type': 'text/html',
                         'title': _('Hypertext (HTML)'),
+                        'icon':'save-as-html',
                         'jpostfix': _('HTML'),
                         'exp_props': 'html4:yes; declare-xml:no; ' \
                                       'embed-css:yes; embed-images:yes;'},
 
                        {'mime_type': 'text/plain',
                         'title': _('Plain Text (TXT)'),
+                        'icon':'save-as-txt',
                         'jpostfix': _('TXT'),
                         'exp_props': ''},
 
                        {'mime_type': 'application/pdf',
                         'title': _('Portable Document Format (PDF)'),
+                        'icon':'save-as-pdf',
                         'jpostfix': _('PDF'),
                         'exp_props': ''}]
 
     def __init__(self, activity, abi):
-        ToolButton.__init__(self, 'document-save')
-        self.props.tooltip = _('Export')
-        self.props.label = _('Export')
 
+        toolbar = activity.activity_button.props.page
         for i in self._EXPORT_FORMATS:
-            menu_item = MenuItem(i['title'])
-            menu_item.connect('activate', self.__activate_cb, activity, abi, i)
-            self.props.palette.menu.append(menu_item)
-            menu_item.show()
+            button = ToolButton(i['icon'])
+            button.set_tooltip(i['title'])
+            button.connect('clicked', self.__clicked_cb, activity, abi, i)
+            toolbar.insert(button, -1)
+            button.show()
 
-    def do_clicked(self):
-        if self.props.palette.is_up():
-            self.props.palette.popdown(immediate=True)
-        else:
-            self.props.palette.popup(immediate=True, state=Palette.SECONDARY)
-
-    def __activate_cb(self, menu_item, activity, abi, format):
+    def __clicked_cb(self, menu_item, activity, abi, format):
         logger.debug('exporting file: %r' % format)
 
         exp_props = format['exp_props']
