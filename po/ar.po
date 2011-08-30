@@ -1,69 +1,33 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # translation of write.master.po to Arabic
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Khaled Hosny <khaledhosny@eglug.org>, 2007.
+# Khaled Hosny <khaledhosny@eglug.org>, 2007, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: write.master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-25 00:30-0500\n"
-"PO-Revision-Date: 2008-03-11 12:11-0400\n"
+"POT-Creation-Date: 2011-08-05 11:13-0300\n"
+"PO-Revision-Date: 2011-08-24 08:22+0200\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && "
-"n<=10 ? 3 : n>=11 && n<=99 ? 4 : 5;\n"
-"X-Generator: Pootle 1.1.0rc2\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Virtaal 0.7.0\n"
 
 #: activity/activity.info:2
 msgid "Write"
 msgstr "اكتب"
 
-#: AbiWordActivity.py:82
-msgid "Edit"
-msgstr "تحرير"
-
-#: AbiWordActivity.py:88
-msgid "View"
-msgstr "عرض"
-
-#: AbiWordActivity.py:97
-msgid "Text"
-msgstr "نص"
-
-#: AbiWordActivity.py:103
-msgid "Paragraph"
-msgstr ""
-
-#: AbiWordActivity.py:109 toolbar.py:549
-msgid "Bullet List"
-msgstr "قائمة منقوطة"
-
-#: AbiWordActivity.py:115 toolbar.py:217
-msgid "Table"
-msgstr "جدول"
-
-#: AbiWordActivity.py:122
-msgid "Bold"
-msgstr "عريض"
-
-#: AbiWordActivity.py:130
-msgid "Italic"
-msgstr "مائل"
-
-#: AbiWordActivity.py:138
-msgid "Underline"
-msgstr "مُسطَّر"
-
 #: toolbar.py:94
 msgid "Search"
-msgstr ""
+msgstr "ابحث"
 
 #: toolbar.py:111
 msgid "Find previous"
@@ -72,6 +36,10 @@ msgstr "ابحث عن السابق"
 #: toolbar.py:117
 msgid "Find next"
 msgstr "ابحث عن التالي"
+
+#: toolbar.py:217 AbiWordActivity.py:115
+msgid "Table"
+msgstr "جدول"
 
 #: toolbar.py:217
 msgid "Cancel"
@@ -99,7 +67,7 @@ msgstr "أدرج صورة"
 
 #: toolbar.py:263
 msgid "Floating"
-msgstr ""
+msgstr "عائم"
 
 #: toolbar.py:320
 msgid "Zoom Out"
@@ -147,19 +115,23 @@ msgstr "نص صِرف"
 
 #: toolbar.py:509
 msgid "Left justify"
-msgstr ""
+msgstr "حاذِ على اليسار"
 
 #: toolbar.py:512
 msgid "Center justify"
-msgstr ""
+msgstr "وسّط"
 
 #: toolbar.py:515
 msgid "Right justify"
-msgstr ""
+msgstr "حاذِ على اليمين"
 
 #: toolbar.py:518
 msgid "Fill justify"
-msgstr ""
+msgstr "ساوِ على الجانبين"
+
+#: toolbar.py:549 AbiWordActivity.py:109
+msgid "Bullet List"
+msgstr "قائمة منقوطة"
 
 #: toolbar.py:553
 msgid "Dashed List"
@@ -176,6 +148,34 @@ msgstr "قائمة حروف صغيرة"
 #: toolbar.py:565
 msgid "Upper Case List"
 msgstr "قائمة حروف كبيرة"
+
+#: AbiWordActivity.py:82
+msgid "Edit"
+msgstr "تحرير"
+
+#: AbiWordActivity.py:88
+msgid "View"
+msgstr "عرض"
+
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr "نص"
+
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr "فقرة"
+
+#: AbiWordActivity.py:122
+msgid "Bold"
+msgstr "عريض"
+
+#: AbiWordActivity.py:130
+msgid "Italic"
+msgstr "مائل"
+
+#: AbiWordActivity.py:138
+msgid "Underline"
+msgstr "مُسطَّر"
 
 #: widgets.py:165
 msgid "Rich Text (RTF)"
@@ -203,15 +203,15 @@ msgstr "TXT"
 
 #: widgets.py:181
 msgid "Portable Document Format (PDF)"
-msgstr ""
+msgstr "صيغة المستندات المحمولة (PDF)"
 
 #: widgets.py:182
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 #: widgets.py:187 widgets.py:188
 msgid "Export"
-msgstr ""
+msgstr "صدّر"
 
 #~ msgid "Image"
 #~ msgstr "صورة"
