@@ -69,7 +69,7 @@ class FontCombo(ComboBox):
             if not self._has_custom_fonts:
                 # add a separator to seperate the non-available fonts from
                 # the available ones
-                self._fonts.append('') # ugly
+                self._fonts.append('')  # ugly
                 self.append_separator()
                 self._has_custom_fonts = True
             # add the new font
@@ -79,7 +79,7 @@ class FontCombo(ComboBox):
             model = self.get_model()
             num_children = model.iter_n_children(None)
             logger.debug('Number of fonts in the list: %d', num_children)
-            font_index = num_children-1
+            font_index = num_children - 1
 
         # activate the found font
         if (font_index > -1):
