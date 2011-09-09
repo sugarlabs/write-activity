@@ -14,56 +14,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-25 00:30-0500\n"
-"PO-Revision-Date: 2011-02-11 07:20+0200\n"
-"Last-Translator: Shaswot <shaswot.kharel@olenepal.org>\n"
+"POT-Creation-Date: 2011-08-05 11:13-0300\n"
+"PO-Revision-Date: 2011-09-09 13:23+0200\n"
+"Last-Translator:  <aman.maharjan@olenepal.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ne\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.3\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: activity/activity.info:2
 msgid "Write"
 msgstr "लेख"
-
-#: AbiWordActivity.py:82
-msgid "Edit"
-msgstr "सम्पादन"
-
-#: AbiWordActivity.py:88
-msgid "View"
-msgstr "दृश्य"
-
-#: AbiWordActivity.py:97
-msgid "Text"
-msgstr "पाठ"
-
-#: AbiWordActivity.py:103
-msgid "Paragraph"
-msgstr "अनुच्छेद "
-
-#: AbiWordActivity.py:109 toolbar.py:549
-msgid "Bullet List"
-msgstr "बुलेट सुचि"
-
-#: AbiWordActivity.py:115 toolbar.py:217
-msgid "Table"
-msgstr "तालिका"
-
-#: AbiWordActivity.py:122
-msgid "Bold"
-msgstr "गाढा"
-
-#: AbiWordActivity.py:130
-msgid "Italic"
-msgstr "छड्के"
-
-#: AbiWordActivity.py:138
-msgid "Underline"
-msgstr "रेखांकित"
 
 #: toolbar.py:94
 msgid "Search"
@@ -76,6 +40,10 @@ msgstr "पछिल्लो खोज"
 #: toolbar.py:117
 msgid "Find next"
 msgstr "अर्को खोज"
+
+#: toolbar.py:217 AbiWordActivity.py:115
+msgid "Table"
+msgstr "तालिका"
 
 #: toolbar.py:217
 msgid "Cancel"
@@ -99,7 +67,7 @@ msgstr "स्तम्भ मेटाऊ"
 
 #: toolbar.py:256
 msgid "Insert Image"
-msgstr "चित्र राख"
+msgstr "तस्विर राख"
 
 #: toolbar.py:263
 msgid "Floating"
@@ -163,7 +131,11 @@ msgstr "दाँयातर्फ समरेखन गर"
 
 #: toolbar.py:518
 msgid "Fill justify"
-msgstr ""
+msgstr " भर समरेखन गर्नुहोस्"
+
+#: toolbar.py:549 AbiWordActivity.py:109
+msgid "Bullet List"
+msgstr "बुलेट सुचि"
 
 #: toolbar.py:553
 msgid "Dashed List"
@@ -181,9 +153,37 @@ msgstr "सानो अक्षरको सुचि"
 msgid "Upper Case List"
 msgstr "ठुलो अक्षरको सुचि"
 
+#: AbiWordActivity.py:82
+msgid "Edit"
+msgstr "सम्पादन"
+
+#: AbiWordActivity.py:88
+msgid "View"
+msgstr "दृश्य"
+
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr "पाठ"
+
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr "अनुच्छेद"
+
+#: AbiWordActivity.py:122
+msgid "Bold"
+msgstr "गाढा"
+
+#: AbiWordActivity.py:130
+msgid "Italic"
+msgstr "छड्के"
+
+#: AbiWordActivity.py:138
+msgid "Underline"
+msgstr "रेखांकित"
+
 #: widgets.py:165
 msgid "Rich Text (RTF)"
-msgstr "रिच् पाठ (RTF)"
+msgstr "Rich Text (RTF)"
 
 #: widgets.py:166
 msgid "RTF"
@@ -191,7 +191,7 @@ msgstr "RTF"
 
 #: widgets.py:170
 msgid "Hypertext (HTML)"
-msgstr "हाईपरटेक्स्ट(HTML)"
+msgstr "Hypertext(HTML)"
 
 #: widgets.py:171
 msgid "HTML"
@@ -199,7 +199,7 @@ msgstr "HTML"
 
 #: widgets.py:176
 msgid "Plain Text (TXT)"
-msgstr "सादा पाठ (TXT)"
+msgstr "Plain Text(TXT)"
 
 #: widgets.py:177
 msgid "TXT"
