@@ -14,68 +14,36 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-25 00:30-0500\n"
-"PO-Revision-Date: 2010-03-27 08:30+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"POT-Creation-Date: 2011-08-05 11:13-0300\n"
+"PO-Revision-Date: 2011-09-11 10:55+0200\n"
+"Last-Translator:  <ganeshgajre@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.3\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: activity/activity.info:2
 msgid "Write"
 msgstr "लिहा"
 
-#: AbiWordActivity.py:82
-msgid "Edit"
-msgstr "संपादन करणे"
-
-#: AbiWordActivity.py:88
-msgid "View"
-msgstr "पाहा"
-
-#: AbiWordActivity.py:97
-msgid "Text"
-msgstr "शब्द"
-
-#: AbiWordActivity.py:103
-msgid "Paragraph"
-msgstr ""
-
-#: AbiWordActivity.py:109 toolbar.py:549
-msgid "Bullet List"
-msgstr "बुलेट लिस्ट"
-
-#: AbiWordActivity.py:115 toolbar.py:217
-msgid "Table"
-msgstr "टेबल"
-
-#: AbiWordActivity.py:122
-msgid "Bold"
-msgstr "बोल्ड"
-
-#: AbiWordActivity.py:130
-msgid "Italic"
-msgstr "तिरपा"
-
-#: AbiWordActivity.py:138
-msgid "Underline"
-msgstr "अधोरेखित करणे"
-
 #: toolbar.py:94
 msgid "Search"
-msgstr ""
+msgstr "शोधा"
 
 #: toolbar.py:111
 msgid "Find previous"
-msgstr "मागचा शोधा"
+msgstr "मागील शोधा"
 
 #: toolbar.py:117
 msgid "Find next"
 msgstr "पुढचे शोधा"
+
+#: toolbar.py:217 AbiWordActivity.py:115
+msgid "Table"
+msgstr "टेबल"
 
 #: toolbar.py:217
 msgid "Cancel"
@@ -103,7 +71,7 @@ msgstr "छायाचित्र आत घाला"
 
 #: toolbar.py:263
 msgid "Floating"
-msgstr ""
+msgstr "फ्लोटिंग"
 
 #: toolbar.py:320
 msgid "Zoom Out"
@@ -119,7 +87,7 @@ msgstr "%"
 
 #: toolbar.py:356
 msgid "Page: "
-msgstr "पृष्ठ "
+msgstr "पृष्ठ: "
 
 #: toolbar.py:462 toolbar.py:539
 msgid "Normal"
@@ -127,19 +95,19 @@ msgstr "साधारण"
 
 #: toolbar.py:473
 msgid "Heading 1"
-msgstr "शीर्षक १"
+msgstr "शीर्षक 1"
 
 #: toolbar.py:477
 msgid "Heading 2"
-msgstr "शीर्षक २"
+msgstr "शीर्षक 2"
 
 #: toolbar.py:481
 msgid "Heading 3"
-msgstr "शीर्षक ३"
+msgstr "शीर्षक 3"
 
 #: toolbar.py:485
 msgid "Heading 4"
-msgstr "शीर्षक ४"
+msgstr "शीर्षक 4"
 
 #: toolbar.py:489
 msgid "Block Text"
@@ -151,19 +119,23 @@ msgstr "साधारण शब्द"
 
 #: toolbar.py:509
 msgid "Left justify"
-msgstr ""
+msgstr "डावीकडून रचा"
 
 #: toolbar.py:512
 msgid "Center justify"
-msgstr ""
+msgstr "मध्यातुन रचा"
 
 #: toolbar.py:515
 msgid "Right justify"
-msgstr ""
+msgstr "उजवीकडुन रचा"
 
 #: toolbar.py:518
 msgid "Fill justify"
-msgstr ""
+msgstr "रचलेली जागा भरा"
+
+#: toolbar.py:549 AbiWordActivity.py:109
+msgid "Bullet List"
+msgstr "बुलेट लिस्ट"
 
 #: toolbar.py:553
 msgid "Dashed List"
@@ -181,6 +153,34 @@ msgstr "छोटी लिपी यादी"
 msgid "Upper Case List"
 msgstr "मोठी लिपी यादी"
 
+#: AbiWordActivity.py:82
+msgid "Edit"
+msgstr "संपादन करणे"
+
+#: AbiWordActivity.py:88
+msgid "View"
+msgstr "पाहा"
+
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr "शब्द"
+
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr "परीच्छेद"
+
+#: AbiWordActivity.py:122
+msgid "Bold"
+msgstr "बोल्ड"
+
+#: AbiWordActivity.py:130
+msgid "Italic"
+msgstr "तिरपा"
+
+#: AbiWordActivity.py:138
+msgid "Underline"
+msgstr "अधोरेखित करणे"
+
 #: widgets.py:165
 msgid "Rich Text (RTF)"
 msgstr "रिच टेक्स्ट (आर.टी.एफ)"
@@ -195,11 +195,11 @@ msgstr "हाइपरटेक्स्ट (एच्.टी.एम्.एल�
 
 #: widgets.py:171
 msgid "HTML"
-msgstr "एच्.टी.एम्.एल्"
+msgstr "एच.टी.एम्.एल्"
 
 #: widgets.py:176
 msgid "Plain Text (TXT)"
-msgstr "साधे शब्द (टी.एक्स.टी)"
+msgstr "सरल शब्द (टी.एक्स.टी)"
 
 #: widgets.py:177
 msgid "TXT"
@@ -207,15 +207,15 @@ msgstr "टी.एक्स.टी"
 
 #: widgets.py:181
 msgid "Portable Document Format (PDF)"
-msgstr ""
+msgstr "पोर्टेबल डॉक्युमेंट पध्दत(पी.डी.एफ)"
 
 #: widgets.py:182
 msgid "PDF"
-msgstr ""
+msgstr "पी.डी.एफ"
 
 #: widgets.py:187 widgets.py:188
 msgid "Export"
-msgstr ""
+msgstr "स्वरुप बदला"
 
 #~ msgid "Image"
 #~ msgstr " छायाचित्र"
