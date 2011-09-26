@@ -14,9 +14,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-25 00:30-0500\n"
-"PO-Revision-Date: 2011-06-12 01:06+0200\n"
-"Last-Translator:  <jamarat@o2.pl>\n"
+"POT-Creation-Date: 2011-09-01 00:30-0400\n"
+"PO-Revision-Date: 2011-09-19 15:04+0200\n"
+"Last-Translator: frks <frks@frks.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -24,45 +24,45 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "Write"
 msgstr "Napisz"
 
-#: AbiWordActivity.py:82
+#: AbiWordActivity.py:81
 msgid "Edit"
 msgstr "Edytuj"
 
-#: AbiWordActivity.py:88
+#: AbiWordActivity.py:87
 msgid "View"
 msgstr "Widok"
 
-#: AbiWordActivity.py:97
+#: AbiWordActivity.py:96
 msgid "Text"
 msgstr "Tekst"
 
-#: AbiWordActivity.py:103
+#: AbiWordActivity.py:102
 msgid "Paragraph"
 msgstr "Akapit"
 
-#: AbiWordActivity.py:109 toolbar.py:549
+#: AbiWordActivity.py:108 toolbar.py:549
 msgid "Bullet List"
 msgstr "Lista wypunktowana"
 
-#: AbiWordActivity.py:115 toolbar.py:217
+#: AbiWordActivity.py:114 toolbar.py:217
 msgid "Table"
 msgstr "Tabela"
 
-#: AbiWordActivity.py:122
+#: AbiWordActivity.py:121
 msgid "Bold"
-msgstr "Pogrubione"
+msgstr "Wytłuszczone"
 
-#: AbiWordActivity.py:130
+#: AbiWordActivity.py:129
 msgid "Italic"
 msgstr "Kursywa"
 
-#: AbiWordActivity.py:138
+#: AbiWordActivity.py:137
 msgid "Underline"
 msgstr "Podkreślenie"
 
@@ -103,9 +103,8 @@ msgid "Insert Image"
 msgstr "Wstaw obraz"
 
 #: toolbar.py:263
-#, fuzzy
 msgid "Floating"
-msgstr "Pływający"
+msgstr "Gdziekolwiek"
 
 #: toolbar.py:320
 msgid "Zoom Out"
@@ -121,7 +120,7 @@ msgstr "%"
 
 #: toolbar.py:356
 msgid "Page: "
-msgstr "Strona:"
+msgstr "Strona: "
 
 #: toolbar.py:462 toolbar.py:539
 msgid "Normal"
@@ -144,9 +143,8 @@ msgid "Heading 4"
 msgstr "Nagłówek 4"
 
 #: toolbar.py:489
-#, fuzzy
 msgid "Block Text"
-msgstr "Blok tekstu"
+msgstr "Tekst wyrównany"
 
 #: toolbar.py:493
 msgid "Plain Text"
@@ -169,9 +167,8 @@ msgid "Fill justify"
 msgstr "Wyrównanie obustronne"
 
 #: toolbar.py:553
-#, fuzzy
 msgid "Dashed List"
-msgstr "Lista z wcięciem"
+msgstr "Lista z myślnikami"
 
 #: toolbar.py:557
 msgid "Numbered List"
@@ -187,39 +184,38 @@ msgstr "Lista z wielkimi literami"
 
 #: widgets.py:165
 msgid "Rich Text (RTF)"
-msgstr "Format tekstu (RTF)"
+msgstr "Rich Text Format (RTF)"
 
-#: widgets.py:166
+#: widgets.py:167
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:170
-msgid "Hypertext (HTML)"
-msgstr "Hipertekst"
-
 #: widgets.py:171
+msgid "Hypertext (HTML)"
+msgstr "Hipertekst (HTML)"
+
+#: widgets.py:173
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:176
+#: widgets.py:178
 msgid "Plain Text (TXT)"
-msgstr "Zwykły tekst"
+msgstr "Zwykły tekst (TXT)"
 
-#: widgets.py:177
+#: widgets.py:180
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:181
+#: widgets.py:184
 msgid "Portable Document Format (PDF)"
-msgstr "Format PDF"
+msgstr "Portable Document Format (PDF)"
 
-#: widgets.py:182
+#: widgets.py:186
 msgid "PDF"
 msgstr "PDF"
 
-#: widgets.py:187 widgets.py:188
-msgid "Export"
-msgstr "Eksport"
+#~ msgid "Export"
+#~ msgstr "Eksport"
 
 #~ msgid "Image"
 #~ msgstr "Obraz"
