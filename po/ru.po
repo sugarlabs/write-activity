@@ -14,54 +14,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-25 00:30-0500\n"
-"PO-Revision-Date: 2007-11-24 11:21+0000\n"
-"Last-Translator: Maxim Osipov <maxim.osipov@gmail.com>\n"
+"POT-Creation-Date: 2011-08-05 11:13-0300\n"
+"PO-Revision-Date: 2011-07-12 21:11+0200\n"
+"Last-Translator: <alex.olpc@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 1.0.2\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: activity/activity.info:2
 msgid "Write"
 msgstr "Написать"
-
-#: AbiWordActivity.py:82
-msgid "Edit"
-msgstr "Редактировать"
-
-#: AbiWordActivity.py:88
-msgid "View"
-msgstr "Просмотреть"
-
-#: AbiWordActivity.py:97
-msgid "Text"
-msgstr "Текст"
-
-#: AbiWordActivity.py:103
-msgid "Paragraph"
-msgstr "Параграф"
-
-#: AbiWordActivity.py:109 toolbar.py:549
-msgid "Bullet List"
-msgstr "Список с маркерами"
-
-#: AbiWordActivity.py:115 toolbar.py:217
-msgid "Table"
-msgstr "Таблица"
-
-#: AbiWordActivity.py:122
-msgid "Bold"
-msgstr "Жирный"
-
-#: AbiWordActivity.py:130
-msgid "Italic"
-msgstr "Курсив"
-
-#: AbiWordActivity.py:138
-msgid "Underline"
-msgstr "Подчёркнутый"
 
 #: toolbar.py:94
 msgid "Search"
@@ -74,6 +41,10 @@ msgstr "Найти предыдущий"
 #: toolbar.py:117
 msgid "Find next"
 msgstr "Найти следующий"
+
+#: toolbar.py:217 AbiWordActivity.py:115
+msgid "Table"
+msgstr "Таблица"
 
 #: toolbar.py:217
 msgid "Cancel"
@@ -101,7 +72,7 @@ msgstr "Вставить картинку"
 
 #: toolbar.py:263
 msgid "Floating"
-msgstr ""
+msgstr "Плавающий"
 
 #: toolbar.py:320
 msgid "Zoom Out"
@@ -163,6 +134,10 @@ msgstr "Выравнивание по правой границе"
 msgid "Fill justify"
 msgstr "Выравнивание по ширине"
 
+#: toolbar.py:549 AbiWordActivity.py:109
+msgid "Bullet List"
+msgstr "Список с маркерами"
+
 #: toolbar.py:553
 msgid "Dashed List"
 msgstr "Простой список"
@@ -178,6 +153,34 @@ msgstr "Список нижнего регистра"
 #: toolbar.py:565
 msgid "Upper Case List"
 msgstr "Список верхнего регистра"
+
+#: AbiWordActivity.py:82
+msgid "Edit"
+msgstr "Редактировать"
+
+#: AbiWordActivity.py:88
+msgid "View"
+msgstr "Просмотреть"
+
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr "Текст"
+
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr "Параграф"
+
+#: AbiWordActivity.py:122
+msgid "Bold"
+msgstr "Жирный"
+
+#: AbiWordActivity.py:130
+msgid "Italic"
+msgstr "Курсив"
+
+#: AbiWordActivity.py:138
+msgid "Underline"
+msgstr "Подчёркнутый"
 
 #: widgets.py:165
 msgid "Rich Text (RTF)"
@@ -205,11 +208,11 @@ msgstr "TXT"
 
 #: widgets.py:181
 msgid "Portable Document Format (PDF)"
-msgstr ""
+msgstr "Формат Portable Document Format (PDF)"
 
 #: widgets.py:182
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 #: widgets.py:187 widgets.py:188
 msgid "Export"
