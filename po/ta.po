@@ -14,56 +14,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-25 00:30-0500\n"
-"PO-Revision-Date: 2010-07-26 08:27+0200\n"
-"Last-Translator: தங்கமணி <thangam.arunx@gmail.com>\n"
+"POT-Creation-Date: 2011-08-05 11:13-0300\n"
+"PO-Revision-Date: 2011-07-03 13:52+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: ta\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.3\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: activity/activity.info:2
 msgid "Write"
 msgstr "எழுதுக"
-
-#: AbiWordActivity.py:82
-msgid "Edit"
-msgstr "திருத்து"
-
-#: AbiWordActivity.py:88
-msgid "View"
-msgstr "பார்"
-
-#: AbiWordActivity.py:97
-msgid "Text"
-msgstr "உரை"
-
-#: AbiWordActivity.py:103
-msgid "Paragraph"
-msgstr "பத்தி"
-
-#: AbiWordActivity.py:109 toolbar.py:549
-msgid "Bullet List"
-msgstr "புள்ளி பட்டியல்"
-
-#: AbiWordActivity.py:115 toolbar.py:217
-msgid "Table"
-msgstr "அட்டவணை"
-
-#: AbiWordActivity.py:122
-msgid "Bold"
-msgstr "பெரிதாக்கு"
-
-#: AbiWordActivity.py:130
-msgid "Italic"
-msgstr "சரிவு"
-
-#: AbiWordActivity.py:138
-msgid "Underline"
-msgstr "அடிகோடிடு"
 
 #: toolbar.py:94
 msgid "Search"
@@ -76,6 +40,10 @@ msgstr "முன்னையதை கண்டுபிடி"
 #: toolbar.py:117
 msgid "Find next"
 msgstr "அடுத்தததை கண்டுபிடி"
+
+#: toolbar.py:217 AbiWordActivity.py:115
+msgid "Table"
+msgstr "அட்டவணை"
 
 #: toolbar.py:217
 msgid "Cancel"
@@ -103,7 +71,7 @@ msgstr "படத்தை உட்சேர்"
 
 #: toolbar.py:263
 msgid "Floating"
-msgstr ""
+msgstr "புள்ளி மாறிலி"
 
 #: toolbar.py:320
 msgid "Zoom Out"
@@ -119,7 +87,7 @@ msgstr "%"
 
 #: toolbar.py:356
 msgid "Page: "
-msgstr "பக்கம்:"
+msgstr "பக்கம் "
 
 #: toolbar.py:462 toolbar.py:539
 msgid "Normal"
@@ -165,6 +133,10 @@ msgstr "வலது பக்கமாக அமை"
 msgid "Fill justify"
 msgstr "நிரம்பிய பக்கமாக அமை"
 
+#: toolbar.py:549 AbiWordActivity.py:109
+msgid "Bullet List"
+msgstr "புள்ளி பட்டியல்"
+
 #: toolbar.py:553
 msgid "Dashed List"
 msgstr "கோடிட்ட பட்டியல்"
@@ -181,9 +153,37 @@ msgstr "சிறியஎழுத்து பட்டியல்"
 msgid "Upper Case List"
 msgstr "பெரியஎழுத்து பட்டியல்"
 
+#: AbiWordActivity.py:82
+msgid "Edit"
+msgstr "திருத்து"
+
+#: AbiWordActivity.py:88
+msgid "View"
+msgstr "பார்"
+
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr "உரை"
+
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr "பத்தி"
+
+#: AbiWordActivity.py:122
+msgid "Bold"
+msgstr "பெரிதாக்கு"
+
+#: AbiWordActivity.py:130
+msgid "Italic"
+msgstr "சரிவு"
+
+#: AbiWordActivity.py:138
+msgid "Underline"
+msgstr "அடிகோடிடு"
+
 #: widgets.py:165
 msgid "Rich Text (RTF)"
-msgstr "வளமான  உரை"
+msgstr "வளமான உரை(RTF)"
 
 #: widgets.py:166
 msgid "RTF"
@@ -207,11 +207,11 @@ msgstr "TXT"
 
 #: widgets.py:181
 msgid "Portable Document Format (PDF)"
-msgstr ""
+msgstr "கையாளுகிற கோப்பு வடிவம்"
 
 #: widgets.py:182
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 #: widgets.py:187 widgets.py:188
 msgid "Export"
