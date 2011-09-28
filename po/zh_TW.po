@@ -10,56 +10,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OLPC Write\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-25 00:30-0500\n"
-"PO-Revision-Date: 2009-10-11 20:02-0400\n"
-"Last-Translator: Yuan Chao <yuanchao@gmail.com>\n"
+"POT-Creation-Date: 2011-08-05 11:13-0300\n"
+"PO-Revision-Date: 2011-05-22 17:54+0200\n"
+"Last-Translator: Chen, Kenzen <fallwind@seed.net.tw>\n"
 "Language-Team: Yuan CHAO <yuanchao@gmail.com>\n"
-"Language: zh_TW\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 1.2.1\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: activity/activity.info:2
 msgid "Write"
 msgstr "寫作"
-
-#: AbiWordActivity.py:82
-msgid "Edit"
-msgstr "編輯"
-
-#: AbiWordActivity.py:88
-msgid "View"
-msgstr "檢視"
-
-#: AbiWordActivity.py:97
-msgid "Text"
-msgstr "文字"
-
-#: AbiWordActivity.py:103
-msgid "Paragraph"
-msgstr "段落"
-
-#: AbiWordActivity.py:109 toolbar.py:549
-msgid "Bullet List"
-msgstr "圓點條列項目"
-
-#: AbiWordActivity.py:115 toolbar.py:217
-msgid "Table"
-msgstr "表格"
-
-#: AbiWordActivity.py:122
-msgid "Bold"
-msgstr "粗體"
-
-#: AbiWordActivity.py:130
-msgid "Italic"
-msgstr "斜體"
-
-#: AbiWordActivity.py:138
-msgid "Underline"
-msgstr "劃底線"
 
 #: toolbar.py:94
 msgid "Search"
@@ -72,6 +36,10 @@ msgstr "找上一個"
 #: toolbar.py:117
 msgid "Find next"
 msgstr "找下一個"
+
+#: toolbar.py:217 AbiWordActivity.py:115
+msgid "Table"
+msgstr "表格"
 
 #: toolbar.py:217
 msgid "Cancel"
@@ -99,7 +67,7 @@ msgstr "插入圖片"
 
 #: toolbar.py:263
 msgid "Floating"
-msgstr ""
+msgstr "旋轉"
 
 #: toolbar.py:320
 msgid "Zoom Out"
@@ -161,6 +129,10 @@ msgstr "靠右"
 msgid "Fill justify"
 msgstr "左右對齊"
 
+#: toolbar.py:549 AbiWordActivity.py:109
+msgid "Bullet List"
+msgstr "圓點條列項目"
+
 #: toolbar.py:553
 msgid "Dashed List"
 msgstr "短線條列項目"
@@ -176,6 +148,34 @@ msgstr "小寫英文條列項目"
 #: toolbar.py:565
 msgid "Upper Case List"
 msgstr "大寫英文條列項目"
+
+#: AbiWordActivity.py:82
+msgid "Edit"
+msgstr "編輯"
+
+#: AbiWordActivity.py:88
+msgid "View"
+msgstr "檢視"
+
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr "文字"
+
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr "段落"
+
+#: AbiWordActivity.py:122
+msgid "Bold"
+msgstr "粗體"
+
+#: AbiWordActivity.py:130
+msgid "Italic"
+msgstr "斜體"
+
+#: AbiWordActivity.py:138
+msgid "Underline"
+msgstr "劃底線"
 
 #: widgets.py:165
 msgid "Rich Text (RTF)"
@@ -203,11 +203,11 @@ msgstr "TXT"
 
 #: widgets.py:181
 msgid "Portable Document Format (PDF)"
-msgstr ""
+msgstr "可攜式文件格式（PDF）"
 
 #: widgets.py:182
 msgid "PDF"
-msgstr ""
+msgstr "pdf"
 
 #: widgets.py:187 widgets.py:188
 msgid "Export"
