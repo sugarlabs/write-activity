@@ -18,11 +18,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-25 00:30-0500\n"
+"POT-Creation-Date: 2011-08-05 11:13-0300\n"
 "PO-Revision-Date: 2011-07-21 21:09+0200\n"
 "Last-Translator: Myckel Habets <myckel@sdf.lonestar.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: nl\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -32,42 +32,6 @@ msgstr ""
 #: activity/activity.info:2
 msgid "Write"
 msgstr "Schrijven"
-
-#: AbiWordActivity.py:82
-msgid "Edit"
-msgstr "Bewerken"
-
-#: AbiWordActivity.py:88
-msgid "View"
-msgstr "Beeld"
-
-#: AbiWordActivity.py:97
-msgid "Text"
-msgstr "Tekst"
-
-#: AbiWordActivity.py:103
-msgid "Paragraph"
-msgstr "Paragraaf"
-
-#: AbiWordActivity.py:109 toolbar.py:549
-msgid "Bullet List"
-msgstr "Puntenlijst"
-
-#: AbiWordActivity.py:115 toolbar.py:217
-msgid "Table"
-msgstr "Tabel"
-
-#: AbiWordActivity.py:122
-msgid "Bold"
-msgstr "Vet"
-
-#: AbiWordActivity.py:130
-msgid "Italic"
-msgstr "Cursief"
-
-#: AbiWordActivity.py:138
-msgid "Underline"
-msgstr "Onderstrepen"
 
 #: toolbar.py:94
 msgid "Search"
@@ -80,6 +44,10 @@ msgstr "Vorige zoeken"
 #: toolbar.py:117
 msgid "Find next"
 msgstr "Volgende zoeken"
+
+#: toolbar.py:217 AbiWordActivity.py:115
+msgid "Table"
+msgstr "Tabel"
 
 #: toolbar.py:217
 msgid "Cancel"
@@ -169,6 +137,10 @@ msgstr "Rechts uitlijnen"
 msgid "Fill justify"
 msgstr "Gevuld uitlijnen"
 
+#: toolbar.py:549 AbiWordActivity.py:109
+msgid "Bullet List"
+msgstr "Puntenlijst"
+
 #: toolbar.py:553
 msgid "Dashed List"
 msgstr "Streepjeslijst"
@@ -184,6 +156,34 @@ msgstr "Kleineletter lijst"
 #: toolbar.py:565
 msgid "Upper Case List"
 msgstr "Hoofdletter lijst"
+
+#: AbiWordActivity.py:82
+msgid "Edit"
+msgstr "Bewerken"
+
+#: AbiWordActivity.py:88
+msgid "View"
+msgstr "Beeld"
+
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr "Tekst"
+
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr "Paragraaf"
+
+#: AbiWordActivity.py:122
+msgid "Bold"
+msgstr "Vet"
+
+#: AbiWordActivity.py:130
+msgid "Italic"
+msgstr "Cursief"
+
+#: AbiWordActivity.py:138
+msgid "Underline"
+msgstr "Onderstrepen"
 
 #: widgets.py:165
 msgid "Rich Text (RTF)"
