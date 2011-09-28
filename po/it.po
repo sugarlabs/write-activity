@@ -14,56 +14,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-25 00:30-0500\n"
-"PO-Revision-Date: 2011-02-05 23:06+0200\n"
-"Last-Translator: matgat <matteo.gatti@gmail.com>\n"
+"POT-Creation-Date: 2011-08-05 11:13-0300\n"
+"PO-Revision-Date: 2011-07-04 15:22+0200\n"
+"Last-Translator: Carlo Falciola <cfalciola@yahoo.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: it\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.3\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: activity/activity.info:2
 msgid "Write"
 msgstr "Scrivi"
-
-#: AbiWordActivity.py:82
-msgid "Edit"
-msgstr "Modifica"
-
-#: AbiWordActivity.py:88
-msgid "View"
-msgstr "Vista"
-
-#: AbiWordActivity.py:97
-msgid "Text"
-msgstr "Testo"
-
-#: AbiWordActivity.py:103
-msgid "Paragraph"
-msgstr "Paragrafo"
-
-#: AbiWordActivity.py:109 toolbar.py:549
-msgid "Bullet List"
-msgstr "Lista puntata"
-
-#: AbiWordActivity.py:115 toolbar.py:217
-msgid "Table"
-msgstr "Tabella"
-
-#: AbiWordActivity.py:122
-msgid "Bold"
-msgstr "Grassetto"
-
-#: AbiWordActivity.py:130
-msgid "Italic"
-msgstr "Corsivo"
-
-#: AbiWordActivity.py:138
-msgid "Underline"
-msgstr "Sottolineato"
 
 #: toolbar.py:94
 msgid "Search"
@@ -76,6 +40,10 @@ msgstr "Trova precedente"
 #: toolbar.py:117
 msgid "Find next"
 msgstr "Trova prossimo"
+
+#: toolbar.py:217 AbiWordActivity.py:115
+msgid "Table"
+msgstr "Tabella"
 
 #: toolbar.py:217
 msgid "Cancel"
@@ -103,7 +71,7 @@ msgstr "Inserisci Immagine"
 
 #: toolbar.py:263
 msgid "Floating"
-msgstr ""
+msgstr "Flottante"
 
 # Nel caso si tratti di attributi al carattere sarebbe più opportuno ingrandisci/riduci
 #: toolbar.py:320
@@ -168,6 +136,10 @@ msgstr "Allinea a destra"
 msgid "Fill justify"
 msgstr "Giustifica"
 
+#: toolbar.py:549 AbiWordActivity.py:109
+msgid "Bullet List"
+msgstr "Lista puntata"
+
 #: toolbar.py:553
 msgid "Dashed List"
 msgstr "Lista con trattino"
@@ -183,6 +155,34 @@ msgstr "Lista con minuscola"
 #: toolbar.py:565
 msgid "Upper Case List"
 msgstr "Lista con maiuscola"
+
+#: AbiWordActivity.py:82
+msgid "Edit"
+msgstr "Modifica"
+
+#: AbiWordActivity.py:88
+msgid "View"
+msgstr "Vista"
+
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr "Testo"
+
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr "Paragrafo"
+
+#: AbiWordActivity.py:122
+msgid "Bold"
+msgstr "Grassetto"
+
+#: AbiWordActivity.py:130
+msgid "Italic"
+msgstr "Corsivo"
+
+#: AbiWordActivity.py:138
+msgid "Underline"
+msgstr "Sottolineato"
 
 #: widgets.py:165
 msgid "Rich Text (RTF)"
