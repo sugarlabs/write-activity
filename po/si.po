@@ -14,58 +14,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-25 00:30-0500\n"
-"PO-Revision-Date: 2008-05-23 09:50-0400\n"
-"Last-Translator: Rashan Anushka <rashan.uoc@gmail.com>\n"
+"POT-Creation-Date: 2011-08-05 11:13-0300\n"
+"PO-Revision-Date: 2011-09-28 08:06+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: si\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 1.1.0rc2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "Write"
 msgstr "ලියන්න"
 
-#: AbiWordActivity.py:82
-msgid "Edit"
-msgstr "සංස්කරනය කරන්න"
-
-#: AbiWordActivity.py:88
-msgid "View"
-msgstr "දර්ශනය කරන්න"
-
-#: AbiWordActivity.py:97
-msgid "Text"
-msgstr "පෙළ"
-
-#: AbiWordActivity.py:103
-msgid "Paragraph"
-msgstr ""
-
-#: AbiWordActivity.py:109 toolbar.py:549
-msgid "Bullet List"
-msgstr "බුලට් ලැයිස්තුව"
-
-#: AbiWordActivity.py:115 toolbar.py:217
-msgid "Table"
-msgstr "වගුව"
-
-#: AbiWordActivity.py:122
-msgid "Bold"
-msgstr "තද ඉරි"
-
-#: AbiWordActivity.py:130
-msgid "Italic"
-msgstr "ඉතාලියානු"
-
-#: AbiWordActivity.py:138
-msgid "Underline"
-msgstr "යටි ඉරක්"
-
 #: toolbar.py:94
 msgid "Search"
-msgstr ""
+msgstr "සොයන්න"
 
 #: toolbar.py:111
 msgid "Find previous"
@@ -74,6 +40,10 @@ msgstr "පෙර එක සොයන්න"
 #: toolbar.py:117
 msgid "Find next"
 msgstr "පසු එක සොයන්න"
+
+#: toolbar.py:217 AbiWordActivity.py:115
+msgid "Table"
+msgstr "වගුව"
 
 #: toolbar.py:217
 msgid "Cancel"
@@ -93,7 +63,7 @@ msgstr "කොලමක් ඇතුල් කරන්න"
 
 #: toolbar.py:247
 msgid "Delete Column"
-msgstr "කොලම ඉවත් කරන්න හෝ කොලම මකා දමන්න "
+msgstr "කොලම ඉවත් කරන්න හෝ කොලම මකා දමන්න"
 
 #: toolbar.py:256
 msgid "Insert Image"
@@ -101,7 +71,7 @@ msgstr "පින්තූරයක් ඇතුල් කරන්න"
 
 #: toolbar.py:263
 msgid "Floating"
-msgstr ""
+msgstr "දශම සංඛ්‍යා"
 
 #: toolbar.py:320
 msgid "Zoom Out"
@@ -117,7 +87,7 @@ msgstr "%"
 
 #: toolbar.py:356
 msgid "Page: "
-msgstr "පිටුව :"
+msgstr "පිටුව : "
 
 #: toolbar.py:462 toolbar.py:539
 msgid "Normal"
@@ -149,19 +119,23 @@ msgstr "සරල පෙළ"
 
 #: toolbar.py:509
 msgid "Left justify"
-msgstr ""
+msgstr "වමට පෙළගස්වන්න"
 
 #: toolbar.py:512
 msgid "Center justify"
-msgstr ""
+msgstr "මැදට පෙළගස්වන්න"
 
 #: toolbar.py:515
 msgid "Right justify"
-msgstr ""
+msgstr "දකුණට පෙළගස්වන්න"
 
 #: toolbar.py:518
 msgid "Fill justify"
-msgstr ""
+msgstr "පෙළගැස්වීම පුවරන්න"
+
+#: toolbar.py:549 AbiWordActivity.py:109
+msgid "Bullet List"
+msgstr "බුලට් ලැයිස්තුව"
 
 #: toolbar.py:553
 msgid "Dashed List"
@@ -178,6 +152,34 @@ msgstr "කුඩකුරු ලැයිස්තුව"
 #: toolbar.py:565
 msgid "Upper Case List"
 msgstr "මහකුරු ලැයිස්තුව"
+
+#: AbiWordActivity.py:82
+msgid "Edit"
+msgstr "සංස්කරනය කරන්න"
+
+#: AbiWordActivity.py:88
+msgid "View"
+msgstr "දර්ශනය කරන්න"
+
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr "පෙළ"
+
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr "ඡේදය"
+
+#: AbiWordActivity.py:122
+msgid "Bold"
+msgstr "තද ඉරි"
+
+#: AbiWordActivity.py:130
+msgid "Italic"
+msgstr "ඉතාලියානු"
+
+#: AbiWordActivity.py:138
+msgid "Underline"
+msgstr "යටි ඉරක්"
 
 #: widgets.py:165
 msgid "Rich Text (RTF)"
@@ -205,15 +207,15 @@ msgstr "TXT"
 
 #: widgets.py:181
 msgid "Portable Document Format (PDF)"
-msgstr ""
+msgstr "Portable Document Format (PDF)"
 
 #: widgets.py:182
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 #: widgets.py:187 widgets.py:188
 msgid "Export"
-msgstr ""
+msgstr "නිර්යාත කරන්න"
 
 #~ msgid "Image"
 #~ msgstr "පින්තූරය"
