@@ -14,11 +14,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Write project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-25 00:30-0500\n"
+"POT-Creation-Date: 2011-08-05 11:13-0300\n"
 "PO-Revision-Date: 2011-02-21 22:58+0200\n"
 "Last-Translator: John Sarlis <sarlis@sch.gr>\n"
 "Language-Team: Greek <olpc@grnet.gr>\n"
-"Language: el\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,42 +28,6 @@ msgstr ""
 #: activity/activity.info:2
 msgid "Write"
 msgstr "Κειμενογράφος"
-
-#: AbiWordActivity.py:82
-msgid "Edit"
-msgstr "Επεξεργασία"
-
-#: AbiWordActivity.py:88
-msgid "View"
-msgstr "Προβολή"
-
-#: AbiWordActivity.py:97
-msgid "Text"
-msgstr "Κείμενο"
-
-#: AbiWordActivity.py:103
-msgid "Paragraph"
-msgstr "Παράγραφος"
-
-#: AbiWordActivity.py:109 toolbar.py:549
-msgid "Bullet List"
-msgstr "Λίστα με κουκίδες"
-
-#: AbiWordActivity.py:115 toolbar.py:217
-msgid "Table"
-msgstr "Πίνακας"
-
-#: AbiWordActivity.py:122
-msgid "Bold"
-msgstr "Έντονα"
-
-#: AbiWordActivity.py:130
-msgid "Italic"
-msgstr "Πλάγια"
-
-#: AbiWordActivity.py:138
-msgid "Underline"
-msgstr "Υπογράμμιση"
 
 #: toolbar.py:94
 msgid "Search"
@@ -76,6 +40,10 @@ msgstr "Εύρεση προηγουμένου"
 #: toolbar.py:117
 msgid "Find next"
 msgstr "Εύρεση επομένου"
+
+#: toolbar.py:217 AbiWordActivity.py:115
+msgid "Table"
+msgstr "Πίνακας"
 
 #: toolbar.py:217
 msgid "Cancel"
@@ -165,6 +133,10 @@ msgstr "Στοίχιση δεξιά"
 msgid "Fill justify"
 msgstr "Πλήρης στοίχιση"
 
+#: toolbar.py:549 AbiWordActivity.py:109
+msgid "Bullet List"
+msgstr "Λίστα με κουκίδες"
+
 #: toolbar.py:553
 msgid "Dashed List"
 msgstr "Λίστα με παύλες"
@@ -181,6 +153,34 @@ msgstr "Λίστα με πεζά γράμματα (α, β, γ,....)"
 #: toolbar.py:565
 msgid "Upper Case List"
 msgstr "Λίστα με κεφαλαία γράμματα (Α,Β, Γ,....)"
+
+#: AbiWordActivity.py:82
+msgid "Edit"
+msgstr "Επεξεργασία"
+
+#: AbiWordActivity.py:88
+msgid "View"
+msgstr "Προβολή"
+
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr "Κείμενο"
+
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr "Παράγραφος"
+
+#: AbiWordActivity.py:122
+msgid "Bold"
+msgstr "Έντονα"
+
+#: AbiWordActivity.py:130
+msgid "Italic"
+msgstr "Πλάγια"
+
+#: AbiWordActivity.py:138
+msgid "Underline"
+msgstr "Υπογράμμιση"
 
 #: widgets.py:165
 msgid "Rich Text (RTF)"
