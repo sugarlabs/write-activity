@@ -14,11 +14,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-25 00:30-0500\n"
+"POT-Creation-Date: 2011-08-05 11:13-0300\n"
 "PO-Revision-Date: 2009-09-24 10:46-0400\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: vi\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,42 +28,6 @@ msgstr ""
 #: activity/activity.info:2
 msgid "Write"
 msgstr "Ghi"
-
-#: AbiWordActivity.py:82
-msgid "Edit"
-msgstr "Sửa"
-
-#: AbiWordActivity.py:88
-msgid "View"
-msgstr "Xem"
-
-#: AbiWordActivity.py:97
-msgid "Text"
-msgstr "Văn bản"
-
-#: AbiWordActivity.py:103
-msgid "Paragraph"
-msgstr "Đoạn văn"
-
-#: AbiWordActivity.py:109 toolbar.py:549
-msgid "Bullet List"
-msgstr "Danh sách chấm điểm"
-
-#: AbiWordActivity.py:115 toolbar.py:217
-msgid "Table"
-msgstr "Bảng"
-
-#: AbiWordActivity.py:122
-msgid "Bold"
-msgstr "Đậm"
-
-#: AbiWordActivity.py:130
-msgid "Italic"
-msgstr "Nghiêng"
-
-#: AbiWordActivity.py:138
-msgid "Underline"
-msgstr "Gạch dưới"
 
 #: toolbar.py:94
 msgid "Search"
@@ -76,6 +40,10 @@ msgstr "Tìm trước"
 #: toolbar.py:117
 msgid "Find next"
 msgstr "Tìm tiếp"
+
+#: toolbar.py:217 AbiWordActivity.py:115
+msgid "Table"
+msgstr "Bảng"
 
 #: toolbar.py:217
 msgid "Cancel"
@@ -165,6 +133,10 @@ msgstr "Sắp thẳng bên phải"
 msgid "Fill justify"
 msgstr "Tô đầy sắp thẳng"
 
+#: toolbar.py:549 AbiWordActivity.py:109
+msgid "Bullet List"
+msgstr "Danh sách chấm điểm"
+
 #: toolbar.py:553
 msgid "Dashed List"
 msgstr "Danh sách gạch gạch"
@@ -180,6 +152,34 @@ msgstr "Danh sách chữ thường"
 #: toolbar.py:565
 msgid "Upper Case List"
 msgstr "Danh sách chữ hoa"
+
+#: AbiWordActivity.py:82
+msgid "Edit"
+msgstr "Sửa"
+
+#: AbiWordActivity.py:88
+msgid "View"
+msgstr "Xem"
+
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr "Văn bản"
+
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr "Đoạn văn"
+
+#: AbiWordActivity.py:122
+msgid "Bold"
+msgstr "Đậm"
+
+#: AbiWordActivity.py:130
+msgid "Italic"
+msgstr "Nghiêng"
+
+#: AbiWordActivity.py:138
+msgid "Underline"
+msgstr "Gạch dưới"
 
 #: widgets.py:165
 msgid "Rich Text (RTF)"
