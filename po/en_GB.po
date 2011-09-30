@@ -1,0 +1,217 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-09-27 07:14-0400\n"
+"PO-Revision-Date: 2011-02-09 18:54+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.3\n"
+
+#: activity/activity.info:2
+msgid "Write"
+msgstr "Write"
+
+#: AbiWordActivity.py:81
+msgid "Edit"
+msgstr "Edit"
+
+#: AbiWordActivity.py:87
+msgid "View"
+msgstr "View"
+
+#: AbiWordActivity.py:96
+msgid "Text"
+msgstr "Text"
+
+#: AbiWordActivity.py:102
+msgid "Paragraph"
+msgstr "Paragraph"
+
+#: AbiWordActivity.py:108 toolbar.py:549
+msgid "Bullet List"
+msgstr "Bullet List"
+
+#: AbiWordActivity.py:114 toolbar.py:217
+msgid "Table"
+msgstr "Table"
+
+#: AbiWordActivity.py:121
+msgid "Bold"
+msgstr "Bold"
+
+#: AbiWordActivity.py:129
+msgid "Italic"
+msgstr "Italic"
+
+#: AbiWordActivity.py:137
+msgid "Underline"
+msgstr "Underline"
+
+#: toolbar.py:94
+msgid "Search"
+msgstr "Search"
+
+#: toolbar.py:111
+msgid "Find previous"
+msgstr "Find previous"
+
+#: toolbar.py:117
+msgid "Find next"
+msgstr "Find next"
+
+#: toolbar.py:217
+msgid "Cancel"
+msgstr "Cancel"
+
+#: toolbar.py:229
+msgid "Insert Row"
+msgstr "Insert Row"
+
+#: toolbar.py:235
+msgid "Delete Row"
+msgstr "Delete Row"
+
+#: toolbar.py:241
+msgid "Insert Column"
+msgstr "Insert Column"
+
+#: toolbar.py:247
+msgid "Delete Column"
+msgstr "Delete Column"
+
+#: toolbar.py:256
+msgid "Insert Image"
+msgstr "Insert Image"
+
+#: toolbar.py:263
+msgid "Floating"
+msgstr "Floating"
+
+#: toolbar.py:320
+msgid "Zoom Out"
+msgstr "Zoom Out"
+
+#: toolbar.py:327
+msgid "Zoom In"
+msgstr "Zoom In"
+
+#: toolbar.py:344
+msgid "%"
+msgstr "%"
+
+#: toolbar.py:356
+msgid "Page: "
+msgstr "Page: "
+
+#: toolbar.py:462 toolbar.py:539
+msgid "Normal"
+msgstr "Normal"
+
+#: toolbar.py:473
+msgid "Heading 1"
+msgstr "Heading 1"
+
+#: toolbar.py:477
+msgid "Heading 2"
+msgstr "Heading 2"
+
+#: toolbar.py:481
+msgid "Heading 3"
+msgstr "Heading 3"
+
+#: toolbar.py:485
+msgid "Heading 4"
+msgstr "Heading 4"
+
+#: toolbar.py:489
+msgid "Block Text"
+msgstr "Block Text"
+
+#: toolbar.py:493
+msgid "Plain Text"
+msgstr "Plain Text"
+
+#: toolbar.py:509
+msgid "Left justify"
+msgstr "Left justify"
+
+#: toolbar.py:512
+msgid "Center justify"
+msgstr "Centre justify"
+
+#: toolbar.py:515
+msgid "Right justify"
+msgstr "Right justify"
+
+#: toolbar.py:518
+msgid "Fill justify"
+msgstr "Fill justify"
+
+#: toolbar.py:553
+msgid "Dashed List"
+msgstr "Dashed List"
+
+#: toolbar.py:557
+msgid "Numbered List"
+msgstr "Numbered List"
+
+#: toolbar.py:561
+msgid "Lower Case List"
+msgstr "Lower Case List"
+
+#: toolbar.py:565
+msgid "Upper Case List"
+msgstr "Upper Case List"
+
+#: widgets.py:165
+msgid "Rich Text (RTF)"
+msgstr "Rich Text (RTF)"
+
+#: widgets.py:167
+msgid "RTF"
+msgstr "RTF"
+
+#: widgets.py:171
+msgid "Hypertext (HTML)"
+msgstr "Hypertext (HTML)"
+
+#: widgets.py:173
+msgid "HTML"
+msgstr "HTML"
+
+#: widgets.py:178
+msgid "Plain Text (TXT)"
+msgstr "Plain Text (TXT)"
+
+#: widgets.py:180
+msgid "TXT"
+msgstr "TXT"
+
+#: widgets.py:184
+msgid "Portable Document Format (PDF)"
+msgstr "Portable Document Format (PDF)"
+
+#: widgets.py:186
+msgid "PDF"
+msgstr "PDF"
+
+#~ msgid "Export"
+#~ msgstr "Export"
