@@ -26,7 +26,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-25 00:30-0500\n"
+"POT-Creation-Date: 2011-10-06 00:30-0400\n"
 "PO-Revision-Date: 2011-09-27 12:46+0200\n"
 "Last-Translator: Cris Anderson <anderson861@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,39 +41,39 @@ msgstr ""
 msgid "Write"
 msgstr "Бичих"
 
-#: AbiWordActivity.py:82
+#: AbiWordActivity.py:81
 msgid "Edit"
 msgstr "Засварлах"
 
-#: AbiWordActivity.py:88
+#: AbiWordActivity.py:87
 msgid "View"
 msgstr "Харагдац"
 
-#: AbiWordActivity.py:97
+#: AbiWordActivity.py:96
 msgid "Text"
 msgstr "Бичвэр"
 
-#: AbiWordActivity.py:103
+#: AbiWordActivity.py:102
 msgid "Paragraph"
 msgstr "Догол мөр гарган бичих"
 
-#: AbiWordActivity.py:109 toolbar.py:549
+#: AbiWordActivity.py:108 toolbar.py:549
 msgid "Bullet List"
 msgstr "Тэмдэглэгээтэй жагсаалт"
 
-#: AbiWordActivity.py:115 toolbar.py:217
+#: AbiWordActivity.py:114 toolbar.py:217
 msgid "Table"
 msgstr "Хүснэгт"
 
-#: AbiWordActivity.py:122
+#: AbiWordActivity.py:121
 msgid "Bold"
 msgstr "Өргөн"
 
-#: AbiWordActivity.py:130
+#: AbiWordActivity.py:129
 msgid "Italic"
 msgstr "Налуу"
 
-#: AbiWordActivity.py:138
+#: AbiWordActivity.py:137
 msgid "Underline"
 msgstr "Доогуур зураас"
 
@@ -197,37 +197,36 @@ msgstr "Толгой үсгэн жагсаалт"
 msgid "Rich Text (RTF)"
 msgstr "Форматтай текст (RTF)"
 
-#: widgets.py:166
+#: widgets.py:167
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:170
+#: widgets.py:171
 msgid "Hypertext (HTML)"
 msgstr "Гипертекст (HTML)"
 
-#: widgets.py:171
+#: widgets.py:173
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:176
+#: widgets.py:178
 msgid "Plain Text (TXT)"
 msgstr "Энгийн текст (TXT)"
 
-#: widgets.py:177
+#: widgets.py:180
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:181
+#: widgets.py:184
 msgid "Portable Document Format (PDF)"
 msgstr ""
 
-#: widgets.py:182
+#: widgets.py:186
 msgid "PDF"
 msgstr ""
 
-#: widgets.py:187 widgets.py:188
-msgid "Export"
-msgstr "Гаргах"
+#~ msgid "Export"
+#~ msgstr "Гаргах"
 
 #~ msgid "Image"
 #~ msgstr "Дүрслэл"
