@@ -1,0 +1,254 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-08-05 11:13-0300\n"
+"PO-Revision-Date: 2011-11-23 07:33+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: aym\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#  "Escribir"
+#: activity/activity.info:2
+msgid "Write"
+msgstr "Qillqaña"
+
+#  "Buscar"
+#: toolbar.py:94
+msgid "Search"
+msgstr "Thaqaña"
+
+#  "Buscar anterior"
+#: toolbar.py:111
+msgid "Find previous"
+msgstr "Kutt'asa thaqaña"
+
+#  "Buscar siguiente"
+#: toolbar.py:117
+msgid "Find next"
+msgstr "Jutiriru thaqaña"
+
+#  "Tabla"
+#: toolbar.py:217 AbiWordActivity.py:115
+msgid "Table"
+msgstr "Jaljata"
+
+#  "Cancelar"
+#: toolbar.py:217
+msgid "Cancel"
+msgstr "Sayt'ayaña"
+
+#  "Insertar fila"
+#: toolbar.py:229
+msgid "Insert Row"
+msgstr "Sich'i qalluchaña"
+
+#  "Borrar fila"
+#: toolbar.py:235
+msgid "Delete Row"
+msgstr "Sich'i apsuña"
+
+#  "Insertar columna"
+#: toolbar.py:241
+msgid "Insert Column"
+msgstr "Sayt'u qalluchaña"
+
+#  "Borrar columna"
+#: toolbar.py:247
+msgid "Delete Column"
+msgstr "Sayt'u apsuña"
+
+#  "Insertar imagen"
+#: toolbar.py:256
+msgid "Insert Image"
+msgstr "Uñtasiri qalluchaña"
+
+#  "Flotante"
+#: toolbar.py:263
+msgid "Floating"
+msgstr "Jalnaqiri"
+
+#  "Reducir"
+#: toolbar.py:320
+msgid "Zoom Out"
+msgstr "Juk'aptayaña"
+
+#  "Ampliar"
+#: toolbar.py:327
+msgid "Zoom In"
+msgstr "Jach'aptayaña"
+
+#  "%"
+#: toolbar.py:344
+msgid "%"
+msgstr "%"
+
+#  "Página: "
+#: toolbar.py:356
+msgid "Page: "
+msgstr "Laphi chimpu: "
+
+#  "Normal"
+#: toolbar.py:462 toolbar.py:539
+msgid "Normal"
+msgstr "Aliqa"
+
+#  "Encabezado 1"
+#: toolbar.py:473
+msgid "Heading 1"
+msgstr "1 P'iqinchäwi"
+
+#  "Encabezado 2"
+#: toolbar.py:477
+msgid "Heading 2"
+msgstr "2 P'iqinchäwi"
+
+#  "Encabezado 3"
+#: toolbar.py:481
+msgid "Heading 3"
+msgstr "3 P'iqinchäwi"
+
+#  "Encabezado 4"
+#: toolbar.py:485
+msgid "Heading 4"
+msgstr "4 P'iqinchäwi"
+
+#  "Bloque de texto"
+#: toolbar.py:489
+msgid "Block Text"
+msgstr "Qillqata tukuya"
+
+#  "Texto simple"
+#: toolbar.py:493
+msgid "Plain Text"
+msgstr "Jisk'a qillqata"
+
+#  "Justificar a la izquierda"
+#: toolbar.py:509
+msgid "Left justify"
+msgstr "Ch'iqaru khuskhachaña"
+
+#  "Justificar al centro"
+#: toolbar.py:512
+msgid "Center justify"
+msgstr "Taypiru khuskhachaña"
+
+#  "Justificar a la derecha"
+#: toolbar.py:515
+msgid "Right justify"
+msgstr "Kupiru khuskhachaña"
+
+#  "Justificar ambos lados"
+#: toolbar.py:518
+msgid "Fill justify"
+msgstr "Puraparu khuskhachaña"
+
+#  "Lista con viñetas"
+#: toolbar.py:549 AbiWordActivity.py:109
+msgid "Bullet List"
+msgstr "Ch'iminakani qillqatanaka siqi"
+
+#  "Lista con guiones"
+#: toolbar.py:553
+msgid "Dashed List"
+msgstr "Sich'inakani qillqatanaka siqi"
+
+#  "Lista enumerada"
+#: toolbar.py:557
+msgid "Numbered List"
+msgstr "Jakhunakani qillqatanaka siqi"
+
+#  "Lista alfabética minúsculas"
+#: toolbar.py:561
+msgid "Lower Case List"
+msgstr "Achakala jisk'a qillqanaka"
+
+#  "Lista alfabética mayúsculas"
+#: toolbar.py:565
+msgid "Upper Case List"
+msgstr "Achakala jach'a qillqanaka"
+
+#  "Editar"
+#: AbiWordActivity.py:82
+msgid "Edit"
+msgstr "Chiqachaña"
+
+#  "Ver"
+#: AbiWordActivity.py:88
+msgid "View"
+msgstr "Uñjaña"
+
+#  "Texto"
+#: AbiWordActivity.py:97
+msgid "Text"
+msgstr "Qillqata"
+
+#  "Párrafo"
+#: AbiWordActivity.py:103
+msgid "Paragraph"
+msgstr "T'aqa qillqata"
+
+#  "Negritas"
+#: AbiWordActivity.py:122
+msgid "Bold"
+msgstr "Qhananchata"
+
+#  "Cursiva"
+#: AbiWordActivity.py:130
+msgid "Italic"
+msgstr "Alt'ata qillqanaka"
+
+#  "Subrayado"
+#: AbiWordActivity.py:138
+msgid "Underline"
+msgstr "Sich'ita qillqanaka"
+
+#  "Texto enriquecido (RTF)"
+#: widgets.py:165
+msgid "Rich Text (RTF)"
+msgstr "Ch'amanchata qillqanaka (RTF)"
+
+#  "RTF"
+#: widgets.py:166
+msgid "RTF"
+msgstr "RTF"
+
+#  "Hipertexto (HTML)"
+#: widgets.py:170
+msgid "Hypertext (HTML)"
+msgstr "Kunaymana qillqata (HTML)"
+
+#  "HTML"
+#: widgets.py:171
+msgid "HTML"
+msgstr "HTML"
+
+#  "Texto simple (TXT)"
+#: widgets.py:176
+msgid "Plain Text (TXT)"
+msgstr "Aliqa qillqata (TXT)"
+
+#  "TXT"
+#: widgets.py:177
+msgid "TXT"
+msgstr "TXT"
+
+#  "Formato de Documento Portable (PDF)"
+#: widgets.py:181
+msgid "Portable Document Format (PDF)"
+msgstr "Taqina Ullañataki Qillqata (PDF)"
+
+#  "PDF"
+#: widgets.py:182
+msgid "PDF"
+msgstr "PDF"
+
+#  "Exportar"
+#: widgets.py:187 widgets.py:188
+msgid "Export"
+msgstr "Apsuña"
