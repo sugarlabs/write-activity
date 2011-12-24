@@ -15,15 +15,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-08-05 11:13-0300\n"
-"PO-Revision-Date: 2011-04-08 07:19+0200\n"
-"Last-Translator: <rubina@aua.am>\n"
+"PO-Revision-Date: 2011-12-19 02:44+0200\n"
+"Last-Translator: Jasmine <udea_jasmine@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: hy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.0.1\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "Write"
@@ -51,11 +51,11 @@ msgstr "Չեղարկել"
 
 #: toolbar.py:229
 msgid "Insert Row"
-msgstr "Զետեղել տող"
+msgstr "Զետեղել շարք"
 
 #: toolbar.py:235
 msgid "Delete Row"
-msgstr "Ջնջել տող"
+msgstr "Ջնջել շարքը"
 
 #: toolbar.py:241
 msgid "Insert Column"
@@ -75,7 +75,7 @@ msgstr "Լողացող"
 
 #: toolbar.py:320
 msgid "Zoom Out"
-msgstr "Հեռվացնել"
+msgstr "Հեռացնել"
 
 #: toolbar.py:327
 msgid "Zoom In"
@@ -131,7 +131,7 @@ msgstr "Տողաշտկել՝ աջ"
 
 #: toolbar.py:518
 msgid "Fill justify"
-msgstr "Տողաշտկել՝ լայնքով"
+msgstr "Տողաշտկել երկու կողմից"
 
 #: toolbar.py:549 AbiWordActivity.py:109
 msgid "Bullet List"
@@ -143,12 +143,14 @@ msgstr "Կետավորված ցուցակ"
 
 #: toolbar.py:557
 msgid "Numbered List"
-msgstr "Համարակալած ցուցակ"
+msgstr "Համարակալված ցուցակ"
 
+# փոքրատառեր
 #: toolbar.py:561
 msgid "Lower Case List"
 msgstr "Ստորին դուրճի ցուցակ"
 
+# Մեծատառեր
 #: toolbar.py:565
 msgid "Upper Case List"
 msgstr "Վերին դուրճի ցուցակ"
@@ -185,6 +187,7 @@ msgstr "Ընդգծված"
 msgid "Rich Text (RTF)"
 msgstr "Հարստագիր (RTF)"
 
+# RTF Rich Text Format - Տեքստի հարստացված ֆորմատ 
 #: widgets.py:166
 msgid "RTF"
 msgstr "RTF"
