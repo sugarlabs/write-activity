@@ -37,9 +37,8 @@ from sugar.activity.activity import get_bundle_path
 
 from sugar import mime
 
+from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.toolbarbox import ToolbarButton, ToolbarBox
-from sugar.graphics.toggletoolbutton import ToggleToolButton
-from sugar.graphics.colorbutton import ColorToolButton
 from sugar.graphics import style
 
 from toolbar import EditToolbar
@@ -49,6 +48,7 @@ from toolbar import ListToolbar
 from toolbar import InsertToolbar
 from toolbar import ParagraphToolbar
 from widgets import ExportButtonFactory
+from port import chooser
 
 logger = logging.getLogger('write-activity')
 
@@ -117,41 +117,20 @@ class AbiWordActivity(activity.Activity):
         separator = gtk.SeparatorToolItem()
         toolbar_box.toolbar.insert(separator, -1)
 
-        bold = ToggleToolButton('format-text-bold')
-        bold.set_tooltip(_('Bold'))
-        bold_id = bold.connect('clicked', lambda sender:
-                self.abiword_canvas.toggle_bold())
-        self.abiword_canvas.connect('bold', lambda abi, b:
-                self._setToggleButtonState(bold, b, bold_id))
-        toolbar_box.toolbar.insert(bold, -1)
+        image = ToolButton('insert-picture')
+        image.set_tooltip(_('Insert Image'))
+        self._image_id = image.connect('clicked', self._image_cb)
+        toolbar_box.toolbar.insert(image, -1)
 
-        italic = ToggleToolButton('format-text-italic')
-        italic.set_tooltip(_('Italic'))
-        italic_id = italic.connect('clicked', lambda sender:
-                self.abiword_canvas.toggle_italic())
-        self.abiword_canvas.connect('italic', lambda abi, b:
-                self._setToggleButtonState(italic, b, italic_id))
-        toolbar_box.toolbar.insert(italic, -1)
-
-        underline = ToggleToolButton('format-text-underline')
-        underline.set_tooltip(_('Underline'))
-        underline_id = underline.connect('clicked', lambda sender:
-                self.abiword_canvas.toggle_underline())
-        self.abiword_canvas.connect('underline', lambda abi, b:
-                self._setToggleButtonState(underline, b, underline_id))
-        toolbar_box.toolbar.insert(underline, -1)
-
-        separator = gtk.SeparatorToolItem()
-        toolbar_box.toolbar.insert(separator, -1)
-
-        color = ColorToolButton()
-        color.connect('notify::color', self._text_color_cb,
-                self.abiword_canvas)
-        tool_item = gtk.ToolItem()
-        tool_item.add(color)
-        toolbar_box.toolbar.insert(tool_item, -1)
-        self.abiword_canvas.connect('color', lambda abi, r, g, b:
-                color.set_color(gtk.gdk.Color(r * 256, g * 256, b * 256)))
+        palette = image.get_palette()
+        content_box = gtk.VBox()
+        palette.set_content(content_box)
+        image_floating_checkbutton = gtk.CheckButton(_('Floating'))
+        image_floating_checkbutton.connect('toggled',
+                self._image_floating_checkbutton_toggled_cb)
+        content_box.pack_start(image_floating_checkbutton)
+        content_box.show_all()
+        self.floating_image = False
 
         separator = gtk.SeparatorToolItem()
         separator.props.draw = False
@@ -172,17 +151,6 @@ class AbiWordActivity(activity.Activity):
 
         self._zoom_handler = self.abiword_canvas.connect("zoom",
                 self.__zoom_cb)
-
-    def _text_color_cb(self, button, pspec, abiword_canvas):
-        newcolor = button.get_color()
-        abiword_canvas.set_text_color(int(newcolor.red / 256.0),
-                                            int(newcolor.green / 256.0),
-                                            int(newcolor.blue / 256.0))
-
-    def _setToggleButtonState(self, button, b, id):
-        button.handler_block(id)
-        button.set_active(b)
-        button.handler_unblock(id)
 
     def __zoom_cb(self, abi, zoom):
         abi.disconnect(self._zoom_handler)
@@ -442,3 +410,16 @@ class AbiWordActivity(activity.Activity):
         mime_parents = mime.get_mime_parents(self.metadata['mime_type'])
         return self.metadata['mime_type'] in ['text/plain', 'text/csv'] or \
                'text/plain' in mime_parents
+
+    def _image_floating_checkbutton_toggled_cb(self, checkbutton):
+        self.floating_image = checkbutton.get_active()
+
+    def _image_cb(self, button):
+
+        def cb(object):
+            logging.debug('ObjectChooser: %r' % object)
+            self.abiword_canvas.insert_image(object.file_path,
+                    self.floating_image)
+
+        chooser.pick(parent=self.abiword_canvas.get_toplevel(),
+                what=chooser.IMAGE, cb=cb)

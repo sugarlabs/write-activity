@@ -27,13 +27,14 @@ from urlparse import urlparse
 
 from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.toolcombobox import ToolComboBox
+from sugar.graphics.colorbutton import ColorToolButton
+from sugar.graphics.toggletoolbutton import ToggleToolButton
 from sugar.graphics import iconentry
 from sugar.graphics import style
 from sugar.activity.widgets import CopyButton
 from sugar.activity.widgets import PasteButton
 from sugar.activity.widgets import UndoButton
 from sugar.activity.widgets import RedoButton
-from port import chooser
 
 from widgets import AbiButton
 from widgets import FontCombo
@@ -249,42 +250,11 @@ class InsertToolbar(gtk.Toolbar):
                 'clicked', self._table_delete_cols_cb)
         self.insert(self._table_delete_cols, -1)
 
-        separator = gtk.SeparatorToolItem()
-        self.insert(separator, -1)
-
-        image = ToolButton('insert-picture')
-        image.set_tooltip(_('Insert Image'))
-        self._image_id = image.connect('clicked', self._image_cb)
-        self.insert(image, -1)
-
-        palette = image.get_palette()
-        content_box = gtk.VBox()
-        palette.set_content(content_box)
-        image_floating_checkbutton = gtk.CheckButton(_('Floating'))
-        image_floating_checkbutton.connect('toggled',
-                self._image_floating_checkbutton_toggled_cb)
-        content_box.pack_start(image_floating_checkbutton)
-        content_box.show_all()
-        self.floating_image = False
-
         self.show_all()
 
         self._abiword_canvas.connect('table-state', self._isTable_cb)
         #self._abiword_canvas.connect('image-selected',
         #       self._image_selected_cb)
-
-    def _image_floating_checkbutton_toggled_cb(self, checkbutton):
-        self.floating_image = checkbutton.get_active()
-
-    def _image_cb(self, button):
-
-        def cb(object):
-            logging.debug('ObjectChooser: %r' % object)
-            self._abiword_canvas.insert_image(object.file_path,
-                    self.floating_image)
-
-        chooser.pick(parent=self._abiword_canvas.get_toplevel(),
-                what=chooser.IMAGE, cb=cb)
 
     def _table_cb(self, abi, rows, cols):
         self._abiword_canvas.insert_table(rows, cols)
@@ -438,10 +408,57 @@ class TextToolbar(gtk.Toolbar):
         font_size = ToolComboBox(FontSizeCombo(abiword_canvas))
         self.insert(font_size, -1)
 
+        bold = ToggleToolButton('format-text-bold')
+        bold.set_tooltip(_('Bold'))
+        bold_id = bold.connect('clicked', lambda sender:
+                abiword_canvas.toggle_bold())
+        abiword_canvas.connect('bold', lambda abi, b:
+                self._setToggleButtonState(bold, b, bold_id))
+        self.insert(bold, -1)
+
+        italic = ToggleToolButton('format-text-italic')
+        italic.set_tooltip(_('Italic'))
+        italic_id = italic.connect('clicked', lambda sender:
+                abiword_canvas.toggle_italic())
+        abiword_canvas.connect('italic', lambda abi, b:
+                self._setToggleButtonState(italic, b, italic_id))
+        self.insert(italic, -1)
+
+        underline = ToggleToolButton('format-text-underline')
+        underline.set_tooltip(_('Underline'))
+        underline_id = underline.connect('clicked', lambda sender:
+                abiword_canvas.toggle_underline())
+        abiword_canvas.connect('underline', lambda abi, b:
+                self._setToggleButtonState(underline, b, underline_id))
+        self.insert(underline, -1)
+
+        separator = gtk.SeparatorToolItem()
+        self.insert(separator, -1)
+
+        color = ColorToolButton()
+        color.connect('notify::color', self._text_color_cb,
+                abiword_canvas)
+        tool_item = gtk.ToolItem()
+        tool_item.add(color)
+        self.insert(tool_item, -1)
+        abiword_canvas.connect('color', lambda abi, r, g, b:
+                color.set_color(gtk.gdk.Color(r * 256, g * 256, b * 256)))
+
         # MAGIC NUMBER WARNING: Secondary toolbars are not a standard height?
         self.set_size_request(-1, style.GRID_CELL_SIZE)
 
         self.show_all()
+
+    def _setToggleButtonState(self, button, b, id):
+        button.handler_block(id)
+        button.set_active(b)
+        button.handler_unblock(id)
+
+    def _text_color_cb(self, button, pspec, abiword_canvas):
+        newcolor = button.get_color()
+        abiword_canvas.set_text_color(int(newcolor.red / 256.0),
+                                            int(newcolor.green / 256.0),
+                                            int(newcolor.blue / 256.0))
 
 
 class ParagraphToolbar(gtk.Toolbar):
