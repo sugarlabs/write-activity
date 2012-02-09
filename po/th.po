@@ -14,58 +14,60 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-25 00:30-0500\n"
-"PO-Revision-Date: 2007-12-10 05:25+0000\n"
-"Last-Translator: Manatsawin <manatsawin@gmail.com>\n"
+"POT-Creation-Date: 2011-10-06 00:30-0400\n"
+"PO-Revision-Date: 2011-11-23 03:30+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 1.0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "Write"
 msgstr "เขียน"
 
-#: AbiWordActivity.py:82
+#: AbiWordActivity.py:81
 msgid "Edit"
 msgstr "แก้ไข"
 
-#: AbiWordActivity.py:88
+#: AbiWordActivity.py:87
 msgid "View"
 msgstr "มุมมอง"
 
-#: AbiWordActivity.py:97
+#: AbiWordActivity.py:96
 msgid "Text"
 msgstr "ข้อความ"
 
-#: AbiWordActivity.py:103
+#: AbiWordActivity.py:102
 msgid "Paragraph"
-msgstr ""
+msgstr "ย่อหน้า"
 
-#: AbiWordActivity.py:109 toolbar.py:549
+#: AbiWordActivity.py:108 toolbar.py:549
 msgid "Bullet List"
 msgstr "รายการรูปจุด"
 
-#: AbiWordActivity.py:115 toolbar.py:217
+#: AbiWordActivity.py:114 toolbar.py:217
 msgid "Table"
 msgstr "ตาราง"
 
-#: AbiWordActivity.py:122
+#: AbiWordActivity.py:121
 msgid "Bold"
 msgstr "ตัวหนา"
 
-#: AbiWordActivity.py:130
+#: AbiWordActivity.py:129
 msgid "Italic"
 msgstr "ตัวเอียง"
 
-#: AbiWordActivity.py:138
+#: AbiWordActivity.py:137
 msgid "Underline"
 msgstr "ขีดเส้นใต้"
 
 #: toolbar.py:94
 msgid "Search"
-msgstr ""
+msgstr "ค้นหา"
 
 #: toolbar.py:111
 msgid "Find previous"
@@ -101,7 +103,7 @@ msgstr "แทรกรูปภาพ"
 
 #: toolbar.py:263
 msgid "Floating"
-msgstr ""
+msgstr "ลอย"
 
 #: toolbar.py:320
 msgid "Zoom Out"
@@ -149,19 +151,19 @@ msgstr "อักษรธรรมดา"
 
 #: toolbar.py:509
 msgid "Left justify"
-msgstr ""
+msgstr "ชิดด้านซ้าย"
 
 #: toolbar.py:512
 msgid "Center justify"
-msgstr ""
+msgstr "เรียงตรงกลาง"
 
 #: toolbar.py:515
 msgid "Right justify"
-msgstr ""
+msgstr "ชิดด้านขวา"
 
 #: toolbar.py:518
 msgid "Fill justify"
-msgstr ""
+msgstr "กระจายเต็มบรรทัด"
 
 #: toolbar.py:553
 msgid "Dashed List"
@@ -181,39 +183,38 @@ msgstr "รายการอักษรตัวใหญ่"
 
 #: widgets.py:165
 msgid "Rich Text (RTF)"
-msgstr ""
+msgstr "เก็บข้อมูลเป็นตัวอักษร (RTF)"
 
-#: widgets.py:166
+#: widgets.py:167
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:170
+#: widgets.py:171
 msgid "Hypertext (HTML)"
 msgstr "ไฮเปอร์เท็ก (HTML)"
 
-#: widgets.py:171
+#: widgets.py:173
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:176
+#: widgets.py:178
 msgid "Plain Text (TXT)"
 msgstr "ข้อความธรรมดา (TXT)"
 
-#: widgets.py:177
+#: widgets.py:180
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:181
+#: widgets.py:184
 msgid "Portable Document Format (PDF)"
-msgstr ""
+msgstr "เก็บข้อมูลเป็น (PDF)"
 
-#: widgets.py:182
+#: widgets.py:186
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
-#: widgets.py:187 widgets.py:188
-msgid "Export"
-msgstr ""
+#~ msgid "Export"
+#~ msgstr "ส่งออก"
 
 #~ msgid "Image"
 #~ msgstr "รูปภาพ"
