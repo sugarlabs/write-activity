@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: OLPC Write\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-06 00:30-0400\n"
-"PO-Revision-Date: 2012-03-22 00:46+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"PO-Revision-Date: 2012-03-24 05:14+0200\n"
+"Last-Translator: lite <litekok@gmail.com>\n"
 "Language-Team: Yuan CHAO <yuanchao@gmail.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +39,7 @@ msgstr "文字"
 
 #: AbiWordActivity.py:102
 msgid "Paragraph"
-msgstr ""
+msgstr "段落"
 
 #: AbiWordActivity.py:108 toolbar.py:549
 msgid "Bullet List"
@@ -63,7 +63,7 @@ msgstr "下划线"
 
 #: toolbar.py:94
 msgid "Search"
-msgstr ""
+msgstr "搜索"
 
 #: toolbar.py:111
 msgid "Find previous"
@@ -99,7 +99,7 @@ msgstr "插入图片"
 
 #: toolbar.py:263
 msgid "Floating"
-msgstr ""
+msgstr "浮动"
 
 #: toolbar.py:320
 msgid "Zoom Out"
@@ -147,19 +147,19 @@ msgstr "文本"
 
 #: toolbar.py:509
 msgid "Left justify"
-msgstr ""
+msgstr "左对齐"
 
 #: toolbar.py:512
 msgid "Center justify"
-msgstr ""
+msgstr "居中对齐"
 
 #: toolbar.py:515
 msgid "Right justify"
-msgstr ""
+msgstr "右对齐"
 
 #: toolbar.py:518
 msgid "Fill justify"
-msgstr ""
+msgstr "两端对齐"
 
 #: toolbar.py:553
 msgid "Dashed List"
@@ -203,11 +203,11 @@ msgstr "TXT"
 
 #: widgets.py:184
 msgid "Portable Document Format (PDF)"
-msgstr ""
+msgstr "便携式文件格式（PDF）"
 
 #: widgets.py:186
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 #~ msgid "Image"
 #~ msgstr "图片"
