@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-06 00:30-0400\n"
-"PO-Revision-Date: 2012-04-13 20:14+0200\n"
+"PO-Revision-Date: 2012-04-29 01:13+0200\n"
 "Last-Translator: Eduardo H. <hoboprimate@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pt\n"
@@ -183,7 +183,7 @@ msgstr "Lista de Maiúsculas"
 
 #: widgets.py:165
 msgid "Rich Text (RTF)"
-msgstr "Rich Text (RTF)"
+msgstr "Texto Rico (RTF)"
 
 #: widgets.py:167
 msgid "RTF"
@@ -207,7 +207,7 @@ msgstr "TXT"
 
 #: widgets.py:184
 msgid "Portable Document Format (PDF)"
-msgstr "Portable Document Format (PDF)"
+msgstr "Formato de Documento Portátil (PDF)"
 
 #: widgets.py:186
 msgid "PDF"
