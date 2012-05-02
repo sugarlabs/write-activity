@@ -149,24 +149,6 @@ class AbiWordActivity(activity.Activity):
         self.abiword_canvas.show()
         self.connect_after('map-event', self.__map_activity_event_cb)
 
-        self._zoom_handler = self.abiword_canvas.connect("zoom",
-                self.__zoom_cb)
-
-    def __zoom_cb(self, abi, zoom):
-        abi.disconnect(self._zoom_handler)
-
-        # XXX workarond code to redraw abi document on every resize, see #1121
-        # looks like original #1121 issue is already not reproducible in
-        # environments like fc13 but we still need it for older ones
-
-        def size_allocate_cb(abi, alloc):
-
-            def idle_cb():
-                zoom = abi.get_zoom_percentage()
-                abi.set_zoom_percentage(zoom)
-            gobject.idle_add(idle_cb)
-        abi.connect('size-allocate', size_allocate_cb)
-
     def __map_event_cb(self, event, activity):
         logger.debug('__map_event_cb')
 
