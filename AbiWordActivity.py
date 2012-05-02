@@ -207,6 +207,12 @@ class AbiWordActivity(activity.Activity):
         self.abiword_canvas.invoke_cmd(
                 'com.abisource.abiword.loadbindings.fromURI',
                 keybindings_file, 0, 0)
+        # set default font
+        self.abiword_canvas.select_all()
+        # get_selection return content and length
+        if self.abiword_canvas.get_selection('text/plain')[1] == 0:
+            logging.error('Setting default font to Sans in new documents')
+            self.abiword_canvas.set_font_name('Sans')
 
     def get_preview(self):
         if not hasattr(self.abiword_canvas, 'render_page_to_image'):

@@ -27,6 +27,9 @@ from sugar.datastore import datastore
 
 logger = logging.getLogger('write-activity')
 
+"""
+# The FontCombo is not used anymore, keep the code here for reference
+# for a few versions
 
 class FontCombo(ComboBox):
 
@@ -86,6 +89,7 @@ class FontCombo(ComboBox):
             self.handler_block(self._fonts_changed_id)
             self.set_active(font_index)
             self.handler_unblock(self._fonts_changed_id)
+"""
 
 
 class FontSizeCombo(ComboBox):

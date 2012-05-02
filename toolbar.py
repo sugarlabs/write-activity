@@ -37,8 +37,8 @@ from sugar.activity.widgets import UndoButton
 from sugar.activity.widgets import RedoButton
 
 from widgets import AbiButton
-from widgets import FontCombo
 from widgets import FontSizeCombo
+from fontcombobox import FontComboBox
 
 logger = logging.getLogger('write-activity')
 
@@ -402,8 +402,13 @@ class TextToolbar(gtk.Toolbar):
     def __init__(self, abiword_canvas):
         gtk.Toolbar.__init__(self)
 
-        font_name = ToolComboBox(FontCombo(abiword_canvas))
-        self.insert(font_name, -1)
+        self.font_name_combo = FontComboBox()
+        self.font_name_combo.set_font_name('Sans')
+        self._fonts_changed_id = self.font_name_combo.connect('changed',
+                self._font_changed_cb, abiword_canvas)
+        self._abi_handler = abiword_canvas.connect('font-family',
+                self._font_family_cb)
+        self.insert(ToolComboBox(self.font_name_combo), -1)
 
         font_size = ToolComboBox(FontSizeCombo(abiword_canvas))
         self.insert(font_size, -1)
@@ -448,6 +453,18 @@ class TextToolbar(gtk.Toolbar):
         self.set_size_request(-1, style.GRID_CELL_SIZE)
 
         self.show_all()
+
+    def _font_changed_cb(self, combobox, abi):
+        logger.debug('Setting font: %s', combobox.get_font_name())
+        try:
+            abi.handler_block(self._abi_handler)
+            abi.set_font_name(combobox.get_font_name())
+        finally:
+            abi.handler_unblock(self._abi_handler)
+
+    def _font_family_cb(self, abi, font_family):
+        logging.debug('Abiword font changed to %s', font_family)
+        self.font_name_combo.set_font_name(font_family)
 
     def _setToggleButtonState(self, button, b, id):
         button.handler_block(id)
