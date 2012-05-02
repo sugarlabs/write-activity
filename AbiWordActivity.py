@@ -158,6 +158,11 @@ class AbiWordActivity(activity.Activity):
         self.abiword_canvas.show()
         self.connect_after('map-event', self.__map_activity_event_cb)
 
+        self.abiword_canvas.connect('size-allocate', self.size_allocate_cb)
+
+    def size_allocate_cb(self, abi, alloc):
+        gobject.idle_add(abi.queue_draw)
+
     def __map_event_cb(self, event, activity):
         logger.debug('__map_event_cb')
 
