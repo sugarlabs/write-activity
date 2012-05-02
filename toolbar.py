@@ -299,6 +299,12 @@ class ViewToolbar(gtk.Toolbar):
         self.insert(self._zoom_in, -1)
         self._zoom_in.show()
 
+        self._zoom_to_width = ToolButton('zoom-best-fit')
+        self._zoom_to_width.set_tooltip(_('Zoom to width'))
+        self._zoom_to_width.connect('clicked', self._zoom_to_width_cb)
+        self.insert(self._zoom_to_width, -1)
+        self._zoom_to_width.show()
+
         # TODO: fix the initial value
         self._zoom_spin_adj = gtk.Adjustment(0, 25, 400, 25, 50, 0)
         self._zoom_spin = gtk.SpinButton(self._zoom_spin_adj, 0, 0)
@@ -374,6 +380,10 @@ class ViewToolbar(gtk.Toolbar):
             self._zoom_percentage = self._abiword_canvas.get_zoom_percentage()
         if self._zoom_percentage <= 375:
             self.set_zoom_percentage(self._zoom_percentage + 25)
+
+    def _zoom_to_width_cb(self, button):
+        self._abiword_canvas.zoom_width()
+        self._zoom_percentage = self._abiword_canvas.get_zoom_percentage()
 
     def _zoom_spin_cb(self, button):
         self._zoom_percentage = self._zoom_spin.get_value_as_int()
