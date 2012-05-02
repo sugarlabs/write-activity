@@ -49,6 +49,8 @@ from toolbar import InsertToolbar
 from toolbar import ParagraphToolbar
 from widgets import ExportButtonFactory
 from port import chooser
+import speech
+from speechtoolbar import SpeechToolbar
 
 logger = logging.getLogger('write-activity')
 
@@ -132,6 +134,13 @@ class AbiWordActivity(activity.Activity):
         content_box.show_all()
         self.floating_image = False
 
+        if speech.supported:
+            self.speech_toolbar_button = ToolbarButton(icon_name='speak')
+            toolbar_box.toolbar.insert(self.speech_toolbar_button, -1)
+            self.speech_toolbar = SpeechToolbar(self)
+            self.speech_toolbar_button.set_page(self.speech_toolbar)
+            self.speech_toolbar_button.show()
+
         separator = gtk.SeparatorToolItem()
         separator.props.draw = False
         separator.set_expand(True)
@@ -195,6 +204,7 @@ class AbiWordActivity(activity.Activity):
         if self.abiword_canvas.get_selection('text/plain')[1] == 0:
             logging.error('Setting default font to Sans in new documents')
             self.abiword_canvas.set_font_name('Sans')
+        self.abiword_canvas.moveto_bod()
 
     def get_preview(self):
         if not hasattr(self.abiword_canvas, 'render_page_to_image'):
