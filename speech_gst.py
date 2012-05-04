@@ -19,7 +19,7 @@ import logging
 
 import speech
 
-_logger = logging.getLogger('read-etexts-activity')
+_logger = logging.getLogger('write-activity')
 
 
 def get_all_voices():

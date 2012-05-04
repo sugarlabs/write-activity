@@ -17,7 +17,7 @@
 
 import logging
 
-_logger = logging.getLogger('read-etexts-activity')
+_logger = logging.getLogger('write-activity')
 
 supported = True
 

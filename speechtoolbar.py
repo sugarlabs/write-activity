@@ -73,7 +73,7 @@ class SpeechToolbar(gtk.Toolbar):
         combotool = ToolComboBox(self.voice_combo)
         self.insert(combotool, -1)
         combotool.show()
-        speech.reset_buttons_cb = self.reset_buttons_cb
+        speech.reset_cb = self.reset_buttons_cb
         speech.end_text_cb = self.reset_buttons_cb
 
     def compare_voices(self,  a,  b):
@@ -170,7 +170,7 @@ class SpeechToolbar(gtk.Toolbar):
                 # play selected text, if not, play all
                 abi = self._activity.abiword_canvas
                 selection = abi.get_selection('text/plain')
-                if selection[1] == 0:
+                if selection[0] is None or selection[1] == 0:
                     # nothing selected
                     abi.select_all()
                     text = abi.get_selection('text/plain')[0]
