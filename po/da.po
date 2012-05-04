@@ -14,202 +14,214 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-06 00:30-0400\n"
-"PO-Revision-Date: 2011-04-05 16:06+0200\n"
-"Last-Translator: Aputsiaq <aj@isit.gl>\n"
+"POT-Creation-Date: 2012-05-03 00:31-0400\n"
+"PO-Revision-Date: 2012-05-04 23:28+0200\n"
+"Last-Translator: Aputsiaq Niels <aj@isit.gl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "Write"
 msgstr "Skriv"
 
-#: AbiWordActivity.py:81
+#: AbiWordActivity.py:83
 msgid "Edit"
 msgstr "Redigér"
 
-#: AbiWordActivity.py:87
+#: AbiWordActivity.py:89
 msgid "View"
 msgstr "Vis"
 
-#: AbiWordActivity.py:96
+#: AbiWordActivity.py:98
 msgid "Text"
 msgstr "Tekst"
 
-#: AbiWordActivity.py:102
+#: AbiWordActivity.py:104
 msgid "Paragraph"
 msgstr "Paragraf"
 
-#: AbiWordActivity.py:108 toolbar.py:549
+#: AbiWordActivity.py:110 toolbar.py:593
 msgid "Bullet List"
 msgstr "Punktopstilling"
 
-#: AbiWordActivity.py:114 toolbar.py:217
+#: AbiWordActivity.py:116 toolbar.py:218
 msgid "Table"
 msgstr "Tabel"
 
-#: AbiWordActivity.py:121
-msgid "Bold"
-msgstr "Fed"
-
-#: AbiWordActivity.py:129
-msgid "Italic"
-msgstr "Kursiv"
-
-#: AbiWordActivity.py:137
-msgid "Underline"
-msgstr "Understreget"
-
-#: toolbar.py:94
-msgid "Search"
-msgstr "Søg"
-
-#: toolbar.py:111
-msgid "Find previous"
-msgstr "Find forrige"
-
-#: toolbar.py:117
-msgid "Find next"
-msgstr "Find næste"
-
-#: toolbar.py:217
-msgid "Cancel"
-msgstr "Fortryd"
-
-#: toolbar.py:229
-msgid "Insert Row"
-msgstr "Indsæt række"
-
-#: toolbar.py:235
-msgid "Delete Row"
-msgstr "Slet række"
-
-#: toolbar.py:241
-msgid "Insert Column"
-msgstr "Indsæt kolonne"
-
-#: toolbar.py:247
-msgid "Delete Column"
-msgstr "Slet kolonne"
-
-#: toolbar.py:256
+#: AbiWordActivity.py:123
 msgid "Insert Image"
 msgstr "Indsæt billede"
 
-#: toolbar.py:263
+#: AbiWordActivity.py:130
 msgid "Floating"
 msgstr "Flydende"
 
-#: toolbar.py:320
+#: speechtoolbar.py:57
+msgid "Play / Pause"
+msgstr "Afspil / Pause"
+
+#: speechtoolbar.py:65
+msgid "Stop"
+msgstr "Stop"
+
+#: toolbar.py:95
+msgid "Search"
+msgstr "Søg"
+
+#: toolbar.py:112
+msgid "Find previous"
+msgstr "Find forrige"
+
+#: toolbar.py:118
+msgid "Find next"
+msgstr "Find næste"
+
+#: toolbar.py:218
+msgid "Cancel"
+msgstr "Fortryd"
+
+#: toolbar.py:230
+msgid "Insert Row"
+msgstr "Indsæt række"
+
+#: toolbar.py:236
+msgid "Delete Row"
+msgstr "Slet række"
+
+#: toolbar.py:242
+msgid "Insert Column"
+msgstr "Indsæt kolonne"
+
+#: toolbar.py:248
+msgid "Delete Column"
+msgstr "Slet kolonne"
+
+#: toolbar.py:290
 msgid "Zoom Out"
 msgstr "Zoom ud"
 
-#: toolbar.py:327
+#: toolbar.py:297
 msgid "Zoom In"
 msgstr "Zoom ind"
 
-#: toolbar.py:344
+#: toolbar.py:303
+msgid "Zoom to width"
+msgstr "Zoom til bredde"
+
+#: toolbar.py:320
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:356
+#: toolbar.py:332
 msgid "Page: "
 msgstr "Side: "
 
-#: toolbar.py:462 toolbar.py:539
+#: toolbar.py:427
+msgid "Bold"
+msgstr "Fed"
+
+#: toolbar.py:435
+msgid "Italic"
+msgstr "Kursiv"
+
+#: toolbar.py:443
+msgid "Underline"
+msgstr "Understreget"
+
+#: toolbar.py:506 toolbar.py:583
 msgid "Normal"
 msgstr "Normal"
 
-#: toolbar.py:473
+#: toolbar.py:517
 msgid "Heading 1"
 msgstr "Overskrift 1"
 
-#: toolbar.py:477
+#: toolbar.py:521
 msgid "Heading 2"
 msgstr "Overskrift 2"
 
-#: toolbar.py:481
+#: toolbar.py:525
 msgid "Heading 3"
 msgstr "Overskrift 3"
 
-#: toolbar.py:485
+#: toolbar.py:529
 msgid "Heading 4"
 msgstr "Overskrift 4"
 
-#: toolbar.py:489
+#: toolbar.py:533
 msgid "Block Text"
 msgstr "Bloktekst"
 
-#: toolbar.py:493
+#: toolbar.py:537
 msgid "Plain Text"
 msgstr "Klartekst"
 
-#: toolbar.py:509
+#: toolbar.py:553
 msgid "Left justify"
 msgstr "Justér venstre"
 
-#: toolbar.py:512
+#: toolbar.py:556
 msgid "Center justify"
 msgstr "Justér midt"
 
-#: toolbar.py:515
+#: toolbar.py:559
 msgid "Right justify"
 msgstr "Justér højre"
 
-#: toolbar.py:518
+#: toolbar.py:562
 msgid "Fill justify"
 msgstr "Lige marginer"
 
-#: toolbar.py:553
+#: toolbar.py:597
 msgid "Dashed List"
 msgstr "Stregliste"
 
-#: toolbar.py:557
+#: toolbar.py:601
 msgid "Numbered List"
 msgstr "Nummereret liste"
 
-#: toolbar.py:561
+#: toolbar.py:605
 msgid "Lower Case List"
 msgstr "Liste med små bogstaver"
 
-#: toolbar.py:565
+#: toolbar.py:609
 msgid "Upper Case List"
 msgstr "Liste med store bogstaver"
 
-#: widgets.py:165
+#: widgets.py:169
 msgid "Rich Text (RTF)"
 msgstr "Rich Text (RTF)"
 
-#: widgets.py:167
+#: widgets.py:171
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:171
+#: widgets.py:175
 msgid "Hypertext (HTML)"
 msgstr "Hypertekst (HTML)"
 
-#: widgets.py:173
+#: widgets.py:177
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:178
+#: widgets.py:182
 msgid "Plain Text (TXT)"
 msgstr "Klartekst (TXT)"
 
-#: widgets.py:180
+#: widgets.py:184
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:184
+#: widgets.py:188
 msgid "Portable Document Format (PDF)"
 msgstr "Portable Document Format (PDF)"
 
-#: widgets.py:186
+#: widgets.py:190
 msgid "PDF"
 msgstr "PDF"
 
