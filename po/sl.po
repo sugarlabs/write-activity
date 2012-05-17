@@ -14,10 +14,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-25 00:30-0500\n"
+"POT-Creation-Date: 2012-05-03 00:31-0400\n"
 "PO-Revision-Date: 2008-07-11 01:33-0400\n"
 "Last-Translator: Denis Oštir <denis.ostir@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,194 +28,202 @@ msgstr ""
 msgid "Write"
 msgstr "Piši"
 
-#: AbiWordActivity.py:82
+#: AbiWordActivity.py:83
 msgid "Edit"
 msgstr "Urejanje"
 
-#: AbiWordActivity.py:88
+#: AbiWordActivity.py:89
 msgid "View"
 msgstr "Pogled"
 
-#: AbiWordActivity.py:97
+#: AbiWordActivity.py:98
 msgid "Text"
 msgstr "Besedilo"
 
-#: AbiWordActivity.py:103
+#: AbiWordActivity.py:104
 msgid "Paragraph"
-msgstr ""
+msgstr "Odstavek"
 
-#: AbiWordActivity.py:109 toolbar.py:549
+#: AbiWordActivity.py:110 toolbar.py:593
 msgid "Bullet List"
 msgstr "Seznam z alineami"
 
-#: AbiWordActivity.py:115 toolbar.py:217
+#: AbiWordActivity.py:116 toolbar.py:218
 msgid "Table"
 msgstr "Tabela"
 
-#: AbiWordActivity.py:122
-msgid "Bold"
-msgstr "Podebeljeno"
-
-#: AbiWordActivity.py:130
-msgid "Italic"
-msgstr "Poševno"
-
-#: AbiWordActivity.py:138
-msgid "Underline"
-msgstr "Podčrtano"
-
-#: toolbar.py:94
-msgid "Search"
-msgstr ""
-
-#: toolbar.py:111
-msgid "Find previous"
-msgstr "Najdi prejšnjega"
-
-#: toolbar.py:117
-msgid "Find next"
-msgstr "Najdi naslednjega"
-
-#: toolbar.py:217
-msgid "Cancel"
-msgstr "Prekliči"
-
-#: toolbar.py:229
-msgid "Insert Row"
-msgstr "Vstavi vrstico"
-
-#: toolbar.py:235
-msgid "Delete Row"
-msgstr "Izbriši vrstico"
-
-#: toolbar.py:241
-msgid "Insert Column"
-msgstr "Vstavi stolpec"
-
-#: toolbar.py:247
-msgid "Delete Column"
-msgstr "Izbriši stolpec"
-
-#: toolbar.py:256
+#: AbiWordActivity.py:123
 msgid "Insert Image"
 msgstr "Vstavi sliko"
 
-#: toolbar.py:263
+#: AbiWordActivity.py:130
 msgid "Floating"
+msgstr "Plavajoče"
+
+#: speechtoolbar.py:57
+msgid "Play / Pause"
 msgstr ""
 
-#: toolbar.py:320
+#: speechtoolbar.py:65
+msgid "Stop"
+msgstr ""
+
+#: toolbar.py:95
+msgid "Search"
+msgstr "Iskanje"
+
+#: toolbar.py:112
+msgid "Find previous"
+msgstr "Najdi prejšnjega"
+
+#: toolbar.py:118
+msgid "Find next"
+msgstr "Najdi naslednjega"
+
+#: toolbar.py:218
+msgid "Cancel"
+msgstr "Prekliči"
+
+#: toolbar.py:230
+msgid "Insert Row"
+msgstr "Vstavi vrstico"
+
+#: toolbar.py:236
+msgid "Delete Row"
+msgstr "Izbriši vrstico"
+
+#: toolbar.py:242
+msgid "Insert Column"
+msgstr "Vstavi stolpec"
+
+#: toolbar.py:248
+msgid "Delete Column"
+msgstr "Izbriši stolpec"
+
+#: toolbar.py:290
 msgid "Zoom Out"
 msgstr "Oddalji"
 
-#: toolbar.py:327
+#: toolbar.py:297
 msgid "Zoom In"
 msgstr "Približaj"
 
-#: toolbar.py:344
+#: toolbar.py:303
+msgid "Zoom to width"
+msgstr ""
+
+#: toolbar.py:320
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:356
+#: toolbar.py:332
 msgid "Page: "
 msgstr "Stran: "
 
-#: toolbar.py:462 toolbar.py:539
+#: toolbar.py:427
+msgid "Bold"
+msgstr "Podebeljeno"
+
+#: toolbar.py:435
+msgid "Italic"
+msgstr "Poševno"
+
+#: toolbar.py:443
+msgid "Underline"
+msgstr "Podčrtano"
+
+#: toolbar.py:506 toolbar.py:583
 msgid "Normal"
 msgstr "Navadno"
 
-#: toolbar.py:473
+#: toolbar.py:517
 msgid "Heading 1"
 msgstr "Naslov 1"
 
-#: toolbar.py:477
+#: toolbar.py:521
 msgid "Heading 2"
 msgstr "Naslov 2"
 
-#: toolbar.py:481
+#: toolbar.py:525
 msgid "Heading 3"
 msgstr "Naslov 3"
 
-#: toolbar.py:485
+#: toolbar.py:529
 msgid "Heading 4"
 msgstr "Naslov 4"
 
 # Block tekst je recimo citat v besedilu, ki je izpostavljen s skupnim zamikom za celoten odstavek.
-#: toolbar.py:489
+#: toolbar.py:533
 msgid "Block Text"
 msgstr "Izpostavljeno besedilo"
 
-#: toolbar.py:493
+#: toolbar.py:537
 msgid "Plain Text"
 msgstr "Golo besedilo"
 
-#: toolbar.py:509
-msgid "Left justify"
-msgstr ""
-
-#: toolbar.py:512
-msgid "Center justify"
-msgstr ""
-
-#: toolbar.py:515
-msgid "Right justify"
-msgstr ""
-
-#: toolbar.py:518
-msgid "Fill justify"
-msgstr ""
-
 #: toolbar.py:553
+msgid "Left justify"
+msgstr "Poravnava levo"
+
+#: toolbar.py:556
+msgid "Center justify"
+msgstr "Poravnava na sredini"
+
+#: toolbar.py:559
+msgid "Right justify"
+msgstr "Poravnava desno"
+
+#: toolbar.py:562
+msgid "Fill justify"
+msgstr "Obojestranska poravnava"
+
+#: toolbar.py:597
 msgid "Dashed List"
 msgstr "Seznam z alineami"
 
-#: toolbar.py:557
+#: toolbar.py:601
 msgid "Numbered List"
 msgstr "Seznam s številkami"
 
-#: toolbar.py:561
+#: toolbar.py:605
 msgid "Lower Case List"
 msgstr "Seznam z malimi črkami"
 
-#: toolbar.py:565
+#: toolbar.py:609
 msgid "Upper Case List"
 msgstr "Seznam v velikimi črkami"
 
-#: widgets.py:165
+#: widgets.py:169
 msgid "Rich Text (RTF)"
 msgstr "Obogateno besedilo (RTF)"
 
-#: widgets.py:166
+#: widgets.py:171
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:170
+#: widgets.py:175
 msgid "Hypertext (HTML)"
 msgstr "Hipertekst (HTML)"
 
-#: widgets.py:171
+#: widgets.py:177
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:176
+#: widgets.py:182
 msgid "Plain Text (TXT)"
 msgstr "Golo besedilo (TXT)"
 
-#: widgets.py:177
+#: widgets.py:184
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:181
+#: widgets.py:188
 msgid "Portable Document Format (PDF)"
-msgstr ""
+msgstr "Prenosljiv zapis dokumentov (PDF)"
 
-#: widgets.py:182
+#: widgets.py:190
 msgid "PDF"
-msgstr ""
-
-#: widgets.py:187 widgets.py:188
-msgid "Export"
-msgstr ""
+msgstr "PDF"
 
 #~ msgid "Image"
 #~ msgstr "Slika"

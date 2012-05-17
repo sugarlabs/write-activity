@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-05 11:13-0300\n"
+"POT-Creation-Date: 2012-05-03 00:31-0400\n"
 "PO-Revision-Date: 2011-07-03 13:52+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,193 +29,204 @@ msgstr ""
 msgid "Write"
 msgstr "எழுதுக"
 
-#: toolbar.py:94
-msgid "Search"
-msgstr "தேடு"
-
-#: toolbar.py:111
-msgid "Find previous"
-msgstr "முன்னையதை கண்டுபிடி"
-
-#: toolbar.py:117
-msgid "Find next"
-msgstr "அடுத்தததை கண்டுபிடி"
-
-#: toolbar.py:217 AbiWordActivity.py:115
-msgid "Table"
-msgstr "அட்டவணை"
-
-#: toolbar.py:217
-msgid "Cancel"
-msgstr "இரத்துசெய்"
-
-#: toolbar.py:229
-msgid "Insert Row"
-msgstr "நிரலை உட்சேர்"
-
-#: toolbar.py:235
-msgid "Delete Row"
-msgstr "நிரலை அழி"
-
-#: toolbar.py:241
-msgid "Insert Column"
-msgstr "நிரையை உட்சேர்"
-
-#: toolbar.py:247
-msgid "Delete Column"
-msgstr "நிரையை அழி"
-
-#: toolbar.py:256
-msgid "Insert Image"
-msgstr "படத்தை உட்சேர்"
-
-#: toolbar.py:263
-msgid "Floating"
-msgstr "புள்ளி மாறிலி"
-
-#: toolbar.py:320
-msgid "Zoom Out"
-msgstr "சிறிதாக்கிக் காட்டு"
-
-#: toolbar.py:327
-msgid "Zoom In"
-msgstr "பெரிதாக்கிக் காட்டு"
-
-#: toolbar.py:344
-msgid "%"
-msgstr "%"
-
-#: toolbar.py:356
-msgid "Page: "
-msgstr "பக்கம் "
-
-#: toolbar.py:462 toolbar.py:539
-msgid "Normal"
-msgstr "சாதாரண"
-
-#: toolbar.py:473
-msgid "Heading 1"
-msgstr "தலைப்பு 1"
-
-#: toolbar.py:477
-msgid "Heading 2"
-msgstr "தலைப்பு 2"
-
-#: toolbar.py:481
-msgid "Heading 3"
-msgstr "தலைப்பு 3"
-
-#: toolbar.py:485
-msgid "Heading 4"
-msgstr "தலைப்பு 4"
-
-#: toolbar.py:489
-msgid "Block Text"
-msgstr "தொகுதி உரை"
-
-#: toolbar.py:493
-msgid "Plain Text"
-msgstr "வெற்று உரை"
-
-#: toolbar.py:509
-msgid "Left justify"
-msgstr "இடது பக்கமாக அமை"
-
-#: toolbar.py:512
-msgid "Center justify"
-msgstr "நடு பக்கமாக அமை"
-
-#: toolbar.py:515
-msgid "Right justify"
-msgstr "வலது பக்கமாக அமை"
-
-#: toolbar.py:518
-msgid "Fill justify"
-msgstr "நிரம்பிய பக்கமாக அமை"
-
-#: toolbar.py:549 AbiWordActivity.py:109
-msgid "Bullet List"
-msgstr "புள்ளி பட்டியல்"
-
-#: toolbar.py:553
-msgid "Dashed List"
-msgstr "கோடிட்ட பட்டியல்"
-
-#: toolbar.py:557
-msgid "Numbered List"
-msgstr "எண் பட்டியல்"
-
-#: toolbar.py:561
-msgid "Lower Case List"
-msgstr "சிறியஎழுத்து பட்டியல்"
-
-#: toolbar.py:565
-msgid "Upper Case List"
-msgstr "பெரியஎழுத்து பட்டியல்"
-
-#: AbiWordActivity.py:82
+#: AbiWordActivity.py:83
 msgid "Edit"
 msgstr "திருத்து"
 
-#: AbiWordActivity.py:88
+#: AbiWordActivity.py:89
 msgid "View"
 msgstr "பார்"
 
-#: AbiWordActivity.py:97
+#: AbiWordActivity.py:98
 msgid "Text"
 msgstr "உரை"
 
-#: AbiWordActivity.py:103
+#: AbiWordActivity.py:104
 msgid "Paragraph"
 msgstr "பத்தி"
 
-#: AbiWordActivity.py:122
+#: AbiWordActivity.py:110 toolbar.py:593
+msgid "Bullet List"
+msgstr "புள்ளி பட்டியல்"
+
+#: AbiWordActivity.py:116 toolbar.py:218
+msgid "Table"
+msgstr "அட்டவணை"
+
+#: AbiWordActivity.py:123
+msgid "Insert Image"
+msgstr "படத்தை உட்சேர்"
+
+#: AbiWordActivity.py:130
+msgid "Floating"
+msgstr "புள்ளி மாறிலி"
+
+#: speechtoolbar.py:57
+msgid "Play / Pause"
+msgstr ""
+
+#: speechtoolbar.py:65
+msgid "Stop"
+msgstr ""
+
+#: toolbar.py:95
+msgid "Search"
+msgstr "தேடு"
+
+#: toolbar.py:112
+msgid "Find previous"
+msgstr "முன்னையதை கண்டுபிடி"
+
+#: toolbar.py:118
+msgid "Find next"
+msgstr "அடுத்தததை கண்டுபிடி"
+
+#: toolbar.py:218
+msgid "Cancel"
+msgstr "இரத்துசெய்"
+
+#: toolbar.py:230
+msgid "Insert Row"
+msgstr "நிரலை உட்சேர்"
+
+#: toolbar.py:236
+msgid "Delete Row"
+msgstr "நிரலை அழி"
+
+#: toolbar.py:242
+msgid "Insert Column"
+msgstr "நிரையை உட்சேர்"
+
+#: toolbar.py:248
+msgid "Delete Column"
+msgstr "நிரையை அழி"
+
+#: toolbar.py:290
+msgid "Zoom Out"
+msgstr "சிறிதாக்கிக் காட்டு"
+
+#: toolbar.py:297
+msgid "Zoom In"
+msgstr "பெரிதாக்கிக் காட்டு"
+
+#: toolbar.py:303
+msgid "Zoom to width"
+msgstr ""
+
+#: toolbar.py:320
+msgid "%"
+msgstr "%"
+
+#: toolbar.py:332
+msgid "Page: "
+msgstr "பக்கம் "
+
+#: toolbar.py:427
 msgid "Bold"
 msgstr "பெரிதாக்கு"
 
-#: AbiWordActivity.py:130
+#: toolbar.py:435
 msgid "Italic"
 msgstr "சரிவு"
 
-#: AbiWordActivity.py:138
+#: toolbar.py:443
 msgid "Underline"
 msgstr "அடிகோடிடு"
 
-#: widgets.py:165
+#: toolbar.py:506 toolbar.py:583
+msgid "Normal"
+msgstr "சாதாரண"
+
+#: toolbar.py:517
+msgid "Heading 1"
+msgstr "தலைப்பு 1"
+
+#: toolbar.py:521
+msgid "Heading 2"
+msgstr "தலைப்பு 2"
+
+#: toolbar.py:525
+msgid "Heading 3"
+msgstr "தலைப்பு 3"
+
+#: toolbar.py:529
+msgid "Heading 4"
+msgstr "தலைப்பு 4"
+
+#: toolbar.py:533
+msgid "Block Text"
+msgstr "தொகுதி உரை"
+
+#: toolbar.py:537
+msgid "Plain Text"
+msgstr "வெற்று உரை"
+
+#: toolbar.py:553
+msgid "Left justify"
+msgstr "இடது பக்கமாக அமை"
+
+#: toolbar.py:556
+msgid "Center justify"
+msgstr "நடு பக்கமாக அமை"
+
+#: toolbar.py:559
+msgid "Right justify"
+msgstr "வலது பக்கமாக அமை"
+
+#: toolbar.py:562
+msgid "Fill justify"
+msgstr "நிரம்பிய பக்கமாக அமை"
+
+#: toolbar.py:597
+msgid "Dashed List"
+msgstr "கோடிட்ட பட்டியல்"
+
+#: toolbar.py:601
+msgid "Numbered List"
+msgstr "எண் பட்டியல்"
+
+#: toolbar.py:605
+msgid "Lower Case List"
+msgstr "சிறியஎழுத்து பட்டியல்"
+
+#: toolbar.py:609
+msgid "Upper Case List"
+msgstr "பெரியஎழுத்து பட்டியல்"
+
+#: widgets.py:169
 msgid "Rich Text (RTF)"
 msgstr "வளமான உரை(RTF)"
 
-#: widgets.py:166
+#: widgets.py:171
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:170
+#: widgets.py:175
 msgid "Hypertext (HTML)"
 msgstr "HTML"
 
-#: widgets.py:171
+#: widgets.py:177
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:176
+#: widgets.py:182
 msgid "Plain Text (TXT)"
 msgstr "வெற்றுஉரை"
 
-#: widgets.py:177
+#: widgets.py:184
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:181
+#: widgets.py:188
 msgid "Portable Document Format (PDF)"
 msgstr "கையாளுகிற கோப்பு வடிவம்"
 
-#: widgets.py:182
+#: widgets.py:190
 msgid "PDF"
 msgstr "PDF"
 
-#: widgets.py:187 widgets.py:188
-msgid "Export"
-msgstr "ஏற்றல்"
+#~ msgid "Export"
+#~ msgstr "ஏற்றல்"
 
 #~ msgid "Image"
 #~ msgstr "படம்"

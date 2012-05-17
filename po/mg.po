@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-05 11:13-0300\n"
+"POT-Creation-Date: 2012-05-03 00:31-0400\n"
 "PO-Revision-Date: 2011-02-14 18:59+0200\n"
 "Last-Translator: Zafimamy Gabriella Ralaivao <gabriella@intnet.mu>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,193 +29,204 @@ msgstr ""
 msgid "Write"
 msgstr "Soraty"
 
-#: toolbar.py:94
-msgid "Search"
-msgstr "Karohy"
-
-#: toolbar.py:111
-msgid "Find previous"
-msgstr "Tadiavo ny teo aloha"
-
-#: toolbar.py:117
-msgid "Find next"
-msgstr "Tadivao ny manaraka"
-
-#: toolbar.py:217 AbiWordActivity.py:115
-msgid "Table"
-msgstr "Tabilao"
-
-#: toolbar.py:217
-msgid "Cancel"
-msgstr "foany"
-
-#: toolbar.py:229
-msgid "Insert Row"
-msgstr "ampidiro andalana"
-
-#: toolbar.py:235
-msgid "Delete Row"
-msgstr "vonoy ny andalana"
-
-#: toolbar.py:241
-msgid "Insert Column"
-msgstr "ampidiro tsanganana"
-
-#: toolbar.py:247
-msgid "Delete Column"
-msgstr "vonoy ny tsanganana"
-
-#: toolbar.py:256
-msgid "Insert Image"
-msgstr "ampidiro sary"
-
-#: toolbar.py:263
-msgid "Floating"
-msgstr "Mitsikafona"
-
-#: toolbar.py:320
-msgid "Zoom Out"
-msgstr "tomory lavitra"
-
-#: toolbar.py:327
-msgid "Zoom In"
-msgstr "tomory akaiky"
-
-#: toolbar.py:344
-msgid "%"
-msgstr "%"
-
-#: toolbar.py:356
-msgid "Page: "
-msgstr "Pejy:_"
-
-#: toolbar.py:462 toolbar.py:539
-msgid "Normal"
-msgstr "Antonony"
-
-#: toolbar.py:473
-msgid "Heading 1"
-msgstr "Lohateny 1"
-
-#: toolbar.py:477
-msgid "Heading 2"
-msgstr "Lohateny 2"
-
-#: toolbar.py:481
-msgid "Heading 3"
-msgstr "Lohateny 3"
-
-#: toolbar.py:485
-msgid "Heading 4"
-msgstr "Lohateny 4"
-
-#: toolbar.py:489
-msgid "Block Text"
-msgstr "Vongantsoratra"
-
-#: toolbar.py:493
-msgid "Plain Text"
-msgstr "Lahatsoratra tsotra"
-
-#: toolbar.py:509
-msgid "Left justify"
-msgstr "Mifanitsy havia"
-
-#: toolbar.py:512
-msgid "Center justify"
-msgstr "Mifanitsy avofoany"
-
-#: toolbar.py:515
-msgid "Right justify"
-msgstr "Mifanitsy havanana"
-
-#: toolbar.py:518
-msgid "Fill justify"
-msgstr "Mifanitsy feno"
-
-#: toolbar.py:549 AbiWordActivity.py:109
-msgid "Bullet List"
-msgstr "lisitra ialohavan'ny teboka"
-
-#: toolbar.py:553
-msgid "Dashed List"
-msgstr "Lisitra misy tsipika"
-
-#: toolbar.py:557
-msgid "Numbered List"
-msgstr "Lisitra misy isa"
-
-#: toolbar.py:561
-msgid "Lower Case List"
-msgstr "Lisitra a b d"
-
-#: toolbar.py:565
-msgid "Upper Case List"
-msgstr "Lisitra A B D"
-
-#: AbiWordActivity.py:82
+#: AbiWordActivity.py:83
 msgid "Edit"
 msgstr "Ovao"
 
-#: AbiWordActivity.py:88
+#: AbiWordActivity.py:89
 msgid "View"
 msgstr "Jereo"
 
-#: AbiWordActivity.py:97
+#: AbiWordActivity.py:98
 msgid "Text"
 msgstr "Lahatsoratra"
 
-#: AbiWordActivity.py:103
+#: AbiWordActivity.py:104
 msgid "Paragraph"
 msgstr "Andalantsoratra"
 
-#: AbiWordActivity.py:122
+#: AbiWordActivity.py:110 toolbar.py:593
+msgid "Bullet List"
+msgstr "lisitra ialohavan'ny teboka"
+
+#: AbiWordActivity.py:116 toolbar.py:218
+msgid "Table"
+msgstr "Tabilao"
+
+#: AbiWordActivity.py:123
+msgid "Insert Image"
+msgstr "ampidiro sary"
+
+#: AbiWordActivity.py:130
+msgid "Floating"
+msgstr "Mitsikafona"
+
+#: speechtoolbar.py:57
+msgid "Play / Pause"
+msgstr ""
+
+#: speechtoolbar.py:65
+msgid "Stop"
+msgstr ""
+
+#: toolbar.py:95
+msgid "Search"
+msgstr "Karohy"
+
+#: toolbar.py:112
+msgid "Find previous"
+msgstr "Tadiavo ny teo aloha"
+
+#: toolbar.py:118
+msgid "Find next"
+msgstr "Tadivao ny manaraka"
+
+#: toolbar.py:218
+msgid "Cancel"
+msgstr "foany"
+
+#: toolbar.py:230
+msgid "Insert Row"
+msgstr "ampidiro andalana"
+
+#: toolbar.py:236
+msgid "Delete Row"
+msgstr "vonoy ny andalana"
+
+#: toolbar.py:242
+msgid "Insert Column"
+msgstr "ampidiro tsanganana"
+
+#: toolbar.py:248
+msgid "Delete Column"
+msgstr "vonoy ny tsanganana"
+
+#: toolbar.py:290
+msgid "Zoom Out"
+msgstr "tomory lavitra"
+
+#: toolbar.py:297
+msgid "Zoom In"
+msgstr "tomory akaiky"
+
+#: toolbar.py:303
+msgid "Zoom to width"
+msgstr ""
+
+#: toolbar.py:320
+msgid "%"
+msgstr "%"
+
+#: toolbar.py:332
+msgid "Page: "
+msgstr "Pejy:_"
+
+#: toolbar.py:427
 msgid "Bold"
 msgstr "matavy"
 
-#: AbiWordActivity.py:130
+#: toolbar.py:435
 msgid "Italic"
 msgstr "mitanila"
 
-#: AbiWordActivity.py:138
+#: toolbar.py:443
 msgid "Underline"
 msgstr "mitsipika"
 
-#: widgets.py:165
+#: toolbar.py:506 toolbar.py:583
+msgid "Normal"
+msgstr "Antonony"
+
+#: toolbar.py:517
+msgid "Heading 1"
+msgstr "Lohateny 1"
+
+#: toolbar.py:521
+msgid "Heading 2"
+msgstr "Lohateny 2"
+
+#: toolbar.py:525
+msgid "Heading 3"
+msgstr "Lohateny 3"
+
+#: toolbar.py:529
+msgid "Heading 4"
+msgstr "Lohateny 4"
+
+#: toolbar.py:533
+msgid "Block Text"
+msgstr "Vongantsoratra"
+
+#: toolbar.py:537
+msgid "Plain Text"
+msgstr "Lahatsoratra tsotra"
+
+#: toolbar.py:553
+msgid "Left justify"
+msgstr "Mifanitsy havia"
+
+#: toolbar.py:556
+msgid "Center justify"
+msgstr "Mifanitsy avofoany"
+
+#: toolbar.py:559
+msgid "Right justify"
+msgstr "Mifanitsy havanana"
+
+#: toolbar.py:562
+msgid "Fill justify"
+msgstr "Mifanitsy feno"
+
+#: toolbar.py:597
+msgid "Dashed List"
+msgstr "Lisitra misy tsipika"
+
+#: toolbar.py:601
+msgid "Numbered List"
+msgstr "Lisitra misy isa"
+
+#: toolbar.py:605
+msgid "Lower Case List"
+msgstr "Lisitra a b d"
+
+#: toolbar.py:609
+msgid "Upper Case List"
+msgstr "Lisitra A B D"
+
+#: widgets.py:169
 msgid "Rich Text (RTF)"
 msgstr "Lahatsoratra nohatsaraina (RTF)"
 
-#: widgets.py:166
+#: widgets.py:171
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:170
+#: widgets.py:175
 msgid "Hypertext (HTML)"
 msgstr "Lahatsoratra mifandrohy (HTML)"
 
-#: widgets.py:171
+#: widgets.py:177
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:176
+#: widgets.py:182
 msgid "Plain Text (TXT)"
 msgstr "Lahatsoratra tsotra (TXT)"
 
-#: widgets.py:177
+#: widgets.py:184
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:181
+#: widgets.py:188
 msgid "Portable Document Format (PDF)"
 msgstr "Endrika tahirinkevitra finday (PDF)"
 
-#: widgets.py:182
+#: widgets.py:190
 msgid "PDF"
 msgstr "PDF"
 
-#: widgets.py:187 widgets.py:188
-msgid "Export"
-msgstr "Aondrano"
+#~ msgid "Export"
+#~ msgstr "Aondrano"
 
 #~ msgid "Image"
 #~ msgstr "Sary"

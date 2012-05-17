@@ -14,11 +14,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-25 00:30-0500\n"
+"POT-Creation-Date: 2012-05-03 00:31-0400\n"
 "PO-Revision-Date: 2009-05-13 12:51-0400\n"
 "Last-Translator: Donghee Park <i4u_4ever@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: ko\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,192 +29,200 @@ msgstr ""
 msgid "Write"
 msgstr "쓰기"
 
-#: AbiWordActivity.py:82
+#: AbiWordActivity.py:83
 msgid "Edit"
 msgstr "편집"
 
-#: AbiWordActivity.py:88
+#: AbiWordActivity.py:89
 msgid "View"
 msgstr "보기"
 
-#: AbiWordActivity.py:97
+#: AbiWordActivity.py:98
 msgid "Text"
 msgstr "문자"
 
-#: AbiWordActivity.py:103
+#: AbiWordActivity.py:104
 msgid "Paragraph"
 msgstr ""
 
-#: AbiWordActivity.py:109 toolbar.py:549
+#: AbiWordActivity.py:110 toolbar.py:593
 msgid "Bullet List"
 msgstr "총알 리스트"
 
-#: AbiWordActivity.py:115 toolbar.py:217
+#: AbiWordActivity.py:116 toolbar.py:218
 msgid "Table"
 msgstr "표"
 
-#: AbiWordActivity.py:122
-msgid "Bold"
-msgstr "굵게"
-
-#: AbiWordActivity.py:130
-msgid "Italic"
-msgstr "이탤릭"
-
-#: AbiWordActivity.py:138
-msgid "Underline"
-msgstr "밑줄"
-
-#: toolbar.py:94
-msgid "Search"
-msgstr ""
-
-#: toolbar.py:111
-msgid "Find previous"
-msgstr "이전 찾기"
-
-#: toolbar.py:117
-msgid "Find next"
-msgstr "다음 찾기"
-
-#: toolbar.py:217
-msgid "Cancel"
-msgstr "취소"
-
-#: toolbar.py:229
-msgid "Insert Row"
-msgstr "줄 삽입"
-
-#: toolbar.py:235
-msgid "Delete Row"
-msgstr "줄 삭제"
-
-#: toolbar.py:241
-msgid "Insert Column"
-msgstr "컬럼 삽입"
-
-#: toolbar.py:247
-msgid "Delete Column"
-msgstr "컬럼 삭제"
-
-#: toolbar.py:256
+#: AbiWordActivity.py:123
 msgid "Insert Image"
 msgstr "이미지 삽입"
 
-#: toolbar.py:263
+#: AbiWordActivity.py:130
 msgid "Floating"
 msgstr ""
 
-#: toolbar.py:320
+#: speechtoolbar.py:57
+msgid "Play / Pause"
+msgstr ""
+
+#: speechtoolbar.py:65
+msgid "Stop"
+msgstr ""
+
+#: toolbar.py:95
+msgid "Search"
+msgstr ""
+
+#: toolbar.py:112
+msgid "Find previous"
+msgstr "이전 찾기"
+
+#: toolbar.py:118
+msgid "Find next"
+msgstr "다음 찾기"
+
+#: toolbar.py:218
+msgid "Cancel"
+msgstr "취소"
+
+#: toolbar.py:230
+msgid "Insert Row"
+msgstr "줄 삽입"
+
+#: toolbar.py:236
+msgid "Delete Row"
+msgstr "줄 삭제"
+
+#: toolbar.py:242
+msgid "Insert Column"
+msgstr "컬럼 삽입"
+
+#: toolbar.py:248
+msgid "Delete Column"
+msgstr "컬럼 삭제"
+
+#: toolbar.py:290
 msgid "Zoom Out"
 msgstr "축소"
 
-#: toolbar.py:327
+#: toolbar.py:297
 msgid "Zoom In"
 msgstr "확대"
 
-#: toolbar.py:344
+#: toolbar.py:303
+msgid "Zoom to width"
+msgstr ""
+
+#: toolbar.py:320
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:356
+#: toolbar.py:332
 msgid "Page: "
 msgstr "페이지: "
 
-#: toolbar.py:462 toolbar.py:539
+#: toolbar.py:427
+msgid "Bold"
+msgstr "굵게"
+
+#: toolbar.py:435
+msgid "Italic"
+msgstr "이탤릭"
+
+#: toolbar.py:443
+msgid "Underline"
+msgstr "밑줄"
+
+#: toolbar.py:506 toolbar.py:583
 msgid "Normal"
 msgstr "보통"
 
-#: toolbar.py:473
+#: toolbar.py:517
 msgid "Heading 1"
 msgstr "제목 1"
 
-#: toolbar.py:477
+#: toolbar.py:521
 msgid "Heading 2"
 msgstr "제목 2"
 
-#: toolbar.py:481
+#: toolbar.py:525
 msgid "Heading 3"
 msgstr "제목 3"
 
-#: toolbar.py:485
+#: toolbar.py:529
 msgid "Heading 4"
 msgstr "제목 4"
 
-#: toolbar.py:489
+#: toolbar.py:533
 msgid "Block Text"
 msgstr "블록 문자"
 
-#: toolbar.py:493
+#: toolbar.py:537
 msgid "Plain Text"
 msgstr "일반 문자"
 
-#: toolbar.py:509
+#: toolbar.py:553
 msgid "Left justify"
 msgstr ""
 
-#: toolbar.py:512
+#: toolbar.py:556
 msgid "Center justify"
 msgstr ""
 
-#: toolbar.py:515
+#: toolbar.py:559
 msgid "Right justify"
 msgstr ""
 
-#: toolbar.py:518
+#: toolbar.py:562
 msgid "Fill justify"
 msgstr ""
 
-#: toolbar.py:553
+#: toolbar.py:597
 msgid "Dashed List"
 msgstr "대쉬 리스트"
 
-#: toolbar.py:557
+#: toolbar.py:601
 msgid "Numbered List"
 msgstr "숫자 리스트"
 
-#: toolbar.py:561
+#: toolbar.py:605
 msgid "Lower Case List"
 msgstr "Lower Case 리스트"
 
-#: toolbar.py:565
+#: toolbar.py:609
 msgid "Upper Case List"
 msgstr "Upper Case 리스트"
 
-#: widgets.py:165
+#: widgets.py:169
 msgid "Rich Text (RTF)"
 msgstr "확장 표현형 문자 (RTF)"
 
-#: widgets.py:166
+#: widgets.py:171
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:170
+#: widgets.py:175
 msgid "Hypertext (HTML)"
 msgstr "하이퍼텍스트 (HTML)"
 
-#: widgets.py:171
+#: widgets.py:177
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:176
+#: widgets.py:182
 msgid "Plain Text (TXT)"
 msgstr "일반 표현형 문자 (TXT)"
 
-#: widgets.py:177
+#: widgets.py:184
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:181
+#: widgets.py:188
 msgid "Portable Document Format (PDF)"
 msgstr ""
 
-#: widgets.py:182
+#: widgets.py:190
 msgid "PDF"
-msgstr ""
-
-#: widgets.py:187 widgets.py:188
-msgid "Export"
 msgstr ""
 
 #~ msgid "Image"

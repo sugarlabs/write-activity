@@ -14,11 +14,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-25 00:30-0500\n"
+"POT-Creation-Date: 2012-05-03 00:31-0400\n"
 "PO-Revision-Date: 2011-03-13 17:37+0200\n"
 "Last-Translator: <klpeter@windowslive.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: hu\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,193 +29,204 @@ msgstr ""
 msgid "Write"
 msgstr "Írás"
 
-#: AbiWordActivity.py:82
+#: AbiWordActivity.py:83
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: AbiWordActivity.py:88
+#: AbiWordActivity.py:89
 msgid "View"
 msgstr "Nézet"
 
-#: AbiWordActivity.py:97
+#: AbiWordActivity.py:98
 msgid "Text"
 msgstr "Szöveg"
 
-#: AbiWordActivity.py:103
+#: AbiWordActivity.py:104
 msgid "Paragraph"
 msgstr "Paragrafus"
 
-#: AbiWordActivity.py:109 toolbar.py:549
+#: AbiWordActivity.py:110 toolbar.py:593
 msgid "Bullet List"
 msgstr "Felsorolás pontokkal"
 
-#: AbiWordActivity.py:115 toolbar.py:217
+#: AbiWordActivity.py:116 toolbar.py:218
 msgid "Table"
 msgstr "Táblázat"
 
-#: AbiWordActivity.py:122
-msgid "Bold"
-msgstr "Félkövér"
-
-#: AbiWordActivity.py:130
-msgid "Italic"
-msgstr "Dőlt"
-
-#: AbiWordActivity.py:138
-msgid "Underline"
-msgstr "Aláhúzott"
-
-#: toolbar.py:94
-msgid "Search"
-msgstr "Keres"
-
-#: toolbar.py:111
-msgid "Find previous"
-msgstr "Előző keresése"
-
-#: toolbar.py:117
-msgid "Find next"
-msgstr "Következő keresése"
-
-#: toolbar.py:217
-msgid "Cancel"
-msgstr "Mégsem"
-
-#: toolbar.py:229
-msgid "Insert Row"
-msgstr "Sor beszúrása"
-
-#: toolbar.py:235
-msgid "Delete Row"
-msgstr "Sor törlése"
-
-#: toolbar.py:241
-msgid "Insert Column"
-msgstr "Oszlop beszúrása"
-
-#: toolbar.py:247
-msgid "Delete Column"
-msgstr "Oszlop törlése"
-
-#: toolbar.py:256
+#: AbiWordActivity.py:123
 msgid "Insert Image"
 msgstr "Kép beillesztése"
 
-#: toolbar.py:263
+#: AbiWordActivity.py:130
 msgid "Floating"
 msgstr "Lebegő"
 
-#: toolbar.py:320
+#: speechtoolbar.py:57
+msgid "Play / Pause"
+msgstr ""
+
+#: speechtoolbar.py:65
+msgid "Stop"
+msgstr ""
+
+#: toolbar.py:95
+msgid "Search"
+msgstr "Keres"
+
+#: toolbar.py:112
+msgid "Find previous"
+msgstr "Előző keresése"
+
+#: toolbar.py:118
+msgid "Find next"
+msgstr "Következő keresése"
+
+#: toolbar.py:218
+msgid "Cancel"
+msgstr "Mégsem"
+
+#: toolbar.py:230
+msgid "Insert Row"
+msgstr "Sor beszúrása"
+
+#: toolbar.py:236
+msgid "Delete Row"
+msgstr "Sor törlése"
+
+#: toolbar.py:242
+msgid "Insert Column"
+msgstr "Oszlop beszúrása"
+
+#: toolbar.py:248
+msgid "Delete Column"
+msgstr "Oszlop törlése"
+
+#: toolbar.py:290
 msgid "Zoom Out"
 msgstr "Nagyítás ki"
 
-#: toolbar.py:327
+#: toolbar.py:297
 msgid "Zoom In"
 msgstr "Nagyítás be"
 
-#: toolbar.py:344
+#: toolbar.py:303
+msgid "Zoom to width"
+msgstr ""
+
+#: toolbar.py:320
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:356
+#: toolbar.py:332
 msgid "Page: "
 msgstr "Oldal: "
 
-#: toolbar.py:462 toolbar.py:539
+#: toolbar.py:427
+msgid "Bold"
+msgstr "Félkövér"
+
+#: toolbar.py:435
+msgid "Italic"
+msgstr "Dőlt"
+
+#: toolbar.py:443
+msgid "Underline"
+msgstr "Aláhúzott"
+
+#: toolbar.py:506 toolbar.py:583
 msgid "Normal"
 msgstr "Normál"
 
-#: toolbar.py:473
+#: toolbar.py:517
 msgid "Heading 1"
 msgstr "Címsor 1"
 
-#: toolbar.py:477
+#: toolbar.py:521
 msgid "Heading 2"
 msgstr "Címsor 2"
 
-#: toolbar.py:481
+#: toolbar.py:525
 msgid "Heading 3"
 msgstr "Címsor 3"
 
-#: toolbar.py:485
+#: toolbar.py:529
 msgid "Heading 4"
 msgstr "Címsor 4"
 
-#: toolbar.py:489
+#: toolbar.py:533
 msgid "Block Text"
 msgstr "Szöveg tömb"
 
-#: toolbar.py:493
+#: toolbar.py:537
 msgid "Plain Text"
 msgstr "Sima szöveg"
 
-#: toolbar.py:509
+#: toolbar.py:553
 msgid "Left justify"
 msgstr "Bal oldalhoz igazít"
 
-#: toolbar.py:512
+#: toolbar.py:556
 msgid "Center justify"
 msgstr "Középre igazít"
 
-#: toolbar.py:515
+#: toolbar.py:559
 msgid "Right justify"
 msgstr "Jobb oldalhoz igazít"
 
-#: toolbar.py:518
+#: toolbar.py:562
 msgid "Fill justify"
 msgstr "Kitöltés"
 
-#: toolbar.py:553
+#: toolbar.py:597
 msgid "Dashed List"
 msgstr "Felsorolás kötőjellel"
 
-#: toolbar.py:557
+#: toolbar.py:601
 msgid "Numbered List"
 msgstr "Számozás"
 
-#: toolbar.py:561
+#: toolbar.py:605
 msgid "Lower Case List"
 msgstr "Felsorolás alacsonyabb szint"
 
-#: toolbar.py:565
+#: toolbar.py:609
 msgid "Upper Case List"
 msgstr "Felsorolás magasabb szint"
 
-#: widgets.py:165
+#: widgets.py:169
 msgid "Rich Text (RTF)"
 msgstr "Rich Text (RTF)"
 
-#: widgets.py:166
+#: widgets.py:171
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:170
+#: widgets.py:175
 msgid "Hypertext (HTML)"
 msgstr "Hypertext (HTML)"
 
-#: widgets.py:171
+#: widgets.py:177
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:176
+#: widgets.py:182
 msgid "Plain Text (TXT)"
 msgstr "Sima szöveg (TXT)"
 
-#: widgets.py:177
+#: widgets.py:184
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:181
+#: widgets.py:188
 msgid "Portable Document Format (PDF)"
 msgstr "Hordozható dokumentum formátum"
 
-#: widgets.py:182
+#: widgets.py:190
 msgid "PDF"
 msgstr "PDF"
 
-#: widgets.py:187 widgets.py:188
-msgid "Export"
-msgstr "Export"
+#~ msgid "Export"
+#~ msgstr "Export"
 
 #~ msgid "Image"
 #~ msgstr "Kép"

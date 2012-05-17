@@ -6,206 +6,218 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-27 07:14-0400\n"
-"PO-Revision-Date: 2011-09-04 08:50+0200\n"
-"Last-Translator: Francisco <fordazmx@gmail.com>\n"
+"POT-Creation-Date: 2012-05-03 00:31-0400\n"
+"PO-Revision-Date: 2012-05-04 07:45+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: hus\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "Write"
 msgstr "Dhucha'"
 
-#: AbiWordActivity.py:81
+#: AbiWordActivity.py:83
 msgid "Edit"
 msgstr "Jalk'uy"
 
-#: AbiWordActivity.py:87
+#: AbiWordActivity.py:89
 msgid "View"
 msgstr "Tsu'uw"
 
-#: AbiWordActivity.py:96
+#: AbiWordActivity.py:98
 msgid "Text"
 msgstr "Dhuchlab"
 
-#: AbiWordActivity.py:102
+#: AbiWordActivity.py:104
 msgid "Paragraph"
 msgstr "Kwenél kits'lab"
 
-#: AbiWordActivity.py:108 toolbar.py:549
+#: AbiWordActivity.py:110 toolbar.py:593
 msgid "Bullet List"
 msgstr "T'iplabidh k'elab"
 
-#: AbiWordActivity.py:114 toolbar.py:217
+#: AbiWordActivity.py:116 toolbar.py:218
 msgid "Table"
 msgstr "Nik'e' tin ay"
 
-#: AbiWordActivity.py:121
-msgid "Bold"
-msgstr "T'unk'uchik"
-
-#: AbiWordActivity.py:129
-msgid "Italic"
-msgstr "Lewél"
-
-#: AbiWordActivity.py:137
-msgid "Underline"
-msgstr "Ákankiloy"
-
-#: toolbar.py:94
-msgid "Search"
-msgstr "Aliy"
-
-#: toolbar.py:111
-msgid "Find previous"
-msgstr "Aliy xi ok'xidh"
-
-#: toolbar.py:117
-msgid "Find next"
-msgstr "Aliy xi júnakej"
-
-#: toolbar.py:217
-msgid "Cancel"
-msgstr "T'apiy"
-
-#: toolbar.py:229
-msgid "Insert Row"
-msgstr "Otsba' juni k'elab"
-
-#: toolbar.py:235
-msgid "Delete Row"
-msgstr "Pakuw an k'elab"
-
-#: toolbar.py:241
-msgid "Insert Column"
-msgstr "Otsba' juni nik'e'"
-
-#: toolbar.py:247
-msgid "Delete Column"
-msgstr "Pakuw an nik'e'"
-
-#: toolbar.py:256
+#: AbiWordActivity.py:123
 msgid "Insert Image"
 msgstr "Otsba' juni t'iplab"
 
-#: toolbar.py:263
+#: AbiWordActivity.py:130
 msgid "Floating"
 msgstr "Dhememél"
 
-#: toolbar.py:320
+#: speechtoolbar.py:57
+msgid "Play / Pause"
+msgstr ""
+
+#: speechtoolbar.py:65
+msgid "Stop"
+msgstr "Kuba'"
+
+#: toolbar.py:95
+msgid "Search"
+msgstr "Aliy"
+
+#: toolbar.py:112
+msgid "Find previous"
+msgstr "Aliy xi ok'xidh"
+
+#: toolbar.py:118
+msgid "Find next"
+msgstr "Aliy xi júnakej"
+
+#: toolbar.py:218
+msgid "Cancel"
+msgstr "T'apiy"
+
+#: toolbar.py:230
+msgid "Insert Row"
+msgstr "Otsba' juni k'elab"
+
+#: toolbar.py:236
+msgid "Delete Row"
+msgstr "Pakuw an k'elab"
+
+#: toolbar.py:242
+msgid "Insert Column"
+msgstr "Otsba' juni nik'e'"
+
+#: toolbar.py:248
+msgid "Delete Column"
+msgstr "Pakuw an nik'e'"
+
+#: toolbar.py:290
 msgid "Zoom Out"
 msgstr "Tsipti'méjdha'"
 
-#: toolbar.py:327
+#: toolbar.py:297
 msgid "Zoom In"
 msgstr "Puwedha'"
 
-#: toolbar.py:344
+#: toolbar.py:303
+msgid "Zoom to width"
+msgstr "Ka junkuw tin ts'ikwtal"
+
+#: toolbar.py:320
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:356
+#: toolbar.py:332
 msgid "Page: "
 msgstr "Walxeklek: "
 
-#: toolbar.py:462 toolbar.py:539
+#: toolbar.py:427
+msgid "Bold"
+msgstr "T'unk'uchik"
+
+#: toolbar.py:435
+msgid "Italic"
+msgstr "Lewél"
+
+#: toolbar.py:443
+msgid "Underline"
+msgstr "Ákankiloy"
+
+#: toolbar.py:506 toolbar.py:583
 msgid "Normal"
 msgstr "Jajats'k'ij"
 
-#: toolbar.py:473
+#: toolbar.py:517
 msgid "Heading 1"
 msgstr "Ok'ol 1"
 
-#: toolbar.py:477
+#: toolbar.py:521
 msgid "Heading 2"
 msgstr "Ok'ol 2"
 
-#: toolbar.py:481
+#: toolbar.py:525
 msgid "Heading 3"
 msgstr "Ok'ol 3"
 
-#: toolbar.py:485
+#: toolbar.py:529
 msgid "Heading 4"
 msgstr "Ok'ol 4"
 
-#: toolbar.py:489
+#: toolbar.py:533
 msgid "Block Text"
 msgstr "Kwenél dhuchlab"
 
-#: toolbar.py:493
+#: toolbar.py:537
 msgid "Plain Text"
 msgstr "T'ipts'odh dhuchlab"
 
-#: toolbar.py:509
+#: toolbar.py:553
 msgid "Left justify"
 msgstr "K'elbay ta k'watab"
 
-#: toolbar.py:512
+#: toolbar.py:556
 msgid "Center justify"
 msgstr "K'elbay ts'ejel"
 
-#: toolbar.py:515
+#: toolbar.py:559
 msgid "Right justify"
 msgstr "K'elbay ta wínab"
 
-#: toolbar.py:518
+#: toolbar.py:562
 msgid "Fill justify"
 msgstr "Tamchidh k'elbay"
 
-#: toolbar.py:553
+#: toolbar.py:597
 msgid "Dashed List"
 msgstr "Kits'odh t'iplab k'elab"
 
-#: toolbar.py:557
+#: toolbar.py:601
 msgid "Numbered List"
 msgstr "Ajidh k'elab"
 
-#: toolbar.py:561
+#: toolbar.py:605
 msgid "Lower Case List"
 msgstr "T'ijax dhuche' k'elab"
 
-#: toolbar.py:565
+#: toolbar.py:609
 msgid "Upper Case List"
 msgstr "Pakdha' Dhuche' K'elab"
 
 # Dhayk'adh dhuchlab() (RTF)
 #
-#: widgets.py:165
+#: widgets.py:169
 msgid "Rich Text (RTF)"
 msgstr "Ts'alat dhuchlab (RTF)"
 
-#: widgets.py:167
+#: widgets.py:171
 msgid "RTF"
 msgstr "RTF"
 
 # Palabra inteligente que te puede relacionar con otras ideas.
-#: widgets.py:171
+#: widgets.py:175
 msgid "Hypertext (HTML)"
 msgstr "Tsalpadh dhuchlab (HTML)"
 
-#: widgets.py:173
+#: widgets.py:177
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:178
+#: widgets.py:182
 msgid "Plain Text (TXT)"
 msgstr "T'ipts'odh dhuchlab (TXT)"
 
-#: widgets.py:180
+#: widgets.py:184
 msgid "TXT"
 msgstr "TXT"
 
 # T'ipodh dhuchlab axi ka ejtow ka kitna' (PDF)
-#: widgets.py:184
+#: widgets.py:188
 msgid "Portable Document Format (PDF)"
 msgstr "Kitnadh dhuchlab t'ipoxtaláb (PDF)"
 
-#: widgets.py:186
+#: widgets.py:190
 msgid "PDF"
 msgstr "PDF"
 

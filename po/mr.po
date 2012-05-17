@@ -14,11 +14,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-05 11:13-0300\n"
+"POT-Creation-Date: 2012-05-03 00:31-0400\n"
 "PO-Revision-Date: 2011-09-11 10:55+0200\n"
-"Last-Translator:  <ganeshgajre@gmail.com>\n"
+"Last-Translator: <ganeshgajre@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: mr\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,193 +29,204 @@ msgstr ""
 msgid "Write"
 msgstr "लिहा"
 
-#: toolbar.py:94
-msgid "Search"
-msgstr "शोधा"
-
-#: toolbar.py:111
-msgid "Find previous"
-msgstr "मागील शोधा"
-
-#: toolbar.py:117
-msgid "Find next"
-msgstr "पुढचे शोधा"
-
-#: toolbar.py:217 AbiWordActivity.py:115
-msgid "Table"
-msgstr "टेबल"
-
-#: toolbar.py:217
-msgid "Cancel"
-msgstr "रद्द करणे"
-
-#: toolbar.py:229
-msgid "Insert Row"
-msgstr "रांग बनवा"
-
-#: toolbar.py:235
-msgid "Delete Row"
-msgstr "रांग काढून टाका"
-
-#: toolbar.py:241
-msgid "Insert Column"
-msgstr "स्तंभ बनवा"
-
-#: toolbar.py:247
-msgid "Delete Column"
-msgstr "स्तंभ काढून टाका"
-
-#: toolbar.py:256
-msgid "Insert Image"
-msgstr "छायाचित्र आत घाला"
-
-#: toolbar.py:263
-msgid "Floating"
-msgstr "फ्लोटिंग"
-
-#: toolbar.py:320
-msgid "Zoom Out"
-msgstr "झूम आउट"
-
-#: toolbar.py:327
-msgid "Zoom In"
-msgstr "झूम इन"
-
-#: toolbar.py:344
-msgid "%"
-msgstr "%"
-
-#: toolbar.py:356
-msgid "Page: "
-msgstr "पृष्ठ: "
-
-#: toolbar.py:462 toolbar.py:539
-msgid "Normal"
-msgstr "साधारण"
-
-#: toolbar.py:473
-msgid "Heading 1"
-msgstr "शीर्षक 1"
-
-#: toolbar.py:477
-msgid "Heading 2"
-msgstr "शीर्षक 2"
-
-#: toolbar.py:481
-msgid "Heading 3"
-msgstr "शीर्षक 3"
-
-#: toolbar.py:485
-msgid "Heading 4"
-msgstr "शीर्षक 4"
-
-#: toolbar.py:489
-msgid "Block Text"
-msgstr "गृहसमुदाय शब्ध"
-
-#: toolbar.py:493
-msgid "Plain Text"
-msgstr "साधारण शब्द"
-
-#: toolbar.py:509
-msgid "Left justify"
-msgstr "डावीकडून रचा"
-
-#: toolbar.py:512
-msgid "Center justify"
-msgstr "मध्यातुन रचा"
-
-#: toolbar.py:515
-msgid "Right justify"
-msgstr "उजवीकडुन रचा"
-
-#: toolbar.py:518
-msgid "Fill justify"
-msgstr "रचलेली जागा भरा"
-
-#: toolbar.py:549 AbiWordActivity.py:109
-msgid "Bullet List"
-msgstr "बुलेट लिस्ट"
-
-#: toolbar.py:553
-msgid "Dashed List"
-msgstr "अधोरेखित यादी"
-
-#: toolbar.py:557
-msgid "Numbered List"
-msgstr "अंक यादी"
-
-#: toolbar.py:561
-msgid "Lower Case List"
-msgstr "छोटी लिपी यादी"
-
-#: toolbar.py:565
-msgid "Upper Case List"
-msgstr "मोठी लिपी यादी"
-
-#: AbiWordActivity.py:82
+#: AbiWordActivity.py:83
 msgid "Edit"
 msgstr "संपादन करणे"
 
-#: AbiWordActivity.py:88
+#: AbiWordActivity.py:89
 msgid "View"
 msgstr "पाहा"
 
-#: AbiWordActivity.py:97
+#: AbiWordActivity.py:98
 msgid "Text"
 msgstr "शब्द"
 
-#: AbiWordActivity.py:103
+#: AbiWordActivity.py:104
 msgid "Paragraph"
 msgstr "परीच्छेद"
 
-#: AbiWordActivity.py:122
+#: AbiWordActivity.py:110 toolbar.py:593
+msgid "Bullet List"
+msgstr "बुलेट लिस्ट"
+
+#: AbiWordActivity.py:116 toolbar.py:218
+msgid "Table"
+msgstr "टेबल"
+
+#: AbiWordActivity.py:123
+msgid "Insert Image"
+msgstr "छायाचित्र आत घाला"
+
+#: AbiWordActivity.py:130
+msgid "Floating"
+msgstr "फ्लोटिंग"
+
+#: speechtoolbar.py:57
+msgid "Play / Pause"
+msgstr ""
+
+#: speechtoolbar.py:65
+msgid "Stop"
+msgstr ""
+
+#: toolbar.py:95
+msgid "Search"
+msgstr "शोधा"
+
+#: toolbar.py:112
+msgid "Find previous"
+msgstr "मागील शोधा"
+
+#: toolbar.py:118
+msgid "Find next"
+msgstr "पुढचे शोधा"
+
+#: toolbar.py:218
+msgid "Cancel"
+msgstr "रद्द करणे"
+
+#: toolbar.py:230
+msgid "Insert Row"
+msgstr "रांग बनवा"
+
+#: toolbar.py:236
+msgid "Delete Row"
+msgstr "रांग काढून टाका"
+
+#: toolbar.py:242
+msgid "Insert Column"
+msgstr "स्तंभ बनवा"
+
+#: toolbar.py:248
+msgid "Delete Column"
+msgstr "स्तंभ काढून टाका"
+
+#: toolbar.py:290
+msgid "Zoom Out"
+msgstr "झूम आउट"
+
+#: toolbar.py:297
+msgid "Zoom In"
+msgstr "झूम इन"
+
+#: toolbar.py:303
+msgid "Zoom to width"
+msgstr ""
+
+#: toolbar.py:320
+msgid "%"
+msgstr "%"
+
+#: toolbar.py:332
+msgid "Page: "
+msgstr "पृष्ठ: "
+
+#: toolbar.py:427
 msgid "Bold"
 msgstr "बोल्ड"
 
-#: AbiWordActivity.py:130
+#: toolbar.py:435
 msgid "Italic"
 msgstr "तिरपा"
 
-#: AbiWordActivity.py:138
+#: toolbar.py:443
 msgid "Underline"
 msgstr "अधोरेखित करणे"
 
-#: widgets.py:165
+#: toolbar.py:506 toolbar.py:583
+msgid "Normal"
+msgstr "साधारण"
+
+#: toolbar.py:517
+msgid "Heading 1"
+msgstr "शीर्षक 1"
+
+#: toolbar.py:521
+msgid "Heading 2"
+msgstr "शीर्षक 2"
+
+#: toolbar.py:525
+msgid "Heading 3"
+msgstr "शीर्षक 3"
+
+#: toolbar.py:529
+msgid "Heading 4"
+msgstr "शीर्षक 4"
+
+#: toolbar.py:533
+msgid "Block Text"
+msgstr "गृहसमुदाय शब्ध"
+
+#: toolbar.py:537
+msgid "Plain Text"
+msgstr "साधारण शब्द"
+
+#: toolbar.py:553
+msgid "Left justify"
+msgstr "डावीकडून रचा"
+
+#: toolbar.py:556
+msgid "Center justify"
+msgstr "मध्यातुन रचा"
+
+#: toolbar.py:559
+msgid "Right justify"
+msgstr "उजवीकडुन रचा"
+
+#: toolbar.py:562
+msgid "Fill justify"
+msgstr "रचलेली जागा भरा"
+
+#: toolbar.py:597
+msgid "Dashed List"
+msgstr "अधोरेखित यादी"
+
+#: toolbar.py:601
+msgid "Numbered List"
+msgstr "अंक यादी"
+
+#: toolbar.py:605
+msgid "Lower Case List"
+msgstr "छोटी लिपी यादी"
+
+#: toolbar.py:609
+msgid "Upper Case List"
+msgstr "मोठी लिपी यादी"
+
+#: widgets.py:169
 msgid "Rich Text (RTF)"
 msgstr "रिच टेक्स्ट (आर.टी.एफ)"
 
-#: widgets.py:166
+#: widgets.py:171
 msgid "RTF"
 msgstr "आर.टी.एफ"
 
-#: widgets.py:170
+#: widgets.py:175
 msgid "Hypertext (HTML)"
 msgstr "हाइपरटेक्स्ट (एच्.टी.एम्.एल्)"
 
-#: widgets.py:171
+#: widgets.py:177
 msgid "HTML"
 msgstr "एच.टी.एम्.एल्"
 
-#: widgets.py:176
+#: widgets.py:182
 msgid "Plain Text (TXT)"
 msgstr "सरल शब्द (टी.एक्स.टी)"
 
-#: widgets.py:177
+#: widgets.py:184
 msgid "TXT"
 msgstr "टी.एक्स.टी"
 
-#: widgets.py:181
+#: widgets.py:188
 msgid "Portable Document Format (PDF)"
 msgstr "पोर्टेबल डॉक्युमेंट पध्दत(पी.डी.एफ)"
 
-#: widgets.py:182
+#: widgets.py:190
 msgid "PDF"
 msgstr "पी.डी.एफ"
 
-#: widgets.py:187 widgets.py:188
-msgid "Export"
-msgstr "स्वरुप बदला"
+#~ msgid "Export"
+#~ msgstr "स्वरुप बदला"
 
 #~ msgid "Image"
 #~ msgstr " छायाचित्र"

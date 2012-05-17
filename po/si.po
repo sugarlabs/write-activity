@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-05 11:13-0300\n"
+"POT-Creation-Date: 2012-05-03 00:31-0400\n"
 "PO-Revision-Date: 2011-09-28 08:06+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,193 +29,204 @@ msgstr ""
 msgid "Write"
 msgstr "ලියන්න"
 
-#: toolbar.py:94
-msgid "Search"
-msgstr "සොයන්න"
-
-#: toolbar.py:111
-msgid "Find previous"
-msgstr "පෙර එක සොයන්න"
-
-#: toolbar.py:117
-msgid "Find next"
-msgstr "පසු එක සොයන්න"
-
-#: toolbar.py:217 AbiWordActivity.py:115
-msgid "Table"
-msgstr "වගුව"
-
-#: toolbar.py:217
-msgid "Cancel"
-msgstr "අවලංගු කරන්න"
-
-#: toolbar.py:229
-msgid "Insert Row"
-msgstr "පේලියක් ඇතුල් කරන්න"
-
-#: toolbar.py:235
-msgid "Delete Row"
-msgstr "පේලිය මකා දමන්න හෝ පේලිය ඉවත් කරන්න"
-
-#: toolbar.py:241
-msgid "Insert Column"
-msgstr "කොලමක් ඇතුල් කරන්න"
-
-#: toolbar.py:247
-msgid "Delete Column"
-msgstr "කොලම ඉවත් කරන්න හෝ කොලම මකා දමන්න"
-
-#: toolbar.py:256
-msgid "Insert Image"
-msgstr "පින්තූරයක් ඇතුල් කරන්න"
-
-#: toolbar.py:263
-msgid "Floating"
-msgstr "දශම සංඛ්‍යා"
-
-#: toolbar.py:320
-msgid "Zoom Out"
-msgstr "කුඩා කරන්න"
-
-#: toolbar.py:327
-msgid "Zoom In"
-msgstr "විශාල කරන්න"
-
-#: toolbar.py:344
-msgid "%"
-msgstr "%"
-
-#: toolbar.py:356
-msgid "Page: "
-msgstr "පිටුව : "
-
-#: toolbar.py:462 toolbar.py:539
-msgid "Normal"
-msgstr "සාමාන්‍ය"
-
-#: toolbar.py:473
-msgid "Heading 1"
-msgstr "සිරැසිය 1"
-
-#: toolbar.py:477
-msgid "Heading 2"
-msgstr "සිරැසිය 2"
-
-#: toolbar.py:481
-msgid "Heading 3"
-msgstr "සිරැසිය 3"
-
-#: toolbar.py:485
-msgid "Heading 4"
-msgstr "සිරැසිය 4"
-
-#: toolbar.py:489
-msgid "Block Text"
-msgstr "ඒකක පෙළ"
-
-#: toolbar.py:493
-msgid "Plain Text"
-msgstr "සරල පෙළ"
-
-#: toolbar.py:509
-msgid "Left justify"
-msgstr "වමට පෙළගස්වන්න"
-
-#: toolbar.py:512
-msgid "Center justify"
-msgstr "මැදට පෙළගස්වන්න"
-
-#: toolbar.py:515
-msgid "Right justify"
-msgstr "දකුණට පෙළගස්වන්න"
-
-#: toolbar.py:518
-msgid "Fill justify"
-msgstr "පෙළගැස්වීම පුවරන්න"
-
-#: toolbar.py:549 AbiWordActivity.py:109
-msgid "Bullet List"
-msgstr "බුලට් ලැයිස්තුව"
-
-#: toolbar.py:553
-msgid "Dashed List"
-msgstr "ඉරි ලැයිස්තුව"
-
-#: toolbar.py:557
-msgid "Numbered List"
-msgstr "අංකිත ලැයිස්තුව"
-
-#: toolbar.py:561
-msgid "Lower Case List"
-msgstr "කුඩකුරු ලැයිස්තුව"
-
-#: toolbar.py:565
-msgid "Upper Case List"
-msgstr "මහකුරු ලැයිස්තුව"
-
-#: AbiWordActivity.py:82
+#: AbiWordActivity.py:83
 msgid "Edit"
 msgstr "සංස්කරනය කරන්න"
 
-#: AbiWordActivity.py:88
+#: AbiWordActivity.py:89
 msgid "View"
 msgstr "දර්ශනය කරන්න"
 
-#: AbiWordActivity.py:97
+#: AbiWordActivity.py:98
 msgid "Text"
 msgstr "පෙළ"
 
-#: AbiWordActivity.py:103
+#: AbiWordActivity.py:104
 msgid "Paragraph"
 msgstr "ඡේදය"
 
-#: AbiWordActivity.py:122
+#: AbiWordActivity.py:110 toolbar.py:593
+msgid "Bullet List"
+msgstr "බුලට් ලැයිස්තුව"
+
+#: AbiWordActivity.py:116 toolbar.py:218
+msgid "Table"
+msgstr "වගුව"
+
+#: AbiWordActivity.py:123
+msgid "Insert Image"
+msgstr "පින්තූරයක් ඇතුල් කරන්න"
+
+#: AbiWordActivity.py:130
+msgid "Floating"
+msgstr "දශම සංඛ්‍යා"
+
+#: speechtoolbar.py:57
+msgid "Play / Pause"
+msgstr ""
+
+#: speechtoolbar.py:65
+msgid "Stop"
+msgstr ""
+
+#: toolbar.py:95
+msgid "Search"
+msgstr "සොයන්න"
+
+#: toolbar.py:112
+msgid "Find previous"
+msgstr "පෙර එක සොයන්න"
+
+#: toolbar.py:118
+msgid "Find next"
+msgstr "පසු එක සොයන්න"
+
+#: toolbar.py:218
+msgid "Cancel"
+msgstr "අවලංගු කරන්න"
+
+#: toolbar.py:230
+msgid "Insert Row"
+msgstr "පේලියක් ඇතුල් කරන්න"
+
+#: toolbar.py:236
+msgid "Delete Row"
+msgstr "පේලිය මකා දමන්න හෝ පේලිය ඉවත් කරන්න"
+
+#: toolbar.py:242
+msgid "Insert Column"
+msgstr "කොලමක් ඇතුල් කරන්න"
+
+#: toolbar.py:248
+msgid "Delete Column"
+msgstr "කොලම ඉවත් කරන්න හෝ කොලම මකා දමන්න"
+
+#: toolbar.py:290
+msgid "Zoom Out"
+msgstr "කුඩා කරන්න"
+
+#: toolbar.py:297
+msgid "Zoom In"
+msgstr "විශාල කරන්න"
+
+#: toolbar.py:303
+msgid "Zoom to width"
+msgstr ""
+
+#: toolbar.py:320
+msgid "%"
+msgstr "%"
+
+#: toolbar.py:332
+msgid "Page: "
+msgstr "පිටුව : "
+
+#: toolbar.py:427
 msgid "Bold"
 msgstr "තද ඉරි"
 
-#: AbiWordActivity.py:130
+#: toolbar.py:435
 msgid "Italic"
 msgstr "ඉතාලියානු"
 
-#: AbiWordActivity.py:138
+#: toolbar.py:443
 msgid "Underline"
 msgstr "යටි ඉරක්"
 
-#: widgets.py:165
+#: toolbar.py:506 toolbar.py:583
+msgid "Normal"
+msgstr "සාමාන්‍ය"
+
+#: toolbar.py:517
+msgid "Heading 1"
+msgstr "සිරැසිය 1"
+
+#: toolbar.py:521
+msgid "Heading 2"
+msgstr "සිරැසිය 2"
+
+#: toolbar.py:525
+msgid "Heading 3"
+msgstr "සිරැසිය 3"
+
+#: toolbar.py:529
+msgid "Heading 4"
+msgstr "සිරැසිය 4"
+
+#: toolbar.py:533
+msgid "Block Text"
+msgstr "ඒකක පෙළ"
+
+#: toolbar.py:537
+msgid "Plain Text"
+msgstr "සරල පෙළ"
+
+#: toolbar.py:553
+msgid "Left justify"
+msgstr "වමට පෙළගස්වන්න"
+
+#: toolbar.py:556
+msgid "Center justify"
+msgstr "මැදට පෙළගස්වන්න"
+
+#: toolbar.py:559
+msgid "Right justify"
+msgstr "දකුණට පෙළගස්වන්න"
+
+#: toolbar.py:562
+msgid "Fill justify"
+msgstr "පෙළගැස්වීම පුවරන්න"
+
+#: toolbar.py:597
+msgid "Dashed List"
+msgstr "ඉරි ලැයිස්තුව"
+
+#: toolbar.py:601
+msgid "Numbered List"
+msgstr "අංකිත ලැයිස්තුව"
+
+#: toolbar.py:605
+msgid "Lower Case List"
+msgstr "කුඩකුරු ලැයිස්තුව"
+
+#: toolbar.py:609
+msgid "Upper Case List"
+msgstr "මහකුරු ලැයිස්තුව"
+
+#: widgets.py:169
 msgid "Rich Text (RTF)"
 msgstr "සරු පෙළ (RTF)"
 
-#: widgets.py:166
+#: widgets.py:171
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:170
+#: widgets.py:175
 msgid "Hypertext (HTML)"
 msgstr "අදිපෙළ (HTML)"
 
-#: widgets.py:171
+#: widgets.py:177
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:176
+#: widgets.py:182
 msgid "Plain Text (TXT)"
 msgstr "සරල පෙළ (TXT)"
 
-#: widgets.py:177
+#: widgets.py:184
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:181
+#: widgets.py:188
 msgid "Portable Document Format (PDF)"
 msgstr "Portable Document Format (PDF)"
 
-#: widgets.py:182
+#: widgets.py:190
 msgid "PDF"
 msgstr "PDF"
 
-#: widgets.py:187 widgets.py:188
-msgid "Export"
-msgstr "නිර්යාත කරන්න"
+#~ msgid "Export"
+#~ msgstr "නිර්යාත කරන්න"
 
 #~ msgid "Image"
 #~ msgstr "පින්තූරය"

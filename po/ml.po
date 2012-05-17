@@ -14,11 +14,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-25 00:30-0500\n"
+"POT-Creation-Date: 2012-05-03 00:31-0400\n"
 "PO-Revision-Date: 2010-10-06 15:10+0200\n"
 "Last-Translator: dhananjay <mb.dhananjay@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: ml\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,190 +29,198 @@ msgstr ""
 msgid "Write"
 msgstr "എഴുതാം"
 
-#: AbiWordActivity.py:82
+#: AbiWordActivity.py:83
 msgid "Edit"
 msgstr "ചിട്ടപെടുത്തുക"
 
-#: AbiWordActivity.py:88
+#: AbiWordActivity.py:89
 msgid "View"
 msgstr "കാണുക"
 
-#: AbiWordActivity.py:97
+#: AbiWordActivity.py:98
 msgid "Text"
 msgstr "പദാവലി"
 
-#: AbiWordActivity.py:103
+#: AbiWordActivity.py:104
 msgid "Paragraph"
 msgstr "ഖണ്ഡിക"
 
-#: AbiWordActivity.py:109 toolbar.py:549
+#: AbiWordActivity.py:110 toolbar.py:593
 msgid "Bullet List"
 msgstr ""
 
-#: AbiWordActivity.py:115 toolbar.py:217
+#: AbiWordActivity.py:116 toolbar.py:218
 msgid "Table"
 msgstr "പട്ടിക"
 
-#: AbiWordActivity.py:122
-msgid "Bold"
-msgstr "കനത്തത്"
-
-#: AbiWordActivity.py:130
-msgid "Italic"
-msgstr "ചരിഞത്"
-
-#: AbiWordActivity.py:138
-msgid "Underline"
-msgstr "അടിവര"
-
-#: toolbar.py:94
-msgid "Search"
-msgstr "തിരയുക"
-
-#: toolbar.py:111
-msgid "Find previous"
-msgstr "മുന്പിലതേത്"
-
-#: toolbar.py:117
-msgid "Find next"
-msgstr "അടുത്തത്"
-
-#: toolbar.py:217
-msgid "Cancel"
-msgstr "ഒഴിവാകൂക"
-
-#: toolbar.py:229
-msgid "Insert Row"
-msgstr "വരി ചേര്‍ക്കുക"
-
-#: toolbar.py:235
-msgid "Delete Row"
-msgstr "വരി ഒഴിവാക്കുക"
-
-#: toolbar.py:241
-msgid "Insert Column"
-msgstr ""
-
-#: toolbar.py:247
-msgid "Delete Column"
-msgstr ""
-
-#: toolbar.py:256
+#: AbiWordActivity.py:123
 msgid "Insert Image"
 msgstr "ചിത്രം ചേര്‍കൂക"
 
-#: toolbar.py:263
+#: AbiWordActivity.py:130
 msgid "Floating"
 msgstr ""
 
-#: toolbar.py:320
+#: speechtoolbar.py:57
+msgid "Play / Pause"
+msgstr ""
+
+#: speechtoolbar.py:65
+msgid "Stop"
+msgstr ""
+
+#: toolbar.py:95
+msgid "Search"
+msgstr "തിരയുക"
+
+#: toolbar.py:112
+msgid "Find previous"
+msgstr "മുന്പിലതേത്"
+
+#: toolbar.py:118
+msgid "Find next"
+msgstr "അടുത്തത്"
+
+#: toolbar.py:218
+msgid "Cancel"
+msgstr "ഒഴിവാകൂക"
+
+#: toolbar.py:230
+msgid "Insert Row"
+msgstr "വരി ചേര്‍ക്കുക"
+
+#: toolbar.py:236
+msgid "Delete Row"
+msgstr "വരി ഒഴിവാക്കുക"
+
+#: toolbar.py:242
+msgid "Insert Column"
+msgstr ""
+
+#: toolbar.py:248
+msgid "Delete Column"
+msgstr ""
+
+#: toolbar.py:290
 msgid "Zoom Out"
 msgstr ""
 
-#: toolbar.py:327
+#: toolbar.py:297
 msgid "Zoom In"
 msgstr ""
 
-#: toolbar.py:344
+#: toolbar.py:303
+msgid "Zoom to width"
+msgstr ""
+
+#: toolbar.py:320
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:356
+#: toolbar.py:332
 msgid "Page: "
 msgstr "താള്‍"
 
-#: toolbar.py:462 toolbar.py:539
+#: toolbar.py:427
+msgid "Bold"
+msgstr "കനത്തത്"
+
+#: toolbar.py:435
+msgid "Italic"
+msgstr "ചരിഞത്"
+
+#: toolbar.py:443
+msgid "Underline"
+msgstr "അടിവര"
+
+#: toolbar.py:506 toolbar.py:583
 msgid "Normal"
 msgstr "സാധാരണ"
 
-#: toolbar.py:473
+#: toolbar.py:517
 msgid "Heading 1"
 msgstr "തലകെട്ട് 1"
 
-#: toolbar.py:477
+#: toolbar.py:521
 msgid "Heading 2"
 msgstr "തലകെട്ട് 2"
 
-#: toolbar.py:481
+#: toolbar.py:525
 msgid "Heading 3"
 msgstr "തലകെട്ട് 3"
 
-#: toolbar.py:485
+#: toolbar.py:529
 msgid "Heading 4"
 msgstr "തലകെട്ട് 4"
 
-#: toolbar.py:489
+#: toolbar.py:533
 msgid "Block Text"
 msgstr ""
 
-#: toolbar.py:493
+#: toolbar.py:537
 msgid "Plain Text"
 msgstr ""
 
-#: toolbar.py:509
+#: toolbar.py:553
 msgid "Left justify"
 msgstr ""
 
-#: toolbar.py:512
+#: toolbar.py:556
 msgid "Center justify"
 msgstr ""
 
-#: toolbar.py:515
+#: toolbar.py:559
 msgid "Right justify"
 msgstr ""
 
-#: toolbar.py:518
+#: toolbar.py:562
 msgid "Fill justify"
 msgstr ""
 
-#: toolbar.py:553
+#: toolbar.py:597
 msgid "Dashed List"
 msgstr ""
 
-#: toolbar.py:557
+#: toolbar.py:601
 msgid "Numbered List"
 msgstr ""
 
-#: toolbar.py:561
+#: toolbar.py:605
 msgid "Lower Case List"
 msgstr ""
 
-#: toolbar.py:565
+#: toolbar.py:609
 msgid "Upper Case List"
 msgstr ""
 
-#: widgets.py:165
+#: widgets.py:169
 msgid "Rich Text (RTF)"
 msgstr ""
 
-#: widgets.py:166
+#: widgets.py:171
 msgid "RTF"
 msgstr ""
 
-#: widgets.py:170
+#: widgets.py:175
 msgid "Hypertext (HTML)"
 msgstr ""
 
-#: widgets.py:171
+#: widgets.py:177
 msgid "HTML"
 msgstr ""
 
-#: widgets.py:176
+#: widgets.py:182
 msgid "Plain Text (TXT)"
 msgstr ""
 
-#: widgets.py:177
+#: widgets.py:184
 msgid "TXT"
 msgstr ""
 
-#: widgets.py:181
+#: widgets.py:188
 msgid "Portable Document Format (PDF)"
 msgstr ""
 
-#: widgets.py:182
+#: widgets.py:190
 msgid "PDF"
-msgstr ""
-
-#: widgets.py:187 widgets.py:188
-msgid "Export"
 msgstr ""

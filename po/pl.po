@@ -14,9 +14,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-01 00:30-0400\n"
-"PO-Revision-Date: 2011-09-19 15:04+0200\n"
-"Last-Translator: frks <frks@frks.pl>\n"
+"POT-Creation-Date: 2012-05-03 00:31-0400\n"
+"PO-Revision-Date: 2011-10-27 21:12+0200\n"
+"Last-Translator: FRKS <frks@frks.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -28,189 +28,201 @@ msgstr ""
 
 #: activity/activity.info:2
 msgid "Write"
-msgstr "Napisz"
+msgstr "Pisz"
 
-#: AbiWordActivity.py:81
+#: AbiWordActivity.py:83
 msgid "Edit"
 msgstr "Edytuj"
 
-#: AbiWordActivity.py:87
+#: AbiWordActivity.py:89
 msgid "View"
 msgstr "Widok"
 
-#: AbiWordActivity.py:96
+#: AbiWordActivity.py:98
 msgid "Text"
 msgstr "Tekst"
 
-#: AbiWordActivity.py:102
+#: AbiWordActivity.py:104
 msgid "Paragraph"
 msgstr "Akapit"
 
-#: AbiWordActivity.py:108 toolbar.py:549
+#: AbiWordActivity.py:110 toolbar.py:593
 msgid "Bullet List"
 msgstr "Lista wypunktowana"
 
-#: AbiWordActivity.py:114 toolbar.py:217
+#: AbiWordActivity.py:116 toolbar.py:218
 msgid "Table"
 msgstr "Tabela"
 
-#: AbiWordActivity.py:121
-msgid "Bold"
-msgstr "Wytłuszczone"
-
-#: AbiWordActivity.py:129
-msgid "Italic"
-msgstr "Kursywa"
-
-#: AbiWordActivity.py:137
-msgid "Underline"
-msgstr "Podkreślenie"
-
-#: toolbar.py:94
-msgid "Search"
-msgstr "Szukaj"
-
-#: toolbar.py:111
-msgid "Find previous"
-msgstr "Znajdź poprzedni"
-
-#: toolbar.py:117
-msgid "Find next"
-msgstr "Znajdź następny"
-
-#: toolbar.py:217
-msgid "Cancel"
-msgstr "Anuluj"
-
-#: toolbar.py:229
-msgid "Insert Row"
-msgstr "Wstaw wiersz"
-
-#: toolbar.py:235
-msgid "Delete Row"
-msgstr "Usuń wiersz"
-
-#: toolbar.py:241
-msgid "Insert Column"
-msgstr "Wstaw kolumnę"
-
-#: toolbar.py:247
-msgid "Delete Column"
-msgstr "Usuń kolumnę"
-
-#: toolbar.py:256
+#: AbiWordActivity.py:123
 msgid "Insert Image"
 msgstr "Wstaw obraz"
 
-#: toolbar.py:263
+#: AbiWordActivity.py:130
 msgid "Floating"
 msgstr "Gdziekolwiek"
 
-#: toolbar.py:320
+#: speechtoolbar.py:57
+msgid "Play / Pause"
+msgstr ""
+
+#: speechtoolbar.py:65
+msgid "Stop"
+msgstr ""
+
+#: toolbar.py:95
+msgid "Search"
+msgstr "Szukaj"
+
+#: toolbar.py:112
+msgid "Find previous"
+msgstr "Znajdź poprzedni"
+
+#: toolbar.py:118
+msgid "Find next"
+msgstr "Znajdź następny"
+
+#: toolbar.py:218
+msgid "Cancel"
+msgstr "Anuluj"
+
+#: toolbar.py:230
+msgid "Insert Row"
+msgstr "Wstaw wiersz"
+
+#: toolbar.py:236
+msgid "Delete Row"
+msgstr "Usuń wiersz"
+
+#: toolbar.py:242
+msgid "Insert Column"
+msgstr "Wstaw kolumnę"
+
+#: toolbar.py:248
+msgid "Delete Column"
+msgstr "Usuń kolumnę"
+
+#: toolbar.py:290
 msgid "Zoom Out"
 msgstr "Powiększ"
 
-#: toolbar.py:327
+#: toolbar.py:297
 msgid "Zoom In"
 msgstr "Zmniejsz"
 
-#: toolbar.py:344
+#: toolbar.py:303
+msgid "Zoom to width"
+msgstr ""
+
+#: toolbar.py:320
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:356
+#: toolbar.py:332
 msgid "Page: "
 msgstr "Strona: "
 
-#: toolbar.py:462 toolbar.py:539
+#: toolbar.py:427
+msgid "Bold"
+msgstr "Wytłuszczone"
+
+#: toolbar.py:435
+msgid "Italic"
+msgstr "Kursywa"
+
+#: toolbar.py:443
+msgid "Underline"
+msgstr "Podkreślenie"
+
+#: toolbar.py:506 toolbar.py:583
 msgid "Normal"
 msgstr "Normalny"
 
-#: toolbar.py:473
+#: toolbar.py:517
 msgid "Heading 1"
 msgstr "Nagłówek 1"
 
-#: toolbar.py:477
+#: toolbar.py:521
 msgid "Heading 2"
 msgstr "Nagłówek 2"
 
-#: toolbar.py:481
+#: toolbar.py:525
 msgid "Heading 3"
 msgstr "Nagłówek 3"
 
-#: toolbar.py:485
+#: toolbar.py:529
 msgid "Heading 4"
 msgstr "Nagłówek 4"
 
-#: toolbar.py:489
+#: toolbar.py:533
 msgid "Block Text"
 msgstr "Tekst wyrównany"
 
-#: toolbar.py:493
+#: toolbar.py:537
 msgid "Plain Text"
 msgstr "Zwykły tekst"
 
-#: toolbar.py:509
+#: toolbar.py:553
 msgid "Left justify"
 msgstr "Wyrównanie do lewej"
 
-#: toolbar.py:512
+#: toolbar.py:556
 msgid "Center justify"
 msgstr "Wyrównanie do środka"
 
-#: toolbar.py:515
+#: toolbar.py:559
 msgid "Right justify"
 msgstr "Wyrównanie do prawej"
 
-#: toolbar.py:518
+#: toolbar.py:562
 msgid "Fill justify"
 msgstr "Wyrównanie obustronne"
 
-#: toolbar.py:553
+#: toolbar.py:597
 msgid "Dashed List"
 msgstr "Lista z myślnikami"
 
-#: toolbar.py:557
+#: toolbar.py:601
 msgid "Numbered List"
 msgstr "Lista numerowana"
 
-#: toolbar.py:561
+#: toolbar.py:605
 msgid "Lower Case List"
 msgstr "Lista z małymi literami"
 
-#: toolbar.py:565
+#: toolbar.py:609
 msgid "Upper Case List"
 msgstr "Lista z wielkimi literami"
 
-#: widgets.py:165
+#: widgets.py:169
 msgid "Rich Text (RTF)"
 msgstr "Rich Text Format (RTF)"
 
-#: widgets.py:167
+#: widgets.py:171
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:171
+#: widgets.py:175
 msgid "Hypertext (HTML)"
 msgstr "Hipertekst (HTML)"
 
-#: widgets.py:173
+#: widgets.py:177
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:178
+#: widgets.py:182
 msgid "Plain Text (TXT)"
 msgstr "Zwykły tekst (TXT)"
 
-#: widgets.py:180
+#: widgets.py:184
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:184
+#: widgets.py:188
 msgid "Portable Document Format (PDF)"
 msgstr "Portable Document Format (PDF)"
 
-#: widgets.py:186
+#: widgets.py:190
 msgid "PDF"
 msgstr "PDF"
 

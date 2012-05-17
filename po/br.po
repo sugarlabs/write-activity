@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-05 11:13-0300\n"
+"POT-Creation-Date: 2012-05-03 00:31-0400\n"
 "PO-Revision-Date: 2011-08-29 07:47+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,190 +21,198 @@ msgstr ""
 msgid "Write"
 msgstr ""
 
-#: toolbar.py:94
-msgid "Search"
-msgstr "Klask"
-
-#: toolbar.py:111
-msgid "Find previous"
-msgstr ""
-
-#: toolbar.py:117
-msgid "Find next"
-msgstr ""
-
-#: toolbar.py:217 AbiWordActivity.py:115
-msgid "Table"
-msgstr ""
-
-#: toolbar.py:217
-msgid "Cancel"
-msgstr "Nullañ"
-
-#: toolbar.py:229
-msgid "Insert Row"
-msgstr ""
-
-#: toolbar.py:235
-msgid "Delete Row"
-msgstr ""
-
-#: toolbar.py:241
-msgid "Insert Column"
-msgstr ""
-
-#: toolbar.py:247
-msgid "Delete Column"
-msgstr ""
-
-#: toolbar.py:256
-msgid "Insert Image"
-msgstr ""
-
-#: toolbar.py:263
-msgid "Floating"
-msgstr ""
-
-#: toolbar.py:320
-msgid "Zoom Out"
-msgstr ""
-
-#: toolbar.py:327
-msgid "Zoom In"
-msgstr ""
-
-#: toolbar.py:344
-msgid "%"
-msgstr "%"
-
-#: toolbar.py:356
-msgid "Page: "
-msgstr "Pajenn: "
-
-#: toolbar.py:462 toolbar.py:539
-msgid "Normal"
-msgstr ""
-
-#: toolbar.py:473
-msgid "Heading 1"
-msgstr ""
-
-#: toolbar.py:477
-msgid "Heading 2"
-msgstr ""
-
-#: toolbar.py:481
-msgid "Heading 3"
-msgstr ""
-
-#: toolbar.py:485
-msgid "Heading 4"
-msgstr ""
-
-#: toolbar.py:489
-msgid "Block Text"
-msgstr ""
-
-#: toolbar.py:493
-msgid "Plain Text"
-msgstr ""
-
-#: toolbar.py:509
-msgid "Left justify"
-msgstr ""
-
-#: toolbar.py:512
-msgid "Center justify"
-msgstr ""
-
-#: toolbar.py:515
-msgid "Right justify"
-msgstr ""
-
-#: toolbar.py:518
-msgid "Fill justify"
-msgstr ""
-
-#: toolbar.py:549 AbiWordActivity.py:109
-msgid "Bullet List"
-msgstr ""
-
-#: toolbar.py:553
-msgid "Dashed List"
-msgstr ""
-
-#: toolbar.py:557
-msgid "Numbered List"
-msgstr ""
-
-#: toolbar.py:561
-msgid "Lower Case List"
-msgstr ""
-
-#: toolbar.py:565
-msgid "Upper Case List"
-msgstr ""
-
-#: AbiWordActivity.py:82
+#: AbiWordActivity.py:83
 msgid "Edit"
 msgstr ""
 
-#: AbiWordActivity.py:88
+#: AbiWordActivity.py:89
 msgid "View"
 msgstr "Gwelout"
 
-#: AbiWordActivity.py:97
+#: AbiWordActivity.py:98
 msgid "Text"
 msgstr "Testenn"
 
-#: AbiWordActivity.py:103
+#: AbiWordActivity.py:104
 msgid "Paragraph"
 msgstr ""
 
-#: AbiWordActivity.py:122
-msgid "Bold"
+#: AbiWordActivity.py:110 toolbar.py:593
+msgid "Bullet List"
+msgstr ""
+
+#: AbiWordActivity.py:116 toolbar.py:218
+msgid "Table"
+msgstr ""
+
+#: AbiWordActivity.py:123
+msgid "Insert Image"
 msgstr ""
 
 #: AbiWordActivity.py:130
+msgid "Floating"
+msgstr ""
+
+#: speechtoolbar.py:57
+msgid "Play / Pause"
+msgstr ""
+
+#: speechtoolbar.py:65
+msgid "Stop"
+msgstr ""
+
+#: toolbar.py:95
+msgid "Search"
+msgstr "Klask"
+
+#: toolbar.py:112
+msgid "Find previous"
+msgstr ""
+
+#: toolbar.py:118
+msgid "Find next"
+msgstr ""
+
+#: toolbar.py:218
+msgid "Cancel"
+msgstr "Nullañ"
+
+#: toolbar.py:230
+msgid "Insert Row"
+msgstr ""
+
+#: toolbar.py:236
+msgid "Delete Row"
+msgstr ""
+
+#: toolbar.py:242
+msgid "Insert Column"
+msgstr ""
+
+#: toolbar.py:248
+msgid "Delete Column"
+msgstr ""
+
+#: toolbar.py:290
+msgid "Zoom Out"
+msgstr ""
+
+#: toolbar.py:297
+msgid "Zoom In"
+msgstr ""
+
+#: toolbar.py:303
+msgid "Zoom to width"
+msgstr ""
+
+#: toolbar.py:320
+msgid "%"
+msgstr "%"
+
+#: toolbar.py:332
+msgid "Page: "
+msgstr "Pajenn: "
+
+#: toolbar.py:427
+msgid "Bold"
+msgstr ""
+
+#: toolbar.py:435
 msgid "Italic"
 msgstr ""
 
-#: AbiWordActivity.py:138
+#: toolbar.py:443
 msgid "Underline"
 msgstr ""
 
-#: widgets.py:165
+#: toolbar.py:506 toolbar.py:583
+msgid "Normal"
+msgstr ""
+
+#: toolbar.py:517
+msgid "Heading 1"
+msgstr ""
+
+#: toolbar.py:521
+msgid "Heading 2"
+msgstr ""
+
+#: toolbar.py:525
+msgid "Heading 3"
+msgstr ""
+
+#: toolbar.py:529
+msgid "Heading 4"
+msgstr ""
+
+#: toolbar.py:533
+msgid "Block Text"
+msgstr ""
+
+#: toolbar.py:537
+msgid "Plain Text"
+msgstr ""
+
+#: toolbar.py:553
+msgid "Left justify"
+msgstr ""
+
+#: toolbar.py:556
+msgid "Center justify"
+msgstr ""
+
+#: toolbar.py:559
+msgid "Right justify"
+msgstr ""
+
+#: toolbar.py:562
+msgid "Fill justify"
+msgstr ""
+
+#: toolbar.py:597
+msgid "Dashed List"
+msgstr ""
+
+#: toolbar.py:601
+msgid "Numbered List"
+msgstr ""
+
+#: toolbar.py:605
+msgid "Lower Case List"
+msgstr ""
+
+#: toolbar.py:609
+msgid "Upper Case List"
+msgstr ""
+
+#: widgets.py:169
 msgid "Rich Text (RTF)"
 msgstr ""
 
-#: widgets.py:166
+#: widgets.py:171
 msgid "RTF"
 msgstr ""
 
-#: widgets.py:170
+#: widgets.py:175
 msgid "Hypertext (HTML)"
 msgstr ""
 
-#: widgets.py:171
+#: widgets.py:177
 msgid "HTML"
 msgstr ""
 
-#: widgets.py:176
+#: widgets.py:182
 msgid "Plain Text (TXT)"
 msgstr ""
 
-#: widgets.py:177
+#: widgets.py:184
 msgid "TXT"
 msgstr ""
 
-#: widgets.py:181
+#: widgets.py:188
 msgid "Portable Document Format (PDF)"
 msgstr ""
 
-#: widgets.py:182
+#: widgets.py:190
 msgid "PDF"
-msgstr ""
-
-#: widgets.py:187 widgets.py:188
-msgid "Export"
 msgstr ""

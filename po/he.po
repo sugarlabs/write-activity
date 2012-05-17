@@ -14,10 +14,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-25 00:30-0500\n"
+"POT-Creation-Date: 2012-05-03 00:31-0400\n"
 "PO-Revision-Date: 2008-12-20 00:14-0500\n"
 "Last-Translator: Chris Leonard <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,228 +29,236 @@ msgstr ""
 msgid "Write"
 msgstr "כתיבה"
 
-#: AbiWordActivity.py:82
+#: AbiWordActivity.py:83
 #, fuzzy
 msgid "Edit"
 msgstr "עריכה"
 
-#: AbiWordActivity.py:88
+#: AbiWordActivity.py:89
 #, fuzzy
 msgid "View"
 msgstr "תצוגה"
 
-#: AbiWordActivity.py:97
+#: AbiWordActivity.py:98
 #, fuzzy
 msgid "Text"
 msgstr "טקסט"
 
-#: AbiWordActivity.py:103
+#: AbiWordActivity.py:104
 msgid "Paragraph"
 msgstr ""
 
-#: AbiWordActivity.py:109 toolbar.py:549
+#: AbiWordActivity.py:110 toolbar.py:593
 #, fuzzy
 msgid "Bullet List"
 msgstr "רשימת תבליטים (נקודות)"
 
-#: AbiWordActivity.py:115 toolbar.py:217
+#: AbiWordActivity.py:116 toolbar.py:218
 #, fuzzy
 msgid "Table"
 msgstr "טבלה"
 
-#: AbiWordActivity.py:122
-#, fuzzy
-msgid "Bold"
-msgstr "מודגש"
-
-#: AbiWordActivity.py:130
-#, fuzzy
-msgid "Italic"
-msgstr "נטוי"
-
-#: AbiWordActivity.py:138
-#, fuzzy
-msgid "Underline"
-msgstr "קו תחתון"
-
-#: toolbar.py:94
-msgid "Search"
-msgstr ""
-
-#: toolbar.py:111
-#, fuzzy
-msgid "Find previous"
-msgstr "מצא מופע קודם"
-
-#: toolbar.py:117
-#, fuzzy
-msgid "Find next"
-msgstr "מצא מופע בא"
-
-#: toolbar.py:217
-#, fuzzy
-msgid "Cancel"
-msgstr "בטל"
-
-#: toolbar.py:229
-#, fuzzy
-msgid "Insert Row"
-msgstr "הוסף שורה"
-
-#: toolbar.py:235
-#, fuzzy
-msgid "Delete Row"
-msgstr "מחק שורה"
-
-#: toolbar.py:241
-#, fuzzy
-msgid "Insert Column"
-msgstr "הוסף עמודה"
-
-#: toolbar.py:247
-#, fuzzy
-msgid "Delete Column"
-msgstr "מחק עמודה"
-
-#: toolbar.py:256
+#: AbiWordActivity.py:123
 #, fuzzy
 msgid "Insert Image"
 msgstr "הוסף תמונה"
 
-#: toolbar.py:263
+#: AbiWordActivity.py:130
 msgid "Floating"
 msgstr ""
 
-#: toolbar.py:320
+#: speechtoolbar.py:57
+msgid "Play / Pause"
+msgstr ""
+
+#: speechtoolbar.py:65
+msgid "Stop"
+msgstr ""
+
+#: toolbar.py:95
+msgid "Search"
+msgstr ""
+
+#: toolbar.py:112
+#, fuzzy
+msgid "Find previous"
+msgstr "מצא מופע קודם"
+
+#: toolbar.py:118
+#, fuzzy
+msgid "Find next"
+msgstr "מצא מופע בא"
+
+#: toolbar.py:218
+#, fuzzy
+msgid "Cancel"
+msgstr "בטל"
+
+#: toolbar.py:230
+#, fuzzy
+msgid "Insert Row"
+msgstr "הוסף שורה"
+
+#: toolbar.py:236
+#, fuzzy
+msgid "Delete Row"
+msgstr "מחק שורה"
+
+#: toolbar.py:242
+#, fuzzy
+msgid "Insert Column"
+msgstr "הוסף עמודה"
+
+#: toolbar.py:248
+#, fuzzy
+msgid "Delete Column"
+msgstr "מחק עמודה"
+
+#: toolbar.py:290
 #, fuzzy
 msgid "Zoom Out"
 msgstr "הקטן"
 
-#: toolbar.py:327
+#: toolbar.py:297
 #, fuzzy
 msgid "Zoom In"
 msgstr "הגדל"
 
-#: toolbar.py:344
+#: toolbar.py:303
+msgid "Zoom to width"
+msgstr ""
+
+#: toolbar.py:320
 #, fuzzy
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:356
+#: toolbar.py:332
 msgid "Page: "
 msgstr ""
 
-#: toolbar.py:462 toolbar.py:539
+#: toolbar.py:427
+#, fuzzy
+msgid "Bold"
+msgstr "מודגש"
+
+#: toolbar.py:435
+#, fuzzy
+msgid "Italic"
+msgstr "נטוי"
+
+#: toolbar.py:443
+#, fuzzy
+msgid "Underline"
+msgstr "קו תחתון"
+
+#: toolbar.py:506 toolbar.py:583
 #, fuzzy
 msgid "Normal"
 msgstr "רגיל"
 
-#: toolbar.py:473
+#: toolbar.py:517
 #, fuzzy
 msgid "Heading 1"
 msgstr "כותרת 1"
 
-#: toolbar.py:477
+#: toolbar.py:521
 #, fuzzy
 msgid "Heading 2"
 msgstr "כותרת 2"
 
-#: toolbar.py:481
+#: toolbar.py:525
 #, fuzzy
 msgid "Heading 3"
 msgstr "כותרת 3"
 
-#: toolbar.py:485
+#: toolbar.py:529
 #, fuzzy
 msgid "Heading 4"
 msgstr "כותרת 4"
 
-#: toolbar.py:489
+#: toolbar.py:533
 #, fuzzy
 msgid "Block Text"
 msgstr "טקסט חסום"
 
-#: toolbar.py:493
+#: toolbar.py:537
 #, fuzzy
 msgid "Plain Text"
 msgstr "טקסט רגיל"
 
-#: toolbar.py:509
+#: toolbar.py:553
 msgid "Left justify"
 msgstr ""
 
-#: toolbar.py:512
+#: toolbar.py:556
 msgid "Center justify"
 msgstr ""
 
-#: toolbar.py:515
+#: toolbar.py:559
 msgid "Right justify"
 msgstr ""
 
-#: toolbar.py:518
+#: toolbar.py:562
 msgid "Fill justify"
 msgstr ""
 
-#: toolbar.py:553
+#: toolbar.py:597
 #, fuzzy
 msgid "Dashed List"
 msgstr "רשימה מקוקוות"
 
-#: toolbar.py:557
+#: toolbar.py:601
 #, fuzzy
 msgid "Numbered List"
 msgstr "רשימה ממוספרת"
 
-#: toolbar.py:561
+#: toolbar.py:605
 #, fuzzy
 msgid "Lower Case List"
 msgstr "רשימה באותיות קטנות"
 
-#: toolbar.py:565
+#: toolbar.py:609
 #, fuzzy
 msgid "Upper Case List"
 msgstr "רשימה באותיות גדולות"
 
-#: widgets.py:165
+#: widgets.py:169
 #, fuzzy
 msgid "Rich Text (RTF)"
 msgstr "טקסט עשיר (RTF)"
 
-#: widgets.py:166
+#: widgets.py:171
 #, fuzzy
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:170
+#: widgets.py:175
 #, fuzzy
 msgid "Hypertext (HTML)"
 msgstr "תמליל-על (HTML)"
 
-#: widgets.py:171
+#: widgets.py:177
 #, fuzzy
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:176
+#: widgets.py:182
 #, fuzzy
 msgid "Plain Text (TXT)"
 msgstr "טקסט רגיל (TXT)"
 
-#: widgets.py:177
+#: widgets.py:184
 #, fuzzy
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:181
+#: widgets.py:188
 msgid "Portable Document Format (PDF)"
 msgstr ""
 
-#: widgets.py:182
+#: widgets.py:190
 msgid "PDF"
-msgstr ""
-
-#: widgets.py:187 widgets.py:188
-msgid "Export"
 msgstr ""
 
 #, fuzzy

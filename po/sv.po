@@ -14,11 +14,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-25 00:30-0500\n"
+"POT-Creation-Date: 2012-05-03 00:31-0400\n"
 "PO-Revision-Date: 2010-02-12 05:58+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: sv\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,193 +29,204 @@ msgstr ""
 msgid "Write"
 msgstr "Skriv"
 
-#: AbiWordActivity.py:82
+#: AbiWordActivity.py:83
 msgid "Edit"
 msgstr "Redigera"
 
-#: AbiWordActivity.py:88
+#: AbiWordActivity.py:89
 msgid "View"
 msgstr "Visa"
 
-#: AbiWordActivity.py:97
+#: AbiWordActivity.py:98
 msgid "Text"
 msgstr "Text"
 
-#: AbiWordActivity.py:103
+#: AbiWordActivity.py:104
 msgid "Paragraph"
 msgstr "Stycke"
 
-#: AbiWordActivity.py:109 toolbar.py:549
+#: AbiWordActivity.py:110 toolbar.py:593
 msgid "Bullet List"
 msgstr "punktlista"
 
-#: AbiWordActivity.py:115 toolbar.py:217
+#: AbiWordActivity.py:116 toolbar.py:218
 msgid "Table"
 msgstr "Tabell"
 
-#: AbiWordActivity.py:122
-msgid "Bold"
-msgstr "Fetstil"
-
-#: AbiWordActivity.py:130
-msgid "Italic"
-msgstr "Kursiv"
-
-#: AbiWordActivity.py:138
-msgid "Underline"
-msgstr "Understruken"
-
-#: toolbar.py:94
-msgid "Search"
-msgstr "Sök"
-
-#: toolbar.py:111
-msgid "Find previous"
-msgstr "Sök föregående"
-
-#: toolbar.py:117
-msgid "Find next"
-msgstr "Sök nästa"
-
-#: toolbar.py:217
-msgid "Cancel"
-msgstr "Avbryt"
-
-#: toolbar.py:229
-msgid "Insert Row"
-msgstr "Infoga rad"
-
-#: toolbar.py:235
-msgid "Delete Row"
-msgstr "Ta bort rad"
-
-#: toolbar.py:241
-msgid "Insert Column"
-msgstr "Infoga kolumn"
-
-#: toolbar.py:247
-msgid "Delete Column"
-msgstr "Ta bort kolumn"
-
-#: toolbar.py:256
+#: AbiWordActivity.py:123
 msgid "Insert Image"
 msgstr "Infoga bild"
 
-#: toolbar.py:263
+#: AbiWordActivity.py:130
 msgid "Floating"
 msgstr ""
 
-#: toolbar.py:320
+#: speechtoolbar.py:57
+msgid "Play / Pause"
+msgstr ""
+
+#: speechtoolbar.py:65
+msgid "Stop"
+msgstr ""
+
+#: toolbar.py:95
+msgid "Search"
+msgstr "Sök"
+
+#: toolbar.py:112
+msgid "Find previous"
+msgstr "Sök föregående"
+
+#: toolbar.py:118
+msgid "Find next"
+msgstr "Sök nästa"
+
+#: toolbar.py:218
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: toolbar.py:230
+msgid "Insert Row"
+msgstr "Infoga rad"
+
+#: toolbar.py:236
+msgid "Delete Row"
+msgstr "Ta bort rad"
+
+#: toolbar.py:242
+msgid "Insert Column"
+msgstr "Infoga kolumn"
+
+#: toolbar.py:248
+msgid "Delete Column"
+msgstr "Ta bort kolumn"
+
+#: toolbar.py:290
 msgid "Zoom Out"
 msgstr "Zooma ut"
 
-#: toolbar.py:327
+#: toolbar.py:297
 msgid "Zoom In"
 msgstr "Zooma in"
 
-#: toolbar.py:344
+#: toolbar.py:303
+msgid "Zoom to width"
+msgstr ""
+
+#: toolbar.py:320
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:356
+#: toolbar.py:332
 msgid "Page: "
 msgstr "Sida: "
 
-#: toolbar.py:462 toolbar.py:539
+#: toolbar.py:427
+msgid "Bold"
+msgstr "Fetstil"
+
+#: toolbar.py:435
+msgid "Italic"
+msgstr "Kursiv"
+
+#: toolbar.py:443
+msgid "Underline"
+msgstr "Understruken"
+
+#: toolbar.py:506 toolbar.py:583
 msgid "Normal"
 msgstr "Normal"
 
-#: toolbar.py:473
+#: toolbar.py:517
 msgid "Heading 1"
 msgstr "Rubrik 1"
 
-#: toolbar.py:477
+#: toolbar.py:521
 msgid "Heading 2"
 msgstr "Rubrik 2"
 
-#: toolbar.py:481
+#: toolbar.py:525
 msgid "Heading 3"
 msgstr "Rubrik 3"
 
-#: toolbar.py:485
+#: toolbar.py:529
 msgid "Heading 4"
 msgstr "Rubrik 4"
 
-#: toolbar.py:489
+#: toolbar.py:533
 msgid "Block Text"
 msgstr "blocktext"
 
-#: toolbar.py:493
+#: toolbar.py:537
 msgid "Plain Text"
 msgstr "Vanlig text"
 
-#: toolbar.py:509
+#: toolbar.py:553
 msgid "Left justify"
 msgstr "Vänsterjusterat"
 
-#: toolbar.py:512
+#: toolbar.py:556
 msgid "Center justify"
 msgstr "Centrerat"
 
-#: toolbar.py:515
+#: toolbar.py:559
 msgid "Right justify"
 msgstr "Högerjusterat"
 
-#: toolbar.py:518
+#: toolbar.py:562
 msgid "Fill justify"
 msgstr "Marginaljustering"
 
-#: toolbar.py:553
+#: toolbar.py:597
 msgid "Dashed List"
 msgstr "strecklista"
 
-#: toolbar.py:557
+#: toolbar.py:601
 msgid "Numbered List"
 msgstr "Numrerad lista"
 
-#: toolbar.py:561
+#: toolbar.py:605
 msgid "Lower Case List"
 msgstr "gemen lista"
 
-#: toolbar.py:565
+#: toolbar.py:609
 msgid "Upper Case List"
 msgstr "VERSAL lista"
 
-#: widgets.py:165
+#: widgets.py:169
 msgid "Rich Text (RTF)"
 msgstr "Rik textfil (RTF)"
 
-#: widgets.py:166
+#: widgets.py:171
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:170
+#: widgets.py:175
 msgid "Hypertext (HTML)"
 msgstr "Hemsida (HTML)"
 
-#: widgets.py:171
+#: widgets.py:177
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:176
+#: widgets.py:182
 msgid "Plain Text (TXT)"
 msgstr "Vanlig text (TXT)"
 
-#: widgets.py:177
+#: widgets.py:184
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:181
+#: widgets.py:188
 msgid "Portable Document Format (PDF)"
 msgstr ""
 
-#: widgets.py:182
+#: widgets.py:190
 msgid "PDF"
 msgstr ""
 
-#: widgets.py:187 widgets.py:188
-msgid "Export"
-msgstr "Spara i annat format"
+#~ msgid "Export"
+#~ msgstr "Spara i annat format"
 
 #~ msgid "Image"
 #~ msgstr "Bild"
