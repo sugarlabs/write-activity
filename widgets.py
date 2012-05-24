@@ -25,6 +25,8 @@ from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.menuitem import MenuItem
 from sugar.datastore import datastore
 
+from sugar.activity.activity import SCOPE_PRIVATE
+
 logger = logging.getLogger('write-activity')
 
 """
@@ -226,13 +228,14 @@ class ExportButtonFactory():
         if format['mime_type'] != 'application/pdf':
             fileObject.metadata['activity'] = act_meta['activity']
 
-        fileObject.metadata['keep'] = act_meta['keep']
+        fileObject.metadata['keep'] = act_meta.get('keep', '0')
 
         preview = activity.get_preview()
         if preview is not None:
             fileObject.metadata['preview'] = dbus.ByteArray(preview)
 
-        fileObject.metadata['share-scope'] = act_meta['share-scope']
+        fileObject.metadata['share-scope'] = act_meta.get('share-scope',
+                                                          SCOPE_PRIVATE)
 
         # write out the document contents in the requested format
         fileObject.file_path = os.path.join(activity.get_activity_root(),
