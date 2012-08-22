@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-05-03 00:31-0400\n"
-"PO-Revision-Date: 2012-05-04 07:45+0200\n"
+"PO-Revision-Date: 2012-07-08 09:04+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: hus\n"
@@ -47,7 +47,7 @@ msgstr "Nik'e' tin ay"
 
 #: AbiWordActivity.py:123
 msgid "Insert Image"
-msgstr "Otsba' juni t'iplab"
+msgstr "Otsba' jún i k'ot'bixtaláb"
 
 #: AbiWordActivity.py:130
 msgid "Floating"
@@ -55,7 +55,7 @@ msgstr "Dhememél"
 
 #: speechtoolbar.py:57
 msgid "Play / Pause"
-msgstr ""
+msgstr "Ka wat'ba' / wé' kuba'"
 
 #: speechtoolbar.py:65
 msgid "Stop"
@@ -103,7 +103,7 @@ msgstr "Puwedha'"
 
 #: toolbar.py:303
 msgid "Zoom to width"
-msgstr "Ka junkuw tin ts'ikwtal"
+msgstr "Ka junkuw ti in ts'ikwtal"
 
 #: toolbar.py:320
 msgid "%"
@@ -115,19 +115,20 @@ msgstr "Walxeklek: "
 
 #: toolbar.py:427
 msgid "Bold"
-msgstr "T'unk'uchik"
+msgstr "T'unk'udh"
 
+# Italic = kínts'óx
 #: toolbar.py:435
 msgid "Italic"
-msgstr "Lewél"
+msgstr "Kínts'óx"
 
 #: toolbar.py:443
 msgid "Underline"
-msgstr "Ákankiloy"
+msgstr "Kits'odh ti in akan an akan"
 
 #: toolbar.py:506 toolbar.py:583
 msgid "Normal"
-msgstr "Jajats'k'ij"
+msgstr "Jajáts'k'ij"
 
 #: toolbar.py:517
 msgid "Heading 1"
@@ -145,51 +146,59 @@ msgstr "Ok'ol 3"
 msgid "Heading 4"
 msgstr "Ok'ol 4"
 
+# Pejadh t'ojláb dhuchlab = bloque de texto
 #: toolbar.py:533
 msgid "Block Text"
 msgstr "Kwenél dhuchlab"
 
+# Alk'idh dhuchlab
 #: toolbar.py:537
 msgid "Plain Text"
 msgstr "T'ipts'odh dhuchlab"
 
+# Ka k'watab junkuw
 #: toolbar.py:553
 msgid "Left justify"
 msgstr "K'elbay ta k'watab"
 
+# ts'ejel junkuw
 #: toolbar.py:556
 msgid "Center justify"
 msgstr "K'elbay ts'ejel"
 
+# Ka winab junkuw
 #: toolbar.py:559
 msgid "Right justify"
 msgstr "K'elbay ta wínab"
 
 #: toolbar.py:562
 msgid "Fill justify"
-msgstr "Tamchidh k'elbay"
+msgstr "Tamchidh junkuw"
 
+#  k'elab kits'odh t'iplab
 #: toolbar.py:597
 msgid "Dashed List"
 msgstr "Kits'odh t'iplab k'elab"
 
+# K'elab k'al i ajixtalàb
 #: toolbar.py:601
 msgid "Numbered List"
 msgstr "Ajidh k'elab"
 
+# T'ijax Nik'adh Dhuche' k'elab
 #: toolbar.py:605
 msgid "Lower Case List"
 msgstr "T'ijax dhuche' k'elab"
 
+# Pakdha' Nik'adh Dhuche' K'elab
 #: toolbar.py:609
 msgid "Upper Case List"
 msgstr "Pakdha' Dhuche' K'elab"
 
 # Dhayk'adh dhuchlab() (RTF)
-#
 #: widgets.py:169
 msgid "Rich Text (RTF)"
-msgstr "Ts'alat dhuchlab (RTF)"
+msgstr "Punk'udh dhuchlab (RTF)"
 
 #: widgets.py:171
 msgid "RTF"
@@ -212,7 +221,7 @@ msgstr "T'ipts'odh dhuchlab (TXT)"
 msgid "TXT"
 msgstr "TXT"
 
-# T'ipodh dhuchlab axi ka ejtow ka kitna' (PDF)
+# T'ipoxtaláb k'al an Kitínadh Dhuchlab (PDF)
 #: widgets.py:188
 msgid "Portable Document Format (PDF)"
 msgstr "Kitnadh dhuchlab t'ipoxtaláb (PDF)"
