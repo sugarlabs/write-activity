@@ -15,15 +15,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-05-03 00:31-0400\n"
-"PO-Revision-Date: 2011-03-18 05:22+0200\n"
+"PO-Revision-Date: 2012-08-22 02:45+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "Write"
@@ -59,15 +59,15 @@ msgstr "Vložit obrázek"
 
 #: AbiWordActivity.py:130
 msgid "Floating"
-msgstr ""
+msgstr "Plovoucí"
 
 #: speechtoolbar.py:57
 msgid "Play / Pause"
-msgstr ""
+msgstr "Přehrát / Pozastavit"
 
 #: speechtoolbar.py:65
 msgid "Stop"
-msgstr ""
+msgstr "Zastavit"
 
 #: toolbar.py:95
 msgid "Search"
@@ -111,7 +111,7 @@ msgstr "Zvětšit"
 
 #: toolbar.py:303
 msgid "Zoom to width"
-msgstr ""
+msgstr "Přiblížení na šířku"
 
 #: toolbar.py:320
 msgid "%"
@@ -163,21 +163,22 @@ msgstr "Prostý Text"
 
 #: toolbar.py:553
 msgid "Left justify"
-msgstr ""
+msgstr "Zarovnat vlevo"
 
 #: toolbar.py:556
 msgid "Center justify"
-msgstr ""
+msgstr "Zarovnat na střed"
 
 #: toolbar.py:559
 msgid "Right justify"
-msgstr ""
+msgstr "Zarovnat vpravo"
 
 #: toolbar.py:562
 msgid "Fill justify"
-msgstr ""
+msgstr "Zarovnat do bloku"
 
 #: toolbar.py:597
+#, fuzzy
 msgid "Dashed List"
 msgstr "Přerušovaný ?"
 
@@ -186,18 +187,16 @@ msgid "Numbered List"
 msgstr "Číslovaný seznam"
 
 #: toolbar.py:605
-#, fuzzy
 msgid "Lower Case List"
-msgstr "Abecední seznam (malá)"
+msgstr "Abecední seznam odspodu"
 
 #: toolbar.py:609
-#, fuzzy
 msgid "Upper Case List"
-msgstr "Abecední seznam (velká)"
+msgstr "Abecední seznam odvrchu"
 
 #: widgets.py:169
 msgid "Rich Text (RTF)"
-msgstr "Hustý Text (RTF)"
+msgstr "Rich Text (RTF)"
 
 #: widgets.py:171
 msgid "RTF"
@@ -221,11 +220,11 @@ msgstr "TXT"
 
 #: widgets.py:188
 msgid "Portable Document Format (PDF)"
-msgstr ""
+msgstr "Portable Document Format (PDF)"
 
 #: widgets.py:190
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 #~ msgid "Export"
 #~ msgstr "Export"
