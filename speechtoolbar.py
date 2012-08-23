@@ -19,26 +19,27 @@ import simplejson
 from gettext import gettext as _
 import logging
 
-import gtk
-import gconf
+from gi.repository import Gtk
+from gi.repository import GObject
+from gi.repository import GConf
 
-from sugar.graphics.toolbutton import ToolButton
-from sugar.graphics.toggletoolbutton import ToggleToolButton
-from sugar.graphics.combobox import ComboBox
-from sugar.graphics.toolcombobox import ToolComboBox
+from sugar3.graphics.toolbutton import ToolButton
+from sugar3.graphics.toggletoolbutton import ToggleToolButton
+from sugar3.graphics.combobox import ComboBox
+from sugar3.graphics.toolcombobox import ToolComboBox
 
 import speech
 
 
-class SpeechToolbar(gtk.Toolbar):
+class SpeechToolbar(Gtk.Toolbar):
 
     def __init__(self, activity):
-        gtk.Toolbar.__init__(self)
+        GObject.GObject.__init__(self)
         self._activity = activity
         if not speech.supported:
             return
         self.is_paused = False
-        self._cnf_client = gconf.client_get_default()
+        self._cnf_client = GConf.Client.get_default()
         self.load_speech_parameters()
 
         self.sorted_voices = [i for i in speech.voices()]
@@ -105,7 +106,7 @@ class SpeechToolbar(gtk.Toolbar):
             logging.error('Default voice %s', speech.voice)
 
         self._cnf_client.add_dir('/desktop/sugar/speech',
-                gconf.CLIENT_PRELOAD_NONE)
+                GConf.ClientPreloadType.PRELOAD_NONE)
         speech.pitch = self._cnf_client.get_int('/desktop/sugar/speech/pitch')
         speech.rate = self._cnf_client.get_int('/desktop/sugar/speech/rate')
         self._cnf_client.notify_add('/desktop/sugar/speech/pitch', \

@@ -18,14 +18,14 @@ import time
 from gettext import gettext as _
 import logging
 
-from sugar.graphics.radiotoolbutton import RadioToolButton
-from sugar.graphics.combobox import ComboBox
-from sugar.graphics.palette import Palette
-from sugar.graphics.toolbutton import ToolButton
-from sugar.graphics.menuitem import MenuItem
-from sugar.datastore import datastore
+from sugar3.graphics.radiotoolbutton import RadioToolButton
+from sugar3.graphics.combobox import ComboBox
+from sugar3.graphics.palette import Palette
+from sugar3.graphics.toolbutton import ToolButton
+from sugar3.graphics.menuitem import MenuItem
+from sugar3.datastore import datastore
 
-from sugar.activity.activity import SCOPE_PRIVATE
+from sugar3.activity.activity import SCOPE_PRIVATE
 
 logger = logging.getLogger('write-activity')
 

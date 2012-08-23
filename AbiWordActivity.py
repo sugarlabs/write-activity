@@ -21,25 +21,25 @@ import logging
 import os
 
 # Abiword needs this to happen as soon as possible
-import gobject
-gobject.threads_init()
+from gi.repository import GObject
+GObject.threads_init()
 
-import gtk
+from gi.repository import Gtk
+from gi.repository import Abi
+from gi.repository import GdkPixbuf
 import telepathy
 import telepathy.client
 
-from abiword import Canvas
+from sugar3.activity import activity
+from sugar3.activity.widgets import StopButton
+from sugar3.activity.widgets import ActivityToolbarButton
+from sugar3.activity.activity import get_bundle_path
 
-from sugar.activity import activity
-from sugar.activity.widgets import StopButton
-from sugar.activity.widgets import ActivityToolbarButton
-from sugar.activity.activity import get_bundle_path
+from sugar3 import mime
 
-from sugar import mime
-
-from sugar.graphics.toolbutton import ToolButton
-from sugar.graphics.toolbarbox import ToolbarButton, ToolbarBox
-from sugar.graphics import style
+from sugar3.graphics.toolbutton import ToolButton
+from sugar3.graphics.toolbarbox import ToolbarButton, ToolbarBox
+from sugar3.graphics import style
 
 from toolbar import EditToolbar
 from toolbar import ViewToolbar
@@ -49,8 +49,9 @@ from toolbar import InsertToolbar
 from toolbar import ParagraphToolbar
 from widgets import ExportButtonFactory
 from port import chooser
-import speech
-from speechtoolbar import SpeechToolbar
+# TODO Gtk3
+#import speech
+#from speechtoolbar import SpeechToolbar
 
 logger = logging.getLogger('write-activity')
 
@@ -64,14 +65,14 @@ class AbiWordActivity(activity.Activity):
         os.chdir(os.path.expanduser('~'))
 
         # create our main abiword canvas
-        self.abiword_canvas = Canvas()
+        self.abiword_canvas = Abi.Widget()
 
         toolbar_box = ToolbarBox()
 
         self.activity_button = ActivityToolbarButton(self)
         toolbar_box.toolbar.insert(self.activity_button, -1)
 
-        separator = gtk.SeparatorToolItem()
+        separator = Gtk.SeparatorToolItem()
         separator.show()
         self.activity_button.props.page.insert(separator, 2)
         ExportButtonFactory(self, self.abiword_canvas)
@@ -89,7 +90,7 @@ class AbiWordActivity(activity.Activity):
         view_toolbar.props.label = _('View')
         toolbar_box.toolbar.insert(view_toolbar, -1)
 
-        separator = gtk.SeparatorToolItem()
+        separator = Gtk.SeparatorToolItem()
         toolbar_box.toolbar.insert(separator, -1)
 
         text_toolbar = ToolbarButton()
@@ -116,7 +117,7 @@ class AbiWordActivity(activity.Activity):
         insert_toolbar.props.label = _('Table')
         toolbar_box.toolbar.insert(insert_toolbar, -1)
 
-        separator = gtk.SeparatorToolItem()
+        separator = Gtk.SeparatorToolItem()
         toolbar_box.toolbar.insert(separator, -1)
 
         image = ToolButton('insert-picture')
@@ -125,23 +126,24 @@ class AbiWordActivity(activity.Activity):
         toolbar_box.toolbar.insert(image, -1)
 
         palette = image.get_palette()
-        content_box = gtk.VBox()
+        content_box = Gtk.VBox()
         palette.set_content(content_box)
-        image_floating_checkbutton = gtk.CheckButton(_('Floating'))
+        image_floating_checkbutton = Gtk.CheckButton(_('Floating'))
         image_floating_checkbutton.connect('toggled',
                 self._image_floating_checkbutton_toggled_cb)
-        content_box.pack_start(image_floating_checkbutton)
+        content_box.pack_start(image_floating_checkbutton, True, True, 0)
         content_box.show_all()
         self.floating_image = False
 
-        if speech.supported:
-            self.speech_toolbar_button = ToolbarButton(icon_name='speak')
-            toolbar_box.toolbar.insert(self.speech_toolbar_button, -1)
-            self.speech_toolbar = SpeechToolbar(self)
-            self.speech_toolbar_button.set_page(self.speech_toolbar)
-            self.speech_toolbar_button.show()
+        # TODO Gtk3
+#        if speech.supported:
+#            self.speech_toolbar_button = ToolbarButton(icon_name='speak')
+#            toolbar_box.toolbar.insert(self.speech_toolbar_button, -1)
+#            self.speech_toolbar = SpeechToolbar(self)
+#            self.speech_toolbar_button.set_page(self.speech_toolbar)
+#            self.speech_toolbar_button.show()
 
-        separator = gtk.SeparatorToolItem()
+        separator = Gtk.SeparatorToolItem()
         separator.props.draw = False
         separator.set_expand(True)
         separator.show()
@@ -161,13 +163,14 @@ class AbiWordActivity(activity.Activity):
         self.abiword_canvas.connect('size-allocate', self.size_allocate_cb)
 
     def size_allocate_cb(self, abi, alloc):
-        gobject.idle_add(abi.queue_draw)
+        logging.error('size allocate %s', alloc)
+        GObject.idle_add(abi.queue_draw)
 
     def __map_event_cb(self, event, activity):
-        logger.debug('__map_event_cb')
+        logger.debug('__map_event_cb abi')
 
         # no ugly borders please
-        self.abiword_canvas.set_property("shadow-type", gtk.SHADOW_NONE)
+        self.abiword_canvas.set_property("shadow-type", Gtk.ShadowType.NONE)
 
         # we only do per-word selections (when using the mouse)
         self.abiword_canvas.set_word_selections(True)
@@ -200,13 +203,13 @@ class AbiWordActivity(activity.Activity):
         # we do it later because have problems if done before - OLPC #11049
         logger.error('Loading keybindings')
         keybindings_file = os.path.join(get_bundle_path(), 'keybindings.xml')
-        self.abiword_canvas.invoke_cmd(
+        self.abiword_canvas.invoke_ex(
                 'com.abisource.abiword.loadbindings.fromURI',
                 keybindings_file, 0, 0)
         # set default font
         self.abiword_canvas.select_all()
         # get_selection return content and length
-        if self.abiword_canvas.get_selection('text/plain')[1] == 0:
+        if self.abiword_canvas.get_selection('text/plain') is None:
             logging.error('Setting default font to Sans in new documents')
             self.abiword_canvas.set_font_name('Sans')
         self.abiword_canvas.moveto_bod()
@@ -217,14 +220,15 @@ class AbiWordActivity(activity.Activity):
 
         pixbuf = self.abiword_canvas.render_page_to_image(1)
         pixbuf = pixbuf.scale_simple(style.zoom(300), style.zoom(225),
-                                     gtk.gdk.INTERP_BILINEAR)
+                                     GdkPixbuf.InterpType.BILINEAR)
 
         preview_data = []
 
-        def save_func(buf, data):
+        def save_func(buf, lenght, data):
             data.append(buf)
+            return True
 
-        pixbuf.save_to_callback(save_func, 'png', user_data=preview_data)
+        pixbuf.save_to_callbackv(save_func, preview_data, 'png', [], [])
         preview_data = ''.join(preview_data)
 
         return preview_data
@@ -313,18 +317,18 @@ class AbiWordActivity(activity.Activity):
         if self.joined:
             logger.error('Passing tube address to abicollab (join): %s',
                     address)
-            self.abiword_canvas.invoke_cmd(cmd_prefix + 'joinTube',
+            self.abiword_canvas.invoke_ex(cmd_prefix + 'joinTube',
                     address, 0, 0)
             # The intiator of the session has to be the first passed
             # to the Abicollab backend.
             logger.error('Adding the initiator to the session: %s',
                     initiator_dbus_name)
-            self.abiword_canvas.invoke_cmd(cmd_prefix + 'buddyJoined',
+            self.abiword_canvas.invoke_ex(cmd_prefix + 'buddyJoined',
                     initiator_dbus_name, 0, 0)
         else:
             logger.error('Passing tube address to abicollab (offer): %s',
                     address)
-            self.abiword_canvas.invoke_cmd(cmd_prefix + 'offerTube', address,
+            self.abiword_canvas.invoke_ex(cmd_prefix + 'offerTube', address,
                     0, 0)
         self.tube_id = id
 
@@ -345,7 +349,7 @@ class AbiWordActivity(activity.Activity):
         for handle, bus_name in added:
             logger.error('added handle: %s, with dbus_name: %s',
                     handle, bus_name)
-            self.abiword_canvas.invoke_cmd(cmd_prefix + '.buddyJoined',
+            self.abiword_canvas.invoke_ex(cmd_prefix + '.buddyJoined',
                     bus_name, 0, 0)
             self.participants[handle] = bus_name
 
@@ -362,7 +366,7 @@ class AbiWordActivity(activity.Activity):
             cmd_prefix = 'com.abisource.abiword.abicollab.olpc'
             logger.error('removed handle: %d, with dbus name: %s', handle,
                          bus_name)
-            self.abiword_canvas.invoke_cmd(cmd_prefix + '.buddyLeft',
+            self.abiword_canvas.invoke_ex(cmd_prefix + '.buddyLeft',
                     bus_name, 0, 0)
 
     def _buddy_joined_cb(self, activity, buddy):
@@ -400,9 +404,9 @@ class AbiWordActivity(activity.Activity):
 
             self.abiword_canvas.save('file://' + file_path,
                     self.metadata['mime_type'], '')
-
-        self.metadata['fulltext'] = self.abiword_canvas.get_content(
-            extension_or_mimetype=".txt")[:3000]
+        # TODO Gtk3
+        #self.metadata['fulltext'] = self.abiword_canvas.get_content(
+        #    extension_or_mimetype=".txt")[:3000]
 
     def _is_plain_text(self, mime_type):
         # These types have 'text/plain' in their mime_parents  but we need
