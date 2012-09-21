@@ -2,225 +2,217 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-05-03 00:31-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2012-09-21 11:26+0200\n"
+"Last-Translator: hariru <hariruroa@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: mi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1rc4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "Write"
-msgstr ""
+msgstr "Tuhi"
 
 #: AbiWordActivity.py:83
 msgid "Edit"
-msgstr ""
+msgstr "Whakatika"
 
 #: AbiWordActivity.py:89
 msgid "View"
-msgstr ""
+msgstr "Tiro"
 
 #: AbiWordActivity.py:98
 msgid "Text"
-msgstr ""
+msgstr "Kupu"
 
 #: AbiWordActivity.py:104
 msgid "Paragraph"
-msgstr ""
+msgstr "Kōwae"
 
 #: AbiWordActivity.py:110 toolbar.py:593
 msgid "Bullet List"
-msgstr ""
+msgstr "Rārangi ā-Matā"
 
 #: AbiWordActivity.py:116 toolbar.py:218
 msgid "Table"
-msgstr ""
+msgstr "Ripanga"
 
 #: AbiWordActivity.py:123
 msgid "Insert Image"
-msgstr ""
+msgstr "Kōkuhu Atahanga"
 
 #: AbiWordActivity.py:130
 msgid "Floating"
-msgstr ""
+msgstr "Pōteretere"
 
 #: speechtoolbar.py:57
 msgid "Play / Pause"
-msgstr ""
+msgstr "Pūrei / Tatari"
 
 #: speechtoolbar.py:65
 msgid "Stop"
-msgstr ""
+msgstr "Tū"
 
 #: toolbar.py:95
 msgid "Search"
-msgstr ""
+msgstr "Rapu"
 
 #: toolbar.py:112
 msgid "Find previous"
-msgstr ""
+msgstr "Kimi tōmua"
 
 #: toolbar.py:118
 msgid "Find next"
-msgstr ""
+msgstr "Kimi panuku"
 
 #: toolbar.py:218
 msgid "Cancel"
-msgstr ""
+msgstr "Whakakore"
 
 #: toolbar.py:230
 msgid "Insert Row"
-msgstr ""
+msgstr "Kōkuhu Haupae"
 
 #: toolbar.py:236
 msgid "Delete Row"
-msgstr ""
+msgstr "Muku Haupae"
 
 #: toolbar.py:242
 msgid "Insert Column"
-msgstr ""
+msgstr "Kōkuhu Tīwae"
 
 #: toolbar.py:248
 msgid "Delete Column"
-msgstr ""
+msgstr "Muku Tīwae"
 
 #: toolbar.py:290
 msgid "Zoom Out"
-msgstr ""
+msgstr "Topa Atu"
 
 #: toolbar.py:297
 msgid "Zoom In"
-msgstr ""
+msgstr "Topa Mai"
 
 #: toolbar.py:303
 msgid "Zoom to width"
-msgstr ""
+msgstr "Topa ki te whānuitanga"
 
 #: toolbar.py:320
 msgid "%"
-msgstr ""
+msgstr "%"
 
 #: toolbar.py:332
 msgid "Page: "
-msgstr ""
+msgstr "Whārangi: "
 
 #: toolbar.py:427
 msgid "Bold"
-msgstr ""
+msgstr "Taekaha"
 
 #: toolbar.py:435
 msgid "Italic"
-msgstr ""
+msgstr "Tītaha"
 
 #: toolbar.py:443
 msgid "Underline"
-msgstr ""
+msgstr "Tāraro"
 
 #: toolbar.py:506 toolbar.py:583
 msgid "Normal"
-msgstr ""
+msgstr "Pūnoa"
 
 #: toolbar.py:517
 msgid "Heading 1"
-msgstr ""
+msgstr "Pane 1"
 
 #: toolbar.py:521
 msgid "Heading 2"
-msgstr ""
+msgstr "Pane 2"
 
 #: toolbar.py:525
 msgid "Heading 3"
-msgstr ""
+msgstr "Pane 3"
 
 #: toolbar.py:529
 msgid "Heading 4"
-msgstr ""
+msgstr "Pane 4"
 
 #: toolbar.py:533
 msgid "Block Text"
-msgstr ""
+msgstr "Kupu Paraka"
 
 #: toolbar.py:537
 msgid "Plain Text"
-msgstr ""
+msgstr "Kupu Tōkau"
 
 #: toolbar.py:553
 msgid "Left justify"
-msgstr ""
+msgstr "Whakatautika mauī"
 
 #: toolbar.py:556
 msgid "Center justify"
-msgstr ""
+msgstr "Whakatautika tauwaenga"
 
 #: toolbar.py:559
 msgid "Right justify"
-msgstr ""
+msgstr "Whakatautika matau"
 
 #: toolbar.py:562
 msgid "Fill justify"
-msgstr ""
+msgstr "Whakakī whakatautika"
 
 #: toolbar.py:597
 msgid "Dashed List"
-msgstr ""
+msgstr "Rārangi Tātā"
 
 #: toolbar.py:601
 msgid "Numbered List"
-msgstr ""
+msgstr "Rārangi Tau"
 
 #: toolbar.py:605
 msgid "Lower Case List"
-msgstr ""
+msgstr "Rārangi Pū Riki"
 
 #: toolbar.py:609
 msgid "Upper Case List"
-msgstr ""
+msgstr "Rārangi Pū Matua"
 
 #: widgets.py:169
 msgid "Rich Text (RTF)"
-msgstr ""
+msgstr "Rich Text (RTF)"
 
 #: widgets.py:171
 msgid "RTF"
-msgstr ""
+msgstr "RTF"
 
 #: widgets.py:175
 msgid "Hypertext (HTML)"
-msgstr ""
+msgstr "Hypertext (HTML)"
 
 #: widgets.py:177
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #: widgets.py:182
 msgid "Plain Text (TXT)"
-msgstr ""
+msgstr "Plain Text (TXT)"
 
 #: widgets.py:184
 msgid "TXT"
-msgstr ""
+msgstr "TXT"
 
 #: widgets.py:188
 msgid "Portable Document Format (PDF)"
-msgstr ""
+msgstr "Hōputu Tuhinga Kaikawe (PDF)"
 
 #: widgets.py:190
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
