@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-03 00:31-0400\n"
+"POT-Creation-Date: 2012-09-27 14:55-0400\n"
 "PO-Revision-Date: 2008-12-20 00:14-0500\n"
 "Last-Translator: Chris Leonard <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,10 +24,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Pootle 1.1.0rc2\n"
 
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
 #, fuzzy
 msgid "Write"
 msgstr "כתיבה"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Write provides a space to put your words. Write a story, poem, report, "
+"anything! Try changing the look, and size of your text; even insert an image!"
+msgstr ""
 
 #: AbiWordActivity.py:83
 #, fuzzy
@@ -223,41 +230,41 @@ msgstr "רשימה באותיות קטנות"
 msgid "Upper Case List"
 msgstr "רשימה באותיות גדולות"
 
-#: widgets.py:169
+#: widgets.py:171
 #, fuzzy
 msgid "Rich Text (RTF)"
 msgstr "טקסט עשיר (RTF)"
 
-#: widgets.py:171
+#: widgets.py:173
 #, fuzzy
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:175
+#: widgets.py:177
 #, fuzzy
 msgid "Hypertext (HTML)"
 msgstr "תמליל-על (HTML)"
 
-#: widgets.py:177
+#: widgets.py:179
 #, fuzzy
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:182
+#: widgets.py:184
 #, fuzzy
 msgid "Plain Text (TXT)"
 msgstr "טקסט רגיל (TXT)"
 
-#: widgets.py:184
+#: widgets.py:186
 #, fuzzy
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:188
+#: widgets.py:190
 msgid "Portable Document Format (PDF)"
 msgstr ""
 
-#: widgets.py:190
+#: widgets.py:192
 msgid "PDF"
 msgstr ""
 

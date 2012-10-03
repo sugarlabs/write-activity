@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-03 00:31-0400\n"
+"POT-Creation-Date: 2012-09-27 14:55-0400\n"
 "PO-Revision-Date: 2010-01-29 08:28+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,9 +25,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.1\n"
 
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
 msgid "Write"
 msgstr "লেখ"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Write provides a space to put your words. Write a story, poem, report, "
+"anything! Try changing the look, and size of your text; even insert an image!"
+msgstr ""
 
 #: AbiWordActivity.py:83
 msgid "Edit"
@@ -193,35 +200,35 @@ msgstr "ছোট হাতের তালিকা"
 msgid "Upper Case List"
 msgstr "বড় হাতের তালিকা"
 
-#: widgets.py:169
+#: widgets.py:171
 msgid "Rich Text (RTF)"
 msgstr "উচ্চ মান টেক্সট (RTF)"
 
-#: widgets.py:171
+#: widgets.py:173
 msgid "RTF"
 msgstr "আরটিএফ"
 
-#: widgets.py:175
+#: widgets.py:177
 msgid "Hypertext (HTML)"
 msgstr "হাইপারটেক্সট (এইচটিএমএল)"
 
-#: widgets.py:177
+#: widgets.py:179
 msgid "HTML"
 msgstr "এইচটিএমএল"
 
-#: widgets.py:182
+#: widgets.py:184
 msgid "Plain Text (TXT)"
 msgstr "প্লেইন টেক্সট (TXT)"
 
-#: widgets.py:184
+#: widgets.py:186
 msgid "TXT"
 msgstr "টিএক্সটি"
 
-#: widgets.py:188
+#: widgets.py:190
 msgid "Portable Document Format (PDF)"
 msgstr ""
 
-#: widgets.py:190
+#: widgets.py:192
 msgid "PDF"
 msgstr ""
 

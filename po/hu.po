@@ -14,20 +14,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-03 00:31-0400\n"
-"PO-Revision-Date: 2011-03-13 17:37+0200\n"
-"Last-Translator: <klpeter@windowslive.com>\n"
+"POT-Creation-Date: 2012-09-27 14:55-0400\n"
+"PO-Revision-Date: 2012-08-23 16:03+0200\n"
+"Last-Translator: gyeben <gyonkibendeguz@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.5\n"
 
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
 msgid "Write"
 msgstr "Írás"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Write provides a space to put your words. Write a story, poem, report, "
+"anything! Try changing the look, and size of your text; even insert an image!"
+msgstr ""
 
 #: AbiWordActivity.py:83
 msgid "Edit"
@@ -63,11 +70,11 @@ msgstr "Lebegő"
 
 #: speechtoolbar.py:57
 msgid "Play / Pause"
-msgstr ""
+msgstr "Lejátszás / Szünet"
 
 #: speechtoolbar.py:65
 msgid "Stop"
-msgstr ""
+msgstr "Leállít"
 
 #: toolbar.py:95
 msgid "Search"
@@ -193,35 +200,35 @@ msgstr "Felsorolás alacsonyabb szint"
 msgid "Upper Case List"
 msgstr "Felsorolás magasabb szint"
 
-#: widgets.py:169
+#: widgets.py:171
 msgid "Rich Text (RTF)"
 msgstr "Rich Text (RTF)"
 
-#: widgets.py:171
+#: widgets.py:173
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:175
+#: widgets.py:177
 msgid "Hypertext (HTML)"
 msgstr "Hypertext (HTML)"
 
-#: widgets.py:177
+#: widgets.py:179
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:182
+#: widgets.py:184
 msgid "Plain Text (TXT)"
 msgstr "Sima szöveg (TXT)"
 
-#: widgets.py:184
+#: widgets.py:186
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:188
+#: widgets.py:190
 msgid "Portable Document Format (PDF)"
 msgstr "Hordozható dokumentum formátum"
 
-#: widgets.py:190
+#: widgets.py:192
 msgid "PDF"
 msgstr "PDF"
 

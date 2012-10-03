@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-03 00:31-0400\n"
+"POT-Creation-Date: 2012-09-27 14:55-0400\n"
 "PO-Revision-Date: 2009-12-06 08:04-0400\n"
 "Last-Translator: Robson Mendonça <robsonmwoc@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <fedora-docs-br@redhat.com>\n"
@@ -25,9 +25,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Pootle 1.2.1\n"
 
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
 msgid "Write"
 msgstr "Escrever"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Write provides a space to put your words. Write a story, poem, report, "
+"anything! Try changing the look, and size of your text; even insert an image!"
+msgstr ""
 
 #: AbiWordActivity.py:83
 msgid "Edit"
@@ -198,35 +205,35 @@ msgstr "Lista (minúsculas)"
 msgid "Upper Case List"
 msgstr "Lista (maiúsculas)"
 
-#: widgets.py:169
+#: widgets.py:171
 msgid "Rich Text (RTF)"
 msgstr "Rich Text (RTF)"
 
-#: widgets.py:171
+#: widgets.py:173
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:175
+#: widgets.py:177
 msgid "Hypertext (HTML)"
 msgstr "Hipertexto (HTML)"
 
-#: widgets.py:177
+#: widgets.py:179
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:182
+#: widgets.py:184
 msgid "Plain Text (TXT)"
 msgstr "Texto Simples (TXT)"
 
-#: widgets.py:184
+#: widgets.py:186
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:188
+#: widgets.py:190
 msgid "Portable Document Format (PDF)"
 msgstr ""
 
-#: widgets.py:190
+#: widgets.py:192
 msgid "PDF"
 msgstr ""
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-03 00:31-0400\n"
+"POT-Creation-Date: 2012-09-27 14:55-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,8 +16,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Translate Toolkit 1.7.0\n"
 
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
 msgid "Write"
+msgstr ""
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Write provides a space to put your words. Write a story, poem, report, "
+"anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
 
 #: AbiWordActivity.py:83
@@ -184,34 +191,34 @@ msgstr ""
 msgid "Upper Case List"
 msgstr ""
 
-#: widgets.py:169
+#: widgets.py:171
 msgid "Rich Text (RTF)"
 msgstr ""
 
-#: widgets.py:171
+#: widgets.py:173
 msgid "RTF"
 msgstr ""
 
-#: widgets.py:175
+#: widgets.py:177
 msgid "Hypertext (HTML)"
 msgstr ""
 
-#: widgets.py:177
+#: widgets.py:179
 msgid "HTML"
 msgstr ""
 
-#: widgets.py:182
+#: widgets.py:184
 msgid "Plain Text (TXT)"
 msgstr ""
 
-#: widgets.py:184
+#: widgets.py:186
 msgid "TXT"
 msgstr ""
 
-#: widgets.py:188
+#: widgets.py:190
 msgid "Portable Document Format (PDF)"
 msgstr ""
 
-#: widgets.py:190
+#: widgets.py:192
 msgid "PDF"
 msgstr ""

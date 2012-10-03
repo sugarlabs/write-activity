@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-03 00:31-0400\n"
+"POT-Creation-Date: 2012-09-27 14:55-0400\n"
 "PO-Revision-Date: 2012-07-15 17:34+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,9 +18,16 @@ msgstr ""
 "X-Generator: Pootle 2.0.5\n"
 
 #  "Escribir"
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
 msgid "Write"
 msgstr "Qillqay"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Write provides a space to put your words. Write a story, poem, report, "
+"anything! Try changing the look, and size of your text; even insert an image!"
+msgstr ""
 
 #  "Editar"
 #: AbiWordActivity.py:83
@@ -226,41 +233,41 @@ msgid "Upper Case List"
 msgstr "Kuraq qillqakunap sinrin"
 
 #  "Texto enriquecido (RTF)"
-#: widgets.py:169
+#: widgets.py:171
 msgid "Rich Text (RTF)"
 msgstr "Qhapaq qillqa (RTF)"
 
 #  "RTF"
-#: widgets.py:171
+#: widgets.py:173
 msgid "RTF"
 msgstr "RTF"
 
 #  "Hipertexto (HTML)"
-#: widgets.py:175
+#: widgets.py:177
 msgid "Hypertext (HTML)"
 msgstr "Hiperqillqa (HTML)"
 
 #  "HTML"
-#: widgets.py:177
+#: widgets.py:179
 msgid "HTML"
 msgstr "HTML"
 
 #  "Texto simple (TXT)"
-#: widgets.py:182
+#: widgets.py:184
 msgid "Plain Text (TXT)"
 msgstr "Pampa qillqa (TXT)"
 
 #  "TXT"
-#: widgets.py:184
+#: widgets.py:186
 msgid "TXT"
 msgstr "TXT"
 
 #  "Formato de Documento Portable (PDF)"
-#: widgets.py:188
+#: widgets.py:190
 msgid "Portable Document Format (PDF)"
 msgstr "Apanapap Qillqa Khipu (PDF)"
 
 #  "PDF"
-#: widgets.py:190
+#: widgets.py:192
 msgid "PDF"
 msgstr "PDF"

@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OLPC Write\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-03 00:31-0400\n"
-"PO-Revision-Date: 2012-05-04 11:44+0200\n"
-"Last-Translator: Xin <dram.wang@gmail.com>\n"
+"POT-Creation-Date: 2012-09-27 14:55-0400\n"
+"PO-Revision-Date: 2012-10-02 19:09+0200\n"
+"Last-Translator: lite <litekok@gmail.com>\n"
 "Language-Team: Yuan CHAO <yuanchao@gmail.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -21,9 +21,16 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
 msgid "Write"
 msgstr "写作"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Write provides a space to put your words. Write a story, poem, report, "
+"anything! Try changing the look, and size of your text; even insert an image!"
+msgstr "写作活动提供了放入你的语言的一个空间。写一个故事，诗歌，报告，任何文字！尝试改变的外观，和您的文字大小，甚至插入一张图片！"
 
 #: AbiWordActivity.py:83
 msgid "Edit"
@@ -189,35 +196,35 @@ msgstr "大写列表"
 msgid "Upper Case List"
 msgstr "小写列表"
 
-#: widgets.py:169
+#: widgets.py:171
 msgid "Rich Text (RTF)"
 msgstr "富文本文件(RTF)"
 
-#: widgets.py:171
+#: widgets.py:173
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:175
+#: widgets.py:177
 msgid "Hypertext (HTML)"
 msgstr "超文本文件 (HTML)"
 
-#: widgets.py:177
+#: widgets.py:179
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:182
+#: widgets.py:184
 msgid "Plain Text (TXT)"
 msgstr "文本文件(TXT)"
 
-#: widgets.py:184
+#: widgets.py:186
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:188
+#: widgets.py:190
 msgid "Portable Document Format (PDF)"
 msgstr "便携式文件格式（PDF）"
 
-#: widgets.py:190
+#: widgets.py:192
 msgid "PDF"
 msgstr "PDF"
 
