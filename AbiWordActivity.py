@@ -170,7 +170,7 @@ class AbiWordActivity(activity.Activity):
         logger.debug('__map_event_cb abi')
 
         # no ugly borders please
-        self.abiword_canvas.set_property("shadow-type", Gtk.ShadowType.NONE)
+        #self.abiword_canvas.set_property("shadow-type", Gtk.ShadowType.NONE)
 
         # we only do per-word selections (when using the mouse)
         self.abiword_canvas.set_word_selections(True)
