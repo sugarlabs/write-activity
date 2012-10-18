@@ -66,6 +66,7 @@ class AbiWordActivity(activity.Activity):
 
         # create our main abiword canvas
         self.abiword_canvas = Abi.Widget()
+        self._shared_activity = None
 
         toolbar_box = ToolbarBox()
 
