@@ -67,7 +67,7 @@ class AbiWordActivity(activity.Activity):
         # create our main abiword canvas
         self.abiword_canvas = Abi.Widget()
         self._shared_activity = None
-
+        self._new_instance = True
         toolbar_box = ToolbarBox()
 
         self.activity_button = ActivityToolbarButton(self)
@@ -210,7 +210,7 @@ class AbiWordActivity(activity.Activity):
         # set default font
         self.abiword_canvas.select_all()
         # get_selection return content and length
-        if self.abiword_canvas.get_selection('text/plain') is None:
+        if self._new_instance:
             logging.error('Setting default font to Sans in new documents')
             self.abiword_canvas.set_font_name('Sans')
         self.abiword_canvas.moveto_bod()
@@ -385,6 +385,7 @@ class AbiWordActivity(activity.Activity):
             # we pass no mime/file type, let libabiword autodetect it,
             # so we can handle multiple file formats
             self.abiword_canvas.load_file('file://' + file_path, '')
+        self._new_instance = False
 
     def write_file(self, file_path):
         logging.debug('AbiWordActivity.write_file: %s, mimetype: %s',
