@@ -405,9 +405,8 @@ class AbiWordActivity(activity.Activity):
 
             self.abiword_canvas.save('file://' + file_path,
                     self.metadata['mime_type'], '')
-        # TODO Gtk3
-        #self.metadata['fulltext'] = self.abiword_canvas.get_content(
-        #    extension_or_mimetype=".txt")[:3000]
+        self.metadata['fulltext'] = self.abiword_canvas.get_content(
+            'text/plain', None)[:3000]
 
     def _is_plain_text(self, mime_type):
         # These types have 'text/plain' in their mime_parents  but we need
