@@ -430,6 +430,7 @@ class TextToolbar(Gtk.Toolbar):
 
         bold = ToggleToolButton('format-text-bold')
         bold.set_tooltip(_('Bold'))
+        bold.props.accelerator = '<Ctrl>B'
         bold_id = bold.connect('clicked', lambda sender:
                 abiword_canvas.toggle_bold())
         abiword_canvas.connect('bold', lambda abi, b:
@@ -438,6 +439,7 @@ class TextToolbar(Gtk.Toolbar):
 
         italic = ToggleToolButton('format-text-italic')
         italic.set_tooltip(_('Italic'))
+        italic.props.accelerator = '<Ctrl>I'
         italic_id = italic.connect('clicked', lambda sender:
                 abiword_canvas.toggle_italic())
         abiword_canvas.connect('italic', lambda abi, b:
@@ -446,6 +448,7 @@ class TextToolbar(Gtk.Toolbar):
 
         underline = ToggleToolButton('format-text-underline')
         underline.set_tooltip(_('Underline'))
+        underline.props.accelerator = '<Ctrl>U'
         underline_id = underline.connect('clicked', lambda sender:
                 abiword_canvas.toggle_underline())
         abiword_canvas.connect('underline', lambda abi, b:
