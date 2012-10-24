@@ -23,7 +23,6 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 from gi.repository import GdkPixbuf
-from gi.repository import Abi
 
 import os
 import tempfile
@@ -43,6 +42,7 @@ from sugar3.activity.widgets import RedoButton
 from widgets import AbiButton
 from widgets import FontSizeCombo
 from fontcombobox import FontComboBox
+from gridcreate import GridCreateWidget
 
 logger = logging.getLogger('write-activity')
 
@@ -218,17 +218,15 @@ class InsertToolbar(Gtk.Toolbar):
 
         self._abiword_canvas = abiword_canvas
 
-        self._table = Abi.Table()
-        self._table.set_labels(_('Table'), _('Cancel'))
-        self._table_id = self._table.connect('selected', self._table_cb)
-        image = Gtk.Image()
-        image.set_from_icon_name('insert-table', -1)
-        self._table.set_image(image)
-        self._table.set_relief(Gtk.ReliefStyle.NONE)
-        tool_item = Gtk.ToolItem()
-        tool_item.add(self._table)
-        self.insert(tool_item, -1)
-        tool_item.show_all()
+        self._table_btn = ToolButton('create-table')
+        self._table_btn.set_tooltip(_('Create table'))
+        self.insert(self._table_btn, -1)
+        self._grid_create = GridCreateWidget()
+        self._grid_create.show()
+        self._grid_create.connect('create-table', self._create_table_cb)
+        palette = self._table_btn.get_palette()
+        palette.set_content(self._grid_create)
+        self._table_btn.connect('clicked', self._table_btn_clicked_cb)
 
         self._table_rows_after = ToolButton('row-insert')
         self._table_rows_after.set_tooltip(_('Insert Row'))
@@ -260,7 +258,10 @@ class InsertToolbar(Gtk.Toolbar):
         #self._abiword_canvas.connect('image-selected',
         #       self._image_selected_cb)
 
-    def _table_cb(self, abi, rows, cols):
+    def _table_btn_clicked_cb(self, button):
+        button.get_palette().popup(True, button.get_palette().SECONDARY)
+
+    def _create_table_cb(self, abi, rows, cols):
         self._abiword_canvas.insert_table(rows, cols)
 
     def _table_rows_after_cb(self, button):
