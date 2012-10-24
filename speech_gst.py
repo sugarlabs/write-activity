@@ -14,7 +14,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-import gst
+from gi.repository import Gst
 import logging
 
 import speech
@@ -24,7 +24,7 @@ _logger = logging.getLogger('write-activity')
 
 def get_all_voices():
     all_voices = {}
-    for voice in gst.element_factory_make('espeak').props.voices:
+    for voice in Gst.ElementFactory.make('espeak', None).props.voices:
         name, language, dialect = voice
         if dialect != 'none':
             all_voices[language + '_' + dialect] = name
@@ -34,29 +34,23 @@ def get_all_voices():
 
 
 def _message_cb(bus, message, pipe):
-    if message.type == gst.MESSAGE_EOS:
-        pipe.set_state(gst.STATE_NULL)
+    if message.type == Gst.MessageType.EOS:
+        pipe.set_state(Gst.State.NULL)
         if speech.end_text_cb != None:
             speech.end_text_cb()
-    if message.type == gst.MESSAGE_ERROR:
-        pipe.set_state(gst.STATE_NULL)
+    if message.type == Gst.MessageType.ERROR:
+        pipe.set_state(Gst.State.NULL)
         if pipe is play_speaker[1]:
             speech.reset_cb()
-    elif message.type == gst.MESSAGE_ELEMENT and \
+    elif message.type == Gst.MessageType.ELEMENT and \
             message.structure.get_name() == 'espeak-mark':
         mark = message.structure['mark']
         speech.highlight_cb(int(mark))
 
 
 def _create_pipe():
-    pipe = gst.Pipeline('pipeline')
-
-    source = gst.element_factory_make('espeak', 'source')
-    pipe.add(source)
-
-    sink = gst.element_factory_make('autoaudiosink', 'sink')
-    pipe.add(sink)
-    source.link(sink)
+    pipe = Gst.parse_launch('espeak name=espeak ! autoaudiosink')
+    source = pipe.get_by_name('espeak')
 
     bus = pipe.get_bus()
     bus.add_signal_watch()
@@ -70,8 +64,8 @@ def _speech(speaker, words):
     speaker[0].props.rate = speech.rate
     speaker[0].props.voice = speech.voice[1]
     speaker[0].props.text = words
-    speaker[1].set_state(gst.STATE_NULL)
-    speaker[1].set_state(gst.STATE_PLAYING)
+    speaker[1].set_state(Gst.State.NULL)
+    speaker[1].set_state(Gst.State.PLAYING)
 
 
 info_speaker = _create_pipe()
@@ -92,19 +86,19 @@ def play(words):
 
 
 def pause():
-    play_speaker[1].set_state(gst.STATE_PAUSED)
+    play_speaker[1].set_state(Gst.State.PAUSED)
 
 
 def continue_play():
-    play_speaker[1].set_state(gst.STATE_PLAYING)
+    play_speaker[1].set_state(Gst.State.PLAYING)
 
 
 def is_stopped():
     for i in play_speaker[1].get_state():
-        if isinstance(i, gst.State) and i == gst.STATE_NULL:
+        if isinstance(i, Gst.State) and i == Gst.State.NULL:
             return True
     return False
 
 
 def stop():
-    play_speaker[1].set_state(gst.STATE_NULL)
+    play_speaker[1].set_state(Gst.State.NULL)

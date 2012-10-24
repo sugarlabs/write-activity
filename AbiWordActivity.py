@@ -49,9 +49,9 @@ from toolbar import InsertToolbar
 from toolbar import ParagraphToolbar
 from widgets import ExportButtonFactory
 from port import chooser
-# TODO Gtk3
-#import speech
-#from speechtoolbar import SpeechToolbar
+
+import speech
+from speechtoolbar import SpeechToolbar
 
 logger = logging.getLogger('write-activity')
 
@@ -90,6 +90,13 @@ class AbiWordActivity(activity.Activity):
         view_toolbar.props.icon_name = 'toolbar-view'
         view_toolbar.props.label = _('View')
         toolbar_box.toolbar.insert(view_toolbar, -1)
+
+        if speech.supported:
+            self.speech_toolbar_button = ToolbarButton(icon_name='speak')
+            toolbar_box.toolbar.insert(self.speech_toolbar_button, -1)
+            self.speech_toolbar = SpeechToolbar(self)
+            self.speech_toolbar_button.set_page(self.speech_toolbar)
+            self.speech_toolbar_button.show()
 
         separator = Gtk.SeparatorToolItem()
         toolbar_box.toolbar.insert(separator, -1)
@@ -135,14 +142,6 @@ class AbiWordActivity(activity.Activity):
         content_box.pack_start(image_floating_checkbutton, True, True, 0)
         content_box.show_all()
         self.floating_image = False
-
-        # TODO Gtk3
-#        if speech.supported:
-#            self.speech_toolbar_button = ToolbarButton(icon_name='speak')
-#            toolbar_box.toolbar.insert(self.speech_toolbar_button, -1)
-#            self.speech_toolbar = SpeechToolbar(self)
-#            self.speech_toolbar_button.set_page(self.speech_toolbar)
-#            self.speech_toolbar_button.show()
 
         separator = Gtk.SeparatorToolItem()
         separator.props.draw = False

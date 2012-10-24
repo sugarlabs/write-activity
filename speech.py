@@ -21,19 +21,20 @@ _logger = logging.getLogger('write-activity')
 
 supported = True
 
-#try:
-#    import gst
-#    gst.element_factory_make('espeak')
-#    from speech_gst import *
-#    _logger.info('use gst-plugins-espeak')
-#except Exception, e:
-#    _logger.info('disable gst-plugins-espeak: %s' % e)
-#    try:
-#        from speech_dispatcher import *
-#        _logger.info('use speech-dispatcher')
-#    except Exception, e:
-#        supported = False
-#        _logger.info('disable speech: %s' % e)
+try:
+    from gi.repository import Gst
+    Gst.init(None)
+    Gst.ElementFactory.make('espeak', None)
+    from speech_gst import *
+    _logger.error('use gst-plugins-espeak')
+except Exception, e:
+    _logger.error('disable gst-plugins-espeak: %s' % e)
+    try:
+        from speech_dispatcher import *
+        _logger.error('use speech-dispatcher')
+    except Exception, e:
+        supported = False
+        _logger.error('disable speech: %s' % e)
 
 voice = 'default'
 pitch = 0

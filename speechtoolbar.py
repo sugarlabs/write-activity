@@ -156,7 +156,7 @@ class SpeechToolbar(Gtk.Toolbar):
 
     def reset_buttons_cb(self):
         logging.error('reset buttons')
-        self.play_btn.set_named_icon('media-playback-start')
+        self.play_btn.set_icon_name('media-playback-start')
         self.stop_btn.set_sensitive(False)
         self.play_btn.set_active(False)
         self.is_paused = False
@@ -164,14 +164,14 @@ class SpeechToolbar(Gtk.Toolbar):
     def play_cb(self, widget):
         self.stop_btn.set_sensitive(True)
         if widget.get_active():
-            self.play_btn.set_named_icon('media-playback-pause')
+            self.play_btn.set_icon_name('media-playback-pause')
             logging.error('Paused %s', self.is_paused)
             if not self.is_paused:
                 # get the text to speech, if there are a selection,
                 # play selected text, if not, play all
                 abi = self._activity.abiword_canvas
                 selection = abi.get_selection('text/plain')
-                if selection[0] is None or selection[1] == 0:
+                if not selection or selection[0] is None or selection[1] == 0:
                     # nothing selected
                     abi.select_all()
                     text = abi.get_selection('text/plain')[0]
@@ -183,13 +183,13 @@ class SpeechToolbar(Gtk.Toolbar):
                 logging.error('Continue play')
                 speech.continue_play()
         else:
-            self.play_btn.set_named_icon('media-playback-start')
+            self.play_btn.set_icon_name('media-playback-start')
             self.is_paused = True
             speech.pause()
 
     def stop_cb(self, widget):
         self.stop_btn.set_sensitive(False)
-        self.play_btn.set_named_icon('media-playback-start')
+        self.play_btn.set_icon_name('media-playback-start')
         self.play_btn.set_active(False)
         self.is_paused = False
         speech.stop()
