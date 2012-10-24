@@ -219,8 +219,8 @@ class ExportButtonFactory():
         fileObject.metadata['title_set_by_user'] = \
                 act_meta['title_set_by_user']
         fileObject.metadata['mime_type'] = format['mime_type']
-        fileObject.metadata['fulltext'] = abi.get_content(
-                extension_or_mimetype=".txt")[:3000]
+        fileObject.metadata['fulltext'] = \
+                abi.get_content('text/plain', None)[:3000]
 
         fileObject.metadata['icon-color'] = act_meta['icon-color']
 
