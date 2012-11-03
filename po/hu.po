@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-27 14:55-0400\n"
+"POT-Creation-Date: 2012-10-25 00:30-0400\n"
 "PO-Revision-Date: 2012-08-23 16:03+0200\n"
 "Last-Translator: gyeben <gyonkibendeguz@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,167 +36,167 @@ msgid ""
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
 
-#: AbiWordActivity.py:83
+#: AbiWordActivity.py:85
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: AbiWordActivity.py:89
+#: AbiWordActivity.py:91
 msgid "View"
 msgstr "Nézet"
 
-#: AbiWordActivity.py:98
+#: AbiWordActivity.py:107
 msgid "Text"
 msgstr "Szöveg"
 
-#: AbiWordActivity.py:104
+#: AbiWordActivity.py:113
 msgid "Paragraph"
 msgstr "Paragrafus"
 
-#: AbiWordActivity.py:110 toolbar.py:593
+#: AbiWordActivity.py:119 toolbar.py:601
 msgid "Bullet List"
 msgstr "Felsorolás pontokkal"
 
-#: AbiWordActivity.py:116 toolbar.py:218
+#: AbiWordActivity.py:125
 msgid "Table"
 msgstr "Táblázat"
 
-#: AbiWordActivity.py:123
+#: AbiWordActivity.py:132
 msgid "Insert Image"
 msgstr "Kép beillesztése"
 
-#: AbiWordActivity.py:130
+#: AbiWordActivity.py:139
 msgid "Floating"
 msgstr "Lebegő"
 
-#: speechtoolbar.py:57
+#: speechtoolbar.py:58
 msgid "Play / Pause"
 msgstr "Lejátszás / Szünet"
 
-#: speechtoolbar.py:65
+#: speechtoolbar.py:66
 msgid "Stop"
 msgstr "Leállít"
 
-#: toolbar.py:95
+#: toolbar.py:99
 msgid "Search"
 msgstr "Keres"
 
-#: toolbar.py:112
+#: toolbar.py:116
 msgid "Find previous"
 msgstr "Előző keresése"
 
-#: toolbar.py:118
+#: toolbar.py:122
 msgid "Find next"
 msgstr "Következő keresése"
 
-#: toolbar.py:218
-msgid "Cancel"
-msgstr "Mégsem"
+#: toolbar.py:222
+msgid "Create table"
+msgstr ""
 
-#: toolbar.py:230
+#: toolbar.py:232
 msgid "Insert Row"
 msgstr "Sor beszúrása"
 
-#: toolbar.py:236
+#: toolbar.py:238
 msgid "Delete Row"
 msgstr "Sor törlése"
 
-#: toolbar.py:242
+#: toolbar.py:244
 msgid "Insert Column"
 msgstr "Oszlop beszúrása"
 
-#: toolbar.py:248
+#: toolbar.py:250
 msgid "Delete Column"
 msgstr "Oszlop törlése"
 
-#: toolbar.py:290
+#: toolbar.py:295
 msgid "Zoom Out"
 msgstr "Nagyítás ki"
 
-#: toolbar.py:297
+#: toolbar.py:302
 msgid "Zoom In"
 msgstr "Nagyítás be"
 
-#: toolbar.py:303
+#: toolbar.py:308
 msgid "Zoom to width"
 msgstr ""
 
-#: toolbar.py:320
+#: toolbar.py:325
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:332
+#: toolbar.py:337
 msgid "Page: "
 msgstr "Oldal: "
 
-#: toolbar.py:427
+#: toolbar.py:432
 msgid "Bold"
 msgstr "Félkövér"
 
-#: toolbar.py:435
+#: toolbar.py:441
 msgid "Italic"
 msgstr "Dőlt"
 
-#: toolbar.py:443
+#: toolbar.py:450
 msgid "Underline"
 msgstr "Aláhúzott"
 
-#: toolbar.py:506 toolbar.py:583
+#: toolbar.py:514 toolbar.py:591
 msgid "Normal"
 msgstr "Normál"
 
-#: toolbar.py:517
+#: toolbar.py:525
 msgid "Heading 1"
 msgstr "Címsor 1"
 
-#: toolbar.py:521
+#: toolbar.py:529
 msgid "Heading 2"
 msgstr "Címsor 2"
 
-#: toolbar.py:525
+#: toolbar.py:533
 msgid "Heading 3"
 msgstr "Címsor 3"
 
-#: toolbar.py:529
+#: toolbar.py:537
 msgid "Heading 4"
 msgstr "Címsor 4"
 
-#: toolbar.py:533
+#: toolbar.py:541
 msgid "Block Text"
 msgstr "Szöveg tömb"
 
-#: toolbar.py:537
+#: toolbar.py:545
 msgid "Plain Text"
 msgstr "Sima szöveg"
 
-#: toolbar.py:553
+#: toolbar.py:561
 msgid "Left justify"
 msgstr "Bal oldalhoz igazít"
 
-#: toolbar.py:556
+#: toolbar.py:564
 msgid "Center justify"
 msgstr "Középre igazít"
 
-#: toolbar.py:559
+#: toolbar.py:567
 msgid "Right justify"
 msgstr "Jobb oldalhoz igazít"
 
-#: toolbar.py:562
+#: toolbar.py:570
 msgid "Fill justify"
 msgstr "Kitöltés"
 
-#: toolbar.py:597
+#: toolbar.py:605
 msgid "Dashed List"
 msgstr "Felsorolás kötőjellel"
 
-#: toolbar.py:601
+#: toolbar.py:609
 msgid "Numbered List"
 msgstr "Számozás"
 
-#: toolbar.py:605
+#: toolbar.py:613
 msgid "Lower Case List"
 msgstr "Felsorolás alacsonyabb szint"
 
-#: toolbar.py:609
+#: toolbar.py:617
 msgid "Upper Case List"
 msgstr "Felsorolás magasabb szint"
 
@@ -231,6 +231,9 @@ msgstr "Hordozható dokumentum formátum"
 #: widgets.py:192
 msgid "PDF"
 msgstr "PDF"
+
+#~ msgid "Cancel"
+#~ msgstr "Mégsem"
 
 #~ msgid "Export"
 #~ msgstr "Export"

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-27 14:55-0400\n"
+"POT-Creation-Date: 2012-10-25 00:30-0400\n"
 "PO-Revision-Date: 2012-04-05 10:21+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,171 +36,171 @@ msgid ""
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
 
-#: AbiWordActivity.py:83
+#: AbiWordActivity.py:85
 msgid "Edit"
 msgstr "Hindura"
 
-#: AbiWordActivity.py:89
+#: AbiWordActivity.py:91
 msgid "View"
 msgstr "Irebero"
 
-#: AbiWordActivity.py:98
+#: AbiWordActivity.py:107
 msgid "Text"
 msgstr "Umwandiko"
 
-#: AbiWordActivity.py:104
+#: AbiWordActivity.py:113
 msgid "Paragraph"
 msgstr "Igika"
 
-#: AbiWordActivity.py:110 toolbar.py:593
+#: AbiWordActivity.py:119 toolbar.py:601
 msgid "Bullet List"
 msgstr "Utuimenyetso tw`urutonde"
 
-#: AbiWordActivity.py:116 toolbar.py:218
+#: AbiWordActivity.py:125
 msgid "Table"
 msgstr "Imbonerahamwe"
 
-#: AbiWordActivity.py:123
+#: AbiWordActivity.py:132
 msgid "Insert Image"
 msgstr "Shyiramo ishusho"
 
-#: AbiWordActivity.py:130
+#: AbiWordActivity.py:139
 #, fuzzy
 msgid "Floating"
 msgstr "Bihindagurika"
 
-#: speechtoolbar.py:57
+#: speechtoolbar.py:58
 msgid "Play / Pause"
 msgstr ""
 
-#: speechtoolbar.py:65
+#: speechtoolbar.py:66
 msgid "Stop"
 msgstr ""
 
-#: toolbar.py:95
+#: toolbar.py:99
 msgid "Search"
 msgstr "Shaka"
 
-#: toolbar.py:112
+#: toolbar.py:116
 msgid "Find previous"
 msgstr "Shaka ibibanziriza"
 
-#: toolbar.py:118
+#: toolbar.py:122
 msgid "Find next"
 msgstr "Shaka ibikurikira"
 
-#: toolbar.py:218
-msgid "Cancel"
-msgstr "Gukuraho"
+#: toolbar.py:222
+msgid "Create table"
+msgstr ""
 
-#: toolbar.py:230
+#: toolbar.py:232
 msgid "Insert Row"
 msgstr "Shyiramo umurongo utambtse"
 
-#: toolbar.py:236
+#: toolbar.py:238
 msgid "Delete Row"
 msgstr "Siba umurongo utambitse"
 
-#: toolbar.py:242
+#: toolbar.py:244
 msgid "Insert Column"
 msgstr "Shyiramo umurongo uhagaze"
 
-#: toolbar.py:248
+#: toolbar.py:250
 msgid "Delete Column"
 msgstr "Siba umurongo uhagaze"
 
-#: toolbar.py:290
+#: toolbar.py:295
 msgid "Zoom Out"
 msgstr "Kugabanya"
 
-#: toolbar.py:297
+#: toolbar.py:302
 msgid "Zoom In"
 msgstr "Kwagura"
 
-#: toolbar.py:303
+#: toolbar.py:308
 msgid "Zoom to width"
 msgstr ""
 
-#: toolbar.py:320
+#: toolbar.py:325
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:332
+#: toolbar.py:337
 msgid "Page: "
 msgstr "Ipaje: "
 
-#: toolbar.py:427
+#: toolbar.py:432
 #, fuzzy
 msgid "Bold"
 msgstr "Bigaragare cyane"
 
-#: toolbar.py:435
+#: toolbar.py:441
 msgid "Italic"
 msgstr "Ikintu kiberamye"
 
-#: toolbar.py:443
+#: toolbar.py:450
 msgid "Underline"
 msgstr "Ca umurongo"
 
-#: toolbar.py:506 toolbar.py:583
+#: toolbar.py:514 toolbar.py:591
 msgid "Normal"
 msgstr "Birasanzwe"
 
-#: toolbar.py:517
+#: toolbar.py:525
 msgid "Heading 1"
 msgstr "Umutwe w`amagambo 1"
 
-#: toolbar.py:521
+#: toolbar.py:529
 msgid "Heading 2"
 msgstr "Umutwe w`amagambo 2"
 
-#: toolbar.py:525
+#: toolbar.py:533
 msgid "Heading 3"
 msgstr "Umutwe w`amagambo 3"
 
-#: toolbar.py:529
+#: toolbar.py:537
 msgid "Heading 4"
 msgstr "Umutwe w`amagambo 4"
 
-#: toolbar.py:533
+#: toolbar.py:541
 msgid "Block Text"
 msgstr "Block Umwandiko"
 
-#: toolbar.py:537
+#: toolbar.py:545
 msgid "Plain Text"
 msgstr "Plain Umandiko"
 
-#: toolbar.py:553
+#: toolbar.py:561
 msgid "Left justify"
 msgstr "Gutondekanya ibumoso"
 
-#: toolbar.py:556
+#: toolbar.py:564
 msgid "Center justify"
 msgstr "Gutondekanya hagati"
 
-#: toolbar.py:559
+#: toolbar.py:567
 msgid "Right justify"
 msgstr "Gutondekanya iburyo"
 
-#: toolbar.py:562
+#: toolbar.py:570
 msgid "Fill justify"
 msgstr ""
 
-#: toolbar.py:597
+#: toolbar.py:605
 #, fuzzy
 msgid "Dashed List"
 msgstr "Urutonde n'utudomo"
 
-#: toolbar.py:601
+#: toolbar.py:609
 #, fuzzy
 msgid "Numbered List"
 msgstr "Urutonde ibarwa"
 
-#: toolbar.py:605
+#: toolbar.py:613
 msgid "Lower Case List"
 msgstr "Urutonde rwanditswe mu nyuguti ntoya"
 
-#: toolbar.py:609
+#: toolbar.py:617
 msgid "Upper Case List"
 msgstr "Urutonde rwanditswe munyuguti nkuru"
 
@@ -235,6 +235,9 @@ msgstr ""
 #: widgets.py:192
 msgid "PDF"
 msgstr "PDF"
+
+#~ msgid "Cancel"
+#~ msgstr "Gukuraho"
 
 #~ msgid "Image"
 #~ msgstr "Ishusho"

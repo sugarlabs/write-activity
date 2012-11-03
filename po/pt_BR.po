@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-27 14:55-0400\n"
+"POT-Creation-Date: 2012-10-25 00:30-0400\n"
 "PO-Revision-Date: 2009-12-06 08:04-0400\n"
 "Last-Translator: Robson Mendonça <robsonmwoc@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <fedora-docs-br@redhat.com>\n"
@@ -36,172 +36,172 @@ msgid ""
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
 
-#: AbiWordActivity.py:83
+#: AbiWordActivity.py:85
 msgid "Edit"
 msgstr "Editar"
 
-#: AbiWordActivity.py:89
+#: AbiWordActivity.py:91
 msgid "View"
 msgstr "Ver"
 
-#: AbiWordActivity.py:98
+#: AbiWordActivity.py:107
 msgid "Text"
 msgstr "Texto"
 
-#: AbiWordActivity.py:104
+#: AbiWordActivity.py:113
 msgid "Paragraph"
 msgstr "Parágrafo"
 
 # I think it's better not to translate the term "bullet"
-#: AbiWordActivity.py:110 toolbar.py:593
+#: AbiWordActivity.py:119 toolbar.py:601
 msgid "Bullet List"
 msgstr "Lista"
 
-#: AbiWordActivity.py:116 toolbar.py:218
+#: AbiWordActivity.py:125
 msgid "Table"
 msgstr "Tabela"
 
-#: AbiWordActivity.py:123
+#: AbiWordActivity.py:132
 msgid "Insert Image"
 msgstr "Inserir Imagem"
 
-#: AbiWordActivity.py:130
+#: AbiWordActivity.py:139
 msgid "Floating"
 msgstr ""
 
-#: speechtoolbar.py:57
+#: speechtoolbar.py:58
 msgid "Play / Pause"
 msgstr ""
 
-#: speechtoolbar.py:65
+#: speechtoolbar.py:66
 msgid "Stop"
 msgstr ""
 
-#: toolbar.py:95
+#: toolbar.py:99
 msgid "Search"
 msgstr "Procurar"
 
-#: toolbar.py:112
+#: toolbar.py:116
 msgid "Find previous"
 msgstr "Buscar anterior"
 
-#: toolbar.py:118
+#: toolbar.py:122
 msgid "Find next"
 msgstr "Buscar próximo"
 
-#: toolbar.py:218
-msgid "Cancel"
-msgstr "Cancelar"
+#: toolbar.py:222
+msgid "Create table"
+msgstr ""
 
-#: toolbar.py:230
+#: toolbar.py:232
 msgid "Insert Row"
 msgstr "Inserir Linha"
 
-#: toolbar.py:236
+#: toolbar.py:238
 msgid "Delete Row"
 msgstr "Remover Linha"
 
-#: toolbar.py:242
+#: toolbar.py:244
 msgid "Insert Column"
 msgstr "Inserir Coluna"
 
-#: toolbar.py:248
+#: toolbar.py:250
 msgid "Delete Column"
 msgstr "Remover Coluna"
 
-#: toolbar.py:290
+#: toolbar.py:295
 msgid "Zoom Out"
 msgstr "Diminuir zoom"
 
-#: toolbar.py:297
+#: toolbar.py:302
 msgid "Zoom In"
 msgstr "Aumentar zoom"
 
-#: toolbar.py:303
+#: toolbar.py:308
 msgid "Zoom to width"
 msgstr ""
 
 # qual é o contexto de significação deste símbolo?
-#: toolbar.py:320
+#: toolbar.py:325
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:332
+#: toolbar.py:337
 msgid "Page: "
 msgstr "Página: "
 
-#: toolbar.py:427
+#: toolbar.py:432
 msgid "Bold"
 msgstr "Negrito"
 
-#: toolbar.py:435
+#: toolbar.py:441
 msgid "Italic"
 msgstr "Itálico"
 
-#: toolbar.py:443
+#: toolbar.py:450
 msgid "Underline"
 msgstr "Sublinhado"
 
-#: toolbar.py:506 toolbar.py:583
+#: toolbar.py:514 toolbar.py:591
 msgid "Normal"
 msgstr "Normal"
 
-#: toolbar.py:517
+#: toolbar.py:525
 msgid "Heading 1"
 msgstr "Título 1"
 
-#: toolbar.py:521
+#: toolbar.py:529
 msgid "Heading 2"
 msgstr "Título 2"
 
-#: toolbar.py:525
+#: toolbar.py:533
 msgid "Heading 3"
 msgstr "Título 3"
 
-#: toolbar.py:529
+#: toolbar.py:537
 msgid "Heading 4"
 msgstr "Título 4"
 
-#: toolbar.py:533
+#: toolbar.py:541
 msgid "Block Text"
 msgstr "Bloco de texto"
 
-#: toolbar.py:537
+#: toolbar.py:545
 msgid "Plain Text"
 msgstr "Texto sem formatação"
 
-#: toolbar.py:553
+#: toolbar.py:561
 msgid "Left justify"
 msgstr "Ajustado à esquerda"
 
-#: toolbar.py:556
+#: toolbar.py:564
 msgid "Center justify"
 msgstr "Ajustado ao Centro"
 
-#: toolbar.py:559
+#: toolbar.py:567
 msgid "Right justify"
 msgstr "Ajustado à direita"
 
-#: toolbar.py:562
+#: toolbar.py:570
 msgid "Fill justify"
 msgstr "Ajustado para preenchimento"
 
-#: toolbar.py:597
+#: toolbar.py:605
 msgid "Dashed List"
 msgstr "Lista com traços"
 
-#: toolbar.py:601
+#: toolbar.py:609
 msgid "Numbered List"
 msgstr "Lista numerada"
 
 # This is a hard translate. It would be something like "Lista de ítens numerados com letras minúsculas". I think it's not applicable.
 # What about "lista com letras minúsculas"?
-#: toolbar.py:605
+#: toolbar.py:613
 msgid "Lower Case List"
 msgstr "Lista (minúsculas)"
 
 # See "Lower Case List" comment, please.
-#: toolbar.py:609
+#: toolbar.py:617
 msgid "Upper Case List"
 msgstr "Lista (maiúsculas)"
 
@@ -236,6 +236,9 @@ msgstr ""
 #: widgets.py:192
 msgid "PDF"
 msgstr ""
+
+#~ msgid "Cancel"
+#~ msgstr "Cancelar"
 
 #~ msgid "Export"
 #~ msgstr "Exportar"

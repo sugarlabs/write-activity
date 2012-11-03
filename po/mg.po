@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-27 14:55-0400\n"
+"POT-Creation-Date: 2012-10-25 00:30-0400\n"
 "PO-Revision-Date: 2011-02-14 18:59+0200\n"
 "Last-Translator: Zafimamy Gabriella Ralaivao <gabriella@intnet.mu>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,167 +36,167 @@ msgid ""
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
 
-#: AbiWordActivity.py:83
+#: AbiWordActivity.py:85
 msgid "Edit"
 msgstr "Ovao"
 
-#: AbiWordActivity.py:89
+#: AbiWordActivity.py:91
 msgid "View"
 msgstr "Jereo"
 
-#: AbiWordActivity.py:98
+#: AbiWordActivity.py:107
 msgid "Text"
 msgstr "Lahatsoratra"
 
-#: AbiWordActivity.py:104
+#: AbiWordActivity.py:113
 msgid "Paragraph"
 msgstr "Andalantsoratra"
 
-#: AbiWordActivity.py:110 toolbar.py:593
+#: AbiWordActivity.py:119 toolbar.py:601
 msgid "Bullet List"
 msgstr "lisitra ialohavan'ny teboka"
 
-#: AbiWordActivity.py:116 toolbar.py:218
+#: AbiWordActivity.py:125
 msgid "Table"
 msgstr "Tabilao"
 
-#: AbiWordActivity.py:123
+#: AbiWordActivity.py:132
 msgid "Insert Image"
 msgstr "ampidiro sary"
 
-#: AbiWordActivity.py:130
+#: AbiWordActivity.py:139
 msgid "Floating"
 msgstr "Mitsikafona"
 
-#: speechtoolbar.py:57
+#: speechtoolbar.py:58
 msgid "Play / Pause"
 msgstr ""
 
-#: speechtoolbar.py:65
+#: speechtoolbar.py:66
 msgid "Stop"
 msgstr ""
 
-#: toolbar.py:95
+#: toolbar.py:99
 msgid "Search"
 msgstr "Karohy"
 
-#: toolbar.py:112
+#: toolbar.py:116
 msgid "Find previous"
 msgstr "Tadiavo ny teo aloha"
 
-#: toolbar.py:118
+#: toolbar.py:122
 msgid "Find next"
 msgstr "Tadivao ny manaraka"
 
-#: toolbar.py:218
-msgid "Cancel"
-msgstr "foany"
+#: toolbar.py:222
+msgid "Create table"
+msgstr ""
 
-#: toolbar.py:230
+#: toolbar.py:232
 msgid "Insert Row"
 msgstr "ampidiro andalana"
 
-#: toolbar.py:236
+#: toolbar.py:238
 msgid "Delete Row"
 msgstr "vonoy ny andalana"
 
-#: toolbar.py:242
+#: toolbar.py:244
 msgid "Insert Column"
 msgstr "ampidiro tsanganana"
 
-#: toolbar.py:248
+#: toolbar.py:250
 msgid "Delete Column"
 msgstr "vonoy ny tsanganana"
 
-#: toolbar.py:290
+#: toolbar.py:295
 msgid "Zoom Out"
 msgstr "tomory lavitra"
 
-#: toolbar.py:297
+#: toolbar.py:302
 msgid "Zoom In"
 msgstr "tomory akaiky"
 
-#: toolbar.py:303
+#: toolbar.py:308
 msgid "Zoom to width"
 msgstr ""
 
-#: toolbar.py:320
+#: toolbar.py:325
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:332
+#: toolbar.py:337
 msgid "Page: "
 msgstr "Pejy:_"
 
-#: toolbar.py:427
+#: toolbar.py:432
 msgid "Bold"
 msgstr "matavy"
 
-#: toolbar.py:435
+#: toolbar.py:441
 msgid "Italic"
 msgstr "mitanila"
 
-#: toolbar.py:443
+#: toolbar.py:450
 msgid "Underline"
 msgstr "mitsipika"
 
-#: toolbar.py:506 toolbar.py:583
+#: toolbar.py:514 toolbar.py:591
 msgid "Normal"
 msgstr "Antonony"
 
-#: toolbar.py:517
+#: toolbar.py:525
 msgid "Heading 1"
 msgstr "Lohateny 1"
 
-#: toolbar.py:521
+#: toolbar.py:529
 msgid "Heading 2"
 msgstr "Lohateny 2"
 
-#: toolbar.py:525
+#: toolbar.py:533
 msgid "Heading 3"
 msgstr "Lohateny 3"
 
-#: toolbar.py:529
+#: toolbar.py:537
 msgid "Heading 4"
 msgstr "Lohateny 4"
 
-#: toolbar.py:533
+#: toolbar.py:541
 msgid "Block Text"
 msgstr "Vongantsoratra"
 
-#: toolbar.py:537
+#: toolbar.py:545
 msgid "Plain Text"
 msgstr "Lahatsoratra tsotra"
 
-#: toolbar.py:553
+#: toolbar.py:561
 msgid "Left justify"
 msgstr "Mifanitsy havia"
 
-#: toolbar.py:556
+#: toolbar.py:564
 msgid "Center justify"
 msgstr "Mifanitsy avofoany"
 
-#: toolbar.py:559
+#: toolbar.py:567
 msgid "Right justify"
 msgstr "Mifanitsy havanana"
 
-#: toolbar.py:562
+#: toolbar.py:570
 msgid "Fill justify"
 msgstr "Mifanitsy feno"
 
-#: toolbar.py:597
+#: toolbar.py:605
 msgid "Dashed List"
 msgstr "Lisitra misy tsipika"
 
-#: toolbar.py:601
+#: toolbar.py:609
 msgid "Numbered List"
 msgstr "Lisitra misy isa"
 
-#: toolbar.py:605
+#: toolbar.py:613
 msgid "Lower Case List"
 msgstr "Lisitra a b d"
 
-#: toolbar.py:609
+#: toolbar.py:617
 msgid "Upper Case List"
 msgstr "Lisitra A B D"
 
@@ -231,6 +231,9 @@ msgstr "Endrika tahirinkevitra finday (PDF)"
 #: widgets.py:192
 msgid "PDF"
 msgstr "PDF"
+
+#~ msgid "Cancel"
+#~ msgstr "foany"
 
 #~ msgid "Export"
 #~ msgstr "Aondrano"

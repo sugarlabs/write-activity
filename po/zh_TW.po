@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OLPC Write\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-27 14:55-0400\n"
+"POT-Creation-Date: 2012-10-25 00:30-0400\n"
 "PO-Revision-Date: 2012-08-22 02:44+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: Yuan CHAO <yuanchao@gmail.com>\n"
@@ -32,167 +32,167 @@ msgid ""
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
 
-#: AbiWordActivity.py:83
+#: AbiWordActivity.py:85
 msgid "Edit"
 msgstr "編輯"
 
-#: AbiWordActivity.py:89
+#: AbiWordActivity.py:91
 msgid "View"
 msgstr "檢視"
 
-#: AbiWordActivity.py:98
+#: AbiWordActivity.py:107
 msgid "Text"
 msgstr "文字"
 
-#: AbiWordActivity.py:104
+#: AbiWordActivity.py:113
 msgid "Paragraph"
 msgstr "段落"
 
-#: AbiWordActivity.py:110 toolbar.py:593
+#: AbiWordActivity.py:119 toolbar.py:601
 msgid "Bullet List"
 msgstr "圓點條列項目"
 
-#: AbiWordActivity.py:116 toolbar.py:218
+#: AbiWordActivity.py:125
 msgid "Table"
 msgstr "表格"
 
-#: AbiWordActivity.py:123
+#: AbiWordActivity.py:132
 msgid "Insert Image"
 msgstr "插入圖片"
 
-#: AbiWordActivity.py:130
+#: AbiWordActivity.py:139
 msgid "Floating"
 msgstr "旋轉"
 
-#: speechtoolbar.py:57
+#: speechtoolbar.py:58
 msgid "Play / Pause"
 msgstr "播放 / 暫停"
 
-#: speechtoolbar.py:65
+#: speechtoolbar.py:66
 msgid "Stop"
 msgstr "停止"
 
-#: toolbar.py:95
+#: toolbar.py:99
 msgid "Search"
 msgstr "尋找"
 
-#: toolbar.py:112
+#: toolbar.py:116
 msgid "Find previous"
 msgstr "找上一個"
 
-#: toolbar.py:118
+#: toolbar.py:122
 msgid "Find next"
 msgstr "找下一個"
 
-#: toolbar.py:218
-msgid "Cancel"
-msgstr "取消"
+#: toolbar.py:222
+msgid "Create table"
+msgstr ""
 
-#: toolbar.py:230
+#: toolbar.py:232
 msgid "Insert Row"
 msgstr "插入列"
 
-#: toolbar.py:236
+#: toolbar.py:238
 msgid "Delete Row"
 msgstr "刪除列"
 
-#: toolbar.py:242
+#: toolbar.py:244
 msgid "Insert Column"
 msgstr "插入行"
 
-#: toolbar.py:248
+#: toolbar.py:250
 msgid "Delete Column"
 msgstr "刪除行"
 
-#: toolbar.py:290
+#: toolbar.py:295
 msgid "Zoom Out"
 msgstr "縮小"
 
-#: toolbar.py:297
+#: toolbar.py:302
 msgid "Zoom In"
 msgstr "放大"
 
-#: toolbar.py:303
+#: toolbar.py:308
 msgid "Zoom to width"
 msgstr "最適寬度"
 
-#: toolbar.py:320
+#: toolbar.py:325
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:332
+#: toolbar.py:337
 msgid "Page: "
 msgstr "頁碼: "
 
-#: toolbar.py:427
+#: toolbar.py:432
 msgid "Bold"
 msgstr "粗體"
 
-#: toolbar.py:435
+#: toolbar.py:441
 msgid "Italic"
 msgstr "斜體"
 
-#: toolbar.py:443
+#: toolbar.py:450
 msgid "Underline"
 msgstr "劃底線"
 
-#: toolbar.py:506 toolbar.py:583
+#: toolbar.py:514 toolbar.py:591
 msgid "Normal"
 msgstr "一般"
 
-#: toolbar.py:517
+#: toolbar.py:525
 msgid "Heading 1"
 msgstr "主標題"
 
-#: toolbar.py:521
+#: toolbar.py:529
 msgid "Heading 2"
 msgstr "大標題"
 
-#: toolbar.py:525
+#: toolbar.py:533
 msgid "Heading 3"
 msgstr "次標題"
 
-#: toolbar.py:529
+#: toolbar.py:537
 msgid "Heading 4"
 msgstr "小標題"
 
-#: toolbar.py:533
+#: toolbar.py:541
 msgid "Block Text"
 msgstr "區塊文字"
 
-#: toolbar.py:537
+#: toolbar.py:545
 msgid "Plain Text"
 msgstr "純文字"
 
-#: toolbar.py:553
+#: toolbar.py:561
 msgid "Left justify"
 msgstr "靠左"
 
-#: toolbar.py:556
+#: toolbar.py:564
 msgid "Center justify"
 msgstr "置中"
 
-#: toolbar.py:559
+#: toolbar.py:567
 msgid "Right justify"
 msgstr "靠右"
 
-#: toolbar.py:562
+#: toolbar.py:570
 msgid "Fill justify"
 msgstr "左右對齊"
 
-#: toolbar.py:597
+#: toolbar.py:605
 msgid "Dashed List"
 msgstr "短線條列項目"
 
-#: toolbar.py:601
+#: toolbar.py:609
 msgid "Numbered List"
 msgstr "數字條列項目"
 
-#: toolbar.py:605
+#: toolbar.py:613
 msgid "Lower Case List"
 msgstr "小寫英文條列項目"
 
-#: toolbar.py:609
+#: toolbar.py:617
 msgid "Upper Case List"
 msgstr "大寫英文條列項目"
 
@@ -227,6 +227,9 @@ msgstr "可攜式文件格式（PDF）"
 #: widgets.py:192
 msgid "PDF"
 msgstr "pdf"
+
+#~ msgid "Cancel"
+#~ msgstr "取消"
 
 #~ msgid "Export"
 #~ msgstr "匯出"

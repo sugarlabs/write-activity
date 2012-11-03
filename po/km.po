@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-27 14:55-0400\n"
+"POT-Creation-Date: 2012-10-25 00:30-0400\n"
 "PO-Revision-Date: 2011-04-28 14:33+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,167 +36,167 @@ msgid ""
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
 
-#: AbiWordActivity.py:83
+#: AbiWordActivity.py:85
 msgid "Edit"
 msgstr "កែ"
 
-#: AbiWordActivity.py:89
+#: AbiWordActivity.py:91
 msgid "View"
 msgstr "មើល"
 
-#: AbiWordActivity.py:98
+#: AbiWordActivity.py:107
 msgid "Text"
 msgstr "អក្សរ"
 
-#: AbiWordActivity.py:104
+#: AbiWordActivity.py:113
 msgid "Paragraph"
 msgstr "កថាខណ្ឌ"
 
-#: AbiWordActivity.py:110 toolbar.py:593
+#: AbiWordActivity.py:119 toolbar.py:601
 msgid "Bullet List"
 msgstr "សំនុមចំនុច"
 
-#: AbiWordActivity.py:116 toolbar.py:218
+#: AbiWordActivity.py:125
 msgid "Table"
 msgstr "តារាង"
 
-#: AbiWordActivity.py:123
+#: AbiWordActivity.py:132
 msgid "Insert Image"
 msgstr "បញ្ចូល​រូបភាព"
 
-#: AbiWordActivity.py:130
+#: AbiWordActivity.py:139
 msgid "Floating"
 msgstr "អណ្ដែត​"
 
-#: speechtoolbar.py:57
+#: speechtoolbar.py:58
 msgid "Play / Pause"
 msgstr ""
 
-#: speechtoolbar.py:65
+#: speechtoolbar.py:66
 msgid "Stop"
 msgstr ""
 
-#: toolbar.py:95
+#: toolbar.py:99
 msgid "Search"
 msgstr "ស្វែងរក"
 
-#: toolbar.py:112
+#: toolbar.py:116
 msgid "Find previous"
 msgstr "រក​ទៅ​ក្រោយ"
 
-#: toolbar.py:118
+#: toolbar.py:122
 msgid "Find next"
 msgstr "រក​ទៅ​មុខ"
 
-#: toolbar.py:218
-msgid "Cancel"
-msgstr "បោះបង់"
+#: toolbar.py:222
+msgid "Create table"
+msgstr ""
 
-#: toolbar.py:230
+#: toolbar.py:232
 msgid "Insert Row"
 msgstr "បញ្ចូល​ជួរដេក"
 
-#: toolbar.py:236
+#: toolbar.py:238
 msgid "Delete Row"
 msgstr "ដក​ជួរដេក"
 
-#: toolbar.py:242
+#: toolbar.py:244
 msgid "Insert Column"
 msgstr "បញ្ចូល​ជួរឈរ"
 
-#: toolbar.py:248
+#: toolbar.py:250
 msgid "Delete Column"
 msgstr "ដក​ជួរ​ឈរ"
 
-#: toolbar.py:290
+#: toolbar.py:295
 msgid "Zoom Out"
 msgstr "ពង្រីក"
 
-#: toolbar.py:297
+#: toolbar.py:302
 msgid "Zoom In"
 msgstr "បង្រួម"
 
-#: toolbar.py:303
+#: toolbar.py:308
 msgid "Zoom to width"
 msgstr ""
 
-#: toolbar.py:320
+#: toolbar.py:325
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:332
+#: toolbar.py:337
 msgid "Page: "
 msgstr "ទំព័រ ៖"
 
-#: toolbar.py:427
+#: toolbar.py:432
 msgid "Bold"
 msgstr "ដុត"
 
-#: toolbar.py:435
+#: toolbar.py:441
 msgid "Italic"
 msgstr "ទ្រេត"
 
-#: toolbar.py:443
+#: toolbar.py:450
 msgid "Underline"
 msgstr "គូស​បន្ទាត់​ក្រាម"
 
-#: toolbar.py:506 toolbar.py:583
+#: toolbar.py:514 toolbar.py:591
 msgid "Normal"
 msgstr "ធម្មតា"
 
-#: toolbar.py:517
+#: toolbar.py:525
 msgid "Heading 1"
 msgstr "ក្បាល ១"
 
-#: toolbar.py:521
+#: toolbar.py:529
 msgid "Heading 2"
 msgstr "ក្បាល ២"
 
-#: toolbar.py:525
+#: toolbar.py:533
 msgid "Heading 3"
 msgstr "ក្បាល ៣"
 
-#: toolbar.py:529
+#: toolbar.py:537
 msgid "Heading 4"
 msgstr "ក្បាល ៤"
 
-#: toolbar.py:533
+#: toolbar.py:541
 msgid "Block Text"
 msgstr "អក្សរប្លុក"
 
-#: toolbar.py:537
+#: toolbar.py:545
 msgid "Plain Text"
 msgstr "អក្សរ​ធម្មតា"
 
-#: toolbar.py:553
+#: toolbar.py:561
 msgid "Left justify"
 msgstr "តម្រឹមឆ្វេង"
 
-#: toolbar.py:556
+#: toolbar.py:564
 msgid "Center justify"
 msgstr ""
 
-#: toolbar.py:559
+#: toolbar.py:567
 msgid "Right justify"
 msgstr "តម្រឹមស្ដាំ"
 
-#: toolbar.py:562
+#: toolbar.py:570
 msgid "Fill justify"
 msgstr ""
 
-#: toolbar.py:597
+#: toolbar.py:605
 msgid "Dashed List"
 msgstr "សំនុម​ខ្សែដាច់"
 
-#: toolbar.py:601
+#: toolbar.py:609
 msgid "Numbered List"
 msgstr "សំនុមលេខ"
 
-#: toolbar.py:605
+#: toolbar.py:613
 msgid "Lower Case List"
 msgstr "សំនុម​អក្សរ​តូច"
 
-#: toolbar.py:609
+#: toolbar.py:617
 msgid "Upper Case List"
 msgstr "សំនុម​អក្សរ​ធំ"
 
@@ -231,3 +231,6 @@ msgstr "ទ្រង់ទ្រាយ​ឯកសារ​ចល័ត (PDF)"
 #: widgets.py:192
 msgid "PDF"
 msgstr "PDF"
+
+#~ msgid "Cancel"
+#~ msgstr "បោះបង់"

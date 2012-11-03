@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-27 14:55-0400\n"
+"POT-Creation-Date: 2012-10-25 00:30-0400\n"
 "PO-Revision-Date: 2009-05-13 12:51-0400\n"
 "Last-Translator: Donghee Park <i4u_4ever@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,167 +36,167 @@ msgid ""
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
 
-#: AbiWordActivity.py:83
+#: AbiWordActivity.py:85
 msgid "Edit"
 msgstr "편집"
 
-#: AbiWordActivity.py:89
+#: AbiWordActivity.py:91
 msgid "View"
 msgstr "보기"
 
-#: AbiWordActivity.py:98
+#: AbiWordActivity.py:107
 msgid "Text"
 msgstr "문자"
 
-#: AbiWordActivity.py:104
+#: AbiWordActivity.py:113
 msgid "Paragraph"
 msgstr ""
 
-#: AbiWordActivity.py:110 toolbar.py:593
+#: AbiWordActivity.py:119 toolbar.py:601
 msgid "Bullet List"
 msgstr "총알 리스트"
 
-#: AbiWordActivity.py:116 toolbar.py:218
+#: AbiWordActivity.py:125
 msgid "Table"
 msgstr "표"
 
-#: AbiWordActivity.py:123
+#: AbiWordActivity.py:132
 msgid "Insert Image"
 msgstr "이미지 삽입"
 
-#: AbiWordActivity.py:130
+#: AbiWordActivity.py:139
 msgid "Floating"
 msgstr ""
 
-#: speechtoolbar.py:57
+#: speechtoolbar.py:58
 msgid "Play / Pause"
 msgstr ""
 
-#: speechtoolbar.py:65
+#: speechtoolbar.py:66
 msgid "Stop"
 msgstr ""
 
-#: toolbar.py:95
+#: toolbar.py:99
 msgid "Search"
 msgstr ""
 
-#: toolbar.py:112
+#: toolbar.py:116
 msgid "Find previous"
 msgstr "이전 찾기"
 
-#: toolbar.py:118
+#: toolbar.py:122
 msgid "Find next"
 msgstr "다음 찾기"
 
-#: toolbar.py:218
-msgid "Cancel"
-msgstr "취소"
+#: toolbar.py:222
+msgid "Create table"
+msgstr ""
 
-#: toolbar.py:230
+#: toolbar.py:232
 msgid "Insert Row"
 msgstr "줄 삽입"
 
-#: toolbar.py:236
+#: toolbar.py:238
 msgid "Delete Row"
 msgstr "줄 삭제"
 
-#: toolbar.py:242
+#: toolbar.py:244
 msgid "Insert Column"
 msgstr "컬럼 삽입"
 
-#: toolbar.py:248
+#: toolbar.py:250
 msgid "Delete Column"
 msgstr "컬럼 삭제"
 
-#: toolbar.py:290
+#: toolbar.py:295
 msgid "Zoom Out"
 msgstr "축소"
 
-#: toolbar.py:297
+#: toolbar.py:302
 msgid "Zoom In"
 msgstr "확대"
 
-#: toolbar.py:303
+#: toolbar.py:308
 msgid "Zoom to width"
 msgstr ""
 
-#: toolbar.py:320
+#: toolbar.py:325
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:332
+#: toolbar.py:337
 msgid "Page: "
 msgstr "페이지: "
 
-#: toolbar.py:427
+#: toolbar.py:432
 msgid "Bold"
 msgstr "굵게"
 
-#: toolbar.py:435
+#: toolbar.py:441
 msgid "Italic"
 msgstr "이탤릭"
 
-#: toolbar.py:443
+#: toolbar.py:450
 msgid "Underline"
 msgstr "밑줄"
 
-#: toolbar.py:506 toolbar.py:583
+#: toolbar.py:514 toolbar.py:591
 msgid "Normal"
 msgstr "보통"
 
-#: toolbar.py:517
+#: toolbar.py:525
 msgid "Heading 1"
 msgstr "제목 1"
 
-#: toolbar.py:521
+#: toolbar.py:529
 msgid "Heading 2"
 msgstr "제목 2"
 
-#: toolbar.py:525
+#: toolbar.py:533
 msgid "Heading 3"
 msgstr "제목 3"
 
-#: toolbar.py:529
+#: toolbar.py:537
 msgid "Heading 4"
 msgstr "제목 4"
 
-#: toolbar.py:533
+#: toolbar.py:541
 msgid "Block Text"
 msgstr "블록 문자"
 
-#: toolbar.py:537
+#: toolbar.py:545
 msgid "Plain Text"
 msgstr "일반 문자"
 
-#: toolbar.py:553
+#: toolbar.py:561
 msgid "Left justify"
 msgstr ""
 
-#: toolbar.py:556
+#: toolbar.py:564
 msgid "Center justify"
 msgstr ""
 
-#: toolbar.py:559
+#: toolbar.py:567
 msgid "Right justify"
 msgstr ""
 
-#: toolbar.py:562
+#: toolbar.py:570
 msgid "Fill justify"
 msgstr ""
 
-#: toolbar.py:597
+#: toolbar.py:605
 msgid "Dashed List"
 msgstr "대쉬 리스트"
 
-#: toolbar.py:601
+#: toolbar.py:609
 msgid "Numbered List"
 msgstr "숫자 리스트"
 
-#: toolbar.py:605
+#: toolbar.py:613
 msgid "Lower Case List"
 msgstr "Lower Case 리스트"
 
-#: toolbar.py:609
+#: toolbar.py:617
 msgid "Upper Case List"
 msgstr "Upper Case 리스트"
 
@@ -231,6 +231,9 @@ msgstr ""
 #: widgets.py:192
 msgid "PDF"
 msgstr ""
+
+#~ msgid "Cancel"
+#~ msgstr "취소"
 
 #~ msgid "Image"
 #~ msgstr "이미지"

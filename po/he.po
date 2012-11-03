@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-27 14:55-0400\n"
+"POT-Creation-Date: 2012-10-25 00:30-0400\n"
 "PO-Revision-Date: 2008-12-20 00:14-0500\n"
 "Last-Translator: Chris Leonard <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,196 +36,195 @@ msgid ""
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
 
-#: AbiWordActivity.py:83
+#: AbiWordActivity.py:85
 #, fuzzy
 msgid "Edit"
 msgstr "עריכה"
 
-#: AbiWordActivity.py:89
+#: AbiWordActivity.py:91
 #, fuzzy
 msgid "View"
 msgstr "תצוגה"
 
-#: AbiWordActivity.py:98
+#: AbiWordActivity.py:107
 #, fuzzy
 msgid "Text"
 msgstr "טקסט"
 
-#: AbiWordActivity.py:104
+#: AbiWordActivity.py:113
 msgid "Paragraph"
 msgstr ""
 
-#: AbiWordActivity.py:110 toolbar.py:593
+#: AbiWordActivity.py:119 toolbar.py:601
 #, fuzzy
 msgid "Bullet List"
 msgstr "רשימת תבליטים (נקודות)"
 
-#: AbiWordActivity.py:116 toolbar.py:218
+#: AbiWordActivity.py:125
 #, fuzzy
 msgid "Table"
 msgstr "טבלה"
 
-#: AbiWordActivity.py:123
+#: AbiWordActivity.py:132
 #, fuzzy
 msgid "Insert Image"
 msgstr "הוסף תמונה"
 
-#: AbiWordActivity.py:130
+#: AbiWordActivity.py:139
 msgid "Floating"
 msgstr ""
 
-#: speechtoolbar.py:57
+#: speechtoolbar.py:58
 msgid "Play / Pause"
 msgstr ""
 
-#: speechtoolbar.py:65
+#: speechtoolbar.py:66
 msgid "Stop"
 msgstr ""
 
-#: toolbar.py:95
+#: toolbar.py:99
 msgid "Search"
 msgstr ""
 
-#: toolbar.py:112
+#: toolbar.py:116
 #, fuzzy
 msgid "Find previous"
 msgstr "מצא מופע קודם"
 
-#: toolbar.py:118
+#: toolbar.py:122
 #, fuzzy
 msgid "Find next"
 msgstr "מצא מופע בא"
 
-#: toolbar.py:218
-#, fuzzy
-msgid "Cancel"
-msgstr "בטל"
+#: toolbar.py:222
+msgid "Create table"
+msgstr ""
 
-#: toolbar.py:230
+#: toolbar.py:232
 #, fuzzy
 msgid "Insert Row"
 msgstr "הוסף שורה"
 
-#: toolbar.py:236
+#: toolbar.py:238
 #, fuzzy
 msgid "Delete Row"
 msgstr "מחק שורה"
 
-#: toolbar.py:242
+#: toolbar.py:244
 #, fuzzy
 msgid "Insert Column"
 msgstr "הוסף עמודה"
 
-#: toolbar.py:248
+#: toolbar.py:250
 #, fuzzy
 msgid "Delete Column"
 msgstr "מחק עמודה"
 
-#: toolbar.py:290
+#: toolbar.py:295
 #, fuzzy
 msgid "Zoom Out"
 msgstr "הקטן"
 
-#: toolbar.py:297
+#: toolbar.py:302
 #, fuzzy
 msgid "Zoom In"
 msgstr "הגדל"
 
-#: toolbar.py:303
+#: toolbar.py:308
 msgid "Zoom to width"
 msgstr ""
 
-#: toolbar.py:320
+#: toolbar.py:325
 #, fuzzy
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:332
+#: toolbar.py:337
 msgid "Page: "
 msgstr ""
 
-#: toolbar.py:427
+#: toolbar.py:432
 #, fuzzy
 msgid "Bold"
 msgstr "מודגש"
 
-#: toolbar.py:435
+#: toolbar.py:441
 #, fuzzy
 msgid "Italic"
 msgstr "נטוי"
 
-#: toolbar.py:443
+#: toolbar.py:450
 #, fuzzy
 msgid "Underline"
 msgstr "קו תחתון"
 
-#: toolbar.py:506 toolbar.py:583
+#: toolbar.py:514 toolbar.py:591
 #, fuzzy
 msgid "Normal"
 msgstr "רגיל"
 
-#: toolbar.py:517
+#: toolbar.py:525
 #, fuzzy
 msgid "Heading 1"
 msgstr "כותרת 1"
 
-#: toolbar.py:521
+#: toolbar.py:529
 #, fuzzy
 msgid "Heading 2"
 msgstr "כותרת 2"
 
-#: toolbar.py:525
+#: toolbar.py:533
 #, fuzzy
 msgid "Heading 3"
 msgstr "כותרת 3"
 
-#: toolbar.py:529
+#: toolbar.py:537
 #, fuzzy
 msgid "Heading 4"
 msgstr "כותרת 4"
 
-#: toolbar.py:533
+#: toolbar.py:541
 #, fuzzy
 msgid "Block Text"
 msgstr "טקסט חסום"
 
-#: toolbar.py:537
+#: toolbar.py:545
 #, fuzzy
 msgid "Plain Text"
 msgstr "טקסט רגיל"
 
-#: toolbar.py:553
+#: toolbar.py:561
 msgid "Left justify"
 msgstr ""
 
-#: toolbar.py:556
+#: toolbar.py:564
 msgid "Center justify"
 msgstr ""
 
-#: toolbar.py:559
+#: toolbar.py:567
 msgid "Right justify"
 msgstr ""
 
-#: toolbar.py:562
+#: toolbar.py:570
 msgid "Fill justify"
 msgstr ""
 
-#: toolbar.py:597
+#: toolbar.py:605
 #, fuzzy
 msgid "Dashed List"
 msgstr "רשימה מקוקוות"
 
-#: toolbar.py:601
+#: toolbar.py:609
 #, fuzzy
 msgid "Numbered List"
 msgstr "רשימה ממוספרת"
 
-#: toolbar.py:605
+#: toolbar.py:613
 #, fuzzy
 msgid "Lower Case List"
 msgstr "רשימה באותיות קטנות"
 
-#: toolbar.py:609
+#: toolbar.py:617
 #, fuzzy
 msgid "Upper Case List"
 msgstr "רשימה באותיות גדולות"
@@ -267,6 +266,10 @@ msgstr ""
 #: widgets.py:192
 msgid "PDF"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Cancel"
+#~ msgstr "בטל"
 
 #, fuzzy
 #~ msgid "Image"

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-27 14:55-0400\n"
+"POT-Creation-Date: 2012-10-25 00:30-0400\n"
 "PO-Revision-Date: 2008-08-26 10:55-0400\n"
 "Last-Translator: abdullah kocabas <abdullah.kocabas@abcdizustu.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,167 +35,167 @@ msgid ""
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
 
-#: AbiWordActivity.py:83
+#: AbiWordActivity.py:85
 msgid "Edit"
 msgstr "Düzenleyiniz."
 
-#: AbiWordActivity.py:89
+#: AbiWordActivity.py:91
 msgid "View"
 msgstr "Görünüm"
 
-#: AbiWordActivity.py:98
+#: AbiWordActivity.py:107
 msgid "Text"
 msgstr "Metin"
 
-#: AbiWordActivity.py:104
+#: AbiWordActivity.py:113
 msgid "Paragraph"
 msgstr ""
 
-#: AbiWordActivity.py:110 toolbar.py:593
+#: AbiWordActivity.py:119 toolbar.py:601
 msgid "Bullet List"
 msgstr "Noktalı Liste"
 
-#: AbiWordActivity.py:116 toolbar.py:218
+#: AbiWordActivity.py:125
 msgid "Table"
 msgstr "Tablo"
 
-#: AbiWordActivity.py:123
+#: AbiWordActivity.py:132
 msgid "Insert Image"
 msgstr "Resim ekleyiniz."
 
-#: AbiWordActivity.py:130
+#: AbiWordActivity.py:139
 msgid "Floating"
 msgstr ""
 
-#: speechtoolbar.py:57
+#: speechtoolbar.py:58
 msgid "Play / Pause"
 msgstr ""
 
-#: speechtoolbar.py:65
+#: speechtoolbar.py:66
 msgid "Stop"
 msgstr ""
 
-#: toolbar.py:95
+#: toolbar.py:99
 msgid "Search"
 msgstr ""
 
-#: toolbar.py:112
+#: toolbar.py:116
 msgid "Find previous"
 msgstr "Öncekini bulunuz."
 
-#: toolbar.py:118
+#: toolbar.py:122
 msgid "Find next"
 msgstr "Sonrakini bulunuz."
 
-#: toolbar.py:218
-msgid "Cancel"
-msgstr "Vazgeçiniz."
+#: toolbar.py:222
+msgid "Create table"
+msgstr ""
 
-#: toolbar.py:230
+#: toolbar.py:232
 msgid "Insert Row"
 msgstr "Satır Ekleyiniz."
 
-#: toolbar.py:236
+#: toolbar.py:238
 msgid "Delete Row"
 msgstr "Satırı Siliniz."
 
-#: toolbar.py:242
+#: toolbar.py:244
 msgid "Insert Column"
 msgstr "Kolon ekleyiniz."
 
-#: toolbar.py:248
+#: toolbar.py:250
 msgid "Delete Column"
 msgstr "Kolonu Siliniz."
 
-#: toolbar.py:290
+#: toolbar.py:295
 msgid "Zoom Out"
 msgstr "Küçültünüz."
 
-#: toolbar.py:297
+#: toolbar.py:302
 msgid "Zoom In"
 msgstr "Büyültünüz."
 
-#: toolbar.py:303
+#: toolbar.py:308
 msgid "Zoom to width"
 msgstr ""
 
-#: toolbar.py:320
+#: toolbar.py:325
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:332
+#: toolbar.py:337
 msgid "Page: "
 msgstr "Sayfa:"
 
-#: toolbar.py:427
+#: toolbar.py:432
 msgid "Bold"
 msgstr "Kalın"
 
-#: toolbar.py:435
+#: toolbar.py:441
 msgid "Italic"
 msgstr "Eğik"
 
-#: toolbar.py:443
+#: toolbar.py:450
 msgid "Underline"
 msgstr "Altçizgili"
 
-#: toolbar.py:506 toolbar.py:583
+#: toolbar.py:514 toolbar.py:591
 msgid "Normal"
 msgstr "Normal"
 
-#: toolbar.py:517
+#: toolbar.py:525
 msgid "Heading 1"
 msgstr "Başlık 1"
 
-#: toolbar.py:521
+#: toolbar.py:529
 msgid "Heading 2"
 msgstr "Başlık 2"
 
-#: toolbar.py:525
+#: toolbar.py:533
 msgid "Heading 3"
 msgstr "Başlık 3"
 
-#: toolbar.py:529
+#: toolbar.py:537
 msgid "Heading 4"
 msgstr "Başlık 4"
 
-#: toolbar.py:533
+#: toolbar.py:541
 msgid "Block Text"
 msgstr "Metin Parçası"
 
-#: toolbar.py:537
+#: toolbar.py:545
 msgid "Plain Text"
 msgstr "Düz Metin"
 
-#: toolbar.py:553
+#: toolbar.py:561
 msgid "Left justify"
 msgstr ""
 
-#: toolbar.py:556
+#: toolbar.py:564
 msgid "Center justify"
 msgstr ""
 
-#: toolbar.py:559
+#: toolbar.py:567
 msgid "Right justify"
 msgstr ""
 
-#: toolbar.py:562
+#: toolbar.py:570
 msgid "Fill justify"
 msgstr ""
 
-#: toolbar.py:597
+#: toolbar.py:605
 msgid "Dashed List"
 msgstr "Çizgili Liste"
 
-#: toolbar.py:601
+#: toolbar.py:609
 msgid "Numbered List"
 msgstr "Numaralı Liste"
 
-#: toolbar.py:605
+#: toolbar.py:613
 msgid "Lower Case List"
 msgstr "Küçük Harfli Liste"
 
-#: toolbar.py:609
+#: toolbar.py:617
 msgid "Upper Case List"
 msgstr "Büyük Harfli Liste"
 
@@ -231,6 +231,9 @@ msgstr ""
 #: widgets.py:192
 msgid "PDF"
 msgstr ""
+
+#~ msgid "Cancel"
+#~ msgstr "Vazgeçiniz."
 
 #~ msgid "Image"
 #~ msgstr "Resim"
