@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-25 00:30-0400\n"
-"PO-Revision-Date: 2012-10-01 13:07+0200\n"
-"Last-Translator: KatSitko <xanthe1808@gmail.com>\n"
+"PO-Revision-Date: 2012-11-13 23:41+0200\n"
+"Last-Translator: FRKS <frks@frks.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -94,7 +94,7 @@ msgstr "Znajdź następny"
 
 #: toolbar.py:222
 msgid "Create table"
-msgstr ""
+msgstr "Stwórz tabelę"
 
 #: toolbar.py:232
 msgid "Insert Row"
