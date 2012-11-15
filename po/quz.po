@@ -275,6 +275,3 @@ msgstr "Apanapap Qillqa Khipu (PDF)"
 msgid "PDF"
 msgstr "PDF"
 
-#  "Cancelar"
-#~ msgid "Cancel"
-#~ msgstr "Chinkachiy"
