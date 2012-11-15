@@ -172,9 +172,6 @@ class AbiWordActivity(activity.Activity):
         # no ugly borders please
         #self.abiword_canvas.set_property("shadow-type", Gtk.ShadowType.NONE)
 
-        # we only do per-word selections (when using the mouse)
-        self.abiword_canvas.set_word_selections(True)
-
         # we want a nice border so we can select paragraphs easily
         self.abiword_canvas.set_show_margin(True)
 
