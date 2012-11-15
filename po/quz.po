@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-25 00:30-0400\n"
-"PO-Revision-Date: 2012-07-15 17:34+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"PO-Revision-Date: 2012-11-15 05:44+0200\n"
+"Last-Translator: Irma  <sankaypillo@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: quz\n"
 "MIME-Version: 1.0\n"
@@ -28,6 +28,9 @@ msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
+"Kay ruwanaqa, qillqasqaykita churanapaqmi. Willakuytapas, harawitapas, ima "
+"willakuytapas qillqarillay! Munaspaqa siq'ikunap sayayninta hatunyachiypas "
+"huch'uyachiypas, hinallataq ima wankitapas churallawaqmi!"
 
 #  "Editar"
 #: AbiWordActivity.py:85
@@ -69,8 +72,8 @@ msgstr "Wankita winay"
 msgid "Floating"
 msgstr "Tuytusqa"
 
+#  [ES] "Reproducir / Pausar"
 #: speechtoolbar.py:58
-#, fuzzy
 msgid "Play / Pause"
 msgstr "Purichiy / Utichiy"
 
@@ -93,9 +96,10 @@ msgstr "Ñawpa machkhay"
 msgid "Find next"
 msgstr "Hamuq maskhay"
 
+#  [ES] "Crear tabla"
 #: toolbar.py:222
 msgid "Create table"
-msgstr ""
+msgstr "Maruta kamariy"
 
 #  "Insertar fila"
 #: toolbar.py:232
