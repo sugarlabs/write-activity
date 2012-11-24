@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: projects/write\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-25 00:30-0400\n"
-"PO-Revision-Date: 2012-06-03 18:02+0200\n"
-"Last-Translator: samy boutayeb <s.boutayeb@free.fr>\n"
+"PO-Revision-Date: 2012-11-24 17:09+0200\n"
+"Last-Translator: Lionel Laské <llaske@c2s.fr>\n"
 "Language-Team: French <traduc@traduc.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -35,6 +35,9 @@ msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
+"Ecrire est un espace pour mettre tes mots. Ecrire une histoire, un poème, un "
+"rapport, n'importe quoi ! Essayes de changer l'apparence et la taille de "
+"ton texte; même mettre une image !"
 
 #: AbiWordActivity.py:85
 msgid "Edit"
@@ -90,7 +93,7 @@ msgstr "Rechercher suivant"
 
 #: toolbar.py:222
 msgid "Create table"
-msgstr ""
+msgstr "Créer un tableau"
 
 #: toolbar.py:232
 msgid "Insert Row"
