@@ -48,6 +48,7 @@ from toolbar import ListToolbar
 from toolbar import InsertToolbar
 from toolbar import ParagraphToolbar
 from widgets import ExportButtonFactory
+from widgets import DocumentView
 from port import chooser
 
 import speech
@@ -65,7 +66,7 @@ class AbiWordActivity(activity.Activity):
         os.chdir(os.path.expanduser('~'))
 
         # create our main abiword canvas
-        self.abiword_canvas = Abi.Widget()
+        self.abiword_canvas = DocumentView()
         self._shared_activity = None
         self._new_instance = True
         toolbar_box = ToolbarBox()

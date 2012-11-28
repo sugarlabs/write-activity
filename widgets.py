@@ -18,6 +18,9 @@ import time
 from gettext import gettext as _
 import logging
 
+from gi.repository import Abi
+from gi.repository import GLib
+
 from sugar3.graphics.radiotoolbutton import RadioToolButton
 from sugar3.graphics.combobox import ComboBox
 from sugar3.graphics.palette import Palette
@@ -247,3 +250,60 @@ class ExportButtonFactory():
         datastore.write(fileObject, transfer_ownership=True)
         fileObject.destroy()
         del fileObject
+
+
+class DocumentView(Abi.Widget):
+
+    def __init__(self):
+        Abi.Widget.__init__(self)
+        self.connect('size-allocate', self.__size_allocate_cb)
+        self.connect('request-clear-area', self.__request_clear_area_cb)
+        self.connect('unset-clear-area', self.__unset_clear_area_cb)
+        self.osk_changed = False
+        self.dy = 0
+
+    def __shallow_move_cb(self):
+        self.moveto_right()
+        return False
+
+    def __size_allocate_cb(self, widget, allocation):
+        self.set_allocation(allocation)
+
+        if self.get_child() is not None:
+            child_allocation = allocation
+            child_allocation.y = 0
+            child_allocation.x = 0
+            child_allocation.height -= self.dy
+            self.get_child().size_allocate(allocation)
+
+        if self.osk_changed is True:
+            self.moveto_left()
+            GLib.timeout_add(100, self.__shallow_move_cb)
+            self.osk_changed = False
+
+    def __request_clear_area_cb(self, widget, clear, cursor):
+        allocation = widget.get_allocation()
+        allocation.x = 0
+        allocation.y = 0
+        allocation.x, allocation.y = \
+                widget.get_window().get_root_coords(allocation.x, allocation.y)
+
+        if clear.y > allocation.y + allocation.height or \
+              clear.y + clear.height < allocation.y:
+            return False
+
+        self.dy = allocation.y + allocation.height - clear.y
+
+        # Ensure there's at least some room for the view
+        if self.dy > allocation.height - 80:
+            self.dy = 0
+            return False
+
+        self.osk_changed = True
+        self.queue_resize()
+        return True
+
+    def __unset_clear_area_cb(self, widget, snap_back):
+        self.dy = 0
+        self.queue_resize()
+        return True
