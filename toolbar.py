@@ -133,7 +133,7 @@ class EditToolbar(Gtk.Toolbar):
         self._findnext.set_sensitive(False)
 
     def __paste_button_cb(self, button):
-        clipboard = Gtk.Clipboard()
+        clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
 
         if clipboard.wait_is_image_available():
             pixbuf_sel = clipboard.wait_for_image()
