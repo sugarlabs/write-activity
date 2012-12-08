@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-25 00:30-0400\n"
-"PO-Revision-Date: 2012-10-08 12:50+0200\n"
-"Last-Translator: Prabhat <prabhat.bhattarai@olenepal.org>\n"
+"PO-Revision-Date: 2012-12-04 12:13+0200\n"
+"Last-Translator: kayomars.puri <kayo.mars@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ne\n"
 "MIME-Version: 1.0\n"
@@ -90,7 +90,7 @@ msgstr "अर्को खोज"
 
 #: toolbar.py:222
 msgid "Create table"
-msgstr ""
+msgstr "तालिका बनाऊ"
 
 #: toolbar.py:232
 msgid "Insert Row"
