@@ -142,11 +142,15 @@ class EditToolbar(Gtk.Toolbar):
             temp_path = os.path.join(activity.get_activity_root(), 'instance')
             if not os.path.exists(temp_path):
                 os.makedirs(temp_path)
-            fd, file_path = tempfile.mkstemp(dir=temp_path, suffix='.jpg')
+            fd, file_path = tempfile.mkstemp(dir=temp_path, suffix='.png')
             os.close(fd)
             logging.error('tempfile is %s' % file_path)
-            pixbuf_sel.save(file_path, 'jpeg')
-            self._abiword_canvas.insert_image(file_path, False)
+            success, data = pixbuf_sel.save_to_bufferv('png', [], [])
+            if success:
+                px_file = open(file_path, 'w')
+                px_file.write(data)
+                px_file.close()
+                self._abiword_canvas.insert_image(file_path, False)
 
         elif clipboard.wait_is_uris_available():
             selection = clipboard.wait_for_contents('text/uri-list')
