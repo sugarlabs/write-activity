@@ -211,6 +211,7 @@ class AbiWordActivity(activity.Activity):
             self.abiword_canvas.set_font_name('Sans')
             self.abiword_canvas.moveto_bod()
             self.abiword_canvas.select_bod()
+        self.abiword_canvas.grab_focus()
 
     def get_preview(self):
         if not hasattr(self.abiword_canvas, 'render_page_to_image'):
