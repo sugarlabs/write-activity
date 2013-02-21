@@ -67,7 +67,6 @@ class AbiWordActivity(activity.Activity):
 
         # create our main abiword canvas
         self.abiword_canvas = DocumentView()
-        self._shared_activity = None
         self._new_instance = True
         toolbar_box = ToolbarBox()
 
@@ -182,13 +181,13 @@ class AbiWordActivity(activity.Activity):
 
         self.connect('shared', self._shared_cb)
 
-        if self._shared_activity:
+        if self.shared_activity:
             # we are joining the activity
             logger.error('We are joining an activity')
             self.connect('joined', self._joined_cb)
-            self._shared_activity.connect('buddy-joined',
+            self.shared_activity.connect('buddy-joined',
                     self._buddy_joined_cb)
-            self._shared_activity.connect('buddy-left', self._buddy_left_cb)
+            self.shared_activity.connect('buddy-left', self._buddy_left_cb)
             if self.get_shared():
 #                # oh, OK, we've already joined
                 self._joined_cb()
@@ -236,8 +235,8 @@ class AbiWordActivity(activity.Activity):
         logger.error('My Write activity was shared')
         self._sharing_setup()
 
-        self._shared_activity.connect('buddy-joined', self._buddy_joined_cb)
-        self._shared_activity.connect('buddy-left', self._buddy_left_cb)
+        self.shared_activity.connect('buddy-joined', self._buddy_joined_cb)
+        self.shared_activity.connect('buddy-left', self._buddy_left_cb)
 
         channel = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES]
         logger.error('This is my activity: offering a tube...')
@@ -247,13 +246,13 @@ class AbiWordActivity(activity.Activity):
     def _sharing_setup(self):
         logger.debug("_sharing_setup()")
 
-        if self._shared_activity is None:
+        if self.shared_activity is None:
             logger.error('Failed to share or join activity')
             return
 
-        self.conn = self._shared_activity.telepathy_conn
-        self.tubes_chan = self._shared_activity.telepathy_tubes_chan
-        self.text_chan = self._shared_activity.telepathy_text_chan
+        self.conn = self.shared_activity.telepathy_conn
+        self.tubes_chan = self.shared_activity.telepathy_tubes_chan
+        self.text_chan = self.shared_activity.telepathy_text_chan
         self.tube_id = None
         self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].connect_to_signal(
                 'NewTube', self._new_tube_cb)
@@ -267,7 +266,7 @@ class AbiWordActivity(activity.Activity):
 
     def _joined_cb(self, activity):
         logger.error("_joined_cb()")
-        if not self._shared_activity:
+        if not self.shared_activity:
             return
 
         self.joined = True
