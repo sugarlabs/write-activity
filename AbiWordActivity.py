@@ -184,6 +184,7 @@ class AbiWordActivity(activity.Activity):
         if self.shared_activity:
             # we are joining the activity
             logger.error('We are joining an activity')
+            self._new_instance = False
             self.connect('joined', self._joined_cb)
             self.shared_activity.connect('buddy-joined',
                     self._buddy_joined_cb)
