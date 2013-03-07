@@ -40,6 +40,8 @@ from sugar3 import mime
 from sugar3.graphics.toolbutton import ToolButton
 from sugar3.graphics.toolbarbox import ToolbarButton, ToolbarBox
 from sugar3.graphics import style
+from sugar3.graphics.icon import Icon
+from sugar3.graphics.xocolor import XoColor
 
 from toolbar import EditToolbar
 from toolbar import ViewToolbar
@@ -55,6 +57,19 @@ import speech
 from speechtoolbar import SpeechToolbar
 
 logger = logging.getLogger('write-activity')
+
+class ConnectingBox(Gtk.VBox):
+
+    def __init__(self):
+        Gtk.VBox.__init__(self)
+        self.props.halign = Gtk.Align.CENTER
+        self.props.valign = Gtk.Align.CENTER
+        waiting_icon = Icon(icon_name='zoom-neighborhood',
+                icon_size=Gtk.IconSize.LARGE_TOOLBAR)
+        waiting_icon.set_xo_color(XoColor('white'))
+        self.add(waiting_icon)
+        self.add(Gtk.Label(_('Connecting...')))
+        self.show_all()
 
 
 class AbiWordActivity(activity.Activity):
@@ -155,7 +170,16 @@ class AbiWordActivity(activity.Activity):
         toolbar_box.show_all()
         self.set_toolbar_box(toolbar_box)
 
-        self.set_canvas(self.abiword_canvas)
+        # add a overlay to be able to show a icon while joining a shared doc
+        overlay = Gtk.Overlay()
+        overlay.add(self.abiword_canvas)
+        overlay.show()
+
+        self._connecting_box = ConnectingBox()
+        overlay.add_overlay(self._connecting_box)
+
+        self.set_canvas(overlay)
+
         self.abiword_canvas.connect_after('map-event', self.__map_event_cb)
         self.abiword_canvas.show()
         self.connect_after('map-event', self.__map_activity_event_cb)
@@ -184,6 +208,10 @@ class AbiWordActivity(activity.Activity):
         if self.shared_activity:
             # we are joining the activity
             logger.error('We are joining an activity')
+            # display a icon while joining
+            self._connecting_box.show()
+            # disable the abi widget
+            self.abiword_canvas.set_sensitive(False)
             self._new_instance = False
             self.connect('joined', self._joined_cb)
             self.shared_activity.connect('buddy-joined',
@@ -191,7 +219,7 @@ class AbiWordActivity(activity.Activity):
             self.shared_activity.connect('buddy-left', self._buddy_left_cb)
             if self.get_shared():
 #                # oh, OK, we've already joined
-                self._joined_cb()
+                self._joined_cb(self)
         else:
             # we are creating the activity
             logger.error("We are creating an activity")
@@ -268,6 +296,7 @@ class AbiWordActivity(activity.Activity):
     def _joined_cb(self, activity):
         logger.error("_joined_cb()")
         if not self.shared_activity:
+            self._enable_collaboration()
             return
 
         self.joined = True
@@ -278,6 +307,16 @@ class AbiWordActivity(activity.Activity):
         self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].ListTubes(
             reply_handler=self._list_tubes_reply_cb,
             error_handler=self._list_tubes_error_cb)
+        self._enable_collaboration()
+
+    def _enable_collaboration(self):
+        """
+        when communication established, hide the download icon
+        and enable the abi widget
+        """
+        self.abiword_canvas.zoom_width()
+        self.abiword_canvas.set_sensitive(True)
+        self._connecting_box.hide()
 
     def _new_tube_cb(self, id, initiator, type, service, params, state):
         logger.error('New tube: ID=%d initiator=%d type=%d service=%s '
