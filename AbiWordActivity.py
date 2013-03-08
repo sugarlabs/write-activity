@@ -58,6 +58,7 @@ from speechtoolbar import SpeechToolbar
 
 logger = logging.getLogger('write-activity')
 
+
 class ConnectingBox(Gtk.VBox):
 
     def __init__(self):
@@ -70,6 +71,7 @@ class ConnectingBox(Gtk.VBox):
         self.add(waiting_icon)
         self.add(Gtk.Label(_('Connecting...')))
         self.show_all()
+        self.hide()
 
 
 class AbiWordActivity(activity.Activity):
