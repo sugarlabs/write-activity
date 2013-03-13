@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-25 00:30-0400\n"
-"PO-Revision-Date: 2012-10-28 08:48+0200\n"
+"POT-Creation-Date: 2013-03-08 00:31-0500\n"
+"PO-Revision-Date: 2013-03-13 08:39+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: en_GB\n"
@@ -39,35 +39,39 @@ msgstr ""
 "anything! Try changing the look, and size of your text; even insert an "
 "image!"
 
-#: AbiWordActivity.py:85
+#: AbiWordActivity.py:71
+msgid "Connecting..."
+msgstr "Connecting..."
+
+#: AbiWordActivity.py:100
 msgid "Edit"
 msgstr "Edit"
 
-#: AbiWordActivity.py:91
+#: AbiWordActivity.py:106
 msgid "View"
 msgstr "View"
 
-#: AbiWordActivity.py:107
+#: AbiWordActivity.py:122
 msgid "Text"
 msgstr "Text"
 
-#: AbiWordActivity.py:113
+#: AbiWordActivity.py:128
 msgid "Paragraph"
 msgstr "Paragraph"
 
-#: AbiWordActivity.py:119 toolbar.py:601
+#: AbiWordActivity.py:134 toolbar.py:605
 msgid "Bullet List"
 msgstr "Bullet List"
 
-#: AbiWordActivity.py:125
+#: AbiWordActivity.py:140
 msgid "Table"
 msgstr "Table"
 
-#: AbiWordActivity.py:132
+#: AbiWordActivity.py:147
 msgid "Insert Image"
 msgstr "Insert Image"
 
-#: AbiWordActivity.py:139
+#: AbiWordActivity.py:154
 msgid "Floating"
 msgstr "Floating"
 
@@ -91,147 +95,147 @@ msgstr "Find previous"
 msgid "Find next"
 msgstr "Find next"
 
-#: toolbar.py:222
+#: toolbar.py:226
 msgid "Create table"
 msgstr "Create table"
 
-#: toolbar.py:232
+#: toolbar.py:236
 msgid "Insert Row"
 msgstr "Insert Row"
 
-#: toolbar.py:238
+#: toolbar.py:242
 msgid "Delete Row"
 msgstr "Delete Row"
 
-#: toolbar.py:244
+#: toolbar.py:248
 msgid "Insert Column"
 msgstr "Insert Column"
 
-#: toolbar.py:250
+#: toolbar.py:254
 msgid "Delete Column"
 msgstr "Delete Column"
 
-#: toolbar.py:295
+#: toolbar.py:299
 msgid "Zoom Out"
 msgstr "Zoom Out"
 
-#: toolbar.py:302
+#: toolbar.py:306
 msgid "Zoom In"
 msgstr "Zoom In"
 
-#: toolbar.py:308
+#: toolbar.py:312
 msgid "Zoom to width"
 msgstr "Zoom to width"
 
-#: toolbar.py:325
+#: toolbar.py:329
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:337
+#: toolbar.py:341
 msgid "Page: "
 msgstr "Page: "
 
-#: toolbar.py:432
+#: toolbar.py:436
 msgid "Bold"
 msgstr "Bold"
 
-#: toolbar.py:441
+#: toolbar.py:445
 msgid "Italic"
 msgstr "Italic"
 
-#: toolbar.py:450
+#: toolbar.py:454
 msgid "Underline"
 msgstr "Underline"
 
-#: toolbar.py:514 toolbar.py:591
+#: toolbar.py:518 toolbar.py:595
 msgid "Normal"
 msgstr "Normal"
 
-#: toolbar.py:525
+#: toolbar.py:529
 msgid "Heading 1"
 msgstr "Heading 1"
 
-#: toolbar.py:529
+#: toolbar.py:533
 msgid "Heading 2"
 msgstr "Heading 2"
 
-#: toolbar.py:533
+#: toolbar.py:537
 msgid "Heading 3"
 msgstr "Heading 3"
 
-#: toolbar.py:537
+#: toolbar.py:541
 msgid "Heading 4"
 msgstr "Heading 4"
 
-#: toolbar.py:541
+#: toolbar.py:545
 msgid "Block Text"
 msgstr "Block Text"
 
-#: toolbar.py:545
+#: toolbar.py:549
 msgid "Plain Text"
 msgstr "Plain Text"
 
-#: toolbar.py:561
+#: toolbar.py:565
 msgid "Left justify"
 msgstr "Left justify"
 
-#: toolbar.py:564
+#: toolbar.py:568
 msgid "Center justify"
 msgstr "Centre justify"
 
-#: toolbar.py:567
+#: toolbar.py:571
 msgid "Right justify"
 msgstr "Right justify"
 
-#: toolbar.py:570
+#: toolbar.py:574
 msgid "Fill justify"
 msgstr "Fill justify"
 
-#: toolbar.py:605
+#: toolbar.py:609
 msgid "Dashed List"
 msgstr "Dashed List"
 
-#: toolbar.py:609
+#: toolbar.py:613
 msgid "Numbered List"
 msgstr "Numbered List"
 
-#: toolbar.py:613
+#: toolbar.py:617
 msgid "Lower Case List"
 msgstr "Lower Case List"
 
-#: toolbar.py:617
+#: toolbar.py:621
 msgid "Upper Case List"
 msgstr "Upper Case List"
 
-#: widgets.py:171
+#: widgets.py:174
 msgid "Rich Text (RTF)"
 msgstr "Rich Text (RTF)"
 
-#: widgets.py:173
+#: widgets.py:176
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:177
+#: widgets.py:180
 msgid "Hypertext (HTML)"
 msgstr "Hypertext (HTML)"
 
-#: widgets.py:179
+#: widgets.py:182
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:184
+#: widgets.py:187
 msgid "Plain Text (TXT)"
 msgstr "Plain Text (TXT)"
 
-#: widgets.py:186
+#: widgets.py:189
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:190
+#: widgets.py:193
 msgid "Portable Document Format (PDF)"
 msgstr "Portable Document Format (PDF)"
 
-#: widgets.py:192
+#: widgets.py:195
 msgid "PDF"
 msgstr "PDF"
 
