@@ -53,7 +53,7 @@ class SpeechToolbar(Gtk.Toolbar):
         # Play button
         self.play_btn = ToggleToolButton('media-playback-start')
         self.play_btn.show()
-        self.play_btn.connect('toggled', self.play_cb)
+        self.play_toggled_handler = self.play_btn.connect('toggled', self.play_cb)
         self.insert(self.play_btn, -1)
         self.play_btn.set_tooltip(_('Play / Pause'))
 
@@ -158,7 +158,9 @@ class SpeechToolbar(Gtk.Toolbar):
         logging.error('reset buttons')
         self.play_btn.set_icon_name('media-playback-start')
         self.stop_btn.set_sensitive(False)
+        self.play_btn.handler_block(self.play_toggled_handler)
         self.play_btn.set_active(False)
+        self.play_btn.handler_unblock(self.play_toggled_handler)
         self.is_paused = False
 
     def play_cb(self, widget):
