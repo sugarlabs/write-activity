@@ -461,9 +461,6 @@ class TextToolbar(Gtk.Toolbar):
                 self._setToggleButtonState(underline, b, underline_id))
         self.insert(underline, -1)
 
-        separator = Gtk.SeparatorToolItem()
-        self.insert(separator, -1)
-
         color = ColorToolButton()
         color.connect('notify::color', self._text_color_cb,
                 abiword_canvas)
@@ -475,6 +472,29 @@ class TextToolbar(Gtk.Toolbar):
 
         # MAGIC NUMBER WARNING: Secondary toolbars are not a standard height?
         self.set_size_request(-1, style.GRID_CELL_SIZE)
+
+        def append_align(icon_name, tooltip, do_abi_cb, style_name, button):
+            menu_item = AbiMenuItem(abiword_canvas, style_name, do_abi_cb,
+                icon_name, tooltip, button)
+            button.props.palette.menu.append(menu_item)
+            menu_item.show()
+
+        self._aligment_btn = RadioMenuButton(icon_name='format-justify-left')
+        self._aligment_btn.props.tooltip = _('Choose aligment')
+
+        append_align('format-justify-left', _('Left justify'),
+            abiword_canvas.align_left, 'left-align', self._aligment_btn)
+
+        append_align('format-justify-center', _('Center justify'),
+            abiword_canvas.align_center, 'center-align', self._aligment_btn)
+
+        append_align('format-justify-right', _('Right justify'),
+            abiword_canvas.align_right, 'right-align', self._aligment_btn)
+
+        append_align('format-justify-fill', _('Fill justify'),
+            abiword_canvas.align_justify, 'justify-align', self._aligment_btn)
+
+        self.insert(self._aligment_btn, -1)
 
         self.show_all()
 
@@ -553,29 +573,6 @@ class ParagraphToolbar(Gtk.Toolbar):
                 lambda abi, style: style == 'Plain Text')
 
         self.insert(Gtk.SeparatorToolItem(), -1)
-
-        def append_align(icon_name, tooltip, do_abi_cb, style_name, button):
-            menu_item = AbiMenuItem(abi, style_name, do_abi_cb, icon_name,
-                tooltip, button)
-            button.props.palette.menu.append(menu_item)
-            menu_item.show()
-
-        self._aligment_btn = RadioMenuButton(icon_name='format-justify-left')
-        self._aligment_btn.props.tooltip = _('Choose aligment')
-
-        append_align('format-justify-left', _('Left justify'),
-                abi.align_left, 'left-align', self._aligment_btn)
-
-        append_align('format-justify-center', _('Center justify'),
-                abi.align_center, 'center-align', self._aligment_btn)
-
-        append_align('format-justify-right', _('Right justify'),
-                abi.align_right, 'right-align', self._aligment_btn)
-
-        append_align('format-justify-fill', _('Fill justify'),
-                abi.align_justify, 'justify-align', self._aligment_btn)
-
-        self.insert(self._aligment_btn, -1)
 
         self.show_all()
 
