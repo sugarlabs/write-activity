@@ -32,6 +32,7 @@ from sugar3.graphics.toolbutton import ToolButton
 from sugar3.graphics.toolcombobox import ToolComboBox
 from sugar3.graphics.colorbutton import ColorToolButton
 from sugar3.graphics.toggletoolbutton import ToggleToolButton
+from sugar3.graphics.radiopalette import RadioMenuButton
 from sugar3.graphics import iconentry
 from sugar3.graphics import style
 from sugar3.activity.widgets import CopyButton
@@ -40,6 +41,7 @@ from sugar3.activity.widgets import UndoButton
 from sugar3.activity.widgets import RedoButton
 
 from widgets import AbiButton
+from widgets import AbiMenuItem
 from widgets import FontSizeCombo
 from fontcombobox import FontComboBox
 from gridcreate import GridCreateWidget
@@ -552,27 +554,28 @@ class ParagraphToolbar(Gtk.Toolbar):
 
         self.insert(Gtk.SeparatorToolItem(), -1)
 
-        def append_align(icon_name, tooltip, do_abi_cb, style_name):
-            button = AbiButton(abi, style_name, do_abi_cb)
-            button.props.icon_name = icon_name
-            button.props.group = group
-            button.props.tooltip = tooltip
-            self.insert(button, -1)
-            return button
+        def append_align(icon_name, tooltip, do_abi_cb, style_name, button):
+            menu_item = AbiMenuItem(abi, style_name, do_abi_cb, icon_name,
+                tooltip, button)
+            button.props.palette.menu.append(menu_item)
+            menu_item.show()
 
-        group = None
+        self._aligment_btn = RadioMenuButton(icon_name='format-justify-left')
+        self._aligment_btn.props.tooltip = _('Choose aligment')
 
-        group = append_align('format-justify-left', _('Left justify'),
-                abi.align_left, 'left-align')
+        append_align('format-justify-left', _('Left justify'),
+                abi.align_left, 'left-align', self._aligment_btn)
 
         append_align('format-justify-center', _('Center justify'),
-                abi.align_center, 'center-align')
+                abi.align_center, 'center-align', self._aligment_btn)
 
         append_align('format-justify-right', _('Right justify'),
-                abi.align_right, 'right-align')
+                abi.align_right, 'right-align', self._aligment_btn)
 
         append_align('format-justify-fill', _('Fill justify'),
-                abi.align_justify, 'justify-align')
+                abi.align_justify, 'justify-align', self._aligment_btn)
+
+        self.insert(self._aligment_btn, -1)
 
         self.show_all()
 

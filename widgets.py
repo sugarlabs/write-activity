@@ -168,6 +168,40 @@ class AbiButton(RadioToolButton):
             self.handler_unblock(self._toggled_handler)
 
 
+class AbiMenuItem(MenuItem):
+
+    def __init__(self, abi, abi_signal, do_abi_cb, icon_name, label,
+            button, on_abi_cb=None):
+        self._icon_name = icon_name
+        self._button = button
+        MenuItem.__init__(self, icon_name=icon_name, text_label=label)
+
+        self._abi_handler = abi.connect(abi_signal, self.__abi_cb,
+                abi_signal, on_abi_cb)
+        self.connect('activate', self.__activated_cb,
+                abi, do_abi_cb)
+
+    def __activated_cb(self, button, abi, do_abi_cb):
+        if self._button.get_icon_name() == self._icon_name:
+            return
+
+        abi.handler_block(self._abi_handler)
+        try:
+            logging.debug('Do abi %s' % do_abi_cb)
+            do_abi_cb()
+            self._button.set_icon_name(self._icon_name)
+        finally:
+            abi.handler_unblock(self._abi_handler)
+
+    def __abi_cb(self, abi, prop, abi_signal, on_abi_cb):
+        if (on_abi_cb is None and not prop) or \
+                (on_abi_cb is not None and not on_abi_cb(abi, prop)):
+            return
+
+        logging.debug('On abi %s prop=%r' % (abi_signal, prop))
+        self._button.set_icon_name(self._icon_name)
+
+
 class ExportButtonFactory():
 
     _EXPORT_FORMATS = [{'mime_type': 'application/rtf',
