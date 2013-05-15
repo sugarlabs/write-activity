@@ -22,7 +22,6 @@ import logging
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
-from gi.repository import GdkPixbuf
 
 import os
 import tempfile
@@ -155,11 +154,11 @@ class EditToolbar(Gtk.Toolbar):
                 self._abiword_canvas.insert_image(file_path, False)
 
         elif clipboard.wait_is_uris_available():
-            selection = clipboard.wait_for_contents('text/uri-list')
+            selection = clipboard.wait_for_uris()
             if selection != None:
-                for uri in selection.get_uris():
+                for uri in selection:
                     self._abiword_canvas.insert_image(urlparse(uri).path,
-                        False)
+                                                      False)
         else:
             self._abiword_canvas.paste()
 
