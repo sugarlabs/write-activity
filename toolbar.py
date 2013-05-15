@@ -574,52 +574,46 @@ class ParagraphToolbar(Gtk.Toolbar):
 
         self.insert(Gtk.SeparatorToolItem(), -1)
 
-        self.show_all()
+        def append_list(icon_name, tooltip, do_abi_cb, on_abi_cb, button,
+                        button_icon=None):
+            menu_item = AbiMenuItem(abi, 'style-name', do_abi_cb,
+                icon_name, tooltip, button, on_abi_cb, button_icon)
+            button.props.palette.menu.append(menu_item)
+            menu_item.show()
 
+        list_btn = RadioMenuButton(icon_name='toolbar-bulletlist')
+        list_btn.props.tooltip = _('Select list')
 
-class ListToolbar(Gtk.Toolbar):
-
-    def __init__(self, abi):
-        GObject.GObject.__init__(self)
-
-        def append(icon_name, tooltip, do_abi_cb, on_abi_cb):
-            button = AbiButton(abi, 'style-name', do_abi_cb, on_abi_cb)
-            button.props.icon_name = icon_name
-            button.props.group = group
-            button.props.tooltip = tooltip
-            self.insert(button, -1)
-            return button
-
-        group = None
-
-        group = append('list-none', _('Normal'),
-                lambda:
-                    abi.set_style('Normal'),
-                lambda abi, style:
+        append_list('list-none', _('Normal'),
+                    lambda: abi.set_style('Normal'),
+                    lambda abi, style:
                     style not in ['Bullet List',
                                   'Dashed List',
                                   'Numbered List',
                                   'Lower Case List',
-                                  'Upper Case List'])
+                                  'Upper Case List'],
+                    list_btn, 'toolbar-bulletlist')
 
-        append('list-bullet', _('Bullet List'),
-                lambda: abi.set_style('Bullet List'),
-                lambda abi, style: style == 'Bullet List')
+        append_list('list-bullet', _('Bullet List'),
+                    lambda: abi.set_style('Bullet List'),
+                    lambda abi, style: style == 'Bullet List', list_btn)
 
-        append('list-dashed', _('Dashed List'),
-                lambda: abi.set_style('Dashed List'),
-                lambda abi, style: style == 'Dashed List')
+        append_list('list-dashed', _('Dashed List'),
+                    lambda: abi.set_style('Dashed List'),
+                    lambda abi, style: style == 'Dashed List', list_btn)
 
-        append('list-numbered', _('Numbered List'),
-                lambda: abi.set_style('Numbered List'),
-                lambda abi, style: style == 'Numbered List')
+        append_list('list-numbered', _('Numbered List'),
+                    lambda: abi.set_style('Numbered List'),
+                    lambda abi, style: style == 'Numbered List', list_btn)
 
-        append('list-lower-case', _('Lower Case List'),
-                lambda: abi.set_style('Lower Case List'),
-                lambda abi, style: style == 'Lower Case List')
+        append_list('list-lower-case', _('Lower Case List'),
+                    lambda: abi.set_style('Lower Case List'),
+                    lambda abi, style: style == 'Lower Case List', list_btn)
 
-        append('list-upper-case', _('Upper Case List'),
-                lambda: abi.set_style('Upper Case List'),
-                lambda abi, style: style == 'Upper Case List')
+        append_list('list-upper-case', _('Upper Case List'),
+                    lambda: abi.set_style('Upper Case List'),
+                    lambda abi, style: style == 'Upper Case List', list_btn)
+
+        self.insert(list_btn, -1)
 
         self.show_all()

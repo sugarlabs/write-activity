@@ -46,7 +46,6 @@ from sugar3.graphics.xocolor import XoColor
 from toolbar import EditToolbar
 from toolbar import ViewToolbar
 from toolbar import TextToolbar
-from toolbar import ListToolbar
 from toolbar import InsertToolbar
 from toolbar import ParagraphToolbar
 from widgets import ExportButtonFactory
@@ -130,20 +129,11 @@ class AbiWordActivity(activity.Activity):
         para_toolbar.props.label = _('Paragraph')
         toolbar_box.toolbar.insert(para_toolbar, -1)
 
-        list_toolbar = ToolbarButton()
-        list_toolbar.props.page = ListToolbar(self.abiword_canvas)
-        list_toolbar.props.icon_name = 'toolbar-bulletlist'
-        list_toolbar.props.label = _('Bullet List')
-        toolbar_box.toolbar.insert(list_toolbar, -1)
-
         insert_toolbar = ToolbarButton()
         insert_toolbar.props.page = InsertToolbar(self.abiword_canvas)
         insert_toolbar.props.icon_name = 'insert-table'
         insert_toolbar.props.label = _('Table')
         toolbar_box.toolbar.insert(insert_toolbar, -1)
-
-        separator = Gtk.SeparatorToolItem()
-        toolbar_box.toolbar.insert(separator, -1)
 
         image = ToolButton('insert-picture')
         image.set_tooltip(_('Insert Image'))
@@ -162,6 +152,7 @@ class AbiWordActivity(activity.Activity):
 
         separator = Gtk.SeparatorToolItem()
         separator.props.draw = False
+        separator.set_size_request(0, -1)
         separator.set_expand(True)
         separator.show()
         toolbar_box.toolbar.insert(separator, -1)

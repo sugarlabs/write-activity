@@ -171,8 +171,11 @@ class AbiButton(RadioToolButton):
 class AbiMenuItem(MenuItem):
 
     def __init__(self, abi, abi_signal, do_abi_cb, icon_name, label,
-            button, on_abi_cb=None):
+            button, on_abi_cb=None, button_icon_name=None):
         self._icon_name = icon_name
+        # _button_icon_name is used only in the first case of
+        # the list menu
+        self._button_icon_name = button_icon_name
         self._button = button
         MenuItem.__init__(self, icon_name=icon_name, text_label=label)
 
@@ -182,14 +185,22 @@ class AbiMenuItem(MenuItem):
                 abi, do_abi_cb)
 
     def __activated_cb(self, button, abi, do_abi_cb):
-        if self._button.get_icon_name() == self._icon_name:
-            return
+
+        if self._button_icon_name is not None:
+            if self._button.get_icon_name() == self._button_icon_name:
+                return
+        else:
+            if self._button.get_icon_name() == self._icon_name:
+                return
 
         abi.handler_block(self._abi_handler)
         try:
             logging.debug('Do abi %s' % do_abi_cb)
             do_abi_cb()
-            self._button.set_icon_name(self._icon_name)
+            if self._button_icon_name is not None:
+                self._button.set_icon_name(self._button_icon_name)
+            else:
+                self._button.set_icon_name(self._icon_name)
         finally:
             abi.handler_unblock(self._abi_handler)
 
@@ -199,7 +210,10 @@ class AbiMenuItem(MenuItem):
             return
 
         logging.debug('On abi %s prop=%r' % (abi_signal, prop))
-        self._button.set_icon_name(self._icon_name)
+        if self._button_icon_name is not None:
+            self._button.set_icon_name(self._button_icon_name)
+        else:
+            self._button.set_icon_name(self._icon_name)
 
 
 class ExportButtonFactory():
