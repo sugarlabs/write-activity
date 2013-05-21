@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OLPC Write\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-08 00:31-0500\n"
-"PO-Revision-Date: 2013-03-13 17:34+0200\n"
+"POT-Creation-Date: 2013-05-16 00:30-0400\n"
+"PO-Revision-Date: 2013-05-21 03:22+0200\n"
 "Last-Translator: lite <litekok@gmail.com>\n"
 "Language-Team: Yuan CHAO <yuanchao@gmail.com>\n"
 "Language: zh_CN\n"
@@ -36,35 +36,31 @@ msgstr "写作活动提供了放入你的语言的一个空间。写一个故事
 msgid "Connecting..."
 msgstr "连接中..."
 
-#: AbiWordActivity.py:100
+#: AbiWordActivity.py:101
 msgid "Edit"
 msgstr "编辑"
 
-#: AbiWordActivity.py:106
+#: AbiWordActivity.py:107
 msgid "View"
 msgstr "查看"
 
-#: AbiWordActivity.py:122
+#: AbiWordActivity.py:123
 msgid "Text"
 msgstr "文字"
 
-#: AbiWordActivity.py:128
+#: AbiWordActivity.py:129
 msgid "Paragraph"
 msgstr "段落"
 
-#: AbiWordActivity.py:134 toolbar.py:605
-msgid "Bullet List"
-msgstr "圆点列举"
-
-#: AbiWordActivity.py:140
+#: AbiWordActivity.py:135
 msgid "Table"
 msgstr "表格"
 
-#: AbiWordActivity.py:147
+#: AbiWordActivity.py:139
 msgid "Insert Image"
 msgstr "插入图片"
 
-#: AbiWordActivity.py:154
+#: AbiWordActivity.py:146
 msgid "Floating"
 msgstr "浮动"
 
@@ -76,159 +72,171 @@ msgstr "播放／暂停"
 msgid "Stop"
 msgstr "停止"
 
-#: toolbar.py:99
+#: toolbar.py:100
 msgid "Search"
 msgstr "搜索"
 
-#: toolbar.py:116
+#: toolbar.py:117
 msgid "Find previous"
 msgstr "往前找"
 
-#: toolbar.py:122
+#: toolbar.py:123
 msgid "Find next"
 msgstr "往后找"
 
-#: toolbar.py:226
+#: toolbar.py:227
 msgid "Create table"
 msgstr "创建表"
 
-#: toolbar.py:236
+#: toolbar.py:237
 msgid "Insert Row"
 msgstr "插入列"
 
-#: toolbar.py:242
+#: toolbar.py:243
 msgid "Delete Row"
 msgstr "删除线"
 
-#: toolbar.py:248
+#: toolbar.py:249
 msgid "Insert Column"
 msgstr "插入行"
 
-#: toolbar.py:254
+#: toolbar.py:255
 msgid "Delete Column"
 msgstr "删除行"
 
-#: toolbar.py:299
+#: toolbar.py:300
 msgid "Zoom Out"
 msgstr "缩小"
 
-#: toolbar.py:306
+#: toolbar.py:307
 msgid "Zoom In"
 msgstr "放大"
 
-#: toolbar.py:312
+#: toolbar.py:313
 msgid "Zoom to width"
 msgstr "适合宽度"
 
-#: toolbar.py:329
+#: toolbar.py:330
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:341
+#: toolbar.py:342
 msgid "Page: "
 msgstr "页:"
 
-#: toolbar.py:436
+#: toolbar.py:437
 msgid "Bold"
 msgstr "粗体"
 
-#: toolbar.py:445
+#: toolbar.py:446
 msgid "Italic"
 msgstr "斜体"
 
-#: toolbar.py:454
+#: toolbar.py:455
 msgid "Underline"
 msgstr "下划线"
 
-#: toolbar.py:518 toolbar.py:595
-msgid "Normal"
-msgstr "常规"
+#: toolbar.py:482
+msgid "Choose aligment"
+msgstr "选择对齐方式"
 
-#: toolbar.py:529
-msgid "Heading 1"
-msgstr "主标题"
-
-#: toolbar.py:533
-msgid "Heading 2"
-msgstr "大标题"
-
-#: toolbar.py:537
-msgid "Heading 3"
-msgstr "次标题"
-
-#: toolbar.py:541
-msgid "Heading 4"
-msgstr "小标题"
-
-#: toolbar.py:545
-msgid "Block Text"
-msgstr "列块文字"
-
-#: toolbar.py:549
-msgid "Plain Text"
-msgstr "文本"
-
-#: toolbar.py:565
+#: toolbar.py:484
 msgid "Left justify"
 msgstr "左对齐"
 
-#: toolbar.py:568
+#: toolbar.py:487
 msgid "Center justify"
 msgstr "居中对齐"
 
-#: toolbar.py:571
+#: toolbar.py:490
 msgid "Right justify"
 msgstr "右对齐"
 
-#: toolbar.py:574
+#: toolbar.py:493
 msgid "Fill justify"
 msgstr "两端对齐"
 
-#: toolbar.py:609
+#: toolbar.py:539 toolbar.py:586
+msgid "Normal"
+msgstr "常规"
+
+#: toolbar.py:550
+msgid "Heading 1"
+msgstr "主标题"
+
+#: toolbar.py:554
+msgid "Heading 2"
+msgstr "大标题"
+
+#: toolbar.py:558
+msgid "Heading 3"
+msgstr "次标题"
+
+#: toolbar.py:562
+msgid "Heading 4"
+msgstr "小标题"
+
+#: toolbar.py:566
+msgid "Block Text"
+msgstr "列块文字"
+
+#: toolbar.py:570
+msgid "Plain Text"
+msgstr "文本"
+
+#: toolbar.py:584
+msgid "Select list"
+msgstr "选择列表"
+
+#: toolbar.py:596
+msgid "Bullet List"
+msgstr "圆点列举"
+
+#: toolbar.py:600
 msgid "Dashed List"
 msgstr "短线列举"
 
-#: toolbar.py:613
+#: toolbar.py:604
 msgid "Numbered List"
 msgstr "序列号列举"
 
-#: toolbar.py:617
+#: toolbar.py:608
 msgid "Lower Case List"
 msgstr "大写列表"
 
-#: toolbar.py:621
+#: toolbar.py:612
 msgid "Upper Case List"
 msgstr "小写列表"
 
-#: widgets.py:174
+#: widgets.py:222
 msgid "Rich Text (RTF)"
 msgstr "富文本文件(RTF)"
 
-#: widgets.py:176
+#: widgets.py:224
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:180
+#: widgets.py:228
 msgid "Hypertext (HTML)"
 msgstr "超文本文件 (HTML)"
 
-#: widgets.py:182
+#: widgets.py:230
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:187
+#: widgets.py:235
 msgid "Plain Text (TXT)"
 msgstr "文本文件(TXT)"
 
-#: widgets.py:189
+#: widgets.py:237
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:193
+#: widgets.py:241
 msgid "Portable Document Format (PDF)"
 msgstr "便携式文件格式（PDF）"
 
-#: widgets.py:195
+#: widgets.py:243
 msgid "PDF"
 msgstr "PDF"
 
