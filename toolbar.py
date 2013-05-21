@@ -479,7 +479,7 @@ class TextToolbar(Gtk.Toolbar):
             menu_item.show()
 
         self._aligment_btn = RadioMenuButton(icon_name='format-justify-left')
-        self._aligment_btn.props.tooltip = _('Choose aligment')
+        self._aligment_btn.props.tooltip = _('Choose alignment')
 
         append_align('format-justify-left', _('Left justify'),
             abiword_canvas.align_left, 'left-align', self._aligment_btn)
