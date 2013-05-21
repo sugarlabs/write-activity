@@ -26,8 +26,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Actividad Escribir\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-25 00:30-0400\n"
-"PO-Revision-Date: 2012-10-26 05:01+0200\n"
+"POT-Creation-Date: 2013-05-16 00:30-0400\n"
+"PO-Revision-Date: 2013-05-21 12:44+0200\n"
 "Last-Translator: AlanJAS <alanjas@hotmail.com>\n"
 "Language-Team: Fedora Spanish <fedora-trans-es@redhat.com>\n"
 "Language: es\n"
@@ -52,35 +52,35 @@ msgstr ""
 "poema, informe, cualquier cosa! ¡Prueba a cambiar el aspecto y el tamaño de "
 "tu texto, e incluso insertar una imagen!"
 
-#: AbiWordActivity.py:85
+#: AbiWordActivity.py:71
+msgid "Connecting..."
+msgstr "Conectando..."
+
+#: AbiWordActivity.py:101
 msgid "Edit"
 msgstr "Editar"
 
-#: AbiWordActivity.py:91
+#: AbiWordActivity.py:107
 msgid "View"
 msgstr "Ver"
 
-#: AbiWordActivity.py:107
+#: AbiWordActivity.py:123
 msgid "Text"
 msgstr "Texto"
 
-#: AbiWordActivity.py:113
+#: AbiWordActivity.py:129
 msgid "Paragraph"
 msgstr "Párrafo"
 
-#: AbiWordActivity.py:119 toolbar.py:601
-msgid "Bullet List"
-msgstr "Lista con viñetas"
-
-#: AbiWordActivity.py:125
+#: AbiWordActivity.py:135
 msgid "Table"
 msgstr "Tabla"
 
-#: AbiWordActivity.py:132
+#: AbiWordActivity.py:139
 msgid "Insert Image"
 msgstr "Insertar imagen"
 
-#: AbiWordActivity.py:139
+#: AbiWordActivity.py:146
 msgid "Floating"
 msgstr "Flotante"
 
@@ -92,159 +92,171 @@ msgstr "Reproducir / Pausar"
 msgid "Stop"
 msgstr "Parar"
 
-#: toolbar.py:99
+#: toolbar.py:100
 msgid "Search"
 msgstr "Buscar"
 
-#: toolbar.py:116
+#: toolbar.py:117
 msgid "Find previous"
 msgstr "Buscar anterior"
 
-#: toolbar.py:122
+#: toolbar.py:123
 msgid "Find next"
 msgstr "Buscar siguiente"
 
-#: toolbar.py:222
+#: toolbar.py:227
 msgid "Create table"
 msgstr "Crear tabla"
 
-#: toolbar.py:232
+#: toolbar.py:237
 msgid "Insert Row"
 msgstr "Insertar fila"
 
-#: toolbar.py:238
+#: toolbar.py:243
 msgid "Delete Row"
 msgstr "Borrar fila"
 
-#: toolbar.py:244
+#: toolbar.py:249
 msgid "Insert Column"
 msgstr "Insertar columna"
 
-#: toolbar.py:250
+#: toolbar.py:255
 msgid "Delete Column"
 msgstr "Borrar columna"
 
-#: toolbar.py:295
+#: toolbar.py:300
 msgid "Zoom Out"
 msgstr "Reducir"
 
-#: toolbar.py:302
+#: toolbar.py:307
 msgid "Zoom In"
 msgstr "Ampliar"
 
-#: toolbar.py:308
+#: toolbar.py:313
 msgid "Zoom to width"
 msgstr "Ajustar ancho"
 
-#: toolbar.py:325
+#: toolbar.py:330
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:337
+#: toolbar.py:342
 msgid "Page: "
 msgstr "Página: "
 
-#: toolbar.py:432
+#: toolbar.py:437
 msgid "Bold"
 msgstr "Negritas"
 
-#: toolbar.py:441
+#: toolbar.py:446
 msgid "Italic"
 msgstr "Cursiva"
 
-#: toolbar.py:450
+#: toolbar.py:455
 msgid "Underline"
 msgstr "Subrayado"
 
-#: toolbar.py:514 toolbar.py:591
-msgid "Normal"
-msgstr "Normal"
+#: toolbar.py:482
+msgid "Choose aligment"
+msgstr "Elegir alineación"
 
-#: toolbar.py:525
-msgid "Heading 1"
-msgstr "Encabezado 1"
-
-#: toolbar.py:529
-msgid "Heading 2"
-msgstr "Encabezado 2"
-
-#: toolbar.py:533
-msgid "Heading 3"
-msgstr "Encabezado 3"
-
-#: toolbar.py:537
-msgid "Heading 4"
-msgstr "Encabezado 4"
-
-#: toolbar.py:541
-msgid "Block Text"
-msgstr "Bloque de texto"
-
-#: toolbar.py:545
-msgid "Plain Text"
-msgstr "Texto simple"
-
-#: toolbar.py:561
+#: toolbar.py:484
 msgid "Left justify"
 msgstr "Justificar a la izquierda"
 
-#: toolbar.py:564
+#: toolbar.py:487
 msgid "Center justify"
 msgstr "Justificar al centro"
 
-#: toolbar.py:567
+#: toolbar.py:490
 msgid "Right justify"
 msgstr "Justificar a la derecha"
 
-#: toolbar.py:570
+#: toolbar.py:493
 msgid "Fill justify"
 msgstr "Justificar ambos lados"
 
-#: toolbar.py:605
+#: toolbar.py:539 toolbar.py:586
+msgid "Normal"
+msgstr "Normal"
+
+#: toolbar.py:550
+msgid "Heading 1"
+msgstr "Encabezado 1"
+
+#: toolbar.py:554
+msgid "Heading 2"
+msgstr "Encabezado 2"
+
+#: toolbar.py:558
+msgid "Heading 3"
+msgstr "Encabezado 3"
+
+#: toolbar.py:562
+msgid "Heading 4"
+msgstr "Encabezado 4"
+
+#: toolbar.py:566
+msgid "Block Text"
+msgstr "Bloque de texto"
+
+#: toolbar.py:570
+msgid "Plain Text"
+msgstr "Texto simple"
+
+#: toolbar.py:584
+msgid "Select list"
+msgstr "Seleccionar lista"
+
+#: toolbar.py:596
+msgid "Bullet List"
+msgstr "Lista con viñetas"
+
+#: toolbar.py:600
 msgid "Dashed List"
 msgstr "Lista con guiones"
 
-#: toolbar.py:609
+#: toolbar.py:604
 msgid "Numbered List"
 msgstr "Lista enumerada"
 
-#: toolbar.py:613
+#: toolbar.py:608
 msgid "Lower Case List"
 msgstr "Lista alfabética minúsculas"
 
-#: toolbar.py:617
+#: toolbar.py:612
 msgid "Upper Case List"
 msgstr "Lista alfabética mayúsculas"
 
-#: widgets.py:171
+#: widgets.py:222
 msgid "Rich Text (RTF)"
 msgstr "Texto enriquecido (RTF)"
 
-#: widgets.py:173
+#: widgets.py:224
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:177
+#: widgets.py:228
 msgid "Hypertext (HTML)"
 msgstr "Hipertexto (HTML)"
 
-#: widgets.py:179
+#: widgets.py:230
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:184
+#: widgets.py:235
 msgid "Plain Text (TXT)"
 msgstr "Texto simple (TXT)"
 
-#: widgets.py:186
+#: widgets.py:237
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:190
+#: widgets.py:241
 msgid "Portable Document Format (PDF)"
 msgstr "Formato de Documento Portable (PDF)"
 
-#: widgets.py:192
+#: widgets.py:243
 msgid "PDF"
 msgstr "PDF"
 
