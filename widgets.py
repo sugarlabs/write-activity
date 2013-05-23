@@ -25,7 +25,7 @@ from sugar3.graphics.radiotoolbutton import RadioToolButton
 from sugar3.graphics.combobox import ComboBox
 from sugar3.graphics.palette import Palette
 from sugar3.graphics.toolbutton import ToolButton
-from sugar3.graphics.menuitem import MenuItem
+from sugar3.graphics.palettemenu import PaletteMenuItem
 from sugar3.datastore import datastore
 
 from sugar3.activity.activity import SCOPE_PRIVATE
@@ -168,7 +168,7 @@ class AbiButton(RadioToolButton):
             self.handler_unblock(self._toggled_handler)
 
 
-class AbiMenuItem(MenuItem):
+class AbiMenuItem(PaletteMenuItem):
 
     def __init__(self, abi, abi_signal, do_abi_cb, icon_name, label,
             button, on_abi_cb=None, button_icon_name=None):
@@ -177,7 +177,7 @@ class AbiMenuItem(MenuItem):
         # the list menu
         self._button_icon_name = button_icon_name
         self._button = button
-        MenuItem.__init__(self, icon_name=icon_name, text_label=label)
+        PaletteMenuItem.__init__(self, icon_name=icon_name, text_label=label)
 
         self._abi_handler = abi.connect(abi_signal, self.__abi_cb,
                 abi_signal, on_abi_cb)

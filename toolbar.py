@@ -31,7 +31,7 @@ from sugar3.graphics.toolbutton import ToolButton
 from sugar3.graphics.toolcombobox import ToolComboBox
 from sugar3.graphics.colorbutton import ColorToolButton
 from sugar3.graphics.toggletoolbutton import ToggleToolButton
-from sugar3.graphics.radiopalette import RadioMenuButton
+from sugar3.graphics.palettemenu import PaletteMenuBox
 from sugar3.graphics import iconentry
 from sugar3.graphics import style
 from sugar3.activity.widgets import CopyButton
@@ -472,26 +472,37 @@ class TextToolbar(Gtk.Toolbar):
         # MAGIC NUMBER WARNING: Secondary toolbars are not a standard height?
         self.set_size_request(-1, style.GRID_CELL_SIZE)
 
-        def append_align(icon_name, tooltip, do_abi_cb, style_name, button):
+        def append_align(icon_name, tooltip, do_abi_cb, style_name, button,
+                         menu_box):
             menu_item = AbiMenuItem(abiword_canvas, style_name, do_abi_cb,
                 icon_name, tooltip, button)
-            button.props.palette.menu.append(menu_item)
+            menu_box.append_item(menu_item)
             menu_item.show()
 
-        self._aligment_btn = RadioMenuButton(icon_name='format-justify-left')
+        self._aligment_btn = ToolButton(icon_name='format-justify-left')
         self._aligment_btn.props.tooltip = _('Choose alignment')
+        self._aligment_btn.props.hide_tooltip_on_click = False
+        self._aligment_btn.palette_invoker.props.toggle_palette = True
+
+        menu_box = PaletteMenuBox()
+        self._aligment_btn.props.palette.set_content(menu_box)
+        menu_box.show()
 
         append_align('format-justify-left', _('Left justify'),
-            abiword_canvas.align_left, 'left-align', self._aligment_btn)
+            abiword_canvas.align_left, 'left-align', self._aligment_btn,
+            menu_box)
 
         append_align('format-justify-center', _('Center justify'),
-            abiword_canvas.align_center, 'center-align', self._aligment_btn)
+            abiword_canvas.align_center, 'center-align', self._aligment_btn,
+            menu_box)
 
         append_align('format-justify-right', _('Right justify'),
-            abiword_canvas.align_right, 'right-align', self._aligment_btn)
+            abiword_canvas.align_right, 'right-align', self._aligment_btn,
+            menu_box)
 
         append_align('format-justify-fill', _('Fill justify'),
-            abiword_canvas.align_justify, 'justify-align', self._aligment_btn)
+            abiword_canvas.align_justify, 'justify-align', self._aligment_btn,
+            menu_box)
 
         self.insert(self._aligment_btn, -1)
 
@@ -574,14 +585,20 @@ class ParagraphToolbar(Gtk.Toolbar):
         self.insert(Gtk.SeparatorToolItem(), -1)
 
         def append_list(icon_name, tooltip, do_abi_cb, on_abi_cb, button,
-                        button_icon=None):
+                        menu_box, button_icon=None):
             menu_item = AbiMenuItem(abi, 'style-name', do_abi_cb,
                 icon_name, tooltip, button, on_abi_cb, button_icon)
-            button.props.palette.menu.append(menu_item)
+            menu_box.append_item(menu_item)
             menu_item.show()
 
-        list_btn = RadioMenuButton(icon_name='toolbar-bulletlist')
+        list_btn = ToolButton(icon_name='toolbar-bulletlist')
         list_btn.props.tooltip = _('Select list')
+        list_btn.props.hide_tooltip_on_click = False
+        list_btn.palette_invoker.props.toggle_palette = True
+
+        menu_box = PaletteMenuBox()
+        list_btn.props.palette.set_content(menu_box)
+        menu_box.show()
 
         append_list('list-none', _('Normal'),
                     lambda: abi.set_style('Normal'),
@@ -591,27 +608,32 @@ class ParagraphToolbar(Gtk.Toolbar):
                                   'Numbered List',
                                   'Lower Case List',
                                   'Upper Case List'],
-                    list_btn, 'toolbar-bulletlist')
+                    list_btn, menu_box, 'toolbar-bulletlist')
 
         append_list('list-bullet', _('Bullet List'),
                     lambda: abi.set_style('Bullet List'),
-                    lambda abi, style: style == 'Bullet List', list_btn)
+                    lambda abi, style: style == 'Bullet List', list_btn,
+                    menu_box)
 
         append_list('list-dashed', _('Dashed List'),
                     lambda: abi.set_style('Dashed List'),
-                    lambda abi, style: style == 'Dashed List', list_btn)
+                    lambda abi, style: style == 'Dashed List', list_btn,
+                    menu_box)
 
         append_list('list-numbered', _('Numbered List'),
                     lambda: abi.set_style('Numbered List'),
-                    lambda abi, style: style == 'Numbered List', list_btn)
+                    lambda abi, style: style == 'Numbered List', list_btn,
+                    menu_box)
 
         append_list('list-lower-case', _('Lower Case List'),
                     lambda: abi.set_style('Lower Case List'),
-                    lambda abi, style: style == 'Lower Case List', list_btn)
+                    lambda abi, style: style == 'Lower Case List', list_btn,
+                    menu_box)
 
         append_list('list-upper-case', _('Upper Case List'),
                     lambda: abi.set_style('Upper Case List'),
-                    lambda abi, style: style == 'Upper Case List', list_btn)
+                    lambda abi, style: style == 'Upper Case List', list_btn,
+                    menu_box)
 
         self.insert(list_btn, -1)
 
