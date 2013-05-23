@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-25 00:30-0400\n"
+"POT-Creation-Date: 2013-05-16 00:30-0400\n"
 "PO-Revision-Date: 2012-10-13 21:25+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,43 +29,42 @@ msgid ""
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
 
+#: AbiWordActivity.py:71
+msgid "Connecting..."
+msgstr ""
+
 #  "Editar"
-#: AbiWordActivity.py:85
+#: AbiWordActivity.py:101
 msgid "Edit"
 msgstr "Chiqachaña"
 
 #  "Ver"
-#: AbiWordActivity.py:91
+#: AbiWordActivity.py:107
 msgid "View"
 msgstr "Uñjaña"
 
 #  "Texto"
-#: AbiWordActivity.py:107
+#: AbiWordActivity.py:123
 msgid "Text"
 msgstr "Qillqata"
 
 #  "Párrafo"
-#: AbiWordActivity.py:113
+#: AbiWordActivity.py:129
 msgid "Paragraph"
 msgstr "T'aqa qillqata"
 
-#  "Lista con viñetas"
-#: AbiWordActivity.py:119 toolbar.py:601
-msgid "Bullet List"
-msgstr "Ch'iminakani qillqatanaka siqi"
-
 #  "Tabla"
-#: AbiWordActivity.py:125
+#: AbiWordActivity.py:135
 msgid "Table"
 msgstr "Jaljata"
 
 #  "Insertar imagen"
-#: AbiWordActivity.py:132
+#: AbiWordActivity.py:139
 msgid "Insert Image"
 msgstr "Uñtasiri qalluchaña"
 
 #  "Flotante"
-#: AbiWordActivity.py:139
+#: AbiWordActivity.py:146
 msgid "Floating"
 msgstr "Jalnaqiri"
 
@@ -78,195 +77,208 @@ msgid "Stop"
 msgstr "Sayt'ayaña"
 
 #  "Buscar"
-#: toolbar.py:99
+#: toolbar.py:100
 msgid "Search"
 msgstr "Thaqaña"
 
 #  "Buscar anterior"
-#: toolbar.py:116
+#: toolbar.py:117
 msgid "Find previous"
 msgstr "Kutt'asa thaqaña"
 
 #  "Buscar siguiente"
-#: toolbar.py:122
+#: toolbar.py:123
 msgid "Find next"
 msgstr "Jutiriru thaqaña"
 
-#: toolbar.py:222
+#: toolbar.py:227
 msgid "Create table"
 msgstr ""
 
 #  "Insertar fila"
-#: toolbar.py:232
+#: toolbar.py:237
 msgid "Insert Row"
 msgstr "Sich'i qalluchaña"
 
 #  "Borrar fila"
-#: toolbar.py:238
+#: toolbar.py:243
 msgid "Delete Row"
 msgstr "Sich'i apsuña"
 
 #  "Insertar columna"
-#: toolbar.py:244
+#: toolbar.py:249
 msgid "Insert Column"
 msgstr "Sayt'u qalluchaña"
 
 #  "Borrar columna"
-#: toolbar.py:250
+#: toolbar.py:255
 msgid "Delete Column"
 msgstr "Sayt'u apsuña"
 
 #  "Reducir"
-#: toolbar.py:295
+#: toolbar.py:300
 msgid "Zoom Out"
 msgstr "Juk'aptayaña"
 
 #  "Ampliar"
-#: toolbar.py:302
+#: toolbar.py:307
 msgid "Zoom In"
 msgstr "Jach'aptayaña"
 
-#: toolbar.py:308
+#: toolbar.py:313
 msgid "Zoom to width"
 msgstr "lankhuru wakichaña"
 
 #  "%"
-#: toolbar.py:325
+#: toolbar.py:330
 msgid "%"
 msgstr "%"
 
 #  "Página: "
-#: toolbar.py:337
+#: toolbar.py:342
 msgid "Page: "
 msgstr "Laphi chimpu: "
 
 #  "Negritas"
-#: toolbar.py:432
+#: toolbar.py:437
 msgid "Bold"
 msgstr "Qhananchata"
 
 #  "Cursiva"
-#: toolbar.py:441
+#: toolbar.py:446
 msgid "Italic"
 msgstr "Alt'ata qillqanaka"
 
 #  "Subrayado"
-#: toolbar.py:450
+#: toolbar.py:455
 msgid "Underline"
 msgstr "Sich'ita qillqanaka"
 
-#  "Normal"
-#: toolbar.py:514 toolbar.py:591
-msgid "Normal"
-msgstr "Aliqa"
-
-#  "Encabezado 1"
-#: toolbar.py:525
-msgid "Heading 1"
-msgstr "1 P'iqinchäwi"
-
-#  "Encabezado 2"
-#: toolbar.py:529
-msgid "Heading 2"
-msgstr "2 P'iqinchäwi"
-
-#  "Encabezado 3"
-#: toolbar.py:533
-msgid "Heading 3"
-msgstr "3 P'iqinchäwi"
-
-#  "Encabezado 4"
-#: toolbar.py:537
-msgid "Heading 4"
-msgstr "4 P'iqinchäwi"
-
-#  "Bloque de texto"
-#: toolbar.py:541
-msgid "Block Text"
-msgstr "Qillqata tukuya"
-
-#  "Texto simple"
-#: toolbar.py:545
-msgid "Plain Text"
-msgstr "Jisk'a qillqata"
+#: toolbar.py:482
+msgid "Choose aligment"
+msgstr ""
 
 #  "Justificar a la izquierda"
-#: toolbar.py:561
+#: toolbar.py:484
 msgid "Left justify"
 msgstr "Ch'iqaru khuskhachaña"
 
 #  "Justificar al centro"
-#: toolbar.py:564
+#: toolbar.py:487
 msgid "Center justify"
 msgstr "Taypiru khuskhachaña"
 
 #  "Justificar a la derecha"
-#: toolbar.py:567
+#: toolbar.py:490
 msgid "Right justify"
 msgstr "Kupiru khuskhachaña"
 
 #  "Justificar ambos lados"
-#: toolbar.py:570
+#: toolbar.py:493
 msgid "Fill justify"
 msgstr "Puraparu khuskhachaña"
 
+#  "Normal"
+#: toolbar.py:539 toolbar.py:586
+msgid "Normal"
+msgstr "Aliqa"
+
+#  "Encabezado 1"
+#: toolbar.py:550
+msgid "Heading 1"
+msgstr "1 P'iqinchäwi"
+
+#  "Encabezado 2"
+#: toolbar.py:554
+msgid "Heading 2"
+msgstr "2 P'iqinchäwi"
+
+#  "Encabezado 3"
+#: toolbar.py:558
+msgid "Heading 3"
+msgstr "3 P'iqinchäwi"
+
+#  "Encabezado 4"
+#: toolbar.py:562
+msgid "Heading 4"
+msgstr "4 P'iqinchäwi"
+
+#  "Bloque de texto"
+#: toolbar.py:566
+msgid "Block Text"
+msgstr "Qillqata tukuya"
+
+#  "Texto simple"
+#: toolbar.py:570
+msgid "Plain Text"
+msgstr "Jisk'a qillqata"
+
+#: toolbar.py:584
+msgid "Select list"
+msgstr ""
+
+#  "Lista con viñetas"
+#: toolbar.py:596
+msgid "Bullet List"
+msgstr "Ch'iminakani qillqatanaka siqi"
+
 #  "Lista con guiones"
-#: toolbar.py:605
+#: toolbar.py:600
 msgid "Dashed List"
 msgstr "Sich'inakani qillqatanaka siqi"
 
 #  "Lista enumerada"
-#: toolbar.py:609
+#: toolbar.py:604
 msgid "Numbered List"
 msgstr "Jakhunakani qillqatanaka siqi"
 
 #  "Lista alfabética minúsculas"
-#: toolbar.py:613
+#: toolbar.py:608
 msgid "Lower Case List"
 msgstr "Achakala jisk'a qillqanaka"
 
 #  "Lista alfabética mayúsculas"
-#: toolbar.py:617
+#: toolbar.py:612
 msgid "Upper Case List"
 msgstr "Achakala jach'a qillqanaka"
 
 #  "Texto enriquecido (RTF)"
-#: widgets.py:171
+#: widgets.py:222
 msgid "Rich Text (RTF)"
 msgstr "Ch'amanchata qillqanaka (RTF)"
 
 #  "RTF"
-#: widgets.py:173
+#: widgets.py:224
 msgid "RTF"
 msgstr "RTF"
 
 #  "Hipertexto (HTML)"
-#: widgets.py:177
+#: widgets.py:228
 msgid "Hypertext (HTML)"
 msgstr "Kunaymana qillqata (HTML)"
 
 #  "HTML"
-#: widgets.py:179
+#: widgets.py:230
 msgid "HTML"
 msgstr "HTML"
 
 #  "Texto simple (TXT)"
-#: widgets.py:184
+#: widgets.py:235
 msgid "Plain Text (TXT)"
 msgstr "Aliqa qillqata (TXT)"
 
 #  "TXT"
-#: widgets.py:186
+#: widgets.py:237
 msgid "TXT"
 msgstr "TXT"
 
 #  "Formato de Documento Portable (PDF)"
-#: widgets.py:190
+#: widgets.py:241
 msgid "Portable Document Format (PDF)"
 msgstr "Taqina Ullañataki Qillqata (PDF)"
 
 #  "PDF"
-#: widgets.py:192
+#: widgets.py:243
 msgid "PDF"
 msgstr "PDF"
 
