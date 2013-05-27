@@ -173,22 +173,6 @@ class AbiWordActivity(activity.Activity):
 
         self.set_canvas(overlay)
 
-        self.abiword_canvas.connect_after('map-event', self.__map_event_cb)
-        self.abiword_canvas.show()
-        self.connect_after('map-event', self.__map_activity_event_cb)
-
-        self.abiword_canvas.connect('size-allocate', self.size_allocate_cb)
-
-    def size_allocate_cb(self, abi, alloc):
-        logging.error('size allocate %s', alloc)
-        GObject.idle_add(abi.queue_draw)
-
-    def __map_event_cb(self, event, activity):
-        logger.debug('__map_event_cb abi')
-
-        # no ugly borders please
-        #self.abiword_canvas.set_property("shadow-type", Gtk.ShadowType.NONE)
-
         # we want a nice border so we can select paragraphs easily
         self.abiword_canvas.set_show_margin(True)
 
@@ -211,11 +195,18 @@ class AbiWordActivity(activity.Activity):
                     self._buddy_joined_cb)
             self.shared_activity.connect('buddy-left', self._buddy_left_cb)
             if self.get_shared():
-#                # oh, OK, we've already joined
                 self._joined_cb(self)
         else:
             # we are creating the activity
             logger.error("We are creating an activity")
+
+        self.abiword_canvas.show()
+        self.connect_after('map-event', self.__map_activity_event_cb)
+
+        self.abiword_canvas.connect('size-allocate', self.size_allocate_cb)
+
+    def size_allocate_cb(self, abi, alloc):
+        GObject.idle_add(abi.queue_draw)
 
     def __map_activity_event_cb(self, event, activity):
         # set custom keybindings for Write
