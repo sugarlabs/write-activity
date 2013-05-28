@@ -15,7 +15,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import os
-import simplejson
+import json
 from gettext import gettext as _
 import logging
 
@@ -97,7 +97,7 @@ class SpeechToolbar(Gtk.Toolbar):
         if os.path.exists(data_file_name):
             f = open(data_file_name, 'r')
             try:
-                speech_parameters = simplejson.load(f)
+                speech_parameters = json.load(f)
                 speech.voice = speech_parameters['voice']
             finally:
                 f.close()
@@ -150,7 +150,7 @@ class SpeechToolbar(Gtk.Toolbar):
         data_file_name = os.path.join(data_path, 'speech_params.json')
         f = open(data_file_name, 'w')
         try:
-            simplejson.dump(speech_parameters, f)
+            json.dump(speech_parameters, f)
         finally:
             f.close()
 
