@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: projects/write\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-22 00:30-0400\n"
-"PO-Revision-Date: 2013-05-21 09:16+0200\n"
+"PO-Revision-Date: 2013-05-30 15:07+0200\n"
 "Last-Translator: samy boutayeb <s.boutayeb@free.fr>\n"
 "Language-Team: French <traduc@traduc.org>\n"
 "Language: fr\n"
@@ -144,7 +144,6 @@ msgid "Underline"
 msgstr "Souligné"
 
 #: toolbar.py:482
-#, fuzzy
 msgid "Choose alignment"
 msgstr "Choisir l'alignement"
 
