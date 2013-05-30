@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-08 00:31-0500\n"
-"PO-Revision-Date: 2013-04-06 08:39+0200\n"
+"POT-Creation-Date: 2013-05-22 00:30-0400\n"
+"PO-Revision-Date: 2013-05-23 15:38+0200\n"
 "Last-Translator: andika <andika@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: id\n"
@@ -43,35 +43,31 @@ msgstr ""
 msgid "Connecting..."
 msgstr "Menyambung..."
 
-#: AbiWordActivity.py:100
+#: AbiWordActivity.py:101
 msgid "Edit"
 msgstr "Sunting"
 
-#: AbiWordActivity.py:106
+#: AbiWordActivity.py:107
 msgid "View"
 msgstr "Tampilan"
 
-#: AbiWordActivity.py:122
+#: AbiWordActivity.py:123
 msgid "Text"
 msgstr "Teks"
 
-#: AbiWordActivity.py:128
+#: AbiWordActivity.py:129
 msgid "Paragraph"
 msgstr "Paragraf"
 
-#: AbiWordActivity.py:134 toolbar.py:605
-msgid "Bullet List"
-msgstr "Daftar Bulet"
-
-#: AbiWordActivity.py:140
+#: AbiWordActivity.py:135
 msgid "Table"
 msgstr "Tabel"
 
-#: AbiWordActivity.py:147
+#: AbiWordActivity.py:139
 msgid "Insert Image"
 msgstr "Sisipkan Gambar"
 
-#: AbiWordActivity.py:154
+#: AbiWordActivity.py:146
 msgid "Floating"
 msgstr "Mengambang"
 
@@ -83,159 +79,172 @@ msgstr "Putar / Jeda"
 msgid "Stop"
 msgstr "Stop"
 
-#: toolbar.py:99
+#: toolbar.py:100
 msgid "Search"
 msgstr "Cari"
 
-#: toolbar.py:116
+#: toolbar.py:117
 msgid "Find previous"
 msgstr "Temukan sebelumnya"
 
-#: toolbar.py:122
+#: toolbar.py:123
 msgid "Find next"
 msgstr "Temukan selanjutnya"
 
-#: toolbar.py:226
+#: toolbar.py:227
 msgid "Create table"
 msgstr "Buat tabel"
 
-#: toolbar.py:236
+#: toolbar.py:237
 msgid "Insert Row"
 msgstr "Sisipkan Baris"
 
-#: toolbar.py:242
+#: toolbar.py:243
 msgid "Delete Row"
 msgstr "Hapus Baris"
 
-#: toolbar.py:248
+#: toolbar.py:249
 msgid "Insert Column"
 msgstr "Sisipkan Kolom"
 
-#: toolbar.py:254
+#: toolbar.py:255
 msgid "Delete Column"
 msgstr "Hapus Kolom"
 
-#: toolbar.py:299
+#: toolbar.py:300
 msgid "Zoom Out"
 msgstr "Zum Perkecil"
 
-#: toolbar.py:306
+#: toolbar.py:307
 msgid "Zoom In"
 msgstr "Zum Perbesar"
 
-#: toolbar.py:312
+#: toolbar.py:313
 msgid "Zoom to width"
 msgstr "Zum ke lebar"
 
-#: toolbar.py:329
+#: toolbar.py:330
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:341
+#: toolbar.py:342
 msgid "Page: "
 msgstr "Halaman: "
 
-#: toolbar.py:436
+#: toolbar.py:437
 msgid "Bold"
 msgstr "Tebal"
 
-#: toolbar.py:445
+#: toolbar.py:446
 msgid "Italic"
 msgstr "Miring"
 
-#: toolbar.py:454
+#: toolbar.py:455
 msgid "Underline"
 msgstr "Garis bawah"
 
-#: toolbar.py:518 toolbar.py:595
-msgid "Normal"
-msgstr "Normal"
+#: toolbar.py:482
+#, fuzzy
+msgid "Choose alignment"
+msgstr "Pilih perataan"
 
-#: toolbar.py:529
-msgid "Heading 1"
-msgstr "Tajuk 1"
-
-#: toolbar.py:533
-msgid "Heading 2"
-msgstr "Tajuk 2"
-
-#: toolbar.py:537
-msgid "Heading 3"
-msgstr "Tajuk 3"
-
-#: toolbar.py:541
-msgid "Heading 4"
-msgstr "Tajuk 4"
-
-#: toolbar.py:545
-msgid "Block Text"
-msgstr "Teks Kotak"
-
-#: toolbar.py:549
-msgid "Plain Text"
-msgstr "Teks Polos"
-
-#: toolbar.py:565
+#: toolbar.py:484
 msgid "Left justify"
 msgstr "Rata kiri"
 
-#: toolbar.py:568
+#: toolbar.py:487
 msgid "Center justify"
 msgstr "Rata tengah"
 
-#: toolbar.py:571
+#: toolbar.py:490
 msgid "Right justify"
 msgstr "Rata kanan"
 
-#: toolbar.py:574
+#: toolbar.py:493
 msgid "Fill justify"
 msgstr "Rata lebar"
 
-#: toolbar.py:609
+#: toolbar.py:539 toolbar.py:586
+msgid "Normal"
+msgstr "Normal"
+
+#: toolbar.py:550
+msgid "Heading 1"
+msgstr "Tajuk 1"
+
+#: toolbar.py:554
+msgid "Heading 2"
+msgstr "Tajuk 2"
+
+#: toolbar.py:558
+msgid "Heading 3"
+msgstr "Tajuk 3"
+
+#: toolbar.py:562
+msgid "Heading 4"
+msgstr "Tajuk 4"
+
+#: toolbar.py:566
+msgid "Block Text"
+msgstr "Teks Kotak"
+
+#: toolbar.py:570
+msgid "Plain Text"
+msgstr "Teks Polos"
+
+#: toolbar.py:584
+msgid "Select list"
+msgstr "Pilih daftar"
+
+#: toolbar.py:596
+msgid "Bullet List"
+msgstr "Daftar Bulet"
+
+#: toolbar.py:600
 msgid "Dashed List"
 msgstr "Daftar Strip"
 
-#: toolbar.py:613
+#: toolbar.py:604
 msgid "Numbered List"
 msgstr "Daftar bernomor"
 
-#: toolbar.py:617
+#: toolbar.py:608
 msgid "Lower Case List"
 msgstr "Daftar Huruf Kecil"
 
-#: toolbar.py:621
+#: toolbar.py:612
 msgid "Upper Case List"
 msgstr "Daftar Huruf Besar"
 
-#: widgets.py:174
+#: widgets.py:222
 msgid "Rich Text (RTF)"
 msgstr "Rich Text (RTF)"
 
-#: widgets.py:176
+#: widgets.py:224
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:180
+#: widgets.py:228
 msgid "Hypertext (HTML)"
 msgstr "Hiperteks (HTML)"
 
-#: widgets.py:182
+#: widgets.py:230
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:187
+#: widgets.py:235
 msgid "Plain Text (TXT)"
 msgstr "Teks Polos (TXT)"
 
-#: widgets.py:189
+#: widgets.py:237
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:193
+#: widgets.py:241
 msgid "Portable Document Format (PDF)"
 msgstr "Portable Document Format (PDF)"
 
-#: widgets.py:195
+#: widgets.py:243
 msgid "PDF"
 msgstr "PDF"
 
