@@ -305,8 +305,16 @@ class DocumentView(Abi.Widget):
     def __init__(self):
         Abi.Widget.__init__(self)
         self.connect('size-allocate', self.__size_allocate_cb)
-        self.connect('request-clear-area', self.__request_clear_area_cb)
-        self.connect('unset-clear-area', self.__unset_clear_area_cb)
+        try:
+            self.connect('request-clear-area', self.__request_clear_area_cb)
+        except:
+            logging.error('EXCEPTION: request-clear-area signal not available')
+
+        try:
+            self.connect('unset-clear-area', self.__unset_clear_area_cb)
+        except:
+            logging.error('EXCEPTION: unset-clear-area signal not available')
+
         self.osk_changed = False
         self.dy = 0
 
