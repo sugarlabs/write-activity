@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-16 00:30-0400\n"
+"POT-Creation-Date: 2013-05-22 00:30-0400\n"
 "PO-Revision-Date: 2012-10-13 21:25+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -155,7 +155,7 @@ msgid "Underline"
 msgstr "Sich'ita qillqanaka"
 
 #: toolbar.py:482
-msgid "Choose aligment"
+msgid "Choose alignment"
 msgstr ""
 
 #  "Justificar a la izquierda"
