@@ -57,6 +57,7 @@ class FontComboBox(Gtk.ToolItem):
         Gtk.ToolItem.__init__(self)
         self._font_label = FontLabel()
         bt = Gtk.Button('')
+        bt.set_can_focus(False)
         bt.remove(bt.get_children()[0])
         box = Gtk.HBox()
         bt.add(box)
@@ -226,6 +227,7 @@ class FontSize(Gtk.ToolItem):
         # add a vbox to set the padding up and down
         vbox.pack_start(hbox, True, True, default_padding)
         self._size_down = Gtk.Button()
+        self._size_down.set_can_focus(False)
         icon = Icon(icon_name='resize-')
         self._size_down.set_image(icon)
         self._size_down.connect('clicked', self.__font_sizes_cb, False)
@@ -239,6 +241,7 @@ class FontSize(Gtk.ToolItem):
         hbox.pack_start(self._size_label, False, False, 10)
 
         self._size_up = Gtk.Button()
+        self._size_up.set_can_focus(False)
         icon = Icon(icon_name='resize+')
         self._size_up.set_image(icon)
         self._size_up.connect('clicked', self.__font_sizes_cb, True)
