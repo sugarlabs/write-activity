@@ -200,6 +200,7 @@ class AbiWordActivity(activity.Activity):
             # we are creating the activity
             logger.error("We are creating an activity")
 
+        self.abiword_canvas.zoom_width()
         self.abiword_canvas.show()
         self.connect_after('map-event', self.__map_activity_event_cb)
 
@@ -406,6 +407,7 @@ class AbiWordActivity(activity.Activity):
             # we pass no mime/file type, let libabiword autodetect it,
             # so we can handle multiple file formats
             self.abiword_canvas.load_file('file://' + file_path, '')
+        self.abiword_canvas.zoom_width()
         self._new_instance = False
 
     def write_file(self, file_path):
