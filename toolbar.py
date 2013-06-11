@@ -41,8 +41,8 @@ from sugar3.activity.widgets import RedoButton
 
 from widgets import AbiButton
 from widgets import AbiMenuItem
-from widgets import FontSizeCombo
 from fontcombobox import FontComboBox
+from fontcombobox import FontSize
 from gridcreate import GridCreateWidget
 
 logger = logging.getLogger('write-activity')
@@ -430,8 +430,12 @@ class TextToolbar(Gtk.Toolbar):
                 self._font_family_cb)
         self.insert(ToolComboBox(self.font_name_combo), -1)
 
-        font_size = ToolComboBox(FontSizeCombo(abiword_canvas))
-        self.insert(font_size, -1)
+        self.font_size = FontSize()
+        self._abi_handler = abiword_canvas.connect('font-size',
+                                                   self._font_size_cb)
+        self._changed_id = self.font_size.connect(
+            'changed', self._font_size_changed_cb, abiword_canvas)
+        self.insert(self.font_size, -1)
 
         bold = ToggleToolButton('format-text-bold')
         bold.set_tooltip(_('Bold'))
@@ -519,6 +523,19 @@ class TextToolbar(Gtk.Toolbar):
     def _font_family_cb(self, abi, font_family):
         logging.debug('Abiword font changed to %s', font_family)
         self.font_name_combo.set_font_name(font_family)
+
+    def _font_size_changed_cb(self, widget, abi):
+        abi.handler_block(self._abi_handler)
+        try:
+            abi.set_font_size(str(widget.get_font_size()))
+        finally:
+            abi.handler_unblock(self._abi_handler)
+
+    def _font_size_cb(self, abi, size):
+        logging.debug('Abiword font size changed to %s', size)
+        self.handler_block(self._changed_id)
+        self.font_size.set_font_size(int(size))
+        self.handler_unblock(self._changed_id)
 
     def _setToggleButtonState(self, button, b, id):
         button.handler_block(id)

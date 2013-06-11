@@ -22,8 +22,6 @@ from gi.repository import Abi
 from gi.repository import GLib
 
 from sugar3.graphics.radiotoolbutton import RadioToolButton
-from sugar3.graphics.combobox import ComboBox
-from sugar3.graphics.palette import Palette
 from sugar3.graphics.toolbutton import ToolButton
 from sugar3.graphics.palettemenu import PaletteMenuItem
 from sugar3.datastore import datastore
@@ -31,107 +29,6 @@ from sugar3.datastore import datastore
 from sugar3.activity.activity import SCOPE_PRIVATE
 
 logger = logging.getLogger('write-activity')
-
-"""
-# The FontCombo is not used anymore, keep the code here for reference
-# for a few versions
-
-class FontCombo(ComboBox):
-
-    def __init__(self, abi):
-        ComboBox.__init__(self)
-
-        self._has_custom_fonts = False
-        self._fonts = sorted(abi.get_font_names())
-        self._fonts_changed_id = self.connect('changed', self._font_changed_cb,
-                abi)
-
-        for i, f in enumerate(self._fonts):
-            self.append_item(i, f, None)
-            if f == 'Times New Roman':
-                self.set_active(i)
-
-        self._abi_handler = abi.connect('font-family', self._font_family_cb)
-
-    def _font_changed_cb(self, combobox, abi):
-        if self.get_active() != -1:
-            logger.debug('Setting font: %s', self._fonts[self.get_active()])
-            try:
-                abi.handler_block(self._abi_handler)
-                abi.set_font_name(self._fonts[self.get_active()])
-            finally:
-                abi.handler_unblock(self._abi_handler)
-
-    def _font_family_cb(self, abi, font_family):
-        font_index = -1
-
-        # search for the font name in our font list
-        for i, f in enumerate(self._fonts):
-            if f == font_family:
-                font_index = i
-                break
-
-        # if we don't know this font yet, then add it (temporary) to the list
-        if font_index == -1:
-            logger.debug('Font not found in font list: %s', font_family)
-            if not self._has_custom_fonts:
-                # add a separator to seperate the non-available fonts from
-                # the available ones
-                self._fonts.append('')  # ugly
-                self.append_separator()
-                self._has_custom_fonts = True
-            # add the new font
-            self._fonts.append(font_family)
-            self.append_item(0, font_family, None)
-            # see how many fonts we have now, so we can select the last one
-            model = self.get_model()
-            num_children = model.iter_n_children(None)
-            logger.debug('Number of fonts in the list: %d', num_children)
-            font_index = num_children - 1
-
-        # activate the found font
-        if (font_index > -1):
-            self.handler_block(self._fonts_changed_id)
-            self.set_active(font_index)
-            self.handler_unblock(self._fonts_changed_id)
-"""
-
-
-class FontSizeCombo(ComboBox):
-
-    def __init__(self, abi):
-        ComboBox.__init__(self)
-
-        self._abi_handler = abi.connect('font-size', self._font_size_cb)
-
-        self._font_sizes = ['8', '9', '10', '11', '12', '14', '16', '20', \
-                            '22', '24', '26', '28', '36', '48', '72']
-        self._changed_id = self.connect('changed', self._font_size_changed_cb,
-                abi)
-
-        for i, s in enumerate(self._font_sizes):
-            self.append_item(i, s, None)
-            if s == '12':
-                self.set_active(i)
-
-    def _font_size_changed_cb(self, combobox, abi):
-        if self.get_active() != -1:
-            logger.debug('Setting font size: %d',
-                    int(self._font_sizes[self.get_active()]))
-
-            abi.handler_block(self._abi_handler)
-            try:
-                abi.set_font_size(self._font_sizes[self.get_active()])
-            finally:
-                abi.handler_unblock(self._abi_handler)
-
-    def _font_size_cb(self, abi, size):
-        for i, s in enumerate(self._font_sizes):
-            if int(s) == int(size):
-                self.handler_block(self._changed_id)
-                self.set_active(i)
-                self.handler_unblock(self._changed_id)
-                break
 
 
 class AbiButton(RadioToolButton):
