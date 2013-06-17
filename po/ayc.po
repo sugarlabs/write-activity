@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-22 00:30-0400\n"
-"PO-Revision-Date: 2012-10-13 21:25+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"PO-Revision-Date: 2013-06-13 16:01+0200\n"
+"Last-Translator: EdgarQuispeChambi <quispedgar@yahoo.es>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ayc\n"
 "MIME-Version: 1.0\n"
@@ -28,10 +28,13 @@ msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
+"Qillqañaxa arunakama katuqañataki maya chiqa utjayi. ¡Maya siwa säwi "
+"qillqma, jarawi, yatiyäwi, maski kunäpansa! ¡Qillqatama tañapa uñanaqapa "
+"jataña yant'ma, ukampinsa maya uñjasïwi apantasma!"
 
 #: AbiWordActivity.py:71
 msgid "Connecting..."
-msgstr ""
+msgstr "Mayachaskaña..."
 
 #  "Editar"
 #: AbiWordActivity.py:101
@@ -93,7 +96,7 @@ msgstr "Jutiriru thaqaña"
 
 #: toolbar.py:227
 msgid "Create table"
-msgstr ""
+msgstr "Siqi wakichata uñstayaña"
 
 #  "Insertar fila"
 #: toolbar.py:237
@@ -156,7 +159,7 @@ msgstr "Sich'ita qillqanaka"
 
 #: toolbar.py:482
 msgid "Choose alignment"
-msgstr ""
+msgstr "chiqañchaña jajlliña"
 
 #  "Justificar a la izquierda"
 #: toolbar.py:484
@@ -215,7 +218,7 @@ msgstr "Jisk'a qillqata"
 
 #: toolbar.py:584
 msgid "Select list"
-msgstr ""
+msgstr "Wakichatanaka siqi jajlliña"
 
 #  "Lista con viñetas"
 #: toolbar.py:596
