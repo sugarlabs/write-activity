@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-22 00:30-0400\n"
-"PO-Revision-Date: 2013-06-13 16:01+0200\n"
+"POT-Creation-Date: 2013-06-12 00:30-0400\n"
+"PO-Revision-Date: 2013-06-17 10:57+0200\n"
 "Last-Translator: EdgarQuispeChambi <quispedgar@yahoo.es>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ayc\n"
@@ -70,6 +70,10 @@ msgstr "Uñtasiri qalluchaña"
 #: AbiWordActivity.py:146
 msgid "Floating"
 msgstr "Jalnaqiri"
+
+#: fontcombobox.py:90
+msgid "Select font"
+msgstr "Qillqa jajlliña"
 
 #: speechtoolbar.py:58
 msgid "Play / Pause"
@@ -143,145 +147,145 @@ msgid "Page: "
 msgstr "Laphi chimpu: "
 
 #  "Negritas"
-#: toolbar.py:437
+#: toolbar.py:441
 msgid "Bold"
 msgstr "Qhananchata"
 
 #  "Cursiva"
-#: toolbar.py:446
+#: toolbar.py:450
 msgid "Italic"
 msgstr "Alt'ata qillqanaka"
 
 #  "Subrayado"
-#: toolbar.py:455
+#: toolbar.py:459
 msgid "Underline"
 msgstr "Sich'ita qillqanaka"
 
-#: toolbar.py:482
+#: toolbar.py:487
 msgid "Choose alignment"
 msgstr "chiqañchaña jajlliña"
 
 #  "Justificar a la izquierda"
-#: toolbar.py:484
+#: toolbar.py:495
 msgid "Left justify"
 msgstr "Ch'iqaru khuskhachaña"
 
 #  "Justificar al centro"
-#: toolbar.py:487
+#: toolbar.py:499
 msgid "Center justify"
 msgstr "Taypiru khuskhachaña"
 
 #  "Justificar a la derecha"
-#: toolbar.py:490
+#: toolbar.py:503
 msgid "Right justify"
 msgstr "Kupiru khuskhachaña"
 
 #  "Justificar ambos lados"
-#: toolbar.py:493
+#: toolbar.py:507
 msgid "Fill justify"
 msgstr "Puraparu khuskhachaña"
 
 #  "Normal"
-#: toolbar.py:539 toolbar.py:586
+#: toolbar.py:567 toolbar.py:620
 msgid "Normal"
 msgstr "Aliqa"
 
 #  "Encabezado 1"
-#: toolbar.py:550
+#: toolbar.py:578
 msgid "Heading 1"
 msgstr "1 P'iqinchäwi"
 
 #  "Encabezado 2"
-#: toolbar.py:554
+#: toolbar.py:582
 msgid "Heading 2"
 msgstr "2 P'iqinchäwi"
 
 #  "Encabezado 3"
-#: toolbar.py:558
+#: toolbar.py:586
 msgid "Heading 3"
 msgstr "3 P'iqinchäwi"
 
 #  "Encabezado 4"
-#: toolbar.py:562
+#: toolbar.py:590
 msgid "Heading 4"
 msgstr "4 P'iqinchäwi"
 
 #  "Bloque de texto"
-#: toolbar.py:566
+#: toolbar.py:594
 msgid "Block Text"
 msgstr "Qillqata tukuya"
 
 #  "Texto simple"
-#: toolbar.py:570
+#: toolbar.py:598
 msgid "Plain Text"
 msgstr "Jisk'a qillqata"
 
-#: toolbar.py:584
+#: toolbar.py:612
 msgid "Select list"
 msgstr "Wakichatanaka siqi jajlliña"
 
 #  "Lista con viñetas"
-#: toolbar.py:596
+#: toolbar.py:630
 msgid "Bullet List"
 msgstr "Ch'iminakani qillqatanaka siqi"
 
 #  "Lista con guiones"
-#: toolbar.py:600
+#: toolbar.py:635
 msgid "Dashed List"
 msgstr "Sich'inakani qillqatanaka siqi"
 
 #  "Lista enumerada"
-#: toolbar.py:604
+#: toolbar.py:640
 msgid "Numbered List"
 msgstr "Jakhunakani qillqatanaka siqi"
 
 #  "Lista alfabética minúsculas"
-#: toolbar.py:608
+#: toolbar.py:645
 msgid "Lower Case List"
 msgstr "Achakala jisk'a qillqanaka"
 
 #  "Lista alfabética mayúsculas"
-#: toolbar.py:612
+#: toolbar.py:650
 msgid "Upper Case List"
 msgstr "Achakala jach'a qillqanaka"
 
 #  "Texto enriquecido (RTF)"
-#: widgets.py:222
+#: widgets.py:119
 msgid "Rich Text (RTF)"
 msgstr "Ch'amanchata qillqanaka (RTF)"
 
 #  "RTF"
-#: widgets.py:224
+#: widgets.py:121
 msgid "RTF"
 msgstr "RTF"
 
 #  "Hipertexto (HTML)"
-#: widgets.py:228
+#: widgets.py:125
 msgid "Hypertext (HTML)"
 msgstr "Kunaymana qillqata (HTML)"
 
 #  "HTML"
-#: widgets.py:230
+#: widgets.py:127
 msgid "HTML"
 msgstr "HTML"
 
 #  "Texto simple (TXT)"
-#: widgets.py:235
+#: widgets.py:132
 msgid "Plain Text (TXT)"
 msgstr "Aliqa qillqata (TXT)"
 
 #  "TXT"
-#: widgets.py:237
+#: widgets.py:134
 msgid "TXT"
 msgstr "TXT"
 
 #  "Formato de Documento Portable (PDF)"
-#: widgets.py:241
+#: widgets.py:138
 msgid "Portable Document Format (PDF)"
 msgstr "Taqina Ullañataki Qillqata (PDF)"
 
 #  "PDF"
-#: widgets.py:243
+#: widgets.py:140
 msgid "PDF"
 msgstr "PDF"
 
