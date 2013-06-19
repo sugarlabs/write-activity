@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: projects/write\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-22 00:30-0400\n"
-"PO-Revision-Date: 2013-05-30 15:07+0200\n"
+"POT-Creation-Date: 2013-06-12 00:30-0400\n"
+"PO-Revision-Date: 2013-06-19 23:25+0200\n"
 "Last-Translator: samy boutayeb <s.boutayeb@free.fr>\n"
 "Language-Team: French <traduc@traduc.org>\n"
 "Language: fr\n"
@@ -70,6 +70,10 @@ msgstr "Insérer une image"
 #: AbiWordActivity.py:146
 msgid "Floating"
 msgstr "Flottant"
+
+#: fontcombobox.py:90
+msgid "Select font"
+msgstr "Sélectionner la police"
 
 #: speechtoolbar.py:58
 msgid "Play / Pause"
@@ -131,119 +135,119 @@ msgstr "%"
 msgid "Page: "
 msgstr "Page : "
 
-#: toolbar.py:437
+#: toolbar.py:441
 msgid "Bold"
 msgstr "Gras"
 
-#: toolbar.py:446
+#: toolbar.py:450
 msgid "Italic"
 msgstr "Italique"
 
-#: toolbar.py:455
+#: toolbar.py:459
 msgid "Underline"
 msgstr "Souligné"
 
-#: toolbar.py:482
+#: toolbar.py:487
 msgid "Choose alignment"
 msgstr "Choisir l'alignement"
 
-#: toolbar.py:484
+#: toolbar.py:495
 msgid "Left justify"
 msgstr "Aligné à gauche"
 
-#: toolbar.py:487
+#: toolbar.py:499
 msgid "Center justify"
 msgstr "Centré"
 
-#: toolbar.py:490
+#: toolbar.py:503
 msgid "Right justify"
 msgstr "Aligné à droite"
 
-#: toolbar.py:493
+#: toolbar.py:507
 msgid "Fill justify"
 msgstr "Justifié"
 
-#: toolbar.py:539 toolbar.py:586
+#: toolbar.py:567 toolbar.py:620
 msgid "Normal"
 msgstr "Normal"
 
-#: toolbar.py:550
+#: toolbar.py:578
 msgid "Heading 1"
 msgstr "Titre 1"
 
-#: toolbar.py:554
+#: toolbar.py:582
 msgid "Heading 2"
 msgstr "Titre 2"
 
-#: toolbar.py:558
+#: toolbar.py:586
 msgid "Heading 3"
 msgstr "Titre 3"
 
-#: toolbar.py:562
+#: toolbar.py:590
 msgid "Heading 4"
 msgstr "Titre 4"
 
-#: toolbar.py:566
+#: toolbar.py:594
 msgid "Block Text"
 msgstr "Texte justifié"
 
-#: toolbar.py:570
+#: toolbar.py:598
 msgid "Plain Text"
 msgstr "Texte simple"
 
-#: toolbar.py:584
+#: toolbar.py:612
 msgid "Select list"
 msgstr "Sélectionner une liste"
 
-#: toolbar.py:596
+#: toolbar.py:630
 msgid "Bullet List"
 msgstr "Liste à puces"
 
-#: toolbar.py:600
+#: toolbar.py:635
 msgid "Dashed List"
 msgstr "Liste à tirets"
 
-#: toolbar.py:604
+#: toolbar.py:640
 msgid "Numbered List"
 msgstr "Liste numérotée"
 
-#: toolbar.py:608
+#: toolbar.py:645
 msgid "Lower Case List"
 msgstr "Liste a, b, c"
 
-#: toolbar.py:612
+#: toolbar.py:650
 msgid "Upper Case List"
 msgstr "Liste A, B, C"
 
-#: widgets.py:222
+#: widgets.py:119
 msgid "Rich Text (RTF)"
 msgstr "Texte enrichi (RTF)"
 
-#: widgets.py:224
+#: widgets.py:121
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:228
+#: widgets.py:125
 msgid "Hypertext (HTML)"
 msgstr "Hypertexte (HTML)"
 
-#: widgets.py:230
+#: widgets.py:127
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:235
+#: widgets.py:132
 msgid "Plain Text (TXT)"
 msgstr "Texte simple (TXT)"
 
-#: widgets.py:237
+#: widgets.py:134
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:241
+#: widgets.py:138
 msgid "Portable Document Format (PDF)"
 msgstr "Portable Document Format (PDF)"
 
-#: widgets.py:243
+#: widgets.py:140
 msgid "PDF"
 msgstr "PDF"
 
