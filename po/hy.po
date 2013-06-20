@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-08 00:31-0500\n"
-"PO-Revision-Date: 2013-04-19 16:42+0200\n"
+"POT-Creation-Date: 2013-06-12 00:30-0400\n"
+"PO-Revision-Date: 2013-06-19 20:17+0200\n"
 "Last-Translator: anushnur <anush.mkrtchyan@ca1492.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: hy\n"
@@ -35,37 +35,37 @@ msgstr ""
 msgid "Connecting..."
 msgstr "Միացում..."
 
-#: AbiWordActivity.py:100
+#: AbiWordActivity.py:101
 msgid "Edit"
 msgstr "Խմբագրել"
 
-#: AbiWordActivity.py:106
+#: AbiWordActivity.py:107
 msgid "View"
 msgstr "Տեսք"
 
-#: AbiWordActivity.py:122
+#: AbiWordActivity.py:123
 msgid "Text"
 msgstr "Տեքստ"
 
-#: AbiWordActivity.py:128
+#: AbiWordActivity.py:129
 msgid "Paragraph"
 msgstr "Պարբերություն"
 
-#: AbiWordActivity.py:134 toolbar.py:605
-msgid "Bullet List"
-msgstr "Պարբերանշված ցուցակ"
-
-#: AbiWordActivity.py:140
+#: AbiWordActivity.py:135
 msgid "Table"
 msgstr "Աղյուսակ"
 
-#: AbiWordActivity.py:147
+#: AbiWordActivity.py:139
 msgid "Insert Image"
 msgstr "Զետեղել պատկեր"
 
-#: AbiWordActivity.py:154
+#: AbiWordActivity.py:146
 msgid "Floating"
 msgstr "Լողացող"
+
+#: fontcombobox.py:90
+msgid "Select font"
+msgstr "Ընտրել տառատեսակը"
 
 #: speechtoolbar.py:58
 msgid "Play / Pause"
@@ -75,162 +75,174 @@ msgstr "Վերարտադրել / Դադար"
 msgid "Stop"
 msgstr "Կանգ"
 
-#: toolbar.py:99
+#: toolbar.py:100
 msgid "Search"
 msgstr "Որոնում"
 
-#: toolbar.py:116
+#: toolbar.py:117
 msgid "Find previous"
 msgstr "Գտնել նախորդը"
 
-#: toolbar.py:122
+#: toolbar.py:123
 msgid "Find next"
 msgstr "Գտնել հաջորդը"
 
-#: toolbar.py:226
+#: toolbar.py:227
 msgid "Create table"
 msgstr "Ստեղծել աղյուսակ"
 
-#: toolbar.py:236
+#: toolbar.py:237
 msgid "Insert Row"
 msgstr "Զետեղել շարք"
 
-#: toolbar.py:242
+#: toolbar.py:243
 msgid "Delete Row"
 msgstr "Ջնջել շարքը"
 
-#: toolbar.py:248
+#: toolbar.py:249
 msgid "Insert Column"
 msgstr "Զետեղել սյունակ"
 
-#: toolbar.py:254
+#: toolbar.py:255
 msgid "Delete Column"
 msgstr "Ջնջել սյունակը"
 
-#: toolbar.py:299
+#: toolbar.py:300
 msgid "Zoom Out"
 msgstr "Հեռացնել"
 
-#: toolbar.py:306
+#: toolbar.py:307
 msgid "Zoom In"
 msgstr "Մոտեցնել"
 
-#: toolbar.py:312
+#: toolbar.py:313
 msgid "Zoom to width"
 msgstr "Հարմարեցնել լայնքը"
 
-#: toolbar.py:329
+#: toolbar.py:330
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:341
+#: toolbar.py:342
 msgid "Page: "
 msgstr "Էջ. "
 
-#: toolbar.py:436
+#: toolbar.py:441
 msgid "Bold"
 msgstr "Թավ"
 
-#: toolbar.py:445
+#: toolbar.py:450
 msgid "Italic"
 msgstr "Շեղատառ"
 
-#: toolbar.py:454
+#: toolbar.py:459
 msgid "Underline"
 msgstr "Ընդգծված"
 
-#: toolbar.py:518 toolbar.py:595
-msgid "Normal"
-msgstr "Բնական"
+#: toolbar.py:487
+msgid "Choose alignment"
+msgstr "Ընտրել դիրքորոշումը"
 
-#: toolbar.py:529
-msgid "Heading 1"
-msgstr "Վերնագիր 1"
-
-#: toolbar.py:533
-msgid "Heading 2"
-msgstr "Վերնագիր 2"
-
-#: toolbar.py:537
-msgid "Heading 3"
-msgstr "Վերնագիր 3"
-
-#: toolbar.py:541
-msgid "Heading 4"
-msgstr "Վերնագիր 4"
-
-#: toolbar.py:545
-msgid "Block Text"
-msgstr "Տեքստի Կաղապար"
-
-#: toolbar.py:549
-msgid "Plain Text"
-msgstr "Պարզ տեքստ"
-
-#: toolbar.py:565
+#: toolbar.py:495
 msgid "Left justify"
 msgstr "Տողաշտկել՝ ձախ"
 
-#: toolbar.py:568
+#: toolbar.py:499
 msgid "Center justify"
 msgstr "Տողաշտկել՝ կենտրոն"
 
-#: toolbar.py:571
+#: toolbar.py:503
 msgid "Right justify"
 msgstr "Տողաշտկել՝ աջ"
 
-#: toolbar.py:574
+#: toolbar.py:507
 msgid "Fill justify"
 msgstr "Տողաշտկել երկու կողմից"
 
-#: toolbar.py:609
+#: toolbar.py:567 toolbar.py:620
+msgid "Normal"
+msgstr "Բնական"
+
+#: toolbar.py:578
+msgid "Heading 1"
+msgstr "Վերնագիր 1"
+
+#: toolbar.py:582
+msgid "Heading 2"
+msgstr "Վերնագիր 2"
+
+#: toolbar.py:586
+msgid "Heading 3"
+msgstr "Վերնագիր 3"
+
+#: toolbar.py:590
+msgid "Heading 4"
+msgstr "Վերնագիր 4"
+
+#: toolbar.py:594
+msgid "Block Text"
+msgstr "Տեքստի Կաղապար"
+
+#: toolbar.py:598
+msgid "Plain Text"
+msgstr "Պարզ տեքստ"
+
+#: toolbar.py:612
+msgid "Select list"
+msgstr "Ընտրել ցուցակը"
+
+#: toolbar.py:630
+msgid "Bullet List"
+msgstr "Պարբերանշված ցուցակ"
+
+#: toolbar.py:635
 msgid "Dashed List"
 msgstr "Պարբերանշում գծիկներով"
 
-#: toolbar.py:613
+#: toolbar.py:640
 msgid "Numbered List"
 msgstr "Համարակալված ցուցակ"
 
 # փոքրատառեր
-#: toolbar.py:617
+#: toolbar.py:645
 msgid "Lower Case List"
 msgstr "Ստորին դուրճի ցուցակ"
 
 # Մեծատառեր
-#: toolbar.py:621
+#: toolbar.py:650
 msgid "Upper Case List"
 msgstr "Վերին դուրճի ցուցակ"
 
-#: widgets.py:174
+#: widgets.py:119
 msgid "Rich Text (RTF)"
 msgstr "Հարստագիր (RTF)"
 
 # RTF Rich Text Format - Տեքստի հարստացված ֆորմատ
-#: widgets.py:176
+#: widgets.py:121
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:180
+#: widgets.py:125
 msgid "Hypertext (HTML)"
 msgstr "Hypertext (HTML)"
 
-#: widgets.py:182
+#: widgets.py:127
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:187
+#: widgets.py:132
 msgid "Plain Text (TXT)"
 msgstr "Պարզ տեքստ (TXT)"
 
-#: widgets.py:189
+#: widgets.py:134
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:193
+#: widgets.py:138
 msgid "Portable Document Format (PDF)"
 msgstr "Դյուրակիր Փաստաթղթի Ֆորմատ (PDF)"
 
-#: widgets.py:195
+#: widgets.py:140
 msgid "PDF"
 msgstr "PDF"
 
