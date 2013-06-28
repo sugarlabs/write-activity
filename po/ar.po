@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: write.master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-25 00:30-0400\n"
+"POT-Creation-Date: 2013-06-12 00:30-0400\n"
 "PO-Revision-Date: 2011-08-24 08:22+0200\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -32,37 +32,41 @@ msgid ""
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
 
-#: AbiWordActivity.py:85
+#: AbiWordActivity.py:71
+msgid "Connecting..."
+msgstr ""
+
+#: AbiWordActivity.py:101
 msgid "Edit"
 msgstr "تحرير"
 
-#: AbiWordActivity.py:91
+#: AbiWordActivity.py:107
 msgid "View"
 msgstr "عرض"
 
-#: AbiWordActivity.py:107
+#: AbiWordActivity.py:123
 msgid "Text"
 msgstr "نص"
 
-#: AbiWordActivity.py:113
+#: AbiWordActivity.py:129
 msgid "Paragraph"
 msgstr "فقرة"
 
-#: AbiWordActivity.py:119 toolbar.py:601
-msgid "Bullet List"
-msgstr "قائمة منقوطة"
-
-#: AbiWordActivity.py:125
+#: AbiWordActivity.py:135
 msgid "Table"
 msgstr "جدول"
 
-#: AbiWordActivity.py:132
+#: AbiWordActivity.py:139
 msgid "Insert Image"
 msgstr "أدرج صورة"
 
-#: AbiWordActivity.py:139
+#: AbiWordActivity.py:146
 msgid "Floating"
 msgstr "عائم"
+
+#: fontcombobox.py:90
+msgid "Select font"
+msgstr ""
 
 #: speechtoolbar.py:58
 msgid "Play / Pause"
@@ -72,159 +76,171 @@ msgstr ""
 msgid "Stop"
 msgstr ""
 
-#: toolbar.py:99
+#: toolbar.py:100
 msgid "Search"
 msgstr "ابحث"
 
-#: toolbar.py:116
+#: toolbar.py:117
 msgid "Find previous"
 msgstr "ابحث عن السابق"
 
-#: toolbar.py:122
+#: toolbar.py:123
 msgid "Find next"
 msgstr "ابحث عن التالي"
 
-#: toolbar.py:222
+#: toolbar.py:227
 msgid "Create table"
 msgstr ""
 
-#: toolbar.py:232
+#: toolbar.py:237
 msgid "Insert Row"
 msgstr "أدرج صف"
 
-#: toolbar.py:238
+#: toolbar.py:243
 msgid "Delete Row"
 msgstr "احذف صف"
 
-#: toolbar.py:244
+#: toolbar.py:249
 msgid "Insert Column"
 msgstr "أدرج عمود"
 
-#: toolbar.py:250
+#: toolbar.py:255
 msgid "Delete Column"
 msgstr "احذف عمود"
 
-#: toolbar.py:295
+#: toolbar.py:300
 msgid "Zoom Out"
 msgstr "صغّر"
 
-#: toolbar.py:302
+#: toolbar.py:307
 msgid "Zoom In"
 msgstr "كبّر"
 
-#: toolbar.py:308
+#: toolbar.py:313
 msgid "Zoom to width"
 msgstr ""
 
-#: toolbar.py:325
+#: toolbar.py:330
 msgid "%"
 msgstr "٪"
 
-#: toolbar.py:337
+#: toolbar.py:342
 msgid "Page: "
 msgstr "صفحة: "
 
-#: toolbar.py:432
+#: toolbar.py:441
 msgid "Bold"
 msgstr "عريض"
 
-#: toolbar.py:441
+#: toolbar.py:450
 msgid "Italic"
 msgstr "مائل"
 
-#: toolbar.py:450
+#: toolbar.py:459
 msgid "Underline"
 msgstr "مُسطَّر"
 
-#: toolbar.py:514 toolbar.py:591
-msgid "Normal"
-msgstr "عادي"
+#: toolbar.py:487
+msgid "Choose alignment"
+msgstr ""
 
-#: toolbar.py:525
-msgid "Heading 1"
-msgstr "رأس 1"
-
-#: toolbar.py:529
-msgid "Heading 2"
-msgstr "رأس 2"
-
-#: toolbar.py:533
-msgid "Heading 3"
-msgstr "رأس 3"
-
-#: toolbar.py:537
-msgid "Heading 4"
-msgstr "رأس 4"
-
-#: toolbar.py:541
-msgid "Block Text"
-msgstr "مربع نص"
-
-#: toolbar.py:545
-msgid "Plain Text"
-msgstr "نص صِرف"
-
-#: toolbar.py:561
+#: toolbar.py:495
 msgid "Left justify"
 msgstr "حاذِ على اليسار"
 
-#: toolbar.py:564
+#: toolbar.py:499
 msgid "Center justify"
 msgstr "وسّط"
 
-#: toolbar.py:567
+#: toolbar.py:503
 msgid "Right justify"
 msgstr "حاذِ على اليمين"
 
-#: toolbar.py:570
+#: toolbar.py:507
 msgid "Fill justify"
 msgstr "ساوِ على الجانبين"
 
-#: toolbar.py:605
+#: toolbar.py:567 toolbar.py:620
+msgid "Normal"
+msgstr "عادي"
+
+#: toolbar.py:578
+msgid "Heading 1"
+msgstr "رأس 1"
+
+#: toolbar.py:582
+msgid "Heading 2"
+msgstr "رأس 2"
+
+#: toolbar.py:586
+msgid "Heading 3"
+msgstr "رأس 3"
+
+#: toolbar.py:590
+msgid "Heading 4"
+msgstr "رأس 4"
+
+#: toolbar.py:594
+msgid "Block Text"
+msgstr "مربع نص"
+
+#: toolbar.py:598
+msgid "Plain Text"
+msgstr "نص صِرف"
+
+#: toolbar.py:612
+msgid "Select list"
+msgstr ""
+
+#: toolbar.py:630
+msgid "Bullet List"
+msgstr "قائمة منقوطة"
+
+#: toolbar.py:635
 msgid "Dashed List"
 msgstr "قائمة بشرطة"
 
-#: toolbar.py:609
+#: toolbar.py:640
 msgid "Numbered List"
 msgstr "قائمة مرقّمة"
 
-#: toolbar.py:613
+#: toolbar.py:645
 msgid "Lower Case List"
 msgstr "قائمة حروف صغيرة"
 
-#: toolbar.py:617
+#: toolbar.py:650
 msgid "Upper Case List"
 msgstr "قائمة حروف كبيرة"
 
-#: widgets.py:171
+#: widgets.py:119
 msgid "Rich Text (RTF)"
 msgstr "نص غني (RTF)"
 
-#: widgets.py:173
+#: widgets.py:121
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:177
+#: widgets.py:125
 msgid "Hypertext (HTML)"
 msgstr "نص فائق (HTML)"
 
-#: widgets.py:179
+#: widgets.py:127
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:184
+#: widgets.py:132
 msgid "Plain Text (TXT)"
 msgstr "نص صِرف (TXT)"
 
-#: widgets.py:186
+#: widgets.py:134
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:190
+#: widgets.py:138
 msgid "Portable Document Format (PDF)"
 msgstr "صيغة المستندات المحمولة (PDF)"
 
-#: widgets.py:192
+#: widgets.py:140
 msgid "PDF"
 msgstr "PDF"
 

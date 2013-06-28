@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: write\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-25 00:30-0400\n"
+"POT-Creation-Date: 2013-06-12 00:30-0400\n"
 "PO-Revision-Date: 2011-09-11 05:38+0200\n"
 "Last-Translator: satyaakam goswami <satyaakam@gmail.com>\n"
 "Language-Team: Hindi <indlinux-hindi@lists.sourceforge.net>\n"
@@ -40,37 +40,41 @@ msgid ""
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
 
-#: AbiWordActivity.py:85
+#: AbiWordActivity.py:71
+msgid "Connecting..."
+msgstr ""
+
+#: AbiWordActivity.py:101
 msgid "Edit"
 msgstr "संपादन"
 
-#: AbiWordActivity.py:91
+#: AbiWordActivity.py:107
 msgid "View"
 msgstr "दृश्य"
 
-#: AbiWordActivity.py:107
+#: AbiWordActivity.py:123
 msgid "Text"
 msgstr "पाठ"
 
-#: AbiWordActivity.py:113
+#: AbiWordActivity.py:129
 msgid "Paragraph"
 msgstr "पैराग्राफ"
 
-#: AbiWordActivity.py:119 toolbar.py:601
-msgid "Bullet List"
-msgstr "बिंदीदार सूची"
-
-#: AbiWordActivity.py:125
+#: AbiWordActivity.py:135
 msgid "Table"
 msgstr "टेबल"
 
-#: AbiWordActivity.py:132
+#: AbiWordActivity.py:139
 msgid "Insert Image"
 msgstr "छवि डालो"
 
-#: AbiWordActivity.py:139
+#: AbiWordActivity.py:146
 msgid "Floating"
 msgstr "फ़्लोटिंग"
+
+#: fontcombobox.py:90
+msgid "Select font"
+msgstr ""
 
 #: speechtoolbar.py:58
 msgid "Play / Pause"
@@ -80,159 +84,171 @@ msgstr ""
 msgid "Stop"
 msgstr ""
 
-#: toolbar.py:99
+#: toolbar.py:100
 msgid "Search"
 msgstr "ढूंढें"
 
-#: toolbar.py:116
+#: toolbar.py:117
 msgid "Find previous"
 msgstr "पिछला ढूँढो"
 
-#: toolbar.py:122
+#: toolbar.py:123
 msgid "Find next"
 msgstr "अगला ढूँढो"
 
-#: toolbar.py:222
+#: toolbar.py:227
 msgid "Create table"
 msgstr ""
 
-#: toolbar.py:232
+#: toolbar.py:237
 msgid "Insert Row"
 msgstr "पंक्ति घुसाएँ"
 
-#: toolbar.py:238
+#: toolbar.py:243
 msgid "Delete Row"
 msgstr "पंक्ति मिटाएँ"
 
-#: toolbar.py:244
+#: toolbar.py:249
 msgid "Insert Column"
 msgstr "स्तम्भ चुनें"
 
-#: toolbar.py:250
+#: toolbar.py:255
 msgid "Delete Column"
 msgstr "स्तम्भ मिटाएँ"
 
-#: toolbar.py:295
+#: toolbar.py:300
 msgid "Zoom Out"
 msgstr "ज़ूम आउट"
 
-#: toolbar.py:302
+#: toolbar.py:307
 msgid "Zoom In"
 msgstr "ज़ूम इन"
 
-#: toolbar.py:308
+#: toolbar.py:313
 msgid "Zoom to width"
 msgstr ""
 
-#: toolbar.py:325
+#: toolbar.py:330
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:337
+#: toolbar.py:342
 msgid "Page: "
 msgstr "पृष्ठ: "
 
-#: toolbar.py:432
+#: toolbar.py:441
 msgid "Bold"
 msgstr "गाढ़ा"
 
-#: toolbar.py:441
+#: toolbar.py:450
 msgid "Italic"
 msgstr "ईटैलिक"
 
-#: toolbar.py:450
+#: toolbar.py:459
 msgid "Underline"
 msgstr "रेखांकित"
 
-#: toolbar.py:514 toolbar.py:591
-msgid "Normal"
-msgstr "सामान्य"
+#: toolbar.py:487
+msgid "Choose alignment"
+msgstr ""
 
-#: toolbar.py:525
-msgid "Heading 1"
-msgstr "शीर्षक १"
-
-#: toolbar.py:529
-msgid "Heading 2"
-msgstr "शीर्षक २"
-
-#: toolbar.py:533
-msgid "Heading 3"
-msgstr "शीर्षक ३"
-
-#: toolbar.py:537
-msgid "Heading 4"
-msgstr "शीर्षक ४"
-
-#: toolbar.py:541
-msgid "Block Text"
-msgstr "गाढा पाठ"
-
-#: toolbar.py:545
-msgid "Plain Text"
-msgstr "सादा पाठ"
-
-#: toolbar.py:561
+#: toolbar.py:495
 msgid "Left justify"
 msgstr "बाएँ जमाएँ"
 
-#: toolbar.py:564
+#: toolbar.py:499
 msgid "Center justify"
 msgstr "बीचों-बीच जमाएँ"
 
-#: toolbar.py:567
+#: toolbar.py:503
 msgid "Right justify"
 msgstr "दाएँ जमाएँ"
 
-#: toolbar.py:570
+#: toolbar.py:507
 msgid "Fill justify"
 msgstr "मध्य में व्यवस्थित करें"
 
-#: toolbar.py:605
+#: toolbar.py:567 toolbar.py:620
+msgid "Normal"
+msgstr "सामान्य"
+
+#: toolbar.py:578
+msgid "Heading 1"
+msgstr "शीर्षक १"
+
+#: toolbar.py:582
+msgid "Heading 2"
+msgstr "शीर्षक २"
+
+#: toolbar.py:586
+msgid "Heading 3"
+msgstr "शीर्षक ३"
+
+#: toolbar.py:590
+msgid "Heading 4"
+msgstr "शीर्षक ४"
+
+#: toolbar.py:594
+msgid "Block Text"
+msgstr "गाढा पाठ"
+
+#: toolbar.py:598
+msgid "Plain Text"
+msgstr "सादा पाठ"
+
+#: toolbar.py:612
+msgid "Select list"
+msgstr ""
+
+#: toolbar.py:630
+msgid "Bullet List"
+msgstr "बिंदीदार सूची"
+
+#: toolbar.py:635
 msgid "Dashed List"
 msgstr "डेश युक्त सूची"
 
-#: toolbar.py:609
+#: toolbar.py:640
 msgid "Numbered List"
 msgstr "नंबर वाली सूची"
 
-#: toolbar.py:613
+#: toolbar.py:645
 msgid "Lower Case List"
 msgstr "लोअर केस सूची"
 
-#: toolbar.py:617
+#: toolbar.py:650
 msgid "Upper Case List"
 msgstr "अपर केस सूची"
 
-#: widgets.py:171
+#: widgets.py:119
 msgid "Rich Text (RTF)"
 msgstr "रिच पाठ (RTF)"
 
-#: widgets.py:173
+#: widgets.py:121
 msgid "RTF"
 msgstr "आरटीएफ़"
 
-#: widgets.py:177
+#: widgets.py:125
 msgid "Hypertext (HTML)"
 msgstr "हायपरटैक्स्ट (एचटीएमएल)"
 
-#: widgets.py:179
+#: widgets.py:127
 msgid "HTML"
 msgstr "एचटीएमएल"
 
-#: widgets.py:184
+#: widgets.py:132
 msgid "Plain Text (TXT)"
 msgstr "सादा पाठ (TXT)"
 
-#: widgets.py:186
+#: widgets.py:134
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:190
+#: widgets.py:138
 msgid "Portable Document Format (PDF)"
 msgstr "पोर्टेबल दस्तावेज़ स्वरूप (पीडीएफ)"
 
-#: widgets.py:192
+#: widgets.py:140
 msgid "PDF"
 msgstr "पीडीएफ"
 

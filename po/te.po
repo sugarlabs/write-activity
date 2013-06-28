@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-25 00:30-0400\n"
+"POT-Creation-Date: 2013-06-12 00:30-0400\n"
 "PO-Revision-Date: 2012-11-25 07:42+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,36 +36,40 @@ msgid ""
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
 
-#: AbiWordActivity.py:85
+#: AbiWordActivity.py:71
+msgid "Connecting..."
+msgstr ""
+
+#: AbiWordActivity.py:101
 msgid "Edit"
 msgstr "కూర్చు"
 
-#: AbiWordActivity.py:91
+#: AbiWordActivity.py:107
 msgid "View"
 msgstr "చూడు"
 
-#: AbiWordActivity.py:107
+#: AbiWordActivity.py:123
 msgid "Text"
 msgstr "వచనం"
 
-#: AbiWordActivity.py:113
+#: AbiWordActivity.py:129
 msgid "Paragraph"
 msgstr ""
 
-#: AbiWordActivity.py:119 toolbar.py:601
-msgid "Bullet List"
-msgstr "బుల్లెటు జాబితా"
-
-#: AbiWordActivity.py:125
+#: AbiWordActivity.py:135
 msgid "Table"
 msgstr "పట్టిక"
 
-#: AbiWordActivity.py:132
+#: AbiWordActivity.py:139
 msgid "Insert Image"
 msgstr "బొమ్మ దూర్చు"
 
-#: AbiWordActivity.py:139
+#: AbiWordActivity.py:146
 msgid "Floating"
+msgstr ""
+
+#: fontcombobox.py:90
+msgid "Select font"
 msgstr ""
 
 #: speechtoolbar.py:58
@@ -76,159 +80,171 @@ msgstr ""
 msgid "Stop"
 msgstr ""
 
-#: toolbar.py:99
+#: toolbar.py:100
 msgid "Search"
 msgstr "వెతుకు"
 
-#: toolbar.py:116
+#: toolbar.py:117
 msgid "Find previous"
 msgstr "ముందుది వెతుకు"
 
-#: toolbar.py:122
+#: toolbar.py:123
 msgid "Find next"
 msgstr "తర్వాతది వెతుకు"
 
-#: toolbar.py:222
+#: toolbar.py:227
 msgid "Create table"
 msgstr ""
 
-#: toolbar.py:232
+#: toolbar.py:237
 msgid "Insert Row"
 msgstr "అడ్డవరస దూర్చు"
 
-#: toolbar.py:238
+#: toolbar.py:243
 msgid "Delete Row"
 msgstr "ఆడ్డవరస తీసివేయి"
 
-#: toolbar.py:244
+#: toolbar.py:249
 msgid "Insert Column"
 msgstr "నిలువవరస దూర్చు"
 
-#: toolbar.py:250
+#: toolbar.py:255
 msgid "Delete Column"
 msgstr "నిలువవరస తీసివేయి"
 
-#: toolbar.py:295
+#: toolbar.py:300
 msgid "Zoom Out"
 msgstr "చిన్నదిగా చూడు"
 
-#: toolbar.py:302
+#: toolbar.py:307
 msgid "Zoom In"
 msgstr "పెద్దదిగా చూడు"
 
-#: toolbar.py:308
+#: toolbar.py:313
 msgid "Zoom to width"
 msgstr ""
 
-#: toolbar.py:325
+#: toolbar.py:330
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:337
+#: toolbar.py:342
 msgid "Page: "
 msgstr "పుట: "
 
-#: toolbar.py:432
+#: toolbar.py:441
 msgid "Bold"
 msgstr "బొద్దు"
 
-#: toolbar.py:441
+#: toolbar.py:450
 msgid "Italic"
 msgstr "వాలు"
 
-#: toolbar.py:450
+#: toolbar.py:459
 msgid "Underline"
 msgstr "క్రింద గీత"
 
-#: toolbar.py:514 toolbar.py:591
-msgid "Normal"
-msgstr "సామాన్యమైన"
+#: toolbar.py:487
+msgid "Choose alignment"
+msgstr ""
 
-#: toolbar.py:525
-msgid "Heading 1"
-msgstr "శీర్షిక 1"
-
-#: toolbar.py:529
-msgid "Heading 2"
-msgstr "శీర్షిక 2"
-
-#: toolbar.py:533
-msgid "Heading 3"
-msgstr "శీర్షిక 3"
-
-#: toolbar.py:537
-msgid "Heading 4"
-msgstr "శీర్షిక 4"
-
-#: toolbar.py:541
-msgid "Block Text"
-msgstr "పెద్ద అక్షరములు"
-
-#: toolbar.py:545
-msgid "Plain Text"
-msgstr "సాదా వచనం"
-
-#: toolbar.py:561
+#: toolbar.py:495
 msgid "Left justify"
 msgstr "ఎడమవైపు  సమతుల్యం"
 
-#: toolbar.py:564
+#: toolbar.py:499
 msgid "Center justify"
 msgstr "మధ్యకు సమతుల్యం"
 
-#: toolbar.py:567
+#: toolbar.py:503
 msgid "Right justify"
 msgstr "కుడివైపునకు సమతుల్యం"
 
-#: toolbar.py:570
+#: toolbar.py:507
 msgid "Fill justify"
 msgstr "సమతుల్యంగా నింపు"
 
-#: toolbar.py:605
+#: toolbar.py:567 toolbar.py:620
+msgid "Normal"
+msgstr "సామాన్యమైన"
+
+#: toolbar.py:578
+msgid "Heading 1"
+msgstr "శీర్షిక 1"
+
+#: toolbar.py:582
+msgid "Heading 2"
+msgstr "శీర్షిక 2"
+
+#: toolbar.py:586
+msgid "Heading 3"
+msgstr "శీర్షిక 3"
+
+#: toolbar.py:590
+msgid "Heading 4"
+msgstr "శీర్షిక 4"
+
+#: toolbar.py:594
+msgid "Block Text"
+msgstr "పెద్ద అక్షరములు"
+
+#: toolbar.py:598
+msgid "Plain Text"
+msgstr "సాదా వచనం"
+
+#: toolbar.py:612
+msgid "Select list"
+msgstr ""
+
+#: toolbar.py:630
+msgid "Bullet List"
+msgstr "బుల్లెటు జాబితా"
+
+#: toolbar.py:635
 msgid "Dashed List"
 msgstr "అడ్డగీతతో జాబితా"
 
-#: toolbar.py:609
+#: toolbar.py:640
 msgid "Numbered List"
 msgstr "అంకెల జాబితా"
 
-#: toolbar.py:613
+#: toolbar.py:645
 msgid "Lower Case List"
 msgstr "రెండో బరి జాబితా"
 
-#: toolbar.py:617
+#: toolbar.py:650
 msgid "Upper Case List"
 msgstr "మొదటి బరి జాబితా"
 
-#: widgets.py:171
+#: widgets.py:119
 msgid "Rich Text (RTF)"
 msgstr "సిరి వచనం (RTF)"
 
-#: widgets.py:173
+#: widgets.py:121
 msgid "RTF"
 msgstr "ఆర్ టి ఎఫ్"
 
-#: widgets.py:177
+#: widgets.py:125
 msgid "Hypertext (HTML)"
 msgstr "హైపరుటెక్స్ట్ (HTML)"
 
-#: widgets.py:179
+#: widgets.py:127
 msgid "HTML"
 msgstr "హెచ్​టి​ఎం​ఎల్(HTML)"
 
-#: widgets.py:184
+#: widgets.py:132
 msgid "Plain Text (TXT)"
 msgstr "సాదా వచనం (TXT)"
 
-#: widgets.py:186
+#: widgets.py:134
 msgid "TXT"
 msgstr "టి​ఎక్స్​టి(TXT)"
 
-#: widgets.py:190
+#: widgets.py:138
 msgid "Portable Document Format (PDF)"
 msgstr ""
 
-#: widgets.py:192
+#: widgets.py:140
 msgid "PDF"
 msgstr ""
 

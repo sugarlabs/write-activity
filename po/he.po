@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-25 00:30-0400\n"
+"POT-Creation-Date: 2013-06-12 00:30-0400\n"
 "PO-Revision-Date: 2008-12-20 00:14-0500\n"
 "Last-Translator: Chris Leonard <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,42 +36,45 @@ msgid ""
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
 
-#: AbiWordActivity.py:85
+#: AbiWordActivity.py:71
+msgid "Connecting..."
+msgstr ""
+
+#: AbiWordActivity.py:101
 #, fuzzy
 msgid "Edit"
 msgstr "עריכה"
 
-#: AbiWordActivity.py:91
+#: AbiWordActivity.py:107
 #, fuzzy
 msgid "View"
 msgstr "תצוגה"
 
-#: AbiWordActivity.py:107
+#: AbiWordActivity.py:123
 #, fuzzy
 msgid "Text"
 msgstr "טקסט"
 
-#: AbiWordActivity.py:113
+#: AbiWordActivity.py:129
 msgid "Paragraph"
 msgstr ""
 
-#: AbiWordActivity.py:119 toolbar.py:601
-#, fuzzy
-msgid "Bullet List"
-msgstr "רשימת תבליטים (נקודות)"
-
-#: AbiWordActivity.py:125
+#: AbiWordActivity.py:135
 #, fuzzy
 msgid "Table"
 msgstr "טבלה"
 
-#: AbiWordActivity.py:132
+#: AbiWordActivity.py:139
 #, fuzzy
 msgid "Insert Image"
 msgstr "הוסף תמונה"
 
-#: AbiWordActivity.py:139
+#: AbiWordActivity.py:146
 msgid "Floating"
+msgstr ""
+
+#: fontcombobox.py:90
+msgid "Select font"
 msgstr ""
 
 #: speechtoolbar.py:58
@@ -82,188 +85,201 @@ msgstr ""
 msgid "Stop"
 msgstr ""
 
-#: toolbar.py:99
+#: toolbar.py:100
 msgid "Search"
 msgstr ""
 
-#: toolbar.py:116
+#: toolbar.py:117
 #, fuzzy
 msgid "Find previous"
 msgstr "מצא מופע קודם"
 
-#: toolbar.py:122
+#: toolbar.py:123
 #, fuzzy
 msgid "Find next"
 msgstr "מצא מופע בא"
 
-#: toolbar.py:222
+#: toolbar.py:227
 msgid "Create table"
 msgstr ""
 
-#: toolbar.py:232
+#: toolbar.py:237
 #, fuzzy
 msgid "Insert Row"
 msgstr "הוסף שורה"
 
-#: toolbar.py:238
+#: toolbar.py:243
 #, fuzzy
 msgid "Delete Row"
 msgstr "מחק שורה"
 
-#: toolbar.py:244
+#: toolbar.py:249
 #, fuzzy
 msgid "Insert Column"
 msgstr "הוסף עמודה"
 
-#: toolbar.py:250
+#: toolbar.py:255
 #, fuzzy
 msgid "Delete Column"
 msgstr "מחק עמודה"
 
-#: toolbar.py:295
+#: toolbar.py:300
 #, fuzzy
 msgid "Zoom Out"
 msgstr "הקטן"
 
-#: toolbar.py:302
+#: toolbar.py:307
 #, fuzzy
 msgid "Zoom In"
 msgstr "הגדל"
 
-#: toolbar.py:308
+#: toolbar.py:313
 msgid "Zoom to width"
 msgstr ""
 
-#: toolbar.py:325
+#: toolbar.py:330
 #, fuzzy
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:337
+#: toolbar.py:342
 msgid "Page: "
 msgstr ""
 
-#: toolbar.py:432
+#: toolbar.py:441
 #, fuzzy
 msgid "Bold"
 msgstr "מודגש"
 
-#: toolbar.py:441
+#: toolbar.py:450
 #, fuzzy
 msgid "Italic"
 msgstr "נטוי"
 
-#: toolbar.py:450
+#: toolbar.py:459
 #, fuzzy
 msgid "Underline"
 msgstr "קו תחתון"
 
-#: toolbar.py:514 toolbar.py:591
+#: toolbar.py:487
+msgid "Choose alignment"
+msgstr ""
+
+#: toolbar.py:495
+msgid "Left justify"
+msgstr ""
+
+#: toolbar.py:499
+msgid "Center justify"
+msgstr ""
+
+#: toolbar.py:503
+msgid "Right justify"
+msgstr ""
+
+#: toolbar.py:507
+msgid "Fill justify"
+msgstr ""
+
+#: toolbar.py:567 toolbar.py:620
 #, fuzzy
 msgid "Normal"
 msgstr "רגיל"
 
-#: toolbar.py:525
+#: toolbar.py:578
 #, fuzzy
 msgid "Heading 1"
 msgstr "כותרת 1"
 
-#: toolbar.py:529
+#: toolbar.py:582
 #, fuzzy
 msgid "Heading 2"
 msgstr "כותרת 2"
 
-#: toolbar.py:533
+#: toolbar.py:586
 #, fuzzy
 msgid "Heading 3"
 msgstr "כותרת 3"
 
-#: toolbar.py:537
+#: toolbar.py:590
 #, fuzzy
 msgid "Heading 4"
 msgstr "כותרת 4"
 
-#: toolbar.py:541
+#: toolbar.py:594
 #, fuzzy
 msgid "Block Text"
 msgstr "טקסט חסום"
 
-#: toolbar.py:545
+#: toolbar.py:598
 #, fuzzy
 msgid "Plain Text"
 msgstr "טקסט רגיל"
 
-#: toolbar.py:561
-msgid "Left justify"
+#: toolbar.py:612
+msgid "Select list"
 msgstr ""
 
-#: toolbar.py:564
-msgid "Center justify"
-msgstr ""
+#: toolbar.py:630
+#, fuzzy
+msgid "Bullet List"
+msgstr "רשימת תבליטים (נקודות)"
 
-#: toolbar.py:567
-msgid "Right justify"
-msgstr ""
-
-#: toolbar.py:570
-msgid "Fill justify"
-msgstr ""
-
-#: toolbar.py:605
+#: toolbar.py:635
 #, fuzzy
 msgid "Dashed List"
 msgstr "רשימה מקוקוות"
 
-#: toolbar.py:609
+#: toolbar.py:640
 #, fuzzy
 msgid "Numbered List"
 msgstr "רשימה ממוספרת"
 
-#: toolbar.py:613
+#: toolbar.py:645
 #, fuzzy
 msgid "Lower Case List"
 msgstr "רשימה באותיות קטנות"
 
-#: toolbar.py:617
+#: toolbar.py:650
 #, fuzzy
 msgid "Upper Case List"
 msgstr "רשימה באותיות גדולות"
 
-#: widgets.py:171
+#: widgets.py:119
 #, fuzzy
 msgid "Rich Text (RTF)"
 msgstr "טקסט עשיר (RTF)"
 
-#: widgets.py:173
+#: widgets.py:121
 #, fuzzy
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:177
+#: widgets.py:125
 #, fuzzy
 msgid "Hypertext (HTML)"
 msgstr "תמליל-על (HTML)"
 
-#: widgets.py:179
+#: widgets.py:127
 #, fuzzy
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:184
+#: widgets.py:132
 #, fuzzy
 msgid "Plain Text (TXT)"
 msgstr "טקסט רגיל (TXT)"
 
-#: widgets.py:186
+#: widgets.py:134
 #, fuzzy
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:190
+#: widgets.py:138
 msgid "Portable Document Format (PDF)"
 msgstr ""
 
-#: widgets.py:192
+#: widgets.py:140
 msgid "PDF"
 msgstr ""
 

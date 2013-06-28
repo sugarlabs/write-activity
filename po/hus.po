@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-25 00:30-0400\n"
+"POT-Creation-Date: 2013-06-12 00:30-0400\n"
 "PO-Revision-Date: 2012-10-18 07:35+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,37 +32,41 @@ msgstr ""
 "ka jalk'uy jant'odha' tataj a kulbetnal in wál ani in puwel an dhuchláb, ani "
 "ka obsba' jun i k'otbixtaláb!"
 
-#: AbiWordActivity.py:85
+#: AbiWordActivity.py:71
+msgid "Connecting..."
+msgstr ""
+
+#: AbiWordActivity.py:101
 msgid "Edit"
 msgstr "Jalk'uy"
 
-#: AbiWordActivity.py:91
+#: AbiWordActivity.py:107
 msgid "View"
 msgstr "Tsu'uw"
 
-#: AbiWordActivity.py:107
+#: AbiWordActivity.py:123
 msgid "Text"
 msgstr "Dhuchláb"
 
-#: AbiWordActivity.py:113
+#: AbiWordActivity.py:129
 msgid "Paragraph"
 msgstr "Kwenél kits'lab. o también puede ser T'ipoxtaláb"
 
-#: AbiWordActivity.py:119 toolbar.py:601
-msgid "Bullet List"
-msgstr "T'iplabidh K'elab"
-
-#: AbiWordActivity.py:125
+#: AbiWordActivity.py:135
 msgid "Table"
 msgstr "Nik'e' tin ay"
 
-#: AbiWordActivity.py:132
+#: AbiWordActivity.py:139
 msgid "Insert Image"
 msgstr "Otsba' jún i k'ot'bixtaláb"
 
-#: AbiWordActivity.py:139
+#: AbiWordActivity.py:146
 msgid "Floating"
 msgstr "Dhememél"
+
+#: fontcombobox.py:90
+msgid "Select font"
+msgstr ""
 
 #: speechtoolbar.py:58
 msgid "Play / Pause"
@@ -72,173 +76,185 @@ msgstr "Ka wat'ba' / wé' kuba'"
 msgid "Stop"
 msgstr "Kuba'"
 
-#: toolbar.py:99
+#: toolbar.py:100
 msgid "Search"
 msgstr "Ka aliy"
 
-#: toolbar.py:116
+#: toolbar.py:117
 msgid "Find previous"
 msgstr "Ka aliy xi ok'xidh"
 
-#: toolbar.py:122
+#: toolbar.py:123
 msgid "Find next"
 msgstr "Ka aliy xi júnakej"
 
-#: toolbar.py:222
+#: toolbar.py:227
 msgid "Create table"
 msgstr ""
 
-#: toolbar.py:232
+#: toolbar.py:237
 msgid "Insert Row"
 msgstr "Otsba' juni k'elab"
 
-#: toolbar.py:238
+#: toolbar.py:243
 msgid "Delete Row"
 msgstr "Pakuw an k'elab"
 
-#: toolbar.py:244
+#: toolbar.py:249
 msgid "Insert Column"
 msgstr "Otsba' juni nik'e'"
 
-#: toolbar.py:250
+#: toolbar.py:255
 msgid "Delete Column"
 msgstr "Pakuw an nik'e'"
 
-#: toolbar.py:295
+#: toolbar.py:300
 msgid "Zoom Out"
 msgstr "Tsipti'méjdha'"
 
-#: toolbar.py:302
+#: toolbar.py:307
 msgid "Zoom In"
 msgstr "Puwedha'"
 
-#: toolbar.py:308
+#: toolbar.py:313
 msgid "Zoom to width"
 msgstr "Ka junkuw ti in ts'ikwél"
 
-#: toolbar.py:325
+#: toolbar.py:330
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:337
+#: toolbar.py:342
 msgid "Page: "
 msgstr "Walxeklek: "
 
-#: toolbar.py:432
+#: toolbar.py:441
 msgid "Bold"
 msgstr "T'unk'udh"
 
 # Italic = kínts'óx
-#: toolbar.py:441
+#: toolbar.py:450
 msgid "Italic"
 msgstr "Kínts'óx"
 
-#: toolbar.py:450
+#: toolbar.py:459
 msgid "Underline"
 msgstr "Kits'odh ti in akan"
 
-#: toolbar.py:514 toolbar.py:591
-msgid "Normal"
-msgstr "Jajáts'k'ij"
-
-#: toolbar.py:525
-msgid "Heading 1"
-msgstr "Ok'ol 1"
-
-#: toolbar.py:529
-msgid "Heading 2"
-msgstr "Ok'ol 2"
-
-#: toolbar.py:533
-msgid "Heading 3"
-msgstr "Ok'ol 3"
-
-#: toolbar.py:537
-msgid "Heading 4"
-msgstr "Ok'ol 4"
-
-# Pejadh t'ojláb dhuchlab = bloque de texto
-#: toolbar.py:541
-msgid "Block Text"
-msgstr "Kwenél dhuchláb"
-
-# Alk'idh dhuchlab
-#: toolbar.py:545
-msgid "Plain Text"
-msgstr "T'ipts'odh dhuchláb"
+#: toolbar.py:487
+msgid "Choose alignment"
+msgstr ""
 
 # Ka k'watab junkuw
-#: toolbar.py:561
+#: toolbar.py:495
 msgid "Left justify"
 msgstr "K'elbay ta k'watab"
 
 # ts'ejel junkuw
-#: toolbar.py:564
+#: toolbar.py:499
 msgid "Center justify"
 msgstr "K'elbay ts'ejel"
 
 # Ka winab junkuw
-#: toolbar.py:567
+#: toolbar.py:503
 msgid "Right justify"
 msgstr "K'elbay ta wínab"
 
-#: toolbar.py:570
+#: toolbar.py:507
 msgid "Fill justify"
 msgstr "Tamchidh junkuw"
 
+#: toolbar.py:567 toolbar.py:620
+msgid "Normal"
+msgstr "Jajáts'k'ij"
+
+#: toolbar.py:578
+msgid "Heading 1"
+msgstr "Ok'ol 1"
+
+#: toolbar.py:582
+msgid "Heading 2"
+msgstr "Ok'ol 2"
+
+#: toolbar.py:586
+msgid "Heading 3"
+msgstr "Ok'ol 3"
+
+#: toolbar.py:590
+msgid "Heading 4"
+msgstr "Ok'ol 4"
+
+# Pejadh t'ojláb dhuchlab = bloque de texto
+#: toolbar.py:594
+msgid "Block Text"
+msgstr "Kwenél dhuchláb"
+
+# Alk'idh dhuchlab
+#: toolbar.py:598
+msgid "Plain Text"
+msgstr "T'ipts'odh dhuchláb"
+
+#: toolbar.py:612
+msgid "Select list"
+msgstr ""
+
+#: toolbar.py:630
+msgid "Bullet List"
+msgstr "T'iplabidh K'elab"
+
 #  k'elab kits'odh t'iplab
-#: toolbar.py:605
+#: toolbar.py:635
 msgid "Dashed List"
 msgstr "Kits'odh t'iplab k'eláb"
 
 # K'elab k'al i ajixtalàb
-#: toolbar.py:609
+#: toolbar.py:640
 msgid "Numbered List"
 msgstr "Ajidh k'eláb"
 
 # T'ijax Nik'adh Dhuche' k'elab
-#: toolbar.py:613
+#: toolbar.py:645
 msgid "Lower Case List"
 msgstr "T'ijax dhuche' k'eláb"
 
 # Pakdha' Nik'adh Dhuche' K'elab
-#: toolbar.py:617
+#: toolbar.py:650
 msgid "Upper Case List"
 msgstr "Pakdha' Dhuche' K'elab"
 
 # Dhayk'adh dhuchlab() (RTF)
-#: widgets.py:171
+#: widgets.py:119
 msgid "Rich Text (RTF)"
 msgstr "Punk'udh dhuchláb (RTF)"
 
-#: widgets.py:173
+#: widgets.py:121
 msgid "RTF"
 msgstr "RTF"
 
 # Palabra inteligente que te puede relacionar con otras ideas.
-#: widgets.py:177
+#: widgets.py:125
 msgid "Hypertext (HTML)"
 msgstr "Tsalpadh dhuchláb (HTML)"
 
-#: widgets.py:179
+#: widgets.py:127
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:184
+#: widgets.py:132
 msgid "Plain Text (TXT)"
 msgstr "T'ipts'odh dhuchláb (TXT)"
 
-#: widgets.py:186
+#: widgets.py:134
 msgid "TXT"
 msgstr "TXT"
 
 # T'ipoxtaláb k'al an Kitínadh Dhuchlab (PDF)
-#: widgets.py:190
+#: widgets.py:138
 msgid "Portable Document Format (PDF)"
 msgstr "Kitnadh dhuchláb t'ipoxtaláb (PDF)"
 
 # Estoy  enviando PDF
-#: widgets.py:192
+#: widgets.py:140
 msgid "PDF"
 msgstr "PDF"
 

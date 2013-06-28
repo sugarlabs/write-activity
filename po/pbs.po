@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-08 00:31-0500\n"
+"POT-Creation-Date: 2013-06-12 00:30-0400\n"
 "PO-Revision-Date: 2012-08-29 01:58+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,37 +32,37 @@ msgstr ""
 msgid "Connecting..."
 msgstr ""
 
-#: AbiWordActivity.py:100
+#: AbiWordActivity.py:101
 msgid "Edit"
 msgstr "Malejeiñ"
 
-#: AbiWordActivity.py:106
+#: AbiWordActivity.py:107
 msgid "View"
 msgstr "Manú"
 
-#: AbiWordActivity.py:122
+#: AbiWordActivity.py:123
 msgid "Text"
 msgstr "Keich' kily'e"
 
-#: AbiWordActivity.py:128
+#: AbiWordActivity.py:129
 msgid "Paragraph"
 msgstr "Kusau kutap kily'e"
 
-#: AbiWordActivity.py:134 toolbar.py:605
-msgid "Bullet List"
-msgstr "Me'ets ljuu'p lumei ndanú"
-
-#: AbiWordActivity.py:140
+#: AbiWordActivity.py:135
 msgid "Table"
 msgstr "Riñ'ieje nde'ets sad-ia'"
 
-#: AbiWordActivity.py:147
+#: AbiWordActivity.py:139
 msgid "Insert Image"
 msgstr "Mamang snakeje'"
 
-#: AbiWordActivity.py:154
+#: AbiWordActivity.py:146
 msgid "Floating"
 msgstr "Ta'ats'"
+
+#: fontcombobox.py:90
+msgid "Select font"
+msgstr ""
 
 #: speechtoolbar.py:58
 msgid "Play / Pause"
@@ -72,159 +72,171 @@ msgstr "Maleiñ / mama'ai"
 msgid "Stop"
 msgstr "Ndama'ai"
 
-#: toolbar.py:99
+#: toolbar.py:100
 msgid "Search"
 msgstr "Mata'aú"
 
-#: toolbar.py:116
+#: toolbar.py:117
 msgid "Find previous"
 msgstr "Mata'au sevaa"
 
-#: toolbar.py:122
+#: toolbar.py:123
 msgid "Find next"
 msgstr "Mata'au ne se likiu'uch'"
 
-#: toolbar.py:226
+#: toolbar.py:227
 msgid "Create table"
 msgstr ""
 
-#: toolbar.py:236
+#: toolbar.py:237
 msgid "Insert Row"
 msgstr "Mamejep ndama'aiñ"
 
-#: toolbar.py:242
+#: toolbar.py:243
 msgid "Delete Row"
 msgstr "Mavun likjiu'un"
 
-#: toolbar.py:248
+#: toolbar.py:249
 msgid "Insert Column"
 msgstr "Mamejep nde'et kily'e"
 
-#: toolbar.py:254
+#: toolbar.py:255
 msgid "Delete Column"
 msgstr "Mavun nde'et kily'e"
 
-#: toolbar.py:299
+#: toolbar.py:300
 msgid "Zoom Out"
 msgstr "Manats'ei'"
 
-#: toolbar.py:306
+#: toolbar.py:307
 msgid "Zoom In"
 msgstr "Manandaí"
 
-#: toolbar.py:312
+#: toolbar.py:313
 msgid "Zoom to width"
 msgstr "Makjáat ne nixi'i"
 
-#: toolbar.py:329
+#: toolbar.py:330
 msgid "%"
 msgstr "%"
 
-#: toolbar.py:341
+#: toolbar.py:342
 msgid "Page: "
 msgstr "Ne nixií: "
 
-#: toolbar.py:436
+#: toolbar.py:441
 msgid "Bold"
 msgstr "Lyi lumvú"
 
-#: toolbar.py:445
+#: toolbar.py:450
 msgid "Italic"
 msgstr "Liji'iun kily'e"
 
-#: toolbar.py:454
+#: toolbar.py:459
 msgid "Underline"
 msgstr "Me'es"
 
-#: toolbar.py:518 toolbar.py:595
-msgid "Normal"
-msgstr "Vajau kily'e"
+#: toolbar.py:487
+msgid "Choose alignment"
+msgstr ""
 
-#: toolbar.py:529
-msgid "Heading 1"
-msgstr "Kanam ngunjiu' kily'e nda"
-
-#: toolbar.py:533
-msgid "Heading 2"
-msgstr "Kanam kily'e nui"
-
-#: toolbar.py:537
-msgid "Heading 3"
-msgstr "Kanam kily'e ranju'"
-
-#: toolbar.py:541
-msgid "Heading 4"
-msgstr "Kanam kily'e kiñui"
-
-#: toolbar.py:545
-msgid "Block Text"
-msgstr "Kad-a keich' kily'e"
-
-#: toolbar.py:549
-msgid "Plain Text"
-msgstr "Keich' kily'e d-ajap"
-
-#: toolbar.py:565
+#: toolbar.py:495
 msgid "Left justify"
 msgstr "Makju' manama ma meje'ep"
 
-#: toolbar.py:568
+#: toolbar.py:499
 msgid "Center justify"
 msgstr "Makju' makjaat kiñkiemejep"
 
-#: toolbar.py:571
+#: toolbar.py:503
 msgid "Right justify"
 msgstr "Makju' manama ma majap"
 
-#: toolbar.py:574
+#: toolbar.py:507
 msgid "Fill justify"
 msgstr "Makju' makjaik"
 
-#: toolbar.py:609
+#: toolbar.py:567 toolbar.py:620
+msgid "Normal"
+msgstr "Vajau kily'e"
+
+#: toolbar.py:578
+msgid "Heading 1"
+msgstr "Kanam ngunjiu' kily'e nda"
+
+#: toolbar.py:582
+msgid "Heading 2"
+msgstr "Kanam kily'e nui"
+
+#: toolbar.py:586
+msgid "Heading 3"
+msgstr "Kanam kily'e ranju'"
+
+#: toolbar.py:590
+msgid "Heading 4"
+msgstr "Kanam kily'e kiñui"
+
+#: toolbar.py:594
+msgid "Block Text"
+msgstr "Kad-a keich' kily'e"
+
+#: toolbar.py:598
+msgid "Plain Text"
+msgstr "Keich' kily'e d-ajap"
+
+#: toolbar.py:612
+msgid "Select list"
+msgstr ""
+
+#: toolbar.py:630
+msgid "Bullet List"
+msgstr "Me'ets ljuu'p lumei ndanú"
+
+#: toolbar.py:635
 msgid "Dashed List"
 msgstr "Nde'ets lju'p lumei ndanu"
 
-#: toolbar.py:613
+#: toolbar.py:640
 msgid "Numbered List"
 msgstr "Nde'ets lju'p lumei rabe'en"
 
-#: toolbar.py:617
+#: toolbar.py:645
 msgid "Lower Case List"
 msgstr "Nde'ets lju'p likjiu'un kily'e ly'i't"
 
-#: toolbar.py:621
+#: toolbar.py:650
 msgid "Upper Case List"
 msgstr "Nde'ets lju'p likjiu'un kily'e ndue't"
 
-#: widgets.py:174
+#: widgets.py:119
 msgid "Rich Text (RTF)"
 msgstr "kily'e me'ets majau valei kad-er vumang (RTF)"
 
-#: widgets.py:176
+#: widgets.py:121
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:180
+#: widgets.py:125
 msgid "Hypertext (HTML)"
 msgstr "Kutue' kily'e me'ets (HTML)"
 
-#: widgets.py:182
+#: widgets.py:127
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:187
+#: widgets.py:132
 msgid "Plain Text (TXT)"
 msgstr "Sau' me'ets kily'e (TXT)"
 
-#: widgets.py:189
+#: widgets.py:134
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:193
+#: widgets.py:138
 msgid "Portable Document Format (PDF)"
 msgstr "Nda'et kily'e k'ua manamaí (PDF)"
 
-#: widgets.py:195
+#: widgets.py:140
 msgid "PDF"
 msgstr "PDF"
 

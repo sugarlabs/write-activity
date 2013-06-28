@@ -44,7 +44,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: write\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-22 00:30-0400\n"
+"POT-Creation-Date: 2013-06-12 00:30-0400\n"
 "PO-Revision-Date: 2013-06-03 21:17+0200\n"
 "Last-Translator: Markus <m.slg@gmx.de>\n"
 "Language-Team: Deutsche OLPC-Lokalisierung\n"
@@ -101,6 +101,10 @@ msgstr "Bild einfügen"
 #: AbiWordActivity.py:146
 msgid "Floating"
 msgstr "Gleitobjekt"
+
+#: fontcombobox.py:90
+msgid "Select font"
+msgstr ""
 
 #: speechtoolbar.py:58
 msgid "Play / Pause"
@@ -162,119 +166,119 @@ msgstr "%"
 msgid "Page: "
 msgstr "Seite: "
 
-#: toolbar.py:437
+#: toolbar.py:441
 msgid "Bold"
 msgstr "Fett"
 
-#: toolbar.py:446
+#: toolbar.py:450
 msgid "Italic"
 msgstr "Kursiv"
 
-#: toolbar.py:455
+#: toolbar.py:459
 msgid "Underline"
 msgstr "Unterstrichen"
 
-#: toolbar.py:482
+#: toolbar.py:487
 msgid "Choose alignment"
 msgstr "Ausrichtung wählen"
 
-#: toolbar.py:484
+#: toolbar.py:495
 msgid "Left justify"
 msgstr "Linksbündig"
 
-#: toolbar.py:487
+#: toolbar.py:499
 msgid "Center justify"
 msgstr "Zentriert"
 
-#: toolbar.py:490
+#: toolbar.py:503
 msgid "Right justify"
 msgstr "Rechtsbündig"
 
-#: toolbar.py:493
+#: toolbar.py:507
 msgid "Fill justify"
 msgstr "Blocksatz"
 
-#: toolbar.py:539 toolbar.py:586
+#: toolbar.py:567 toolbar.py:620
 msgid "Normal"
 msgstr "Normaler Text"
 
-#: toolbar.py:550
+#: toolbar.py:578
 msgid "Heading 1"
 msgstr "Überschrift 1"
 
-#: toolbar.py:554
+#: toolbar.py:582
 msgid "Heading 2"
 msgstr "Überschrift 2"
 
-#: toolbar.py:558
+#: toolbar.py:586
 msgid "Heading 3"
 msgstr "Überschrift 3"
 
-#: toolbar.py:562
+#: toolbar.py:590
 msgid "Heading 4"
 msgstr "Überschrift 4"
 
-#: toolbar.py:566
+#: toolbar.py:594
 msgid "Block Text"
 msgstr "Eingerückt"
 
-#: toolbar.py:570
+#: toolbar.py:598
 msgid "Plain Text"
 msgstr "Unformatierter Text"
 
-#: toolbar.py:584
+#: toolbar.py:612
 msgid "Select list"
 msgstr "Liste wählen"
 
-#: toolbar.py:596
+#: toolbar.py:630
 msgid "Bullet List"
 msgstr "Liste mit Punkten"
 
-#: toolbar.py:600
+#: toolbar.py:635
 msgid "Dashed List"
 msgstr "Liste mit Spiegelstrichen"
 
-#: toolbar.py:604
+#: toolbar.py:640
 msgid "Numbered List"
 msgstr "Nummerierte Liste"
 
-#: toolbar.py:608
+#: toolbar.py:645
 msgid "Lower Case List"
 msgstr "Nummerierung mit Kleinbuchstaben"
 
-#: toolbar.py:612
+#: toolbar.py:650
 msgid "Upper Case List"
 msgstr "Nummerierung mit Großbuchstaben"
 
-#: widgets.py:222
+#: widgets.py:119
 msgid "Rich Text (RTF)"
 msgstr "Rich-Text-Format (RTF)"
 
-#: widgets.py:224
+#: widgets.py:121
 msgid "RTF"
 msgstr "RTF"
 
-#: widgets.py:228
+#: widgets.py:125
 msgid "Hypertext (HTML)"
 msgstr "Hypertext (HTML)"
 
-#: widgets.py:230
+#: widgets.py:127
 msgid "HTML"
 msgstr "HTML"
 
-#: widgets.py:235
+#: widgets.py:132
 msgid "Plain Text (TXT)"
 msgstr "Unformatierter Text (TXT)"
 
-#: widgets.py:237
+#: widgets.py:134
 msgid "TXT"
 msgstr "TXT"
 
-#: widgets.py:241
+#: widgets.py:138
 msgid "Portable Document Format (PDF)"
 msgstr "Portables Dokumentenformat (PDF)"
 
-#: widgets.py:243
+#: widgets.py:140
 msgid "PDF"
 msgstr "PDF"
 
