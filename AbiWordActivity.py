@@ -50,7 +50,11 @@ from toolbar import InsertToolbar
 from toolbar import ParagraphToolbar
 from widgets import ExportButtonFactory
 from widgets import DocumentView
-from port import chooser
+from sugar3.graphics.objectchooser import ObjectChooser
+try:
+    from sugar3.graphics.objectchooser import FILTER_TYPE_GENERIC_MIME
+except:
+    FILTER_TYPE_GENERIC_MIME = 'generic_mime'
 
 import speech
 from speechtoolbar import SpeechToolbar
@@ -446,11 +450,23 @@ class AbiWordActivity(activity.Activity):
         self.floating_image = checkbutton.get_active()
 
     def _image_cb(self, button):
+        try:
+            chooser = ObjectChooser(self, what_filter='Image',
+                                    filter_type=FILTER_TYPE_GENERIC_MIME,
+                                    show_preview=True)
+        except:
+            # for compatibility with older versions
+            chooser = ObjectChooser(self, what_filter='Image')
 
-        def cb(object):
-            logging.debug('ObjectChooser: %r' % object)
-            self.abiword_canvas.insert_image(object.file_path,
-                    self.floating_image)
-
-        chooser.pick(parent=self.abiword_canvas.get_toplevel(),
-                what=chooser.IMAGE, cb=cb)
+        try:
+            result = chooser.run()
+            if result == Gtk.ResponseType.ACCEPT:
+                logging.debug('ObjectChooser: %r',
+                        chooser.get_selected_object())
+                jobject = chooser.get_selected_object()
+                if jobject and jobject.file_path:
+                    self.abiword_canvas.insert_image(jobject.file_path,
+                            self.floating_image)
+        finally:
+            chooser.destroy()
+            del chooser
