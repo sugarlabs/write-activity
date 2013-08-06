@@ -228,6 +228,11 @@ class AbiWordActivity(activity.Activity):
             self.abiword_canvas.set_font_name('Sans')
             self.abiword_canvas.moveto_bod()
             self.abiword_canvas.select_bod()
+        if hasattr(self.abiword_canvas, 'toggle_rulers'):
+            # this is not available yet on upstream abiword
+            self.abiword_canvas.view_print_layout()
+            self.abiword_canvas.toggle_rulers(False)
+
         self.abiword_canvas.grab_focus()
 
     def get_preview(self):
