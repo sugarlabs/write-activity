@@ -25,7 +25,6 @@ from gi.repository import GObject
 GObject.threads_init()
 
 from gi.repository import Gtk
-from gi.repository import Abi
 from gi.repository import GdkPixbuf
 import telepathy
 import telepathy.client
@@ -69,7 +68,7 @@ class ConnectingBox(Gtk.VBox):
         self.props.halign = Gtk.Align.CENTER
         self.props.valign = Gtk.Align.CENTER
         waiting_icon = Icon(icon_name='zoom-neighborhood',
-                icon_size=Gtk.IconSize.LARGE_TOOLBAR)
+                            icon_size=Gtk.IconSize.LARGE_TOOLBAR)
         waiting_icon.set_xo_color(XoColor('white'))
         self.add(waiting_icon)
         self.add(Gtk.Label(_('Connecting...')))
@@ -148,8 +147,8 @@ class AbiWordActivity(activity.Activity):
         content_box = Gtk.VBox()
         palette.set_content(content_box)
         image_floating_checkbutton = Gtk.CheckButton(_('Floating'))
-        image_floating_checkbutton.connect('toggled',
-                self._image_floating_checkbutton_toggled_cb)
+        image_floating_checkbutton.connect(
+            'toggled', self._image_floating_checkbutton_toggled_cb)
         content_box.pack_start(image_floating_checkbutton, True, True, 0)
         content_box.show_all()
         self.floating_image = False
@@ -196,7 +195,7 @@ class AbiWordActivity(activity.Activity):
             self._new_instance = False
             self.connect('joined', self._joined_cb)
             self.shared_activity.connect('buddy-joined',
-                    self._buddy_joined_cb)
+                                         self._buddy_joined_cb)
             self.shared_activity.connect('buddy-left', self._buddy_left_cb)
             if self.get_shared():
                 self._joined_cb(self)
@@ -219,8 +218,8 @@ class AbiWordActivity(activity.Activity):
         logger.error('Loading keybindings')
         keybindings_file = os.path.join(get_bundle_path(), 'keybindings.xml')
         self.abiword_canvas.invoke_ex(
-                'com.abisource.abiword.loadbindings.fromURI',
-                keybindings_file, 0, 0)
+            'com.abisource.abiword.loadbindings.fromURI',
+            keybindings_file, 0, 0)
         # set default font
         if self._new_instance:
             self.abiword_canvas.select_all()
@@ -278,7 +277,7 @@ class AbiWordActivity(activity.Activity):
         self.text_chan = self.shared_activity.telepathy_text_chan
         self.tube_id = None
         self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].connect_to_signal(
-                'NewTube', self._new_tube_cb)
+            'NewTube', self._new_tube_cb)
 
     def _list_tubes_reply_cb(self, tubes):
         for tube_info in tubes:
@@ -348,24 +347,24 @@ class AbiWordActivity(activity.Activity):
         address = channel.GetDBusTubeAddress(id)
         if self.joined:
             logger.error('Passing tube address to abicollab (join): %s',
-                    address)
+                         address)
             self.abiword_canvas.invoke_ex(cmd_prefix + 'joinTube',
-                    address, 0, 0)
+                                          address, 0, 0)
             # The intiator of the session has to be the first passed
             # to the Abicollab backend.
             logger.error('Adding the initiator to the session: %s',
-                    initiator_dbus_name)
+                         initiator_dbus_name)
             self.abiword_canvas.invoke_ex(cmd_prefix + 'buddyJoined',
-                    initiator_dbus_name, 0, 0)
+                                          initiator_dbus_name, 0, 0)
         else:
             logger.error('Passing tube address to abicollab (offer): %s',
-                    address)
+                         address)
             self.abiword_canvas.invoke_ex(cmd_prefix + 'offerTube', address,
-                    0, 0)
+                                          0, 0)
         self.tube_id = id
 
         channel.connect_to_signal('DBusNamesChanged',
-            self._on_dbus_names_changed)
+                                  self._on_dbus_names_changed)
 
         self._on_dbus_names_changed(id, dbus_names, [])
 
@@ -380,9 +379,9 @@ class AbiWordActivity(activity.Activity):
         cmd_prefix = 'com.abisource.abiword.abicollab.olpc'
         for handle, bus_name in added:
             logger.error('added handle: %s, with dbus_name: %s',
-                    handle, bus_name)
+                         handle, bus_name)
             self.abiword_canvas.invoke_ex(cmd_prefix + '.buddyJoined',
-                    bus_name, 0, 0)
+                                          bus_name, 0, 0)
             self.participants[handle] = bus_name
 
     def _on_members_changed(self, message, added, removed, local_pending,
@@ -399,7 +398,7 @@ class AbiWordActivity(activity.Activity):
             logger.error('removed handle: %d, with dbus name: %s', handle,
                          bus_name)
             self.abiword_canvas.invoke_ex(cmd_prefix + '.buddyLeft',
-                    bus_name, 0, 0)
+                                          bus_name, 0, 0)
 
     def _buddy_joined_cb(self, activity, buddy):
         logger.error('buddy joined with object path: %s', buddy.object_path())
@@ -409,7 +408,7 @@ class AbiWordActivity(activity.Activity):
 
     def read_file(self, file_path):
         logging.debug('AbiWordActivity.read_file: %s, mimetype: %s',
-                file_path, self.metadata['mime_type'])
+                      file_path, self.metadata['mime_type'])
         if self._is_plain_text(self.metadata['mime_type']):
             self.abiword_canvas.load_file('file://' + file_path, 'text/plain')
         else:
@@ -421,7 +420,7 @@ class AbiWordActivity(activity.Activity):
 
     def write_file(self, file_path):
         logging.debug('AbiWordActivity.write_file: %s, mimetype: %s',
-            file_path, self.metadata['mime_type'])
+                      file_path, self.metadata['mime_type'])
         # if we were editing a text file save as plain text
         if self._is_plain_text(self.metadata['mime_type']):
             logger.debug('Writing file as type source (text/plain)')
@@ -430,14 +429,14 @@ class AbiWordActivity(activity.Activity):
             #if the file is new, save in .odt format
             if self.metadata['mime_type'] == '':
                 self.metadata['mime_type'] = \
-                        'application/vnd.oasis.opendocument.text'
+                    'application/vnd.oasis.opendocument.text'
 
             # Abiword can't save in .doc format, save in .rtf instead
             if self.metadata['mime_type'] == 'application/msword':
                 self.metadata['mime_type'] = 'application/rtf'
 
             self.abiword_canvas.save('file://' + file_path,
-                    self.metadata['mime_type'], '')
+                                     self.metadata['mime_type'], '')
         self.metadata['fulltext'] = self.abiword_canvas.get_content(
             'text/plain', None)[:3000]
 
@@ -449,7 +448,7 @@ class AbiWordActivity(activity.Activity):
 
         mime_parents = mime.get_mime_parents(self.metadata['mime_type'])
         return self.metadata['mime_type'] in ['text/plain', 'text/csv'] or \
-               'text/plain' in mime_parents
+            'text/plain' in mime_parents
 
     def _image_floating_checkbutton_toggled_cb(self, checkbutton):
         self.floating_image = checkbutton.get_active()
@@ -467,11 +466,11 @@ class AbiWordActivity(activity.Activity):
             result = chooser.run()
             if result == Gtk.ResponseType.ACCEPT:
                 logging.debug('ObjectChooser: %r',
-                        chooser.get_selected_object())
+                              chooser.get_selected_object())
                 jobject = chooser.get_selected_object()
                 if jobject and jobject.file_path:
                     self.abiword_canvas.insert_image(jobject.file_path,
-                            self.floating_image)
+                                                     self.floating_image)
         finally:
             chooser.destroy()
             del chooser
