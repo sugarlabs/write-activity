@@ -26,6 +26,7 @@ GObject.threads_init()
 
 from gi.repository import Gtk
 from gi.repository import GdkPixbuf
+from gi.repository import GConf
 import telepathy
 import telepathy.client
 
@@ -179,6 +180,17 @@ class AbiWordActivity(activity.Activity):
         # we want a nice border so we can select paragraphs easily
         self.abiword_canvas.set_show_margin(True)
 
+        # Read default font face and size
+        client = GConf.Client.get_default()
+        self._default_font_face = client.get_string(
+            '/desktop/sugar/activities/write/font_face')
+        if not self._default_font_face:
+            self._default_font_face = 'Sans'
+        self._default_font_size = client.get_int(
+            '/desktop/sugar/activities/write/font_size')
+        if self._default_font_size == 0:
+            self._default_font_size = 12
+
         # activity sharing
         self.participants = {}
         self.joined = False
@@ -223,8 +235,10 @@ class AbiWordActivity(activity.Activity):
         # set default font
         if self._new_instance:
             self.abiword_canvas.select_all()
-            logging.error('Setting default font to Sans in new documents')
-            self.abiword_canvas.set_font_name('Sans')
+            logging.error('Setting default font to %s %d in new documents',
+                         self._default_font_face, self._default_font_size)
+            self.abiword_canvas.set_font_name(self._default_font_face)
+            self.abiword_canvas.set_font_size(str(self._default_font_size))
             self.abiword_canvas.moveto_bod()
             self.abiword_canvas.select_bod()
         if hasattr(self.abiword_canvas, 'toggle_rulers'):
