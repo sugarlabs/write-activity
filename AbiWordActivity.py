@@ -25,7 +25,6 @@ from gi.repository import GObject
 GObject.threads_init()
 
 from gi.repository import Gtk
-from gi.repository import GdkPixbuf
 from gi.repository import GConf
 import telepathy
 import telepathy.client
@@ -34,8 +33,6 @@ from sugar3.activity import activity
 from sugar3.activity.widgets import StopButton
 from sugar3.activity.widgets import ActivityToolbarButton
 from sugar3.activity.activity import get_bundle_path
-
-from sugar3 import mime
 
 from sugar3.graphics.toolbutton import ToolButton
 from sugar3.graphics.toolbarbox import ToolbarButton, ToolbarBox
@@ -254,6 +251,8 @@ class AbiWordActivity(activity.Activity):
         if not hasattr(self.abiword_canvas, 'render_page_to_image'):
             return activity.Activity.get_preview(self)
 
+        from gi.repository import GdkPixbuf
+
         pixbuf = self.abiword_canvas.render_page_to_image(1)
         pixbuf = pixbuf.scale_simple(style.zoom(300), style.zoom(225),
                                      GdkPixbuf.InterpType.BILINEAR)
@@ -461,6 +460,8 @@ class AbiWordActivity(activity.Activity):
         # use it like rich text
         if mime_type in ['application/rtf', 'text/rtf', 'text/html']:
             return False
+
+        from sugar3 import mime
 
         mime_parents = mime.get_mime_parents(self.metadata['mime_type'])
         return self.metadata['mime_type'] in ['text/plain', 'text/csv'] or \
