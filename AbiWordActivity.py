@@ -56,9 +56,6 @@ try:
 except:
     FILTER_TYPE_GENERIC_MIME = 'generic_mime'
 
-import speech
-from speechtoolbar import SpeechToolbar
-
 logger = logging.getLogger('write-activity')
 
 
@@ -111,12 +108,9 @@ class AbiWordActivity(activity.Activity):
         view_toolbar.props.label = _('View')
         toolbar_box.toolbar.insert(view_toolbar, -1)
 
-        if speech.supported:
-            self.speech_toolbar_button = ToolbarButton(icon_name='speak')
-            toolbar_box.toolbar.insert(self.speech_toolbar_button, -1)
-            self.speech_toolbar = SpeechToolbar(self)
-            self.speech_toolbar_button.set_page(self.speech_toolbar)
-            self.speech_toolbar_button.show()
+        self.speech_toolbar_button = ToolbarButton(icon_name='speak')
+        toolbar_box.toolbar.insert(self.speech_toolbar_button, -1)
+        GObject.idle_add(self._init_speech)
 
         separator = Gtk.SeparatorToolItem()
         toolbar_box.toolbar.insert(separator, -1)
@@ -220,6 +214,14 @@ class AbiWordActivity(activity.Activity):
         self.connect_after('map-event', self.__map_activity_event_cb)
 
         self.abiword_canvas.connect('size-allocate', self.size_allocate_cb)
+
+    def _init_speech(self):
+        import speech
+        from speechtoolbar import SpeechToolbar
+        if speech.supported:
+            self.speech_toolbar = SpeechToolbar(self)
+            self.speech_toolbar_button.set_page(self.speech_toolbar)
+            self.speech_toolbar_button.show()
 
     def size_allocate_cb(self, abi, alloc):
         GObject.idle_add(abi.queue_draw)
