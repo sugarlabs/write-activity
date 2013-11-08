@@ -4,12 +4,12 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 
+
 class GridCreateWidget(Gtk.DrawingArea):
 
     __gsignals__ = {
         'create-table': (
-            GObject.SignalFlags.RUN_FIRST, None, [int, int]),
-        }
+            GObject.SignalFlags.RUN_FIRST, None, [int, int]), }
 
     def __init__(self):
         super(GridCreateWidget, self).__init__()
@@ -29,15 +29,16 @@ class GridCreateWidget(Gtk.DrawingArea):
         self.connect('event', self.__event_cb)
 
     def __event_cb(self, widget, event):
-        if event.type in (Gdk.EventType.TOUCH_BEGIN,
+        if event.type in (
+                Gdk.EventType.TOUCH_BEGIN,
                 Gdk.EventType.TOUCH_CANCEL, Gdk.EventType.TOUCH_END,
                 Gdk.EventType.TOUCH_UPDATE, Gdk.EventType.BUTTON_PRESS,
                 Gdk.EventType.BUTTON_RELEASE, Gdk.EventType.MOTION_NOTIFY):
             x = event.get_coords()[1]
             y = event.get_coords()[2]
-            seq = str(event.touch.sequence)
 
-            if event.type in (Gdk.EventType.TOUCH_BEGIN,
+            if event.type in (
+                    Gdk.EventType.TOUCH_BEGIN,
                     Gdk.EventType.TOUCH_UPDATE, Gdk.EventType.BUTTON_PRESS,
                     Gdk.EventType.MOTION_NOTIFY):
                 # update rows and cols
@@ -74,7 +75,7 @@ class GridCreateWidget(Gtk.DrawingArea):
         # draw grid
         cr.set_source_rgb(1.0, 1.0, 1.0)
         self._draw_grid(cr, self._min_rows, self._min_col, self._width,
-                self._height)
+                        self._height)
         cr.set_source_rgb(0.0, 0.0, 0.0)
         self._draw_grid(cr, self._rows, self._columns, width, height)
 

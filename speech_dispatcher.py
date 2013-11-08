@@ -77,14 +77,14 @@ class EspeakThread(threading.Thread):
         try:
             self.client = speechd.SSIPClient('readetexts')
             self.client._conn.send_command('SET', speechd.Scope.SELF,
-                    'SSML_MODE', "ON")
+                                           'SSML_MODE', "ON")
             if speech.voice:
                 self.client.set_language(speech.voice[1])
                 self.client.set_rate(speech.rate)
                 self.client.set_pitch(speech.pitch)
             self.client.speak(self.words, self.next_word_cb,
-                    (speechd.CallbackType.INDEX_MARK,
-                    speechd.CallbackType.END))
+                              (speechd.CallbackType.INDEX_MARK,
+                               speechd.CallbackType.END))
             global done
             done = False
             while not done:

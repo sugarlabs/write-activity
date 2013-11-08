@@ -53,7 +53,8 @@ class SpeechToolbar(Gtk.Toolbar):
         # Play button
         self.play_btn = ToggleToolButton('media-playback-start')
         self.play_btn.show()
-        self.play_toggled_handler = self.play_btn.connect('toggled', self.play_cb)
+        self.play_toggled_handler = self.play_btn.connect(
+            'toggled', self.play_cb)
         self.insert(self.play_btn, -1)
         self.play_btn.set_tooltip(_('Play / Pause'))
 
@@ -106,16 +107,17 @@ class SpeechToolbar(Gtk.Toolbar):
             logging.error('Default voice %s', speech.voice)
 
         self._cnf_client.add_dir('/desktop/sugar/speech',
-                GConf.ClientPreloadType.PRELOAD_NONE)
+                                 GConf.ClientPreloadType.PRELOAD_NONE)
         speech.pitch = self._cnf_client.get_int('/desktop/sugar/speech/pitch')
         speech.rate = self._cnf_client.get_int('/desktop/sugar/speech/rate')
-        self._cnf_client.notify_add('/desktop/sugar/speech/pitch', \
-                self.__conf_changed_cb, None)
-        self._cnf_client.notify_add('/desktop/sugar/speech/rate', \
-                self.__conf_changed_cb, None)
+        self._cnf_client.notify_add('/desktop/sugar/speech/pitch',
+                                    self.__conf_changed_cb, None)
+        self._cnf_client.notify_add('/desktop/sugar/speech/rate',
+                                    self.__conf_changed_cb, None)
 
     def get_default_voice(self):
-        """Try to figure out the default voice, from the current locale ($LANG)
+        """Try to figure out the default voice, from the current locale
+           ($LANG)
            Fall back to espeak's voice called Default."""
         voices = speech.get_all_voices()
 
@@ -130,9 +132,9 @@ class SpeechToolbar(Gtk.Toolbar):
             language_location = 'es_la'
 
         best = voices.get(language_location) or voices.get(language) \
-                or 'default'
+            or 'default'
         logging.debug('Best voice for LANG %s seems to be %s',
-                locale, best)
+                      locale, best)
         return [best, language, variant]
 
     def __conf_changed_cb(self, client, connection_id, entry, args):

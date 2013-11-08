@@ -37,9 +37,9 @@ class AbiButton(RadioToolButton):
         RadioToolButton.__init__(self, **kwargs)
 
         self._abi_handler = abi.connect(abi_signal, self.__abi_cb,
-                abi_signal, on_abi_cb)
+                                        abi_signal, on_abi_cb)
         self._toggled_handler = self.connect('toggled', self.__toggled_cb,
-                abi, do_abi_cb)
+                                             abi, do_abi_cb)
 
     def __toggled_cb(self, button, abi, do_abi_cb):
         if not button.props.active:
@@ -68,7 +68,7 @@ class AbiButton(RadioToolButton):
 class AbiMenuItem(PaletteMenuItem):
 
     def __init__(self, abi, abi_signal, do_abi_cb, icon_name, label,
-            button, on_abi_cb=None, button_icon_name=None):
+                 button, on_abi_cb=None, button_icon_name=None):
         self._icon_name = icon_name
         # _button_icon_name is used only in the first case of
         # the list menu
@@ -77,9 +77,8 @@ class AbiMenuItem(PaletteMenuItem):
         PaletteMenuItem.__init__(self, icon_name=icon_name, text_label=label)
 
         self._abi_handler = abi.connect(abi_signal, self.__abi_cb,
-                abi_signal, on_abi_cb)
-        self.connect('activate', self.__activated_cb,
-                abi, do_abi_cb)
+                                        abi_signal, on_abi_cb)
+        self.connect('activate', self.__activated_cb, abi, do_abi_cb)
 
     def __activated_cb(self, button, abi, do_abi_cb):
 
@@ -117,26 +116,26 @@ class ExportButtonFactory():
 
     _EXPORT_FORMATS = [{'mime_type': 'application/rtf',
                         'title': _('Rich Text (RTF)'),
-                        'icon':'save-as-rtf',
+                        'icon': 'save-as-rtf',
                         'jpostfix': _('RTF'),
                         'exp_props': ''},
 
                        {'mime_type': 'text/html',
                         'title': _('Hypertext (HTML)'),
-                        'icon':'save-as-html',
+                        'icon': 'save-as-html',
                         'jpostfix': _('HTML'),
-                        'exp_props': 'html4:yes; declare-xml:no; ' \
-                                      'embed-css:yes; embed-images:yes;'},
+                        'exp_props': 'html4:yes; declare-xml:no; '
+                                     'embed-css:yes; embed-images:yes;'},
 
                        {'mime_type': 'text/plain',
                         'title': _('Plain Text (TXT)'),
-                        'icon':'save-as-txt',
+                        'icon': 'save-as-txt',
                         'jpostfix': _('TXT'),
                         'exp_props': ''},
 
                        {'mime_type': 'application/pdf',
                         'title': _('Portable Document Format (PDF)'),
-                        'icon':'save-as-pdf',
+                        'icon': 'save-as-pdf',
                         'jpostfix': _('PDF'),
                         'exp_props': ''}]
 
@@ -163,12 +162,12 @@ class ExportButtonFactory():
         fileObject = datastore.create()
         act_meta = activity.metadata
         fileObject.metadata['title'] = \
-                act_meta['title'] + ' (' + format['jpostfix'] + ')'
+            act_meta['title'] + ' (' + format['jpostfix'] + ')'
         fileObject.metadata['title_set_by_user'] = \
-                act_meta['title_set_by_user']
+            act_meta['title_set_by_user']
         fileObject.metadata['mime_type'] = format['mime_type']
         fileObject.metadata['fulltext'] = \
-                abi.get_content('text/plain', None)[:3000]
+            abi.get_content('text/plain', None)[:3000]
 
         fileObject.metadata['icon-color'] = act_meta['icon-color']
 
@@ -187,9 +186,9 @@ class ExportButtonFactory():
 
         # write out the document contents in the requested format
         fileObject.file_path = os.path.join(activity.get_activity_root(),
-                'instance', '%i' % time.time())
+                                            'instance', '%i' % time.time())
         abi.save('file://' + fileObject.file_path,
-                format['mime_type'], exp_props)
+                 format['mime_type'], exp_props)
 
         # store the journal item
         datastore.write(fileObject, transfer_ownership=True)
@@ -239,10 +238,10 @@ class DocumentView(Abi.Widget):
         allocation.x = 0
         allocation.y = 0
         allocation.x, allocation.y = \
-                widget.get_window().get_root_coords(allocation.x, allocation.y)
+            widget.get_window().get_root_coords(allocation.x, allocation.y)
 
         if clear.y > allocation.y + allocation.height or \
-              clear.y + clear.height < allocation.y:
+                clear.y + clear.height < allocation.y:
             return False
 
         self.dy = allocation.y + allocation.height - clear.y

@@ -75,23 +75,23 @@ class EditToolbar(Gtk.Toolbar):
         undo = UndoButton(sensitive=False)
         undo.connect('clicked', lambda button: pc.abiword_canvas.undo())
         pc.abiword_canvas.connect("can-undo", lambda abi, can_undo:
-                undo.set_sensitive(can_undo))
+                                  undo.set_sensitive(can_undo))
         self.insert(undo, -1)
         undo.show()
 
         redo = RedoButton(sensitive=False)
         redo.connect('clicked', lambda button: pc.abiword_canvas.redo())
         pc.abiword_canvas.connect("can-redo", lambda abi, can_redo:
-                redo.set_sensitive(can_redo))
+                                  redo.set_sensitive(can_redo))
         self.insert(redo, -1)
         redo.show()
 
         pc.abiword_canvas.connect('text-selected', lambda abi, b:
-                copy.set_sensitive(True))
+                                  copy.set_sensitive(True))
         pc.abiword_canvas.connect('image-selected', lambda abi, b:
-                copy.set_sensitive(True))
+                                  copy.set_sensitive(True))
         pc.abiword_canvas.connect('selection-cleared', lambda abi, b:
-                copy.set_sensitive(False))
+                                  copy.set_sensitive(False))
 
         separator = Gtk.SeparatorToolItem()
         self.insert(separator, -1)
@@ -138,7 +138,6 @@ class EditToolbar(Gtk.Toolbar):
 
         if clipboard.wait_is_image_available():
             pixbuf_sel = clipboard.wait_for_image()
-            size = int(pixbuf_sel.get_width()), int(pixbuf_sel.get_height())
             activity = self._abiword_canvas.get_toplevel()
             temp_path = os.path.join(activity.get_activity_root(), 'instance')
             if not os.path.exists(temp_path):
@@ -155,7 +154,7 @@ class EditToolbar(Gtk.Toolbar):
 
         elif clipboard.wait_is_uris_available():
             selection = clipboard.wait_for_uris()
-            if selection != None:
+            if selection is not None:
                 for uri in selection:
                     self._abiword_canvas.insert_image(urlparse(uri).path,
                                                       False)
@@ -172,7 +171,7 @@ class EditToolbar(Gtk.Toolbar):
 
     def _search_entry_changed_cb(self, entry):
         logger.debug('_search_entry_changed_cb search for \'%s\'',
-                self._search_entry.props.text)
+                     self._search_entry.props.text)
 
         if not self._search_entry.props.text:
             self._search_entry.activate()
@@ -235,26 +234,26 @@ class InsertToolbar(Gtk.Toolbar):
 
         self._table_rows_after = ToolButton('row-insert')
         self._table_rows_after.set_tooltip(_('Insert Row'))
-        self._table_rows_after_id = self._table_rows_after.connect( \
-                'clicked', self._table_rows_after_cb)
+        self._table_rows_after_id = self._table_rows_after.connect(
+            'clicked', self._table_rows_after_cb)
         self.insert(self._table_rows_after, -1)
 
         self._table_delete_rows = ToolButton('row-remove')
         self._table_delete_rows.set_tooltip(_('Delete Row'))
-        self._table_delete_rows_id = self._table_delete_rows.connect( \
-                'clicked', self._table_delete_rows_cb)
+        self._table_delete_rows_id = self._table_delete_rows.connect(
+            'clicked', self._table_delete_rows_cb)
         self.insert(self._table_delete_rows, -1)
 
         self._table_cols_after = ToolButton('column-insert')
         self._table_cols_after.set_tooltip(_('Insert Column'))
-        self._table_cols_after_id = self._table_cols_after.connect( \
-                'clicked', self._table_cols_after_cb)
+        self._table_cols_after_id = self._table_cols_after.connect(
+            'clicked', self._table_cols_after_cb)
         self.insert(self._table_cols_after, -1)
 
         self._table_delete_cols = ToolButton('column-remove')
         self._table_delete_cols.set_tooltip(_('Delete Column'))
-        self._table_delete_cols_id = self._table_delete_cols.connect( \
-                'clicked', self._table_delete_cols_cb)
+        self._table_delete_cols_id = self._table_delete_cols.connect(
+            'clicked', self._table_delete_cols_cb)
         self.insert(self._table_delete_cols, -1)
 
         self.show_all()
@@ -298,14 +297,15 @@ class ViewToolbar(Gtk.Toolbar):
 
         self._zoom_out = ToolButton('zoom-out')
         self._zoom_out.set_tooltip(_('Zoom Out'))
-        self._zoom_out_id = self._zoom_out.connect('clicked',
-                self._zoom_out_cb)
+        self._zoom_out_id = self._zoom_out.connect(
+            'clicked', self._zoom_out_cb)
         self.insert(self._zoom_out, -1)
         self._zoom_out.show()
 
         self._zoom_in = ToolButton('zoom-in')
         self._zoom_in.set_tooltip(_('Zoom In'))
-        self._zoom_in_id = self._zoom_in.connect('clicked', self._zoom_in_cb)
+        self._zoom_in_id = self._zoom_in.connect('clicked',
+                                                 self._zoom_in_cb)
         self.insert(self._zoom_in, -1)
         self._zoom_in.show()
 
@@ -424,10 +424,10 @@ class TextToolbar(Gtk.Toolbar):
 
         self.font_name_combo = FontComboBox()
         self.font_name_combo.set_font_name('Sans')
-        self._fonts_changed_id = self.font_name_combo.connect('changed',
-                self._font_changed_cb, abiword_canvas)
+        self._fonts_changed_id = self.font_name_combo.connect(
+            'changed', self._font_changed_cb, abiword_canvas)
         self._abi_handler = abiword_canvas.connect('font-family',
-                self._font_family_cb)
+                                                   self._font_family_cb)
         self.insert(ToolComboBox(self.font_name_combo), -1)
 
         self.font_size = FontSize()
@@ -441,37 +441,40 @@ class TextToolbar(Gtk.Toolbar):
         bold.set_tooltip(_('Bold'))
         bold.props.accelerator = '<Ctrl>B'
         bold_id = bold.connect('clicked', lambda sender:
-                abiword_canvas.toggle_bold())
+                               abiword_canvas.toggle_bold())
         abiword_canvas.connect('bold', lambda abi, b:
-                self._setToggleButtonState(bold, b, bold_id))
+                               self._setToggleButtonState(bold, b, bold_id))
         self.insert(bold, -1)
 
         italic = ToggleToolButton('format-text-italic')
         italic.set_tooltip(_('Italic'))
         italic.props.accelerator = '<Ctrl>I'
         italic_id = italic.connect('clicked', lambda sender:
-                abiword_canvas.toggle_italic())
+                                   abiword_canvas.toggle_italic())
         abiword_canvas.connect('italic', lambda abi, b:
-                self._setToggleButtonState(italic, b, italic_id))
+                               self._setToggleButtonState(italic, b,
+                                                          italic_id))
         self.insert(italic, -1)
 
         underline = ToggleToolButton('format-text-underline')
         underline.set_tooltip(_('Underline'))
         underline.props.accelerator = '<Ctrl>U'
         underline_id = underline.connect('clicked', lambda sender:
-                abiword_canvas.toggle_underline())
+                                         abiword_canvas.toggle_underline())
         abiword_canvas.connect('underline', lambda abi, b:
-                self._setToggleButtonState(underline, b, underline_id))
+                               self._setToggleButtonState(underline, b,
+                                                          underline_id))
         self.insert(underline, -1)
 
         color = ColorToolButton()
         color.connect('notify::color', self._text_color_cb,
-                abiword_canvas)
+                      abiword_canvas)
         tool_item = Gtk.ToolItem()
         tool_item.add(color)
         self.insert(tool_item, -1)
-        abiword_canvas.connect('color', lambda abi, r, g, b:
-                color.set_color(Gdk.Color(r * 256, g * 256, b * 256)))
+        abiword_canvas.connect(
+            'color', lambda abi, r, g, b:
+            color.set_color(Gdk.Color(r * 256, g * 256, b * 256)))
 
         # MAGIC NUMBER WARNING: Secondary toolbars are not a standard height?
         self.set_size_request(-1, style.GRID_CELL_SIZE)
@@ -479,7 +482,7 @@ class TextToolbar(Gtk.Toolbar):
         def append_align(icon_name, tooltip, do_abi_cb, style_name, button,
                          menu_box):
             menu_item = AbiMenuItem(abiword_canvas, style_name, do_abi_cb,
-                icon_name, tooltip, button)
+                                    icon_name, tooltip, button)
             menu_box.append_item(menu_item)
             menu_item.show()
 
@@ -493,20 +496,20 @@ class TextToolbar(Gtk.Toolbar):
         menu_box.show()
 
         append_align('format-justify-left', _('Left justify'),
-            abiword_canvas.align_left, 'left-align', self._aligment_btn,
-            menu_box)
+                     abiword_canvas.align_left, 'left-align',
+                     self._aligment_btn, menu_box)
 
         append_align('format-justify-center', _('Center justify'),
-            abiword_canvas.align_center, 'center-align', self._aligment_btn,
-            menu_box)
+                     abiword_canvas.align_center, 'center-align',
+                     self._aligment_btn, menu_box)
 
         append_align('format-justify-right', _('Right justify'),
-            abiword_canvas.align_right, 'right-align', self._aligment_btn,
-            menu_box)
+                     abiword_canvas.align_right, 'right-align',
+                     self._aligment_btn, menu_box)
 
         append_align('format-justify-fill', _('Fill justify'),
-            abiword_canvas.align_justify, 'justify-align', self._aligment_btn,
-            menu_box)
+                     abiword_canvas.align_justify, 'justify-align',
+                     self._aligment_btn, menu_box)
 
         self.insert(self._aligment_btn, -1)
 
@@ -545,8 +548,8 @@ class TextToolbar(Gtk.Toolbar):
     def _text_color_cb(self, button, pspec, abiword_canvas):
         newcolor = button.get_color()
         abiword_canvas.set_text_color(int(newcolor.red / 256.0),
-                                            int(newcolor.green / 256.0),
-                                            int(newcolor.blue / 256.0))
+                                      int(newcolor.green / 256.0),
+                                      int(newcolor.blue / 256.0))
 
 
 class ParagraphToolbar(Gtk.Toolbar):
@@ -564,46 +567,43 @@ class ParagraphToolbar(Gtk.Toolbar):
 
         group = None
 
-        group = append_style('list-none', _('Normal'),
-                lambda:
-                    abi.set_style('Normal'),
-                lambda abi, style:
-                    style not in ['Heading 1',
-                                  'Heading 2',
-                                  'Heading 3',
-                                  'Heading 4',
-                                  'Block Text',
-                                  'Plain Text'])
+        group = append_style(
+            'list-none', _('Normal'),
+            lambda: abi.set_style('Normal'),
+            lambda abi, style: style not in [
+                'Heading 1', 'Heading 2', 'Heading 3', 'Heading 4',
+                'Block Text', 'Plain Text'])
 
         append_style('paragraph-h1', _('Heading 1'),
-                lambda: abi.set_style('Heading 1'),
-                lambda abi, style: style == 'Heading 1')
+                     lambda: abi.set_style('Heading 1'),
+                     lambda abi, style: style == 'Heading 1')
 
         append_style('paragraph-h2', _('Heading 2'),
-                lambda: abi.set_style('Heading 2'),
-                lambda abi, style: style == 'Heading 2')
+                     lambda: abi.set_style('Heading 2'),
+                     lambda abi, style: style == 'Heading 2')
 
         append_style('paragraph-h3', _('Heading 3'),
-                lambda: abi.set_style('Heading 3'),
-                lambda abi, style: style == 'Heading 3')
+                     lambda: abi.set_style('Heading 3'),
+                     lambda abi, style: style == 'Heading 3')
 
         append_style('paragraph-h4', _('Heading 4'),
-                lambda: abi.set_style('Heading 4'),
-                lambda abi, style: style == 'Heading 4')
+                     lambda: abi.set_style('Heading 4'),
+                     lambda abi, style: style == 'Heading 4')
 
         append_style('paragraph-blocktext', _('Block Text'),
-                lambda: abi.set_style('Block Text'),
-                lambda abi, style: style == 'Block Text')
+                     lambda: abi.set_style('Block Text'),
+                     lambda abi, style: style == 'Block Text')
 
         append_style('paragraph-plaintext', _('Plain Text'),
-                lambda: abi.set_style('Plain Text'),
-                lambda abi, style: style == 'Plain Text')
+                     lambda: abi.set_style('Plain Text'),
+                     lambda abi, style: style == 'Plain Text')
 
         self.insert(Gtk.SeparatorToolItem(), -1)
 
         def append_list(icon_name, tooltip, do_abi_cb, on_abi_cb, button,
                         menu_box, button_icon=None):
-            menu_item = AbiMenuItem(abi, 'style-name', do_abi_cb,
+            menu_item = AbiMenuItem(
+                abi, 'style-name', do_abi_cb,
                 icon_name, tooltip, button, on_abi_cb, button_icon)
             menu_box.append_item(menu_item)
             menu_item.show()

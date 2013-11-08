@@ -235,7 +235,7 @@ class AbiWordActivity(activity.Activity):
         if self._new_instance:
             self.abiword_canvas.select_all()
             logging.error('Setting default font to %s %d in new documents',
-                         self._default_font_face, self._default_font_size)
+                          self._default_font_face, self._default_font_size)
             self.abiword_canvas.set_font_name(self._default_font_face)
             self.abiword_canvas.set_font_size(str(self._default_font_size))
             self.abiword_canvas.moveto_bod()

@@ -36,7 +36,7 @@ def get_all_voices():
 def _message_cb(bus, message, pipe):
     if message.type == Gst.MessageType.EOS:
         pipe.set_state(Gst.State.NULL)
-        if speech.end_text_cb != None:
+        if speech.end_text_cb is not None:
             speech.end_text_cb()
     if message.type == Gst.MessageType.ERROR:
         pipe.set_state(Gst.State.NULL)
