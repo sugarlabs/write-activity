@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-12 00:30-0400\n"
-"PO-Revision-Date: 2013-08-05 15:06+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"PO-Revision-Date: 2013-11-20 07:54+0200\n"
+"Last-Translator: Avasz <avashmulmi@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ne\n"
 "MIME-Version: 1.0\n"
@@ -35,10 +35,13 @@ msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
+"लेखले तिम्रा शब्दहरु राख्नका लागि ठाउँ दिन्छ। कथा, कविता, विवरण, जे पनि "
+"लेख्न सक्छौ! तिम्रा अक्षरहरुको बनावट, अाकारलाई परिवर्तन गर्ने प्रयास गर; "
+"तस्विर पनि घुसाऊ!"
 
 #: AbiWordActivity.py:71
 msgid "Connecting..."
-msgstr ""
+msgstr "जडान हुँदैछ..."
 
 #: AbiWordActivity.py:101
 msgid "Edit"
@@ -70,7 +73,7 @@ msgstr "तैरिनु"
 
 #: fontcombobox.py:90
 msgid "Select font"
-msgstr ""
+msgstr "फण्ट छान"
 
 #: speechtoolbar.py:58
 msgid "Play / Pause"
@@ -146,7 +149,7 @@ msgstr "रेखांकित"
 
 #: toolbar.py:487
 msgid "Choose alignment"
-msgstr ""
+msgstr "मार्गरेखा छान"
 
 #: toolbar.py:495
 msgid "Left justify"
@@ -194,7 +197,7 @@ msgstr "सादा पाठ"
 
 #: toolbar.py:612
 msgid "Select list"
-msgstr ""
+msgstr "सुचि छान"
 
 #: toolbar.py:630
 msgid "Bullet List"
