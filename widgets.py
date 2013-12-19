@@ -259,3 +259,8 @@ class DocumentView(Abi.Widget):
         self.dy = 0
         self.queue_resize()
         return True
+
+    def get_version(self):
+        version = Abi._version
+        logging.error('Abiword version %s', version)
+        return version

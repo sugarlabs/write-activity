@@ -452,8 +452,11 @@ class AbiWordActivity(activity.Activity):
 
             self.abiword_canvas.save('file://' + file_path,
                                      self.metadata['mime_type'], '')
-        self.metadata['fulltext'] = self.abiword_canvas.get_content(
-            'text/plain', None)[:3000]
+
+        # due to http://bugzilla.abisource.com/show_bug.cgi?id=13585
+        if self.abiword_canvas.get_version() != '3.0':
+            self.metadata['fulltext'] = self.abiword_canvas.get_content(
+                'text/plain', None)[:3000]
 
     def _is_plain_text(self, mime_type):
         # These types have 'text/plain' in their mime_parents  but we need
