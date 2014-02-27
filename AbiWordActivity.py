@@ -63,7 +63,7 @@ class ConnectingBox(Gtk.VBox):
         self.props.halign = Gtk.Align.CENTER
         self.props.valign = Gtk.Align.CENTER
         waiting_icon = Icon(icon_name='zoom-neighborhood',
-                            icon_size=Gtk.IconSize.LARGE_TOOLBAR)
+                            pixel_size=style.STANDARD_ICON_SIZE)
         waiting_icon.set_xo_color(XoColor('white'))
         self.add(waiting_icon)
         self.add(Gtk.Label(_('Connecting...')))
