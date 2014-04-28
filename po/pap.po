@@ -1,29 +1,28 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# User <juneleonora@yahoo.com>, 2013.
+# Wenchi <linguares@yahoo.com>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-12 00:30-0400\n"
-"PO-Revision-Date: 2010-02-28 20:30+0200\n"
-"Last-Translator: <empetronia@yahoo.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2013-10-31 10:44-0400\n"
+"Last-Translator: Wenchi <linguares@yahoo.com>\n"
+"Language-Team: Suares\n"
+"Language: pap\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Virtaal 0.7.1\n"
 
 #. TRANS: "name" option from activity.info file
 msgid "Write"
@@ -35,14 +34,17 @@ msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
+"Skibi ta ofresé un espasio pa pone bo palabranan. Skibi un kuenta, poema, "
+"reportahe, ki ku ta!Purba kambia e bista i tamaño di bo teksto; añadí hasta "
+"un ilustrashon!"
 
 #: AbiWordActivity.py:71
 msgid "Connecting..."
-msgstr ""
+msgstr "Konektando..."
 
 #: AbiWordActivity.py:101
 msgid "Edit"
-msgstr "Edita"
+msgstr "Editá"
 
 #: AbiWordActivity.py:107
 msgid "View"
@@ -62,23 +64,23 @@ msgstr "Tabla"
 
 #: AbiWordActivity.py:139
 msgid "Insert Image"
-msgstr "Inserta imagen"
+msgstr "Hinka ilustrashon"
 
 #: AbiWordActivity.py:146
 msgid "Floating"
-msgstr ""
+msgstr "Flotando"
 
 #: fontcombobox.py:90
 msgid "Select font"
-msgstr ""
+msgstr "Skohe tipo di lèter"
 
 #: speechtoolbar.py:58
 msgid "Play / Pause"
-msgstr ""
+msgstr "Aktivá / Pousa"
 
 #: speechtoolbar.py:66
 msgid "Stop"
-msgstr ""
+msgstr "Stòp"
 
 #: toolbar.py:100
 msgid "Search"
@@ -90,39 +92,39 @@ msgstr "Buska previo"
 
 #: toolbar.py:123
 msgid "Find next"
-msgstr "Buska sigiente"
+msgstr "Buska siguiente"
 
 #: toolbar.py:227
 msgid "Create table"
-msgstr ""
+msgstr "Krea tabla"
 
 #: toolbar.py:237
 msgid "Insert Row"
-msgstr "Inserta Rei"
+msgstr "Hinka Rei"
 
 #: toolbar.py:243
 msgid "Delete Row"
-msgstr "Elimina Rei"
+msgstr "Eliminá Rei"
 
 #: toolbar.py:249
 msgid "Insert Column"
-msgstr "Inserta kolumno"
+msgstr "Hinka Kolumna"
 
 #: toolbar.py:255
 msgid "Delete Column"
-msgstr "Elimina kolumno"
+msgstr "Eliminá Kolumna"
 
 #: toolbar.py:300
 msgid "Zoom Out"
-msgstr "Zoom Out"
+msgstr "Ahustá afó"
 
 #: toolbar.py:307
 msgid "Zoom In"
-msgstr "Zoom In"
+msgstr "Ahustá aden"
 
 #: toolbar.py:313
 msgid "Zoom to width"
-msgstr ""
+msgstr "Ahustá na hanchura"
 
 #: toolbar.py:330
 msgid "%"
@@ -138,7 +140,7 @@ msgstr "Bold"
 
 #: toolbar.py:450
 msgid "Italic"
-msgstr "Cursiva"
+msgstr "Kursivo"
 
 #: toolbar.py:459
 msgid "Underline"
@@ -146,23 +148,23 @@ msgstr "Subrayá"
 
 #: toolbar.py:487
 msgid "Choose alignment"
-msgstr ""
+msgstr "Skohe aliniamentu"
 
 #: toolbar.py:495
 msgid "Left justify"
-msgstr "Justifikashon robes"
+msgstr "Hustifikashon robes"
 
 #: toolbar.py:499
 msgid "Center justify"
-msgstr "Justifikashon sentro"
+msgstr "Hustifikashon sentro"
 
 #: toolbar.py:503
 msgid "Right justify"
-msgstr "Justifikashon derechi"
+msgstr "Hustifikashon drechi"
 
 #: toolbar.py:507
 msgid "Fill justify"
-msgstr "Justifikashon kompleto"
+msgstr "Hustifikashon kompleto"
 
 #: toolbar.py:567 toolbar.py:620
 msgid "Normal"
@@ -194,11 +196,11 @@ msgstr "Teksto sin formato"
 
 #: toolbar.py:612
 msgid "Select list"
-msgstr ""
+msgstr "Skohe tipo di lèter"
 
 #: toolbar.py:630
 msgid "Bullet List"
-msgstr "Lista ku bullets"
+msgstr "Lista ku punto kardinal"
 
 #: toolbar.py:635
 msgid "Dashed List"
@@ -206,15 +208,15 @@ msgstr "Lista di dash"
 
 #: toolbar.py:640
 msgid "Numbered List"
-msgstr "Lista numbrá"
+msgstr "Lista numerá"
 
 #: toolbar.py:645
 msgid "Lower Case List"
-msgstr "Lista alfabétika minúskula"
+msgstr "Lista Lèter chikí"
 
 #: toolbar.py:650
 msgid "Upper Case List"
-msgstr "Lista alfabétika mayúskula"
+msgstr "Lista Lèter kapital"
 
 #: widgets.py:119
 msgid "Rich Text (RTF)"
@@ -234,7 +236,7 @@ msgstr "HTML"
 
 #: widgets.py:132
 msgid "Plain Text (TXT)"
-msgstr "Plain Text (TXT)"
+msgstr "Teksto sin formato (TXT)"
 
 #: widgets.py:134
 msgid "TXT"
@@ -242,11 +244,11 @@ msgstr "TXT"
 
 #: widgets.py:138
 msgid "Portable Document Format (PDF)"
-msgstr ""
+msgstr "Formato Dokumento Portátil"
 
 #: widgets.py:140
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 #~ msgid "Cancel"
 #~ msgstr "Kansela"
