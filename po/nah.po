@@ -1,0 +1,249 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-12 00:30-0400\n"
+"PO-Revision-Date: 2013-11-14 21:47+0200\n"
+"Last-Translator: usuarionahuatl02 <proyecto.olpc@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: nah\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#. TRANS: "name" option from activity.info file
+msgid "Write"
+msgstr "Xijtlajkuilo"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Write provides a space to put your words. Write a story, poem, report, "
+"anything! Try changing the look, and size of your text; even insert an image!"
+msgstr ""
+"xitlajkuilo tlen mits maktilis tijtlalis tlajtoltlajkuiloli. ¡Xikijkuilo sej "
+"tlatempouali, iyejka tlajkuiloli. tlajkuiloli tlanextilistli, sekinok! "
+"¡Xiyejyeko tijpatlas tlen eltok uan iuexka nopa tlajkuiloli, nojkia "
+"xitlajlili  ixkopinkayotl!"
+
+#: AbiWordActivity.py:71
+msgid "Connecting..."
+msgstr "Tlatskiltijtok..."
+
+#: AbiWordActivity.py:101
+msgid "Edit"
+msgstr "tlajchijchiualistli"
+
+#: AbiWordActivity.py:107
+msgid "View"
+msgstr "Xikijta"
+
+#: AbiWordActivity.py:123
+msgid "Text"
+msgstr "Tlajkuiloli"
+
+#: AbiWordActivity.py:129
+msgid "Paragraph"
+msgstr "sentilis tlajkuiloli"
+
+#: AbiWordActivity.py:135
+msgid "Table"
+msgstr "Uapali"
+
+#: AbiWordActivity.py:139
+msgid "Insert Image"
+msgstr "Xitlali ixkopinkayotl"
+
+#: AbiWordActivity.py:146
+msgid "Floating"
+msgstr "Tlamaxokuiltiya"
+
+#: fontcombobox.py:90
+msgid "Select font"
+msgstr "Pejpenili iyejkayotl"
+
+#: speechtoolbar.py:58
+msgid "Play / Pause"
+msgstr "Tlatsinkui / Xiketsa"
+
+#: speechtoolbar.py:66
+msgid "Stop"
+msgstr "Xiketsa"
+
+#: toolbar.py:100
+msgid "Search"
+msgstr "Xijtemo"
+
+#: toolbar.py:117
+msgid "Find previous"
+msgstr "Xijtemo achtiui"
+
+#: toolbar.py:123
+msgid "Find next"
+msgstr "Xijtemo teipa"
+
+#: toolbar.py:227
+msgid "Create table"
+msgstr "Xijchiua uapali"
+
+#: toolbar.py:237
+msgid "Insert Row"
+msgstr "Tlatskiltili sej tokili"
+
+#: toolbar.py:243
+msgid "Delete Row"
+msgstr "Xikixpolo tokili"
+
+#: toolbar.py:249
+msgid "Insert Column"
+msgstr "Xikalaki patlajkayotl"
+
+#: toolbar.py:255
+msgid "Delete Column"
+msgstr "Xikixpolo patlajkayotl"
+
+#: toolbar.py:300
+msgid "Zoom Out"
+msgstr "Xitsikitetili"
+
+#: toolbar.py:307
+msgid "Zoom In"
+msgstr "Xiueyilti"
+
+#: toolbar.py:313
+msgid "Zoom to width"
+msgstr "Xikolcho ipatlajka"
+
+#: toolbar.py:330
+msgid "%"
+msgstr "%"
+
+#: toolbar.py:342
+msgid "Page: "
+msgstr "tlaixnextilisamatl: "
+
+#: toolbar.py:441
+msgid "Bold"
+msgstr "Yayauiktsitsi"
+
+#: toolbar.py:450
+msgid "Italic"
+msgstr "Chikiltik"
+
+#: toolbar.py:459
+msgid "Underline"
+msgstr "tlajkuiloluasanili"
+
+#: toolbar.py:487
+msgid "Choose alignment"
+msgstr "xitlajpepeni sej xitlauali"
+
+#: toolbar.py:495
+msgid "Left justify"
+msgstr "Tij semanas pan opochtli"
+
+#: toolbar.py:499
+msgid "Center justify"
+msgstr "Tij semanas pan tlanko amatl"
+
+#: toolbar.py:503
+msgid "Right justify"
+msgstr "Tij semanas pan nejmaktli "
+
+#: toolbar.py:507
+msgid "Fill justify"
+msgstr "Tij semanas tlajkuiloli pan nochi amatl"
+
+#: toolbar.py:567 toolbar.py:620
+msgid "Normal"
+msgstr "San kiampa"
+
+#: toolbar.py:578
+msgid "Heading 1"
+msgstr "Tsunchijchiuali 1"
+
+#: toolbar.py:582
+msgid "Heading 2"
+msgstr "Tsunchijchiuali 2"
+
+#: toolbar.py:586
+msgid "Heading 3"
+msgstr "Tsunchinchiuali 3"
+
+#: toolbar.py:590
+msgid "Heading 4"
+msgstr "Tsunchijchiuali 4"
+
+#: toolbar.py:594
+msgid "Block Text"
+msgstr "Uapaltlajkuiloli"
+
+#: toolbar.py:598
+msgid "Plain Text"
+msgstr "Tlankuiloli san nima"
+
+#: toolbar.py:612
+msgid "Select list"
+msgstr "Tij tlapejpenis tlatekpantli"
+
+#: toolbar.py:630
+msgid "Bullet List"
+msgstr "Tlatekpantli ka tlenueli"
+
+#: toolbar.py:635
+msgid "Dashed List"
+msgstr "Tlatekpantli ka tikilchijchiuali"
+
+#: toolbar.py:640
+msgid "Numbered List"
+msgstr "Tlatekpantli ipoual"
+
+#: toolbar.py:645
+msgid "Lower Case List"
+msgstr "Temouilistli tlakayotl tlajkuiloli"
+
+#: toolbar.py:650
+msgid "Upper Case List"
+msgstr "Temouilistli tlakayotl tlajkiololi ika i uexkapa"
+
+#: widgets.py:119
+msgid "Rich Text (RTF)"
+msgstr "Tlajkuilili tlauel ipati (RTF)"
+
+#: widgets.py:121
+msgid "RTF"
+msgstr "RTF"
+
+#: widgets.py:125
+msgid "Hypertext (HTML)"
+msgstr "Kualitlajkuiloli (HTML)"
+
+#: widgets.py:127
+msgid "HTML"
+msgstr "HTML"
+
+#: widgets.py:132
+msgid "Plain Text (TXT)"
+msgstr "Tlajkuilol san nima (TXT)"
+
+#: widgets.py:134
+msgid "TXT"
+msgstr "TXT"
+
+#: widgets.py:138
+msgid "Portable Document Format (PDF)"
+msgstr "Kenkatsa tij tekiuis Amachijchiuali (PDF)"
+
+#: widgets.py:140
+msgid "PDF"
+msgstr "PDF"
+
+#, fuzzy
+#~ msgid "Cancel"
+#~ msgstr "Tlamilti"
