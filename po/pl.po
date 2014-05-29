@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-12 00:30-0400\n"
-"PO-Revision-Date: 2012-11-13 23:41+0200\n"
-"Last-Translator: FRKS <frks@frks.pl>\n"
+"PO-Revision-Date: 2013-09-25 21:54+0200\n"
+"Last-Translator: Jakub <jamarat@o2.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,7 @@ msgstr ""
 
 #: AbiWordActivity.py:71
 msgid "Connecting..."
-msgstr ""
+msgstr "Nawiązuję połączenie..."
 
 #: AbiWordActivity.py:101
 msgid "Edit"
@@ -74,7 +74,7 @@ msgstr "Gdziekolwiek"
 
 #: fontcombobox.py:90
 msgid "Select font"
-msgstr ""
+msgstr "Wybierz czcionkę"
 
 #: speechtoolbar.py:58
 msgid "Play / Pause"
@@ -150,7 +150,7 @@ msgstr "Podkreślenie"
 
 #: toolbar.py:487
 msgid "Choose alignment"
-msgstr ""
+msgstr "Ustaw wyrównanie"
 
 #: toolbar.py:495
 msgid "Left justify"
@@ -198,7 +198,7 @@ msgstr "Zwykły tekst"
 
 #: toolbar.py:612
 msgid "Select list"
-msgstr ""
+msgstr "Wybierz listę"
 
 #: toolbar.py:630
 msgid "Bullet List"
