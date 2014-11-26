@@ -105,9 +105,11 @@ class AbiWordActivity(activity.Activity):
         view_toolbar.props.label = _('View')
         toolbar_box.toolbar.insert(view_toolbar, -1)
 
-        self.speech_toolbar_button = ToolbarButton(icon_name='speak')
-        toolbar_box.toolbar.insert(self.speech_toolbar_button, -1)
-        GObject.idle_add(self._init_speech)
+        # due to http://bugzilla.abisource.com/show_bug.cgi?id=13585
+        if self.abiword_canvas.get_version() != '3.0':
+            self.speech_toolbar_button = ToolbarButton(icon_name='speak')
+            toolbar_box.toolbar.insert(self.speech_toolbar_button, -1)
+            GObject.idle_add(self._init_speech)
 
         separator = Gtk.SeparatorToolItem()
         toolbar_box.toolbar.insert(separator, -1)
