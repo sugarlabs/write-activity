@@ -443,8 +443,7 @@ class AbiWordActivity(activity.Activity):
         else:
             #if the file is new, save in .odt format
             if self.metadata['mime_type'] == '':
-                self.metadata['mime_type'] = \
-                    'application/vnd.oasis.opendocument.text'
+                self.metadata['mime_type'] = 'application/rtf'
 
             # Abiword can't save in .doc format, save in .rtf instead
             if self.metadata['mime_type'] == 'application/msword':
