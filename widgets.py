@@ -143,6 +143,9 @@ class ExportButtonFactory():
 
         toolbar = activity.activity_button.props.page
         for i in self._EXPORT_FORMATS:
+            if abi.get_version() == '3.0' and i['title'].find('PDF') > -1:
+                # pdf export crashes on abiword 3.0
+                continue
             button = ToolButton(i['icon'])
             button.set_tooltip(i['title'])
             button.connect('clicked', self.__clicked_cb, activity, abi, i)
