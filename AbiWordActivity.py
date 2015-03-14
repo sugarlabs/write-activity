@@ -109,7 +109,7 @@ class AbiWordActivity(activity.Activity):
         if self.abiword_canvas.get_version() != '3.0':
             self.speech_toolbar_button = ToolbarButton(icon_name='speak')
             toolbar_box.toolbar.insert(self.speech_toolbar_button, -1)
-            GObject.idle_add(self._init_speech)
+            self._init_speech()
 
         separator = Gtk.SeparatorToolItem()
         toolbar_box.toolbar.insert(separator, -1)
