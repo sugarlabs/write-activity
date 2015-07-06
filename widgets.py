@@ -204,6 +204,7 @@ class ExportButtonFactory():
 class DocumentView(Abi.Widget):
 
     def __init__(self):
+        Abi.init([])
         Abi.Widget.__init__(self)
         self.connect('size-allocate', self.__size_allocate_cb)
         try:
