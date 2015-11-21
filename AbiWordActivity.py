@@ -28,6 +28,7 @@ from gi.repository import Gtk
 from gi.repository import GConf
 import telepathy
 import telepathy.client
+import dbus
 
 from sugar3.activity import activity
 from sugar3.activity.widgets import StopButton
@@ -277,10 +278,27 @@ class AbiWordActivity(activity.Activity):
         self.shared_activity.connect('buddy-joined', self._buddy_joined_cb)
         self.shared_activity.connect('buddy-left', self._buddy_left_cb)
 
-        channel = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES]
+        def create_tube_reply_cb(path, props):
+            logging.error('DBus tube channel created')
+            self._tube_chan = telepathy.client.Channel(self.conn.bus_name, path)
+            address = self._tube_chan[telepathy.CHANNEL_TYPE_DBUS_TUBE].Offer( \
+                {},
+                telepathy.SOCKET_ACCESS_CONTROL_LOCALHOST)
+            logging.error('Address: %r', address)
+            self._got_tube(props, address)
+
+        def create_tube_error_cb(e):
+            logging.error('DBus tube channel creation failed: %s' % e)
+
+        room_handle = self.shared_activity.room_handle
+        self.conn.CreateChannel(dbus.Dictionary({
+            telepathy.CHANNEL_INTERFACE + ".ChannelType": telepathy.CHANNEL_TYPE_DBUS_TUBE,
+            telepathy.CHANNEL_INTERFACE + ".TargetHandleType": telepathy.CONNECTION_HANDLE_TYPE_ROOM,
+            telepathy.CHANNEL_INTERFACE + ".TargetHandle": int(room_handle),
+            telepathy.CHANNEL_TYPE_DBUS_TUBE + ".ServiceName": 'com.abisource.abiword.abicollab'}, signature='sv'),
+            reply_handler=create_tube_reply_cb,
+            error_handler=create_tube_error_cb)
         logger.error('This is my activity: offering a tube...')
-        id = channel.OfferDBusTube('com.abisource.abiword.abicollab', {})
-        logger.error('Tube address: %s', channel.GetDBusTubeAddress(id))
 
     def _sharing_setup(self):
         logger.debug("_sharing_setup()")
@@ -290,18 +308,8 @@ class AbiWordActivity(activity.Activity):
             return
 
         self.conn = self.shared_activity.telepathy_conn
-        self.tubes_chan = self.shared_activity.telepathy_tubes_chan
         self.text_chan = self.shared_activity.telepathy_text_chan
-        self.tube_id = None
-        self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].connect_to_signal(
-            'NewTube', self._new_tube_cb)
-
-    def _list_tubes_reply_cb(self, tubes):
-        for tube_info in tubes:
-            self._new_tube_cb(*tube_info)
-
-    def _list_tubes_error_cb(self, e):
-        logger.error('ListTubes() failed: %s', e)
+        self.tube_path = None
 
     def _joined_cb(self, activity):
         logger.error("_joined_cb()")
@@ -310,14 +318,15 @@ class AbiWordActivity(activity.Activity):
             return
 
         self.joined = True
-        logger.error('Joined an existing Write session')
+        logging.error('Joined an existing Write session')
         self._sharing_setup()
 
-        logger.error('This is not my activity: waiting for a tube...')
-        self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].ListTubes(
-            reply_handler=self._list_tubes_reply_cb,
-            error_handler=self._list_tubes_error_cb)
-        self._enable_collaboration()
+        logging.error('This is not my activity: waiting for a tube chan...')
+        self._waiting_for_tube = True
+        self.conn.connect_to_signal('NewChannels', self.__new_channels_cb)
+        self.conn.Get(telepathy.CONNECTION_INTERFACE_REQUESTS, 'Channels',
+            reply_handler=self.__get_channels_reply_cb,
+            error_handler=self.__get_channels_error_cb)
 
     def _enable_collaboration(self):
         """
@@ -328,40 +337,44 @@ class AbiWordActivity(activity.Activity):
         self.abiword_canvas.set_sensitive(True)
         self._connecting_box.hide()
 
-    def _new_tube_cb(self, id, initiator, type, service, params, state):
-        logger.error('New tube: ID=%d initiator=%d type=%d service=%s '
-                     'params=%r state=%d', id, initiator, type, service,
-                     params, state)
+    def __new_channels_cb(self, channels):
+        """Callback when a new channel is created. We are interested about the stream tube ones"""
+        for path, props in channels:
+            if props[telepathy.CHANNEL_INTERFACE + ".ChannelType"] != telepathy.CHANNEL_TYPE_DBUS_TUBE:
+                continue
 
-        if self.tube_id is not None:
-            # We are already using a tube
-            return
+            if self._waiting_for_tube and props[telepathy.CHANNEL_TYPE_DBUS_TUBE + '.ServiceName'] == 'com.abisource.abiword.abicollab':
+                logging.debug('I could use this tube chan')
+                self._waiting_for_tube = False
+                self.tube_path = path
+                self._tube_chan = telepathy.client.Channel(self.conn.bus_name, path)
+                address = self._tube_chan[telepathy.CHANNEL_TYPE_DBUS_TUBE].Accept( \
+                    telepathy.SOCKET_ACCESS_CONTROL_LOCALHOST)
+                logging.error('Address %r', address)
+                self._enable_collaboration()
+                self._got_tube(props, address)
 
-        if type != telepathy.TUBE_TYPE_DBUS or \
-                service != "com.abisource.abiword.abicollab":
-            return
+    def __get_channels_reply_cb(self, channels):
+        """Callback when existing channels are available."""
+        self.__new_channels_cb(channels)
 
-        channel = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES]
+    def __get_channels_error_cb(self, e):
+        """Handle get channels error by logging."""
+        logging.error('Get channels failed: %s', e)
 
-        if state == telepathy.TUBE_STATE_LOCAL_PENDING:
-            channel.AcceptDBusTube(id)
-
+    def _got_tube(self, props, address):
         # look for the initiator's D-Bus unique name
-        initiator_dbus_name = None
-        dbus_names = channel.GetDBusNames(id)
-        for handle, name in dbus_names:
-            if handle == initiator:
-                logger.error('found initiator D-Bus name: %s', name)
-                initiator_dbus_name = name
-                break
+        initiator_handle = props[telepathy.CHANNEL_INTERFACE + '.InitiatorHandle']
+        logging.error('Initiator: %r', initiator_handle)
+        dbus_names = self._tube_chan[dbus.PROPERTIES_IFACE].Get(telepathy.CHANNEL_TYPE_DBUS_TUBE, 'DBusNames')
+        logging.error('DBus Names: %r', dbus_names)
+        initiator_dbus_name = dbus_names.get(initiator_handle)
 
         if initiator_dbus_name is None:
             logger.error('Unable to get the D-Bus name of the tube initiator')
             return
 
         cmd_prefix = 'com.abisource.abiword.abicollab.olpc.'
-        # pass this tube to abicollab
-        address = channel.GetDBusTubeAddress(id)
         if self.joined:
             logger.error('Passing tube address to abicollab (join): %s',
                          address)
@@ -378,23 +391,22 @@ class AbiWordActivity(activity.Activity):
                          address)
             self.abiword_canvas.invoke_ex(cmd_prefix + 'offerTube', address,
                                           0, 0)
-        self.tube_id = id
+        self.tube_path = id
 
-        channel.connect_to_signal('DBusNamesChanged',
+        self._tube_chan.connect_to_signal('DBusNamesChanged',
                                   self._on_dbus_names_changed)
-
         self._on_dbus_names_changed(id, dbus_names, [])
 
-    def _on_dbus_names_changed(self, tube_id, added, removed):
+    def _on_dbus_names_changed(self, tube_path, added, removed):
         """
         We call com.abisource.abiword.abicollab.olpc.buddy{Joined,Left}
         according members of the D-Bus tube. That's why we don't add/remove
         buddies in _buddy_{joined,left}_cb.
         """
         logger.error('_on_dbus_names_changed')
-#        if tube_id == self.tube_id:
+#        if tube_path == self.tube_path:
         cmd_prefix = 'com.abisource.abiword.abicollab.olpc'
-        for handle, bus_name in added:
+        for handle, bus_name in added.iteritems():
             logger.error('added handle: %s, with dbus_name: %s',
                          handle, bus_name)
             self.abiword_canvas.invoke_ex(cmd_prefix + '.buddyJoined',
