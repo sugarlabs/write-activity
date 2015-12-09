@@ -147,6 +147,14 @@ msgstr ""
 msgid "Underline"
 msgstr ""
 
+#: toolbar.py:505
+msgid "Superscript"
+msgstr ""
+
+#: toolbar.py:518
+msgid "Subscript"
+msgstr ""
+
 #: toolbar.py:521
 msgid "Choose alignment"
 msgstr ""
