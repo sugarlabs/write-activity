@@ -59,8 +59,8 @@ msgstr ""
 msgid "Floating"
 msgstr ""
 
-#: fontcombobox.py:90
-msgid "Select font"
+#: widgets.py:133
+msgid "TXT"
 msgstr ""
 
 #: speechtoolbar.py:57

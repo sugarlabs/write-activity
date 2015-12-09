@@ -21,6 +21,7 @@ import logging
 
 from gi.repository import Gtk
 from gi.repository import Gdk
+from gi.repository import GdkPixbuf
 from gi.repository import GObject
 
 import os
@@ -497,6 +498,30 @@ class TextToolbar(Gtk.Toolbar):
                                self._setToggleButtonState(underline, b,
                                                           underline_id))
         self.insert(underline, -1)
+
+        # for super/subscript, we're using the same keyboard shorcuts as
+        # abiword: <C-^> and <C-_>
+        super_btn = ToggleToolButton('format-text-super')
+        super_btn.set_tooltip(_('Superscript'))
+        # found with gtk.accelerator_name
+        super_btn.props.accelerator = '<Ctrl>asciicircum'
+        super_id = super_btn.connect('clicked', lambda sender:
+                               abiword_canvas.toggle_super())
+        # no, this isn't a mistake. The method is called `toggle_super()', but
+        # the *signal* is called `superscript'. Same goes for sub{script,}.
+        abiword_canvas.connect('superscript', lambda abi, b:
+                               self._setToggleButtonState(super_btn, b,
+                                                          super_id))
+        self.insert(super_btn, -1)
+
+        sub = ToggleToolButton('format-text-sub')
+        sub.set_tooltip(_('Subscript'))
+        sub.props.accelerator = '<Ctrl>underscore'
+        sub_id = sub.connect('clicked', lambda sender:
+                               abiword_canvas.toggle_sub())
+        abiword_canvas.connect('subscript', lambda abi, b:
+                               self._setToggleButtonState(sub, b, sub_id))
+        self.insert(sub, -1)
 
         color = ColorToolButton()
         color.connect('notify::color', self._text_color_cb,
