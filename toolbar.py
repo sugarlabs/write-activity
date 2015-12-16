@@ -256,6 +256,12 @@ class InsertToolbar(Gtk.Toolbar):
             'clicked', self._table_delete_cols_cb)
         self.insert(self._table_delete_cols, -1)
 
+        self._table_merge_cells = ToolButton('column-remove')
+        self._table_merge_cells.set_tooltip(_('Merge Cells'))
+        self._table_merge_cells_id = self._table_merge_cells.connect(
+            'clicked', self._table_merge_cells_cb)
+        self.insert(self._table_merge_cells, -1)
+
         self.show_all()
 
         self._abiword_canvas.connect('table-state', self._isTable_cb)
@@ -280,12 +286,16 @@ class InsertToolbar(Gtk.Toolbar):
     def _table_delete_cols_cb(self, button):
         self._abiword_canvas.invoke_ex('deleteColumns', '', 0, 0)
 
+    def _table_merge_cells_cb(self, button):
+        self._abiword_canvas.invoke_ex('mergeCells', '', 0, 0)
+
     def _isTable_cb(self, abi, b):
         self._table_rows_after.set_sensitive(b)
         self._table_delete_rows.set_sensitive(b)
         self._table_cols_after.set_sensitive(b)
         self._table_delete_cols.set_sensitive(b)
-
+        self._table_merge_cells.set_sensitive(b)
+        
 
 class ViewToolbar(Gtk.Toolbar):
 
