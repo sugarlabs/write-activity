@@ -256,7 +256,7 @@ class InsertToolbar(Gtk.Toolbar):
             'clicked', self._table_delete_cols_cb)
         self.insert(self._table_delete_cols, -1)
 
-        self._table_merge_cells = ToolButton('column-remove')
+        self._table_merge_cells = ToolButton('merge-cells')
         self._table_merge_cells.set_tooltip(_('Merge Cells'))
         self._table_merge_cells_id = self._table_merge_cells.connect(
             'clicked', self._table_merge_cells_cb)
