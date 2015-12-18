@@ -256,6 +256,20 @@ class InsertToolbar(Gtk.Toolbar):
             'clicked', self._table_delete_cols_cb)
         self.insert(self._table_delete_cols, -1)
 
+        self._merge_cells = ToolButton('format-columns-single')
+        self._merge_cells.set_tooltip(_('Merge Cells'))
+        self._merge_cells_id = self._merge_cells.connect(
+            'clicked', self._merge_cells_cb)
+        self.insert(self._merge_cells, -1)
+        self._merge_cells.set_sensitive(True)
+
+        self._split_cells = ToolButton('format-columns-double')
+        self._split_cells.set_tooltip(_('Split Cells'))
+        self._split_cells_id = self._split_cells.connect(
+            'clicked', self._split_cells_cb)
+        self.insert(self._split_cells, -1)
+        self._split_cells.set_sensitive(True)
+
         self.show_all()
 
         self._abiword_canvas.connect('table-state', self._isTable_cb)
@@ -280,11 +294,19 @@ class InsertToolbar(Gtk.Toolbar):
     def _table_delete_cols_cb(self, button):
         self._abiword_canvas.invoke_ex('deleteColumns', '', 0, 0)
 
+    def _merge_cells_cb(self, button):
+        self._abiword_canvas.invoke('mergeCells')
+
+    def _split_cells_cb(self, button):
+        self._abiword_canvas.invoke('splitCells')
+
     def _isTable_cb(self, abi, b):
         self._table_rows_after.set_sensitive(b)
         self._table_delete_rows.set_sensitive(b)
         self._table_cols_after.set_sensitive(b)
         self._table_delete_cols.set_sensitive(b)
+        self._merge_cells.set_sensitive(b)
+        self._split_cells.set_sensitive(b)
 
 
 class ViewToolbar(Gtk.Toolbar):
