@@ -1,0 +1,22 @@
+<svg width="55" height="55" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="edit-paste" display="block">
+   <g id="Paste">
+    <g id="svg_1">
+     <polygon id="svg_2" points="11.386,18.559 11.386,36.159 32.109,36.159 32.109,9.173 20.773,9.173    " fill="#FFFFFF"/>
+     <polygon id="svg_3" stroke-width="2.9867" stroke-linecap="round" stroke="#010101" points="11.386,18.559 11.386,36.159      32.109,36.159 32.109,9.173 20.773,9.173    " fill="none"/>
+     <polyline id="svg_4" stroke-width="2.9867" stroke="#010101" points="11.386,18.559 20.773,18.559 20.773,9.173    " fill="none"/>
+     <line id="svg_5" y2="35.084" y1="47.248" x2="40.745" x1="40.745" stroke-width="2.9867" stroke-linejoin="round" stroke-linecap="round" stroke="#FFFFFF" fill="none"/>
+     <polyline id="svg_6" stroke-width="2.9867" stroke-linejoin="round" stroke-linecap="round" stroke="#FFFFFF" points="     45.875,41.164 40.745,47.248 35.615,41.164    " fill="none"/>
+    </g>
+   </g>
+  </g>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_7" y="21.25" x="34.895835" stroke="#FFF" fill="#FFFFFF">u</text>
+ </g>
+</svg>
