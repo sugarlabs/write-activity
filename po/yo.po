@@ -10,24 +10,25 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-12 00:30-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2016-09-24 01:24+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: yo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.0.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1474680267.000000\n"
 
 #. TRANS: "name" option from activity.info file
 msgid "Write"
-msgstr ""
+msgstr "Kọ"
 
 #. TRANS: "summary" option from activity.info file
 #. TRANS: "description" option from activity.info file
@@ -35,215 +36,217 @@ msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
+"Kọ pese aaye kan kun lati fi ọrọ rẹ. Kọ a itan, Ewi, Iroyin, ohunkohun! "
+"Gbiyanju yiyipada wo, ki o si iwọn ti rẹ ọrọ; ani fi ohun aworan!"
 
 #: AbiWordActivity.py:71
 msgid "Connecting..."
-msgstr ""
+msgstr "Pọ..."
 
 #: AbiWordActivity.py:101
 msgid "Edit"
-msgstr ""
+msgstr "Ṣatunkọ"
 
 #: AbiWordActivity.py:107
 msgid "View"
-msgstr ""
+msgstr "Wo"
 
 #: AbiWordActivity.py:123
 msgid "Text"
-msgstr ""
+msgstr "Ọrọ"
 
 #: AbiWordActivity.py:129
 msgid "Paragraph"
-msgstr ""
+msgstr "Ìpínrọ"
 
 #: AbiWordActivity.py:135
 msgid "Table"
-msgstr ""
+msgstr "Aworan"
 
 #: AbiWordActivity.py:139
 msgid "Insert Image"
-msgstr ""
+msgstr "Fi aworan"
 
 #: AbiWordActivity.py:146
 msgid "Floating"
-msgstr ""
+msgstr "Lilefoofo"
 
 #: fontcombobox.py:90
 msgid "Select font"
-msgstr ""
+msgstr "Yan ara ti kikọ"
 
 #: speechtoolbar.py:58
 msgid "Play / Pause"
-msgstr ""
+msgstr "Mu ṣiṣẹ / Sinmi"
 
 #: speechtoolbar.py:66
 msgid "Stop"
-msgstr ""
+msgstr "Duro"
 
 #: toolbar.py:100
 msgid "Search"
-msgstr ""
+msgstr "Àwárí"
 
 #: toolbar.py:117
 msgid "Find previous"
-msgstr ""
+msgstr "Ri ti tẹlẹ"
 
 #: toolbar.py:123
 msgid "Find next"
-msgstr ""
+msgstr "Ri tókàn"
 
 #: toolbar.py:227
 msgid "Create table"
-msgstr ""
+msgstr "Ṣẹda tabili"
 
 #: toolbar.py:237
 msgid "Insert Row"
-msgstr ""
+msgstr "Fi kana"
 
 #: toolbar.py:243
 msgid "Delete Row"
-msgstr ""
+msgstr "Pa kana"
 
 #: toolbar.py:249
 msgid "Insert Column"
-msgstr ""
+msgstr "Fi iwe"
 
 #: toolbar.py:255
 msgid "Delete Column"
-msgstr ""
+msgstr "Pa iwe"
 
 #: toolbar.py:300
 msgid "Zoom Out"
-msgstr ""
+msgstr "Fẹ̀ẹ́ Síta"
 
 #: toolbar.py:307
 msgid "Zoom In"
-msgstr ""
+msgstr "Fẹ̀ẹ́ Sinú"
 
 #: toolbar.py:313
 msgid "Zoom to width"
-msgstr ""
+msgstr "Sun to iwọn"
 
 #: toolbar.py:330
 msgid "%"
-msgstr ""
+msgstr "%"
 
 #: toolbar.py:342
 msgid "Page: "
-msgstr ""
+msgstr "Iwe: "
 
 #: toolbar.py:441
 msgid "Bold"
-msgstr ""
+msgstr "Lagbara awọ"
 
 #: toolbar.py:450
 msgid "Italic"
-msgstr ""
+msgstr "Ara kikọ"
 
 #: toolbar.py:459
 msgid "Underline"
-msgstr ""
+msgstr "Aami"
 
 #: toolbar.py:487
 msgid "Choose alignment"
-msgstr ""
+msgstr "Yan titete"
 
 #: toolbar.py:495
 msgid "Left justify"
-msgstr ""
+msgstr "Osi da"
 
 #: toolbar.py:499
 msgid "Center justify"
-msgstr ""
+msgstr "Arin da"
 
 #: toolbar.py:503
 msgid "Right justify"
-msgstr ""
+msgstr "Ọtun da"
 
 #: toolbar.py:507
 msgid "Fill justify"
-msgstr ""
+msgstr "Kun da"
 
 #: toolbar.py:567 toolbar.py:620
 msgid "Normal"
-msgstr ""
+msgstr "Deede"
 
 #: toolbar.py:578
 msgid "Heading 1"
-msgstr ""
+msgstr "Nlọ ọkan"
 
 #: toolbar.py:582
 msgid "Heading 2"
-msgstr ""
+msgstr "Nlọ meji"
 
 #: toolbar.py:586
 msgid "Heading 3"
-msgstr ""
+msgstr "Nlọ mẹta"
 
 #: toolbar.py:590
 msgid "Heading 4"
-msgstr ""
+msgstr "Nlọ mẹrin"
 
 #: toolbar.py:594
 msgid "Block Text"
-msgstr ""
+msgstr "Dẹkun ọrọ"
 
 #: toolbar.py:598
 msgid "Plain Text"
-msgstr ""
+msgstr "Itele Ọrọ"
 
 #: toolbar.py:612
 msgid "Select list"
-msgstr ""
+msgstr "Yan akojọ"
 
 #: toolbar.py:630
 msgid "Bullet List"
-msgstr ""
+msgstr "Bullet Akojọ"
 
 #: toolbar.py:635
 msgid "Dashed List"
-msgstr ""
+msgstr "Fọ Akojọ"
 
 #: toolbar.py:640
 msgid "Numbered List"
-msgstr ""
+msgstr "Kà Akojọ"
 
 #: toolbar.py:645
 msgid "Lower Case List"
-msgstr ""
+msgstr "Kere iwọn Akojọ"
 
 #: toolbar.py:650
 msgid "Upper Case List"
-msgstr ""
+msgstr "Tobi iwọn akojọ"
 
 #: widgets.py:119
 msgid "Rich Text (RTF)"
-msgstr ""
+msgstr "Rich Text (RTF)"
 
 #: widgets.py:121
 msgid "RTF"
-msgstr ""
+msgstr "RTF"
 
 #: widgets.py:125
 msgid "Hypertext (HTML)"
-msgstr ""
+msgstr "Hypertext (HTML)"
 
 #: widgets.py:127
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #: widgets.py:132
 msgid "Plain Text (TXT)"
-msgstr ""
+msgstr "Itele ti Text (txt)"
 
 #: widgets.py:134
 msgid "TXT"
-msgstr ""
+msgstr "TXT"
 
 #: widgets.py:138
 msgid "Portable Document Format (PDF)"
-msgstr ""
+msgstr "Šee Iwe kika (PDF)"
 
 #: widgets.py:140
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
