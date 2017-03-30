@@ -7,233 +7,239 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-24 17:39+1100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2017-03-28 17:38+0000\n"
+"Last-Translator: yurchor <yurchor@ukr.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: sd\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1rc4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1490722731.000000\n"
 
 #: activity/activity.info:2
 msgid "Write"
-msgstr ""
+msgstr "Записник"
 
 #: activity/activity.info:3
 msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
+"Записник — це місце, куди ви можете записати якийсь текст. Тут ви можете "
+"створити оповідання, вірш, звіт, будь-що! Ви можете змінити вигляд і розмір "
+"частин вашого тексту, навіть додати зображення!"
 
 #: widgets.py:118
 msgid "Rich Text (RTF)"
-msgstr ""
+msgstr "Форматований текст (RTF)"
 
 #: widgets.py:120
 msgid "RTF"
-msgstr ""
+msgstr "RTF"
 
 #: widgets.py:124
 msgid "Hypertext (HTML)"
-msgstr ""
+msgstr "Гіпертекст (HTML)"
 
 #: widgets.py:126
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #: widgets.py:131
 msgid "Plain Text (TXT)"
-msgstr ""
+msgstr "Простий текст (TXT)"
 
 #: widgets.py:133
 msgid "TXT"
-msgstr ""
+msgstr "TXT"
 
 #: widgets.py:137
 msgid "Portable Document Format (PDF)"
-msgstr ""
+msgstr "Portable Document Format (PDF)"
 
 #: widgets.py:139
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 #: speechtoolbar.py:59
 msgid "Play / Pause"
-msgstr ""
+msgstr "Старт / Пауза"
 
 #: speechtoolbar.py:67
 msgid "Stop"
-msgstr ""
+msgstr "Зупинити"
 
 #: toolbar.py:100
 msgid "Search"
-msgstr ""
+msgstr "Шукати"
 
 #: toolbar.py:117
 msgid "Find previous"
-msgstr ""
+msgstr "Знайти попереднє"
 
 #: toolbar.py:123
 msgid "Find next"
-msgstr ""
+msgstr "Знайти далі"
 
 #: toolbar.py:226
 msgid "Create table"
-msgstr ""
+msgstr "Створити таблицю"
 
 #: toolbar.py:236
 msgid "Insert Row"
-msgstr ""
+msgstr "Вставити рядок"
 
 #: toolbar.py:242
 msgid "Delete Row"
-msgstr ""
+msgstr "Вилучити рядок"
 
 #: toolbar.py:248
 msgid "Insert Column"
-msgstr ""
+msgstr "Вставити стовпчик"
 
 #: toolbar.py:254
 msgid "Delete Column"
-msgstr ""
+msgstr "Вилучити стовпчик"
 
 #: toolbar.py:299
 msgid "Zoom Out"
-msgstr ""
+msgstr "Зменшити"
 
 #: toolbar.py:306
 msgid "Zoom In"
-msgstr ""
+msgstr "Збільшити"
 
 #: toolbar.py:313
 msgid "Zoom to width"
-msgstr ""
+msgstr "Вмістити за шириною"
 
 #: toolbar.py:330
 msgid "%"
-msgstr ""
+msgstr "%"
 
 #: toolbar.py:342
 msgid "Page: "
-msgstr ""
+msgstr "Сторінка: "
 
 #: toolbar.py:441
 msgid "Bold"
-msgstr ""
+msgstr "Жирний"
 
 #: toolbar.py:450
 msgid "Italic"
-msgstr ""
+msgstr "Курсив"
 
 #: toolbar.py:460
 msgid "Underline"
-msgstr ""
+msgstr "Підкреслений"
 
 #: toolbar.py:490
 msgid "Choose alignment"
-msgstr ""
+msgstr "Виберіть вирівнювання"
 
 #: toolbar.py:498
 msgid "Left justify"
-msgstr ""
+msgstr "Вирівняти ліворуч"
 
 #: toolbar.py:502
 msgid "Center justify"
-msgstr ""
+msgstr "Вирівняти за центром"
 
 #: toolbar.py:506
 msgid "Right justify"
-msgstr ""
+msgstr "Вирівняти праворуч"
 
 #: toolbar.py:510
 msgid "Fill justify"
-msgstr ""
+msgstr "Вирівняти за шириною"
 
 #: toolbar.py:571 toolbar.py:620
 msgid "Normal"
-msgstr ""
+msgstr "Звичайний"
 
 #: toolbar.py:577
 msgid "Heading 1"
-msgstr ""
+msgstr "Заголовок 1"
 
 #: toolbar.py:581
 msgid "Heading 2"
-msgstr ""
+msgstr "Заголовок 2"
 
 #: toolbar.py:585
 msgid "Heading 3"
-msgstr ""
+msgstr "Заголовок 3"
 
 #: toolbar.py:589
 msgid "Heading 4"
-msgstr ""
+msgstr "Заголовок 4"
 
 #: toolbar.py:593
 msgid "Block Text"
-msgstr ""
+msgstr "Текстовий блок"
 
 #: toolbar.py:597
 msgid "Plain Text"
-msgstr ""
+msgstr "Простий текст"
 
 #: toolbar.py:612
 msgid "Select list"
-msgstr ""
+msgstr "Виберіть варіант списку"
 
 #: toolbar.py:630
 msgid "Bullet List"
-msgstr ""
+msgstr "Список з пунктами"
 
 #: toolbar.py:635
 msgid "Dashed List"
-msgstr ""
+msgstr "Список із рисками"
 
 #: toolbar.py:640
 msgid "Numbered List"
-msgstr ""
+msgstr "Нумерований список"
 
 #: toolbar.py:645
 msgid "Lower Case List"
-msgstr ""
+msgstr "Список із малими літерами"
 
 #: toolbar.py:650
 msgid "Upper Case List"
-msgstr ""
+msgstr "Список із великими літерами"
 
 #: fontcombobox.py:90
 msgid "Select font"
-msgstr ""
+msgstr "Виберіть шрифт"
 
 #: AbiWordActivity.py:69
 msgid "Connecting..."
-msgstr ""
+msgstr "З’єднуємо…"
 
 #: AbiWordActivity.py:99
 msgid "Edit"
-msgstr ""
+msgstr "Зміни"
 
 #: AbiWordActivity.py:105
 msgid "View"
-msgstr ""
+msgstr "Перегляд"
 
 #: AbiWordActivity.py:120
 msgid "Text"
-msgstr ""
+msgstr "Текст"
 
 #: AbiWordActivity.py:126
 msgid "Paragraph"
-msgstr ""
+msgstr "Абзац"
 
 #: AbiWordActivity.py:132
 msgid "Table"
-msgstr ""
+msgstr "Таблиця"
 
 #: AbiWordActivity.py:136
 msgid "Insert Image"
-msgstr ""
+msgstr "Вставити зображення"
 
 #: AbiWordActivity.py:143
 msgid "Floating"
-msgstr ""
+msgstr "Рухомий об’єкт"

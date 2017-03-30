@@ -2,86 +2,74 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-12 00:30-0400\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
 "PO-Revision-Date: 2008-12-20 00:14-0500\n"
 "Last-Translator: Chris Leonard <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Pootle 1.1.0rc2\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 #, fuzzy
 msgid "Write"
 msgstr "כתיבה"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
 
-#: AbiWordActivity.py:71
-msgid "Connecting..."
+#: widgets.py:118
+#, fuzzy
+msgid "Rich Text (RTF)"
+msgstr "טקסט עשיר (RTF)"
+
+#: widgets.py:120
+#, fuzzy
+msgid "RTF"
+msgstr "RTF"
+
+#: widgets.py:124
+#, fuzzy
+msgid "Hypertext (HTML)"
+msgstr "תמליל-על (HTML)"
+
+#: widgets.py:126
+#, fuzzy
+msgid "HTML"
+msgstr "HTML"
+
+#: widgets.py:131
+#, fuzzy
+msgid "Plain Text (TXT)"
+msgstr "טקסט רגיל (TXT)"
+
+#: widgets.py:133
+#, fuzzy
+msgid "TXT"
+msgstr "TXT"
+
+#: widgets.py:137
+msgid "Portable Document Format (PDF)"
 msgstr ""
 
-#: AbiWordActivity.py:101
-#, fuzzy
-msgid "Edit"
-msgstr "עריכה"
-
-#: AbiWordActivity.py:107
-#, fuzzy
-msgid "View"
-msgstr "תצוגה"
-
-#: AbiWordActivity.py:123
-#, fuzzy
-msgid "Text"
-msgstr "טקסט"
-
-#: AbiWordActivity.py:129
-msgid "Paragraph"
+#: widgets.py:139
+msgid "PDF"
 msgstr ""
 
-#: AbiWordActivity.py:135
-#, fuzzy
-msgid "Table"
-msgstr "טבלה"
-
-#: AbiWordActivity.py:139
-#, fuzzy
-msgid "Insert Image"
-msgstr "הוסף תמונה"
-
-#: AbiWordActivity.py:146
-msgid "Floating"
-msgstr ""
-
-#: fontcombobox.py:90
-msgid "Select font"
-msgstr ""
-
-#: speechtoolbar.py:58
+#: speechtoolbar.py:59
 msgid "Play / Pause"
 msgstr ""
 
-#: speechtoolbar.py:66
+#: speechtoolbar.py:67
 msgid "Stop"
 msgstr ""
 
@@ -99,36 +87,36 @@ msgstr "מצא מופע קודם"
 msgid "Find next"
 msgstr "מצא מופע בא"
 
-#: toolbar.py:227
+#: toolbar.py:226
 msgid "Create table"
 msgstr ""
 
-#: toolbar.py:237
+#: toolbar.py:236
 #, fuzzy
 msgid "Insert Row"
 msgstr "הוסף שורה"
 
-#: toolbar.py:243
+#: toolbar.py:242
 #, fuzzy
 msgid "Delete Row"
 msgstr "מחק שורה"
 
-#: toolbar.py:249
+#: toolbar.py:248
 #, fuzzy
 msgid "Insert Column"
 msgstr "הוסף עמודה"
 
-#: toolbar.py:255
+#: toolbar.py:254
 #, fuzzy
 msgid "Delete Column"
 msgstr "מחק עמודה"
 
-#: toolbar.py:300
+#: toolbar.py:299
 #, fuzzy
 msgid "Zoom Out"
 msgstr "הקטן"
 
-#: toolbar.py:307
+#: toolbar.py:306
 #, fuzzy
 msgid "Zoom In"
 msgstr "הגדל"
@@ -156,62 +144,62 @@ msgstr "מודגש"
 msgid "Italic"
 msgstr "נטוי"
 
-#: toolbar.py:459
+#: toolbar.py:460
 #, fuzzy
 msgid "Underline"
 msgstr "קו תחתון"
 
-#: toolbar.py:487
+#: toolbar.py:490
 msgid "Choose alignment"
 msgstr ""
 
-#: toolbar.py:495
+#: toolbar.py:498
 msgid "Left justify"
 msgstr ""
 
-#: toolbar.py:499
+#: toolbar.py:502
 msgid "Center justify"
 msgstr ""
 
-#: toolbar.py:503
+#: toolbar.py:506
 msgid "Right justify"
 msgstr ""
 
-#: toolbar.py:507
+#: toolbar.py:510
 msgid "Fill justify"
 msgstr ""
 
-#: toolbar.py:567 toolbar.py:620
+#: toolbar.py:571 toolbar.py:620
 #, fuzzy
 msgid "Normal"
 msgstr "רגיל"
 
-#: toolbar.py:578
+#: toolbar.py:577
 #, fuzzy
 msgid "Heading 1"
 msgstr "כותרת 1"
 
-#: toolbar.py:582
+#: toolbar.py:581
 #, fuzzy
 msgid "Heading 2"
 msgstr "כותרת 2"
 
-#: toolbar.py:586
+#: toolbar.py:585
 #, fuzzy
 msgid "Heading 3"
 msgstr "כותרת 3"
 
-#: toolbar.py:590
+#: toolbar.py:589
 #, fuzzy
 msgid "Heading 4"
 msgstr "כותרת 4"
 
-#: toolbar.py:594
+#: toolbar.py:593
 #, fuzzy
 msgid "Block Text"
 msgstr "טקסט חסום"
 
-#: toolbar.py:598
+#: toolbar.py:597
 #, fuzzy
 msgid "Plain Text"
 msgstr "טקסט רגיל"
@@ -245,56 +233,43 @@ msgstr "רשימה באותיות קטנות"
 msgid "Upper Case List"
 msgstr "רשימה באותיות גדולות"
 
-#: widgets.py:119
-#, fuzzy
-msgid "Rich Text (RTF)"
-msgstr "טקסט עשיר (RTF)"
-
-#: widgets.py:121
-#, fuzzy
-msgid "RTF"
-msgstr "RTF"
-
-#: widgets.py:125
-#, fuzzy
-msgid "Hypertext (HTML)"
-msgstr "תמליל-על (HTML)"
-
-#: widgets.py:127
-#, fuzzy
-msgid "HTML"
-msgstr "HTML"
-
-#: widgets.py:132
-#, fuzzy
-msgid "Plain Text (TXT)"
-msgstr "טקסט רגיל (TXT)"
-
-#: widgets.py:134
-#, fuzzy
-msgid "TXT"
-msgstr "TXT"
-
-#: widgets.py:138
-msgid "Portable Document Format (PDF)"
+#: fontcombobox.py:90
+msgid "Select font"
 msgstr ""
 
-#: widgets.py:140
-msgid "PDF"
+#: AbiWordActivity.py:69
+msgid "Connecting..."
 msgstr ""
 
+#: AbiWordActivity.py:99
 #, fuzzy
-#~ msgid "Cancel"
-#~ msgstr "בטל"
+msgid "Edit"
+msgstr "עריכה"
 
+#: AbiWordActivity.py:105
 #, fuzzy
-#~ msgid "Image"
-#~ msgstr "תמונה"
+msgid "View"
+msgstr "תצוגה"
 
+#: AbiWordActivity.py:120
 #, fuzzy
-#~ msgid "Format"
-#~ msgstr "תבנית"
+msgid "Text"
+msgstr "טקסט"
 
+#: AbiWordActivity.py:126
+msgid "Paragraph"
+msgstr ""
+
+#: AbiWordActivity.py:132
 #, fuzzy
-#~ msgid "Choose image"
-#~ msgstr "בחר תמונה"
+msgid "Table"
+msgstr "טבלה"
+
+#: AbiWordActivity.py:136
+#, fuzzy
+msgid "Insert Image"
+msgstr "הוסף תמונה"
+
+#: AbiWordActivity.py:143
+msgid "Floating"
+msgstr ""

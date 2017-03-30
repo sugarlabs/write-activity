@@ -2,31 +2,11 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-12 00:30-0400\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
 "PO-Revision-Date: 2011-09-27 12:46+0200\n"
 "Last-Translator: Cris Anderson <anderson861@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,58 +17,53 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Write"
 msgstr "Бичих"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
 
-#: AbiWordActivity.py:71
-msgid "Connecting..."
+#: widgets.py:118
+msgid "Rich Text (RTF)"
+msgstr "Форматтай текст (RTF)"
+
+#: widgets.py:120
+msgid "RTF"
+msgstr "RTF"
+
+#: widgets.py:124
+msgid "Hypertext (HTML)"
+msgstr "Гипертекст (HTML)"
+
+#: widgets.py:126
+msgid "HTML"
+msgstr "HTML"
+
+#: widgets.py:131
+msgid "Plain Text (TXT)"
+msgstr "Энгийн текст (TXT)"
+
+#: widgets.py:133
+msgid "TXT"
+msgstr "TXT"
+
+#: widgets.py:137
+msgid "Portable Document Format (PDF)"
 msgstr ""
 
-#: AbiWordActivity.py:101
-msgid "Edit"
-msgstr "Засварлах"
+#: widgets.py:139
+msgid "PDF"
+msgstr "PDF"
 
-#: AbiWordActivity.py:107
-msgid "View"
-msgstr "Харагдац"
-
-#: AbiWordActivity.py:123
-msgid "Text"
-msgstr "Бичвэр"
-
-#: AbiWordActivity.py:129
-msgid "Paragraph"
-msgstr "Догол мөр гарган бичих"
-
-#: AbiWordActivity.py:135
-msgid "Table"
-msgstr "Хүснэгт"
-
-#: AbiWordActivity.py:139
-msgid "Insert Image"
-msgstr "Зураг оруулах"
-
-#: AbiWordActivity.py:146
-msgid "Floating"
-msgstr ""
-
-#: fontcombobox.py:90
-msgid "Select font"
-msgstr ""
-
-#: speechtoolbar.py:58
+#: speechtoolbar.py:59
 msgid "Play / Pause"
 msgstr ""
 
-#: speechtoolbar.py:66
+#: speechtoolbar.py:67
 msgid "Stop"
 msgstr ""
 
@@ -104,31 +79,31 @@ msgstr "Өмнөхийг олох"
 msgid "Find next"
 msgstr "Дараахийг олох"
 
-#: toolbar.py:227
+#: toolbar.py:226
 msgid "Create table"
 msgstr ""
 
-#: toolbar.py:237
+#: toolbar.py:236
 msgid "Insert Row"
 msgstr "Мөр оруулах"
 
-#: toolbar.py:243
+#: toolbar.py:242
 msgid "Delete Row"
 msgstr "Мөр устгах"
 
-#: toolbar.py:249
+#: toolbar.py:248
 msgid "Insert Column"
 msgstr "Багана оруулах"
 
-#: toolbar.py:255
+#: toolbar.py:254
 msgid "Delete Column"
 msgstr "Багана устгах"
 
-#: toolbar.py:300
+#: toolbar.py:299
 msgid "Zoom Out"
 msgstr "Холдуулах"
 
-#: toolbar.py:307
+#: toolbar.py:306
 msgid "Zoom In"
 msgstr "Ойртуулах"
 
@@ -152,55 +127,55 @@ msgstr "Өргөн"
 msgid "Italic"
 msgstr "Налуу"
 
-#: toolbar.py:459
+#: toolbar.py:460
 msgid "Underline"
 msgstr "Доогуур зураас"
 
-#: toolbar.py:487
+#: toolbar.py:490
 msgid "Choose alignment"
 msgstr ""
 
-#: toolbar.py:495
+#: toolbar.py:498
 msgid "Left justify"
 msgstr "Зүүн тийш зэрэгцүүл"
 
-#: toolbar.py:499
+#: toolbar.py:502
 msgid "Center justify"
 msgstr "Голлуулах"
 
-#: toolbar.py:503
+#: toolbar.py:506
 msgid "Right justify"
 msgstr "Баруун тийш зэрэгцүүл"
 
-#: toolbar.py:507
+#: toolbar.py:510
 msgid "Fill justify"
 msgstr "Мөр дүүргэн багтаах"
 
-#: toolbar.py:567 toolbar.py:620
+#: toolbar.py:571 toolbar.py:620
 msgid "Normal"
 msgstr "Хэвийн"
 
-#: toolbar.py:578
+#: toolbar.py:577
 msgid "Heading 1"
 msgstr "Гарчиг 1"
 
-#: toolbar.py:582
+#: toolbar.py:581
 msgid "Heading 2"
 msgstr "Гарчиг 2"
 
-#: toolbar.py:586
+#: toolbar.py:585
 msgid "Heading 3"
 msgstr "Гарчиг 3"
 
-#: toolbar.py:590
+#: toolbar.py:589
 msgid "Heading 4"
 msgstr "Гарчиг 4"
 
-#: toolbar.py:594
+#: toolbar.py:593
 msgid "Block Text"
 msgstr "Бүлэг бичвэр"
 
-#: toolbar.py:598
+#: toolbar.py:597
 msgid "Plain Text"
 msgstr "Энгийн текст"
 
@@ -228,52 +203,38 @@ msgstr "Жижиг үсгэн жагсаалт"
 msgid "Upper Case List"
 msgstr "Толгой үсгэн жагсаалт"
 
-#: widgets.py:119
-msgid "Rich Text (RTF)"
-msgstr "Форматтай текст (RTF)"
-
-#: widgets.py:121
-msgid "RTF"
-msgstr "RTF"
-
-#: widgets.py:125
-msgid "Hypertext (HTML)"
-msgstr "Гипертекст (HTML)"
-
-#: widgets.py:127
-msgid "HTML"
-msgstr "HTML"
-
-#: widgets.py:132
-msgid "Plain Text (TXT)"
-msgstr "Энгийн текст (TXT)"
-
-#: widgets.py:134
-msgid "TXT"
-msgstr "TXT"
-
-#: widgets.py:138
-msgid "Portable Document Format (PDF)"
+#: fontcombobox.py:90
+msgid "Select font"
 msgstr ""
 
-#: widgets.py:140
-msgid "PDF"
-msgstr "PDF"
+#: AbiWordActivity.py:69
+msgid "Connecting..."
+msgstr ""
 
-#~ msgid "Cancel"
-#~ msgstr "Болих"
+#: AbiWordActivity.py:99
+msgid "Edit"
+msgstr "Засварлах"
 
-#~ msgid "Export"
-#~ msgstr "Гаргах"
+#: AbiWordActivity.py:105
+msgid "View"
+msgstr "Харагдац"
 
-#~ msgid "Image"
-#~ msgstr "Дүрслэл"
+#: AbiWordActivity.py:120
+msgid "Text"
+msgstr "Бичвэр"
 
-#~ msgid "Format"
-#~ msgstr "Хэлбэр"
+#: AbiWordActivity.py:126
+msgid "Paragraph"
+msgstr "Догол мөр гарган бичих"
 
-#~ msgid "Choose image"
-#~ msgstr "Зургаа сонгох"
+#: AbiWordActivity.py:132
+msgid "Table"
+msgstr "Хүснэгт"
 
-#~ msgid "Style: "
-#~ msgstr "Загвар: "
+#: AbiWordActivity.py:136
+msgid "Insert Image"
+msgstr "Зураг оруулах"
+
+#: AbiWordActivity.py:143
+msgid "Floating"
+msgstr ""

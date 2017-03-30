@@ -2,83 +2,71 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-12 00:30-0400\n"
-"PO-Revision-Date: 2010-01-29 04:37+0200\n"
-"Last-Translator: korakurider <korakurider@gmail.com>\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
+"PO-Revision-Date: 2015-12-15 13:24+0000\n"
+"Last-Translator: sujiniku <qqke6wd9k@apricot.ocn.ne.jp>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1450185846.000000\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Write"
 msgstr "Write"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
 
-#: AbiWordActivity.py:71
-msgid "Connecting..."
-msgstr ""
+#: widgets.py:118
+msgid "Rich Text (RTF)"
+msgstr "リッチテキスト(RTF)"
 
-#: AbiWordActivity.py:101
-msgid "Edit"
-msgstr "編集"
+#: widgets.py:120
+msgid "RTF"
+msgstr "RTF"
 
-#: AbiWordActivity.py:107
-msgid "View"
-msgstr "ビュー"
+#: widgets.py:124
+msgid "Hypertext (HTML)"
+msgstr "ハイパーテキスト(HTML)"
 
-#: AbiWordActivity.py:123
-msgid "Text"
-msgstr "文字"
+#: widgets.py:126
+msgid "HTML"
+msgstr "HTML"
 
-#: AbiWordActivity.py:129
-msgid "Paragraph"
-msgstr "段落"
+#: widgets.py:131
+msgid "Plain Text (TXT)"
+msgstr "プレーンテキスト(TXT)"
 
-#: AbiWordActivity.py:135
-msgid "Table"
-msgstr "表"
+#: widgets.py:133
+msgid "TXT"
+msgstr "TXT"
 
-#: AbiWordActivity.py:139
-msgid "Insert Image"
-msgstr "画像を挿入"
+#: widgets.py:137
+msgid "Portable Document Format (PDF)"
+msgstr "ポータブル・ドキュメント・フォーマット (PDF)"
 
-#: AbiWordActivity.py:146
-msgid "Floating"
-msgstr ""
+#: widgets.py:139
+msgid "PDF"
+msgstr "PDF"
 
-#: fontcombobox.py:90
-msgid "Select font"
-msgstr ""
-
-#: speechtoolbar.py:58
+#: speechtoolbar.py:59
 msgid "Play / Pause"
-msgstr ""
+msgstr "再生 / 一時停止"
 
-#: speechtoolbar.py:66
+#: speechtoolbar.py:67
 msgid "Stop"
-msgstr ""
+msgstr "停止"
 
 #: toolbar.py:100
 msgid "Search"
@@ -92,31 +80,31 @@ msgstr "前を探す"
 msgid "Find next"
 msgstr "次を探す"
 
-#: toolbar.py:227
+#: toolbar.py:226
 msgid "Create table"
-msgstr ""
+msgstr "テーブルの作成"
 
-#: toolbar.py:237
+#: toolbar.py:236
 msgid "Insert Row"
 msgstr "行を挿入"
 
-#: toolbar.py:243
+#: toolbar.py:242
 msgid "Delete Row"
 msgstr "行を削除"
 
-#: toolbar.py:249
+#: toolbar.py:248
 msgid "Insert Column"
 msgstr "列を挿入"
 
-#: toolbar.py:255
+#: toolbar.py:254
 msgid "Delete Column"
 msgstr "列を削除"
 
-#: toolbar.py:300
+#: toolbar.py:299
 msgid "Zoom Out"
 msgstr "縮小"
 
-#: toolbar.py:307
+#: toolbar.py:306
 msgid "Zoom In"
 msgstr "拡大"
 
@@ -140,61 +128,61 @@ msgstr "太字"
 msgid "Italic"
 msgstr "斜体"
 
-#: toolbar.py:459
+#: toolbar.py:460
 msgid "Underline"
 msgstr "下線"
 
-#: toolbar.py:487
+#: toolbar.py:490
 msgid "Choose alignment"
 msgstr ""
 
-#: toolbar.py:495
+#: toolbar.py:498
 msgid "Left justify"
 msgstr "左端揃え"
 
-#: toolbar.py:499
+#: toolbar.py:502
 msgid "Center justify"
 msgstr "中央揃え"
 
-#: toolbar.py:503
+#: toolbar.py:506
 msgid "Right justify"
 msgstr "右端揃え"
 
-#: toolbar.py:507
+#: toolbar.py:510
 msgid "Fill justify"
 msgstr "両端揃え"
 
-#: toolbar.py:567 toolbar.py:620
+#: toolbar.py:571 toolbar.py:620
 msgid "Normal"
 msgstr "標準"
 
-#: toolbar.py:578
+#: toolbar.py:577
 msgid "Heading 1"
 msgstr "見出し1"
 
-#: toolbar.py:582
+#: toolbar.py:581
 msgid "Heading 2"
 msgstr "見出し2"
 
-#: toolbar.py:586
+#: toolbar.py:585
 msgid "Heading 3"
 msgstr "見出し3"
 
-#: toolbar.py:590
+#: toolbar.py:589
 msgid "Heading 4"
 msgstr "見出し4"
 
-#: toolbar.py:594
+#: toolbar.py:593
 msgid "Block Text"
 msgstr "ゴシック体"
 
-#: toolbar.py:598
+#: toolbar.py:597
 msgid "Plain Text"
 msgstr "プレーンテキスト"
 
 #: toolbar.py:612
 msgid "Select list"
-msgstr ""
+msgstr "リストを選ぶ"
 
 #: toolbar.py:630
 msgid "Bullet List"
@@ -216,52 +204,38 @@ msgstr "箇条書き（英小文字）"
 msgid "Upper Case List"
 msgstr "箇条書き（英大文字）"
 
-#: widgets.py:119
-msgid "Rich Text (RTF)"
-msgstr "リッチテキスト(RTF)"
-
-#: widgets.py:121
-msgid "RTF"
-msgstr "RTF"
-
-#: widgets.py:125
-msgid "Hypertext (HTML)"
-msgstr "ハイパーテキスト(HTML)"
-
-#: widgets.py:127
-msgid "HTML"
-msgstr "HTML"
-
-#: widgets.py:132
-msgid "Plain Text (TXT)"
-msgstr "プレーンテキスト(TXT)"
-
-#: widgets.py:134
-msgid "TXT"
-msgstr "TXT"
-
-#: widgets.py:138
-msgid "Portable Document Format (PDF)"
+#: fontcombobox.py:90
+msgid "Select font"
 msgstr ""
 
-#: widgets.py:140
-msgid "PDF"
+#: AbiWordActivity.py:69
+msgid "Connecting..."
 msgstr ""
 
-#~ msgid "Cancel"
-#~ msgstr "中止"
+#: AbiWordActivity.py:99
+msgid "Edit"
+msgstr "編集"
 
-#~ msgid "Export"
-#~ msgstr "書き出し"
+#: AbiWordActivity.py:105
+msgid "View"
+msgstr "ビュー"
 
-#~ msgid "Image"
-#~ msgstr "画像"
+#: AbiWordActivity.py:120
+msgid "Text"
+msgstr "文字"
 
-#~ msgid "Format"
-#~ msgstr "書式"
+#: AbiWordActivity.py:126
+msgid "Paragraph"
+msgstr "段落"
 
-#~ msgid "Choose image"
-#~ msgstr "画像を選ぶ"
+#: AbiWordActivity.py:132
+msgid "Table"
+msgstr "表"
 
-#~ msgid "Style: "
-#~ msgstr "スタイル: "
+#: AbiWordActivity.py:136
+msgid "Insert Image"
+msgstr "画像を挿入"
+
+#: AbiWordActivity.py:143
+msgid "Floating"
+msgstr ""

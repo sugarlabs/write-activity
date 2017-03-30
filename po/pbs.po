@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-12 00:30-0400\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
 "PO-Revision-Date: 2012-08-29 01:58+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,58 +17,53 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Write"
 msgstr "Me'ets"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
 
-#: AbiWordActivity.py:71
-msgid "Connecting..."
-msgstr ""
+#: widgets.py:118
+msgid "Rich Text (RTF)"
+msgstr "kily'e me'ets majau valei kad-er vumang (RTF)"
 
-#: AbiWordActivity.py:101
-msgid "Edit"
-msgstr "Malejeiñ"
+#: widgets.py:120
+msgid "RTF"
+msgstr "RTF"
 
-#: AbiWordActivity.py:107
-msgid "View"
-msgstr "Manú"
+#: widgets.py:124
+msgid "Hypertext (HTML)"
+msgstr "Kutue' kily'e me'ets (HTML)"
 
-#: AbiWordActivity.py:123
-msgid "Text"
-msgstr "Keich' kily'e"
+#: widgets.py:126
+msgid "HTML"
+msgstr "HTML"
 
-#: AbiWordActivity.py:129
-msgid "Paragraph"
-msgstr "Kusau kutap kily'e"
+#: widgets.py:131
+msgid "Plain Text (TXT)"
+msgstr "Sau' me'ets kily'e (TXT)"
 
-#: AbiWordActivity.py:135
-msgid "Table"
-msgstr "Riñ'ieje nde'ets sad-ia'"
+#: widgets.py:133
+msgid "TXT"
+msgstr "TXT"
 
-#: AbiWordActivity.py:139
-msgid "Insert Image"
-msgstr "Mamang snakeje'"
+#: widgets.py:137
+msgid "Portable Document Format (PDF)"
+msgstr "Nda'et kily'e k'ua manamaí (PDF)"
 
-#: AbiWordActivity.py:146
-msgid "Floating"
-msgstr "Ta'ats'"
+#: widgets.py:139
+msgid "PDF"
+msgstr "PDF"
 
-#: fontcombobox.py:90
-msgid "Select font"
-msgstr ""
-
-#: speechtoolbar.py:58
+#: speechtoolbar.py:59
 msgid "Play / Pause"
 msgstr "Maleiñ / mama'ai"
 
-#: speechtoolbar.py:66
+#: speechtoolbar.py:67
 msgid "Stop"
 msgstr "Ndama'ai"
 
@@ -84,31 +79,31 @@ msgstr "Mata'au sevaa"
 msgid "Find next"
 msgstr "Mata'au ne se likiu'uch'"
 
-#: toolbar.py:227
+#: toolbar.py:226
 msgid "Create table"
 msgstr ""
 
-#: toolbar.py:237
+#: toolbar.py:236
 msgid "Insert Row"
 msgstr "Mamejep ndama'aiñ"
 
-#: toolbar.py:243
+#: toolbar.py:242
 msgid "Delete Row"
 msgstr "Mavun likjiu'un"
 
-#: toolbar.py:249
+#: toolbar.py:248
 msgid "Insert Column"
 msgstr "Mamejep nde'et kily'e"
 
-#: toolbar.py:255
+#: toolbar.py:254
 msgid "Delete Column"
 msgstr "Mavun nde'et kily'e"
 
-#: toolbar.py:300
+#: toolbar.py:299
 msgid "Zoom Out"
 msgstr "Manats'ei'"
 
-#: toolbar.py:307
+#: toolbar.py:306
 msgid "Zoom In"
 msgstr "Manandaí"
 
@@ -132,55 +127,55 @@ msgstr "Lyi lumvú"
 msgid "Italic"
 msgstr "Liji'iun kily'e"
 
-#: toolbar.py:459
+#: toolbar.py:460
 msgid "Underline"
 msgstr "Me'es"
 
-#: toolbar.py:487
+#: toolbar.py:490
 msgid "Choose alignment"
 msgstr ""
 
-#: toolbar.py:495
+#: toolbar.py:498
 msgid "Left justify"
 msgstr "Makju' manama ma meje'ep"
 
-#: toolbar.py:499
+#: toolbar.py:502
 msgid "Center justify"
 msgstr "Makju' makjaat kiñkiemejep"
 
-#: toolbar.py:503
+#: toolbar.py:506
 msgid "Right justify"
 msgstr "Makju' manama ma majap"
 
-#: toolbar.py:507
+#: toolbar.py:510
 msgid "Fill justify"
 msgstr "Makju' makjaik"
 
-#: toolbar.py:567 toolbar.py:620
+#: toolbar.py:571 toolbar.py:620
 msgid "Normal"
 msgstr "Vajau kily'e"
 
-#: toolbar.py:578
+#: toolbar.py:577
 msgid "Heading 1"
 msgstr "Kanam ngunjiu' kily'e nda"
 
-#: toolbar.py:582
+#: toolbar.py:581
 msgid "Heading 2"
 msgstr "Kanam kily'e nui"
 
-#: toolbar.py:586
+#: toolbar.py:585
 msgid "Heading 3"
 msgstr "Kanam kily'e ranju'"
 
-#: toolbar.py:590
+#: toolbar.py:589
 msgid "Heading 4"
 msgstr "Kanam kily'e kiñui"
 
-#: toolbar.py:594
+#: toolbar.py:593
 msgid "Block Text"
 msgstr "Kad-a keich' kily'e"
 
-#: toolbar.py:598
+#: toolbar.py:597
 msgid "Plain Text"
 msgstr "Keich' kily'e d-ajap"
 
@@ -208,37 +203,38 @@ msgstr "Nde'ets lju'p likjiu'un kily'e ly'i't"
 msgid "Upper Case List"
 msgstr "Nde'ets lju'p likjiu'un kily'e ndue't"
 
-#: widgets.py:119
-msgid "Rich Text (RTF)"
-msgstr "kily'e me'ets majau valei kad-er vumang (RTF)"
+#: fontcombobox.py:90
+msgid "Select font"
+msgstr ""
 
-#: widgets.py:121
-msgid "RTF"
-msgstr "RTF"
+#: AbiWordActivity.py:69
+msgid "Connecting..."
+msgstr ""
 
-#: widgets.py:125
-msgid "Hypertext (HTML)"
-msgstr "Kutue' kily'e me'ets (HTML)"
+#: AbiWordActivity.py:99
+msgid "Edit"
+msgstr "Malejeiñ"
 
-#: widgets.py:127
-msgid "HTML"
-msgstr "HTML"
+#: AbiWordActivity.py:105
+msgid "View"
+msgstr "Manú"
 
-#: widgets.py:132
-msgid "Plain Text (TXT)"
-msgstr "Sau' me'ets kily'e (TXT)"
+#: AbiWordActivity.py:120
+msgid "Text"
+msgstr "Keich' kily'e"
 
-#: widgets.py:134
-msgid "TXT"
-msgstr "TXT"
+#: AbiWordActivity.py:126
+msgid "Paragraph"
+msgstr "Kusau kutap kily'e"
 
-#: widgets.py:138
-msgid "Portable Document Format (PDF)"
-msgstr "Nda'et kily'e k'ua manamaí (PDF)"
+#: AbiWordActivity.py:132
+msgid "Table"
+msgstr "Riñ'ieje nde'ets sad-ia'"
 
-#: widgets.py:140
-msgid "PDF"
-msgstr "PDF"
+#: AbiWordActivity.py:136
+msgid "Insert Image"
+msgstr "Mamang snakeje'"
 
-#~ msgid "Cancel"
-#~ msgstr "Mapejeel'"
+#: AbiWordActivity.py:143
+msgid "Floating"
+msgstr "Ta'ats'"

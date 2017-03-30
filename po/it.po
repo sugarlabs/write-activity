@@ -2,19 +2,11 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-12 00:30-0400\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
 "PO-Revision-Date: 2013-11-10 12:58+0200\n"
 "Last-Translator: arosella <arosella@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,61 +17,57 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Write"
 msgstr "Scrivi"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
-"\"Scrivi\" fornisce uno spazio per mettere le tue parole. Scrivere una storia, "
-"una poesia, un articolo, qualunque cosa! Prova a cambiare l'impaginazione e "
-"la dimensione del tuo testo. Puoi anche inserire delle immagini!"
+"\"Scrivi\" fornisce uno spazio per mettere le tue parole. Scrivere una "
+"storia, una poesia, un articolo, qualunque cosa! Prova a cambiare "
+"l'impaginazione e la dimensione del tuo testo. Puoi anche inserire delle "
+"immagini!"
 
-#: AbiWordActivity.py:71
-msgid "Connecting..."
-msgstr "In collegamento..."
+#: widgets.py:118
+msgid "Rich Text (RTF)"
+msgstr "Rich Text Format (RTF)"
 
-#: AbiWordActivity.py:101
-msgid "Edit"
-msgstr "Modifica"
+#: widgets.py:120
+msgid "RTF"
+msgstr "RTF"
 
-#: AbiWordActivity.py:107
-msgid "View"
-msgstr "Vista"
+#: widgets.py:124
+msgid "Hypertext (HTML)"
+msgstr "Ipertesto (HTML)"
 
-#: AbiWordActivity.py:123
-msgid "Text"
-msgstr "Testo"
+#: widgets.py:126
+msgid "HTML"
+msgstr "HTML"
 
-#: AbiWordActivity.py:129
-msgid "Paragraph"
-msgstr "Paragrafo"
+#: widgets.py:131
+msgid "Plain Text (TXT)"
+msgstr "Testo semplice (TXT)"
 
-#: AbiWordActivity.py:135
-msgid "Table"
-msgstr "Tabella"
+#: widgets.py:133
+msgid "TXT"
+msgstr "TXT"
 
-#: AbiWordActivity.py:139
-msgid "Insert Image"
-msgstr "Inserisci Immagine"
+#: widgets.py:137
+msgid "Portable Document Format (PDF)"
+msgstr "Portable Document Format (PDF)"
 
-#: AbiWordActivity.py:146
-msgid "Floating"
-msgstr "Flottante"
+#: widgets.py:139
+msgid "PDF"
+msgstr "PDF"
 
-#: fontcombobox.py:90
-msgid "Select font"
-msgstr "Scegli carattere"
-
-#: speechtoolbar.py:58
+#: speechtoolbar.py:59
 msgid "Play / Pause"
 msgstr "Esegui / Pausa"
 
-#: speechtoolbar.py:66
+#: speechtoolbar.py:67
 msgid "Stop"
 msgstr "Stop"
 
@@ -95,33 +83,33 @@ msgstr "Trova precedente"
 msgid "Find next"
 msgstr "Trova prossimo"
 
-#: toolbar.py:227
+#: toolbar.py:226
 msgid "Create table"
 msgstr "Crea tabella"
 
-#: toolbar.py:237
+#: toolbar.py:236
 msgid "Insert Row"
 msgstr "Inserisci Riga"
 
-#: toolbar.py:243
+#: toolbar.py:242
 msgid "Delete Row"
 msgstr "Cancella Riga"
 
-#: toolbar.py:249
+#: toolbar.py:248
 msgid "Insert Column"
 msgstr "Inserisci Colonna"
 
-#: toolbar.py:255
+#: toolbar.py:254
 msgid "Delete Column"
 msgstr "Cancella Colonna"
 
 # Nel caso si tratti di attributi al carattere sarebbe più opportuno ingrandisci/riduci
-#: toolbar.py:300
+#: toolbar.py:299
 msgid "Zoom Out"
 msgstr "Zoom Indietro"
 
 # Nel caso si tratti di attributi al carattere sarebbe più opportuno ingrandisci/riduci
-#: toolbar.py:307
+#: toolbar.py:306
 msgid "Zoom In"
 msgstr "Zoom Avanti"
 
@@ -145,56 +133,56 @@ msgstr "Grassetto"
 msgid "Italic"
 msgstr "Corsivo"
 
-#: toolbar.py:459
+#: toolbar.py:460
 msgid "Underline"
 msgstr "Sottolineato"
 
-#: toolbar.py:487
+#: toolbar.py:490
 msgid "Choose alignment"
 msgstr "Scegli allineamento"
 
-#: toolbar.py:495
+#: toolbar.py:498
 msgid "Left justify"
 msgstr "Allinea a sinistra"
 
-#: toolbar.py:499
+#: toolbar.py:502
 msgid "Center justify"
 msgstr "Allinea al centro"
 
-#: toolbar.py:503
+#: toolbar.py:506
 msgid "Right justify"
 msgstr "Allinea a destra"
 
-#: toolbar.py:507
+#: toolbar.py:510
 msgid "Fill justify"
 msgstr "Giustifica"
 
-#: toolbar.py:567 toolbar.py:620
+#: toolbar.py:571 toolbar.py:620
 msgid "Normal"
 msgstr "Normale"
 
-#: toolbar.py:578
+#: toolbar.py:577
 msgid "Heading 1"
 msgstr "Titolo 1"
 
-#: toolbar.py:582
+#: toolbar.py:581
 msgid "Heading 2"
 msgstr "Titolo 2"
 
-#: toolbar.py:586
+#: toolbar.py:585
 msgid "Heading 3"
 msgstr "Titolo 3"
 
-#: toolbar.py:590
+#: toolbar.py:589
 msgid "Heading 4"
 msgstr "Titolo 4"
 
 # to be checked on app
-#: toolbar.py:594
+#: toolbar.py:593
 msgid "Block Text"
 msgstr "Blocco di testo"
 
-#: toolbar.py:598
+#: toolbar.py:597
 msgid "Plain Text"
 msgstr "Testo normale"
 
@@ -222,58 +210,38 @@ msgstr "Lista con minuscola"
 msgid "Upper Case List"
 msgstr "Lista con maiuscola"
 
-#: widgets.py:119
-msgid "Rich Text (RTF)"
-msgstr "Rich Text Format (RTF)"
+#: fontcombobox.py:90
+msgid "Select font"
+msgstr "Scegli carattere"
 
-#: widgets.py:121
-msgid "RTF"
-msgstr "RTF"
+#: AbiWordActivity.py:69
+msgid "Connecting..."
+msgstr "In collegamento..."
 
-#: widgets.py:125
-msgid "Hypertext (HTML)"
-msgstr "Ipertesto (HTML)"
+#: AbiWordActivity.py:99
+msgid "Edit"
+msgstr "Modifica"
 
-#: widgets.py:127
-msgid "HTML"
-msgstr "HTML"
+#: AbiWordActivity.py:105
+msgid "View"
+msgstr "Vista"
 
-#: widgets.py:132
-msgid "Plain Text (TXT)"
-msgstr "Testo semplice (TXT)"
+#: AbiWordActivity.py:120
+msgid "Text"
+msgstr "Testo"
 
-#: widgets.py:134
-msgid "TXT"
-msgstr "TXT"
+#: AbiWordActivity.py:126
+msgid "Paragraph"
+msgstr "Paragrafo"
 
-#: widgets.py:138
-msgid "Portable Document Format (PDF)"
-msgstr "Portable Document Format (PDF)"
+#: AbiWordActivity.py:132
+msgid "Table"
+msgstr "Tabella"
 
-#: widgets.py:140
-msgid "PDF"
-msgstr "PDF"
+#: AbiWordActivity.py:136
+msgid "Insert Image"
+msgstr "Inserisci Immagine"
 
-#~ msgid "Cancel"
-#~ msgstr "Annulla"
-
-#~ msgid "Export"
-#~ msgstr "Esporta"
-
-#~ msgid "Image"
-#~ msgstr "Immagine"
-
-#~ msgid "Format"
-#~ msgstr "Formato"
-
-#~ msgid "Choose image"
-#~ msgstr "Scegli immagine"
-
-#~ msgid "Style: "
-#~ msgstr "Stile: "
-
-#~ msgid "Select text color"
-#~ msgstr "Seleziona colore testo"
-
-#~ msgid "Page:"
-#~ msgstr "Pagina:"
+#: AbiWordActivity.py:143
+msgid "Floating"
+msgstr "Flottante"

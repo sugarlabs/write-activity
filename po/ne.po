@@ -2,19 +2,11 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-12 00:30-0400\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
 "PO-Revision-Date: 2013-11-20 07:54+0200\n"
 "Last-Translator: Avasz <avashmulmi@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,61 +17,56 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Write"
 msgstr "लेख"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
-"लेखले तिम्रा शब्दहरु राख्नका लागि ठाउँ दिन्छ। कथा, कविता, विवरण, जे पनि "
-"लेख्न सक्छौ! तिम्रा अक्षरहरुको बनावट, अाकारलाई परिवर्तन गर्ने प्रयास गर; "
-"तस्विर पनि घुसाऊ!"
+"लेखले तिम्रा शब्दहरु राख्नका लागि ठाउँ दिन्छ। कथा, कविता, विवरण, जे पनि लेख्"
+"न सक्छौ! तिम्रा अक्षरहरुको बनावट, अाकारलाई परिवर्तन गर्ने प्रयास गर; तस्विर "
+"पनि घुसाऊ!"
 
-#: AbiWordActivity.py:71
-msgid "Connecting..."
-msgstr "जडान हुँदैछ..."
+#: widgets.py:118
+msgid "Rich Text (RTF)"
+msgstr "Rich Text (RTF)"
 
-#: AbiWordActivity.py:101
-msgid "Edit"
-msgstr "सम्पादन"
+#: widgets.py:120
+msgid "RTF"
+msgstr "RTF"
 
-#: AbiWordActivity.py:107
-msgid "View"
-msgstr "दृश्य"
+#: widgets.py:124
+msgid "Hypertext (HTML)"
+msgstr "Hypertext(HTML)"
 
-#: AbiWordActivity.py:123
-msgid "Text"
-msgstr "पाठ"
+#: widgets.py:126
+msgid "HTML"
+msgstr "HTML"
 
-#: AbiWordActivity.py:129
-msgid "Paragraph"
-msgstr "अनुच्छेद"
+#: widgets.py:131
+msgid "Plain Text (TXT)"
+msgstr "Plain Text(TXT)"
 
-#: AbiWordActivity.py:135
-msgid "Table"
-msgstr "तालिका"
+#: widgets.py:133
+msgid "TXT"
+msgstr "TXT"
 
-#: AbiWordActivity.py:139
-msgid "Insert Image"
-msgstr "तस्विर राख"
+#: widgets.py:137
+msgid "Portable Document Format (PDF)"
+msgstr "Portable Document Format (PDF)"
 
-#: AbiWordActivity.py:146
-msgid "Floating"
-msgstr "तैरिनु"
+#: widgets.py:139
+msgid "PDF"
+msgstr "PDF"
 
-#: fontcombobox.py:90
-msgid "Select font"
-msgstr "फण्ट छान"
-
-#: speechtoolbar.py:58
+#: speechtoolbar.py:59
 msgid "Play / Pause"
 msgstr "सुरु गर/रोक"
 
-#: speechtoolbar.py:66
+#: speechtoolbar.py:67
 msgid "Stop"
 msgstr "रोक"
 
@@ -95,31 +82,31 @@ msgstr "पछिल्लो खोज"
 msgid "Find next"
 msgstr "अर्को खोज"
 
-#: toolbar.py:227
+#: toolbar.py:226
 msgid "Create table"
 msgstr "तालिका बनाऊ"
 
-#: toolbar.py:237
+#: toolbar.py:236
 msgid "Insert Row"
 msgstr "पंक्ति घुसाऊ"
 
-#: toolbar.py:243
+#: toolbar.py:242
 msgid "Delete Row"
 msgstr "पंक्ति मेटाऊ"
 
-#: toolbar.py:249
+#: toolbar.py:248
 msgid "Insert Column"
 msgstr "स्तम्भ घुसाऊ"
 
-#: toolbar.py:255
+#: toolbar.py:254
 msgid "Delete Column"
 msgstr "स्तम्भ मेटाऊ"
 
-#: toolbar.py:300
+#: toolbar.py:299
 msgid "Zoom Out"
 msgstr "सानो बनाऊ"
 
-#: toolbar.py:307
+#: toolbar.py:306
 msgid "Zoom In"
 msgstr "ठुलो बनाऊ"
 
@@ -143,55 +130,55 @@ msgstr "गाढा"
 msgid "Italic"
 msgstr "छड्के"
 
-#: toolbar.py:459
+#: toolbar.py:460
 msgid "Underline"
 msgstr "रेखांकित"
 
-#: toolbar.py:487
+#: toolbar.py:490
 msgid "Choose alignment"
 msgstr "मार्गरेखा छान"
 
-#: toolbar.py:495
+#: toolbar.py:498
 msgid "Left justify"
 msgstr "बाँयाँतर्फ समरेखन गर"
 
-#: toolbar.py:499
+#: toolbar.py:502
 msgid "Center justify"
 msgstr "बीचमा समरेखन गर"
 
-#: toolbar.py:503
+#: toolbar.py:506
 msgid "Right justify"
 msgstr "दाँयातर्फ समरेखन गर"
 
-#: toolbar.py:507
+#: toolbar.py:510
 msgid "Fill justify"
 msgstr "भर समरेखन गर्नुहोस्"
 
-#: toolbar.py:567 toolbar.py:620
+#: toolbar.py:571 toolbar.py:620
 msgid "Normal"
 msgstr "सामान्य"
 
-#: toolbar.py:578
+#: toolbar.py:577
 msgid "Heading 1"
 msgstr "शीर्षक १"
 
-#: toolbar.py:582
+#: toolbar.py:581
 msgid "Heading 2"
 msgstr "शीर्षक २"
 
-#: toolbar.py:586
+#: toolbar.py:585
 msgid "Heading 3"
 msgstr "शीर्षक ३"
 
-#: toolbar.py:590
+#: toolbar.py:589
 msgid "Heading 4"
 msgstr "शीर्षक ४"
 
-#: toolbar.py:594
+#: toolbar.py:593
 msgid "Block Text"
 msgstr "गाढा पाठ"
 
-#: toolbar.py:598
+#: toolbar.py:597
 msgid "Plain Text"
 msgstr "सादा पाठ"
 
@@ -219,58 +206,38 @@ msgstr "सानो अक्षरको सुचि"
 msgid "Upper Case List"
 msgstr "ठुलो अक्षरको सुचि"
 
-#: widgets.py:119
-msgid "Rich Text (RTF)"
-msgstr "Rich Text (RTF)"
+#: fontcombobox.py:90
+msgid "Select font"
+msgstr "फण्ट छान"
 
-#: widgets.py:121
-msgid "RTF"
-msgstr "RTF"
+#: AbiWordActivity.py:69
+msgid "Connecting..."
+msgstr "जडान हुँदैछ..."
 
-#: widgets.py:125
-msgid "Hypertext (HTML)"
-msgstr "Hypertext(HTML)"
+#: AbiWordActivity.py:99
+msgid "Edit"
+msgstr "सम्पादन"
 
-#: widgets.py:127
-msgid "HTML"
-msgstr "HTML"
+#: AbiWordActivity.py:105
+msgid "View"
+msgstr "दृश्य"
 
-#: widgets.py:132
-msgid "Plain Text (TXT)"
-msgstr "Plain Text(TXT)"
+#: AbiWordActivity.py:120
+msgid "Text"
+msgstr "पाठ"
 
-#: widgets.py:134
-msgid "TXT"
-msgstr "TXT"
+#: AbiWordActivity.py:126
+msgid "Paragraph"
+msgstr "अनुच्छेद"
 
-#: widgets.py:138
-msgid "Portable Document Format (PDF)"
-msgstr "Portable Document Format (PDF)"
+#: AbiWordActivity.py:132
+msgid "Table"
+msgstr "तालिका"
 
-#: widgets.py:140
-msgid "PDF"
-msgstr "PDF"
+#: AbiWordActivity.py:136
+msgid "Insert Image"
+msgstr "तस्विर राख"
 
-#~ msgid "Cancel"
-#~ msgstr "रद्द गर"
-
-#~ msgid "Export"
-#~ msgstr "निर्यात गर्नुहोस्"
-
-#~ msgid "Image"
-#~ msgstr "चित्र"
-
-#~ msgid "Format"
-#~ msgstr "प्रारुप"
-
-#~ msgid "Choose image"
-#~ msgstr "चित्र छान"
-
-#~ msgid "Style: "
-#~ msgstr "शैली:"
-
-#~ msgid "Select text color"
-#~ msgstr "पाठको रङ्ग छान"
-
-#~ msgid "Page:"
-#~ msgstr "पृष्ठ:"
+#: AbiWordActivity.py:143
+msgid "Floating"
+msgstr "तैरिनु"

@@ -2,19 +2,11 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-12 00:30-0400\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
 "PO-Revision-Date: 2012-04-05 10:21+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,59 +17,53 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1) ;\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Write"
 msgstr "Andika"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
 
-#: AbiWordActivity.py:71
-msgid "Connecting..."
+#: widgets.py:118
+msgid "Rich Text (RTF)"
+msgstr "Umwandiko ukungahaye (RTF)"
+
+#: widgets.py:120
+msgid "RTF"
+msgstr "RTF"
+
+#: widgets.py:124
+msgid "Hypertext (HTML)"
+msgstr "UImwandiko mugali"
+
+#: widgets.py:126
+msgid "HTML"
+msgstr "HTML"
+
+#: widgets.py:131
+msgid "Plain Text (TXT)"
+msgstr "Plain Umwandiko (TXT)"
+
+#: widgets.py:133
+msgid "TXT"
+msgstr "TXT"
+
+#: widgets.py:137
+msgid "Portable Document Format (PDF)"
 msgstr ""
 
-#: AbiWordActivity.py:101
-msgid "Edit"
-msgstr "Hindura"
+#: widgets.py:139
+msgid "PDF"
+msgstr "PDF"
 
-#: AbiWordActivity.py:107
-msgid "View"
-msgstr "Irebero"
-
-#: AbiWordActivity.py:123
-msgid "Text"
-msgstr "Umwandiko"
-
-#: AbiWordActivity.py:129
-msgid "Paragraph"
-msgstr "Igika"
-
-#: AbiWordActivity.py:135
-msgid "Table"
-msgstr "Imbonerahamwe"
-
-#: AbiWordActivity.py:139
-msgid "Insert Image"
-msgstr "Shyiramo ishusho"
-
-#: AbiWordActivity.py:146
-#, fuzzy
-msgid "Floating"
-msgstr "Bihindagurika"
-
-#: fontcombobox.py:90
-msgid "Select font"
-msgstr ""
-
-#: speechtoolbar.py:58
+#: speechtoolbar.py:59
 msgid "Play / Pause"
 msgstr ""
 
-#: speechtoolbar.py:66
+#: speechtoolbar.py:67
 msgid "Stop"
 msgstr ""
 
@@ -93,31 +79,31 @@ msgstr "Shaka ibibanziriza"
 msgid "Find next"
 msgstr "Shaka ibikurikira"
 
-#: toolbar.py:227
+#: toolbar.py:226
 msgid "Create table"
 msgstr ""
 
-#: toolbar.py:237
+#: toolbar.py:236
 msgid "Insert Row"
 msgstr "Shyiramo umurongo utambtse"
 
-#: toolbar.py:243
+#: toolbar.py:242
 msgid "Delete Row"
 msgstr "Siba umurongo utambitse"
 
-#: toolbar.py:249
+#: toolbar.py:248
 msgid "Insert Column"
 msgstr "Shyiramo umurongo uhagaze"
 
-#: toolbar.py:255
+#: toolbar.py:254
 msgid "Delete Column"
 msgstr "Siba umurongo uhagaze"
 
-#: toolbar.py:300
+#: toolbar.py:299
 msgid "Zoom Out"
 msgstr "Kugabanya"
 
-#: toolbar.py:307
+#: toolbar.py:306
 msgid "Zoom In"
 msgstr "Kwagura"
 
@@ -142,55 +128,55 @@ msgstr "Bigaragare cyane"
 msgid "Italic"
 msgstr "Ikintu kiberamye"
 
-#: toolbar.py:459
+#: toolbar.py:460
 msgid "Underline"
 msgstr "Ca umurongo"
 
-#: toolbar.py:487
+#: toolbar.py:490
 msgid "Choose alignment"
 msgstr ""
 
-#: toolbar.py:495
+#: toolbar.py:498
 msgid "Left justify"
 msgstr "Gutondekanya ibumoso"
 
-#: toolbar.py:499
+#: toolbar.py:502
 msgid "Center justify"
 msgstr "Gutondekanya hagati"
 
-#: toolbar.py:503
+#: toolbar.py:506
 msgid "Right justify"
 msgstr "Gutondekanya iburyo"
 
-#: toolbar.py:507
+#: toolbar.py:510
 msgid "Fill justify"
 msgstr ""
 
-#: toolbar.py:567 toolbar.py:620
+#: toolbar.py:571 toolbar.py:620
 msgid "Normal"
 msgstr "Birasanzwe"
 
-#: toolbar.py:578
+#: toolbar.py:577
 msgid "Heading 1"
 msgstr "Umutwe w`amagambo 1"
 
-#: toolbar.py:582
+#: toolbar.py:581
 msgid "Heading 2"
 msgstr "Umutwe w`amagambo 2"
 
-#: toolbar.py:586
+#: toolbar.py:585
 msgid "Heading 3"
 msgstr "Umutwe w`amagambo 3"
 
-#: toolbar.py:590
+#: toolbar.py:589
 msgid "Heading 4"
 msgstr "Umutwe w`amagambo 4"
 
-#: toolbar.py:594
+#: toolbar.py:593
 msgid "Block Text"
 msgstr "Block Umwandiko"
 
-#: toolbar.py:598
+#: toolbar.py:597
 msgid "Plain Text"
 msgstr "Plain Umandiko"
 
@@ -220,49 +206,39 @@ msgstr "Urutonde rwanditswe mu nyuguti ntoya"
 msgid "Upper Case List"
 msgstr "Urutonde rwanditswe munyuguti nkuru"
 
-#: widgets.py:119
-msgid "Rich Text (RTF)"
-msgstr "Umwandiko ukungahaye (RTF)"
-
-#: widgets.py:121
-msgid "RTF"
-msgstr "RTF"
-
-#: widgets.py:125
-msgid "Hypertext (HTML)"
-msgstr "UImwandiko mugali"
-
-#: widgets.py:127
-msgid "HTML"
-msgstr "HTML"
-
-#: widgets.py:132
-msgid "Plain Text (TXT)"
-msgstr "Plain Umwandiko (TXT)"
-
-#: widgets.py:134
-msgid "TXT"
-msgstr "TXT"
-
-#: widgets.py:138
-msgid "Portable Document Format (PDF)"
+#: fontcombobox.py:90
+msgid "Select font"
 msgstr ""
 
-#: widgets.py:140
-msgid "PDF"
-msgstr "PDF"
+#: AbiWordActivity.py:69
+msgid "Connecting..."
+msgstr ""
 
-#~ msgid "Cancel"
-#~ msgstr "Gukuraho"
+#: AbiWordActivity.py:99
+msgid "Edit"
+msgstr "Hindura"
 
-#~ msgid "Image"
-#~ msgstr "Ishusho"
+#: AbiWordActivity.py:105
+msgid "View"
+msgstr "Irebero"
 
-#~ msgid "Format"
-#~ msgstr "Gusanisha"
+#: AbiWordActivity.py:120
+msgid "Text"
+msgstr "Umwandiko"
 
-#~ msgid "Choose image"
-#~ msgstr "Toranya Ishusho"
+#: AbiWordActivity.py:126
+msgid "Paragraph"
+msgstr "Igika"
 
-#~ msgid "Style: "
-#~ msgstr "Siitile"
+#: AbiWordActivity.py:132
+msgid "Table"
+msgstr "Imbonerahamwe"
+
+#: AbiWordActivity.py:136
+msgid "Insert Image"
+msgstr "Shyiramo ishusho"
+
+#: AbiWordActivity.py:143
+#, fuzzy
+msgid "Floating"
+msgstr "Bihindagurika"

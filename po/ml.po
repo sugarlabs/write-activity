@@ -2,83 +2,75 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-12 00:30-0400\n"
-"PO-Revision-Date: 2010-10-06 15:10+0200\n"
-"Last-Translator: dhananjay <mb.dhananjay@gmail.com>\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
+"PO-Revision-Date: 2016-05-25 04:41+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: ml\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.3\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1464151262.000000\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Write"
-msgstr "എഴുതാം"
+msgstr "എഴുത്"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
+"\"എഴുത്\" എന്നത് നിങ്ങളുടെ വാക്കുകൾക്കായി ഒരു ഇടം തരപ്പെടുത്തുന്നു. കഥകൾ, കവി"
+"തകൾ, വിവരങ്ങൾ, അങ്ങനെ എന്തു തന്നെയും എഴുതി വയ്ക്കാം! എഴുതുന്ന വാക്കുകളുടെ "
+"വരയും വലുപ്പവും മാറ്റാവുന്നതാണ്; അതിനോടൊപ്പം ചിത്രങ്ങൾ കൂട്ടിച്ചേർക്കുകയും "
+"ആവാം!"
 
-#: AbiWordActivity.py:71
-msgid "Connecting..."
-msgstr ""
+#: widgets.py:118
+msgid "Rich Text (RTF)"
+msgstr "റിച് ടെക്സ്റ്റ്‌ രൂപകൽപന (RTF അതായത് ആർ.ടി.എഫ്)"
 
-#: AbiWordActivity.py:101
-msgid "Edit"
-msgstr "ചിട്ടപെടുത്തുക"
+#: widgets.py:120
+msgid "RTF"
+msgstr "RTF (ആർ.ടി.എഫ്)"
 
-#: AbiWordActivity.py:107
-msgid "View"
-msgstr "കാണുക"
+#: widgets.py:124
+msgid "Hypertext (HTML)"
+msgstr "ഹൈപർടെക്സ്റ്റ്‌ (HTML അതായത് എച്.ടി.എം.എൽ)"
 
-#: AbiWordActivity.py:123
-msgid "Text"
-msgstr "പദാവലി"
+#: widgets.py:126
+msgid "HTML"
+msgstr "HTML (എച്.ടി.എം.എൽ)"
 
-#: AbiWordActivity.py:129
-msgid "Paragraph"
-msgstr "ഖണ്ഡിക"
+#: widgets.py:131
+msgid "Plain Text (TXT)"
+msgstr "പ്ലെയ്ൻ ടെക്സ്റ്റ്‌ (TXT അതായത് ടി.എക്സ്.ടി)"
 
-#: AbiWordActivity.py:135
-msgid "Table"
-msgstr "പട്ടിക"
+#: widgets.py:133
+msgid "TXT"
+msgstr "TXT (ടി.എക്സ്.ടി)"
 
-#: AbiWordActivity.py:139
-msgid "Insert Image"
-msgstr "ചിത്രം ചേര്‍കൂക"
+#: widgets.py:137
+msgid "Portable Document Format (PDF)"
+msgstr "പോര്‍ട്ടബിള്‍ ഡോക്യുമെന്റ് ഫോര്‍മാറ്റ് (PDF അതായത് പി.ഡി.എഫ്)"
 
-#: AbiWordActivity.py:146
-msgid "Floating"
-msgstr ""
+#: widgets.py:139
+msgid "PDF"
+msgstr "PDF (പി.ഡി.എഫ്)"
 
-#: fontcombobox.py:90
-msgid "Select font"
-msgstr ""
-
-#: speechtoolbar.py:58
+#: speechtoolbar.py:59
 msgid "Play / Pause"
-msgstr ""
+msgstr "പ്ലേ / പോസ് ചെയ്യുക"
 
-#: speechtoolbar.py:66
+#: speechtoolbar.py:67
 msgid "Stop"
-msgstr ""
+msgstr "നിര്‍ത്തുക"
 
 #: toolbar.py:100
 msgid "Search"
@@ -92,37 +84,37 @@ msgstr "മുന്പിലതേത്"
 msgid "Find next"
 msgstr "അടുത്തത്"
 
-#: toolbar.py:227
+#: toolbar.py:226
 msgid "Create table"
-msgstr ""
+msgstr "പട്ടിക സൃഷ്ടിക്കുക"
 
-#: toolbar.py:237
+#: toolbar.py:236
 msgid "Insert Row"
 msgstr "വരി ചേര്‍ക്കുക"
 
-#: toolbar.py:243
+#: toolbar.py:242
 msgid "Delete Row"
 msgstr "വരി ഒഴിവാക്കുക"
 
-#: toolbar.py:249
+#: toolbar.py:248
 msgid "Insert Column"
-msgstr ""
+msgstr "കോളം ചേർക്കുക"
 
-#: toolbar.py:255
+#: toolbar.py:254
 msgid "Delete Column"
-msgstr ""
+msgstr "കോളം വെട്ടി നീക്കുക"
 
-#: toolbar.py:300
+#: toolbar.py:299
 msgid "Zoom Out"
-msgstr ""
+msgstr "ചെറുതായിക്കാണുക"
 
-#: toolbar.py:307
+#: toolbar.py:306
 msgid "Zoom In"
-msgstr ""
+msgstr "വലുതായിക്കാണുക"
 
 #: toolbar.py:313
 msgid "Zoom to width"
-msgstr ""
+msgstr "വീതിക്ക്‌ അനുപാതമായി വലുതാക്കുക"
 
 #: toolbar.py:330
 msgid "%"
@@ -130,7 +122,7 @@ msgstr "%"
 
 #: toolbar.py:342
 msgid "Page: "
-msgstr "താള്‍"
+msgstr "താള്‍ "
 
 #: toolbar.py:441
 msgid "Bold"
@@ -138,115 +130,116 @@ msgstr "കനത്തത്"
 
 #: toolbar.py:450
 msgid "Italic"
-msgstr "ചരിഞത്"
+msgstr "ചരിഞ്ഞത്"
 
-#: toolbar.py:459
+#: toolbar.py:460
 msgid "Underline"
 msgstr "അടിവര"
 
-#: toolbar.py:487
+#: toolbar.py:490
 msgid "Choose alignment"
-msgstr ""
+msgstr "പദങ്ങളുടെ സ്ഥാനം"
 
-#: toolbar.py:495
+#: toolbar.py:498
 msgid "Left justify"
-msgstr ""
+msgstr "ഇടത്തേക്ക് ക്രമീകരിക്കുക"
 
-#: toolbar.py:499
+#: toolbar.py:502
 msgid "Center justify"
-msgstr ""
+msgstr "നടുവിലേക്ക് ക്രമീകരിക്കുക"
 
-#: toolbar.py:503
+#: toolbar.py:506
 msgid "Right justify"
-msgstr ""
+msgstr "വലത്തേക്ക് ക്രമീകരിക്കുക"
 
-#: toolbar.py:507
+#: toolbar.py:510
 msgid "Fill justify"
-msgstr ""
+msgstr "വരി നിറയ്ക്കുക"
 
-#: toolbar.py:567 toolbar.py:620
+#: toolbar.py:571 toolbar.py:620
 msgid "Normal"
-msgstr "സാധാരണ"
+msgstr "സാധാരണം"
 
-#: toolbar.py:578
+#: toolbar.py:577
 msgid "Heading 1"
 msgstr "തലകെട്ട് 1"
 
-#: toolbar.py:582
+#: toolbar.py:581
 msgid "Heading 2"
 msgstr "തലകെട്ട് 2"
 
-#: toolbar.py:586
+#: toolbar.py:585
 msgid "Heading 3"
 msgstr "തലകെട്ട് 3"
 
-#: toolbar.py:590
+#: toolbar.py:589
 msgid "Heading 4"
 msgstr "തലകെട്ട് 4"
 
-#: toolbar.py:594
+#: toolbar.py:593
 msgid "Block Text"
-msgstr ""
+msgstr "വാക്കുകൾ കൂട്ടമാക്കുക"
 
-#: toolbar.py:598
+#: toolbar.py:597
 msgid "Plain Text"
-msgstr ""
+msgstr "സാധാരണ പദാവലി"
 
 #: toolbar.py:612
 msgid "Select list"
-msgstr ""
+msgstr "നാമാവലി തരങ്ങൾ"
 
 #: toolbar.py:630
 msgid "Bullet List"
-msgstr ""
+msgstr "ബുള്ളെറ്റ് നാമാവലി"
 
 #: toolbar.py:635
 msgid "Dashed List"
-msgstr ""
+msgstr "ഡാഷ് നാമാവലി"
 
 #: toolbar.py:640
 msgid "Numbered List"
-msgstr ""
+msgstr "അക്കമിട്ട നാമാവലി"
 
 #: toolbar.py:645
 msgid "Lower Case List"
-msgstr ""
+msgstr "ചെറിയ അക്ഷരം നാമാവലി"
 
 #: toolbar.py:650
 msgid "Upper Case List"
-msgstr ""
+msgstr "വലിയ അക്ഷരം നാമാവലി"
 
-#: widgets.py:119
-msgid "Rich Text (RTF)"
-msgstr ""
+#: fontcombobox.py:90
+msgid "Select font"
+msgstr "ലിപി തിരഞ്ഞെടുക്കുക"
 
-#: widgets.py:121
-msgid "RTF"
-msgstr ""
+#: AbiWordActivity.py:69
+msgid "Connecting..."
+msgstr "ബന്ധം സ്ഥാപിക്കുന്നു..."
 
-#: widgets.py:125
-msgid "Hypertext (HTML)"
-msgstr ""
+#: AbiWordActivity.py:99
+msgid "Edit"
+msgstr "ചിട്ടപെടുത്തുക"
 
-#: widgets.py:127
-msgid "HTML"
-msgstr ""
+#: AbiWordActivity.py:105
+msgid "View"
+msgstr "കാണുക"
 
-#: widgets.py:132
-msgid "Plain Text (TXT)"
-msgstr ""
+#: AbiWordActivity.py:120
+msgid "Text"
+msgstr "പദാവലി"
 
-#: widgets.py:134
-msgid "TXT"
-msgstr ""
+#: AbiWordActivity.py:126
+msgid "Paragraph"
+msgstr "ഖണ്ഡിക"
 
-#: widgets.py:138
-msgid "Portable Document Format (PDF)"
-msgstr ""
+#: AbiWordActivity.py:132
+msgid "Table"
+msgstr "പട്ടിക"
 
-#: widgets.py:140
-msgid "PDF"
-msgstr ""
+#: AbiWordActivity.py:136
+msgid "Insert Image"
+msgstr "ചിത്രം ചേർക്കുക"
 
-#~ msgid "Cancel"
-#~ msgstr "ഒഴിവാകൂക"
+#: AbiWordActivity.py:143
+msgid "Floating"
+msgstr "ഒഴുകി നടക്കുന്നു"
