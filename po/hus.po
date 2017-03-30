@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-12 00:30-0400\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
 "PO-Revision-Date: 2012-10-18 07:35+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,62 +17,61 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Write"
 msgstr "Dhucha'"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
 "An dhuchláb pel jun i jolataláb abal ka eyendha' ka olna' an kaw. Ka dhucha' "
-"jun i t'ilaxtaláb, witsidh kaw, jun i  t'ojláb, ani jawa' ka lejna'. Awil "
-"ka jalk'uy jant'odha' tataj a kulbetnal in wál ani in puwel an dhuchláb, ani "
-"ka obsba' jun i k'otbixtaláb!"
+"jun i t'ilaxtaláb, witsidh kaw, jun i  t'ojláb, ani jawa' ka lejna'. Awil ka "
+"jalk'uy jant'odha' tataj a kulbetnal in wál ani in puwel an dhuchláb, ani ka "
+"obsba' jun i k'otbixtaláb!"
 
-#: AbiWordActivity.py:71
-msgid "Connecting..."
-msgstr ""
+# Dhayk'adh dhuchlab() (RTF)
+#: widgets.py:118
+msgid "Rich Text (RTF)"
+msgstr "Punk'udh dhuchláb (RTF)"
 
-#: AbiWordActivity.py:101
-msgid "Edit"
-msgstr "Jalk'uy"
+#: widgets.py:120
+msgid "RTF"
+msgstr "RTF"
 
-#: AbiWordActivity.py:107
-msgid "View"
-msgstr "Tsu'uw"
+# Palabra inteligente que te puede relacionar con otras ideas.
+#: widgets.py:124
+msgid "Hypertext (HTML)"
+msgstr "Tsalpadh dhuchláb (HTML)"
 
-#: AbiWordActivity.py:123
-msgid "Text"
-msgstr "Dhuchláb"
+#: widgets.py:126
+msgid "HTML"
+msgstr "HTML"
 
-#: AbiWordActivity.py:129
-msgid "Paragraph"
-msgstr "Kwenél kits'lab. o también puede ser T'ipoxtaláb"
+#: widgets.py:131
+msgid "Plain Text (TXT)"
+msgstr "T'ipts'odh dhuchláb (TXT)"
 
-#: AbiWordActivity.py:135
-msgid "Table"
-msgstr "Nik'e' tin ay"
+#: widgets.py:133
+msgid "TXT"
+msgstr "TXT"
 
-#: AbiWordActivity.py:139
-msgid "Insert Image"
-msgstr "Otsba' jún i k'ot'bixtaláb"
+# T'ipoxtaláb k'al an Kitínadh Dhuchlab (PDF)
+#: widgets.py:137
+msgid "Portable Document Format (PDF)"
+msgstr "Kitnadh dhuchláb t'ipoxtaláb (PDF)"
 
-#: AbiWordActivity.py:146
-msgid "Floating"
-msgstr "Dhememél"
+# Estoy  enviando PDF
+#: widgets.py:139
+msgid "PDF"
+msgstr "PDF"
 
-#: fontcombobox.py:90
-msgid "Select font"
-msgstr ""
-
-#: speechtoolbar.py:58
+#: speechtoolbar.py:59
 msgid "Play / Pause"
 msgstr "Ka wat'ba' / wé' kuba'"
 
-#: speechtoolbar.py:66
+#: speechtoolbar.py:67
 msgid "Stop"
 msgstr "Kuba'"
 
@@ -88,31 +87,31 @@ msgstr "Ka aliy xi ok'xidh"
 msgid "Find next"
 msgstr "Ka aliy xi júnakej"
 
-#: toolbar.py:227
+#: toolbar.py:226
 msgid "Create table"
 msgstr ""
 
-#: toolbar.py:237
+#: toolbar.py:236
 msgid "Insert Row"
 msgstr "Otsba' juni k'elab"
 
-#: toolbar.py:243
+#: toolbar.py:242
 msgid "Delete Row"
 msgstr "Pakuw an k'elab"
 
-#: toolbar.py:249
+#: toolbar.py:248
 msgid "Insert Column"
 msgstr "Otsba' juni nik'e'"
 
-#: toolbar.py:255
+#: toolbar.py:254
 msgid "Delete Column"
 msgstr "Pakuw an nik'e'"
 
-#: toolbar.py:300
+#: toolbar.py:299
 msgid "Zoom Out"
 msgstr "Tsipti'méjdha'"
 
-#: toolbar.py:307
+#: toolbar.py:306
 msgid "Zoom In"
 msgstr "Puwedha'"
 
@@ -137,60 +136,60 @@ msgstr "T'unk'udh"
 msgid "Italic"
 msgstr "Kínts'óx"
 
-#: toolbar.py:459
+#: toolbar.py:460
 msgid "Underline"
 msgstr "Kits'odh ti in akan"
 
-#: toolbar.py:487
+#: toolbar.py:490
 msgid "Choose alignment"
 msgstr ""
 
 # Ka k'watab junkuw
-#: toolbar.py:495
+#: toolbar.py:498
 msgid "Left justify"
 msgstr "K'elbay ta k'watab"
 
 # ts'ejel junkuw
-#: toolbar.py:499
+#: toolbar.py:502
 msgid "Center justify"
 msgstr "K'elbay ts'ejel"
 
 # Ka winab junkuw
-#: toolbar.py:503
+#: toolbar.py:506
 msgid "Right justify"
 msgstr "K'elbay ta wínab"
 
-#: toolbar.py:507
+#: toolbar.py:510
 msgid "Fill justify"
 msgstr "Tamchidh junkuw"
 
-#: toolbar.py:567 toolbar.py:620
+#: toolbar.py:571 toolbar.py:620
 msgid "Normal"
 msgstr "Jajáts'k'ij"
 
-#: toolbar.py:578
+#: toolbar.py:577
 msgid "Heading 1"
 msgstr "Ok'ol 1"
 
-#: toolbar.py:582
+#: toolbar.py:581
 msgid "Heading 2"
 msgstr "Ok'ol 2"
 
-#: toolbar.py:586
+#: toolbar.py:585
 msgid "Heading 3"
 msgstr "Ok'ol 3"
 
-#: toolbar.py:590
+#: toolbar.py:589
 msgid "Heading 4"
 msgstr "Ok'ol 4"
 
 # Pejadh t'ojláb dhuchlab = bloque de texto
-#: toolbar.py:594
+#: toolbar.py:593
 msgid "Block Text"
 msgstr "Kwenél dhuchláb"
 
 # Alk'idh dhuchlab
-#: toolbar.py:598
+#: toolbar.py:597
 msgid "Plain Text"
 msgstr "T'ipts'odh dhuchláb"
 
@@ -222,44 +221,38 @@ msgstr "T'ijax dhuche' k'eláb"
 msgid "Upper Case List"
 msgstr "Pakdha' Dhuche' K'elab"
 
-# Dhayk'adh dhuchlab() (RTF)
-#: widgets.py:119
-msgid "Rich Text (RTF)"
-msgstr "Punk'udh dhuchláb (RTF)"
+#: fontcombobox.py:90
+msgid "Select font"
+msgstr ""
 
-#: widgets.py:121
-msgid "RTF"
-msgstr "RTF"
+#: AbiWordActivity.py:69
+msgid "Connecting..."
+msgstr ""
 
-# Palabra inteligente que te puede relacionar con otras ideas.
-#: widgets.py:125
-msgid "Hypertext (HTML)"
-msgstr "Tsalpadh dhuchláb (HTML)"
+#: AbiWordActivity.py:99
+msgid "Edit"
+msgstr "Jalk'uy"
 
-#: widgets.py:127
-msgid "HTML"
-msgstr "HTML"
+#: AbiWordActivity.py:105
+msgid "View"
+msgstr "Tsu'uw"
 
-#: widgets.py:132
-msgid "Plain Text (TXT)"
-msgstr "T'ipts'odh dhuchláb (TXT)"
+#: AbiWordActivity.py:120
+msgid "Text"
+msgstr "Dhuchláb"
 
-#: widgets.py:134
-msgid "TXT"
-msgstr "TXT"
+#: AbiWordActivity.py:126
+msgid "Paragraph"
+msgstr "Kwenél kits'lab. o también puede ser T'ipoxtaláb"
 
-# T'ipoxtaláb k'al an Kitínadh Dhuchlab (PDF)
-#: widgets.py:138
-msgid "Portable Document Format (PDF)"
-msgstr "Kitnadh dhuchláb t'ipoxtaláb (PDF)"
+#: AbiWordActivity.py:132
+msgid "Table"
+msgstr "Nik'e' tin ay"
 
-# Estoy  enviando PDF
-#: widgets.py:140
-msgid "PDF"
-msgstr "PDF"
+#: AbiWordActivity.py:136
+msgid "Insert Image"
+msgstr "Otsba' jún i k'ot'bixtaláb"
 
-#~ msgid "Cancel"
-#~ msgstr "T'apiy"
-
-#~ msgid "Export"
-#~ msgstr "Abnaxtaláb"
+#: AbiWordActivity.py:143
+msgid "Floating"
+msgstr "Dhememél"

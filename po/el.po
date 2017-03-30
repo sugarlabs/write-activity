@@ -1,11 +1,3 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # Greek translation of Write project.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
@@ -14,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Write project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-12 00:30-0400\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
 "PO-Revision-Date: 2012-09-08 10:40+0200\n"
 "Last-Translator: Yannis <kiolalis@gmail.com>\n"
 "Language-Team: Greek <olpc@grnet.gr>\n"
@@ -25,58 +17,53 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Write"
 msgstr "Κειμενογράφος"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
 
-#: AbiWordActivity.py:71
-msgid "Connecting..."
-msgstr ""
+#: widgets.py:118
+msgid "Rich Text (RTF)"
+msgstr "Εμπλουτισμένο κείμενο (RTF)"
 
-#: AbiWordActivity.py:101
-msgid "Edit"
-msgstr "Επεξεργασία"
+#: widgets.py:120
+msgid "RTF"
+msgstr "RTF"
 
-#: AbiWordActivity.py:107
-msgid "View"
-msgstr "Προβολή"
+#: widgets.py:124
+msgid "Hypertext (HTML)"
+msgstr "Υπερκείμενο (HTML)"
 
-#: AbiWordActivity.py:123
-msgid "Text"
-msgstr "Κείμενο"
+#: widgets.py:126
+msgid "HTML"
+msgstr "HTML"
 
-#: AbiWordActivity.py:129
-msgid "Paragraph"
-msgstr "Παράγραφος"
+#: widgets.py:131
+msgid "Plain Text (TXT)"
+msgstr "Απλό κείμενο (TXT)"
 
-#: AbiWordActivity.py:135
-msgid "Table"
-msgstr "Πίνακας"
+#: widgets.py:133
+msgid "TXT"
+msgstr "TXT"
 
-#: AbiWordActivity.py:139
-msgid "Insert Image"
-msgstr "Εισαγωγή εικόνας"
+#: widgets.py:137
+msgid "Portable Document Format (PDF)"
+msgstr "Μορφή φορητού εγγράφου (PDF)"
 
-#: AbiWordActivity.py:146
-msgid "Floating"
-msgstr "Επιπλέουσα"
+#: widgets.py:139
+msgid "PDF"
+msgstr "PDF"
 
-#: fontcombobox.py:90
-msgid "Select font"
-msgstr ""
-
-#: speechtoolbar.py:58
+#: speechtoolbar.py:59
 msgid "Play / Pause"
 msgstr "Αναπαραγωγή / Παύση"
 
-#: speechtoolbar.py:66
+#: speechtoolbar.py:67
 msgid "Stop"
 msgstr "Διακοπή"
 
@@ -92,31 +79,31 @@ msgstr "Εύρεση προηγουμένου"
 msgid "Find next"
 msgstr "Εύρεση επομένου"
 
-#: toolbar.py:227
+#: toolbar.py:226
 msgid "Create table"
 msgstr ""
 
-#: toolbar.py:237
+#: toolbar.py:236
 msgid "Insert Row"
 msgstr "Εισαγωγή γραμμής"
 
-#: toolbar.py:243
+#: toolbar.py:242
 msgid "Delete Row"
 msgstr "Διαγραφή γραμμής"
 
-#: toolbar.py:249
+#: toolbar.py:248
 msgid "Insert Column"
 msgstr "Εισαγωγή στήλης"
 
-#: toolbar.py:255
+#: toolbar.py:254
 msgid "Delete Column"
 msgstr "Διαγραφή στήλης"
 
-#: toolbar.py:300
+#: toolbar.py:299
 msgid "Zoom Out"
 msgstr "Σμίκρυνση"
 
-#: toolbar.py:307
+#: toolbar.py:306
 msgid "Zoom In"
 msgstr "Μεγέθυνση"
 
@@ -140,55 +127,55 @@ msgstr "Έντονα"
 msgid "Italic"
 msgstr "Πλάγια"
 
-#: toolbar.py:459
+#: toolbar.py:460
 msgid "Underline"
 msgstr "Υπογράμμιση"
 
-#: toolbar.py:487
+#: toolbar.py:490
 msgid "Choose alignment"
 msgstr ""
 
-#: toolbar.py:495
+#: toolbar.py:498
 msgid "Left justify"
 msgstr "Στοίχιση αριστερά"
 
-#: toolbar.py:499
+#: toolbar.py:502
 msgid "Center justify"
 msgstr "Στοίχιση στο κέντρο"
 
-#: toolbar.py:503
+#: toolbar.py:506
 msgid "Right justify"
 msgstr "Στοίχιση δεξιά"
 
-#: toolbar.py:507
+#: toolbar.py:510
 msgid "Fill justify"
 msgstr "Πλήρης στοίχιση"
 
-#: toolbar.py:567 toolbar.py:620
+#: toolbar.py:571 toolbar.py:620
 msgid "Normal"
 msgstr "Κανονικό"
 
-#: toolbar.py:578
+#: toolbar.py:577
 msgid "Heading 1"
 msgstr "Κεφαλίδα 1"
 
-#: toolbar.py:582
+#: toolbar.py:581
 msgid "Heading 2"
 msgstr "Κεφαλίδα 2"
 
-#: toolbar.py:586
+#: toolbar.py:585
 msgid "Heading 3"
 msgstr "Κεφαλίδα 3"
 
-#: toolbar.py:590
+#: toolbar.py:589
 msgid "Heading 4"
 msgstr "Κεφαλίδα 4"
 
-#: toolbar.py:594
+#: toolbar.py:593
 msgid "Block Text"
 msgstr "Κομμάτι Κειμένου"
 
-#: toolbar.py:598
+#: toolbar.py:597
 msgid "Plain Text"
 msgstr "Απλό κείμενο"
 
@@ -217,55 +204,38 @@ msgstr "Λίστα με πεζά γράμματα (α, β, γ,....)"
 msgid "Upper Case List"
 msgstr "Λίστα με κεφαλαία γράμματα (Α,Β, Γ,....)"
 
-#: widgets.py:119
-msgid "Rich Text (RTF)"
-msgstr "Εμπλουτισμένο κείμενο (RTF)"
+#: fontcombobox.py:90
+msgid "Select font"
+msgstr ""
 
-#: widgets.py:121
-msgid "RTF"
-msgstr "RTF"
+#: AbiWordActivity.py:69
+msgid "Connecting..."
+msgstr ""
 
-#: widgets.py:125
-msgid "Hypertext (HTML)"
-msgstr "Υπερκείμενο (HTML)"
+#: AbiWordActivity.py:99
+msgid "Edit"
+msgstr "Επεξεργασία"
 
-#: widgets.py:127
-msgid "HTML"
-msgstr "HTML"
+#: AbiWordActivity.py:105
+msgid "View"
+msgstr "Προβολή"
 
-#: widgets.py:132
-msgid "Plain Text (TXT)"
-msgstr "Απλό κείμενο (TXT)"
+#: AbiWordActivity.py:120
+msgid "Text"
+msgstr "Κείμενο"
 
-#: widgets.py:134
-msgid "TXT"
-msgstr "TXT"
+#: AbiWordActivity.py:126
+msgid "Paragraph"
+msgstr "Παράγραφος"
 
-#: widgets.py:138
-msgid "Portable Document Format (PDF)"
-msgstr "Μορφή φορητού εγγράφου (PDF)"
+#: AbiWordActivity.py:132
+msgid "Table"
+msgstr "Πίνακας"
 
-#: widgets.py:140
-msgid "PDF"
-msgstr "PDF"
+#: AbiWordActivity.py:136
+msgid "Insert Image"
+msgstr "Εισαγωγή εικόνας"
 
-#~ msgid "Cancel"
-#~ msgstr "Ακύρωση"
-
-#~ msgid "Export"
-#~ msgstr "Εξαγωγή"
-
-#~ msgid "Image"
-#~ msgstr "Εικόνα"
-
-#~ msgid "Format"
-#~ msgstr "Μορφοποίηση"
-
-#~ msgid "Choose image"
-#~ msgstr "Επιλογή εικόνας"
-
-#~ msgid "Style: "
-#~ msgstr "Στύλ: "
-
-#~ msgid "Select text color"
-#~ msgstr "Επιλογή χρώματος κειμένου"
+#: AbiWordActivity.py:143
+msgid "Floating"
+msgstr "Επιπλέουσα"

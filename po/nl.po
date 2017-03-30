@@ -2,23 +2,11 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-12 00:30-0400\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
 "PO-Revision-Date: 2013-06-17 16:46+0200\n"
 "Last-Translator: whe <heppew@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,12 +17,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Write"
 msgstr "Schrijven"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
@@ -43,47 +30,43 @@ msgstr ""
 "gedicht, verslag, wat dan ook! Probeer het uiterlijk en de grootte van je "
 "tekst te veranderen; je kan zelfs een afbeelding invoegen!"
 
-#: AbiWordActivity.py:71
-msgid "Connecting..."
-msgstr "Verbinden..."
+#: widgets.py:118
+msgid "Rich Text (RTF)"
+msgstr "Rich Text (RTF)"
 
-#: AbiWordActivity.py:101
-msgid "Edit"
-msgstr "Bewerken"
+#: widgets.py:120
+msgid "RTF"
+msgstr "RTF"
 
-#: AbiWordActivity.py:107
-msgid "View"
-msgstr "Beeld"
+#: widgets.py:124
+msgid "Hypertext (HTML)"
+msgstr "Hypertext (HTML)"
 
-#: AbiWordActivity.py:123
-msgid "Text"
-msgstr "Tekst"
+#: widgets.py:126
+msgid "HTML"
+msgstr "HTML"
 
-#: AbiWordActivity.py:129
-msgid "Paragraph"
-msgstr "Paragraaf"
+#: widgets.py:131
+msgid "Plain Text (TXT)"
+msgstr "Platte tekst (TXT)"
 
-#: AbiWordActivity.py:135
-msgid "Table"
-msgstr "Tabel"
+#: widgets.py:133
+msgid "TXT"
+msgstr "TXT"
 
-#: AbiWordActivity.py:139
-msgid "Insert Image"
-msgstr "Afbeelding invoegen"
+#: widgets.py:137
+msgid "Portable Document Format (PDF)"
+msgstr "Portable Document Format (PDF)"
 
-#: AbiWordActivity.py:146
-msgid "Floating"
-msgstr "Drijvend"
+#: widgets.py:139
+msgid "PDF"
+msgstr "PDF"
 
-#: fontcombobox.py:90
-msgid "Select font"
-msgstr "Selecteer lettertype"
-
-#: speechtoolbar.py:58
+#: speechtoolbar.py:59
 msgid "Play / Pause"
 msgstr "Speel / Pauze"
 
-#: speechtoolbar.py:66
+#: speechtoolbar.py:67
 msgid "Stop"
 msgstr "Stop"
 
@@ -99,31 +82,31 @@ msgstr "Vorige zoeken"
 msgid "Find next"
 msgstr "Volgende zoeken"
 
-#: toolbar.py:227
+#: toolbar.py:226
 msgid "Create table"
 msgstr "Tabel maken"
 
-#: toolbar.py:237
+#: toolbar.py:236
 msgid "Insert Row"
 msgstr "Rij invoegen"
 
-#: toolbar.py:243
+#: toolbar.py:242
 msgid "Delete Row"
 msgstr "Rij verwijderen"
 
-#: toolbar.py:249
+#: toolbar.py:248
 msgid "Insert Column"
 msgstr "Kolom invoegen"
 
-#: toolbar.py:255
+#: toolbar.py:254
 msgid "Delete Column"
 msgstr "Kolom verwijderen"
 
-#: toolbar.py:300
+#: toolbar.py:299
 msgid "Zoom Out"
 msgstr "Uitzoomen"
 
-#: toolbar.py:307
+#: toolbar.py:306
 msgid "Zoom In"
 msgstr "Inzoomen"
 
@@ -147,55 +130,55 @@ msgstr "Vet"
 msgid "Italic"
 msgstr "Cursief"
 
-#: toolbar.py:459
+#: toolbar.py:460
 msgid "Underline"
 msgstr "Onderstrepen"
 
-#: toolbar.py:487
+#: toolbar.py:490
 msgid "Choose alignment"
 msgstr "Kies uitlijning"
 
-#: toolbar.py:495
+#: toolbar.py:498
 msgid "Left justify"
 msgstr "Links uitlijnen"
 
-#: toolbar.py:499
+#: toolbar.py:502
 msgid "Center justify"
 msgstr "Midden uitlijnen"
 
-#: toolbar.py:503
+#: toolbar.py:506
 msgid "Right justify"
 msgstr "Rechts uitlijnen"
 
-#: toolbar.py:507
+#: toolbar.py:510
 msgid "Fill justify"
 msgstr "Gevuld uitlijnen"
 
-#: toolbar.py:567 toolbar.py:620
+#: toolbar.py:571 toolbar.py:620
 msgid "Normal"
 msgstr "Normaal"
 
-#: toolbar.py:578
+#: toolbar.py:577
 msgid "Heading 1"
 msgstr "Koptekst 1"
 
-#: toolbar.py:582
+#: toolbar.py:581
 msgid "Heading 2"
 msgstr "Koptekst 2"
 
-#: toolbar.py:586
+#: toolbar.py:585
 msgid "Heading 3"
 msgstr "Koptekst 3"
 
-#: toolbar.py:590
+#: toolbar.py:589
 msgid "Heading 4"
 msgstr "Koptekst 4"
 
-#: toolbar.py:594
+#: toolbar.py:593
 msgid "Block Text"
 msgstr "Tekstblok"
 
-#: toolbar.py:598
+#: toolbar.py:597
 msgid "Plain Text"
 msgstr "Platte tekst"
 
@@ -223,58 +206,38 @@ msgstr "Kleineletter lijst"
 msgid "Upper Case List"
 msgstr "Hoofdletter lijst"
 
-#: widgets.py:119
-msgid "Rich Text (RTF)"
-msgstr "Rich Text (RTF)"
+#: fontcombobox.py:90
+msgid "Select font"
+msgstr "Selecteer lettertype"
 
-#: widgets.py:121
-msgid "RTF"
-msgstr "RTF"
+#: AbiWordActivity.py:69
+msgid "Connecting..."
+msgstr "Verbinden..."
 
-#: widgets.py:125
-msgid "Hypertext (HTML)"
-msgstr "Hypertext (HTML)"
+#: AbiWordActivity.py:99
+msgid "Edit"
+msgstr "Bewerken"
 
-#: widgets.py:127
-msgid "HTML"
-msgstr "HTML"
+#: AbiWordActivity.py:105
+msgid "View"
+msgstr "Beeld"
 
-#: widgets.py:132
-msgid "Plain Text (TXT)"
-msgstr "Platte tekst (TXT)"
+#: AbiWordActivity.py:120
+msgid "Text"
+msgstr "Tekst"
 
-#: widgets.py:134
-msgid "TXT"
-msgstr "TXT"
+#: AbiWordActivity.py:126
+msgid "Paragraph"
+msgstr "Paragraaf"
 
-#: widgets.py:138
-msgid "Portable Document Format (PDF)"
-msgstr "Portable Document Format (PDF)"
+#: AbiWordActivity.py:132
+msgid "Table"
+msgstr "Tabel"
 
-#: widgets.py:140
-msgid "PDF"
-msgstr "PDF"
+#: AbiWordActivity.py:136
+msgid "Insert Image"
+msgstr "Afbeelding invoegen"
 
-#~ msgid "Cancel"
-#~ msgstr "Annuleren"
-
-#~ msgid "Export"
-#~ msgstr "Uitvoer"
-
-#~ msgid "Image"
-#~ msgstr "Afbeelding"
-
-#~ msgid "Format"
-#~ msgstr "Opmaak"
-
-#~ msgid "Choose image"
-#~ msgstr "Afbeelding kiezen"
-
-#~ msgid "Style: "
-#~ msgstr "Opmaak:"
-
-#~ msgid "Select text color"
-#~ msgstr "Tekst kleur kiezen"
-
-#~ msgid "Page:"
-#~ msgstr "Pagina:"
+#: AbiWordActivity.py:143
+msgid "Floating"
+msgstr "Drijvend"

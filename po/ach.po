@@ -7,24 +7,28 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-24 17:39+1100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2017-03-14 03:30+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: sd\n"
+"Language: ach\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1rc4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1489462220.000000\n"
 
 #: activity/activity.info:2
 msgid "Write"
-msgstr ""
+msgstr "Coo"
 
 #: activity/activity.info:3
 msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
+"Coc mio kabedo me keto nyig lok mamegi. Coo stori, ododo, repot, ginmo "
+"keken! Tem loko kit maneno kwede, ki cajji me coc; ci i roo bene cal mo!"
 
 #: widgets.py:118
 msgid "Rich Text (RTF)"
@@ -60,99 +64,99 @@ msgstr ""
 
 #: speechtoolbar.py:59
 msgid "Play / Pause"
-msgstr ""
+msgstr "Tuki / Juki"
 
 #: speechtoolbar.py:67
 msgid "Stop"
-msgstr ""
+msgstr "Juki"
 
 #: toolbar.py:100
 msgid "Search"
-msgstr ""
+msgstr "Yeny"
 
 #: toolbar.py:117
 msgid "Find previous"
-msgstr ""
+msgstr "Nong mukato"
 
 #: toolbar.py:123
 msgid "Find next"
-msgstr ""
+msgstr "Nong malubo"
 
 #: toolbar.py:226
 msgid "Create table"
-msgstr ""
+msgstr "Yub meja"
 
 #: toolbar.py:236
 msgid "Insert Row"
-msgstr ""
+msgstr "Roo Layin arii"
 
 #: toolbar.py:242
 msgid "Delete Row"
-msgstr ""
+msgstr "Ywe Layin arii"
 
 #: toolbar.py:248
 msgid "Insert Column"
-msgstr ""
+msgstr "Roo Buge"
 
 #: toolbar.py:254
 msgid "Delete Column"
-msgstr ""
+msgstr "Ywe Buge"
 
 #: toolbar.py:299
 msgid "Zoom Out"
-msgstr ""
+msgstr "Jwik matidi"
 
 #: toolbar.py:306
 msgid "Zoom In"
-msgstr ""
+msgstr "Kwot madit"
 
 #: toolbar.py:313
 msgid "Zoom to width"
-msgstr ""
+msgstr "Wot bed mabor"
 
 #: toolbar.py:330
 msgid "%"
-msgstr ""
+msgstr "%"
 
 #: toolbar.py:342
 msgid "Page: "
-msgstr ""
+msgstr "Potbuk: "
 
 #: toolbar.py:441
 msgid "Bold"
-msgstr ""
+msgstr "Mii bed macol"
 
 #: toolbar.py:450
 msgid "Italic"
-msgstr ""
+msgstr "Mii but abuta"
 
 #: toolbar.py:460
 msgid "Underline"
-msgstr ""
+msgstr "Ngol te"
 
 #: toolbar.py:490
 msgid "Choose alignment"
-msgstr ""
+msgstr "Yer en maryeo maber"
 
 #: toolbar.py:498
 msgid "Left justify"
-msgstr ""
+msgstr "Nyut tung cam"
 
 #: toolbar.py:502
 msgid "Center justify"
-msgstr ""
+msgstr "Nyut i dyere"
 
 #: toolbar.py:506
 msgid "Right justify"
-msgstr ""
+msgstr "Nyut tung cem"
 
 #: toolbar.py:510
 msgid "Fill justify"
-msgstr ""
+msgstr "Nyut i rid"
 
 #: toolbar.py:571 toolbar.py:620
 msgid "Normal"
-msgstr ""
+msgstr "Ocung"
 
 #: toolbar.py:577
 msgid "Heading 1"
@@ -204,36 +208,36 @@ msgstr ""
 
 #: fontcombobox.py:90
 msgid "Select font"
-msgstr ""
+msgstr "Yer dit me coc"
 
 #: AbiWordActivity.py:69
 msgid "Connecting..."
-msgstr ""
+msgstr "Tye ka kube..."
 
 #: AbiWordActivity.py:99
 msgid "Edit"
-msgstr ""
+msgstr "Yubi"
 
 #: AbiWordActivity.py:105
 msgid "View"
-msgstr ""
+msgstr "Nen"
 
 #: AbiWordActivity.py:120
 msgid "Text"
-msgstr ""
+msgstr "Coc"
 
 #: AbiWordActivity.py:126
 msgid "Paragraph"
-msgstr ""
+msgstr "Dul coc"
 
 #: AbiWordActivity.py:132
 msgid "Table"
-msgstr ""
+msgstr "Meca"
 
 #: AbiWordActivity.py:136
 msgid "Insert Image"
-msgstr ""
+msgstr "Ket cal"
 
 #: AbiWordActivity.py:143
 msgid "Floating"
-msgstr ""
+msgstr "Tye kabeo i wie"

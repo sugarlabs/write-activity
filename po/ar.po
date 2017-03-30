@@ -9,73 +9,69 @@ msgid ""
 msgstr ""
 "Project-Id-Version: write.master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-12 00:30-0400\n"
-"PO-Revision-Date: 2014-04-29 01:37+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
+"PO-Revision-Date: 2016-03-25 08:08+0000\n"
+"Last-Translator: khaled <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Pootle 2.0.5\n"
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1458893323.000000\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Write"
 msgstr "اُكتب"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
-"\"اُكتب\" يوفر لك وسيله سهله لتنميه إبداعاتك الكتابيه ، \"اُكتب\" يوفر لك مكاناً "
-"لكتابه قصصاً قصيره ، قصائد ، وحتى أبحاثك الدراسيه. مع إمكانيه تغيير حجم "
-"الخط ومظهره. إن \"اُكتب يُمَكِنُكَ حتى من إدخال الصور !"
+"\"اُكتب\" يوفر لك وسيله سهله لتنميه إبداعاتك الكتابيه ، \"اُكتب\" يوفر لك "
+"مكاناً لكتابه قصصاً قصيره ، قصائد ، وحتى أبحاثك الدراسيه. مع إمكانيه تغيير "
+"حجم الخط ومظهره. إن \"اُكتب يُمَكِنُكَ حتى من إدخال الصور !"
 
-#: AbiWordActivity.py:71
-msgid "Connecting..."
-msgstr "جارٍ الإتصال..."
+#: widgets.py:118
+msgid "Rich Text (RTF)"
+msgstr "نص غنى (RTF)"
 
-#: AbiWordActivity.py:101
-msgid "Edit"
-msgstr "حرر"
+#: widgets.py:120
+msgid "RTF"
+msgstr "RTF"
 
-#: AbiWordActivity.py:107
-msgid "View"
-msgstr "إعرض"
+#: widgets.py:124
+msgid "Hypertext (HTML)"
+msgstr "نص تشعبى (HTML)"
 
-#: AbiWordActivity.py:123
-msgid "Text"
-msgstr "النص"
+#: widgets.py:126
+msgid "HTML"
+msgstr "HTML"
 
-#: AbiWordActivity.py:129
-msgid "Paragraph"
-msgstr "الفقره"
+#: widgets.py:131
+msgid "Plain Text (TXT)"
+msgstr "نص مُجَرد (TXT)"
 
-#: AbiWordActivity.py:135
-msgid "Table"
-msgstr "الجدول"
+#: widgets.py:133
+msgid "TXT"
+msgstr "TXT"
 
-#: AbiWordActivity.py:139
-msgid "Insert Image"
-msgstr "إدرج صوره"
+#: widgets.py:137
+msgid "Portable Document Format (PDF)"
+msgstr "مستند محمول (PDF)"
 
-#: AbiWordActivity.py:146
-msgid "Floating"
-msgstr "عائم"
+#: widgets.py:139
+msgid "PDF"
+msgstr "PDF"
 
-#: fontcombobox.py:90
-msgid "Select font"
-msgstr "إختر الخط"
-
-#: speechtoolbar.py:58
+#: speechtoolbar.py:59
 msgid "Play / Pause"
 msgstr "شَغِل / ألبِث"
 
-#: speechtoolbar.py:66
+#: speechtoolbar.py:67
 msgid "Stop"
 msgstr "أوقف"
 
@@ -91,37 +87,37 @@ msgstr "إبحث عن السابق"
 msgid "Find next"
 msgstr "إبحث عن التالى"
 
-#: toolbar.py:227
+#: toolbar.py:226
 msgid "Create table"
 msgstr "أنشئ جدول"
 
-#: toolbar.py:237
+#: toolbar.py:236
 msgid "Insert Row"
 msgstr "إدرج صف"
 
-#: toolbar.py:243
+#: toolbar.py:242
 msgid "Delete Row"
 msgstr "إحذف الصف"
 
-#: toolbar.py:249
+#: toolbar.py:248
 msgid "Insert Column"
 msgstr "إدرج عمود"
 
-#: toolbar.py:255
+#: toolbar.py:254
 msgid "Delete Column"
 msgstr "إحذف العمود"
 
-#: toolbar.py:300
+#: toolbar.py:299
 msgid "Zoom Out"
 msgstr "صَغِر"
 
-#: toolbar.py:307
+#: toolbar.py:306
 msgid "Zoom In"
 msgstr "كَبِر"
 
 #: toolbar.py:313
 msgid "Zoom to width"
-msgstr ""
+msgstr "كبِّر لتناسب العرض"
 
 #: toolbar.py:330
 msgid "%"
@@ -139,55 +135,55 @@ msgstr "عريض"
 msgid "Italic"
 msgstr "مائل"
 
-#: toolbar.py:459
+#: toolbar.py:460
 msgid "Underline"
 msgstr "سَطِر"
 
-#: toolbar.py:487
+#: toolbar.py:490
 msgid "Choose alignment"
 msgstr "إختر المحاذاه"
 
-#: toolbar.py:495
+#: toolbar.py:498
 msgid "Left justify"
 msgstr "حاذِ على اليسار"
 
-#: toolbar.py:499
+#: toolbar.py:502
 msgid "Center justify"
 msgstr "حاذِ فى الوسط"
 
-#: toolbar.py:503
+#: toolbar.py:506
 msgid "Right justify"
 msgstr "حاذِ على اليمين"
 
-#: toolbar.py:507
+#: toolbar.py:510
 msgid "Fill justify"
 msgstr "ساوِ على الجانبين"
 
-#: toolbar.py:567 toolbar.py:620
+#: toolbar.py:571 toolbar.py:620
 msgid "Normal"
 msgstr "عادي"
 
-#: toolbar.py:578
+#: toolbar.py:577
 msgid "Heading 1"
 msgstr "عنوان رئيسى 1"
 
-#: toolbar.py:582
+#: toolbar.py:581
 msgid "Heading 2"
 msgstr "عنوان رئيسى 2"
 
-#: toolbar.py:586
+#: toolbar.py:585
 msgid "Heading 3"
 msgstr "عنوان رئيسى 3"
 
-#: toolbar.py:590
+#: toolbar.py:589
 msgid "Heading 4"
 msgstr "عنوان رئيسى 4"
 
-#: toolbar.py:594
+#: toolbar.py:593
 msgid "Block Text"
-msgstr ""
+msgstr "مربع نص"
 
-#: toolbar.py:598
+#: toolbar.py:597
 msgid "Plain Text"
 msgstr "نص مُجَرد"
 
@@ -215,55 +211,38 @@ msgstr "قائمة حروف صغيرة (للإنجليزيه)"
 msgid "Upper Case List"
 msgstr "قائمة حروف كبيرة (للإنجليزيه)"
 
-#: widgets.py:119
-msgid "Rich Text (RTF)"
-msgstr "نص غنى (RTF)"
+#: fontcombobox.py:90
+msgid "Select font"
+msgstr "إختر الخط"
 
-#: widgets.py:121
-msgid "RTF"
-msgstr "RTF"
+#: AbiWordActivity.py:69
+msgid "Connecting..."
+msgstr "جارٍ الإتصال..."
 
-#: widgets.py:125
-msgid "Hypertext (HTML)"
-msgstr "نص تشعبى (HTML)"
+#: AbiWordActivity.py:99
+msgid "Edit"
+msgstr "حرر"
 
-#: widgets.py:127
-msgid "HTML"
-msgstr "HTML"
+#: AbiWordActivity.py:105
+msgid "View"
+msgstr "إعرض"
 
-#: widgets.py:132
-msgid "Plain Text (TXT)"
-msgstr "نص مُجَرد (TXT)"
+#: AbiWordActivity.py:120
+msgid "Text"
+msgstr "النص"
 
-#: widgets.py:134
-msgid "TXT"
-msgstr "TXT"
+#: AbiWordActivity.py:126
+msgid "Paragraph"
+msgstr "الفقره"
 
-#: widgets.py:138
-msgid "Portable Document Format (PDF)"
-msgstr "مستند محمول (PDF)"
+#: AbiWordActivity.py:132
+msgid "Table"
+msgstr "الجدول"
 
-#: widgets.py:140
-msgid "PDF"
-msgstr "PDF"
+#: AbiWordActivity.py:136
+msgid "Insert Image"
+msgstr "إدرج صوره"
 
-#~ msgid "Cancel"
-#~ msgstr "الغِ"
-
-#~ msgid "Export"
-#~ msgstr "صدّر"
-
-#~ msgid "Image"
-#~ msgstr "صورة"
-
-#~ msgid "Format"
-#~ msgstr "تنسيق"
-
-#~ msgid "Choose image"
-#~ msgstr "اختر صورة"
-
-#~ msgid "Style: "
-#~ msgstr "الأسلوب: "
-
-#~ msgid "Select text color"
-#~ msgstr "اختر لون النص"
+#: AbiWordActivity.py:143
+msgid "Floating"
+msgstr "عائم"

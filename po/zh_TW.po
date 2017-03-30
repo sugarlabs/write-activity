@@ -10,69 +10,65 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OLPC Write\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-12 00:30-0400\n"
-"PO-Revision-Date: 2012-08-22 02:44+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
+"PO-Revision-Date: 2017-03-28 04:51+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: Yuan CHAO <yuanchao@gmail.com>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1490676708.000000\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Write"
 msgstr "寫作"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
-msgstr ""
+msgstr "小作家活動提供您一個寫作的空間。寫一些故事、詩詞、報告，或是任何事物！您可以試著改變文字的外觀和大小，也可以插入一些圖片！"
 
-#: AbiWordActivity.py:71
-msgid "Connecting..."
-msgstr ""
+#: widgets.py:118
+msgid "Rich Text (RTF)"
+msgstr "RTF文件(RTF)"
 
-#: AbiWordActivity.py:101
-msgid "Edit"
-msgstr "編輯"
+#: widgets.py:120
+msgid "RTF"
+msgstr "RTF"
 
-#: AbiWordActivity.py:107
-msgid "View"
-msgstr "檢視"
+#: widgets.py:124
+msgid "Hypertext (HTML)"
+msgstr "超本文(HTML)"
 
-#: AbiWordActivity.py:123
-msgid "Text"
-msgstr "文字"
+#: widgets.py:126
+msgid "HTML"
+msgstr "HTML"
 
-#: AbiWordActivity.py:129
-msgid "Paragraph"
-msgstr "段落"
+#: widgets.py:131
+msgid "Plain Text (TXT)"
+msgstr "純文字文件(TXT)"
 
-#: AbiWordActivity.py:135
-msgid "Table"
-msgstr "表格"
+#: widgets.py:133
+msgid "TXT"
+msgstr "TXT"
 
-#: AbiWordActivity.py:139
-msgid "Insert Image"
-msgstr "插入圖片"
+#: widgets.py:137
+msgid "Portable Document Format (PDF)"
+msgstr "可攜式文件格式（PDF）"
 
-#: AbiWordActivity.py:146
-msgid "Floating"
-msgstr "旋轉"
+#: widgets.py:139
+msgid "PDF"
+msgstr "pdf"
 
-#: fontcombobox.py:90
-msgid "Select font"
-msgstr ""
-
-#: speechtoolbar.py:58
+#: speechtoolbar.py:59
 msgid "Play / Pause"
 msgstr "播放 / 暫停"
 
-#: speechtoolbar.py:66
+#: speechtoolbar.py:67
 msgid "Stop"
 msgstr "停止"
 
@@ -88,31 +84,31 @@ msgstr "找上一個"
 msgid "Find next"
 msgstr "找下一個"
 
-#: toolbar.py:227
+#: toolbar.py:226
 msgid "Create table"
-msgstr ""
+msgstr "建立表格"
 
-#: toolbar.py:237
+#: toolbar.py:236
 msgid "Insert Row"
 msgstr "插入列"
 
-#: toolbar.py:243
+#: toolbar.py:242
 msgid "Delete Row"
 msgstr "刪除列"
 
-#: toolbar.py:249
+#: toolbar.py:248
 msgid "Insert Column"
 msgstr "插入行"
 
-#: toolbar.py:255
+#: toolbar.py:254
 msgid "Delete Column"
 msgstr "刪除行"
 
-#: toolbar.py:300
+#: toolbar.py:299
 msgid "Zoom Out"
 msgstr "縮小"
 
-#: toolbar.py:307
+#: toolbar.py:306
 msgid "Zoom In"
 msgstr "放大"
 
@@ -126,7 +122,7 @@ msgstr "%"
 
 #: toolbar.py:342
 msgid "Page: "
-msgstr "頁碼: "
+msgstr "頁碼:"
 
 #: toolbar.py:441
 msgid "Bold"
@@ -136,61 +132,61 @@ msgstr "粗體"
 msgid "Italic"
 msgstr "斜體"
 
-#: toolbar.py:459
+#: toolbar.py:460
 msgid "Underline"
 msgstr "劃底線"
 
-#: toolbar.py:487
+#: toolbar.py:490
 msgid "Choose alignment"
-msgstr ""
+msgstr "選擇文字對齊方向"
 
-#: toolbar.py:495
+#: toolbar.py:498
 msgid "Left justify"
 msgstr "靠左"
 
-#: toolbar.py:499
+#: toolbar.py:502
 msgid "Center justify"
 msgstr "置中"
 
-#: toolbar.py:503
+#: toolbar.py:506
 msgid "Right justify"
 msgstr "靠右"
 
-#: toolbar.py:507
+#: toolbar.py:510
 msgid "Fill justify"
 msgstr "左右對齊"
 
-#: toolbar.py:567 toolbar.py:620
+#: toolbar.py:571 toolbar.py:620
 msgid "Normal"
 msgstr "一般"
 
-#: toolbar.py:578
+#: toolbar.py:577
 msgid "Heading 1"
 msgstr "主標題"
 
-#: toolbar.py:582
+#: toolbar.py:581
 msgid "Heading 2"
 msgstr "大標題"
 
-#: toolbar.py:586
+#: toolbar.py:585
 msgid "Heading 3"
 msgstr "次標題"
 
-#: toolbar.py:590
+#: toolbar.py:589
 msgid "Heading 4"
 msgstr "小標題"
 
-#: toolbar.py:594
+#: toolbar.py:593
 msgid "Block Text"
 msgstr "區塊文字"
 
-#: toolbar.py:598
+#: toolbar.py:597
 msgid "Plain Text"
 msgstr "純文字"
 
 #: toolbar.py:612
 msgid "Select list"
-msgstr ""
+msgstr "選擇條列項目"
 
 #: toolbar.py:630
 msgid "Bullet List"
@@ -212,37 +208,41 @@ msgstr "小寫英文條列項目"
 msgid "Upper Case List"
 msgstr "大寫英文條列項目"
 
-#: widgets.py:119
-msgid "Rich Text (RTF)"
-msgstr "RTF文件(RTF)"
+#: fontcombobox.py:90
+msgid "Select font"
+msgstr "選擇字型"
 
-#: widgets.py:121
-msgid "RTF"
-msgstr "RTF"
+#: AbiWordActivity.py:69
+msgid "Connecting..."
+msgstr "連接中..."
 
-#: widgets.py:125
-msgid "Hypertext (HTML)"
-msgstr "超本文(HTML)"
+#: AbiWordActivity.py:99
+msgid "Edit"
+msgstr "編輯"
 
-#: widgets.py:127
-msgid "HTML"
-msgstr "HTML"
+#: AbiWordActivity.py:105
+msgid "View"
+msgstr "檢視"
 
-#: widgets.py:132
-msgid "Plain Text (TXT)"
-msgstr "純文字文件(TXT)"
+#: AbiWordActivity.py:120
+msgid "Text"
+msgstr "文字"
 
-#: widgets.py:134
-msgid "TXT"
-msgstr "TXT"
+#: AbiWordActivity.py:126
+msgid "Paragraph"
+msgstr "段落"
 
-#: widgets.py:138
-msgid "Portable Document Format (PDF)"
-msgstr "可攜式文件格式（PDF）"
+#: AbiWordActivity.py:132
+msgid "Table"
+msgstr "表格"
 
-#: widgets.py:140
-msgid "PDF"
-msgstr "pdf"
+#: AbiWordActivity.py:136
+msgid "Insert Image"
+msgstr "插入圖片"
+
+#: AbiWordActivity.py:143
+msgid "Floating"
+msgstr "旋轉"
 
 #~ msgid "Cancel"
 #~ msgstr "取消"
