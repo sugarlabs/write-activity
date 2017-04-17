@@ -240,4 +240,3 @@ msgstr "ছবি ঢোকান"
 #: AbiWordActivity.py:143
 msgid "Floating"
 msgstr ""
-#~ msgstr "স্টাইল:"
