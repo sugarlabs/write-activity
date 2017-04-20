@@ -1,3 +1,11 @@
+98
+
+* Update POT and refresh from Pootle, trim headers (Chris Leonard)
+* Yoruba (iamutkarshtiwari)
+* Added max_participants = 6 in activity.info (AbrahmAB)
+* Fix crash on startup due to missing module initialization. (Icarito)
+* fix repository url (James Cameron)
+
 66
 
 * Revert export button
