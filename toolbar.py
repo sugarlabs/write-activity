@@ -68,6 +68,13 @@ class EditToolbar(Gtk.Toolbar):
         self.insert(paste, -1)
         paste.show()
 
+        pasteraw = ToolButton(icon_name='paste')
+        pasteraw.set_tooltip(_('Paste Unformatted '))
+        pasteraw.props.accelerator = '<Ctrl>F'
+        paste.connect('clicked', self.__pasteraw_button_cb)
+        self.insert(pasteraw, -1)
+        pasteraw.show()
+        
         separator = Gtk.SeparatorToolItem()
         self.insert(separator, -1)
         separator.show()
@@ -160,6 +167,9 @@ class EditToolbar(Gtk.Toolbar):
                                                       False)
         else:
             self._abiword_canvas.paste()
+
+    def __pasteraw_button_cb(self, button):
+        self._abiword_canvas.paste_special()
 
     def _search_entry_activated_cb(self, entry):
         logger.debug('_search_entry_activated_cb')
