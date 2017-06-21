@@ -18,6 +18,8 @@ import time
 from gettext import gettext as _
 import logging
 
+import gi
+gi.require_version('Abi', '3.0')
 from gi.repository import Abi
 from gi.repository import GLib
 

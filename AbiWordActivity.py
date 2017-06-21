@@ -24,6 +24,9 @@ import os
 from gi.repository import GObject
 GObject.threads_init()
 
+import gi
+gi.require_version('Gtk', '3.0')
+gi.require_version('GConf', '2.0')
 from gi.repository import Gtk
 from gi.repository import GConf
 import telepathy
