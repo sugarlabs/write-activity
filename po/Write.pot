@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 17:39+1100\n"
+"POT-Creation-Date: 2017-06-21 16:26+1000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,35 +27,67 @@ msgid ""
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
 
-#: widgets.py:118
-msgid "Rich Text (RTF)"
+#: AbiWordActivity.py:72
+msgid "Connecting..."
+msgstr ""
+
+#: AbiWordActivity.py:102
+msgid "Edit"
+msgstr ""
+
+#: AbiWordActivity.py:108
+msgid "View"
+msgstr ""
+
+#: AbiWordActivity.py:123
+msgid "Text"
+msgstr ""
+
+#: AbiWordActivity.py:129
+msgid "Paragraph"
+msgstr ""
+
+#: AbiWordActivity.py:135
+msgid "Table"
+msgstr ""
+
+#: AbiWordActivity.py:139
+msgid "Insert Image"
+msgstr ""
+
+#: AbiWordActivity.py:146
+msgid "Floating"
 msgstr ""
 
 #: widgets.py:120
+msgid "Rich Text (RTF)"
+msgstr ""
+
+#: widgets.py:122
 msgid "RTF"
 msgstr ""
 
-#: widgets.py:124
+#: widgets.py:126
 msgid "Hypertext (HTML)"
 msgstr ""
 
-#: widgets.py:126
+#: widgets.py:128
 msgid "HTML"
 msgstr ""
 
-#: widgets.py:131
+#: widgets.py:133
 msgid "Plain Text (TXT)"
 msgstr ""
 
-#: widgets.py:133
+#: widgets.py:135
 msgid "TXT"
 msgstr ""
 
-#: widgets.py:137
+#: widgets.py:139
 msgid "Portable Document Format (PDF)"
 msgstr ""
 
-#: widgets.py:139
+#: widgets.py:141
 msgid "PDF"
 msgstr ""
 
@@ -205,36 +237,4 @@ msgstr ""
 
 #: fontcombobox.py:90
 msgid "Select font"
-msgstr ""
-
-#: AbiWordActivity.py:69
-msgid "Connecting..."
-msgstr ""
-
-#: AbiWordActivity.py:99
-msgid "Edit"
-msgstr ""
-
-#: AbiWordActivity.py:105
-msgid "View"
-msgstr ""
-
-#: AbiWordActivity.py:120
-msgid "Text"
-msgstr ""
-
-#: AbiWordActivity.py:126
-msgid "Paragraph"
-msgstr ""
-
-#: AbiWordActivity.py:132
-msgid "Table"
-msgstr ""
-
-#: AbiWordActivity.py:136
-msgid "Insert Image"
-msgstr ""
-
-#: AbiWordActivity.py:143
-msgid "Floating"
 msgstr ""
