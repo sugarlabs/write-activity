@@ -1,3 +1,8 @@
+98.1
+
+* Update POT file
+* Fix Python GI API version warnings
+
 98
 
 * Update POT and refresh from Pootle, trim headers (Chris Leonard)
