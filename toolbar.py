@@ -72,14 +72,14 @@ class EditToolbar(Gtk.Toolbar):
         self.insert(separator, -1)
         separator.show()
 
-        undo = UndoButton(sensitive=False)
+        undo = UndoButton(sensitive=True)
         undo.connect('clicked', lambda button: pc.abiword_canvas.undo())
         pc.abiword_canvas.connect("can-undo", lambda abi, can_undo:
                                   undo.set_sensitive(can_undo))
         self.insert(undo, -1)
         undo.show()
 
-        redo = RedoButton(sensitive=False)
+        redo = RedoButton(sensitive=True)
         redo.connect('clicked', lambda button: pc.abiword_canvas.redo())
         pc.abiword_canvas.connect("can-redo", lambda abi, can_redo:
                                   redo.set_sensitive(can_redo))
