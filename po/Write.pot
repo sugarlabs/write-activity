@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-21 16:26+1000\n"
+"POT-Creation-Date: 2017-09-27 17:37+1000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,36 +59,8 @@ msgstr ""
 msgid "Floating"
 msgstr ""
 
-#: widgets.py:120
-msgid "Rich Text (RTF)"
-msgstr ""
-
-#: widgets.py:122
-msgid "RTF"
-msgstr ""
-
-#: widgets.py:126
-msgid "Hypertext (HTML)"
-msgstr ""
-
-#: widgets.py:128
-msgid "HTML"
-msgstr ""
-
-#: widgets.py:133
-msgid "Plain Text (TXT)"
-msgstr ""
-
-#: widgets.py:135
-msgid "TXT"
-msgstr ""
-
-#: widgets.py:139
-msgid "Portable Document Format (PDF)"
-msgstr ""
-
-#: widgets.py:141
-msgid "PDF"
+#: fontcombobox.py:90
+msgid "Select font"
 msgstr ""
 
 #: speechtoolbar.py:59
@@ -235,6 +207,34 @@ msgstr ""
 msgid "Upper Case List"
 msgstr ""
 
-#: fontcombobox.py:90
-msgid "Select font"
+#: widgets.py:123
+msgid "Rich Text (RTF)"
+msgstr ""
+
+#: widgets.py:125
+msgid "RTF"
+msgstr ""
+
+#: widgets.py:129
+msgid "Hypertext (HTML)"
+msgstr ""
+
+#: widgets.py:131
+msgid "HTML"
+msgstr ""
+
+#: widgets.py:136
+msgid "Plain Text (TXT)"
+msgstr ""
+
+#: widgets.py:138
+msgid "TXT"
+msgstr ""
+
+#: widgets.py:142
+msgid "Portable Document Format (PDF)"
+msgstr ""
+
+#: widgets.py:144
+msgid "PDF"
 msgstr ""
