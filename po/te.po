@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-24 17:39+1100\n"
-"PO-Revision-Date: 2017-03-28 05:46+0000\n"
-"Last-Translator: Chris <cjl@sugarlabs.org>\n"
+"PO-Revision-Date: 2017-04-04 16:31+0000\n"
+"Last-Translator: GeeKrypter <psramaraju@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: te\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.1.1\n"
-"X-POOTLE-MTIME: 1490679969.000000\n"
+"X-POOTLE-MTIME: 1491323482.000000\n"
 
 #: activity/activity.info:2
 msgid "Write"
@@ -54,11 +54,11 @@ msgstr "టి​ఎక్స్​టి(TXT)"
 
 #: widgets.py:137
 msgid "Portable Document Format (PDF)"
-msgstr ""
+msgstr "పోర్టబుల్ డాక్యుమెంట్ ఫార్మాట్ (PDF)"
 
 #: widgets.py:139
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 #: speechtoolbar.py:59
 msgid "Play / Pause"

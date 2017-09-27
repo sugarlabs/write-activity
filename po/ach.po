@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-24 17:39+1100\n"
-"PO-Revision-Date: 2017-03-14 03:30+0000\n"
-"Last-Translator: Chris <cjl@sugarlabs.org>\n"
+"PO-Revision-Date: 2017-05-07 10:10+0000\n"
+"Last-Translator: Olot <agwanta2004@yahoo.co.uk>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ach\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.5.1.1\n"
-"X-POOTLE-MTIME: 1489462220.000000\n"
+"X-POOTLE-MTIME: 1494151811.000000\n"
 
 #: activity/activity.info:2
 msgid "Write"
@@ -32,39 +32,39 @@ msgstr ""
 
 #: widgets.py:118
 msgid "Rich Text (RTF)"
-msgstr ""
+msgstr "Rich Text (RTF)"
 
 #: widgets.py:120
 msgid "RTF"
-msgstr ""
+msgstr "RTF"
 
 #: widgets.py:124
 msgid "Hypertext (HTML)"
-msgstr ""
+msgstr "Hypertext (HTML)"
 
 #: widgets.py:126
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #: widgets.py:131
 msgid "Plain Text (TXT)"
-msgstr ""
+msgstr "Plain Text (TXT)"
 
 #: widgets.py:133
 msgid "TXT"
-msgstr ""
+msgstr "TXT"
 
 #: widgets.py:137
 msgid "Portable Document Format (PDF)"
-msgstr ""
+msgstr "Portable Document Format (PDF)"
 
 #: widgets.py:139
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 #: speechtoolbar.py:59
 msgid "Play / Pause"
-msgstr "Tuki / Juki"
+msgstr "Tuki / Cungi"
 
 #: speechtoolbar.py:67
 msgid "Stop"
@@ -72,7 +72,7 @@ msgstr "Juki"
 
 #: toolbar.py:100
 msgid "Search"
-msgstr "Yeny"
+msgstr "Yenyi"
 
 #: toolbar.py:117
 msgid "Find previous"
@@ -160,55 +160,55 @@ msgstr "Ocung"
 
 #: toolbar.py:577
 msgid "Heading 1"
-msgstr ""
+msgstr "Wie malo 1"
 
 #: toolbar.py:581
 msgid "Heading 2"
-msgstr ""
+msgstr "Wie malo 2"
 
 #: toolbar.py:585
 msgid "Heading 3"
-msgstr ""
+msgstr "Wie malo 3"
 
 #: toolbar.py:589
 msgid "Heading 4"
-msgstr ""
+msgstr "Wie malo 4"
 
 #: toolbar.py:593
 msgid "Block Text"
-msgstr ""
+msgstr "Geng Coc oko"
 
 #: toolbar.py:597
 msgid "Plain Text"
-msgstr ""
+msgstr "Coc Keken"
 
 #: toolbar.py:612
 msgid "Select list"
-msgstr ""
+msgstr "Yer lic"
 
 #: toolbar.py:630
 msgid "Bullet List"
-msgstr ""
+msgstr "Lic me Tonton"
 
 #: toolbar.py:635
 msgid "Dashed List"
-msgstr ""
+msgstr "Lic me ocicio"
 
 #: toolbar.py:640
 msgid "Numbered List"
-msgstr ""
+msgstr "Lic me namba"
 
 #: toolbar.py:645
 msgid "Lower Case List"
-msgstr ""
+msgstr "Lic me Nyukta Atino"
 
 #: toolbar.py:650
 msgid "Upper Case List"
-msgstr ""
+msgstr "Lic me Nyukta Adongo"
 
 #: fontcombobox.py:90
 msgid "Select font"
-msgstr "Yer dit me coc"
+msgstr "Yer kite me coc"
 
 #: AbiWordActivity.py:69
 msgid "Connecting..."

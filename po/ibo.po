@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-24 17:39+1100\n"
-"PO-Revision-Date: 2017-03-28 05:11+0000\n"
-"Last-Translator: Chris <cjl@sugarlabs.org>\n"
+"PO-Revision-Date: 2017-08-30 10:27+0000\n"
+"Last-Translator: Ifeanyi <imattew3@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ibo\n"
 "MIME-Version: 1.0\n"
@@ -16,18 +16,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Pootle 2.5.1.1\n"
-"X-POOTLE-MTIME: 1490677890.000000\n"
+"X-POOTLE-MTIME: 1504088838.000000\n"
 
 #: activity/activity.info:2
 msgid "Write"
-msgstr "Dee"
+msgstr "Deé"
 
 #: activity/activity.info:3
 msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
-"Dee na-enye a ohere itinye okwu gị. Dee a akụkọ, uri, akụkọ, ihe ọ bụla! "
+"Deé na-enye a ohere itinye okwu gị. Deé a akụkọ, uri, akụkọ, ihe ọ bụla! "
 "Gbalịa na-agbanwe agbanwe na anya, ma hà gị ederede; ọbụna fanye ihe oyiyi!"
 
 #: widgets.py:118
@@ -66,16 +66,15 @@ msgstr "PDF"
 
 #: speechtoolbar.py:59
 msgid "Play / Pause"
-msgstr "Play / kwụsịtụ"
+msgstr "Kgba / kwụsịtụ"
 
 #: speechtoolbar.py:67
 msgid "Stop"
 msgstr "Kwụsị"
 
 #: toolbar.py:100
-#, fuzzy
 msgid "Search"
-msgstr "Search"
+msgstr "Chúo"
 
 #: toolbar.py:117
 msgid "Find previous"

@@ -1,39 +1,38 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# This file is distributed under the same license as the Write package.
+# Božidar Putanec <bozidarp@yahoo.com>, 2017.
 msgid ""
 msgstr ""
-"Project-Id-Version: Sugar Fructose Write\n"
+"Project-Id-Version: Write\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-24 17:39+1100\n"
-"PO-Revision-Date: 2017-04-12 11:46+0000\n"
-"Last-Translator: OdettePretorius <odettepret@gmail.com>\n"
-"Language-Team: AF <af@translate.sugarlabs.org>\n"
-"Language: af\n"
+"PO-Revision-Date: 2017-05-16 15:37-0700\n"
+"Last-Translator: Božidar Putanec <bozidarp@yahoo.com>\n"
+"Language-Team: Croatian <LL@li.org>\n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.5.1.1\n"
-"X-POOTLE-MTIME: 1491997588.000000\n"
+"X-Generator: Poedit 2.0.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: activity/activity.info:2
 msgid "Write"
-msgstr "Skryf"
+msgstr "Pišemo"
 
 #: activity/activity.info:3
 msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
-"Skryf bied 'n ruimte om jou woorde te sit. Skryf 'n storie, gedig, verslag, "
-"enige iets! Probeer om die  die voorkoms, en grootte van jou teks te "
-"verander; voeg selfs 'n beeld in!"
+"Pišemo ti pruža prostor po kojemu možeš pisati. Napiši priču, pjesmu, "
+"izvještaj, bilo što. Pokušaj mijenjati izgled i veličinu teksta; pa čak "
+"umetni i sliku u svoj tekst!"
 
 #: widgets.py:118
 msgid "Rich Text (RTF)"
-msgstr "Geformateerde Teks (RTF)"
+msgstr "RTF, Rich format"
 
 #: widgets.py:120
 msgid "RTF"
@@ -41,7 +40,7 @@ msgstr "RTF"
 
 #: widgets.py:124
 msgid "Hypertext (HTML)"
-msgstr "Hiperteks (HTML)"
+msgstr "HTML, Hypertext format"
 
 #: widgets.py:126
 msgid "HTML"
@@ -49,7 +48,7 @@ msgstr "HTML"
 
 #: widgets.py:131
 msgid "Plain Text (TXT)"
-msgstr "Skoonteks (TXT)"
+msgstr "TXT, običan tekst"
 
 #: widgets.py:133
 msgid "TXT"
@@ -57,7 +56,7 @@ msgstr "TXT"
 
 #: widgets.py:137
 msgid "Portable Document Format (PDF)"
-msgstr "Draagbare Dokument Formaat (PDF)"
+msgstr "PDF, Portable Document Format"
 
 #: widgets.py:139
 msgid "PDF"
@@ -65,7 +64,7 @@ msgstr "PDF"
 
 #: speechtoolbar.py:59
 msgid "Play / Pause"
-msgstr "Speel/Vries"
+msgstr "Kreni/Stani"
 
 #: speechtoolbar.py:67
 msgid "Stop"
@@ -73,47 +72,47 @@ msgstr "Stop"
 
 #: toolbar.py:100
 msgid "Search"
-msgstr "Soek"
+msgstr "Traži"
 
 #: toolbar.py:117
 msgid "Find previous"
-msgstr "Vind vorige"
+msgstr "Nađi prethodni"
 
 #: toolbar.py:123
 msgid "Find next"
-msgstr "Vind volgende"
+msgstr "Nađi sljedeći"
 
 #: toolbar.py:226
 msgid "Create table"
-msgstr "Skep tafel"
+msgstr "Stvori tablicu"
 
 #: toolbar.py:236
 msgid "Insert Row"
-msgstr "Voeg ry in"
+msgstr "Umetni redak"
 
 #: toolbar.py:242
 msgid "Delete Row"
-msgstr "Vee ry uit"
+msgstr "Izbriši redak"
 
 #: toolbar.py:248
 msgid "Insert Column"
-msgstr "Voeg kolom in"
+msgstr "Umetni stupac"
 
 #: toolbar.py:254
 msgid "Delete Column"
-msgstr "Vee kolom uit"
+msgstr "Izbriši stupac"
 
 #: toolbar.py:299
 msgid "Zoom Out"
-msgstr "Zoem Uit"
+msgstr "Smanjivanje"
 
 #: toolbar.py:306
 msgid "Zoom In"
-msgstr "Zoem In"
+msgstr "Povećavanje"
 
 #: toolbar.py:313
 msgid "Zoom to width"
-msgstr "Zoem tot breedte"
+msgstr "Povećaj do širine"
 
 #: toolbar.py:330
 msgid "%"
@@ -121,124 +120,124 @@ msgstr "%"
 
 #: toolbar.py:342
 msgid "Page: "
-msgstr "Bladsy: "
+msgstr "Stranica: "
 
 #: toolbar.py:441
 msgid "Bold"
-msgstr "Vetdruk"
+msgstr "Podebljana"
 
 #: toolbar.py:450
 msgid "Italic"
-msgstr "Skuinsdruk"
+msgstr "Kosa"
 
 #: toolbar.py:460
 msgid "Underline"
-msgstr "Onderstreep"
+msgstr "Podcrtana"
 
 #: toolbar.py:490
 msgid "Choose alignment"
-msgstr "Kies belyning"
+msgstr "Poravnavanje teksta"
 
 #: toolbar.py:498
 msgid "Left justify"
-msgstr "Belyn links"
+msgstr "Lijevo"
 
 #: toolbar.py:502
 msgid "Center justify"
-msgstr "Alkantbelyn"
+msgstr "Centrirano"
 
 #: toolbar.py:506
 msgid "Right justify"
-msgstr "Belyn regs"
+msgstr "Desno"
 
 #: toolbar.py:510
 msgid "Fill justify"
-msgstr "Belyn vulling"
+msgstr "Obostrano"
 
 #: toolbar.py:571 toolbar.py:620
 msgid "Normal"
-msgstr "Normaal"
+msgstr "Normalno"
 
 #: toolbar.py:577
 msgid "Heading 1"
-msgstr "Opskrif 1"
+msgstr "Naslov 1"
 
 #: toolbar.py:581
 msgid "Heading 2"
-msgstr "Opskrif 2"
+msgstr "Naslov 2"
 
 #: toolbar.py:585
 msgid "Heading 3"
-msgstr "Opskrif 3"
+msgstr "Naslov 3"
 
 #: toolbar.py:589
 msgid "Heading 4"
-msgstr "Opskrif 4"
+msgstr "Naslov 4"
 
 #: toolbar.py:593
 msgid "Block Text"
-msgstr "Blokteks"
+msgstr "Uvučeni odlomak teksta"
 
 #: toolbar.py:597
 msgid "Plain Text"
-msgstr "Skoonteks"
+msgstr "Običan tekst"
 
 #: toolbar.py:612
 msgid "Select list"
-msgstr "Kies lys"
+msgstr "Nabrajanje"
 
 #: toolbar.py:630
 msgid "Bullet List"
-msgstr "Kollys"
+msgstr "Točkama"
 
 #: toolbar.py:635
 msgid "Dashed List"
-msgstr "Streeplys"
+msgstr "Crticama"
 
 #: toolbar.py:640
 msgid "Numbered List"
-msgstr "Nommerlys"
+msgstr "Brojkama"
 
 #: toolbar.py:645
 msgid "Lower Case List"
-msgstr "Kleinletterlys"
+msgstr "Mala slova"
 
 #: toolbar.py:650
 msgid "Upper Case List"
-msgstr "Hoofletterlys"
+msgstr "Velika slova"
 
 #: fontcombobox.py:90
 msgid "Select font"
-msgstr "Kies lettertipe"
+msgstr "Tipovi slova"
 
 #: AbiWordActivity.py:69
 msgid "Connecting..."
-msgstr "Konnekteer..."
+msgstr "Spajam se..."
 
 #: AbiWordActivity.py:99
 msgid "Edit"
-msgstr "Redigeer"
+msgstr "Uredi"
 
 #: AbiWordActivity.py:105
 msgid "View"
-msgstr "Bekyk"
+msgstr "Pregled"
 
 #: AbiWordActivity.py:120
 msgid "Text"
-msgstr "Teks"
+msgstr "Tekst"
 
 #: AbiWordActivity.py:126
 msgid "Paragraph"
-msgstr "Paragraaf"
+msgstr "Odlomak"
 
 #: AbiWordActivity.py:132
 msgid "Table"
-msgstr "Tabel"
+msgstr "Tablica"
 
 #: AbiWordActivity.py:136
 msgid "Insert Image"
-msgstr "Voeg prent in"
+msgstr "Umetni sliku"
 
 #: AbiWordActivity.py:143
 msgid "Floating"
-msgstr "Drywende"
+msgstr "Plutajuću"
