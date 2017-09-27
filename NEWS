@@ -1,3 +1,7 @@
+98.3
+
+* Fix initial state of Undo and Redo buttons (James Cameron)
+
 98.2
 
 * Fix for fail to start with Abiword 2.9 on Fedora 18
