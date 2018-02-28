@@ -7,33 +7,34 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-24 17:39+1100\n"
-"PO-Revision-Date: 2018-02-10 12:47+0000\n"
-"Last-Translator: Besnik_b <besnik@programeshqip.org>\n"
+"PO-Revision-Date: 2017-11-12 19:11+0000\n"
+"Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: sq\n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.5.1.1\n"
-"X-POOTLE-MTIME: 1518266834.000000\n"
+"X-POOTLE-MTIME: 1510513874.000000\n"
 
 #: activity/activity.info:2
 msgid "Write"
-msgstr "Shkruani"
+msgstr "Rašyti"
 
 #: activity/activity.info:3
 msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
-"Veprimtaria Shkruani ju jep një hapësirë ku të vendosni fjalët tuaja. "
-"Shkruani një histori, poemë, raport, ç’të doni! Provoni të ndryshoni pamjen, "
-"dhe madhësinë e shkronjave për tekstin tuaj, madje edhe të futni figura!"
+"Rašyti pateikia vietos išdėstyti savo žodžius. Rašykite istoriją, poemą, "
+"ataskaitą, bet ką! Pabandykite pakeisti savo teksto išvaizdą ir dydį; netgi "
+"įterpkite paveikslą!"
 
 #: widgets.py:118
 msgid "Rich Text (RTF)"
-msgstr "Tekst i Pasur (RTF)"
+msgstr "Raiškusis tekstas (RTF)"
 
 #: widgets.py:120
 msgid "RTF"
@@ -41,7 +42,7 @@ msgstr "RTF"
 
 #: widgets.py:124
 msgid "Hypertext (HTML)"
-msgstr "Hipertekst (HTML)"
+msgstr "Hipertekstas (HTML)"
 
 #: widgets.py:126
 msgid "HTML"
@@ -49,7 +50,7 @@ msgstr "HTML"
 
 #: widgets.py:131
 msgid "Plain Text (TXT)"
-msgstr "Tekst i Thjeshtë (TXT)"
+msgstr "Grynasis tekstas (TXT)"
 
 #: widgets.py:133
 msgid "TXT"
@@ -57,7 +58,7 @@ msgstr "TXT"
 
 #: widgets.py:137
 msgid "Portable Document Format (PDF)"
-msgstr "Portable Document Format (PDF)"
+msgstr "PDF formatas (PDF)"
 
 #: widgets.py:139
 msgid "PDF"
@@ -65,55 +66,55 @@ msgstr "PDF"
 
 #: speechtoolbar.py:59
 msgid "Play / Pause"
-msgstr "Luaje / Pushoje"
+msgstr "Groti / Pristabdyti"
 
 #: speechtoolbar.py:67
 msgid "Stop"
-msgstr "Ndale"
+msgstr "Stabdyti"
 
 #: toolbar.py:100
 msgid "Search"
-msgstr "Kërko"
+msgstr "Ieškoti"
 
 #: toolbar.py:117
 msgid "Find previous"
-msgstr "Gjej të mëparshmin"
+msgstr "Rasti ankstesnį"
 
 #: toolbar.py:123
 msgid "Find next"
-msgstr "Gjej pasuesin"
+msgstr "Rasti kitą"
 
 #: toolbar.py:226
 msgid "Create table"
-msgstr "Krijoni tabelë"
+msgstr "Sukurti lentelę"
 
 #: toolbar.py:236
 msgid "Insert Row"
-msgstr "Futni Rresht"
+msgstr "Įterpti eilutę"
 
 #: toolbar.py:242
 msgid "Delete Row"
-msgstr "Fshije Rreshtin"
+msgstr "Ištrinti eilutę"
 
 #: toolbar.py:248
 msgid "Insert Column"
-msgstr "Futni Shtyllë"
+msgstr "Įterpti stulpelį"
 
 #: toolbar.py:254
 msgid "Delete Column"
-msgstr "Fshije Shtyllën"
+msgstr "Ištrinti stulpelį"
 
 #: toolbar.py:299
 msgid "Zoom Out"
-msgstr "Zvogëloje"
+msgstr "Mažinti"
 
 #: toolbar.py:306
 msgid "Zoom In"
-msgstr "Zmadhoje"
+msgstr "Didinti"
 
 #: toolbar.py:313
 msgid "Zoom to width"
-msgstr "Zmadhoje sa gjerësia e faqes"
+msgstr "Talpinti pagal plotį"
 
 #: toolbar.py:330
 msgid "%"
@@ -121,124 +122,124 @@ msgstr "%"
 
 #: toolbar.py:342
 msgid "Page: "
-msgstr "Faqe: "
+msgstr "Puslapis: "
 
 #: toolbar.py:441
 msgid "Bold"
-msgstr "të Trasha"
+msgstr "Pusjuodis"
 
 #: toolbar.py:450
 msgid "Italic"
-msgstr "Të pjerrëta"
+msgstr "Kursyvas"
 
 #: toolbar.py:460
 msgid "Underline"
-msgstr "Nënvijë"
+msgstr "Pabraukimas"
 
 #: toolbar.py:490
 msgid "Choose alignment"
-msgstr "Zgjidhni drejtim"
+msgstr "Pasirinkite lygiavimą"
 
 #: toolbar.py:498
 msgid "Left justify"
-msgstr "Justifikim i majtë"
+msgstr "Lygiuoti kairėje"
 
 #: toolbar.py:502
 msgid "Center justify"
-msgstr "Justifikim i qendra"
+msgstr "Lygiuoti centre"
 
 #: toolbar.py:506
 msgid "Right justify"
-msgstr "Justifikim i djathtë"
+msgstr "Lygiuoti dešinėje"
 
 #: toolbar.py:510
 msgid "Fill justify"
-msgstr "Plotësoni justifikimin"
+msgstr "Abipusis lygiavimas"
 
 #: toolbar.py:571 toolbar.py:620
 msgid "Normal"
-msgstr "Normale"
+msgstr "Normalus"
 
 #: toolbar.py:577
 msgid "Heading 1"
-msgstr "Titulli 1"
+msgstr "Antraštė 1"
 
 #: toolbar.py:581
 msgid "Heading 2"
-msgstr "Titulli 2"
+msgstr "Antraštė 2"
 
 #: toolbar.py:585
 msgid "Heading 3"
-msgstr "Titulli 3"
+msgstr "Antraštė 3"
 
 #: toolbar.py:589
 msgid "Heading 4"
-msgstr "Titulli 4"
+msgstr "Antraštė 4"
 
 #: toolbar.py:593
 msgid "Block Text"
-msgstr "Blloko Tekstin"
+msgstr "Teksto blokas"
 
 #: toolbar.py:597
 msgid "Plain Text"
-msgstr "Tekst i Thjeshtë"
+msgstr "Grynasis tekstas"
 
 #: toolbar.py:612
 msgid "Select list"
-msgstr "Përzgjidhni listë"
+msgstr "Pasirinkite sąrašą"
 
 #: toolbar.py:630
 msgid "Bullet List"
-msgstr "Listë me Toptha"
+msgstr "Sąrašas su ženkleliais"
 
 #: toolbar.py:635
 msgid "Dashed List"
-msgstr "Listë me Vija"
+msgstr "Sąrašas su brūkšneliais"
 
 #: toolbar.py:640
 msgid "Numbered List"
-msgstr "Listë me Numra"
+msgstr "Sąrašas su numeriais"
 
 #: toolbar.py:645
 msgid "Lower Case List"
-msgstr "Listë me të Vogla "
+msgstr "Sąrašas su mažosiomis raidėmis"
 
 #: toolbar.py:650
 msgid "Upper Case List"
-msgstr "Listë me të Mëdha "
+msgstr "Sąrašas su didžiosiomis raidėmis"
 
 #: fontcombobox.py:90
 msgid "Select font"
-msgstr "Përzgjidhni shkronja"
+msgstr "Pasirinkite šriftą"
 
 #: AbiWordActivity.py:69
 msgid "Connecting..."
-msgstr "Po lidhet…"
+msgstr "Jungiamasi..."
 
 #: AbiWordActivity.py:99
 msgid "Edit"
-msgstr "Përpunoni"
+msgstr "Taisa"
 
 #: AbiWordActivity.py:105
 msgid "View"
-msgstr "Shiheni"
+msgstr "Rodinys"
 
 #: AbiWordActivity.py:120
 msgid "Text"
-msgstr "Tekst"
+msgstr "Tekstas"
 
 #: AbiWordActivity.py:126
 msgid "Paragraph"
-msgstr "Paragraf"
+msgstr "Pastraipa"
 
 #: AbiWordActivity.py:132
 msgid "Table"
-msgstr "Tabelë"
+msgstr "Lentelė"
 
 #: AbiWordActivity.py:136
 msgid "Insert Image"
-msgstr "Futni Figurë"
+msgstr "Įterpti paveikslą"
 
 #: AbiWordActivity.py:143
 msgid "Floating"
-msgstr "Pezull"
+msgstr "Slankus"

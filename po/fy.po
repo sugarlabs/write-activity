@@ -7,33 +7,33 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-24 17:39+1100\n"
-"PO-Revision-Date: 2018-02-10 12:47+0000\n"
-"Last-Translator: Besnik_b <besnik@programeshqip.org>\n"
+"PO-Revision-Date: 2017-12-15 18:37+0000\n"
+"Last-Translator: Berend <berendy@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: sq\n"
+"Language: fy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.1.1\n"
-"X-POOTLE-MTIME: 1518266834.000000\n"
+"X-POOTLE-MTIME: 1513363048.000000\n"
 
 #: activity/activity.info:2
 msgid "Write"
-msgstr "Shkruani"
+msgstr "Skriuwe"
 
 #: activity/activity.info:3
 msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
-"Veprimtaria Shkruani ju jep një hapësirë ku të vendosni fjalët tuaja. "
-"Shkruani një histori, poemë, raport, ç’të doni! Provoni të ndryshoni pamjen, "
-"dhe madhësinë e shkronjave për tekstin tuaj, madje edhe të futni figura!"
+"Write ferskaft in romte om dyn wurden del te setten. Skriuw in ferhaal, "
+"gedicht, ferslach, wat dan ek! Besykje it uterlik te feroarjen en de grutte "
+"fan dyn tekst; sels in ôfbylding ynfoegje kin gewoan!"
 
 #: widgets.py:118
 msgid "Rich Text (RTF)"
-msgstr "Tekst i Pasur (RTF)"
+msgstr "Rike tekst (RTF)"
 
 #: widgets.py:120
 msgid "RTF"
@@ -41,7 +41,7 @@ msgstr "RTF"
 
 #: widgets.py:124
 msgid "Hypertext (HTML)"
-msgstr "Hipertekst (HTML)"
+msgstr "Hypertekst (HTML)"
 
 #: widgets.py:126
 msgid "HTML"
@@ -49,7 +49,7 @@ msgstr "HTML"
 
 #: widgets.py:131
 msgid "Plain Text (TXT)"
-msgstr "Tekst i Thjeshtë (TXT)"
+msgstr "Platte tekst (TXT)"
 
 #: widgets.py:133
 msgid "TXT"
@@ -65,55 +65,55 @@ msgstr "PDF"
 
 #: speechtoolbar.py:59
 msgid "Play / Pause"
-msgstr "Luaje / Pushoje"
+msgstr "Ofspylje / Skoftsje"
 
 #: speechtoolbar.py:67
 msgid "Stop"
-msgstr "Ndale"
+msgstr "Ophâlde"
 
 #: toolbar.py:100
 msgid "Search"
-msgstr "Kërko"
+msgstr "Sykje"
 
 #: toolbar.py:117
 msgid "Find previous"
-msgstr "Gjej të mëparshmin"
+msgstr "Foarige sykje"
 
 #: toolbar.py:123
 msgid "Find next"
-msgstr "Gjej pasuesin"
+msgstr "Folgjende sykje"
 
 #: toolbar.py:226
 msgid "Create table"
-msgstr "Krijoni tabelë"
+msgstr "Tabel oanmeitsje"
 
 #: toolbar.py:236
 msgid "Insert Row"
-msgstr "Futni Rresht"
+msgstr "Rige ynfoegje"
 
 #: toolbar.py:242
 msgid "Delete Row"
-msgstr "Fshije Rreshtin"
+msgstr "Rige wiskje"
 
 #: toolbar.py:248
 msgid "Insert Column"
-msgstr "Futni Shtyllë"
+msgstr "Kolom ynfoegje"
 
 #: toolbar.py:254
 msgid "Delete Column"
-msgstr "Fshije Shtyllën"
+msgstr "Kolom wiskje"
 
 #: toolbar.py:299
 msgid "Zoom Out"
-msgstr "Zvogëloje"
+msgstr "Zoom út"
 
 #: toolbar.py:306
 msgid "Zoom In"
-msgstr "Zmadhoje"
+msgstr "Zoom yn"
 
 #: toolbar.py:313
 msgid "Zoom to width"
-msgstr "Zmadhoje sa gjerësia e faqes"
+msgstr "Zoom nei breedte"
 
 #: toolbar.py:330
 msgid "%"
@@ -121,107 +121,107 @@ msgstr "%"
 
 #: toolbar.py:342
 msgid "Page: "
-msgstr "Faqe: "
+msgstr "Side: "
 
 #: toolbar.py:441
 msgid "Bold"
-msgstr "të Trasha"
+msgstr "Fet"
 
 #: toolbar.py:450
 msgid "Italic"
-msgstr "Të pjerrëta"
+msgstr "Skeanprinte"
 
 #: toolbar.py:460
 msgid "Underline"
-msgstr "Nënvijë"
+msgstr "Understreek"
 
 #: toolbar.py:490
 msgid "Choose alignment"
-msgstr "Zgjidhni drejtim"
+msgstr "Rjochting kieze"
 
 #: toolbar.py:498
 msgid "Left justify"
-msgstr "Justifikim i majtë"
+msgstr "Links rjochtsje"
 
 #: toolbar.py:502
 msgid "Center justify"
-msgstr "Justifikim i qendra"
+msgstr "Sintraal rjochtsje"
 
 #: toolbar.py:506
 msgid "Right justify"
-msgstr "Justifikim i djathtë"
+msgstr "Rjochts rjochtsje"
 
 #: toolbar.py:510
 msgid "Fill justify"
-msgstr "Plotësoni justifikimin"
+msgstr "Utfolle rjochtsje"
 
 #: toolbar.py:571 toolbar.py:620
 msgid "Normal"
-msgstr "Normale"
+msgstr "Normaal"
 
 #: toolbar.py:577
 msgid "Heading 1"
-msgstr "Titulli 1"
+msgstr "Koptekst 1"
 
 #: toolbar.py:581
 msgid "Heading 2"
-msgstr "Titulli 2"
+msgstr "Koptekst 2"
 
 #: toolbar.py:585
 msgid "Heading 3"
-msgstr "Titulli 3"
+msgstr "Koptekst 3"
 
 #: toolbar.py:589
 msgid "Heading 4"
-msgstr "Titulli 4"
+msgstr "Koptekst 4"
 
 #: toolbar.py:593
 msgid "Block Text"
-msgstr "Blloko Tekstin"
+msgstr "Tekst blok"
 
 #: toolbar.py:597
 msgid "Plain Text"
-msgstr "Tekst i Thjeshtë"
+msgstr "Platte tekst"
 
 #: toolbar.py:612
 msgid "Select list"
-msgstr "Përzgjidhni listë"
+msgstr "List selektearje"
 
 #: toolbar.py:630
 msgid "Bullet List"
-msgstr "Listë me Toptha"
+msgstr "Punten list"
 
 #: toolbar.py:635
 msgid "Dashed List"
-msgstr "Listë me Vija"
+msgstr "Streke list"
 
 #: toolbar.py:640
 msgid "Numbered List"
-msgstr "Listë me Numra"
+msgstr "Nûmere list"
 
 #: toolbar.py:645
 msgid "Lower Case List"
-msgstr "Listë me të Vogla "
+msgstr "Lytse letter list"
 
 #: toolbar.py:650
 msgid "Upper Case List"
-msgstr "Listë me të Mëdha "
+msgstr "Haadletter list"
 
 #: fontcombobox.py:90
 msgid "Select font"
-msgstr "Përzgjidhni shkronja"
+msgstr "Lettertype selektearje"
 
 #: AbiWordActivity.py:69
 msgid "Connecting..."
-msgstr "Po lidhet…"
+msgstr "Ferbine..."
 
 #: AbiWordActivity.py:99
 msgid "Edit"
-msgstr "Përpunoni"
+msgstr "Bewurkje"
 
 #: AbiWordActivity.py:105
 msgid "View"
-msgstr "Shiheni"
+msgstr "Byld"
 
 #: AbiWordActivity.py:120
 msgid "Text"
@@ -229,16 +229,16 @@ msgstr "Tekst"
 
 #: AbiWordActivity.py:126
 msgid "Paragraph"
-msgstr "Paragraf"
+msgstr "Alinea"
 
 #: AbiWordActivity.py:132
 msgid "Table"
-msgstr "Tabelë"
+msgstr "Tabel"
 
 #: AbiWordActivity.py:136
 msgid "Insert Image"
-msgstr "Futni Figurë"
+msgstr "Ofbylding ynfoegje"
 
 #: AbiWordActivity.py:143
 msgid "Floating"
-msgstr "Pezull"
+msgstr "Driuwend"

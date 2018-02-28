@@ -7,14 +7,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-24 17:39+1100\n"
-"PO-Revision-Date: 2008-07-11 01:33-0400\n"
-"Last-Translator: Denis Oštir <denis.ostir@gmail.com>\n"
+"PO-Revision-Date: 2017-12-03 16:36+0000\n"
+"Last-Translator: Martin <miles@filmsi.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 1.1.0rc2\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3);\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1512318962.000000\n"
 
 #: activity/activity.info:2
 msgid "Write"
@@ -25,6 +28,9 @@ msgid ""
 "Write provides a space to put your words. Write a story, poem, report, "
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
+"Piši je prostor za beleženje tvojih besed. Napiši zgodbo, pesem, poročilo, "
+"kar želiš! Spremeniš lahko videz in velikost besedila; vstaviš lahko tudi "
+"slike!"
 
 #: widgets.py:118
 msgid "Rich Text (RTF)"
@@ -60,11 +66,11 @@ msgstr "PDF"
 
 #: speechtoolbar.py:59
 msgid "Play / Pause"
-msgstr ""
+msgstr "Predvajaj / prekini"
 
 #: speechtoolbar.py:67
 msgid "Stop"
-msgstr ""
+msgstr "Ustavi"
 
 #: toolbar.py:100
 msgid "Search"
@@ -80,7 +86,7 @@ msgstr "Najdi naslednjega"
 
 #: toolbar.py:226
 msgid "Create table"
-msgstr ""
+msgstr "Ustvari tabelo"
 
 #: toolbar.py:236
 msgid "Insert Row"
@@ -108,7 +114,7 @@ msgstr "Približaj"
 
 #: toolbar.py:313
 msgid "Zoom to width"
-msgstr ""
+msgstr "Povečaj na širino"
 
 #: toolbar.py:330
 msgid "%"
@@ -132,7 +138,7 @@ msgstr "Podčrtano"
 
 #: toolbar.py:490
 msgid "Choose alignment"
-msgstr ""
+msgstr "Izberite poravnavo"
 
 #: toolbar.py:498
 msgid "Left justify"
@@ -181,15 +187,15 @@ msgstr "Golo besedilo"
 
 #: toolbar.py:612
 msgid "Select list"
-msgstr ""
+msgstr "Izberite seznam"
 
 #: toolbar.py:630
 msgid "Bullet List"
-msgstr "Seznam z alineami"
+msgstr "Seznam z oznakami"
 
 #: toolbar.py:635
 msgid "Dashed List"
-msgstr "Seznam z alineami"
+msgstr "Seznam z alinejami"
 
 #: toolbar.py:640
 msgid "Numbered List"
@@ -201,19 +207,19 @@ msgstr "Seznam z malimi črkami"
 
 #: toolbar.py:650
 msgid "Upper Case List"
-msgstr "Seznam v velikimi črkami"
+msgstr "Seznam z velikimi črkami"
 
 #: fontcombobox.py:90
 msgid "Select font"
-msgstr ""
+msgstr "Izberite pisavo"
 
 #: AbiWordActivity.py:69
 msgid "Connecting..."
-msgstr ""
+msgstr "Povezovanje ..."
 
 #: AbiWordActivity.py:99
 msgid "Edit"
-msgstr "Urejanje"
+msgstr "Uredi"
 
 #: AbiWordActivity.py:105
 msgid "View"
