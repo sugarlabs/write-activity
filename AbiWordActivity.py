@@ -42,6 +42,8 @@ from sugar3.graphics.toolbarbox import ToolbarButton, ToolbarBox
 from sugar3.graphics import style
 from sugar3.graphics.icon import Icon
 from sugar3.graphics.xocolor import XoColor
+from sugar3.graphics.palettemenu import PaletteMenuBox
+from sugar3.graphics.palettemenu import PaletteMenuItem
 
 from toolbar import EditToolbar
 from toolbar import ViewToolbar
@@ -137,18 +139,17 @@ class AbiWordActivity(activity.Activity):
 
         image = ToolButton('insert-picture')
         image.set_tooltip(_('Insert Image'))
-        self._image_id = image.connect('clicked', self._image_cb)
+        self._image_id = image.connect('clicked', self.__image_cb)
         toolbar_box.toolbar.insert(image, -1)
 
         palette = image.get_palette()
-        content_box = Gtk.VBox()
-        palette.set_content(content_box)
-        image_floating_checkbutton = Gtk.CheckButton(_('Floating'))
-        image_floating_checkbutton.connect(
-            'toggled', self._image_floating_checkbutton_toggled_cb)
-        content_box.pack_start(image_floating_checkbutton, True, True, 0)
-        content_box.show_all()
-        self.floating_image = False
+        box = PaletteMenuBox()
+        palette.set_content(box)
+        box.show()
+        menu_item = PaletteMenuItem(_('Floating'))
+        menu_item.connect('activate', self.__image_cb, True)
+        box.append_item(menu_item)
+        menu_item.show()
 
         separator = Gtk.SeparatorToolItem()
         separator.props.draw = False
@@ -474,10 +475,7 @@ class AbiWordActivity(activity.Activity):
         return self.metadata['mime_type'] in ['text/plain', 'text/csv'] or \
             'text/plain' in mime_parents
 
-    def _image_floating_checkbutton_toggled_cb(self, checkbutton):
-        self.floating_image = checkbutton.get_active()
-
-    def _image_cb(self, button):
+    def __image_cb(self, button, floating=False):
         try:
             chooser = ObjectChooser(self, what_filter='Image',
                                     filter_type=FILTER_TYPE_GENERIC_MIME,
@@ -494,7 +492,7 @@ class AbiWordActivity(activity.Activity):
                 jobject = chooser.get_selected_object()
                 if jobject and jobject.file_path:
                     self.abiword_canvas.insert_image(jobject.file_path,
-                                                     self.floating_image)
+                                                     floating)
         finally:
             chooser.destroy()
             del chooser
