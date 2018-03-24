@@ -19,6 +19,11 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 
+from sugar3.graphics import style
+
+
+HALF_LINE = int(style.LINE_WIDTH / 2)
+
 
 class GridCreateWidget(Gtk.DrawingArea):
 
@@ -28,12 +33,16 @@ class GridCreateWidget(Gtk.DrawingArea):
 
     def __init__(self):
         super(GridCreateWidget, self).__init__()
-        self._cell_width = 75  # will be style.GRID_CELL_SIZE
+        self._cell_width = style.GRID_CELL_SIZE
         self._cell_height = int(self._cell_width / 2)
         self._rows = 0
         self._columns = 0
         self._min_rows = 3
         self._min_columns = 3
+
+        # Padding to the sides are not added automatically
+        self.props.margin_left = style.DEFAULT_SPACING
+        self.props.margin_right = style.DEFAULT_SPACING
 
         self._update_size()
         self.connect('draw', self.__draw_cb)
@@ -73,35 +82,43 @@ class GridCreateWidget(Gtk.DrawingArea):
         self._width = self._min_col * self._cell_width
         self._min_rows = max(self._rows + 1, self._min_rows)
         self._height = self._min_rows * self._cell_height
-        self.set_size_request(self._width, self._height)
+        # Add spacd for the line to show on the outsides
+        self.set_size_request(self._width + style.LINE_WIDTH,
+                              self._height + style.LINE_WIDTH)
         self.queue_draw()
 
     def __draw_cb(self, widget, cr):
         # background
-        cr.set_source_rgb(0.0, 0.0, 0.0)
+        cr.set_source_rgba(*style.COLOR_BLACK.get_rgba())
         cr.rectangle(0, 0, self._width, self._height)
         cr.fill()
         # used area
-        cr.set_source_rgb(0.9, 0.9, 0.9)
+        cr.set_source_rgba(*style.COLOR_HIGHLIGHT.get_rgba())
         width = self._columns * self._cell_width
         height = self._rows * self._cell_height
         cr.rectangle(0, 0, width, height)
         cr.fill()
         # draw grid
-        cr.set_source_rgb(1.0, 1.0, 1.0)
+        cr.set_line_width(style.LINE_WIDTH)
+        cr.set_source_rgba(*style.COLOR_HIGHLIGHT.get_rgba())
         self._draw_grid(cr, self._min_rows, self._min_col, self._width,
                         self._height)
-        cr.set_source_rgb(0.0, 0.0, 0.0)
-        self._draw_grid(cr, self._rows, self._columns, width, height)
+        if self._rows > 0 or self._columns > 0:
+            cr.set_source_rgba(*style.COLOR_TOOLBAR_GREY.get_rgba())
+            self._draw_grid(cr, self._rows, self._columns, width, height)
 
     def _draw_grid(self, cr, rows, cols, width, height):
         for n in range(rows + 1):
-            cr.move_to(0, n * self._cell_height)
-            cr.line_to(width, n * self._cell_height)
+            cr.move_to(0, n * self._cell_height + HALF_LINE)
+            cr.line_to(width, n * self._cell_height + HALF_LINE)
         for n in range(cols + 1):
-            cr.move_to(n * self._cell_width, 0)
-            cr.line_to(n * self._cell_width, height)
+            cr.move_to(n * self._cell_width + HALF_LINE, 0)
+            cr.line_to(n * self._cell_width + HALF_LINE, height)
         cr.stroke()
+
+        # properly fill the line cap in the bottom right corner
+        cr.rectangle(width, height, style.LINE_WIDTH * 2, style.LINE_WIDTH * 2)
+        cr.fill()
 
 
 class GridCreateTest(Gtk.Window):
