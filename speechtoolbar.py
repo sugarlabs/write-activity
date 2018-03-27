@@ -21,7 +21,6 @@ import logging
 
 from gi.repository import Gtk
 from gi.repository import GObject
-from gi.repository import GConf
 
 from sugar3.graphics.toolbutton import ToolButton
 from sugar3.graphics.toggletoolbutton import ToggleToolButton
@@ -39,7 +38,6 @@ class SpeechToolbar(Gtk.Toolbar):
         if not speech.supported:
             return
         self.is_paused = False
-        self._cnf_client = GConf.Client.get_default()
         self.load_speech_parameters()
 
         self.sorted_voices = [i for i in speech.voices()]
@@ -102,48 +100,6 @@ class SpeechToolbar(Gtk.Toolbar):
                 speech.voice = speech_parameters['voice']
             finally:
                 f.close()
-        else:
-            speech.voice = self.get_default_voice()
-            logging.error('Default voice %s', speech.voice)
-
-        self._cnf_client.add_dir('/desktop/sugar/speech',
-                                 GConf.ClientPreloadType.PRELOAD_NONE)
-        speech.pitch = self._cnf_client.get_int('/desktop/sugar/speech/pitch')
-        speech.rate = self._cnf_client.get_int('/desktop/sugar/speech/rate')
-        self._cnf_client.notify_add('/desktop/sugar/speech/pitch',
-                                    self.__conf_changed_cb, None)
-        self._cnf_client.notify_add('/desktop/sugar/speech/rate',
-                                    self.__conf_changed_cb, None)
-
-    def get_default_voice(self):
-        """Try to figure out the default voice, from the current locale
-           ($LANG)
-           Fall back to espeak's voice called Default."""
-        voices = speech.get_all_voices()
-
-        locale = os.environ.get('LANG', '')
-        language_location = locale.split('.', 1)[0].lower()
-        language = language_location.split('_')[0]
-        variant = ''
-        if language_location.find('_') > -1:
-            variant = language_location.split('_')[1]
-        # if the language is es but not es_es default to es_la (latin voice)
-        if language == 'es' and language_location != 'es_es':
-            language_location = 'es_la'
-
-        best = voices.get(language_location) or voices.get(language) \
-            or 'default'
-        logging.debug('Best voice for LANG %s seems to be %s',
-                      locale, best)
-        return [best, language, variant]
-
-    def __conf_changed_cb(self, client, connection_id, entry, args):
-        key = entry.get_key()
-        value = client.get_int(key)
-        if key == '/desktop/sugar/speech/pitch':
-            speech.pitch = value
-        if key == '/desktop/sugar/speech/rate':
-            speech.rate = value
 
     def save_speech_parameters(self):
         speech_parameters = {}
