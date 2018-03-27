@@ -43,8 +43,8 @@ def _message_cb(bus, message, pipe):
         if pipe is play_speaker[1]:
             speech.reset_cb()
     elif message.type == Gst.MessageType.ELEMENT and \
-            message.structure.get_name() == 'espeak-mark':
-        mark = message.structure['mark']
+            message.get_structure().get_name() == 'espeak-mark':
+        mark = message.get_structure()['mark']
         speech.highlight_cb(int(mark))
 
 
