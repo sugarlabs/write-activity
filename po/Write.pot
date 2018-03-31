@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-27 17:37+1000\n"
+"POT-Creation-Date: 2018-03-31 13:10+1100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,7 +55,7 @@ msgstr ""
 msgid "Insert Image"
 msgstr ""
 
-#: AbiWordActivity.py:146
+#: AbiWordActivity.py:147
 msgid "Floating"
 msgstr ""
 
@@ -63,11 +63,11 @@ msgstr ""
 msgid "Select font"
 msgstr ""
 
-#: speechtoolbar.py:59
+#: speechtoolbar.py:57
 msgid "Play / Pause"
 msgstr ""
 
-#: speechtoolbar.py:67
+#: speechtoolbar.py:65
 msgid "Stop"
 msgstr ""
 
