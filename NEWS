@@ -1,3 +1,11 @@
+99
+
+* Use menu item instead of checkbox for image palette (Sam Parkinson),
+* Improve grid creator UI (Sam Parkinson),
+* Port from GConf (James Cameron),
+* Fix use of Gst.Message.structure (James Cameron),
+* Update POT file (James Cameron).
+
 98.4
 
 * New translations (Chris Leonard et al)
