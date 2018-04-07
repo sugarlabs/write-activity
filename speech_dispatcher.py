@@ -33,7 +33,7 @@ def voices():
         voices = client.list_synthesis_voices()
         client.close()
         return voices
-    except Exception, e:
+    except Exception as e:
         _logger.warning('speech dispatcher not started: %s' % e)
         return []
 
@@ -46,7 +46,7 @@ def say(words):
         client.set_language(speech.voice[1])
         client.speak(words)
         client.close()
-    except Exception, e:
+    except Exception as e:
         _logger.warning('speech dispatcher not running: %s' % e)
 
 
@@ -91,14 +91,14 @@ class EspeakThread(threading.Thread):
                 time.sleep(0.1)
             self.cancel()
             self.client.close()
-        except Exception, e:
+        except Exception as e:
             _logger.warning('speech-dispatcher client not created: %s' % e)
 
     def cancel(self):
         if self.client:
             try:
                 self.client.cancel()
-            except Exception, e:
+            except Exception as e:
                 _logger.warning('speech dispatcher cancel failed: %s' % e)
 
     def next_word_cb(self, type, **kargs):

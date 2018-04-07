@@ -25,7 +25,7 @@ from gi.repository import GObject
 
 import os
 import tempfile
-from urlparse import urlparse
+from urllib.parse import urlparse
 
 from sugar3.graphics.toolbutton import ToolButton
 from sugar3.graphics.toolcombobox import ToolComboBox
