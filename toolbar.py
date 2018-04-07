@@ -32,6 +32,7 @@ from sugar3.graphics.toolcombobox import ToolComboBox
 from sugar3.graphics.colorbutton import ColorToolButton
 from sugar3.graphics.toggletoolbutton import ToggleToolButton
 from sugar3.graphics.palettemenu import PaletteMenuBox
+from sugar3.graphics.palettemenu import PaletteMenuItem
 from sugar3.graphics import iconentry
 from sugar3.graphics import style
 from sugar3.activity.widgets import CopyButton
@@ -67,6 +68,14 @@ class EditToolbar(Gtk.Toolbar):
         paste.connect('clicked', self.__paste_button_cb)
         self.insert(paste, -1)
         paste.show()
+
+        menu_box = PaletteMenuBox()
+        paste.props.palette.set_content(menu_box)
+        menu_box.show()
+        menu_item = PaletteMenuItem()
+        menu_item.set_label(_('Paste unformatted'))
+        menu_item.connect('activate', self.__paste_special_button_cb)
+        menu_box.append_item(menu_item)
 
         separator = Gtk.SeparatorToolItem()
         self.insert(separator, -1)
@@ -160,6 +169,9 @@ class EditToolbar(Gtk.Toolbar):
                                                       False)
         else:
             self._abiword_canvas.paste()
+
+    def __paste_special_button_cb(self, button):
+        self._abiword_canvas.paste_special()
 
     def _search_entry_activated_cb(self, entry):
         logger.debug('_search_entry_activated_cb')
