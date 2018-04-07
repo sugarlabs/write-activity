@@ -262,7 +262,7 @@ class AbiWordActivity(activity.Activity):
             return True
 
         pixbuf.save_to_callbackv(save_func, preview_data, 'png', [], [])
-        preview_data = ''.join(preview_data)
+        preview_data = ''.join(map(str,preview_data)).encode()
 
         return preview_data
 

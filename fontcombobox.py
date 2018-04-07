@@ -75,7 +75,7 @@ class FontComboBox(Gtk.ToolItem):
         else:
             subcell_size = 11
         radius = 2 * subcell_size
-        theme = "GtkButton {border-radius: %dpx;}" % radius
+        theme = b"GtkButton {border-radius: %dpx;}" % radius
         css_provider = Gtk.CssProvider()
         css_provider.load_from_data(theme)
         style_context = bt.get_style_context()
@@ -248,7 +248,7 @@ class FontSize(Gtk.ToolItem):
         hbox.pack_start(self._size_up, False, False, 5)
 
         radius = 2 * subcell_size
-        theme_up = "GtkButton {border-radius:0px %dpx %dpx 0px;}" % (radius,
+        theme_up = b"GtkButton {border-radius:0px %dpx %dpx 0px;}" % (radius,
                                                                      radius)
         css_provider_up = Gtk.CssProvider()
         css_provider_up.load_from_data(theme_up)
@@ -257,7 +257,7 @@ class FontSize(Gtk.ToolItem):
         style_context.add_provider(css_provider_up,
                                    Gtk.STYLE_PROVIDER_PRIORITY_USER)
 
-        theme_down = "GtkButton {border-radius: %dpx 0px 0px %dpx;}" % (radius,
+        theme_down = b"GtkButton {border-radius: %dpx 0px 0px %dpx;}" % (radius,
                                                                         radius)
         css_provider_down = Gtk.CssProvider()
         css_provider_down.load_from_data(theme_down)
