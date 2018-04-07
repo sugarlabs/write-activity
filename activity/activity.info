@@ -1,7 +1,7 @@
 [Activity]
 name = Write
 bundle_id = org.laptop.AbiWordActivity
-exec = sugar-activity AbiWordActivity.AbiWordActivity
+exec = sugar-activity3 AbiWordActivity.AbiWordActivity
 icon = activity-write
 activity_version = 100
 max_participants = 6

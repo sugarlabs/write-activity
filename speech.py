@@ -27,12 +27,12 @@ try:
     Gst.ElementFactory.make('espeak', None)
     from speech_gst import *
     _logger.error('use gst-plugins-espeak')
-except Exception, e:
+except Exception as e:
     _logger.error('disable gst-plugins-espeak: %s' % e)
     try:
         from speech_dispatcher import *
         _logger.error('use speech-dispatcher')
-    except Exception, e:
+    except Exception as e:
         supported = False
         _logger.error('disable speech: %s' % e)
 
