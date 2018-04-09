@@ -215,12 +215,12 @@ class DocumentView(Abi.Widget):
         try:
             self.connect('request-clear-area', self.__request_clear_area_cb)
         except:
-            logging.error('EXCEPTION: request-clear-area signal not available')
+            logging.debug('EXCEPTION: request-clear-area signal not available')
 
         try:
             self.connect('unset-clear-area', self.__unset_clear_area_cb)
         except:
-            logging.error('EXCEPTION: unset-clear-area signal not available')
+            logging.debug('EXCEPTION: unset-clear-area signal not available')
 
         self.osk_changed = False
         self.dy = 0
@@ -273,5 +273,5 @@ class DocumentView(Abi.Widget):
 
     def get_version(self):
         version = Abi._version
-        logging.error('Abiword version %s', version)
+        logging.debug('Abiword version %s', version)
         return version

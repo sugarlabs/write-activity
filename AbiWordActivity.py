@@ -187,7 +187,7 @@ class AbiWordActivity(activity.Activity):
 
         if self.shared_activity:
             # we are joining the activity
-            logger.error('We are joining an activity')
+            logger.debug('We are joining an activity')
             # display a icon while joining
             self._connecting_box.show()
             # disable the abi widget
@@ -201,7 +201,7 @@ class AbiWordActivity(activity.Activity):
                 self._joined_cb(self)
         else:
             # we are creating the activity
-            logger.error("We are creating an activity")
+            logger.debug("We are creating an activity")
 
         self.abiword_canvas.zoom_width()
         self.abiword_canvas.show()
@@ -223,7 +223,7 @@ class AbiWordActivity(activity.Activity):
     def __map_activity_event_cb(self, event, activity):
         # set custom keybindings for Write
         # we do it later because have problems if done before - OLPC #11049
-        logger.error('Loading keybindings')
+        logger.debug('Loading keybindings')
         keybindings_file = os.path.join(get_bundle_path(), 'keybindings.xml')
         self.abiword_canvas.invoke_ex(
             'com.abisource.abiword.loadbindings.fromURI',
@@ -231,7 +231,7 @@ class AbiWordActivity(activity.Activity):
         # set default font
         if self._new_instance:
             self.abiword_canvas.select_all()
-            logging.error('Setting default font to %s %d in new documents',
+            logging.debug('Setting default font to %s %d in new documents',
                           self._default_font_face, self._default_font_size)
             self.abiword_canvas.set_font_name(self._default_font_face)
             self.abiword_canvas.set_font_size(str(self._default_font_size))
@@ -266,16 +266,16 @@ class AbiWordActivity(activity.Activity):
         return preview_data
 
     def _shared_cb(self, activity):
-        logger.error('My Write activity was shared')
+        logger.debug('My Write activity was shared')
         self._sharing_setup()
 
         self.shared_activity.connect('buddy-joined', self._buddy_joined_cb)
         self.shared_activity.connect('buddy-left', self._buddy_left_cb)
 
         channel = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES]
-        logger.error('This is my activity: offering a tube...')
+        logger.debug('This is my activity: offering a tube...')
         id = channel.OfferDBusTube('com.abisource.abiword.abicollab', {})
-        logger.error('Tube address: %s', channel.GetDBusTubeAddress(id))
+        logger.debug('Tube address: %s', channel.GetDBusTubeAddress(id))
 
     def _sharing_setup(self):
         logger.debug("_sharing_setup()")
@@ -299,16 +299,16 @@ class AbiWordActivity(activity.Activity):
         logger.error('ListTubes() failed: %s', e)
 
     def _joined_cb(self, activity):
-        logger.error("_joined_cb()")
+        logger.debug("_joined_cb()")
         if not self.shared_activity:
             self._enable_collaboration()
             return
 
         self.joined = True
-        logger.error('Joined an existing Write session')
+        logger.debug('Joined an existing Write session')
         self._sharing_setup()
 
-        logger.error('This is not my activity: waiting for a tube...')
+        logger.debug('This is not my activity: waiting for a tube...')
         self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].ListTubes(
             reply_handler=self._list_tubes_reply_cb,
             error_handler=self._list_tubes_error_cb)
@@ -324,7 +324,7 @@ class AbiWordActivity(activity.Activity):
         self._connecting_box.hide()
 
     def _new_tube_cb(self, id, initiator, type, service, params, state):
-        logger.error('New tube: ID=%d initiator=%d type=%d service=%s '
+        logger.debug('New tube: ID=%d initiator=%d type=%d service=%s '
                      'params=%r state=%d', id, initiator, type, service,
                      params, state)
 
@@ -346,7 +346,7 @@ class AbiWordActivity(activity.Activity):
         dbus_names = channel.GetDBusNames(id)
         for handle, name in dbus_names:
             if handle == initiator:
-                logger.error('found initiator D-Bus name: %s', name)
+                logger.debug('found initiator D-Bus name: %s', name)
                 initiator_dbus_name = name
                 break
 
@@ -358,18 +358,18 @@ class AbiWordActivity(activity.Activity):
         # pass this tube to abicollab
         address = channel.GetDBusTubeAddress(id)
         if self.joined:
-            logger.error('Passing tube address to abicollab (join): %s',
+            logger.debug('Passing tube address to abicollab (join): %s',
                          address)
             self.abiword_canvas.invoke_ex(cmd_prefix + 'joinTube',
                                           address, 0, 0)
             # The intiator of the session has to be the first passed
             # to the Abicollab backend.
-            logger.error('Adding the initiator to the session: %s',
+            logger.debug('Adding the initiator to the session: %s',
                          initiator_dbus_name)
             self.abiword_canvas.invoke_ex(cmd_prefix + 'buddyJoined',
                                           initiator_dbus_name, 0, 0)
         else:
-            logger.error('Passing tube address to abicollab (offer): %s',
+            logger.debug('Passing tube address to abicollab (offer): %s',
                          address)
             self.abiword_canvas.invoke_ex(cmd_prefix + 'offerTube', address,
                                           0, 0)
@@ -386,11 +386,11 @@ class AbiWordActivity(activity.Activity):
         according members of the D-Bus tube. That's why we don't add/remove
         buddies in _buddy_{joined,left}_cb.
         """
-        logger.error('_on_dbus_names_changed')
+        logger.debug('_on_dbus_names_changed')
 #        if tube_id == self.tube_id:
         cmd_prefix = 'com.abisource.abiword.abicollab.olpc'
         for handle, bus_name in added:
-            logger.error('added handle: %s, with dbus_name: %s',
+            logger.debug('added handle: %s, with dbus_name: %s',
                          handle, bus_name)
             self.abiword_canvas.invoke_ex(cmd_prefix + '.buddyJoined',
                                           bus_name, 0, 0)
@@ -398,7 +398,7 @@ class AbiWordActivity(activity.Activity):
 
     def _on_members_changed(self, message, added, removed, local_pending,
                             remote_pending, actor, reason):
-        logger.error("_on_members_changed")
+        logger.debug("_on_members_changed")
         for handle in removed:
             bus_name = self.participants.pop(handle, None)
             if bus_name is None:
@@ -407,16 +407,16 @@ class AbiWordActivity(activity.Activity):
                 continue
 
             cmd_prefix = 'com.abisource.abiword.abicollab.olpc'
-            logger.error('removed handle: %d, with dbus name: %s', handle,
+            logger.debug('removed handle: %d, with dbus name: %s', handle,
                          bus_name)
             self.abiword_canvas.invoke_ex(cmd_prefix + '.buddyLeft',
                                           bus_name, 0, 0)
 
     def _buddy_joined_cb(self, activity, buddy):
-        logger.error('buddy joined with object path: %s', buddy.object_path())
+        logger.debug('buddy joined with object path: %s', buddy.object_path())
 
     def _buddy_left_cb(self, activity, buddy):
-        logger.error('buddy left with object path: %s', buddy.object_path())
+        logger.debug('buddy left with object path: %s', buddy.object_path())
 
     def read_file(self, file_path):
         logging.debug('AbiWordActivity.read_file: %s, mimetype: %s',
