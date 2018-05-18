@@ -26,9 +26,10 @@ GObject.threads_init()
 
 import gi
 gi.require_version('Gtk', '3.0')
+gi.require_version('TelepathyGLib', '0.12')
+
 from gi.repository import Gtk
-import telepathy
-import telepathy.client
+from gi.repository import TelepathyGLib
 
 from sugar3.activity import activity
 from sugar3.activity.widgets import StopButton
@@ -272,7 +273,7 @@ class AbiWordActivity(activity.Activity):
         self.shared_activity.connect('buddy-joined', self._buddy_joined_cb)
         self.shared_activity.connect('buddy-left', self._buddy_left_cb)
 
-        channel = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES]
+        channel = self.tubes_chan[TelepathyGLib.IFACE_CHANNEL_TYPE_TUBES]
         logger.debug('This is my activity: offering a tube...')
         id = channel.OfferDBusTube('com.abisource.abiword.abicollab', {})
         logger.debug('Tube address: %s', channel.GetDBusTubeAddress(id))
@@ -288,7 +289,7 @@ class AbiWordActivity(activity.Activity):
         self.tubes_chan = self.shared_activity.telepathy_tubes_chan
         self.text_chan = self.shared_activity.telepathy_text_chan
         self.tube_id = None
-        self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].connect_to_signal(
+        self.tubes_chan[TelepathyGLib.IFACE_CHANNEL_TYPE_TUBES].connect_to_signal(
             'NewTube', self._new_tube_cb)
 
     def _list_tubes_reply_cb(self, tubes):
@@ -309,7 +310,7 @@ class AbiWordActivity(activity.Activity):
         self._sharing_setup()
 
         logger.debug('This is not my activity: waiting for a tube...')
-        self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].ListTubes(
+        self.tubes_chan[TelepathyGLib.IFACE_CHANNEL_TYPE_TUBES].ListTubes(
             reply_handler=self._list_tubes_reply_cb,
             error_handler=self._list_tubes_error_cb)
         self._enable_collaboration()
@@ -332,13 +333,13 @@ class AbiWordActivity(activity.Activity):
             # We are already using a tube
             return
 
-        if type != telepathy.TUBE_TYPE_DBUS or \
+        if type != TelepathyGLib.TubeType.DBUS or \
                 service != "com.abisource.abiword.abicollab":
             return
 
-        channel = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES]
+        channel = self.tubes_chan[TelepathyGLib.IFACE_CHANNEL_TYPE_TUBES]
 
-        if state == telepathy.TUBE_STATE_LOCAL_PENDING:
+        if state == TelepathyGLib.TubeState.LOCAL_PENDING:
             channel.AcceptDBusTube(id)
 
         # look for the initiator's D-Bus unique name
