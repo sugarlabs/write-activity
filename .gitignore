@@ -12,3 +12,4 @@ py-compile
 *.xo
 *~
 locale
+dist
