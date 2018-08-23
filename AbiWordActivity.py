@@ -51,6 +51,7 @@ from toolbar import InsertToolbar
 from toolbar import ParagraphToolbar
 from widgets import ExportButtonFactory
 from widgets import DocumentView
+from speechtoolbar import SpeechToolbar
 from sugar3.graphics.objectchooser import ObjectChooser
 try:
     from sugar3.graphics.objectchooser import FILTER_TYPE_GENERIC_MIME
@@ -211,12 +212,9 @@ class AbiWordActivity(activity.Activity):
         self.abiword_canvas.connect('size-allocate', self.size_allocate_cb)
 
     def _init_speech(self):
-        import speech
-        from speechtoolbar import SpeechToolbar
-        if speech.supported:
-            self.speech_toolbar = SpeechToolbar(self)
-            self.speech_toolbar_button.set_page(self.speech_toolbar)
-            self.speech_toolbar_button.show()
+        self.speech_toolbar = SpeechToolbar(self)
+        self.speech_toolbar_button.set_page(self.speech_toolbar)
+        self.speech_toolbar_button.show()
 
     def size_allocate_cb(self, abi, alloc):
         GObject.idle_add(abi.queue_draw)
