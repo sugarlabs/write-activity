@@ -59,20 +59,20 @@ class SpeechToolbar(Gtk.Toolbar):
         voice_names.sort(self._compare_voice)
 
         # Play button
-        self.play_button = ToggleToolButton('media-playback-start')
-        self.play_button.show()
-        self.play_toggled_handler = self.play_button.connect(
+        self._play_button = ToggleToolButton('media-playback-start')
+        self._play_button.show()
+        self.play_toggled_handler = self._play_button.connect(
             'toggled', self._play_toggled_cb)
-        self.insert(self.play_button, -1)
-        self.play_button.set_tooltip(_('Play / Pause'))
+        self.insert(self._play_button, -1)
+        self._play_button.set_tooltip(_('Play / Pause'))
 
         # Stop button
-        self.stop_button = ToolButton('media-playback-stop')
-        self.stop_button.show()
-        self.stop_button.connect('clicked', self.stop_cb)
-        self.stop_button.set_sensitive(False)
-        self.insert(self.stop_button, -1)
-        self.stop_button.set_tooltip(_('Stop'))
+        self._stop_button = ToolButton('media-playback-stop')
+        self._stop_button.show()
+        self._stop_button.connect('clicked', self._stop_clicked_cb)
+        self._stop_button.set_sensitive(False)
+        self.insert(self._stop_button, -1)
+        self._stop_button.set_tooltip(_('Stop'))
 
         # Language list
         combo = ComboBox()
@@ -128,18 +128,18 @@ class SpeechToolbar(Gtk.Toolbar):
 
     def _reset_buttons_cb(self):
         logging.error('reset buttons')
-        self.play_button.set_icon_name('media-playback-start')
-        self.stop_button.set_sensitive(False)
-        self.play_button.handler_block(self.play_toggled_handler)
-        self.play_button.set_active(False)
-        self.play_button.handler_unblock(self.play_toggled_handler)
+        self._play_button.set_icon_name('media-playback-start')
+        self._stop_button.set_sensitive(False)
+        self._play_button.handler_block(self.play_toggled_handler)
+        self._play_button.set_active(False)
+        self._play_button.handler_unblock(self.play_toggled_handler)
         self._is_paused = False
 
     def _play_toggled_cb(self, widget):
-        self.stop_button.set_sensitive(True)
+        self._stop_button.set_sensitive(True)
         if widget.get_active():
-            self.play_button.set_icon_name('media-playback-pause')
             logging.error('Paused %s', self.is_paused)
+            self._play_button.set_icon_name('media-playback-pause')
             if not self._is_paused:
                 # get the text to speech, if there are a selection,
                 # play selected text, if not, play all
@@ -157,13 +157,13 @@ class SpeechToolbar(Gtk.Toolbar):
                 logging.error('Continue play')
                 self._speech.restart()
         else:
-            self.play_button.set_icon_name('media-playback-start')
+            self._play_button.set_icon_name('media-playback-start')
             self._is_paused = True
             self._speech.pause()
 
-    def stop_cb(self, widget):
-        self.stop_button.set_sensitive(False)
-        self.play_button.set_icon_name('media-playback-start')
-        self.play_button.set_active(False)
+    def _stop_clicked_cb(self, widget):
+        self._stop_button.set_sensitive(False)
+        self._play_button.set_icon_name('media-playback-start')
+        self._play_button.set_active(False)
         self._is_paused = False
         self._speech.stop()
