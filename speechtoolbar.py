@@ -127,7 +127,7 @@ class SpeechToolbar(Gtk.Toolbar):
             f.close()
 
     def _reset_buttons_cb(self):
-        logging.error('reset buttons')
+        logging.debug('reset buttons')
         self._play_button.set_icon_name('media-playback-start')
         self._stop_button.set_sensitive(False)
         self._play_button.handler_block(self.play_toggled_handler)
@@ -138,7 +138,7 @@ class SpeechToolbar(Gtk.Toolbar):
     def _play_toggled_cb(self, widget):
         self._stop_button.set_sensitive(True)
         if widget.get_active():
-            logging.error('Paused %s', self.is_paused)
+            logging.debug('Paused %s', self.is_paused)
             self._play_button.set_icon_name('media-playback-pause')
             if not self._is_paused:
                 # get the text to speech, if there are a selection,
@@ -154,7 +154,7 @@ class SpeechToolbar(Gtk.Toolbar):
                     text = selection[0]
                 self._speech.say_text(text, lang_code=self._voice)
             else:
-                logging.error('Continue play')
+                logging.debug('Continue play')
                 self._speech.restart()
         else:
             self._play_button.set_icon_name('media-playback-start')
