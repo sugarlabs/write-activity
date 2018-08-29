@@ -42,7 +42,7 @@ class SpeechToolbar(Gtk.Toolbar):
 
         locale = os.environ.get('LANG', '')
         language_location = locale.split('.', 1)[0].lower()
-        language = language_location.split('_', 1)[0]
+        language = language_location.split('_')[0]
         # if the language is es but not es_es default to es_la (latin voice)
         if language == 'es' and language_location != 'es_es':
             language_location = 'es_la'
