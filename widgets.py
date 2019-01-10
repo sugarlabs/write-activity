@@ -19,10 +19,7 @@ from gettext import gettext as _
 import logging
 
 import gi
-try:
-    gi.require_version('Abi', '2.9')
-except:
-    gi.require_version('Abi', '3.0')
+gi.require_version('Abi', '3.0')
 from gi.repository import Abi
 from gi.repository import GLib
 

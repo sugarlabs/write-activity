@@ -26,8 +26,7 @@ from sugar3.graphics.toolbutton import ToolButton
 from sugar3.graphics.toggletoolbutton import ToggleToolButton
 from sugar3.graphics.combobox import ComboBox
 from sugar3.graphics.toolcombobox import ToolComboBox
-
-import speech
+from sugar3.speech import SpeechManager
 
 
 class SpeechToolbar(Gtk.Toolbar):
@@ -35,18 +34,12 @@ class SpeechToolbar(Gtk.Toolbar):
     def __init__(self, activity):
         GObject.GObject.__init__(self)
         self._activity = activity
-        if not speech.supported:
-            return
+        self._voice = None
         self.is_paused = False
         self.load_speech_parameters()
-
-        self.sorted_voices = [i for i in speech.voices()]
-        self.sorted_voices.sort(self.compare_voices)
-        default = 0
-        for voice in self.sorted_voices:
-            if voice[0] == speech.voice[0]:
-                break
-            default = default + 1
+        
+        self._speech = SpeechManager()        
+        self.all_voices = self._speech.get_all_voices()
 
         # Play button
         self.play_btn = ToggleToolButton('media-playback-start')
@@ -64,17 +57,24 @@ class SpeechToolbar(Gtk.Toolbar):
         self.insert(self.stop_btn, -1)
         self.stop_btn.set_tooltip(_('Stop'))
 
+        default = 0
         self.voice_combo = ComboBox()
-        for voice in self.sorted_voices:
-            self.voice_combo.append_item(voice, voice[0])
-        self.voice_combo.set_active(default)
-
+        for lang_code, name in self.all_voices.items():
+            language = lang_code
+            dialect = None
+            if('_' in lang_code):
+                language = lang_code.split('_')[0]
+                dialect = lang_code.split('_')[1]
+            self.voice_combo.append_item([name, language, dialect], name)
+            if([name, language, dialect] == self._voice):
+                self.voice_combo.set_active(default)
+            default += 1
+                    
         self.voice_combo.connect('changed', self.voice_changed_cb)
         combotool = ToolComboBox(self.voice_combo)
         self.insert(combotool, -1)
         combotool.show()
-        speech.reset_cb = self.reset_buttons_cb
-        speech.end_text_cb = self.reset_buttons_cb
+        self._speech.connect('stop', self._reset_buttons_cb)
 
     def compare_voices(self,  a,  b):
         if a[0].lower() == b[0].lower():
@@ -85,8 +85,8 @@ class SpeechToolbar(Gtk.Toolbar):
             return 1
 
     def voice_changed_cb(self, combo):
-        speech.voice = combo.props.value
-        speech.say(speech.voice[0])
+        self._voice = combo.props.value
+        self._speech.say_text(self._voice[0])
         self.save_speech_parameters()
 
     def load_speech_parameters(self):
@@ -97,13 +97,13 @@ class SpeechToolbar(Gtk.Toolbar):
             f = open(data_file_name, 'r')
             try:
                 speech_parameters = json.load(f)
-                speech.voice = speech_parameters['voice']
+                self._voice = speech_parameters['voice']
             finally:
                 f.close()
 
     def save_speech_parameters(self):
         speech_parameters = {}
-        speech_parameters['voice'] = speech.voice
+        speech_parameters['voice'] = self._voice
         data_path = os.path.join(self._activity.get_activity_root(), 'data')
         data_file_name = os.path.join(data_path, 'speech_params.json')
         f = open(data_file_name, 'w')
@@ -112,8 +112,8 @@ class SpeechToolbar(Gtk.Toolbar):
         finally:
             f.close()
 
-    def reset_buttons_cb(self):
-        logging.error('reset buttons')
+    def _reset_buttons_cb(self,a):
+        logging.debug('reset buttons')
         self.play_btn.set_icon_name('media-playback-start')
         self.stop_btn.set_sensitive(False)
         self.play_btn.handler_block(self.play_toggled_handler)
@@ -125,7 +125,7 @@ class SpeechToolbar(Gtk.Toolbar):
         self.stop_btn.set_sensitive(True)
         if widget.get_active():
             self.play_btn.set_icon_name('media-playback-pause')
-            logging.error('Paused %s', self.is_paused)
+            logging.debug('Paused %s', self.is_paused)
             if not self.is_paused:
                 # get the text to speech, if there are a selection,
                 # play selected text, if not, play all
@@ -138,18 +138,18 @@ class SpeechToolbar(Gtk.Toolbar):
                     abi.moveto_bod()
                 else:
                     text = selection[0]
-                speech.play(text)
+                self._speech.say_text(text, lang_code=self._voice)
             else:
-                logging.error('Continue play')
-                speech.continue_play()
+                logging.debug('Continue play')
+                self._speech.restart()
         else:
             self.play_btn.set_icon_name('media-playback-start')
             self.is_paused = True
-            speech.pause()
+            self._speech.pause()
 
     def stop_cb(self, widget):
         self.stop_btn.set_sensitive(False)
         self.play_btn.set_icon_name('media-playback-start')
         self.play_btn.set_active(False)
         self.is_paused = False
-        speech.stop()
+        self._speech.stop()

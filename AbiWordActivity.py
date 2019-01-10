@@ -110,10 +110,10 @@ class AbiWordActivity(activity.Activity):
         toolbar_box.toolbar.insert(view_toolbar, -1)
 
         # due to http://bugzilla.abisource.com/show_bug.cgi?id=13585
-        if self.abiword_canvas.get_version() != '3.0':
-            self.speech_toolbar_button = ToolbarButton(icon_name='speak')
-            toolbar_box.toolbar.insert(self.speech_toolbar_button, -1)
-            self._init_speech()
+
+        self.speech_toolbar_button = ToolbarButton(icon_name='speak')
+        toolbar_box.toolbar.insert(self.speech_toolbar_button, -1)
+        self._init_speech()
 
         separator = Gtk.SeparatorToolItem()
         toolbar_box.toolbar.insert(separator, -1)
@@ -211,12 +211,12 @@ class AbiWordActivity(activity.Activity):
         self.abiword_canvas.connect('size-allocate', self.size_allocate_cb)
 
     def _init_speech(self):
-        import speech
+        import sugar3.speech as speech
         from speechtoolbar import SpeechToolbar
-        if speech.supported:
-            self.speech_toolbar = SpeechToolbar(self)
-            self.speech_toolbar_button.set_page(self.speech_toolbar)
-            self.speech_toolbar_button.show()
+
+        self.speech_toolbar = SpeechToolbar(self)
+        self.speech_toolbar_button.set_page(self.speech_toolbar)
+        self.speech_toolbar_button.show()
 
     def size_allocate_cb(self, abi, alloc):
         GObject.idle_add(abi.queue_draw)
