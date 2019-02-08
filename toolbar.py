@@ -236,13 +236,13 @@ class InsertToolbar(Gtk.Toolbar):
 
         self._table_btn = ToolButton('create-table')
         self._table_btn.set_tooltip(_('Create table'))
-        self.insert(self._table_btn, -1)
         self._grid_create = GridCreateWidget()
         self._grid_create.show()
         self._grid_create.connect('create-table', self._create_table_cb)
         palette = self._table_btn.get_palette()
         palette.set_content(self._grid_create)
         self._table_btn.connect('clicked', self._table_btn_clicked_cb)
+        self.insert(self._table_btn, -1)
 
         self._table_rows_after = ToolButton('row-insert')
         self._table_rows_after.set_tooltip(_('Insert Row'))
@@ -275,7 +275,7 @@ class InsertToolbar(Gtk.Toolbar):
         #       self._image_selected_cb)
 
     def _table_btn_clicked_cb(self, button):
-        button.get_palette().popup(True, button.get_palette().SECONDARY)
+        button.get_palette().popup(True)
 
     def _create_table_cb(self, abi, rows, cols):
         self._abiword_canvas.insert_table(rows, cols)
