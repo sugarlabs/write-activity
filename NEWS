@@ -1,3 +1,10 @@
+100
+
+* Fix create table function (Swarup N),
+* Add merge and split table cells (Ezequiel Pereira López, Swarup N),
+* Update POT file (James Cameron),
+* New translations (Chris Leonard et al).
+
 99.1
 
 * Add paste unformatted option (Ezequiel Pereira),
