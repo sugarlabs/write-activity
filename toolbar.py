@@ -318,6 +318,7 @@ class InsertToolbar(Gtk.Toolbar):
         self._merge_cells.set_sensitive(b)
         self._split_cells.set_sensitive(b)
 
+
 class ViewToolbar(Gtk.Toolbar):
 
     def __init__(self, abiword_canvas):

@@ -289,7 +289,8 @@ class AbiWordActivity(activity.Activity):
         self.tubes_chan = self.shared_activity.telepathy_tubes_chan
         self.text_chan = self.shared_activity.telepathy_text_chan
         self.tube_id = None
-        self.tubes_chan[TelepathyGLib.IFACE_CHANNEL_TYPE_TUBES].connect_to_signal(
+        self.tubes_chan[
+            TelepathyGLib.IFACE_CHANNEL_TYPE_TUBES].connect_to_signal(
             'NewTube', self._new_tube_cb)
 
     def _list_tubes_reply_cb(self, tubes):
@@ -439,7 +440,7 @@ class AbiWordActivity(activity.Activity):
             logger.debug('Writing file as type source (text/plain)')
             self.abiword_canvas.save('file://' + file_path, 'text/plain', '')
         else:
-            #if the file is new, save in .odt format
+            # if the file is new, save in .odt format
             if self.metadata['mime_type'] == '':
                 self.metadata['mime_type'] = 'application/rtf'
 
