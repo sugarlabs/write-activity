@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-09 12:41+1000\n"
+"POT-Creation-Date: 2019-02-21 16:23+1100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -107,107 +107,115 @@ msgstr ""
 msgid "Delete Column"
 msgstr ""
 
-#: toolbar.py:311
+#: toolbar.py:272
+msgid "Merge Cells"
+msgstr ""
+
+#: toolbar.py:278
+msgid "Split Cells"
+msgstr ""
+
+#: toolbar.py:330
 msgid "Zoom Out"
 msgstr ""
 
-#: toolbar.py:318
+#: toolbar.py:337
 msgid "Zoom In"
 msgstr ""
 
-#: toolbar.py:325
+#: toolbar.py:344
 msgid "Zoom to width"
 msgstr ""
 
-#: toolbar.py:342
+#: toolbar.py:361
 msgid "%"
 msgstr ""
 
-#: toolbar.py:354
+#: toolbar.py:373
 msgid "Page: "
 msgstr ""
 
-#: toolbar.py:453
+#: toolbar.py:472
 msgid "Bold"
 msgstr ""
 
-#: toolbar.py:462
+#: toolbar.py:481
 msgid "Italic"
 msgstr ""
 
-#: toolbar.py:472
+#: toolbar.py:491
 msgid "Underline"
 msgstr ""
 
-#: toolbar.py:502
+#: toolbar.py:521
 msgid "Choose alignment"
 msgstr ""
 
-#: toolbar.py:510
+#: toolbar.py:529
 msgid "Left justify"
 msgstr ""
 
-#: toolbar.py:514
+#: toolbar.py:533
 msgid "Center justify"
 msgstr ""
 
-#: toolbar.py:518
+#: toolbar.py:537
 msgid "Right justify"
 msgstr ""
 
-#: toolbar.py:522
+#: toolbar.py:541
 msgid "Fill justify"
 msgstr ""
 
-#: toolbar.py:583 toolbar.py:632
+#: toolbar.py:602 toolbar.py:651
 msgid "Normal"
 msgstr ""
 
-#: toolbar.py:589
+#: toolbar.py:608
 msgid "Heading 1"
 msgstr ""
 
-#: toolbar.py:593
+#: toolbar.py:612
 msgid "Heading 2"
 msgstr ""
 
-#: toolbar.py:597
+#: toolbar.py:616
 msgid "Heading 3"
 msgstr ""
 
-#: toolbar.py:601
+#: toolbar.py:620
 msgid "Heading 4"
 msgstr ""
 
-#: toolbar.py:605
+#: toolbar.py:624
 msgid "Block Text"
 msgstr ""
 
-#: toolbar.py:609
+#: toolbar.py:628
 msgid "Plain Text"
 msgstr ""
 
-#: toolbar.py:624
+#: toolbar.py:643
 msgid "Select list"
 msgstr ""
 
-#: toolbar.py:642
+#: toolbar.py:661
 msgid "Bullet List"
 msgstr ""
 
-#: toolbar.py:647
+#: toolbar.py:666
 msgid "Dashed List"
 msgstr ""
 
-#: toolbar.py:652
+#: toolbar.py:671
 msgid "Numbered List"
 msgstr ""
 
-#: toolbar.py:657
+#: toolbar.py:676
 msgid "Lower Case List"
 msgstr ""
 
-#: toolbar.py:662
+#: toolbar.py:681
 msgid "Upper Case List"
 msgstr ""
 
