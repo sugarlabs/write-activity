@@ -18,7 +18,6 @@
 
 from gettext import gettext as _
 import logging
-
 import re
 
 from gi.repository import Gtk
@@ -404,35 +403,43 @@ class ViewToolbar(Gtk.Toolbar):
         self.insert(separator, -1)
         separator.show()
 
-        self._word_count_label = Gtk.Label(_("No words"))
+        self._word_count_label = Gtk.Label(_("0 words"))
         self._word_count_label.show()
         tool_item = Gtk.ToolItem()
         tool_item.add(self._word_count_label)
         self.insert(tool_item, -1)
         tool_item.show()
 
+        separator = Gtk.SeparatorToolItem()
+        separator.set_draw(True)
+        separator.show()
+        self.insert(separator, -1)
+
+        self._char_count_label = Gtk.Label(_("0 Characters"))
+        self._char_count_label.show()
+        tool_item = Gtk.ToolItem()
+        tool_item.add(self._char_count_label)
+        self.insert(tool_item, -1)
+        tool_item.show()
+
         self._abiword_canvas.connect("page-count", self._page_count_cb)
         self._abiword_canvas.connect("current-page", self._current_page_cb)
         self._abiword_canvas.connect("zoom", self._zoom_cb)
+        self._abiword_canvas.connect("changed", self._word_char_count_cb)
 
-        # For some reason, if we don't connect changed event after
-        # the abi canvas is loaded, the activity fails.
-        def internal_callback():
-            self._abiword_canvas.connect_after("changed", self._word_count_cb)
-            self._word_count_cb(self._abiword_canvas)
-
-        GObject.timeout_add(2000, internal_callback)
-
-    def _word_count_cb(self, abiword_canvas):
+    def _word_char_count_cb(self, abiword_canvas):
         text = abiword_canvas.get_content("text/plain", None)[0]
-        # Find all non-whitespace patterns.
         word_list = re.findall("(\S+)", text)
+        char_count = len(text.replace('\n', ''))
         words_count = len(word_list)
-        label_text = _("No words")
+        word_label_text = _("0 words")
+        char_label_text = _("0 characters")
         if words_count > 0:
-            label_text = _("%s words") % str(words_count)
-
-        self._word_count_label.set_text(label_text)
+            word_label_text = _("%s words") % str(words_count)
+        if char_count > 0:
+            char_label_text = _("%s characters") % str(char_count)
+        self._word_count_label.set_text(word_label_text)
+        self._char_count_label.set_text(char_label_text)
 
     def set_zoom_percentage(self, zoom):
         self._zoom_percentage = zoom
