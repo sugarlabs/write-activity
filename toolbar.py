@@ -507,8 +507,8 @@ class TextToolbar(Gtk.Toolbar):
         super_btn.props.accelerator = '<Ctrl>asciicircum'
         super_id = super_btn.connect('clicked', lambda sender:
                                abiword_canvas.toggle_super())
-        # no, this isn't a mistake. The method is called `toggle_super()', but
-        # the *signal* is called `superscript'. Same goes for sub{script,}.
+        # The abiword method is called `toggle_super()'
+        # The *signal* is called `superscript'. Same goes for sub{script,}.
         abiword_canvas.connect('superscript', lambda abi, b:
                                self._setToggleButtonState(super_btn, b,
                                                           super_id))
