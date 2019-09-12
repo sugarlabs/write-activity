@@ -51,6 +51,7 @@ from toolbar import InsertToolbar
 from toolbar import ParagraphToolbar
 from widgets import ExportButtonFactory
 from widgets import DocumentView
+from speechtoolbar import SpeechToolbar
 from sugar3.graphics.objectchooser import ObjectChooser
 try:
     from sugar3.graphics.objectchooser import FILTER_TYPE_GENERIC_MIME
@@ -109,11 +110,11 @@ class AbiWordActivity(activity.Activity):
         view_toolbar.props.label = _('View')
         toolbar_box.toolbar.insert(view_toolbar, -1)
 
-        # due to http://bugzilla.abisource.com/show_bug.cgi?id=13585
-        if self.abiword_canvas.get_version() != '3.0':
-            self.speech_toolbar_button = ToolbarButton(icon_name='speak')
-            toolbar_box.toolbar.insert(self.speech_toolbar_button, -1)
-            self._init_speech()
+        self.speech_toolbar_button = ToolbarButton(icon_name='speak')
+        toolbar_box.toolbar.insert(self.speech_toolbar_button, -1)
+        self.speech_toolbar = SpeechToolbar(self)
+        self.speech_toolbar_button.set_page(self.speech_toolbar)
+        self.speech_toolbar_button.show()
 
         separator = Gtk.SeparatorToolItem()
         toolbar_box.toolbar.insert(separator, -1)
@@ -209,14 +210,6 @@ class AbiWordActivity(activity.Activity):
         self.connect_after('map-event', self.__map_activity_event_cb)
 
         self.abiword_canvas.connect('size-allocate', self.size_allocate_cb)
-
-    def _init_speech(self):
-        import speech
-        from speechtoolbar import SpeechToolbar
-        if speech.supported:
-            self.speech_toolbar = SpeechToolbar(self)
-            self.speech_toolbar_button.set_page(self.speech_toolbar)
-            self.speech_toolbar_button.show()
 
     def size_allocate_cb(self, abi, alloc):
         GObject.idle_add(abi.queue_draw)
@@ -451,10 +444,8 @@ class AbiWordActivity(activity.Activity):
             self.abiword_canvas.save('file://' + file_path,
                                      self.metadata['mime_type'], '')
 
-        # due to http://bugzilla.abisource.com/show_bug.cgi?id=13585
-        if self.abiword_canvas.get_version() != '3.0':
-            self.metadata['fulltext'] = self.abiword_canvas.get_content(
-                'text/plain', None)[:3000]
+        self.metadata['fulltext'] = self.abiword_canvas.get_content(
+            'text/plain', None)[0][:3000]
 
     def _is_plain_text(self, mime_type):
         # These types have 'text/plain' in their mime_parents  but we need

@@ -14,142 +14,69 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-import os
-import json
 from gettext import gettext as _
-import logging
 
 from gi.repository import Gtk
-from gi.repository import GObject
 
 from sugar3.graphics.toolbutton import ToolButton
-from sugar3.graphics.toggletoolbutton import ToggleToolButton
-from sugar3.graphics.combobox import ComboBox
-from sugar3.graphics.toolcombobox import ToolComboBox
-
-import speech
+from sugar3.speech import SpeechManager
 
 
 class SpeechToolbar(Gtk.Toolbar):
 
     def __init__(self, activity):
-        GObject.GObject.__init__(self)
+        Gtk.Toolbar.__init__(self)
         self._activity = activity
-        if not speech.supported:
-            return
-        self.is_paused = False
-        self.load_speech_parameters()
+        self._speech = SpeechManager()
 
-        self.sorted_voices = [i for i in speech.voices()]
-        self.sorted_voices.sort(self.compare_voices)
-        default = 0
-        for voice in self.sorted_voices:
-            if voice[0] == speech.voice[0]:
-                break
-            default = default + 1
+        self._speech.connect('play', self._play_cb)
+        self._speech.connect('stop', self._stop_cb)
+        self._speech.connect('pause', self._pause_cb)
 
-        # Play button
-        self.play_btn = ToggleToolButton('media-playback-start')
-        self.play_btn.show()
-        self.play_toggled_handler = self.play_btn.connect(
-            'toggled', self.play_cb)
-        self.insert(self.play_btn, -1)
-        self.play_btn.set_tooltip(_('Play / Pause'))
+        def make_button(icon, callback, tip):
+            button = ToolButton(icon)
+            button.show()
+            button.connect('clicked', callback)
+            self.insert(button, -1)
+            button.set_tooltip(tip)
+            return button
 
-        # Stop button
-        self.stop_btn = ToolButton('media-playback-stop')
-        self.stop_btn.show()
-        self.stop_btn.connect('clicked', self.stop_cb)
-        self.stop_btn.set_sensitive(False)
-        self.insert(self.stop_btn, -1)
-        self.stop_btn.set_tooltip(_('Stop'))
+        self._play_button = make_button(
+            'media-playback-start', self._play_clicked_cb, _('Play'))
 
-        self.voice_combo = ComboBox()
-        for voice in self.sorted_voices:
-            self.voice_combo.append_item(voice, voice[0])
-        self.voice_combo.set_active(default)
+        self._pause_button = make_button(
+            'media-playback-pause', self._pause_clicked_cb, _('Pause'))
 
-        self.voice_combo.connect('changed', self.voice_changed_cb)
-        combotool = ToolComboBox(self.voice_combo)
-        self.insert(combotool, -1)
-        combotool.show()
-        speech.reset_cb = self.reset_buttons_cb
-        speech.end_text_cb = self.reset_buttons_cb
+        self._stop_button = make_button(
+            'media-playback-stop', self._stop_clicked_cb, _('Stop'))
 
-    def compare_voices(self,  a,  b):
-        if a[0].lower() == b[0].lower():
-            return 0
-        if a[0] .lower() < b[0].lower():
-            return -1
-        if a[0] .lower() > b[0].lower():
-            return 1
+        self._stop_cb(None)
 
-    def voice_changed_cb(self, combo):
-        speech.voice = combo.props.value
-        speech.say(speech.voice[0])
-        self.save_speech_parameters()
+    def _play_cb(self, speech):
+        self._play_button.set_sensitive(False)
+        self._pause_button.set_sensitive(True)
+        self._stop_button.set_sensitive(True)
 
-    def load_speech_parameters(self):
-        speech_parameters = {}
-        data_path = os.path.join(self._activity.get_activity_root(), 'data')
-        data_file_name = os.path.join(data_path, 'speech_params.json')
-        if os.path.exists(data_file_name):
-            f = open(data_file_name, 'r')
-            try:
-                speech_parameters = json.load(f)
-                speech.voice = speech_parameters['voice']
-            finally:
-                f.close()
+    def _pause_cb(self, speech):
+        self._play_button.set_sensitive(True)
+        self._pause_button.set_sensitive(False)
+        self._stop_button.set_sensitive(True)
 
-    def save_speech_parameters(self):
-        speech_parameters = {}
-        speech_parameters['voice'] = speech.voice
-        data_path = os.path.join(self._activity.get_activity_root(), 'data')
-        data_file_name = os.path.join(data_path, 'speech_params.json')
-        f = open(data_file_name, 'w')
-        try:
-            json.dump(speech_parameters, f)
-        finally:
-            f.close()
+    def _stop_cb(self, speech):
+        self._play_button.set_sensitive(True)
+        self._pause_button.set_sensitive(False)
+        self._stop_button.set_sensitive(False)
 
-    def reset_buttons_cb(self):
-        logging.error('reset buttons')
-        self.play_btn.set_icon_name('media-playback-start')
-        self.stop_btn.set_sensitive(False)
-        self.play_btn.handler_block(self.play_toggled_handler)
-        self.play_btn.set_active(False)
-        self.play_btn.handler_unblock(self.play_toggled_handler)
-        self.is_paused = False
-
-    def play_cb(self, widget):
-        self.stop_btn.set_sensitive(True)
-        if widget.get_active():
-            self.play_btn.set_icon_name('media-playback-pause')
-            logging.error('Paused %s', self.is_paused)
-            if not self.is_paused:
-                # get the text to speech, if there are a selection,
-                # play selected text, if not, play all
-                abi = self._activity.abiword_canvas
-                selection = abi.get_selection('text/plain')
-                if not selection or selection[0] is None or selection[1] == 0:
-                    # nothing selected
-                    abi.select_all()
-                    text = abi.get_selection('text/plain')[0]
-                    abi.moveto_bod()
-                else:
-                    text = selection[0]
-                speech.play(text)
-            else:
-                logging.error('Continue play')
-                speech.continue_play()
+    def _play_clicked_cb(self, widget):
+        if not self._speech.get_is_paused():
+            abi = self._activity.abiword_canvas
+            text = abi.get_content("text/plain", None)
+            self._speech.say_text(text[0])
         else:
-            self.play_btn.set_icon_name('media-playback-start')
-            self.is_paused = True
-            speech.pause()
+            self._speech.restart()
 
-    def stop_cb(self, widget):
-        self.stop_btn.set_sensitive(False)
-        self.play_btn.set_icon_name('media-playback-start')
-        self.play_btn.set_active(False)
-        self.is_paused = False
-        speech.stop()
+    def _pause_clicked_cb(self, widget):
+        self._speech.pause()
+
+    def _stop_clicked_cb(self, widget):
+        self._speech.stop()
