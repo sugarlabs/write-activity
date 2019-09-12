@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-21 16:23+1100\n"
+"POT-Creation-Date: 2019-09-12 17:44+1000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,35 +27,35 @@ msgid ""
 "anything! Try changing the look, and size of your text; even insert an image!"
 msgstr ""
 
-#: AbiWordActivity.py:73
+#: AbiWordActivity.py:74
 msgid "Connecting..."
 msgstr ""
 
-#: AbiWordActivity.py:103
+#: AbiWordActivity.py:104
 msgid "Edit"
 msgstr ""
 
-#: AbiWordActivity.py:109
+#: AbiWordActivity.py:110
 msgid "View"
 msgstr ""
 
-#: AbiWordActivity.py:124
+#: AbiWordActivity.py:125
 msgid "Text"
 msgstr ""
 
-#: AbiWordActivity.py:130
+#: AbiWordActivity.py:131
 msgid "Paragraph"
 msgstr ""
 
-#: AbiWordActivity.py:136
+#: AbiWordActivity.py:137
 msgid "Table"
 msgstr ""
 
-#: AbiWordActivity.py:140
+#: AbiWordActivity.py:141
 msgid "Insert Image"
 msgstr ""
 
-#: AbiWordActivity.py:148
+#: AbiWordActivity.py:149
 msgid "Floating"
 msgstr ""
 
@@ -63,11 +63,15 @@ msgstr ""
 msgid "Select font"
 msgstr ""
 
-#: speechtoolbar.py:57
-msgid "Play / Pause"
+#: speechtoolbar.py:45
+msgid "Play"
 msgstr ""
 
-#: speechtoolbar.py:65
+#: speechtoolbar.py:48
+msgid "Pause"
+msgstr ""
+
+#: speechtoolbar.py:51
 msgid "Stop"
 msgstr ""
 
@@ -115,115 +119,115 @@ msgstr ""
 msgid "Split Cells"
 msgstr ""
 
-#: toolbar.py:330
+#: toolbar.py:331
 msgid "Zoom Out"
 msgstr ""
 
-#: toolbar.py:337
+#: toolbar.py:338
 msgid "Zoom In"
 msgstr ""
 
-#: toolbar.py:344
+#: toolbar.py:345
 msgid "Zoom to width"
 msgstr ""
 
-#: toolbar.py:361
+#: toolbar.py:362
 msgid "%"
 msgstr ""
 
-#: toolbar.py:373
+#: toolbar.py:374
 msgid "Page: "
 msgstr ""
 
-#: toolbar.py:472
+#: toolbar.py:473
 msgid "Bold"
 msgstr ""
 
-#: toolbar.py:481
+#: toolbar.py:482
 msgid "Italic"
 msgstr ""
 
-#: toolbar.py:491
+#: toolbar.py:492
 msgid "Underline"
 msgstr ""
 
-#: toolbar.py:505
+#: toolbar.py:502
 msgid "Superscript"
 msgstr ""
 
-#: toolbar.py:518
+#: toolbar.py:512
 msgid "Subscript"
 msgstr ""
 
-#: toolbar.py:521
+#: toolbar.py:541
 msgid "Choose alignment"
 msgstr ""
 
-#: toolbar.py:529
+#: toolbar.py:549
 msgid "Left justify"
 msgstr ""
 
-#: toolbar.py:533
+#: toolbar.py:553
 msgid "Center justify"
 msgstr ""
 
-#: toolbar.py:537
+#: toolbar.py:557
 msgid "Right justify"
 msgstr ""
 
-#: toolbar.py:541
+#: toolbar.py:561
 msgid "Fill justify"
 msgstr ""
 
-#: toolbar.py:602 toolbar.py:651
+#: toolbar.py:622 toolbar.py:671
 msgid "Normal"
 msgstr ""
 
-#: toolbar.py:608
+#: toolbar.py:628
 msgid "Heading 1"
 msgstr ""
 
-#: toolbar.py:612
+#: toolbar.py:632
 msgid "Heading 2"
 msgstr ""
 
-#: toolbar.py:616
+#: toolbar.py:636
 msgid "Heading 3"
 msgstr ""
 
-#: toolbar.py:620
+#: toolbar.py:640
 msgid "Heading 4"
 msgstr ""
 
-#: toolbar.py:624
+#: toolbar.py:644
 msgid "Block Text"
 msgstr ""
 
-#: toolbar.py:628
+#: toolbar.py:648
 msgid "Plain Text"
 msgstr ""
 
-#: toolbar.py:643
+#: toolbar.py:663
 msgid "Select list"
 msgstr ""
 
-#: toolbar.py:661
+#: toolbar.py:681
 msgid "Bullet List"
 msgstr ""
 
-#: toolbar.py:666
+#: toolbar.py:686
 msgid "Dashed List"
 msgstr ""
 
-#: toolbar.py:671
+#: toolbar.py:691
 msgid "Numbered List"
 msgstr ""
 
-#: toolbar.py:676
+#: toolbar.py:696
 msgid "Lower Case List"
 msgstr ""
 
-#: toolbar.py:681
+#: toolbar.py:701
 msgid "Upper Case List"
 msgstr ""
 
