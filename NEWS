@@ -1,3 +1,10 @@
+101
+
+* New superscript and subscript buttons (Andy Tockman, Swarup N),
+* Remove empty locale files (James Cameron),
+* Port to Python 3 (Rahul Bothra, James Cameron),
+* Port to sugar3.speech (James Cameron),
+
 100
 
 * Fix create table function (Swarup N),
