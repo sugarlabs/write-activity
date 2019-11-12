@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-24 17:39+1100\n"
-"PO-Revision-Date: 2018-09-03 20:02+0000\n"
+"PO-Revision-Date: 2019-03-09 02:09+0000\n"
 "Last-Translator: Paulo Francisco <slomp@ufrgs.br>\n"
 "Language-Team: Brazilian Portuguese <fedora-docs-br@redhat.com>\n"
 "Language: pt_BR\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.1.1\n"
-"X-POOTLE-MTIME: 1536004978.000000\n"
+"X-POOTLE-MTIME: 1552097376.000000\n"
 
 #: activity/activity.info:2
 msgid "Write"
@@ -205,12 +205,12 @@ msgstr "Lista numerada"
 # What about "lista com letras minúsculas"?
 #: toolbar.py:645
 msgid "Lower Case List"
-msgstr "Lista (minúsculas)"
+msgstr "Lista de minúsculas"
 
 # See "Lower Case List" comment, please.
 #: toolbar.py:650
 msgid "Upper Case List"
-msgstr "Lista (maiúsculas)"
+msgstr "Lista de maiúsculas"
 
 #: fontcombobox.py:90
 msgid "Select font"
