@@ -156,7 +156,7 @@ class EditToolbar(Gtk.Toolbar):
             logging.error('tempfile is %s' % file_path)
             success, data = pixbuf_sel.save_to_bufferv('png', [], [])
             if success:
-                px_file = open(file_path, 'w')
+                px_file = open(file_path, 'wb')
                 px_file.write(data)
                 px_file.close()
                 self._abiword_canvas.insert_image(file_path, False)
