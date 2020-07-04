@@ -153,7 +153,7 @@ class EditToolbar(Gtk.Toolbar):
                 os.makedirs(temp_path)
             fd, file_path = tempfile.mkstemp(dir=temp_path, suffix='.png')
             os.close(fd)
-            logging.error('tempfile is %s' % file_path)
+            logging.debug('tempfile is %s' % file_path)
             success, data = pixbuf_sel.save_to_bufferv('png', [], [])
             if success:
                 px_file = open(file_path, 'wb')
