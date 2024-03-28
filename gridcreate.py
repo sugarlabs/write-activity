@@ -134,6 +134,7 @@ class GridCreateTest(Gtk.Window):
     def __create_table(self, grid_creator, rows, columns):
         print('rows %d columns %d' % (rows, columns))
 
+
 if __name__ == '__main__':
     GridCreateTest()
     Gtk.main()
