@@ -498,6 +498,16 @@ class TextToolbar(Gtk.Toolbar):
                                                           underline_id))
         self.insert(underline, -1)
 
+        strike = ToggleToolButton('format-text-strike')
+        strike.set_tooltip(_('Strikethrough'))
+        strike.props.accelerator = '<Ctrl>K'
+        strike_id = strike.connect('clicked', lambda sender:
+                                   abiword_canvas.toggle_strike())
+        abiword_canvas.connect('line-through', lambda abi, b:
+                               self._setToggleButtonState(strike, b,
+                                                          strike_id))
+        self.insert(strike, -1)
+
         super_btn = ToggleToolButton('format-text-super')
         super_btn.set_tooltip(_('Superscript'))
         super_btn.props.accelerator = '<Ctrl>asciicircum'
