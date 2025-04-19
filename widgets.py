@@ -45,17 +45,20 @@ class AbiButton(RadioToolButton):
                                         abi_signal, on_abi_cb)
         self._toggled_handler = self.connect('toggled', self.__toggled_cb,
                                              abi, do_abi_cb)
+        self._connected_handlers = [self._abi_handler]
 
     def __toggled_cb(self, button, abi, do_abi_cb):
         if not button.props.active:
             return
 
-        abi.handler_block(self._abi_handler)
+        if self._abi_handler in self._connected_handlers:
+            abi.handler_block(self._abi_handler)
         try:
             logging.debug('Do abi %s' % do_abi_cb)
             do_abi_cb()
         finally:
-            abi.handler_unblock(self._abi_handler)
+            if self._abi_handler in self._connected_handlers:
+                abi.handler_unblock(self._abi_handler)
 
     def __abi_cb(self, abi, prop, abi_signal, on_abi_cb):
         if (on_abi_cb is None and not prop) or \
@@ -75,18 +78,16 @@ class AbiMenuItem(PaletteMenuItem):
     def __init__(self, abi, abi_signal, do_abi_cb, icon_name, label,
                  button, on_abi_cb=None, button_icon_name=None):
         self._icon_name = icon_name
-        # _button_icon_name is used only in the first case of
-        # the list menu
         self._button_icon_name = button_icon_name
         self._button = button
         PaletteMenuItem.__init__(self, icon_name=icon_name, text_label=label)
 
         self._abi_handler = abi.connect(abi_signal, self.__abi_cb,
                                         abi_signal, on_abi_cb)
+        self._connected_handlers = [self._abi_handler]
         self.connect('activate', self.__activated_cb, abi, do_abi_cb)
 
     def __activated_cb(self, button, abi, do_abi_cb):
-
         if self._button_icon_name is not None:
             if self._button.get_icon_name() == self._button_icon_name:
                 return
@@ -94,7 +95,8 @@ class AbiMenuItem(PaletteMenuItem):
             if self._button.get_icon_name() == self._icon_name:
                 return
 
-        abi.handler_block(self._abi_handler)
+        if self._abi_handler in self._connected_handlers:
+            abi.handler_block(self._abi_handler)
         try:
             logging.debug('Do abi %s' % do_abi_cb)
             do_abi_cb()
@@ -103,7 +105,8 @@ class AbiMenuItem(PaletteMenuItem):
             else:
                 self._button.set_icon_name(self._icon_name)
         finally:
-            abi.handler_unblock(self._abi_handler)
+            if self._abi_handler in self._connected_handlers:
+                abi.handler_unblock(self._abi_handler)
 
     def __abi_cb(self, abi, prop, abi_signal, on_abi_cb):
         if (on_abi_cb is None and not prop) or \
@@ -118,7 +121,6 @@ class AbiMenuItem(PaletteMenuItem):
 
 
 class ExportButtonFactory():
-
     _EXPORT_FORMATS = [{'mime_type': 'application/rtf',
                         'title': _('Rich Text (RTF)'),
                         'icon': 'save-as-rtf',
@@ -145,11 +147,9 @@ class ExportButtonFactory():
                         'exp_props': ''}]
 
     def __init__(self, activity, abi):
-
         toolbar = activity.activity_button.props.page
         for i in self._EXPORT_FORMATS:
             if abi.get_version() == '3.0' and i['title'].find('PDF') > -1:
-                # pdf export crashes on abiword 3.0
                 continue
             button = ToolButton(i['icon'])
             button.set_tooltip(i['title'])
@@ -162,11 +162,9 @@ class ExportButtonFactory():
 
         exp_props = format['exp_props']
 
-        # special case HTML export to set the activity name as the HTML title
         if format['mime_type'] == "text/html":
             exp_props += " title:" + activity.metadata['title'] + ';'
 
-        # create a new journal item
         fileObject = datastore.create()
         act_meta = activity.metadata
         fileObject.metadata['title'] = \
@@ -179,7 +177,6 @@ class ExportButtonFactory():
 
         fileObject.metadata['icon-color'] = act_meta['icon-color']
 
-        # don't set application if PDF because Write can't open PDF files
         if format['mime_type'] != 'application/pdf':
             fileObject.metadata['activity'] = act_meta['activity']
 
@@ -192,13 +189,11 @@ class ExportButtonFactory():
         fileObject.metadata['share-scope'] = act_meta.get('share-scope',
                                                           SCOPE_PRIVATE)
 
-        # write out the document contents in the requested format
         fileObject.file_path = os.path.join(activity.get_activity_root(),
                                             'instance', '%i' % time.time())
         abi.save('file://' + fileObject.file_path,
                  format['mime_type'], exp_props)
 
-        # store the journal item
         datastore.write(fileObject, transfer_ownership=True)
         fileObject.destroy()
         del fileObject
@@ -255,7 +250,6 @@ class DocumentView(Abi.Widget):
 
         self.dy = allocation.y + allocation.height - clear.y
 
-        # Ensure there's at least some room for the view
         if self.dy > allocation.height - 80:
             self.dy = 0
             return False
