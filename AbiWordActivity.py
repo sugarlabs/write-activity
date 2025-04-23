@@ -26,10 +26,10 @@ GObject.threads_init()
 
 import gi
 gi.require_version('Gtk', '3.0')
-gi.require_version('TelepathyGLib', '0.12')
+#gi.require_version('TelepathyGLib', '0.12')
 
 from gi.repository import Gtk
-from gi.repository import TelepathyGLib
+#from gi.repository import TelepathyGLib
 
 from sugar3.activity import activity
 from sugar3.activity.widgets import StopButton
@@ -185,28 +185,31 @@ class AbiWordActivity(activity.Activity):
         self.participants = {}
         self.joined = False
 
-        self.connect('shared', self._shared_cb)
+        # Disabled Telepathy-based sharing features for now
+        #self.connect('shared', self._shared_cb)
 
-        if self.shared_activity:
+        #if self.shared_activity:
             # we are joining the activity
-            logger.debug('We are joining an activity')
+        #    logger.debug('We are joining an activity')
             # display a icon while joining
-            self._connecting_box.show()
+        #    self._connecting_box.show()
             # disable the abi widget
-            self.abiword_canvas.set_sensitive(False)
-            self._new_instance = False
-            self.connect('joined', self._joined_cb)
-            self.shared_activity.connect('buddy-joined',
-                                         self._buddy_joined_cb)
-            self.shared_activity.connect('buddy-left', self._buddy_left_cb)
-            if self.get_shared():
-                self._joined_cb(self)
-        else:
+        #   self.abiword_canvas.set_sensitive(False)
+        #    self._new_instance = False
+        #    self.connect('joined', self._joined_cb)
+        #    self.shared_activity.connect('buddy-joined',
+        #                                 self._buddy_joined_cb)
+        #    self.shared_activity.connect('buddy-left', self._buddy_left_cb)
+        #    if self.get_shared():
+        #        self._joined_cb(self)
+        #else:
             # we are creating the activity
-            logger.debug("We are creating an activity")
+        #    logger.debug("We are creating an activity")
 
         self.abiword_canvas.zoom_width()
+        self.abiword_canvas.connect("text-changed", self._update_word_count)
         self.abiword_canvas.show()
+        self._update_word_count()
         self.connect_after('map-event', self.__map_activity_event_cb)
 
         self.abiword_canvas.connect('size-allocate', self.size_allocate_cb)
@@ -259,7 +262,7 @@ class AbiWordActivity(activity.Activity):
 
         return preview_data
 
-    def _shared_cb(self, activity):
+#    def _shared_cb(self, activity):
         logger.debug('My Write activity was shared')
         self._sharing_setup()
 
@@ -271,7 +274,7 @@ class AbiWordActivity(activity.Activity):
         id = channel.OfferDBusTube('com.abisource.abiword.abicollab', {})
         logger.debug('Tube address: %s', channel.GetDBusTubeAddress(id))
 
-    def _sharing_setup(self):
+#    def _sharing_setup(self):
         logger.debug("_sharing_setup()")
 
         if self.shared_activity is None:
@@ -293,7 +296,7 @@ class AbiWordActivity(activity.Activity):
     def _list_tubes_error_cb(self, e):
         logger.error('ListTubes() failed: %s', e)
 
-    def _joined_cb(self, activity):
+#    def _joined_cb(self, activity):
         logger.debug("_joined_cb()")
         if not self.shared_activity:
             self._enable_collaboration()
@@ -318,7 +321,7 @@ class AbiWordActivity(activity.Activity):
         self.abiword_canvas.set_sensitive(True)
         self._connecting_box.hide()
 
-    def _new_tube_cb(self, id, initiator, type, service, params, state):
+#    def _new_tube_cb(self, id, initiator, type, service, params, state):
         logger.debug('New tube: ID=%d initiator=%d type=%d service=%s '
                      'params=%r state=%d', id, initiator, type, service,
                      params, state)
@@ -375,7 +378,7 @@ class AbiWordActivity(activity.Activity):
 
         self._on_dbus_names_changed(id, dbus_names, [])
 
-    def _on_dbus_names_changed(self, tube_id, added, removed):
+#    def _on_dbus_names_changed(self, tube_id, added, removed):
         """
         We call com.abisource.abiword.abicollab.olpc.buddy{Joined,Left}
         according members of the D-Bus tube. That's why we don't add/remove
@@ -391,8 +394,8 @@ class AbiWordActivity(activity.Activity):
                                           bus_name, 0, 0)
             self.participants[handle] = bus_name
 
-    def _on_members_changed(self, message, added, removed, local_pending,
-                            remote_pending, actor, reason):
+   # def _on_members_changed(self, message, added, removed, local_pending,
+   #                         remote_pending, actor, reason):
         logger.debug("_on_members_changed")
         for handle in removed:
             bus_name = self.participants.pop(handle, None)
@@ -480,3 +483,10 @@ class AbiWordActivity(activity.Activity):
         finally:
             chooser.destroy()
             del chooser
+    def _update_word_count(self, *args):
+        # Plain text fetch karo
+        text = self.abiword_canvas.get_content("text/plain", None)[0]
+        # Word count karo (split by space)
+        word_count = len(text.split())
+        # Update label on toolbar
+        self._edit_toolbar.props.page.word_count_label.set_text(f"Words: {word_count}")
