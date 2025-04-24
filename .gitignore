@@ -13,3 +13,7 @@ py-compile
 *~
 locale
 dist
+llm/venv/
+llm/.env
+llm/model_cache/
+__pycache__/

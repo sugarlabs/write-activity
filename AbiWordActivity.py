@@ -52,6 +52,7 @@ from toolbar import ParagraphToolbar
 from widgets import ExportButtonFactory
 from widgets import DocumentView
 from speechtoolbar import SpeechToolbar
+from ai_toolbar import AIAssistanceToolbar
 from sugar3.graphics.objectchooser import ObjectChooser
 try:
     from sugar3.graphics.objectchooser import FILTER_TYPE_GENERIC_MIME
@@ -115,6 +116,12 @@ class AbiWordActivity(activity.Activity):
         self.speech_toolbar = SpeechToolbar(self)
         self.speech_toolbar_button.set_page(self.speech_toolbar)
         self.speech_toolbar_button.show()
+
+        
+        self.ai_toolbar = AIAssistanceToolbar(self.abiword_canvas)
+        ai_button = self.ai_toolbar.create_button()
+        toolbar_box.toolbar.insert(ai_button, -1)
+        ai_button.show()
 
         separator = Gtk.SeparatorToolItem()
         toolbar_box.toolbar.insert(separator, -1)
