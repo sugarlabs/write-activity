@@ -134,6 +134,20 @@ class EditToolbar(Gtk.Toolbar):
         self._findnext.show()
         self._findnext.connect('clicked', self._findnext_cb)
 
+        # Separator before word count (optional)
+        separator = Gtk.SeparatorToolItem()
+        self.insert(separator, -1)
+        separator.show()
+
+        # Word Count Label
+        self.word_count_label = Gtk.Label(label="Words: 0")
+        word_count_toolitem = Gtk.ToolItem()
+        word_count_toolitem.add(self.word_count_label)
+        self.insert(word_count_toolitem, -1)
+        word_count_toolitem.show()
+        self.word_count_label.show()
+
+
         # set the initial state of the search controls
         # note: we won't simple call self._search_entry_changed_cb
         # here, as that will call into the abiword_canvas, which
