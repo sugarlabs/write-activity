@@ -17,55 +17,19 @@ from typing import List
 __all__ = ['LLMManager', 'LLMConfig', 'get_feedback', 'get_feedback_sync', 'get_tokens_list']
 
 def get_feedback(text, prompt_type=None, backend=None):
-    """
-    Get AI feedback on provided text using the configured backend.
     
-    This provides a simple function-based interface to the LLM functionality
-    without having to manage the LLMManager instance directly.
-    
-    Args:
-        text: The text to analyze
-        prompt_type: Optional prompt type (grammar, style, etc.)
-        backend: Optional backend to use (local, openai), defaults to config setting
-        
-    Returns:
-        An async generator yielding response tokens
-    """
     manager = LLMManager()
     manager.initialize(backend_type=backend)
     return manager.get_feedback(text, prompt_type)
 
 async def get_tokens_list(text, prompt_type=None, backend=None) -> List[str]:
-    """
-    Get AI feedback as a list of tokens (async version).
-    
-    Args:
-        text: The text to analyze
-        prompt_type: Optional prompt type (grammar, style, etc.)
-        backend: Optional backend to use (local, openai), defaults to config setting
-        
-    Returns:
-        A list of tokens from the model
-    """
+   
     manager = LLMManager()
     manager.initialize(backend_type=backend)
     return await manager.get_feedback_as_list(text, prompt_type)
 
 def get_feedback_sync(text, prompt_type=None, backend=None) -> str:
-    """
-    Get AI feedback as a single string response (synchronous version).
-    
-    This function should only be used when you're not in an event loop.
-    For code running inside an event loop or async function, use get_tokens_list instead.
-    
-    Args:
-        text: The text to analyze
-        prompt_type: Optional prompt type (grammar, style, etc.)
-        backend: Optional backend to use (local, openai), defaults to config setting
-        
-    Returns:
-        A string containing the complete model response
-    """
+   
     # Create a new event loop only if there isn't one already running
     try:
         loop = asyncio.get_event_loop()
