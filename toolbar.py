@@ -142,7 +142,7 @@ class EditToolbar(Gtk.Toolbar):
         self._findprev.set_sensitive(False)
         self._findnext.set_sensitive(False)
 
-    def __paste_button_cb(self, button):
+    '''def __paste_button_cb(self, button):
         clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
 
         if clipboard.wait_is_image_available():
@@ -159,7 +159,34 @@ class EditToolbar(Gtk.Toolbar):
                 px_file = open(file_path, 'wb')
                 px_file.write(data)
                 px_file.close()
-                self._abiword_canvas.insert_image(file_path, False)
+                self._abiword_canvas.insert_image(file_path, False)'''
+
+    def __paste_button_cb(self, button):
+        clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
+
+        if clipboard.wait_is_image_available():
+            pixbuf_sel = clipboard.wait_for_image()
+            activity = self._abiword_canvas.get_toplevel()
+            temp_path = os.path.join(activity.get_activity_root(), 'instance')
+            if not os.path.exists(temp_path):
+                os.makedirs(temp_path)
+            fd, file_path = tempfile.mkstemp(dir=temp_path, suffix='.png')
+            os.close(fd)
+            try:
+                logging.debug('tempfile is %s' % file_path)
+                success, data = pixbuf_sel.save_to_bufferv('png', [], [])
+                if success:
+                    with open(file_path, 'wb') as px_file:
+                        px_file.write(data)
+                    self._abiword_canvas.insert_image(file_path, False)
+            finally:
+            # Clean up the temporary file after inserting or on error
+                try:
+                    os.remove(file_path)
+                    logging.debug('Removed temporary file: %s' % file_path)
+                except OSError as e:
+                    logging.error('Failed to remove temporary file: %s (Error: %s)' % (file_path, e))
+
 
         elif clipboard.wait_is_uris_available():
             selection = clipboard.wait_for_uris()
