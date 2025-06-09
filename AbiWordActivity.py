@@ -177,8 +177,8 @@ class AbiWordActivity(activity.Activity):
         # we want a nice border so we can select paragraphs easily
         self.abiword_canvas.set_show_margin(True)
 
-        # Set default font face and size
-        self._default_font_face = 'Sans'
+        # Set default font face and size - use DejaVu Sans for better Unicode support
+        self._default_font_face = 'DejaVu Sans'
         self._default_font_size = 12
 
         # activity sharing
@@ -222,8 +222,22 @@ class AbiWordActivity(activity.Activity):
         self.abiword_canvas.invoke_ex(
             'com.abisource.abiword.loadbindings.fromURI',
             keybindings_file, 0, 0)
-        # set default font
+            
+        # set default font and document properties
         if self._new_instance:
+            # Create a new document with explicit UTF-8 encoding
+            self.abiword_canvas.invoke_ex('com.abisource.abiword.doCommand', 
+                                        'newDoc', 'UTF-8', 0)
+            
+            # Apply document-wide settings for better Unicode compatibility
+            self.abiword_canvas.invoke_ex('com.abisource.abiword.doCommand',
+                                        'sectProp', 'encoding:UTF-8', 0)
+            
+            # Enable smart quotes for better typography but with Unicode compatibility
+            self.abiword_canvas.invoke_ex('com.abisource.abiword.doCommand',
+                                        'insertSettings', 'smartquotes:1', 0)
+                                        
+            # Set the font to a Unicode-compatible one
             self.abiword_canvas.select_all()
             logging.debug('Setting default font to %s %d in new documents',
                           self._default_font_face, self._default_font_size)
@@ -231,6 +245,7 @@ class AbiWordActivity(activity.Activity):
             self.abiword_canvas.set_font_size(str(self._default_font_size))
             self.abiword_canvas.moveto_bod()
             self.abiword_canvas.select_bod()
+            
         if hasattr(self.abiword_canvas, 'toggle_rulers'):
             # this is not available yet on upstream abiword
             self.abiword_canvas.view_print_layout()
@@ -417,11 +432,17 @@ class AbiWordActivity(activity.Activity):
         logging.debug('AbiWordActivity.read_file: %s, mimetype: %s',
                       file_path, self.metadata['mime_type'])
         if self._is_plain_text(self.metadata['mime_type']):
-            self.abiword_canvas.load_file('file://' + file_path, 'text/plain')
+            # For plain text, explicitly specify UTF-8 encoding
+            self.abiword_canvas.load_file('file://' + file_path, 'text/plain; charset=utf-8')
         else:
-            # we pass no mime/file type, let libabiword autodetect it,
-            # so we can handle multiple file formats
-            self.abiword_canvas.load_file('file://' + file_path, '')
+            # For OpenDocument format, explicitly specify the mime type
+            if self.metadata['mime_type'] == 'application/vnd.oasis.opendocument.text':
+                self.abiword_canvas.load_file('file://' + file_path, 
+                                             'application/vnd.oasis.opendocument.text')
+            # For RTF or other formats, let AbiWord detect
+            else:
+                self.abiword_canvas.load_file('file://' + file_path, '')
+        
         self.abiword_canvas.zoom_width()
         self._new_instance = False
 
@@ -431,18 +452,16 @@ class AbiWordActivity(activity.Activity):
         # if we were editing a text file save as plain text
         if self._is_plain_text(self.metadata['mime_type']):
             logger.debug('Writing file as type source (text/plain)')
-            self.abiword_canvas.save('file://' + file_path, 'text/plain', '')
+            # Explicitly use UTF-8 for plain text
+            self.abiword_canvas.save('file://' + file_path, 'text/plain', 'charset:utf-8')
         else:
-            # if the file is new, save in .odt format
-            if self.metadata['mime_type'] == '':
-                self.metadata['mime_type'] = 'application/rtf'
-
-            # Abiword can't save in .doc format, save in .rtf instead
-            if self.metadata['mime_type'] == 'application/msword':
-                self.metadata['mime_type'] = 'application/rtf'
-
+            # Save in OpenDocument Format (ODT) which has better Unicode support
+            self.metadata['mime_type'] = 'application/vnd.oasis.opendocument.text'
+            
+            # Use ODT-specific options for better character preservation
+            odt_props = 'odt:pretty=yes; odt:use-named-character-references=yes'
             self.abiword_canvas.save('file://' + file_path,
-                                     self.metadata['mime_type'], '')
+                                 self.metadata['mime_type'], odt_props)
 
         self.metadata['fulltext'] = self.abiword_canvas.get_content(
             'text/plain', None)[0][:3000]
