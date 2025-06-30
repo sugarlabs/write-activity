@@ -52,6 +52,7 @@ from toolbar import ParagraphToolbar
 from widgets import ExportButtonFactory
 from widgets import DocumentView
 from speechtoolbar import SpeechToolbar
+from chatbox import ChatSidebar
 from sugar3.graphics.objectchooser import ObjectChooser
 try:
     from sugar3.graphics.objectchooser import FILTER_TYPE_GENERIC_MIME
@@ -88,6 +89,22 @@ class AbiWordActivity(activity.Activity):
         self.abiword_canvas = DocumentView()
         self._new_instance = True
         toolbar_box = ToolbarBox()
+
+        # Create main content box
+        content_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        content_box.set_homogeneous(False)
+        
+        # Create canvas box to hold the editor
+        canvas_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        canvas_box.set_hexpand(True)
+        canvas_box.set_homogeneous(False)
+
+        # Create sidebar
+        self.chat_sidebar = ChatSidebar()
+        self.chat_sidebar.set_size_request(300, -1)  # Set width to 300px
+        
+        content_box.pack_start(canvas_box, True, True, 0)
+        content_box.pack_end(self.chat_sidebar, False, True, 0)
 
         self.activity_button = ActivityToolbarButton(self)
         toolbar_box.toolbar.insert(self.activity_button, -1)
@@ -172,7 +189,12 @@ class AbiWordActivity(activity.Activity):
         self._connecting_box = ConnectingBox()
         overlay.add_overlay(self._connecting_box)
 
-        self.set_canvas(overlay)
+        # Add overlay to canvas box
+        canvas_box.pack_start(overlay, True, True, 0)
+        content_box.show_all()
+
+        self.set_canvas(content_box)
+        self._connecting_box.hide()
 
         # we want a nice border so we can select paragraphs easily
         self.abiword_canvas.set_show_margin(True)
