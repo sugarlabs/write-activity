@@ -4,6 +4,8 @@ from sugar3.graphics.icon import Icon
 from sugar3.graphics.toolbutton import ToolButton
 import os
 from sugar3.graphics import style
+from conversation_manager import ConversationContext
+from groq_api import load_story_prompt
 
 class ChatMessage(Gtk.Box):
     def __init__(self, message, is_bot=True):
@@ -42,46 +44,62 @@ class ChatSidebar(Gtk.Box):
             css_provider,
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
         Gtk.Box.__init__(self, orientation=Gtk.Orientation.VERTICAL)
+
+        self.context = ConversationContext()
+        self.system_prompt = load_story_prompt()
         
         # Header with Create Framework button
         header = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         create_btn = Gtk.Button(label=_('Create framework'))
         create_btn.get_style_context().add_class('create-framework-button')
+        create_btn.connect('clicked', self._create_framework)
         header.pack_start(create_btn, True, False, 0)
         self.pack_start(header, False, True, 10)
-        
+
         # Chat messages area
         scroll = Gtk.ScrolledWindow()
         scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
-        
+
         self.messages_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         scroll.add(self.messages_box)
         self.pack_start(scroll, True, True, 0)
-        
+
         # Input area
         input_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         self.entry = Gtk.Entry()
         self.entry.set_placeholder_text(_('My story is about...'))
         self.entry.connect('activate', self._send_message)
-        
+
         send_btn = Gtk.Button(label=_('Send'))
         send_btn.connect('clicked', self._send_message)
-        
+
         input_box.pack_start(self.entry, True, True, 5)
         input_box.pack_start(send_btn, False, True, 5)
-        
+
         self.pack_end(input_box, False, True, 10)
         self.show_all()
-    
+        # Show initial bot message
+        self._show_initial_messages()
+
+    def _show_initial_messages(self):
+        for msg in self.context.messages:
+            self.add_message(msg["content"], msg["role"] == "assistant")
+
     def _send_message(self, widget):
         message = self.entry.get_text()
         if message:
+            self.context.add_user_message(message)
             self.add_message(message, False)
             self.entry.set_text('')
-            # Add mock bot response
-            self.add_message(_('Bot is going to be live soon'), True)
-    
+            # Get LLM response using the loaded system prompt
+            response = self.context.get_llm_response(self.context.get_latest_context(), self.system_prompt)
+            self.context.add_bot_message(response)
+            self.add_message(response, True)
+
     def add_message(self, message, is_bot=True):
         msg = ChatMessage(message, is_bot)
         self.messages_box.pack_start(msg, False, True, 0)
         msg.show_all()
+
+    def _create_framework(self, widget):
+        self.context.write_framework()
