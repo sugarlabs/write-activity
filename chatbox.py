@@ -54,6 +54,11 @@ class ChatSidebar(Gtk.Box):
         create_btn.get_style_context().add_class('create-framework-button')
         create_btn.connect('clicked', self._create_framework)
         header.pack_start(create_btn, True, False, 0)
+        # Add Back button to the right
+        back_btn = Gtk.Button(label=_('Back'))
+        back_btn.get_style_context().add_class('back-framework-button')
+        back_btn.connect('clicked', self._show_framework)
+        header.pack_start(back_btn, False, False, 0)
         self.pack_start(header, False, True, 10)
 
         # Chat messages area
@@ -106,7 +111,7 @@ class ChatSidebar(Gtk.Box):
         self.context.update_story_info()
         self._show_framework()
 
-    def _show_framework(self):
+    def _show_framework(self, widget=None):
         # Hide chat area and show framework display
         for child in self.get_children():
             child.hide()
