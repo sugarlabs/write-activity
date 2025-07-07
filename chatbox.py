@@ -102,4 +102,43 @@ class ChatSidebar(Gtk.Box):
         msg.show_all()
 
     def _create_framework(self, widget):
-        self.context.write_framework()
+        # Remove file writing, instead update story info and show framework in sidebar
+        self.context.update_story_info()
+        self._show_framework()
+
+    def _show_framework(self):
+        # Hide chat area and show framework display
+        for child in self.get_children():
+            child.hide()
+        framework_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
+        framework_box.set_margin_top(20)
+        framework_box.set_margin_bottom(20)
+        framework_box.set_margin_start(20)
+        framework_box.set_margin_end(20)
+        # Add a back button
+        back_btn = Gtk.Button(label=_('Back to chat'))
+        back_btn.connect('clicked', self._show_chat)
+        framework_box.pack_start(back_btn, False, False, 0)
+        # Add framework key-value pairs in colorful boxes
+        for key, value in self.context.story_info.items():
+            pair_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+            key_label = Gtk.Label(label=key.capitalize()+':')
+            key_label.set_xalign(0)
+            key_label.get_style_context().add_class('framework-key')
+            value_entry = Gtk.Entry()
+            value_entry.set_text(value)
+            value_entry.set_editable(False)
+            value_entry.get_style_context().add_class('framework-value')
+            pair_box.pack_start(key_label, False, False, 0)
+            pair_box.pack_start(value_entry, True, True, 0)
+            framework_box.pack_start(pair_box, False, False, 5)
+        self.pack_start(framework_box, True, True, 0)
+        framework_box.show_all()
+        self.framework_box = framework_box
+
+    def _show_chat(self, widget):
+        # Remove framework and show chat area again
+        if hasattr(self, 'framework_box'):
+            self.framework_box.destroy()
+        for child in self.get_children():
+            child.show()

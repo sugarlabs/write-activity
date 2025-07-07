@@ -67,7 +67,7 @@ def write_framework_json(story_info, file_name):
     except Exception as e:
         print(f"Error writing framework file: {str(e)}")
         print(f"Error writing framework file: {str(e)}")
-        
+
 # In-memory conversation context
 class ConversationContext:
     def __init__(self):
