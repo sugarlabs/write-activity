@@ -149,9 +149,12 @@ class ChatSidebar(Gtk.Box):
         for key, value in self.context.story_info.items():
             pair_box = self._create_framework_pair(key, value)
             framework_box.pack_start(pair_box, False, False, 10)
-        self.pack_start(framework_box, True, True, 0)
-        framework_box.show_all()
-        self.framework_box = framework_box
+        scroll = Gtk.ScrolledWindow()
+        scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+        scroll.add(framework_box)
+        self.pack_start(scroll, True, True, 0)
+        scroll.show_all()
+        self.framework_box = scroll
 
     def _show_chat(self, widget):
         # Remove framework and show chat area again
