@@ -19,3 +19,23 @@
     margin: 5px;
     font-weight: bold;
 }
+
+.framework-value-frame {
+    background: #e0f7fa;
+    border-radius: 8px;
+    border: 2px solid #26c6da;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.framework-value-label {
+    color: #006064;
+    font-weight: bold;
+    padding: 12px 24px;
+    font-size: 1.1em;
+}
+.framework-key {
+    font-weight: 600;
+    color: #37474f;
+    margin-bottom: 2px;
+    font-size: 1.05em;
+}
