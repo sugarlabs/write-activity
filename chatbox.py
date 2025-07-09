@@ -105,6 +105,9 @@ class ChatSidebar(Gtk.Box):
         msg = ChatMessage(message, is_bot)
         self.messages_box.pack_start(msg, False, True, 0)
         msg.show_all()
+        # Auto-scroll to new message
+        adj = self.messages_box.get_parent().get_vadjustment()
+        adj.set_value(adj.get_upper() - adj.get_page_size())
 
     def _create_framework(self, widget):
         # Remove file writing, instead update story info and show framework in sidebar
