@@ -47,27 +47,6 @@ def extract_story_info(messages):
         "theme": ""
     }
 
-# Write framework JSON to file
-def write_framework_json(story_info, file_name):
-    try:
-        # Get the directory of the current script
-        base_dir = os.path.dirname(os.path.abspath(__file__))
-        # Build the full path to the target directory: output/
-        target_dir = os.path.join(base_dir, "output")
-        # Make sure the directory exists
-        os.makedirs(target_dir, exist_ok=True)
-        # Full path to the JSON file
-        file_path = os.path.join(target_dir, file_name)
-
-        # Write the JSON data
-        with open(file_path, "w", encoding="utf-8") as f:
-            json.dump(story_info, f, indent=2, ensure_ascii=False)
-
-        print(f"Successfully wrote framework to {file_path}")
-    except Exception as e:
-        print(f"Error writing framework file: {str(e)}")
-        print(f"Error writing framework file: {str(e)}")
-
 # In-memory conversation context
 class ConversationContext:
     def __init__(self):
@@ -102,7 +81,3 @@ class ConversationContext:
 
     def update_story_info(self):
         self.story_info = extract_story_info(self.messages)
-
-    def write_framework(self, file_path="outputs/story_framework.json"):
-        self.update_story_info()
-        write_framework_json(self.story_info, file_path)
