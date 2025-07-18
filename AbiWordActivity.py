@@ -203,8 +203,6 @@ class AbiWordActivity(activity.Activity):
 
         # Add overlay to canvas box
         canvas_box.pack_start(overlay, True, True, 0)
-        # self.set_canvas(content_box)
-        # self._connecting_box.hide()
 
         # we want a nice border so we can select paragraphs easily
         self.abiword_canvas.set_show_margin(True)
