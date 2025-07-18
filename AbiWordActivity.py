@@ -106,6 +106,11 @@ class AbiWordActivity(activity.Activity):
         content_box.pack_start(canvas_box, True, True, 0)
         content_box.pack_end(self.chat_sidebar, False, True, 0)
 
+        # Set the main content box as the canvas
+        self.set_canvas(content_box)
+        content_box.show_all()
+        self.chat_sidebar.hide() # Initially hide the chat sidebar
+
         self.activity_button = ActivityToolbarButton(self)
         toolbar_box.toolbar.insert(self.activity_button, -1)
 
@@ -132,6 +137,13 @@ class AbiWordActivity(activity.Activity):
         self.speech_toolbar = SpeechToolbar(self)
         self.speech_toolbar_button.set_page(self.speech_toolbar)
         self.speech_toolbar_button.show()
+
+        # Add chat button to toolbar
+        chat_button = ToolbarButton()
+        chat_button.props.icon_name = 'chat'
+        chat_button.props.label = _('Chat')
+        chat_button.connect('clicked', lambda w: self.chat_sidebar.toggle_visibility())
+        toolbar_box.toolbar.insert(chat_button, -1)
 
         separator = Gtk.SeparatorToolItem()
         toolbar_box.toolbar.insert(separator, -1)
@@ -191,10 +203,8 @@ class AbiWordActivity(activity.Activity):
 
         # Add overlay to canvas box
         canvas_box.pack_start(overlay, True, True, 0)
-        content_box.show_all()
-
-        self.set_canvas(content_box)
-        self._connecting_box.hide()
+        # self.set_canvas(content_box)
+        # self._connecting_box.hide()
 
         # we want a nice border so we can select paragraphs easily
         self.abiword_canvas.set_show_margin(True)

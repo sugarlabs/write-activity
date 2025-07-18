@@ -29,7 +29,6 @@ class ChatMessage(Gtk.Box):
             self.pack_end(msg_box, True, True, 0)
             
         msg_box.pack_start(msg_label, True, True, 0)
-        self.show_all()
 
 class ChatSidebar(Gtk.Box):
     def __init__(self):
@@ -82,7 +81,6 @@ class ChatSidebar(Gtk.Box):
         input_box.pack_start(send_btn, False, True, 5)
 
         self.pack_end(input_box, False, True, 10)
-        self.show_all()
         # Show initial bot message
         self._show_initial_messages()
 
@@ -165,3 +163,9 @@ class ChatSidebar(Gtk.Box):
             self.framework_box.destroy()
         for child in self.get_children():
             child.show()
+
+    def toggle_visibility(self):
+        if self.get_visible():
+            self.hide()
+        else:
+            self.show_all()
