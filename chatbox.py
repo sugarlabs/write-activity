@@ -146,8 +146,22 @@ class ChatSidebar(Gtk.Box):
         back_btn = Gtk.Button(label=_('Back to chat'))
         back_btn.connect('clicked', self._show_chat)
         framework_box.pack_start(back_btn, False, False, 0)
-        # Add framework key-value pairs in stylized boxes
+        # Separate keys with values from keys without values
+        keys_with_values = []
+        keys_without_values = []
         for key, value in self.context.story_info.items():
+            if value:
+                keys_with_values.append((key, value))
+            else:
+                keys_without_values.append((key, value))
+
+        # Display keys with values first
+        for key, value in keys_with_values:
+            pair_box = self._create_framework_pair(key, value)
+            framework_box.pack_start(pair_box, False, False, 10)
+
+        # Then display keys without values
+        for key, value in keys_without_values:
             pair_box = self._create_framework_pair(key, value)
             framework_box.pack_start(pair_box, False, False, 10)
         scroll = Gtk.ScrolledWindow()
