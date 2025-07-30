@@ -50,8 +50,8 @@ class ChatSidebar(Gtk.Box):
         self.default_meanings = {
             'title': _('A concise and engaging title for the story.'),
             'setting': _('The time and place where the story unfolds.'),
-            'character_main': _('The main character of the story.'),
-            'character_side': _('A supporting character in the story.'),
+            'main_character': _('The main character of the story.'),
+            'side_character': _('A supporting character in the story.'),
             'goal': _('The main objective or desire of the protagonist.'),
             'conflict': _('The central struggle or problem in the story.'),
             'climax': _('The turning point or most intense moment of the story.'),
