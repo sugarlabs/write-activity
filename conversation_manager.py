@@ -10,8 +10,8 @@ def extract_story_info(messages):
         "{\n"
         "    \"title\": \"\",\n"
         "    \"setting\": \"\",\n"
-        "    \"character_main\": \"\",\n"
-        "    \"character_side\": \"\",\n"
+        "    \"main_character\": \"\",\n"
+        "    \"side_character\": \"\",\n"
         "    \"goal\": \"\",\n"
         "    \"conflict\": \"\",\n"
         "    \"climax\": \"\",\n"
@@ -36,8 +36,8 @@ def extract_story_info(messages):
     return {
         "title": "",
         "setting": "",
-        "character_main": "",
-        "character_side": "",
+        "main_character": "",
+        "side_character": "",
         "goal": "",
         "conflict": "",
         "climax": "",
@@ -56,8 +56,8 @@ class ConversationContext:
         self.story_info = {
             "title": "",
             "setting": "",
-            "character_main": "",
-            "character_side": "",
+            "main_character": "",
+            "side_character": "",
             "goal": "",
             "conflict": "",
             "climax": "",
