@@ -46,6 +46,20 @@ class ChatSidebar(Gtk.Box):
 
         self.context = ConversationContext()
         self.system_prompt = load_story_prompt()
+
+        self.default_meanings = {
+            'title': _('A concise and engaging title for the story.'),
+            'setting': _('The time and place where the story unfolds.'),
+            'character_main': _('The main character of the story.'),
+            'character_side': _('A supporting character in the story.'),
+            'goal': _('The main objective or desire of the protagonist.'),
+            'conflict': _('The central struggle or problem in the story.'),
+            'climax': _('The turning point or most intense moment of the story.'),
+            'helpers': _('Characters who assist the protagonist.'),
+            'villains': _('Characters who oppose the protagonist.'),
+            'ending': _('The conclusion or resolution of the story.'),
+            'theme': _('The underlying message or central idea of the story.')
+        }
         
         # Header with Create Framework button
         header = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
@@ -121,12 +135,17 @@ class ChatSidebar(Gtk.Box):
         value_frame.set_shadow_type(Gtk.ShadowType.IN)
         value_frame.get_style_context().add_class('framework-value-frame')
         value_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
-        value_label = Gtk.Label(label=value)
+        if value:
+            value_label = Gtk.Label(label=value)
+            value_label.get_style_context().add_class('framework-value-label')
+        else:
+            value_label = Gtk.Label(label=self.default_meanings.get(key))
+            value_label.get_style_context().add_class('framework-default-value-label')
+
         value_label.set_xalign(0.5)
         value_label.set_justify(Gtk.Justification.CENTER)
         value_label.set_halign(Gtk.Align.CENTER)
         value_label.set_valign(Gtk.Align.CENTER)
-        value_label.get_style_context().add_class('framework-value-label')
         value_box.pack_start(value_label, True, True, 10)
         value_frame.add(value_box)
         pair_box.pack_start(key_label, False, False, 0)
