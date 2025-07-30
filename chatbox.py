@@ -160,6 +160,13 @@ class ChatSidebar(Gtk.Box):
             pair_box = self._create_framework_pair(key, value)
             framework_box.pack_start(pair_box, False, False, 10)
 
+        # Add a separator after keys with values
+        if keys_with_values and keys_without_values:
+            separator = Gtk.Separator(orientation=Gtk.Orientation.HORIZONTAL)
+            separator.set_margin_top(10)
+            separator.set_margin_bottom(10)
+            framework_box.pack_start(separator, False, False, 0)
+
         # Then display keys without values
         for key, value in keys_without_values:
             pair_box = self._create_framework_pair(key, value)
