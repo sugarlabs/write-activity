@@ -44,6 +44,8 @@ from sugar3.graphics.xocolor import XoColor
 from sugar3.graphics.palettemenu import PaletteMenuBox
 from sugar3.graphics.palettemenu import PaletteMenuItem
 
+from groq_api import get_llm_response
+
 from toolbar import EditToolbar
 from toolbar import ViewToolbar
 from toolbar import TextToolbar
@@ -139,11 +141,18 @@ class AbiWordActivity(activity.Activity):
         self.speech_toolbar_button.show()
 
         # Add chat button to toolbar
-        chat_button = ToolbarButton()
-        chat_button.props.icon_name = 'chat'
-        chat_button.props.label = _('Chat')
-        chat_button.connect('clicked', lambda w: self.chat_sidebar.toggle_visibility())
-        toolbar_box.toolbar.insert(chat_button, -1)
+        chat_toolbar = ToolbarButton()
+        chat_toolbar.props.icon_name = 'chat'
+        chat_toolbar.props.label = _('Chat')
+        chat_toolbar.connect('clicked', lambda w: self.chat_sidebar.toggle_visibility())
+        toolbar_box.toolbar.insert(chat_toolbar, -1)
+        
+        #Add a advice button 
+        advice_toolbar = ToolbarButton()
+        advice_toolbar.props.icon_name = 'document-print'
+        advice_toolbar.props.label = _('Print Content')
+        advice_toolbar.connect('clicked', lambda w: self.get_canvas_content_for_advice())
+        toolbar_box.toolbar.insert(advice_toolbar, -1)
 
         separator = Gtk.SeparatorToolItem()
         toolbar_box.toolbar.insert(separator, -1)
@@ -442,6 +451,24 @@ class AbiWordActivity(activity.Activity):
 
     def _buddy_left_cb(self, activity, buddy):
         logger.debug('buddy left with object path: %s', buddy.object_path())
+        
+    def load_story_prompt(self):
+        prompt_path = os.path.join(os.path.dirname(__file__), "prompts", "advice_prompt.txt")
+        with open(prompt_path, "r", encoding="utf-8") as f:
+            return f.read()    
+        
+    def get_canvas_content_for_advice(self):
+        """
+        Retrieves the content from the abiword_canvas and sends it to the LLM.
+        """
+        try:
+            document_content = self.abiword_canvas.get_content('text/plain', None)[0]
+            advice_prompt = self.load_story_prompt()
+            advice = get_llm_response([{"role": "user", "content": document_content}], advice_prompt)
+            print("Mary Tales suggests:\n", advice)
+
+        except Exception as e:
+            logger.error("Error getting canvas content: %s", e)
 
     def read_file(self, file_path):
         logging.debug('AbiWordActivity.read_file: %s, mimetype: %s',
