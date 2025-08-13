@@ -60,19 +60,22 @@ class ChatSidebar(Gtk.Box):
             'ending': _('The conclusion or resolution of the story.'),
             'theme': _('The underlying message or central idea of the story.')
         }
-        
+
+        # Create a Gtk.Stack to manage different views (chat, framework)
+        self.main_stack = Gtk.Stack()
+        self.main_stack.set_transition_type(Gtk.StackTransitionType.SLIDE_LEFT_RIGHT)
+        self.main_stack.set_transition_duration(300)
+
+        # --- Chat View Setup ---
+        self.chat_view_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+
         # Header with Create Framework button
         header = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         create_btn = Gtk.Button(label=_('Create framework'))
         create_btn.get_style_context().add_class('create-framework-button')
         create_btn.connect('clicked', self._create_framework)
         header.pack_start(create_btn, True, False, 0)
-        # Add Back button to the right
-        back_btn = Gtk.Button(label=_('Back'))
-        back_btn.get_style_context().add_class('back-framework-button')
-        back_btn.connect('clicked', self._show_framework)
-        header.pack_start(back_btn, False, False, 0)
-        self.pack_start(header, False, True, 10)
+        self.chat_view_box.pack_start(header, False, True, 10)
 
         # Chat messages area
         scroll = Gtk.ScrolledWindow()
@@ -80,7 +83,7 @@ class ChatSidebar(Gtk.Box):
 
         self.messages_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         scroll.add(self.messages_box)
-        self.pack_start(scroll, True, True, 0)
+        self.chat_view_box.pack_start(scroll, True, True, 0)
 
         # Input area
         input_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
@@ -94,9 +97,37 @@ class ChatSidebar(Gtk.Box):
         input_box.pack_start(self.entry, True, True, 5)
         input_box.pack_start(send_btn, False, True, 5)
 
-        self.pack_end(input_box, False, True, 10)
+        self.chat_view_box.pack_end(input_box, False, True, 10)
         # Show initial bot message
         self._show_initial_messages()
+
+        # Add chat view to the stack
+        self.main_stack.add_titled(self.chat_view_box, "chat_view", "Chat")
+
+        # --- Framework View Setup (initialized once) ---
+        self.framework_view_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=20)
+        self.framework_view_box.set_margin_top(20)
+        self.framework_view_box.set_margin_bottom(20)
+        self.framework_view_box.set_margin_start(20)
+        self.framework_view_box.set_margin_end(20)
+
+        # Add a back button for the framework view
+        framework_back_btn = Gtk.Button(label=_('Back to chat'))
+        framework_back_btn.connect('clicked', self._show_chat)
+        self.framework_view_box.pack_start(framework_back_btn, False, False, 0)
+
+        # Scrolled window for framework content
+        self.framework_scroll = Gtk.ScrolledWindow()
+        self.framework_scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+        self.framework_content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10) # This will hold the actual framework pairs
+        self.framework_scroll.add(self.framework_content_box)
+        self.framework_view_box.pack_start(self.framework_scroll, True, True, 0)
+
+        # Add framework view to the stack
+        self.main_stack.add_titled(self.framework_view_box, "framework_view", "Framework")
+
+        # Pack the stack into the ChatSidebar
+        self.pack_start(self.main_stack, True, True, 0)
 
     def _show_initial_messages(self):
         for msg in self.context.messages:
@@ -122,9 +153,9 @@ class ChatSidebar(Gtk.Box):
         adj.set_value(adj.get_upper() - adj.get_page_size())
 
     def _create_framework(self, widget):
-        # Remove file writing, instead update story info and show framework in sidebar
         self.context.update_story_info()
-        self._show_framework()
+        self._update_framework_display() # Call a new method to update content
+        self.main_stack.set_visible_child_name("framework_view") # Switch to framework view
 
     def _create_framework_pair(self, key, value):
         pair_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=2)
@@ -152,19 +183,11 @@ class ChatSidebar(Gtk.Box):
         pair_box.pack_start(value_frame, False, False, 0)
         return pair_box
 
-    def _show_framework(self, widget=None):
-        # Hide chat area and show framework display
-        for child in self.get_children():
-            child.hide()
-        framework_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=20)
-        framework_box.set_margin_top(20)
-        framework_box.set_margin_bottom(20)
-        framework_box.set_margin_start(20)
-        framework_box.set_margin_end(20)
-        # Add a back button
-        back_btn = Gtk.Button(label=_('Back to chat'))
-        back_btn.connect('clicked', self._show_chat)
-        framework_box.pack_start(back_btn, False, False, 0)
+    def _update_framework_display(self):
+        # Clear existing framework content
+        for child in self.framework_content_box.get_children():
+            self.framework_content_box.remove(child)
+
         # Separate keys with values from keys without values
         keys_with_values = []
         keys_without_values = []
@@ -177,35 +200,33 @@ class ChatSidebar(Gtk.Box):
         # Display keys with values first
         for key, value in keys_with_values:
             pair_box = self._create_framework_pair(key, value)
-            framework_box.pack_start(pair_box, False, False, 10)
+            self.framework_content_box.pack_start(pair_box, False, False, 10)
 
         # Add a separator after keys with values
         if keys_with_values and keys_without_values:
             separator = Gtk.Separator(orientation=Gtk.Orientation.HORIZONTAL)
             separator.set_margin_top(10)
             separator.set_margin_bottom(10)
-            framework_box.pack_start(separator, False, False, 0)
+            self.framework_content_box.pack_start(separator, False, False, 0)
 
         # Then display keys without values
         for key, value in keys_without_values:
             pair_box = self._create_framework_pair(key, value)
-            framework_box.pack_start(pair_box, False, False, 10)
-        scroll = Gtk.ScrolledWindow()
-        scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
-        scroll.add(framework_box)
-        self.pack_start(scroll, True, True, 0)
-        scroll.show_all()
-        self.framework_box = scroll
+            self.framework_content_box.pack_start(pair_box, False, False, 10)
+        self.framework_content_box.show_all()
 
-    def _show_chat(self, widget):
-        # Remove framework and show chat area again
-        if hasattr(self, 'framework_box'):
-            self.framework_box.destroy()
-        for child in self.get_children():
-            child.show()
+    def _show_framework(self, widget=None):
+        # This method is now primarily for the 'Back' button in the header
+        # It will update the framework content and then switch to it.
+        self._update_framework_display()
+        self.main_stack.set_visible_child_name("framework_view")
+
+    def _show_chat(self, widget=None):
+        # Switch to chat view
+        self.main_stack.set_visible_child_name("chat_view")
 
     def toggle_visibility(self):
         if self.get_visible():
             self.hide()
         else:
-            self.show_all()
+            self.show()
