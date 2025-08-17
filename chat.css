@@ -46,3 +46,12 @@
     padding: 12px 24px;
     font-size: 1.1em;
 }
+
+.advice-header {
+    background-color: #FFD700;
+    color: #333333;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
