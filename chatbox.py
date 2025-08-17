@@ -31,7 +31,7 @@ class ChatMessage(Gtk.Box):
         msg_box.pack_start(msg_label, True, True, 0)
 
 class ChatSidebar(Gtk.Box):
-    def __init__(self):
+    def __init__(self, activity):
         # Load CSS
         css_provider = Gtk.CssProvider()
         css_file = os.path.join(os.path.dirname(__file__), 'chat.css')
@@ -43,6 +43,7 @@ class ChatSidebar(Gtk.Box):
             css_provider,
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
         Gtk.Box.__init__(self, orientation=Gtk.Orientation.VERTICAL)
+        self.activity = activity
 
         self.context = ConversationContext()
         self.system_prompt = load_story_prompt()
@@ -110,24 +111,90 @@ class ChatSidebar(Gtk.Box):
         self.framework_view_box.set_margin_bottom(20)
         self.framework_view_box.set_margin_start(20)
         self.framework_view_box.set_margin_end(20)
+        
+        # Buttons for framework view
+        framework_buttons_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
 
+        # Add advice button next to 'Back to chat'
+        self.advice_toggle_btn = Gtk.Button(label=_('Advice'))
+        self.advice_toggle_btn.connect('clicked', self._toggle_advice_section)
+        framework_buttons_box.pack_start(self.advice_toggle_btn, False, False, 0)
+        
         # Add a back button for the framework view
         framework_back_btn = Gtk.Button(label=_('Back to chat'))
         framework_back_btn.connect('clicked', self._show_chat)
-        self.framework_view_box.pack_start(framework_back_btn, False, False, 0)
+        framework_buttons_box.pack_start(framework_back_btn, False, False, 0)
+
+        self.framework_view_box.pack_start(framework_buttons_box, False, False, 0)
+
+        # Advice section setup
+        self.advice_section_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
+        self.advice_section_box.set_margin_top(2)
+        self.advice_section_box.set_margin_bottom(2)
+        self.advice_section_box.set_margin_start(20)
+        self.advice_section_box.set_margin_end(20)
+
+        # Add "Mary Tales suggests" header
+        advice_header_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        advice_header_label = Gtk.Label(label=_('Mary Tales suggests'))
+        advice_header_label.get_style_context().add_class('advice-header')
+        advice_header_box.pack_start(advice_header_label, True, True, 0)
+        # Add a separator at the top of the advice section
+        separator = Gtk.Separator(orientation=Gtk.Orientation.HORIZONTAL)
+        separator.set_margin_top(5)
+        separator.set_margin_bottom(5)
+        self.advice_section_box.pack_start(separator, False, False, 0)
+
+        self.advice_section_box.pack_start(advice_header_box, False, False, 0)
+
+        self.advice_label = Gtk.Label(label='')
+        self.advice_label.set_line_wrap(True)
+        self.advice_label.set_max_width_chars(50)
+        self.advice_label.set_justify(Gtk.Justification.LEFT)
+
+        advice_scroll = Gtk.ScrolledWindow()
+        advice_scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+        advice_scroll.set_min_content_height(150)
+        advice_scroll.add(self.advice_label)
+        self.advice_section_box.pack_start(advice_scroll, False, False, 0)
 
         # Scrolled window for framework content
         self.framework_scroll = Gtk.ScrolledWindow()
         self.framework_scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
         self.framework_content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10) # This will hold the actual framework pairs
         self.framework_scroll.add(self.framework_content_box)
+        self.framework_scroll.set_vexpand(True)
         self.framework_view_box.pack_start(self.framework_scroll, True, True, 0)
+
+        self.framework_view_box.pack_start(self.advice_section_box, False, False, 0)
+        self.advice_section_box.set_vexpand(False)
+
+        self.generate_advice_btn = Gtk.Button(label=_('Generate Advice'))
+        self.generate_advice_btn.connect('clicked', self._generate_and_display_advice)
+        self.advice_section_box.pack_end(self.generate_advice_btn, False, False, 0)
 
         # Add framework view to the stack
         self.main_stack.add_titled(self.framework_view_box, "framework_view", "Framework")
 
         # Pack the stack into the ChatSidebar
         self.pack_start(self.main_stack, True, True, 0)
+
+        # Ensure advice section is hidden by default after all packing
+        self.advice_section_box.hide()
+
+    def _toggle_advice_section(self, widget):
+        if self.advice_section_box.get_visible():
+            self.advice_section_box.hide()
+        else:
+            self.advice_section_box.show()
+
+    def _generate_and_display_advice(self, widget):
+        self.advice_label.set_text("Generating advice...")
+        advice = self.activity.get_canvas_content_for_advice()
+        self.advice_label.set_text(advice)
+
+    def set_advice_text(self, advice_text):
+        self.advice_label.set_text(advice_text)
 
     def _show_initial_messages(self):
         for msg in self.context.messages:
@@ -156,6 +223,7 @@ class ChatSidebar(Gtk.Box):
         self.context.update_story_info()
         self._update_framework_display() # Call a new method to update content
         self.main_stack.set_visible_child_name("framework_view") # Switch to framework view
+        self.advice_section_box.hide() # Ensure advice section is hidden by default when framework is created
 
     def _create_framework_pair(self, key, value):
         pair_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=2)
