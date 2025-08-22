@@ -31,7 +31,7 @@ class ChatMessage(Gtk.Box):
         msg_box.pack_start(msg_label, True, True, 0)
 
 class ChatSidebar(Gtk.Box):
-    def __init__(self, activity):
+    def __init__(self, activity, initial_messages=None):
         # Load CSS
         css_provider = Gtk.CssProvider()
         css_file = os.path.join(os.path.dirname(__file__), 'chat.css')
@@ -46,6 +46,9 @@ class ChatSidebar(Gtk.Box):
         self.activity = activity
 
         self.context = ConversationContext()
+        if initial_messages:
+            self.context.messages = initial_messages
+
         self.system_prompt = load_story_prompt()
 
         self.default_meanings = {
