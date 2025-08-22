@@ -19,6 +19,7 @@
 from gettext import gettext as _
 import logging
 import os
+import json
 
 # Abiword needs this to happen as soon as possible
 from gi.repository import GObject
@@ -102,7 +103,16 @@ class AbiWordActivity(activity.Activity):
         canvas_box.set_homogeneous(False)
 
         # Create sidebar
-        self.chat_sidebar = ChatSidebar(self)
+        # Load conversation messages if available
+        initial_messages = None
+        if 'conversation' in self.metadata:
+            try:
+                initial_messages = json.loads(self.metadata['conversation'])
+            except (json.JSONDecodeError, TypeError) as e:
+                logger.debug(f"Error decoding conversation messages: {e}")
+                initial_messages = None
+
+        self.chat_sidebar = ChatSidebar(self, initial_messages=initial_messages)
         self.chat_sidebar.set_size_request(300, -1)  # Set width to 300px
         
         content_box.pack_start(canvas_box, True, True, 0)
@@ -497,6 +507,13 @@ class AbiWordActivity(activity.Activity):
 
         self.metadata['fulltext'] = self.abiword_canvas.get_content(
             'text/plain', None)[0][:3000]
+
+        # Save conversation messages to metadata
+        if hasattr(self, 'chat_sidebar') and hasattr(self.chat_sidebar, 'context') and hasattr(self.chat_sidebar.context, 'messages'):
+            try:
+                self.metadata['conversation'] = json.dumps(self.chat_sidebar.context.messages)
+            except TypeError as e:
+                logger.debug(f"Error serializing conversation messages in write_file: {e}")
 
     def _is_plain_text(self, mime_type):
         # These types have 'text/plain' in their mime_parents  but we need
