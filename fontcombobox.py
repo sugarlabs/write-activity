@@ -248,8 +248,8 @@ class FontSize(Gtk.ToolItem):
         hbox.pack_start(self._size_up, False, False, 5)
 
         radius = 2 * subcell_size
-        theme_up = b"GtkButton {border-radius:0px %dpx %dpx 0px;}" % (radius,
-                                                                     radius)
+        theme_up = b"GtkButton {border-radius:0px %dpx %dpx 0px;}" % \
+                   (radius, radius)
         css_provider_up = Gtk.CssProvider()
         css_provider_up.load_from_data(theme_up)
 
@@ -257,8 +257,8 @@ class FontSize(Gtk.ToolItem):
         style_context.add_provider(css_provider_up,
                                    Gtk.STYLE_PROVIDER_PRIORITY_USER)
 
-        theme_down = b"GtkButton {border-radius: %dpx 0px 0px %dpx;}" % (radius,
-                                                                        radius)
+        theme_down = b"GtkButton {border-radius: %dpx 0px 0px %dpx;}" % \
+                     (radius, radius)
         css_provider_down = Gtk.CssProvider()
         css_provider_down.load_from_data(theme_down)
         style_context = self._size_down.get_style_context()
