@@ -52,17 +52,17 @@ class ChatSidebar(Gtk.Box):
         self.system_prompt = load_story_prompt()
 
         self.default_meanings = {
-            'title': _('A concise and engaging title for the story.'),
-            'setting': _('The time and place where the story unfolds.'),
-            'main_character': _('The main character of the story.'),
-            'side_character': _('A supporting character in the story.'),
-            'goal': _('The main objective or desire of the protagonist.'),
-            'conflict': _('The central struggle or problem in the story.'),
-            'climax': _('The turning point or most intense moment of the story.'),
-            'helpers': _('Characters who assist the protagonist.'),
-            'villains': _('Characters who oppose the protagonist.'),
-            'ending': _('The conclusion or resolution of the story.'),
-            'theme': _('The underlying message or central idea of the story.')
+            'title': _('The name of your story.'),
+            'setting': _('Where and when your story happens.'),
+            'main_character': _('The most important person or animal in your story.'),
+            'side_character': _('A friend or helper character in your story.'),
+            'goal': _('What the main character wants to do or get.'),
+            'conflict': _('The big problem or challenge in the story.'),
+            'climax': _('The most exciting part of the story, where things change!'),
+            'helpers': _('Good guys who help the main character.'),
+            'villains': _('Bad guys who try to stop the main character.'),
+            'ending': _('How the story finishes.'),
+            'theme': _('The main idea or lesson of the story.')
         }
 
         # Create a Gtk.Stack to manage different views (chat, framework)
