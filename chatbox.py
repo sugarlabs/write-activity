@@ -119,12 +119,22 @@ class ChatSidebar(Gtk.Box):
         framework_buttons_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
 
         # Add advice button next to 'Back to chat'
-        self.advice_toggle_btn = Gtk.Button(label=_('Advice'))
+        self.advice_toggle_btn = Gtk.Button()
+        advice_icon = Gtk.Image.new_from_icon_name('advice', Gtk.IconSize.LARGE_TOOLBAR)
+        advice_icon.set_pixel_size(40)
+        self.advice_toggle_btn.set_image(advice_icon)
+        self.advice_toggle_btn.set_always_show_image(True)
+        self.advice_toggle_btn.set_tooltip_text(_('Advice'))
         self.advice_toggle_btn.connect('clicked', self._toggle_advice_section)
         framework_buttons_box.pack_start(self.advice_toggle_btn, False, False, 0)
-        
+
         # Add a back button for the framework view
-        framework_back_btn = Gtk.Button(label=_('Back to chat'))
+        framework_back_btn = Gtk.Button()
+        chat_icon = Gtk.Image.new_from_icon_name('chat', Gtk.IconSize.LARGE_TOOLBAR)
+        chat_icon.set_pixel_size(40)
+        framework_back_btn.set_image(chat_icon)
+        framework_back_btn.set_always_show_image(True)
+        framework_back_btn.set_tooltip_text(_('Back to Chat'))
         framework_back_btn.connect('clicked', self._show_chat)
         framework_buttons_box.pack_start(framework_back_btn, False, False, 0)
 
