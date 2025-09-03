@@ -46,6 +46,7 @@ from sugar3.graphics.palettemenu import PaletteMenuBox
 from sugar3.graphics.palettemenu import PaletteMenuItem
 
 from groq_api import get_llm_response
+import socket
 
 from toolbar import EditToolbar
 from toolbar import ViewToolbar
@@ -154,7 +155,8 @@ class AbiWordActivity(activity.Activity):
         chat_toolbar = ToolbarButton()
         chat_toolbar.props.icon_name = 'chat'
         chat_toolbar.props.label = _('Chat')
-        chat_toolbar.connect('clicked', lambda w: self.chat_sidebar.toggle_visibility())
+        chat_toolbar.set_tooltip(_('Chat'))
+        chat_toolbar.connect('clicked', self._on_chat_button_clicked)
         toolbar_box.toolbar.insert(chat_toolbar, -1)
  
         separator = Gtk.SeparatorToolItem()
@@ -252,6 +254,34 @@ class AbiWordActivity(activity.Activity):
         self.connect_after('map-event', self.__map_activity_event_cb)
 
         self.abiword_canvas.connect('size-allocate', self.size_allocate_cb)
+        
+    def check_internet_connection(self):
+        """Check with reasonable timeout"""
+        try:
+            socket.create_connection(("8.8.8.8", 53), timeout=4)
+            return True
+        except OSError:
+            return False
+
+    def _on_chat_button_clicked(self, widget):
+        if self.chat_sidebar.get_visible():
+            self.chat_sidebar.toggle_visibility()
+        else:
+            self.chat_sidebar.toggle_visibility()
+            if not self.check_internet_connection():
+                self._show_no_internet_dialog()
+
+    def _show_no_internet_dialog(self):
+        dialog = Gtk.MessageDialog(
+            parent=self,  # Use self instead of self.get_window()
+            flags=Gtk.DialogFlags.MODAL,
+            type=Gtk.MessageType.INFO,
+            buttons=Gtk.ButtonsType.CLOSE,
+            message_format=_("Oops! It looks like you're not connected to the internet. Please check your connection to use the chat feature.")
+        )
+        dialog.set_title(_("No Internet Connection"))
+        dialog.run()
+        dialog.destroy()
 
     def size_allocate_cb(self, abi, alloc):
         GObject.idle_add(abi.queue_draw)
