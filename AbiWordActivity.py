@@ -45,7 +45,7 @@ from sugar3.graphics.xocolor import XoColor
 from sugar3.graphics.palettemenu import PaletteMenuBox
 from sugar3.graphics.palettemenu import PaletteMenuItem
 
-from groq_api import get_llm_response
+from sugarai_api import get_llm_response
 import socket
 
 from toolbar import EditToolbar

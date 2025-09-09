@@ -5,7 +5,7 @@ from sugar3.graphics.toolbutton import ToolButton
 import os
 from sugar3.graphics import style
 from conversation_manager import ConversationContext
-from groq_api import load_story_prompt
+from sugarai_api import load_story_prompt
 
 class ChatMessage(Gtk.Box):
     def __init__(self, message, is_bot=True):

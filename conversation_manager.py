@@ -1,6 +1,6 @@
 import json
 import os
-from groq_api import get_llm_response
+from sugarai_api import get_llm_response, get_llm_response_framework
 
 # Extract story info from conversation using LLM analysis prompt
 def extract_story_info(messages):
@@ -22,7 +22,7 @@ def extract_story_info(messages):
         "}\n"
         "Do not include any other text or explanation, just the JSON object."
     )
-    analysis = get_llm_response(messages, analysis_prompt)
+    analysis = get_llm_response_framework(messages, analysis_prompt)
     try:
         start_idx = analysis.find('{')
         end_idx = analysis.rfind('}') + 1
