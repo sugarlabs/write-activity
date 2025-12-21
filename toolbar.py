@@ -160,7 +160,8 @@ class EditToolbar(Gtk.Toolbar):
                 px_file.write(data)
                 px_file.close()
                 self._abiword_canvas.insert_image(file_path, False)
-
+                if os.path.exists(file_path):
+                   os.unlink(file_path)
         elif clipboard.wait_is_uris_available():
             selection = clipboard.wait_for_uris()
             if selection is not None:
