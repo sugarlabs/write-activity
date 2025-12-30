@@ -25,16 +25,22 @@ def get_llm_response(messages, system_prompt=None):
             "X-API-KEY": api_key,
             "Content-Type": "application/json"
         }
+
         payload = {
+            "chat": True,
             "messages": full_messages,
             "max_length": 512,
-            "truncation": False,
-            "repetition_penalty": 1.1,
-            "temperature": 0.7,
+            "temperature": 0.6,
             "top_p": 0.9,
-            "top_k": 40
+            "top_k": 50
         }
-        response = requests.post(f"{SUGAR_AI_API_URL}/chat/completions", headers=headers, json=payload, timeout=60)
+
+        response = requests.post(
+            f"{SUGAR_AI_API_URL}/ask-llm-prompted",
+            headers=headers,
+            json=payload,
+            timeout=60
+        )
         response.raise_for_status()
         data = response.json()
         return data["choices"][0]["message"]["content"]
