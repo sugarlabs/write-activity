@@ -5,13 +5,25 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv(override=True)
 api_key = os.getenv("SUGAR_AI_API_KEY")
+sugar_ai_url = "https://ai.sugarlabs.org"
+local_url = "http://localhost:8000"
+
+def load_url():
+    try:
+        response = requests.head(sugar_ai_url, timeout=2)
+        if response.ok:
+            return sugar_ai_url
+    except requests.RequestException:
+        pass
+    
+    return local_url
 
 def load_story_prompt():
     prompt_path = os.path.join(os.path.dirname(__file__), "prompts", "story_qa_prompt.txt")
     with open(prompt_path, "r", encoding="utf-8") as f:
         return f.read()
 
-SUGAR_AI_API_URL = "https://ai.sugarlabs.org"
+SUGAR_AI_API_URL = load_url()
 story_prompt = load_story_prompt()
 
 def get_llm_response(messages, system_prompt=None):
