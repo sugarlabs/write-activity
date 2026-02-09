@@ -5,6 +5,8 @@ Write is a word processor activity for the Sugar desktop.
 
 Write embeds the AbiWord word processor, and can be used to write and edit text documents.
 
+It is designed for educational use, allowing learners to create, edit, and save documents within the Sugar learning environment.
+
 How to use?
 ===========
 
