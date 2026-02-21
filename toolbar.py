@@ -405,11 +405,15 @@ class ViewToolbar(Gtk.Toolbar):
         self._abiword_canvas.set_zoom_percentage(self._zoom_percentage)
 
     def _zoom_cb(self, canvas, zoom):
-        self._zoom_spin.handler_block(self._zoom_spin_id)
+        handler_id = self._zoom_spin_id
+        
+        if handler_id is not None and self._zoom_spin.handler_is_connected(handler_id):
+            self._zoom_spin.handler_block(handler_id)
         try:
             self._zoom_spin.set_value(zoom)
         finally:
-            self._zoom_spin.handler_unblock(self._zoom_spin_id)
+            if handler_id is not None and self._zoom_spin.handler_is_connected(handler_id):
+                self._zoom_spin.handler_unblock(handler_id)
 
     def _zoom_out_cb(self, button):
         if self._zoom_percentage == 0:
@@ -442,11 +446,15 @@ class ViewToolbar(Gtk.Toolbar):
             ' / ' + str(count)
 
     def _current_page_cb(self, canvas, num):
-        self._page_spin.handler_block(self._page_spin_id)
+        handler_id = self._page_spin_id
+        
+        if handler_id is not None and self._page_spin.handler_is_connected(handler_id):
+            self._page_spin.handler_block(handler_id)
         try:
             self._page_spin.set_value(num)
         finally:
-            self._page_spin.handler_unblock(self._page_spin_id)
+            if handler_id is not None and self._page_spin.handler_is_connected(handler_id):
+                self._page_spin.handler_unblock(handler_id)
 
 
 class TextToolbar(Gtk.Toolbar):
@@ -568,33 +576,46 @@ class TextToolbar(Gtk.Toolbar):
 
     def _font_changed_cb(self, combobox, abi):
         logger.debug('Setting font: %s', combobox.get_font_name())
+        handler_id = self._abi_handler
         try:
-            abi.handler_block(self._abi_handler)
+            if handler_id is not None and abi.handler_is_connected(handler_id):
+                abi.handler_block(handler_id)
             abi.set_font_name(combobox.get_font_name())
         finally:
-            abi.handler_unblock(self._abi_handler)
+            if handler_id is not None and abi.handler_is_connected(handler_id):
+                abi.handler_unblock(handler_id)
 
     def _font_family_cb(self, abi, font_family):
         logging.debug('Abiword font changed to %s', font_family)
         self.font_name_combo.set_font_name(font_family)
 
     def _font_size_changed_cb(self, widget, abi):
-        abi.handler_block(self._abi_handler)
+        handler_id = self._abi_handler
+        if handler_id is not None and abi.handler_is_connected(handler_id):
+            abi.handler_block(handler_id)
         try:
             abi.set_font_size(str(widget.get_font_size()))
         finally:
-            abi.handler_unblock(self._abi_handler)
+            if handler_id is not None and abi.handler_is_connected(handler_id):
+                abi.handler_unblock(handler_id)
 
     def _font_size_cb(self, abi, size):
         logging.debug('Abiword font size changed to %s', size)
-        self.handler_block(self._changed_id)
+        handler_id = self._changed_id
+        if handler_id is not None and self.handler_is_connected(handler_id):
+            self.handler_block(handler_id)
+        
         self.font_size.set_font_size(int(size))
-        self.handler_unblock(self._changed_id)
+        
+        if handler_id is not None and self.handler_is_connected(handler_id):
+            self.handler_unblock(handler_id)
 
     def _setToggleButtonState(self, button, b, id):
-        button.handler_block(id)
+        if button.handler_is_connected(id):
+            button.handler_block(id)
         button.set_active(b)
-        button.handler_unblock(id)
+        if button.handler_is_connected(id):
+            button.handler_unblock(id)
 
     def _text_color_cb(self, button, pspec, abiword_canvas):
         newcolor = button.get_color()

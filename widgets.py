@@ -49,25 +49,37 @@ class AbiButton(RadioToolButton):
     def __toggled_cb(self, button, abi, do_abi_cb):
         if not button.props.active:
             return
+        
+        handler_id = self._abi_handler
 
-        abi.handler_block(self._abi_handler)
+        # Check if handler is valid before blocking
+        if handler_id is not None and abi.handler_is_connected(handler_id):
+            abi.handler_block(handler_id)
         try:
             logging.debug('Do abi %s' % do_abi_cb)
             do_abi_cb()
         finally:
-            abi.handler_unblock(self._abi_handler)
+            # Check if handler is valid before unblocking
+            if handler_id is not None and abi.handler_is_connected(handler_id):
+                abi.handler_unblock(handler_id)
 
     def __abi_cb(self, abi, prop, abi_signal, on_abi_cb):
         if (on_abi_cb is None and not prop) or \
                 (on_abi_cb is not None and not on_abi_cb(abi, prop)):
             return
 
-        self.handler_block(self._toggled_handler)
+        toggled_id = self._toggled_handler
+
+        # Check if handler is valid before blocking
+        if toggled_id is not None and self.handler_is_connected(toggled_id):
+            self.handler_block(toggled_id)
         try:
             logging.debug('On abi %s prop=%r' % (abi_signal, prop))
             self.set_active(True)
         finally:
-            self.handler_unblock(self._toggled_handler)
+            # Check if handler is valid before unblocking
+            if toggled_id is not None and self.handler_is_connected(toggled_id):
+                self.handler_unblock(toggled_id)
 
 
 class AbiMenuItem(PaletteMenuItem):
