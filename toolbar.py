@@ -465,7 +465,7 @@ class TextToolbar(Gtk.Toolbar):
         self.font_size = FontSize()
         self._abi_handler = abiword_canvas.connect('font-size',
                                                    self._font_size_cb)
-        self._changed_id = self.font_size.connect(
+        self._font_size_changed_id = self.font_size.connect(
             'changed', self._font_size_changed_cb, abiword_canvas)
         self.insert(self.font_size, -1)
 
@@ -587,9 +587,9 @@ class TextToolbar(Gtk.Toolbar):
 
     def _font_size_cb(self, abi, size):
         logging.debug('Abiword font size changed to %s', size)
-        self.handler_block(self._changed_id)
+        self.font_size.handler_block(self._font_size_changed_id)
         self.font_size.set_font_size(int(size))
-        self.handler_unblock(self._changed_id)
+        self.font_size.handler_unblock(self._font_size_changed_id)
 
     def _setToggleButtonState(self, button, b, id):
         button.handler_block(id)
