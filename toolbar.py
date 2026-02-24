@@ -45,6 +45,7 @@ from widgets import AbiMenuItem
 from fontcombobox import FontComboBox
 from fontcombobox import FontSize
 from gridcreate import GridCreateWidget
+from specialchars import SpecialCharactersWidget
 
 logger = logging.getLogger('write-activity')
 
@@ -234,6 +235,7 @@ class InsertToolbar(Gtk.Toolbar):
 
         self._abiword_canvas = abiword_canvas
 
+        # Table button and other elements
         self._table_btn = ToolButton('create-table')
         self._table_btn.set_tooltip(_('Create table'))
         self._grid_create = GridCreateWidget()
@@ -454,6 +456,24 @@ class TextToolbar(Gtk.Toolbar):
     def __init__(self, abiword_canvas):
         GObject.GObject.__init__(self)
 
+        self._abiword_canvas = abiword_canvas
+        
+        # Add Special Characters button as the first option
+        self._special_chars_btn = ToolButton('special-characters')
+        self._special_chars_btn.set_tooltip(_('Special Characters'))
+        self._special_chars_widget = SpecialCharactersWidget()
+        self._special_chars_widget.show()
+        self._special_chars_widget.connect('character-selected', 
+                                           self._character_selected_cb)
+        palette = self._special_chars_btn.get_palette()
+        palette.set_content(self._special_chars_widget)
+        
+        # Set palette properties for better fit
+        palette.set_group_id("special-chars")
+        
+        self._special_chars_btn.connect('clicked', self._special_chars_btn_clicked_cb)
+        self.insert(self._special_chars_btn, -1)
+
         self.font_name_combo = FontComboBox()
         self.font_name_combo.set_font_name('Sans')
         self._fonts_changed_id = self.font_name_combo.connect(
@@ -601,6 +621,18 @@ class TextToolbar(Gtk.Toolbar):
         abiword_canvas.set_text_color(int(newcolor.red / 256.0),
                                       int(newcolor.green / 256.0),
                                       int(newcolor.blue / 256.0))
+
+    def _special_chars_btn_clicked_cb(self, button):
+        # Simple approach that is known to work
+        palette = button.get_palette()
+        if not palette.is_up():
+            palette.popup(immediate=True)
+
+    def _character_selected_cb(self, widget, character):
+        """Insert the selected special character into the document"""
+        logging.debug("Inserting character: %s", character)
+        if not self._abiword_canvas.insert_text(character):
+            logging.error("Failed to insert character: %s", character)
 
 
 class ParagraphToolbar(Gtk.Toolbar):
