@@ -43,6 +43,8 @@ from sugar3.graphics.icon import Icon
 from sugar3.graphics.xocolor import XoColor
 from sugar3.graphics.palettemenu import PaletteMenuBox
 from sugar3.graphics.palettemenu import PaletteMenuItem
+from ai_feedback import AIFeedback
+
 
 from toolbar import EditToolbar
 from toolbar import ViewToolbar
@@ -80,6 +82,9 @@ class AbiWordActivity(activity.Activity):
 
     def __init__(self, handle):
         activity.Activity.__init__(self, handle)
+        self.ai_feedback = AIFeedback()
+        self._autocomplete_suggestion = ""  # Holds the current suggestion
+
 
         # abiword uses the current directory for all its file dialogs
         os.chdir(os.path.expanduser('~'))
@@ -115,6 +120,24 @@ class AbiWordActivity(activity.Activity):
         self.speech_toolbar = SpeechToolbar(self)
         self.speech_toolbar_button.set_page(self.speech_toolbar)
         self.speech_toolbar_button.show()
+        
+        # Add a new toolbar button for AI Feedback
+        feedback_button = ToolbarButton()
+        feedback_button.props.icon_name = 'dialog-information'  # or any appropriate icon
+        feedback_button.props.label = _('Feedback')
+        feedback_button.connect('clicked', self.__feedback_cb)
+        toolbar_box.toolbar.insert(feedback_button, -1)
+        feedback_button.show()
+        
+        
+
+        # Add a new toolbar button for Autocomplete
+        autocomplete_button = ToolbarButton()
+        autocomplete_button.props.icon_name = 'edit-find'  # choose an appropriate icon
+        autocomplete_button.props.label = _('Autocomplete')
+        autocomplete_button.connect('clicked', self.__autocomplete_cb)
+        toolbar_box.toolbar.insert(autocomplete_button, -1)
+        autocomplete_button.show()
 
         separator = Gtk.SeparatorToolItem()
         toolbar_box.toolbar.insert(separator, -1)
@@ -210,7 +233,72 @@ class AbiWordActivity(activity.Activity):
         self.connect_after('map-event', self.__map_activity_event_cb)
 
         self.abiword_canvas.connect('size-allocate', self.size_allocate_cb)
+        self.abiword_canvas.connect('key-press-event', self._on_key_press)
 
+
+    def __autocomplete_cb(self, widget):
+        text_content = self.abiword_canvas.get_content('text/plain', None)[0]
+        suggestion = self.ai_feedback.get_autocomplete(text_content)
+        # Wrap the suggestion with lighter (grey) Pango markup if DocumentView supports it.
+        suggestion_markup = "<span foreground='#888888'>" + suggestion + "</span>"
+        self._autocomplete_suggestion = suggestion_markup
+        print("Autocomplete suggestion available. Press Ctrl+L to accept.")
+   
+    def _on_key_press(self, widget, event):
+        from gi.repository import Gdk
+        # Check if Ctrl+L was pressed, using Gdk keyvals.
+        if (event.state & Gdk.ModifierType.CONTROL_MASK) and (event.keyval == Gdk.KEY_l) and self._autocomplete_suggestion:
+            current_text = self.abiword_canvas.get_content('text/plain', None)[0]
+            # Remove any Pango markup before appending.
+            import re
+            plain_suggestion = re.sub(r'<[^>]+>', '', self._autocomplete_suggestion)
+            new_text = current_text + plain_suggestion
+            if hasattr(self.abiword_canvas, 'set_document_text'):
+                self.abiword_canvas.set_document_text(new_text)
+            elif hasattr(self.abiword_canvas, 'child') and hasattr(self.abiword_canvas.child, 'set_text'):
+                self.abiword_canvas.child.set_text(new_text)
+            else:
+                print("DocumentView does not support programmatic text insertion, unable to add text.")
+            self._autocomplete_suggestion = ""  # Clear after accepting.
+            return True
+        return False
+    
+    def __feedback_cb(self, widget):
+        # Use selected text if available, otherwise use the full content.
+        if hasattr(self.abiword_canvas, "get_selected_text"):
+            text_content = self.abiword_canvas.get_selected_text()
+        else:
+            text_content = ""
+        if not text_content or len(text_content.strip()) < 20:
+            text_content = self.abiword_canvas.get_content('text/plain', None)[0]
+
+        # If the text is still too short, show a warning and do not call the AI.
+        if not text_content or len(text_content.strip()) < 20:
+            self.__show_feedback_dialog("Please provide me with more content.")
+            return
+
+        feedback = self.ai_feedback.get_feedback(text_content)
+        self.__show_feedback_dialog(feedback)
+
+    def __show_feedback_dialog(self, feedback):
+        dialog = Gtk.MessageDialog(
+            transient_for=self.get_toplevel(),
+            flags=0,
+            message_type=Gtk.MessageType.INFO,
+            buttons=Gtk.ButtonsType.OK            
+        )
+        dialog.set_markup("<span foreground='blue'>" + _("AI Feedback") + "</span>")
+        dialog.format_secondary_markup("<span foreground='black'>" + feedback + "</span>")        
+        dialog.run()
+        dialog.destroy()
+        
+    def provide_feedback(self):
+        # Assuming self.abiword_canvas.get_content returns the text of the document.
+        text_content = self.abiword_canvas.get_content('text/plain', None)[0]
+        feedback = self.ai_feedback.get_feedback(text_content)
+        # You can now display the feedback as needed.
+        logger.info("Feedback: %s", feedback)
+        
     def size_allocate_cb(self, abi, alloc):
         GObject.idle_add(abi.queue_draw)
 
