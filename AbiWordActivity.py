@@ -19,6 +19,7 @@
 from gettext import gettext as _
 import logging
 import os
+import json
 
 # Abiword needs this to happen as soon as possible
 from gi.repository import GObject
@@ -44,6 +45,9 @@ from sugar3.graphics.xocolor import XoColor
 from sugar3.graphics.palettemenu import PaletteMenuBox
 from sugar3.graphics.palettemenu import PaletteMenuItem
 
+from sugarai_api import get_llm_response
+import socket
+
 from toolbar import EditToolbar
 from toolbar import ViewToolbar
 from toolbar import TextToolbar
@@ -52,6 +56,7 @@ from toolbar import ParagraphToolbar
 from widgets import ExportButtonFactory
 from widgets import DocumentView
 from speechtoolbar import SpeechToolbar
+from chatbox import ChatSidebar
 from sugar3.graphics.objectchooser import ObjectChooser
 try:
     from sugar3.graphics.objectchooser import FILTER_TYPE_GENERIC_MIME
@@ -89,6 +94,36 @@ class AbiWordActivity(activity.Activity):
         self._new_instance = True
         toolbar_box = ToolbarBox()
 
+        # Create main content box
+        content_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        content_box.set_homogeneous(False)
+        
+        # Create canvas box to hold the editor
+        canvas_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        canvas_box.set_hexpand(True)
+        canvas_box.set_homogeneous(False)
+
+        # Create sidebar
+        # Load conversation messages if available
+        initial_messages = None
+        if 'conversation' in self.metadata:
+            try:
+                initial_messages = json.loads(self.metadata['conversation'])
+            except (json.JSONDecodeError, TypeError) as e:
+                logger.debug(f"Error decoding conversation messages: {e}")
+                initial_messages = None
+
+        self.chat_sidebar = ChatSidebar(self, initial_messages=initial_messages)
+        self.chat_sidebar.set_size_request(300, -1)  # Set width to 300px
+        
+        content_box.pack_start(canvas_box, True, True, 0)
+        content_box.pack_end(self.chat_sidebar, False, True, 0)
+
+        # Set the main content box as the canvas
+        self.set_canvas(content_box)
+        content_box.show_all()
+        self.chat_sidebar.hide() # Initially hide the chat sidebar
+
         self.activity_button = ActivityToolbarButton(self)
         toolbar_box.toolbar.insert(self.activity_button, -1)
 
@@ -116,6 +151,14 @@ class AbiWordActivity(activity.Activity):
         self.speech_toolbar_button.set_page(self.speech_toolbar)
         self.speech_toolbar_button.show()
 
+        # Add chat button to toolbar
+        chat_toolbar = ToolbarButton()
+        chat_toolbar.props.icon_name = 'chat'
+        chat_toolbar.props.label = _('Chat')
+        chat_toolbar.set_tooltip(_('Chat'))
+        chat_toolbar.connect('clicked', self._on_chat_button_clicked)
+        toolbar_box.toolbar.insert(chat_toolbar, -1)
+ 
         separator = Gtk.SeparatorToolItem()
         toolbar_box.toolbar.insert(separator, -1)
 
@@ -172,7 +215,8 @@ class AbiWordActivity(activity.Activity):
         self._connecting_box = ConnectingBox()
         overlay.add_overlay(self._connecting_box)
 
-        self.set_canvas(overlay)
+        # Add overlay to canvas box
+        canvas_box.pack_start(overlay, True, True, 0)
 
         # we want a nice border so we can select paragraphs easily
         self.abiword_canvas.set_show_margin(True)
@@ -210,6 +254,34 @@ class AbiWordActivity(activity.Activity):
         self.connect_after('map-event', self.__map_activity_event_cb)
 
         self.abiword_canvas.connect('size-allocate', self.size_allocate_cb)
+        
+    def check_internet_connection(self):
+        """Check with reasonable timeout"""
+        try:
+            socket.create_connection(("8.8.8.8", 53), timeout=4)
+            return True
+        except OSError:
+            return False
+
+    def _on_chat_button_clicked(self, widget):
+        if self.chat_sidebar.get_visible():
+            self.chat_sidebar.toggle_visibility()
+        else:
+            self.chat_sidebar.toggle_visibility()
+            if not self.check_internet_connection():
+                self._show_no_internet_dialog()
+
+    def _show_no_internet_dialog(self):
+        dialog = Gtk.MessageDialog(
+            parent=self,  # Use self instead of self.get_window()
+            flags=Gtk.DialogFlags.MODAL,
+            type=Gtk.MessageType.INFO,
+            buttons=Gtk.ButtonsType.CLOSE,
+            message_format=_("Oops! It looks like you're not connected to the internet. Please check your connection to use the chat feature.")
+        )
+        dialog.set_title(_("No Internet Connection"))
+        dialog.run()
+        dialog.destroy()
 
     def size_allocate_cb(self, abi, alloc):
         GObject.idle_add(abi.queue_draw)
@@ -412,6 +484,25 @@ class AbiWordActivity(activity.Activity):
 
     def _buddy_left_cb(self, activity, buddy):
         logger.debug('buddy left with object path: %s', buddy.object_path())
+        
+    def load_story_prompt(self):
+        prompt_path = os.path.join(os.path.dirname(__file__), "prompts", "advice_prompt.txt")
+        with open(prompt_path, "r", encoding="utf-8") as f:
+            return f.read()    
+        
+    def get_canvas_content_for_advice(self):
+        """
+        Retrieves the content from the abiword_canvas and sends it to the LLM.
+        """
+        try:
+            document_content = self.abiword_canvas.get_content('text/plain', None)[0]
+            advice_prompt = self.load_story_prompt()
+            advice = get_llm_response([{"role": "user", "content": document_content}], advice_prompt)
+            self.chat_sidebar.set_advice_text(advice)
+            return advice
+
+        except Exception as e:
+            logger.error("Error getting canvas content: %s", e)
 
     def read_file(self, file_path):
         logging.debug('AbiWordActivity.read_file: %s, mimetype: %s',
@@ -446,6 +537,13 @@ class AbiWordActivity(activity.Activity):
 
         self.metadata['fulltext'] = self.abiword_canvas.get_content(
             'text/plain', None)[0][:3000]
+
+        # Save conversation messages to metadata
+        if hasattr(self, 'chat_sidebar') and hasattr(self.chat_sidebar, 'context') and hasattr(self.chat_sidebar.context, 'messages'):
+            try:
+                self.metadata['conversation'] = json.dumps(self.chat_sidebar.context.messages)
+            except TypeError as e:
+                logger.debug(f"Error serializing conversation messages in write_file: {e}")
 
     def _is_plain_text(self, mime_type):
         # These types have 'text/plain' in their mime_parents  but we need
