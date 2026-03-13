@@ -18,6 +18,7 @@
 
 from gettext import gettext as _
 import logging
+import re
 
 from gi.repository import Gtk
 from gi.repository import Gdk
@@ -396,9 +397,49 @@ class ViewToolbar(Gtk.Toolbar):
         self.insert(tool_item, -1)
         tool_item.show()
 
+        separator = Gtk.SeparatorToolItem()
+        separator.set_expand(True)
+        separator.props.draw = False
+        self.insert(separator, -1)
+        separator.show()
+
+        self._word_count_label = Gtk.Label(_("0 words"))
+        self._word_count_label.show()
+        tool_item = Gtk.ToolItem()
+        tool_item.add(self._word_count_label)
+        self.insert(tool_item, -1)
+        tool_item.show()
+
+        separator = Gtk.SeparatorToolItem()
+        separator.set_draw(True)
+        separator.show()
+        self.insert(separator, -1)
+
+        self._char_count_label = Gtk.Label(_("0 Characters"))
+        self._char_count_label.show()
+        tool_item = Gtk.ToolItem()
+        tool_item.add(self._char_count_label)
+        self.insert(tool_item, -1)
+        tool_item.show()
+
         self._abiword_canvas.connect("page-count", self._page_count_cb)
         self._abiword_canvas.connect("current-page", self._current_page_cb)
         self._abiword_canvas.connect("zoom", self._zoom_cb)
+        self._abiword_canvas.connect("changed", self._word_char_count_cb)
+
+    def _word_char_count_cb(self, abiword_canvas):
+        text = abiword_canvas.get_content("text/plain", None)[0]
+        word_list = re.findall("(\S+)", text)
+        char_count = len(text.replace('\n', ''))
+        words_count = len(word_list)
+        word_label_text = _("0 words")
+        char_label_text = _("0 characters")
+        if words_count > 0:
+            word_label_text = _("%s words") % str(words_count)
+        if char_count > 0:
+            char_label_text = _("%s characters") % str(char_count)
+        self._word_count_label.set_text(word_label_text)
+        self._char_count_label.set_text(char_label_text)
 
     def set_zoom_percentage(self, zoom):
         self._zoom_percentage = zoom
