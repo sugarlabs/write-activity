@@ -58,10 +58,7 @@ from widgets import DocumentView
 from speechtoolbar import SpeechToolbar
 from chatbox import ChatSidebar
 from sugar3.graphics.objectchooser import ObjectChooser
-try:
-    from sugar3.graphics.objectchooser import FILTER_TYPE_GENERIC_MIME
-except:
-    FILTER_TYPE_GENERIC_MIME = 'generic_mime'
+from sugar3.graphics.objectchooser import FILTER_TYPE_GENERIC_MIME
 
 logger = logging.getLogger('write-activity')
 
@@ -558,13 +555,9 @@ class AbiWordActivity(activity.Activity):
             'text/plain' in mime_parents
 
     def __image_cb(self, button, floating=False):
-        try:
-            chooser = ObjectChooser(self, what_filter='Image',
-                                    filter_type=FILTER_TYPE_GENERIC_MIME,
-                                    show_preview=True)
-        except:
-            # for compatibility with older versions
-            chooser = ObjectChooser(self, what_filter='Image')
+        chooser = ObjectChooser(self, what_filter='Image',
+                                filter_type=FILTER_TYPE_GENERIC_MIME,
+                                show_preview=True)
 
         try:
             result = chooser.run()
