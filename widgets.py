@@ -25,6 +25,8 @@ except:
     gi.require_version('Abi', '3.0')
 from gi.repository import Abi
 from gi.repository import GLib
+from gi.repository import Gtk
+from gi.repository import Gdk
 
 from sugar3.graphics.radiotoolbutton import RadioToolButton
 from sugar3.graphics.toolbutton import ToolButton
@@ -273,3 +275,44 @@ class DocumentView(Abi.Widget):
         version = Abi._version
         logging.debug('Abiword version %s', version)
         return version
+
+    def insert_text(self, text):
+        """Insert text at the current cursor position"""
+        logging.debug("Attempting to insert text: %s", text)
+        
+        try:
+            # Ensure text is properly encoded as UTF-8
+            if not isinstance(text, str):
+                # Convert to unicode if somehow we got bytes
+                text = str(text, 'utf-8')
+            
+            # Insert the Unicode text directly
+            self.cmd("insertText", text)
+            return True
+            
+        except Exception as e:
+            logging.error("Failed to insert text via cmd: %s", e)
+            
+            # Fallback: try clipboard method
+            try:
+                clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
+                # Store current clipboard content
+                current_text = clipboard.wait_for_text()
+                
+                # Set our text to clipboard
+                clipboard.set_text(text, -1)
+                clipboard.store()
+                
+                # Paste it
+                self.paste()
+                
+                # Restore previous clipboard content if any
+                if current_text:
+                    # Add a small delay to ensure paste completes
+                    GLib.timeout_add(100, lambda: clipboard.set_text(current_text, -1) or clipboard.store())
+                    
+                logging.debug("Successfully inserted text via clipboard")
+                return True
+            except Exception as e2:
+                logging.error("Failed to insert text with all methods: %s", e2)
+                return False
