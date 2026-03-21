@@ -396,9 +396,23 @@ class ViewToolbar(Gtk.Toolbar):
         self.insert(tool_item, -1)
         tool_item.show()
 
+        separator2 = Gtk.SeparatorToolItem()
+        separator2.set_draw(True)
+        separator2.show()
+        self.insert(separator2, -1)
+
+        self._word_count_label = Gtk.Label(label=_("Words: 0"))
+        self._word_count_label.show()
+        tool_item_wc = Gtk.ToolItem()
+        tool_item_wc.add(self._word_count_label)
+        self.insert(tool_item_wc, -1)
+        tool_item_wc.show()
+
         self._abiword_canvas.connect("page-count", self._page_count_cb)
         self._abiword_canvas.connect("current-page", self._current_page_cb)
         self._abiword_canvas.connect("zoom", self._zoom_cb)
+        self._abiword_canvas.connect("changed", self._update_word_count_cb)
+
 
     def set_zoom_percentage(self, zoom):
         self._zoom_percentage = zoom
@@ -447,6 +461,21 @@ class ViewToolbar(Gtk.Toolbar):
             self._page_spin.set_value(num)
         finally:
             self._page_spin.handler_unblock(self._page_spin_id)
+
+    def _update_word_count_cb(self, canvas, *args):
+        if hasattr(self, "_word_count_timer") and self._word_count_timer:
+            GObject.source_remove(self._word_count_timer)
+        self._word_count_timer = GObject.timeout_add(500, self._do_word_count, canvas)
+
+    def _do_word_count(self, canvas):
+        try:
+            text = canvas.get_content("text/plain", None)[0]
+            count = len(text.split()) if text.strip() else 0
+            self._word_count_label.props.label = _("Words: ") + str(count)
+        except Exception:
+            pass
+        self._word_count_timer = None
+        return False
 
 
 class TextToolbar(Gtk.Toolbar):
