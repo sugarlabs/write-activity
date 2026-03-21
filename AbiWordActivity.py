@@ -267,9 +267,10 @@ class AbiWordActivity(activity.Activity):
         if self.chat_sidebar.get_visible():
             self.chat_sidebar.toggle_visibility()
         else:
-            self.chat_sidebar.toggle_visibility()
             if not self.check_internet_connection():
                 self._show_no_internet_dialog()
+                return
+            self.chat_sidebar.toggle_visibility()
 
     def _show_no_internet_dialog(self):
         dialog = Gtk.MessageDialog(
