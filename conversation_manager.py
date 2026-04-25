@@ -18,6 +18,8 @@
 
 import json
 import os
+import logging
+logger = logging.getLogger('write-activity')
 from sugarai_api import get_llm_response, get_llm_response_framework
 
 # Extract story info from conversation using LLM analysis prompt
@@ -48,8 +50,8 @@ def extract_story_info(messages):
             json_str = analysis[start_idx:end_idx]
             story_data = json.loads(json_str)
             return story_data
-    except Exception:
-        pass
+    except Exception as e:
+        logger.error(f"Error: {e}")
     # Return default structure if parsing fails
     return {
         "title": "",
@@ -69,7 +71,7 @@ def extract_story_info(messages):
 class ConversationContext:
     def __init__(self):
         self.messages = [
-            {"role": "assistant", "content": "Hi there!👋I am Mary Tales. Who is this story about?✨"}
+            {"role": "assistant", "content": "Hi there! 👋 I am Mary Tales. Who is this story about? ✨"}
         ]
         self.story_info = {
             "title": "",

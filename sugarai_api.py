@@ -18,7 +18,11 @@
 
 import os
 import requests
+import logging
+from gettext import gettext as _
 from dotenv import load_dotenv
+
+logger = logging.getLogger('write-activity')
 
 # Load environment variables
 load_dotenv(override=True)
@@ -48,6 +52,10 @@ def get_llm_response(messages, system_prompt=None):
     """
     Get response from LLM using the story prompt as system prompt if not provided.
     """
+    if not api_key:
+        logger.warning("No API key found")
+        return "AI unavailable"
+
     try:
         sys_prompt = system_prompt if system_prompt else story_prompt
         full_messages = [{"role": "system", "content": sys_prompt}] + messages
@@ -69,29 +77,28 @@ def get_llm_response(messages, system_prompt=None):
             f"{SUGAR_AI_API_URL}/ask-llm-prompted",
             headers=headers,
             json=payload,
-            timeout=60
+            timeout=15  # Production timeout
         )
         response.raise_for_status()
         data = response.json()
         return data["choices"][0]["message"]["content"]
     except Exception as e:
-        return f"Sorry, I encountered an error: {str(e)}"
+        logger.error(f"LLM request failed: {e}")
+        return _("AI service unavailable (offline mode)")
     
 def get_llm_response_framework(messages, custom_prompt):
     """
     Get response from LLM using the /ask-llm-prompted endpoint for structured responses.
-    This endpoint is better for avoiding hallucination in structured tasks.
-
-    Returns:
-        str: The answer content from the LLM response
     """
+    if not api_key:
+        return _("AI Service unavailable: API Key missing.")
+
     try:      
         headers = {
             "X-API-KEY": api_key,
             "Content-Type": "application/json"
         }
         
-        # Convert messages list to a single string for the question parameter
         question_text = "\n".join(f"{msg['role']}: {msg['content']}" for msg in messages)
         
         payload = {
@@ -105,11 +112,12 @@ def get_llm_response_framework(messages, custom_prompt):
             "top_k": 50
         }
         
-        response = requests.post(f"{SUGAR_AI_API_URL}/ask-llm-prompted", headers=headers, json=payload, timeout=60)
+        response = requests.post(f"{SUGAR_AI_API_URL}/ask-llm-prompted", headers=headers, json=payload, timeout=30)
         response.raise_for_status()
         data = response.json()
         
-        return data["answer"]
+        return data.get("answer", _("No answer received from AI."))
         
     except Exception as e:
-        return f"Sorry, I encountered an error: {str(e)}"
+        logger.error(f"LLM request failed: {e}")
+        return _("AI service unavailable (offline mode)")
