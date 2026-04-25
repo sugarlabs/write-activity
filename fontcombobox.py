@@ -19,16 +19,19 @@ import os
 import shutil
 from gettext import gettext as _
 
-from gi.repository import Gtk
+import gi
+gi.require_version('Gtk', '4.0')
+from gi.repository import Gtk, Gdk
 from gi.repository import GObject
 from gi.repository import Gio
+from gi.repository import Pango
 
-from sugar3.graphics.icon import Icon
-from sugar3.graphics.palette import Palette, ToolInvoker
-from sugar3.graphics.palettemenu import PaletteMenuBox
-from sugar3.graphics.palettemenu import PaletteMenuItem
-from sugar3.graphics import style
-from sugar3 import env
+from sugar4.graphics.icon import Icon
+from sugar4.graphics.palette import Palette, ToolInvoker
+from sugar4.graphics.palettemenu import PaletteMenuBox
+from sugar4.graphics.palettemenu import PaletteMenuItem
+from sugar4.graphics import style
+from sugar4 import env
 
 DEFAULT_FONTS = ['Sans', 'Serif', 'Monospace']
 USER_FONTS_FILE_PATH = env.get_profile_path('fonts')
@@ -38,64 +41,75 @@ GLOBAL_FONTS_FILE_PATH = '/etc/sugar_fonts'
 class FontLabel(Gtk.Label):
 
     def __init__(self, default_font='Sans'):
-        Gtk.Label.__init__(self)
+        super().__init__()
         self._font = None
         self.set_font(default_font)
 
     def set_font(self, font):
         if self._font != font:
+            self._font = font
             self.set_markup('<span font="%s">%s</span>' % (font, font))
 
 
-class FontComboBox(Gtk.ToolItem):
+class FontComboBox(Gtk.Box):
 
     __gsignals__ = {
-        'changed': (GObject.SignalFlags.RUN_LAST, None, ([])), }
+        'font-changed': (GObject.SignalFlags.RUN_LAST, None, (str,)),
+    }
+
+    font_name = GObject.Property(type=str, default='Sans')
 
     def __init__(self):
+        super().__init__(orientation=Gtk.Orientation.HORIZONTAL)
         self._palette_invoker = ToolInvoker()
-        Gtk.ToolItem.__init__(self)
         self._font_label = FontLabel()
-        bt = Gtk.Button('')
+        bt = Gtk.Button()
         bt.set_can_focus(False)
-        bt.remove(bt.get_children()[0])
-        box = Gtk.HBox()
-        bt.add(box)
+        box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        bt.set_child(box)
         icon = Icon(icon_name='font-text')
-        box.pack_start(icon, False, False, 10)
-        box.pack_start(self._font_label, False, False, 10)
-        self.add(bt)
-        self.show_all()
+        box.append(icon)
+        icon.set_margin_start(10)
+        icon.set_margin_end(10)
+        box.append(self._font_label)
+        self._font_label.set_margin_end(10)
+        self.append(bt)
 
         self._font_name = 'Sans'
 
-        # theme the button, can be removed if add the style to the sugar css
+        # theme the button
         if style.zoom(100) == 100:
             subcell_size = 15
         else:
             subcell_size = 11
         radius = 2 * subcell_size
-        theme = b"GtkButton {border-radius: %dpx;}" % radius
+        theme = "button {border-radius: %dpx;}" % radius
         css_provider = Gtk.CssProvider()
-        css_provider.load_from_data(theme)
-        style_context = bt.get_style_context()
-        style_context.add_provider(css_provider,
-                                   Gtk.STYLE_PROVIDER_PRIORITY_USER)
+        css_provider.load_from_data(theme.encode('utf-8'))
+        display = Gdk.Display.get_default()
+        if display:
+            Gtk.StyleContext.add_provider_for_display(
+                display,
+                css_provider,
+                Gtk.STYLE_PROVIDER_PRIORITY_USER)
 
         # init palette
         self._hide_tooltip_on_click = True
         self._palette_invoker.attach_tool(self)
         self._palette_invoker.props.toggle_palette = True
 
-        self.palette = Palette(_('Select font'))
-        self.palette.set_invoker(self._palette_invoker)
+        self._palette = Palette(label=_('Select font'))
+        self._palette.set_invoker(self._palette_invoker)
 
         # load the fonts in the palette menu
         self._menu_box = PaletteMenuBox()
-        self.props.palette.set_content(self._menu_box)
+        self._palette.set_content(self._menu_box)
         self._menu_box.show()
 
-        context = self.get_pango_context()
+        # In GTK4, pango context is available from self.get_pango_context()
+        context = self.get_pango_context() if self.get_pango_context() else None
+        if not context:
+            return
 
         self._init_font_list()
 
@@ -107,7 +121,18 @@ class FontComboBox(Gtk.ToolItem):
         for name in sorted(tmp_list):
             self._add_menu(name, self.__font_selected_cb)
 
-        self._font_label.set_font(self._font_name)
+        self.set_font_name(self.font_name)
+        self.connect("notify::font-name", self._on_font_changed)
+
+    def _on_font_changed(self, widget, pspec):
+        self.emit("font-changed", self.font_name)
+
+    def set_font_name(self, font_name):
+        self.font_name = font_name
+        self._font_label.set_font(font_name)
+
+    def get_font_name(self):
+        return self.font_name
 
     def _init_font_list(self):
         self._font_white_list = []
@@ -121,10 +146,9 @@ class FontComboBox(Gtk.ToolItem):
 
         if os.path.exists(USER_FONTS_FILE_PATH):
             # get the font names in the file to the white list
-            fonts_file = open(USER_FONTS_FILE_PATH)
-            # get the font names in the file to the white list
-            for line in fonts_file:
-                self._font_white_list.append(line.strip())
+            with open(USER_FONTS_FILE_PATH) as fonts_file:
+                for line in fonts_file:
+                    self._font_white_list.append(line.strip())
             # monitor changes in the file
             gio_fonts_file = Gio.File.new_for_path(USER_FONTS_FILE_PATH)
             self.monitor = gio_fonts_file.monitor_file(
@@ -137,14 +161,19 @@ class FontComboBox(Gtk.ToolItem):
             return
         self._font_white_list = []
         self._font_white_list.extend(DEFAULT_FONTS)
-        fonts_file = open(USER_FONTS_FILE_PATH)
-        for line in fonts_file:
-            self._font_white_list.append(line.strip())
+        with open(USER_FONTS_FILE_PATH) as fonts_file:
+            for line in fonts_file:
+                self._font_white_list.append(line.strip())
         # update the menu
-        for child in self._menu_box.get_children():
+        child = self._menu_box.get_first_child()
+        while child:
+            next_child = child.get_next_sibling()
             self._menu_box.remove(child)
-            child = None
-        context = self.get_pango_context()
+            child = next_child
+
+        context = self.get_pango_context() if self.get_pango_context() else None
+        if not context:
+            return False
         tmp_list = []
         for family in context.list_families():
             name = family.get_name()
@@ -155,9 +184,7 @@ class FontComboBox(Gtk.ToolItem):
         return False
 
     def __font_selected_cb(self, menu, font_name):
-        self._font_name = font_name
-        self._font_label.set_font(font_name)
-        self.emit('changed')
+        self.set_font_name(font_name)
 
     def _add_menu(self, font_name, activate_cb):
         label = '<span font="%s">%s</span>' % (font_name, font_name)
@@ -193,27 +220,20 @@ class FontComboBox(Gtk.ToolItem):
     palette_invoker = GObject.property(
         type=object, setter=set_palette_invoker, getter=get_palette_invoker)
 
-    def set_font_name(self, font_name):
-        self._font_label.set_font(font_name)
-
-    def get_font_name(self):
-        return self._font_name
 
 
-class FontSize(Gtk.ToolItem):
+
+class FontSize(Gtk.Box):
 
     __gsignals__ = {
         'changed': (GObject.SignalFlags.RUN_LAST, None, ([])), }
 
     def __init__(self):
-
-        Gtk.ToolItem.__init__(self)
+        super().__init__(orientation=Gtk.Orientation.HORIZONTAL)
 
         self._font_sizes = [8, 9, 10, 11, 12, 14, 16, 20, 22, 24, 26, 28, 36,
                             48, 72]
 
-        # theme the buttons, can be removed if add the style to the sugar css
-        # these are the same values used in gtk-widgets.css.em
         if style.zoom(100) == 100:
             subcell_size = 15
             default_padding = 6
@@ -221,51 +241,55 @@ class FontSize(Gtk.ToolItem):
             subcell_size = 11
             default_padding = 4
 
-        hbox = Gtk.HBox()
-        vbox = Gtk.VBox()
-        self.add(vbox)
-        # add a vbox to set the padding up and down
-        vbox.pack_start(hbox, True, True, default_padding)
+        hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        self.append(hbox)
+        hbox.set_margin_top(default_padding)
+        hbox.set_margin_bottom(default_padding)
+
         self._size_down = Gtk.Button()
         self._size_down.set_can_focus(False)
-        icon = Icon(icon_name='resize-')
-        self._size_down.set_image(icon)
+        icon_down = Icon(icon_name='resize-')
+        self._size_down.set_child(icon_down)
         self._size_down.connect('clicked', self.__font_sizes_cb, False)
-        hbox.pack_start(self._size_down, False, False, 5)
+        hbox.append(self._size_down)
+        self._size_down.set_margin_end(5)
 
         # TODO: default?
         self._default_size = 12
         self._font_size = self._default_size
 
-        self._size_label = Gtk.Label(str(self._font_size))
-        hbox.pack_start(self._size_label, False, False, 10)
+        self._size_label = Gtk.Label(label=str(self._font_size))
+        hbox.append(self._size_label)
+        self._size_label.set_margin_end(10)
 
         self._size_up = Gtk.Button()
         self._size_up.set_can_focus(False)
-        icon = Icon(icon_name='resize+')
-        self._size_up.set_image(icon)
+        icon_up = Icon(icon_name='resize+')
+        self._size_up.set_child(icon_up)
         self._size_up.connect('clicked', self.__font_sizes_cb, True)
-        hbox.pack_start(self._size_up, False, False, 5)
+        hbox.append(self._size_up)
+        self._size_up.set_margin_start(5)
 
         radius = 2 * subcell_size
-        theme_up = b"GtkButton {border-radius:0px %dpx %dpx 0px;}" % (radius,
-                                                                     radius)
+        theme_up = "button {border-radius:0px %dpx %dpx 0px;}" % (radius,
+                                                                 radius)
         css_provider_up = Gtk.CssProvider()
-        css_provider_up.load_from_data(theme_up)
+        css_provider_up.load_from_data(theme_up.encode('utf-8'))
+        display = Gdk.Display.get_default()
+        if display:
+            Gtk.StyleContext.add_provider_for_display(
+                display,
+                css_provider_up,
+                Gtk.STYLE_PROVIDER_PRIORITY_USER)
 
-        style_context = self._size_up.get_style_context()
-        style_context.add_provider(css_provider_up,
-                                   Gtk.STYLE_PROVIDER_PRIORITY_USER)
-
-        theme_down = b"GtkButton {border-radius: %dpx 0px 0px %dpx;}" % (radius,
-                                                                        radius)
+        theme_down = "button {border-radius: %dpx 0px 0px %dpx;}" % (radius, radius)
         css_provider_down = Gtk.CssProvider()
-        css_provider_down.load_from_data(theme_down)
-        style_context = self._size_down.get_style_context()
-        style_context.add_provider(css_provider_down,
-                                   Gtk.STYLE_PROVIDER_PRIORITY_USER)
-
-        self.show_all()
+        css_provider_down.load_from_data(theme_down.encode('utf-8'))
+        if display:
+            Gtk.StyleContext.add_provider_for_display(
+                display,
+                css_provider_down,
+                Gtk.STYLE_PROVIDER_PRIORITY_USER)
 
     def __font_sizes_cb(self, button, increase):
         if self._font_size in self._font_sizes:
@@ -307,3 +331,4 @@ class FontSize(Gtk.ToolItem):
 
     def get_font_size(self):
         return self._font_size
+

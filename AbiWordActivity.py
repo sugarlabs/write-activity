@@ -1,6 +1,7 @@
 # Copyright (C) 2006 by Martin Sevior
 # Copyright (C) 2006-2007 Marc Maurer <uwog@uwog.net>
 # Copyright (C) 2007, One Laptop Per Child
+# Copyright (C) 2025 MostlyK
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,565 +17,114 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-from gettext import gettext as _
 import logging
-import os
-import json
-
-# Abiword needs this to happen as soon as possible
-from gi.repository import GObject
-GObject.threads_init()
-
+from gettext import gettext as _
 import gi
-gi.require_version('Gtk', '3.0')
-gi.require_version('TelepathyGLib', '0.12')
+gi.require_version('Gtk', '4.0')
+from gi.repository import Gtk, GObject, Gdk
 
-from gi.repository import Gtk
-from gi.repository import TelepathyGLib
+from sugar4.activity import activity
+from sugar4.activity.widgets import StopButton, ActivityToolbarButton
+from sugar4.graphics.toolbarbox import ToolbarButton, ToolbarBox
+from sugar4.graphics.toggletoolbutton import ToggleToolButton
+from sugar4.graphics.toolbutton import ToolButton
 
-from sugar3.activity import activity
-from sugar3.activity.widgets import StopButton
-from sugar3.activity.widgets import ActivityToolbarButton
-from sugar3.activity.activity import get_bundle_path
-
-from sugar3.graphics.toolbutton import ToolButton
-from sugar3.graphics.toolbarbox import ToolbarButton, ToolbarBox
-from sugar3.graphics import style
-from sugar3.graphics.icon import Icon
-from sugar3.graphics.xocolor import XoColor
-from sugar3.graphics.palettemenu import PaletteMenuBox
-from sugar3.graphics.palettemenu import PaletteMenuItem
-
-from sugarai_api import get_llm_response
-import socket
-
-from toolbar import EditToolbar
-from toolbar import ViewToolbar
-from toolbar import TextToolbar
-from toolbar import InsertToolbar
-from toolbar import ParagraphToolbar
-from widgets import ExportButtonFactory
+from toolbar import EditToolbar, ViewToolbar, TextToolbar
 from widgets import DocumentView
-from speechtoolbar import SpeechToolbar
 from chatbox import ChatSidebar
-from sugar3.graphics.objectchooser import ObjectChooser
-try:
-    from sugar3.graphics.objectchooser import FILTER_TYPE_GENERIC_MIME
-except:
-    FILTER_TYPE_GENERIC_MIME = 'generic_mime'
 
 logger = logging.getLogger('write-activity')
 
-
-class ConnectingBox(Gtk.VBox):
-
-    def __init__(self):
-        Gtk.VBox.__init__(self)
-        self.props.halign = Gtk.Align.CENTER
-        self.props.valign = Gtk.Align.CENTER
-        waiting_icon = Icon(icon_name='zoom-neighborhood',
-                            pixel_size=style.STANDARD_ICON_SIZE)
-        waiting_icon.set_xo_color(XoColor('white'))
-        self.add(waiting_icon)
-        self.add(Gtk.Label(_('Connecting...')))
-        self.show_all()
-        self.hide()
-
-
 class AbiWordActivity(activity.Activity):
-
     def __init__(self, handle):
-        activity.Activity.__init__(self, handle)
-
-        # abiword uses the current directory for all its file dialogs
-        os.chdir(os.path.expanduser('~'))
-
-        # create our main abiword canvas
-        self.abiword_canvas = DocumentView()
-        self._new_instance = True
-        toolbar_box = ToolbarBox()
-
-        # Create main content box
-        content_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
-        content_box.set_homogeneous(False)
+        super().__init__(handle)
         
-        # Create canvas box to hold the editor
-        canvas_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        canvas_box.set_hexpand(True)
-        canvas_box.set_homogeneous(False)
-
-        # Create sidebar
-        # Load conversation messages if available
-        initial_messages = None
-        if 'conversation' in self.metadata:
-            try:
-                initial_messages = json.loads(self.metadata['conversation'])
-            except (json.JSONDecodeError, TypeError) as e:
-                logger.debug(f"Error decoding conversation messages: {e}")
-                initial_messages = None
-
-        self.chat_sidebar = ChatSidebar(self, initial_messages=initial_messages)
-        self.chat_sidebar.set_size_request(300, -1)  # Set width to 300px
+        self.document_view = DocumentView()
         
-        content_box.pack_start(canvas_box, True, True, 0)
-        content_box.pack_end(self.chat_sidebar, False, True, 0)
-
-        # Set the main content box as the canvas
-        self.set_canvas(content_box)
-        content_box.show_all()
-        self.chat_sidebar.hide() # Initially hide the chat sidebar
-
+        self.toolbar_box = ToolbarBox()
+        self.set_toolbar_box(self.toolbar_box)
+        
+        # Activity Tab
         self.activity_button = ActivityToolbarButton(self)
-        toolbar_box.toolbar.insert(self.activity_button, -1)
+        self.toolbar_box.toolbar.append(self.activity_button)
+        
+        # Edit Tab
+        self.edit_toolbar = EditToolbar(self, self.toolbar_box)
+        edit_button = ToolbarButton(label=_('Edit'), icon_name='toolbar-edit')
+        edit_button.set_page(self.edit_toolbar)
+        self.toolbar_box.toolbar.append(edit_button)
+        
+        # Text Tab
+        self.text_toolbar = TextToolbar(self.document_view)
+        text_button = ToolbarButton(label=_('Text'), icon_name='format-text')
+        text_button.set_page(self.text_toolbar)
+        self.toolbar_box.toolbar.append(text_button)
 
-        separator = Gtk.SeparatorToolItem()
-        separator.show()
-        self.activity_button.props.page.insert(separator, 2)
-        ExportButtonFactory(self, self.abiword_canvas)
-        self.activity_button.show()
+        # View Tab
+        view_toolbar = ViewToolbar(self.document_view)
+        view_button = ToolbarButton(label=_('View'), icon_name='toolbar-view')
+        view_button.set_page(view_toolbar)
+        self.toolbar_box.toolbar.append(view_button)
 
-        edit_toolbar = ToolbarButton()
-        edit_toolbar.props.page = EditToolbar(self, toolbar_box)
-        edit_toolbar.props.icon_name = 'toolbar-edit'
-        edit_toolbar.props.label = _('Edit')
-        toolbar_box.toolbar.insert(edit_toolbar, -1)
+        # Spacer
+        spacer = Gtk.Box()
+        spacer.set_hexpand(True)
+        self.toolbar_box.toolbar.append(spacer)
+        
+        # Chat Toggle Button
+        chat_toggle = ToolButton(icon_name='chat')
+        chat_toggle.set_tooltip(_('Toggle Chat'))
+        chat_toggle.connect('clicked', self._toggle_chat)
+        self.toolbar_box.toolbar.append(chat_toggle)
 
-        view_toolbar = ToolbarButton()
-        view_toolbar.props.page = ViewToolbar(self.abiword_canvas)
-        view_toolbar.props.icon_name = 'toolbar-view'
-        view_toolbar.props.label = _('View')
-        toolbar_box.toolbar.insert(view_toolbar, -1)
-
-        self.speech_toolbar_button = ToolbarButton(icon_name='speak')
-        toolbar_box.toolbar.insert(self.speech_toolbar_button, -1)
-        self.speech_toolbar = SpeechToolbar(self)
-        self.speech_toolbar_button.set_page(self.speech_toolbar)
-        self.speech_toolbar_button.show()
-
-        # Add chat button to toolbar
-        chat_toolbar = ToolbarButton()
-        chat_toolbar.props.icon_name = 'chat'
-        chat_toolbar.props.label = _('Chat')
-        chat_toolbar.set_tooltip(_('Chat'))
-        chat_toolbar.connect('clicked', self._on_chat_button_clicked)
-        toolbar_box.toolbar.insert(chat_toolbar, -1)
- 
-        separator = Gtk.SeparatorToolItem()
-        toolbar_box.toolbar.insert(separator, -1)
-
-        text_toolbar = ToolbarButton()
-        text_toolbar.props.page = TextToolbar(self.abiword_canvas)
-        text_toolbar.props.icon_name = 'format-text'
-        text_toolbar.props.label = _('Text')
-        toolbar_box.toolbar.insert(text_toolbar, -1)
-
-        para_toolbar = ToolbarButton()
-        para_toolbar.props.page = ParagraphToolbar(self.abiword_canvas)
-        para_toolbar.props.icon_name = 'paragraph-bar'
-        para_toolbar.props.label = _('Paragraph')
-        toolbar_box.toolbar.insert(para_toolbar, -1)
-
-        insert_toolbar = ToolbarButton()
-        insert_toolbar.props.page = InsertToolbar(self.abiword_canvas)
-        insert_toolbar.props.icon_name = 'insert-table'
-        insert_toolbar.props.label = _('Table')
-        toolbar_box.toolbar.insert(insert_toolbar, -1)
-
-        image = ToolButton('insert-picture')
-        image.set_tooltip(_('Insert Image'))
-        self._image_id = image.connect('clicked', self.__image_cb)
-        toolbar_box.toolbar.insert(image, -1)
-
-        palette = image.get_palette()
-        box = PaletteMenuBox()
-        palette.set_content(box)
-        box.show()
-        menu_item = PaletteMenuItem(_('Floating'))
-        menu_item.connect('activate', self.__image_cb, True)
-        box.append_item(menu_item)
-        menu_item.show()
-
-        separator = Gtk.SeparatorToolItem()
-        separator.props.draw = False
-        separator.set_size_request(0, -1)
-        separator.set_expand(True)
-        separator.show()
-        toolbar_box.toolbar.insert(separator, -1)
-
+        # Stop
         stop = StopButton(self)
-        toolbar_box.toolbar.insert(stop, -1)
+        self.toolbar_box.toolbar.append(stop)
 
-        toolbar_box.show_all()
-        self.set_toolbar_box(toolbar_box)
-
-        # add a overlay to be able to show a icon while joining a shared doc
-        overlay = Gtk.Overlay()
-        overlay.add(self.abiword_canvas)
-        overlay.show()
-
-        self._connecting_box = ConnectingBox()
-        overlay.add_overlay(self._connecting_box)
-
-        # Add overlay to canvas box
-        canvas_box.pack_start(overlay, True, True, 0)
-
-        # we want a nice border so we can select paragraphs easily
-        self.abiword_canvas.set_show_margin(True)
-
-        # Set default font face and size
-        self._default_font_face = 'Sans'
-        self._default_font_size = 12
-
-        # activity sharing
-        self.participants = {}
-        self.joined = False
-
-        self.connect('shared', self._shared_cb)
-
-        if self.shared_activity:
-            # we are joining the activity
-            logger.debug('We are joining an activity')
-            # display a icon while joining
-            self._connecting_box.show()
-            # disable the abi widget
-            self.abiword_canvas.set_sensitive(False)
-            self._new_instance = False
-            self.connect('joined', self._joined_cb)
-            self.shared_activity.connect('buddy-joined',
-                                         self._buddy_joined_cb)
-            self.shared_activity.connect('buddy-left', self._buddy_left_cb)
-            if self.get_shared():
-                self._joined_cb(self)
-        else:
-            # we are creating the activity
-            logger.debug("We are creating an activity")
-
-        self.abiword_canvas.zoom_width()
-        self.abiword_canvas.show()
-        self.connect_after('map-event', self.__map_activity_event_cb)
-
-        self.abiword_canvas.connect('size-allocate', self.size_allocate_cb)
+        # Build Exact Layout
+        main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         
-    def check_internet_connection(self):
-        """Check with reasonable timeout"""
-        try:
-            socket.create_connection(("8.8.8.8", 53), timeout=4)
-            return True
-        except OSError:
-            return False
-
-    def _on_chat_button_clicked(self, widget):
-        if self.chat_sidebar.get_visible():
-            self.chat_sidebar.toggle_visibility()
-        else:
-            self.chat_sidebar.toggle_visibility()
-            if not self.check_internet_connection():
-                self._show_no_internet_dialog()
-
-    def _show_no_internet_dialog(self):
-        dialog = Gtk.MessageDialog(
-            parent=self,  # Use self instead of self.get_window()
-            flags=Gtk.DialogFlags.MODAL,
-            type=Gtk.MessageType.INFO,
-            buttons=Gtk.ButtonsType.CLOSE,
-            message_format=_("Oops! It looks like you're not connected to the internet. Please check your connection to use the chat feature.")
-        )
-        dialog.set_title(_("No Internet Connection"))
-        dialog.run()
-        dialog.destroy()
-
-    def size_allocate_cb(self, abi, alloc):
-        GObject.idle_add(abi.queue_draw)
-
-    def __map_activity_event_cb(self, event, activity):
-        # set custom keybindings for Write
-        # we do it later because have problems if done before - OLPC #11049
-        logger.debug('Loading keybindings')
-        keybindings_file = os.path.join(get_bundle_path(), 'keybindings.xml')
-        self.abiword_canvas.invoke_ex(
-            'com.abisource.abiword.loadbindings.fromURI',
-            keybindings_file, 0, 0)
-        # set default font
-        if self._new_instance:
-            self.abiword_canvas.select_all()
-            logging.debug('Setting default font to %s %d in new documents',
-                          self._default_font_face, self._default_font_size)
-            self.abiword_canvas.set_font_name(self._default_font_face)
-            self.abiword_canvas.set_font_size(str(self._default_font_size))
-            self.abiword_canvas.moveto_bod()
-            self.abiword_canvas.select_bod()
-        if hasattr(self.abiword_canvas, 'toggle_rulers'):
-            # this is not available yet on upstream abiword
-            self.abiword_canvas.view_print_layout()
-            self.abiword_canvas.toggle_rulers(False)
-
-        self.abiword_canvas.grab_focus()
-
-    def get_preview(self):
-        if not hasattr(self.abiword_canvas, 'render_page_to_image'):
-            return activity.Activity.get_preview(self)
-
-        from gi.repository import GdkPixbuf
-
-        pixbuf = self.abiword_canvas.render_page_to_image(1)
-        pixbuf = pixbuf.scale_simple(style.zoom(300), style.zoom(225),
-                                     GdkPixbuf.InterpType.BILINEAR)
-
-        preview_data = []
-
-        def save_func(buf, length, data):
-            data.append(buf)
-            return True
-
-        pixbuf.save_to_callbackv(save_func, preview_data, 'png', [], [])
-        preview_data = b''.join(preview_data)
-
-        return preview_data
-
-    def _shared_cb(self, activity):
-        logger.debug('My Write activity was shared')
-        self._sharing_setup()
-
-        self.shared_activity.connect('buddy-joined', self._buddy_joined_cb)
-        self.shared_activity.connect('buddy-left', self._buddy_left_cb)
-
-        channel = self.tubes_chan[TelepathyGLib.IFACE_CHANNEL_TYPE_TUBES]
-        logger.debug('This is my activity: offering a tube...')
-        id = channel.OfferDBusTube('com.abisource.abiword.abicollab', {})
-        logger.debug('Tube address: %s', channel.GetDBusTubeAddress(id))
-
-    def _sharing_setup(self):
-        logger.debug("_sharing_setup()")
-
-        if self.shared_activity is None:
-            logger.error('Failed to share or join activity')
-            return
-
-        self.conn = self.shared_activity.telepathy_conn
-        self.tubes_chan = self.shared_activity.telepathy_tubes_chan
-        self.text_chan = self.shared_activity.telepathy_text_chan
-        self.tube_id = None
-        self.tubes_chan[
-            TelepathyGLib.IFACE_CHANNEL_TYPE_TUBES].connect_to_signal(
-            'NewTube', self._new_tube_cb)
-
-    def _list_tubes_reply_cb(self, tubes):
-        for tube_info in tubes:
-            self._new_tube_cb(*tube_info)
-
-    def _list_tubes_error_cb(self, e):
-        logger.error('ListTubes() failed: %s', e)
-
-    def _joined_cb(self, activity):
-        logger.debug("_joined_cb()")
-        if not self.shared_activity:
-            self._enable_collaboration()
-            return
-
-        self.joined = True
-        logger.debug('Joined an existing Write session')
-        self._sharing_setup()
-
-        logger.debug('This is not my activity: waiting for a tube...')
-        self.tubes_chan[TelepathyGLib.IFACE_CHANNEL_TYPE_TUBES].ListTubes(
-            reply_handler=self._list_tubes_reply_cb,
-            error_handler=self._list_tubes_error_cb)
-        self._enable_collaboration()
-
-    def _enable_collaboration(self):
-        """
-        when communication established, hide the download icon
-        and enable the abi widget
-        """
-        self.abiword_canvas.zoom_width()
-        self.abiword_canvas.set_sensitive(True)
-        self._connecting_box.hide()
-
-    def _new_tube_cb(self, id, initiator, type, service, params, state):
-        logger.debug('New tube: ID=%d initiator=%d type=%d service=%s '
-                     'params=%r state=%d', id, initiator, type, service,
-                     params, state)
-
-        if self.tube_id is not None:
-            # We are already using a tube
-            return
-
-        if type != TelepathyGLib.TubeType.DBUS or \
-                service != "com.abisource.abiword.abicollab":
-            return
-
-        channel = self.tubes_chan[TelepathyGLib.IFACE_CHANNEL_TYPE_TUBES]
-
-        if state == TelepathyGLib.TubeState.LOCAL_PENDING:
-            channel.AcceptDBusTube(id)
-
-        # look for the initiator's D-Bus unique name
-        initiator_dbus_name = None
-        dbus_names = channel.GetDBusNames(id)
-        for handle, name in dbus_names:
-            if handle == initiator:
-                logger.debug('found initiator D-Bus name: %s', name)
-                initiator_dbus_name = name
-                break
-
-        if initiator_dbus_name is None:
-            logger.error('Unable to get the D-Bus name of the tube initiator')
-            return
-
-        cmd_prefix = 'com.abisource.abiword.abicollab.olpc.'
-        # pass this tube to abicollab
-        address = channel.GetDBusTubeAddress(id)
-        if self.joined:
-            logger.debug('Passing tube address to abicollab (join): %s',
-                         address)
-            self.abiword_canvas.invoke_ex(cmd_prefix + 'joinTube',
-                                          address, 0, 0)
-            # The intiator of the session has to be the first passed
-            # to the Abicollab backend.
-            logger.debug('Adding the initiator to the session: %s',
-                         initiator_dbus_name)
-            self.abiword_canvas.invoke_ex(cmd_prefix + 'buddyJoined',
-                                          initiator_dbus_name, 0, 0)
-        else:
-            logger.debug('Passing tube address to abicollab (offer): %s',
-                         address)
-            self.abiword_canvas.invoke_ex(cmd_prefix + 'offerTube', address,
-                                          0, 0)
-        self.tube_id = id
-
-        channel.connect_to_signal('DBusNamesChanged',
-                                  self._on_dbus_names_changed)
-
-        self._on_dbus_names_changed(id, dbus_names, [])
-
-    def _on_dbus_names_changed(self, tube_id, added, removed):
-        """
-        We call com.abisource.abiword.abicollab.olpc.buddy{Joined,Left}
-        according members of the D-Bus tube. That's why we don't add/remove
-        buddies in _buddy_{joined,left}_cb.
-        """
-        logger.debug('_on_dbus_names_changed')
-#        if tube_id == self.tube_id:
-        cmd_prefix = 'com.abisource.abiword.abicollab.olpc'
-        for handle, bus_name in added:
-            logger.debug('added handle: %s, with dbus_name: %s',
-                         handle, bus_name)
-            self.abiword_canvas.invoke_ex(cmd_prefix + '.buddyJoined',
-                                          bus_name, 0, 0)
-            self.participants[handle] = bus_name
-
-    def _on_members_changed(self, message, added, removed, local_pending,
-                            remote_pending, actor, reason):
-        logger.debug("_on_members_changed")
-        for handle in removed:
-            bus_name = self.participants.pop(handle, None)
-            if bus_name is None:
-                # FIXME: that shouldn't happen so probably hide another bug.
-                # Should be investigated
-                continue
-
-            cmd_prefix = 'com.abisource.abiword.abicollab.olpc'
-            logger.debug('removed handle: %d, with dbus name: %s', handle,
-                         bus_name)
-            self.abiword_canvas.invoke_ex(cmd_prefix + '.buddyLeft',
-                                          bus_name, 0, 0)
-
-    def _buddy_joined_cb(self, activity, buddy):
-        logger.debug('buddy joined with object path: %s', buddy.object_path())
-
-    def _buddy_left_cb(self, activity, buddy):
-        logger.debug('buddy left with object path: %s', buddy.object_path())
+        content_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        content_box.append(self.document_view)
+        self.document_view.set_hexpand(True); self.document_view.set_vexpand(True)
         
-    def load_story_prompt(self):
-        prompt_path = os.path.join(os.path.dirname(__file__), "prompts", "advice_prompt.txt")
-        with open(prompt_path, "r", encoding="utf-8") as f:
-            return f.read()    
+        self.chat_sidebar = ChatSidebar(self)
+        self.chat_sidebar.set_size_request(300, -1)
+        self.chat_sidebar.set_visible(False)
+        content_box.append(self.chat_sidebar)
         
+        main_box.append(content_box)
+        self.set_canvas(main_box)
+        self.set_visible(True)
+        
+        # Sync toolbar on cursor move
+        self.document_view.buffer.connect("mark-set", self._on_mark_set)
+
+    def _on_mark_set(self, buf, iter, mark):
+        if mark.get_name() == "insert":
+            it = buf.get_iter_at_mark(mark)
+            self._sync_toolbar(it)
+
+    def _sync_toolbar(self, it):
+        # FIX: only update UI, not typing engine
+        if hasattr(self.text_toolbar, 'sync_state'):
+            self.text_toolbar.sync_state(it)
+
+    def _toggle_chat(self, button):
+        self.chat_sidebar.set_visible(not self.chat_sidebar.get_visible())
+
     def get_canvas_content_for_advice(self):
-        """
-        Retrieves the content from the abiword_canvas and sends it to the LLM.
-        """
-        try:
-            document_content = self.abiword_canvas.get_content('text/plain', None)[0]
-            advice_prompt = self.load_story_prompt()
-            advice = get_llm_response([{"role": "user", "content": document_content}], advice_prompt)
-            self.chat_sidebar.set_advice_text(advice)
-            return advice
-
-        except Exception as e:
-            logger.error("Error getting canvas content: %s", e)
+        return self.document_view.get_text()
 
     def read_file(self, file_path):
-        logging.debug('AbiWordActivity.read_file: %s, mimetype: %s',
-                      file_path, self.metadata['mime_type'])
-        if self._is_plain_text(self.metadata['mime_type']):
-            self.abiword_canvas.load_file('file://' + file_path, 'text/plain')
-        else:
-            # we pass no mime/file type, let libabiword autodetect it,
-            # so we can handle multiple file formats
-            self.abiword_canvas.load_file('file://' + file_path, '')
-        self.abiword_canvas.zoom_width()
-        self._new_instance = False
+        self.document_view.load_file(file_path)
 
     def write_file(self, file_path):
-        logging.debug('AbiWordActivity.write_file: %s, mimetype: %s',
-                      file_path, self.metadata['mime_type'])
-        # if we were editing a text file save as plain text
-        if self._is_plain_text(self.metadata['mime_type']):
-            logger.debug('Writing file as type source (text/plain)')
-            self.abiword_canvas.save('file://' + file_path, 'text/plain', '')
-        else:
-            # if the file is new, save in .odt format
-            if self.metadata['mime_type'] == '':
-                self.metadata['mime_type'] = 'application/rtf'
+        self.document_view.save_file(file_path)
 
-            # Abiword can't save in .doc format, save in .rtf instead
-            if self.metadata['mime_type'] == 'application/msword':
-                self.metadata['mime_type'] = 'application/rtf'
-
-            self.abiword_canvas.save('file://' + file_path,
-                                     self.metadata['mime_type'], '')
-
-        self.metadata['fulltext'] = self.abiword_canvas.get_content(
-            'text/plain', None)[0][:3000]
-
-        # Save conversation messages to metadata
-        if hasattr(self, 'chat_sidebar') and hasattr(self.chat_sidebar, 'context') and hasattr(self.chat_sidebar.context, 'messages'):
-            try:
-                self.metadata['conversation'] = json.dumps(self.chat_sidebar.context.messages)
-            except TypeError as e:
-                logger.debug(f"Error serializing conversation messages in write_file: {e}")
-
-    def _is_plain_text(self, mime_type):
-        # These types have 'text/plain' in their mime_parents  but we need
-        # use it like rich text
-        if mime_type in ['application/rtf', 'text/rtf', 'text/html']:
-            return False
-
-        from sugar3 import mime
-
-        mime_parents = mime.get_mime_parents(self.metadata['mime_type'])
-        return self.metadata['mime_type'] in ['text/plain', 'text/csv'] or \
-            'text/plain' in mime_parents
-
-    def __image_cb(self, button, floating=False):
-        try:
-            chooser = ObjectChooser(self, what_filter='Image',
-                                    filter_type=FILTER_TYPE_GENERIC_MIME,
-                                    show_preview=True)
-        except:
-            # for compatibility with older versions
-            chooser = ObjectChooser(self, what_filter='Image')
-
-        try:
-            result = chooser.run()
-            if result == Gtk.ResponseType.ACCEPT:
-                logging.debug('ObjectChooser: %r',
-                              chooser.get_selected_object())
-                jobject = chooser.get_selected_object()
-                if jobject and jobject.file_path:
-                    self.abiword_canvas.insert_image(jobject.file_path,
-                                                     floating)
-        finally:
-            chooser.destroy()
-            del chooser
+if __name__ == "__main__":
+    from sugar4.activity.activityhandle import ActivityHandle
+    handle = ActivityHandle()
+    handle.activity_id = "org.sugarlabs.WriteActivity"
+    activity = AbiWordActivity(handle)
+    activity.present()
